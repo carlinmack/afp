@@ -9,7 +9,7 @@
 
     <tr>
       <td class="datahead">Authors:</td>
-      <td class="data">{{ delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+      <td class="data">{{ partial "authors.html" (dict "site" . "authors" .Params.authors) }}</td>
     </tr>
 
     <tr>
