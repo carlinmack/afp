@@ -19,17 +19,91 @@
 
             <table width="80%" class="data">
               <tbody>
-                {{ range $key, $value := (index .Site.Data .File.TranslationBaseName )}}
                 <tr>
-                  <td class="datahead">{{ title $key }}:</td>
-                  <td class="data">{{ $value }}</td>
+                  <td class="datahead" width="20%">Title:</td>
+                  <td class="data" width="80%">{{ .Params.title }}</td>
                 </tr>
-                {{ end }}
+
+                <tr>
+                  <td class="datahead">Authors:</td>
+                  <td class="data">{{ delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+                </tr>
+
+                <tr>
+                  <td class="datahead">Submission date:</td>
+                  <td class="data">{{ dateFormat "2006-01-02" .Params.date }}</td>
+                </tr>
+
+                <tr>
+                  <td class="datahead" valign="top">Abstract:</td>
+                  <td class="abstract mathjax_process">{{ .Params.abstract }}</td>
+                </tr>
+
+                <tr>
+                  <td class="datahead" valign="top">BibTeX:</td>
+                  <td class="formatted">
+                    <pre>{{ .Params.bibtex }}</pre>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="datahead">License:</td>
+                  <td class="data">{{ .Params.license }}</td>
+                </tr>
+
+                {{- with .Params.usedBy -}}<tr>
+                  <td class="datahead">Used by:</td>
+                  <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+                </tr>{{- end -}}
+
+                {{- with .Params.dependsOn -}}<tr>
+                  <td class="datahead">Depends On:</td>
+                  <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+                </tr>{{- end -}}
               </tbody>
             </table>
             <p></p>
 
             <table class="links">
+              <tbody>
+                <tr>
+                  <td class="links">
+                    <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/outline.pdf">Proof
+                      outline</a><br>
+                    <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/document.pdf">Proof
+                      document</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="links">
+                    <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/index.html">Browse
+                      theories</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="links">
+                    <a href="../release/afp-{{- .File.TranslationBaseName -}}-current.tar.gz">Download this entry</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="links">Older releases:
+                    {{ with .Params.olderReleases }}
+                      {{ range . }}
+                      <li>{{ index . 0 }}:
+                        <a href="../release/{{ index . 1 }}.tar.gz">
+                          {{ index . 1 }}
+                        </a>
+                      </li>
+                      {{ end }}
+                    {{ else }}
+                    None
+                    {{ end }}
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </td>

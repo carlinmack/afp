@@ -2,5 +2,12 @@
     "baseURL": "/",
     "languageCode": "en-gb",
     "title": "Archive of Formal Proofs",
-    "theme": "afp"
+    "theme": "afp",
+    "taxonomies": {
+        "author": "authors",
+        "category": "categories"
+    },
+    "params": { 
+        "mainSections": ["entries"]
+    }
 }
