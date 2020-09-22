@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div id="content">
+        {{ partial "header.html" . }}
+        <div class="container wrapper">
+
+            <div class="recent-posts section">
+                {{- range (.Data.Pages).GroupByDate "2006" -}}
+                    {{- if ne .Key "0001" -}}
+                    <h2 class="archive-title">{{ .Key }}</h2>
+                    {{- range .Pages -}}
+                        {{ .Params.hidden }}
+                        <article class="archive-item">
+                            <span class="item-text">
+                                <h4><a class="title" href="{{ .RelPermalink }}">{{.Title}}</a></h4> &mdash;
+                                <span class="description">
+                                    {{- if isset .Params "description" -}}
+                                    {{- .Description -}}
+                                    {{- else if gt (len .RawContent) 120 -}}
+                                    {{- slicestr .RawContent 0 120 -}}...
+                                    {{- else -}}
+                                    {{- .RawContent -}}
+                                    {{- end -}}
+                                </span>
+                            </span>
+                            <span class="item-date">
+                                {{ .Date.Format "January 2" }}
+                            </span>
+                        </article>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>
