@@ -1,0 +1,10 @@
+{{ partial "single_top.html" . }}
+
+<h1>Authors</h1>
+<ul>
+  {{ range .Data.Pages }}
+  <li><a href="{{ .Permalink }}">{{ .Params.name }}</a></li>
+  {{ end }}
+</ul>
+
+{{ partial "single_bottom.html" }}

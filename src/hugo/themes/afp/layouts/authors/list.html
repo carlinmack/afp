@@ -1,0 +1,39 @@
+{{ partial "single_top.html" . }}
+
+{{ with (index $.Site.Data.authors .Title )}}
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td>
+        Website: <a href="{{ .website }}">{{ .website }}</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>&nbsp;</p>
+{{ end }}
+
+<h2>Articles</h2>
+
+{{- range (.Data.Pages).GroupByDate "2006" -}}
+{{- if ne .Key "0001" -}}
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td class="head">{{ .Key }}</td>
+    </tr>
+    {{- range .Pages -}}
+    {{ .Params.hidden }}
+    <tr>
+      <td class="entry">
+        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a>
+      </td>
+    </tr>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </tbody>
+</table>
+
+{{ partial "single_bottom.html" }}

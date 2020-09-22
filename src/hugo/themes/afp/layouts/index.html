@@ -1,71 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-{{ partial "head.html" . }}
+{{ partial "single_top.html" . }}
 
-<body class="mathjax_ignore">
-  <table width="100%">
-    <tbody>
-      <tr>
-        <!-- Navigation -->
-        <td width="20%" align="center" valign="top">
-          {{ partial "navigation.html" . }}
-        </td>
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td>
+        The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific
+        developments,
+        mechanically checked in the theorem prover <a href="http://isabelle.in.tum.de/">Isabelle</a>. It
+        is organized in the way
+        of a scientific journal, is indexed by <a href="http://dblp.uni-trier.de/db/journals/afp/">dblp</a> and has an
+        ISSN:
+        2150-914x. Submissions are refereed. The preferred citation style is available <a href="citing.html">[here]</a>.
+        We encourage companion AFP submissions to conference and journal
+        publications.
+        <br><br>A <a href="http://devel.isa-afp.org">development version</a> of the archive is available
+        as well. </td>
+    </tr>
+  </tbody>
+</table>
 
+<p>&nbsp;</p>
 
-        <!-- Content -->
-        <td width="80%" valign="top">
-          <div align="center">
-            <div id="content">
-              {{ partial "header.html" . }}
-              <table width="80%" class="entries">
-                <tbody>
-                  <tr>
-                    <td>
-                      The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific
-                      developments,
-                      mechanically checked in the theorem prover <a href="http://isabelle.in.tum.de/">Isabelle</a>. It
-                      is organized in the way
-                      of a scientific journal, is indexed by <a
-                        href="http://dblp.uni-trier.de/db/journals/afp/">dblp</a> and has an ISSN:
-                      2150-914x. Submissions are refereed. The preferred citation style is available <a
-                        href="citing.html">[here]</a>. We encourage companion AFP submissions to conference and journal
-                      publications.
-                      <br><br>A <a href="http://devel.isa-afp.org">development version</a> of the archive is available
-                      as well. </td>
-                  </tr>
-                </tbody>
-              </table>
+<p>&nbsp;</p>
 
-              <p>&nbsp;</p>
+{{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td class="head">{{ .Key }}</td>
+    </tr>
+    {{ range .Pages }}
+    <tr>
+      <td class="entry">
+        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> <br>
+        Authors: {{ delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" }}
+      </td>
+    </tr>
+    {{ end }}
+  </tbody>
+</table>
+<p>&nbsp;</p>
+{{ end }}
+</div>
 
-              <p>&nbsp;</p>
-
-              {{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
-              <table width="80%" class="entries">
-                <tbody>
-                  <tr>
-                    <td class="head">{{ .Key }}</td>
-                  </tr>
-                  {{ range .Pages }}
-                  <tr>
-                    <td class="entry">
-                      {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> <br>
-                      Authors: {{ delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" }}
-                    </td>
-                  </tr>
-                  {{ end }}
-                </tbody>
-              </table>
-              <p>&nbsp;</p>
-              {{ end }}
-            </div>
-          </div>
-          </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</body>
-
-</html>
+{{ partial "single_bottom.html" }}

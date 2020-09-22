@@ -1,11 +1,7 @@
 <p>&nbsp;</p>
 <header>
-  {{ if .Title }}
-  <h1>{{ title .Title | replaceRE "[A-Z]" "<font class='first'>$0</font>" | safeHTML }}
+  {{ $title := default .Site.Title (default .Title .Params.name) }}
+  <h1>{{ title $title | replaceRE "[A-Z]" "<font class='first'>$0</font>" | safeHTML }}
   </h1>
-  {{ else }}
-  <h1>{{ title .Site.Title | replaceRE "[A-Z]" "<font class='first'>$0</font>" | safeHTML }}
-  </h1>
-  {{ end }}
 </header>
 <p>&nbsp;</p>
