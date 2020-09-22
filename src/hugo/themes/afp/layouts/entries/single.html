@@ -19,7 +19,7 @@
 
     <tr>
       <td class="datahead" valign="top">Abstract:</td>
-      <td class="abstract mathjax_process">{{ .Params.abstract }}</td>
+      <td class="abstract mathjax_process">{{ $.Page.RenderString .Params.abstract }}</td>
     </tr>
 
     <tr>
@@ -31,17 +31,17 @@
 
     <tr>
       <td class="datahead">License:</td>
-      <td class="data">{{ .Params.license }}</td>
+      <td class="data">{{ $.Page.RenderString .Params.license }}</td>
     </tr>
 
     {{- with .Params.usedBy -}}<tr>
       <td class="datahead">Used by:</td>
-      <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+      <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString}}</td>
     </tr>{{- end -}}
 
     {{- with .Params.dependsOn -}}<tr>
       <td class="datahead">Depends On:</td>
-      <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" }}</td>
+      <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString }}</td>
     </tr>{{- end -}}
   </tbody>
 </table>
@@ -73,17 +73,19 @@
 
     <tr>
       <td class="links">Older releases:
-        {{ with .Params.olderReleases }}
-        {{ range . }}
-        <li>{{ index . 0 }}:
-          <a href="../release/{{ index . 1 }}.tar.gz">
-            {{ index . 1 }}
-          </a>
-        </li>
-        {{ end }}
-        {{ else }}
-        None
-        {{ end }}
+        <ul>
+          {{ with .Params.olderReleases }}
+          {{ range . }}
+          <li>{{ index . 0 }}:
+            <a href="../release/{{ index . 1 }}.tar.gz">
+              {{ index . 1 }}
+            </a>
+          </li>
+          {{ end }}
+          {{ else }}
+          None
+          {{ end }}
+        </ul>
       </td>
     </tr>
   </tbody>
