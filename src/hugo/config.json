@@ -9,5 +9,12 @@
     },
     "params": { 
         "mainSections": ["entries"]
+    },
+    "markup": {
+        "goldmark": {
+            "renderer": {
+                "unsafe": true
+            }
+        }
     }
 }
