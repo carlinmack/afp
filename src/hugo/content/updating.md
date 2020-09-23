@@ -1,5 +1,9 @@
 ---
 title: Updating Entries
+menu: 
+    main:
+        name: "Updating Entries"
+        weight: 4
 ---
 
 ## Change

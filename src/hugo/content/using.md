@@ -1,5 +1,9 @@
 ---
 title: Referring to AFP Entries
+menu: 
+    main:
+        name: "Using Entries"
+        weight: 5
 ---
 
 Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others _without_ having to include the AFP articles you depend on, here is how to do it.

@@ -1,5 +1,9 @@
 ---
 title: Download the Archive
+menu: 
+    main:
+        name: "Download"
+        weight: 9
 ---
 
 <tr><td class="head">

@@ -1,5 +1,8 @@
 ---
-title: Archive of Formal Proofs
+menu: 
+    main:
+        name: "About"
+        weight: 2
 ---
 
 ## About
@@ -9,8 +12,6 @@ The Archive of Formal Proofs is a collection of proof libraries, examples, and l
 The archive repository is hosted on [Heptapod](https://foss.heptapod.net/isa-afp/) to provide easy free access to archive entries. The entries are tested and maintained continuously against the current stable release of Isabelle. Older versions of archive entries will remain available.
 
 ## Editors
-
-The editors of the archive are
 
 The editors of the archive are
 

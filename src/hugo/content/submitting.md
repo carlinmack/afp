@@ -1,5 +1,9 @@
 ---
 title: Submission Guidelines
+menu: 
+    main:
+        name: "Submission"
+        weight: 3
 ---
 
 Please send your submission [via this web page](https://ci.isabelle.systems/afp-submission/).

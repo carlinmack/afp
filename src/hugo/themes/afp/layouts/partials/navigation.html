@@ -5,31 +5,10 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <table class="nav" width="80%">
-  <tr>
-    <td class="nav" width="100%"><a href="/">Home</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/about/">About</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/submitting/">Submission</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/updating/">Updating Entries</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/using/">Using Entries</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/search/">Search</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/statistics/">Statistics</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/topics/">Index</a></td>
-  </tr>
-  <tr>
-    <td class="nav"><a href="/download/">Download</a></td>
-  </tr>
+  {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <tr>
+      <td class="nav"><a href="{{ .URL }}">{{ .Name }}</a></td>
+    </tr>
+    {{ end }}
 </table>
