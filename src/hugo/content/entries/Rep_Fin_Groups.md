@@ -1,6 +1,8 @@
 {
     "title": "Representations of Finite Groups",
-    "topic": "Mathematics/Algebra",
+    "topics": [
+        "Mathematics-Algebra"
+    ],
     "authors": [
         "Jeremy Sylvestre"
     ],

@@ -1,6 +1,8 @@
 {
     "title": "A Fast SAT Solver for Isabelle in Standard ML",
-    "topic": "Tools",
+    "topics": [
+        "Tools"
+    ],
     "authors": [
         "Armin Heller"
     ],

@@ -1,6 +1,8 @@
 {
     "title": "Efficient Mergesort",
-    "topic": "Computer science/Algorithms",
+    "topics": [
+        "Computer science-Algorithms"
+    ],
     "date": "2011-11-09",
     "authors": [
         "Christian Sternagel"

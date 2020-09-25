@@ -4,7 +4,10 @@
         "Christian Sternagel",
         "René Thiemann"
     ],
-    "topic": "Logic/Rewriting, Computer science/Algorithms",
+    "topics": [
+        "Logic-Rewriting",
+        "Computer science-Algorithms"
+    ],
     "license": "LGPL",
     "date": "2018-02-06",
     "notify": "c.sternagel@gmail.com, rene.thiemann@uibk.ac.at",

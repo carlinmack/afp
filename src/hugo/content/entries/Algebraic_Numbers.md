@@ -1,6 +1,8 @@
 {
     "title": "Algebraic Numbers in Isabelle/HOL",
-    "topic": "Mathematics/Algebra",
+    "topics": [
+        "Mathematics-Algebra"
+    ],
     "authors": [
         "René Thiemann",
         "Akihisa Yamada",

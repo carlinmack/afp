@@ -6,7 +6,9 @@
         "Florian Pollak"
     ],
     "date": "2014-09-15",
-    "topic": "Mathematics/Algebra",
+    "topics": [
+        "Mathematics-Algebra"
+    ],
     "abstract": "\nThis document contains a proof of the Cayley-Hamilton theorem\nbased on the development of matrices in HOL/Multivariate Analysis.",
     "notify": "stvienna@gmail.com"
 }

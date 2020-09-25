@@ -6,7 +6,11 @@
         "Jonas Schöpf",
         "Christian Sternagel"
     ],
-    "topic": "Computer science/Algorithms/Mathematical, Mathematics/Number theory, Tools",
+    "topics": [
+        "Computer science-Algorithms-Mathematical",
+        "Mathematics-Number theory",
+        "Tools"
+    ],
     "license": "LGPL",
     "date": "2017-10-14",
     "notify": "c.sternagel@gmail.com, julian.parsert@gmail.com",

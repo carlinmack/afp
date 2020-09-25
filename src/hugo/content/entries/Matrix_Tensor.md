@@ -1,6 +1,9 @@
 {
     "title": "Tensor Product of Matrices",
-    "topic": "Computer science/Data structures, Mathematics/Algebra",
+    "topics": [
+        "Computer science-Data structures",
+        "Mathematics-Algebra"
+    ],
     "date": "2016-01-18",
     "authors": [
         "T.V.H. Prathamesh"

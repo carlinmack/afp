@@ -1,6 +1,8 @@
 {
     "title": "Matrices, Jordan Normal Forms, and Spectral Radius Theory",
-    "topic": "Mathematics/Algebra",
+    "topics": [
+        "Mathematics-Algebra"
+    ],
     "authors": [
         "René Thiemann",
         "Akihisa Yamada"

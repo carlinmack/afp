@@ -1,6 +1,8 @@
 {
     "title": "Polynomial Interpolation",
-    "topic": "Mathematics/Algebra",
+    "topics": [
+        "Mathematics-Algebra"
+    ],
     "authors": [
         "René Thiemann",
         "Akihisa Yamada"

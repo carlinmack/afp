@@ -4,7 +4,9 @@
         "David Fuenmayor",
         "Christoph Benzmüller"
     ],
-    "topic": "Logic/Philosophical aspects",
+    "topics": [
+        "Logic-Philosophical aspects"
+    ],
     "date": "2018-10-30",
     "notify": "davfuenmayor@gmail.com, c.benzmueller@gmail.com",
     "abstract": "\nAn ambitious ethical theory ---Alan Gewirth's \"Principle of\nGeneric Consistency\"--- is encoded and analysed in Isabelle/HOL.\nGewirth's theory has stirred much attention in philosophy and\nethics and has been proposed as a potential means to bound the impact\nof artificial general intelligence.",

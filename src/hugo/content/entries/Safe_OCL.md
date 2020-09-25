@@ -3,7 +3,9 @@
     "authors": [
         "Denis Nikiforov"
     ],
-    "topic": "Computer science/Programming languages/Language definitions",
+    "topics": [
+        "Computer science-Programming languages-Language definitions"
+    ],
     "license": "LGPL",
     "date": "2019-03-09",
     "notify": "denis.nikif@gmail.com",

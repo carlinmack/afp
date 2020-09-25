@@ -4,7 +4,9 @@
         "Martin Rau",
         "Tobias Nipkow"
     ],
-    "topic": "Computer science/Algorithms/Geometry",
+    "topics": [
+        "Computer science-Algorithms-Geometry"
+    ],
     "date": "2020-01-13",
     "notify": "martin.rau@tum.de, nipkow@in.tum.de",
     "abstract": "\nThis entry provides two related verified divide-and-conquer algorithms\nsolving the fundamental <em>Closest Pair of Points</em>\nproblem in Computational Geometry. Functional correctness and the\noptimal running time of <em>O</em>(<em>n</em> log <em>n</em>) are\nproved. Executable code is generated which is empirically competitive\nwith handwritten reference implementations.",

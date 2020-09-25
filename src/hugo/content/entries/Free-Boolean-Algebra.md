@@ -1,5 +1,7 @@
 {
-    "topic": "Logic/General logic/Classical propositional logic",
+    "topics": [
+        "Logic-General logic-Classical propositional logic"
+    ],
     "title": "Free Boolean Algebra",
     "authors": [
         "Brian Huffman"

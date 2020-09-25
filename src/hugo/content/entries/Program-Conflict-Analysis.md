@@ -1,6 +1,8 @@
 {
     "title": "Formalization of Conflict Analysis of Programs with Procedures, Thread Creation, and Monitors",
-    "topic": "Computer science/Programming languages/Static analysis",
+    "topics": [
+        "Computer science-Programming languages-Static analysis"
+    ],
     "authors": [
         "Peter Lammich",
         "Markus Müller-Olm"

@@ -3,7 +3,10 @@
     "authors": [
         "Mnacho Echenim"
     ],
-    "topic": "Mathematics/Probability theory, Mathematics/Games and economics",
+    "topics": [
+        "Mathematics-Probability theory",
+        "Mathematics-Games and economics"
+    ],
     "date": "2018-07-16",
     "notify": "mnacho.echenim@univ-grenoble-alpes.fr",
     "abstract": "\nWe have formalized the computation of fair prices for derivative\nproducts in discrete financial models. As an application, we derive a\nway to compute fair prices of derivative products in the\nCox-Ross-Rubinstein model of a financial market, thus completing the\nwork that was presented in this <a\nhref=\"https://hal.archives-ouvertes.fr/hal-01562944\">paper</a>.",

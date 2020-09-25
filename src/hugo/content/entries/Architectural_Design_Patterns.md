@@ -3,7 +3,9 @@
     "authors": [
         "Diego Marmsoler"
     ],
-    "topic": "Computer science/System description languages",
+    "topics": [
+        "Computer science-System description languages"
+    ],
     "date": "2018-03-01",
     "notify": "diego.marmsoler@tum.de",
     "abstract": "\nThe following document formalizes and verifies several architectural\ndesign patterns. Each pattern specification is formalized in terms of\na locale where the locale assumptions correspond to the assumptions\nwhich a pattern poses on an architecture. Thus, pattern specifications\nmay build on top of each other by interpreting the corresponding\nlocale. A pattern is verified using the framework provided by the AFP\nentry Dynamic Architectures. Currently, the document consists of\nformalizations of 4 different patterns: the singleton, the publisher\nsubscriber, the blackboard pattern, and the blockchain pattern.\nThereby, the publisher component of the publisher subscriber pattern\nis modeled as an instance of the singleton pattern and the blackboard\npattern is modeled as an instance of the publisher subscriber pattern.\nIn general, this entry provides the first steps towards an overall\ntheory of architectural design patterns.",

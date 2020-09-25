@@ -2,9 +2,11 @@
     "title": "Microeconomics and the First Welfare Theorem",
     "authors": [
         "Julian Parsert",
-        "Cezary Kaliszyk<http://cl-informatik.uibk.ac.at/users/cek/>"
+        "Cezary Kaliszyk"
     ],
-    "topic": "Mathematics/Games and economics",
+    "topics": [
+        "Mathematics-Games and economics"
+    ],
     "license": "LGPL",
     "date": "2017-09-01",
     "notify": "julian.parsert@uibk.ac.at, cezary.kaliszyk@uibk.ac.at",

@@ -2,9 +2,11 @@
     "title": "Developing Security Protocols by Refinement",
     "authors": [
         "Christoph Sprenger",
-        "Ivano Somaini<>"
+        "Ivano Somaini"
     ],
-    "topic": "Computer science/Security",
+    "topics": [
+        "Computer science-Security"
+    ],
     "license": "LGPL",
     "date": "2017-05-24",
     "notify": "sprenger@inf.ethz.ch",

@@ -1,6 +1,8 @@
 {
     "title": "Executable Matrix Operations on Matrices of Arbitrary Dimensions",
-    "topic": "Computer science/Data structures",
+    "topics": [
+        "Computer science-Data structures"
+    ],
     "date": "2010-06-17",
     "authors": [
         "Christian Sternagel",

@@ -4,7 +4,9 @@
         "Joseph Lallemand",
         "Christoph Sprenger"
     ],
-    "topic": "Computer science/Security",
+    "topics": [
+        "Computer science-Security"
+    ],
     "license": "LGPL",
     "date": "2017-01-31",
     "notify": "joseph.lallemand@loria.fr, sprenger@inf.ethz.ch",

@@ -1,10 +1,12 @@
 {
     "title": "Von-Neumann-Morgenstern Utility Theorem",
     "authors": [
-        "Julian Parsert<mailto:julian.parsert@gmail.com>",
-        "Cezary Kaliszyk<http://cl-informatik.uibk.ac.at/users/cek/>"
+        "Julian Parsert",
+        "Cezary Kaliszyk"
     ],
-    "topic": "Mathematics/Games and economics",
+    "topics": [
+        "Mathematics-Games and economics"
+    ],
     "license": "LGPL",
     "date": "2018-07-04",
     "notify": "julian.parsert@uibk.ac.at, cezary.kaliszyk@uibk.ac.at",

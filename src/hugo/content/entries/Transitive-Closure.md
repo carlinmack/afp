@@ -1,6 +1,8 @@
 {
     "title": "Executable Transitive Closures of Finite Relations",
-    "topic": "Computer science/Algorithms/Graph",
+    "topics": [
+        "Computer science-Algorithms-Graph"
+    ],
     "date": "2011-03-14",
     "authors": [
         "Christian Sternagel",

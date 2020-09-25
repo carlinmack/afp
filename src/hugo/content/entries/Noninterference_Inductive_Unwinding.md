@@ -1,6 +1,8 @@
 {
     "title": "The Inductive Unwinding Theorem for CSP Noninterference Security",
-    "topic": "Computer science/Security",
+    "topics": [
+        "Computer science-Security"
+    ],
     "authors": [
         "Pasquale Noce"
     ],

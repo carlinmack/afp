@@ -3,11 +3,13 @@
     "authors": [
         "Marco B. Caminati",
         "Manfred Kerber",
-        "Christoph Lange<mailto:math.semantic.web@gmail.com>",
-        "Colin Rowat<mailto:c.rowat@bham.ac.uk>"
+        "Christoph Lange",
+        "Colin Rowat"
     ],
     "date": "2015-04-30",
-    "topic": "Mathematics/Games and economics",
+    "topics": [
+        "Mathematics-Games and economics"
+    ],
     "abstract": "\nA VCG auction (named after their inventors Vickrey, Clarke, and\nGroves) is a generalization of the single-good, second price Vickrey\nauction to the case of a combinatorial auction (multiple goods, from\nwhich any participant can bid on each possible combination). We\nformalize in this entry VCG auctions, including tie-breaking and prove\nthat the functions for the allocation and the price determination are\nwell-defined. Furthermore we show that the allocation function\nallocates goods only to participants, only goods in the auction are\nallocated, and no good is allocated twice. We also show that the price\nfunction is non-negative. These properties also hold for the\nautomatically extracted Scala code.",
     "notify": "mnfrd.krbr@gmail.com"
 }

@@ -1,6 +1,8 @@
 {
     "title": "Abstract Rewriting",
-    "topic": "Logic/Rewriting",
+    "topics": [
+        "Logic-Rewriting"
+    ],
     "date": "2010-06-14",
     "authors": [
         "Christian Sternagel",

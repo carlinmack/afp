@@ -5,7 +5,9 @@
         "Mirko Spasić",
         "René Thiemann"
     ],
-    "topic": "Computer science/Algorithms/Optimization",
+    "topics": [
+        "Computer science-Algorithms-Optimization"
+    ],
     "date": "2018-08-24",
     "notify": "rene.thiemann@uibk.ac.at",
     "abstract": "\nWe present an Isabelle/HOL formalization and total correctness proof\nfor the incremental version of the Simplex algorithm which is used in\nmost state-of-the-art SMT solvers. It supports extraction of\nsatisfying assignments, extraction of minimal unsatisfiable cores, incremental\nassertion of constraints and backtracking. The formalization relies on\nstepwise program refinement, starting from a simple specification,\ngoing through a number of refinement steps, and ending up in a fully\nexecutable functional implementation. Symmetries present in the\nalgorithm are handled with special care."

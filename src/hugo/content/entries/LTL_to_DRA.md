@@ -1,6 +1,8 @@
 {
     "title": "Converting Linear Temporal Logic to Deterministic (Generalized) Rabin Automata",
-    "topic": "Computer science/Automata and formal languages",
+    "topics": [
+        "Computer science-Automata and formal languages"
+    ],
     "authors": [
         "Salomon Sickert"
     ],

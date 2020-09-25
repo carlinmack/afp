@@ -1,6 +1,8 @@
 {
     "title": "Executable Transitive Closures",
-    "topic": "Computer science/Algorithms/Graph",
+    "topics": [
+        "Computer science-Algorithms-Graph"
+    ],
     "date": "2012-02-29",
     "authors": [
         "René Thiemann"

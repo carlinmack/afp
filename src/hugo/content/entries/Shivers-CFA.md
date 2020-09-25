@@ -1,6 +1,8 @@
 {
     "title": "Shivers' Control Flow Analysis",
-    "topic": "Computer science/Programming languages/Static analysis",
+    "topics": [
+        "Computer science-Programming languages-Static analysis"
+    ],
     "authors": [
         "Joachim Breitner"
     ],

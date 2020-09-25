@@ -1,6 +1,8 @@
 {
     "title": "Coinductive",
-    "topic": "Computer science/Functional programming",
+    "topics": [
+        "Computer science-Functional programming"
+    ],
     "authors": [
         "Andreas Lochbihler"
     ],

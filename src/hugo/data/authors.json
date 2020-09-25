@@ -196,7 +196,7 @@
         "mailto": "david.cock@nicta.com.au"
     },
     "Simon Wimmer": {
-        "website": "http://in.tum.de/~wimmers",
+        "website": "http://home.in.tum.de/~wimmers/",
         "mailto": "simon.wimmer@tum.de"
     },
     "John Wickerson": {
@@ -210,7 +210,7 @@
     },
     "Joachim Breitner": {
         "website": "http://pp.ipd.kit.edu/~breitner",
-        "mailto": "mail@joachim-breitner.de"
+        "mailto": "joachim@cis.upenn.edu"
     },
     "Jesper Bengtson": {
         "website": "http://www.itu.dk/people/jebe"
@@ -240,6 +240,9 @@
     },
     "Cornelius Diekmann": {
         "website": "http://net.in.tum.de/~diekmann"
+    },
+    "Maximilian Haslbeck": {
+        "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
     },
     "T. J. M. Makarios": {
         "mailto": "tjm1983@gmail.com"
@@ -507,6 +510,12 @@
     "Manfred Kerber": {
         "website": "http://www.cs.bham.ac.uk/~mmk"
     },
+    "Christoph Lange": {
+        "mailto": "math.semantic.web@gmail.com"
+    },
+    "Colin Rowat": {
+        "mailto": "c.rowat@bham.ac.uk"
+    },
     "Dongchen Jiang": {
         "mailto": "dongchenjiang@googlemail.com"
     },
@@ -606,9 +615,6 @@
         "mailto": "julian.parsert@gmail.com",
         "website": "http://www.parsert.com/"
     },
-    "Maximilian Haslbeck": {
-        "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
-    },
     "Mike Stannett": {
         "mailto": "m.stannett@sheffield.ac.uk"
     },
@@ -687,6 +693,15 @@
     "Brandon Bohrer": {
         "mailto": "bbohrer@cs.cmu.edu"
     },
+    "Martin Kleppmann": {
+        "mailto": "mk428@cl.cam.ac.uk"
+    },
+    "Dominic P. Mulligan": {
+        "mailto": "Dominic.Mulligan@arm.com"
+    },
+    "Alastair R. Beresford": {
+        "mailto": "arb33@cl.cam.ac.uk"
+    },
     "Jeremy Siek": {
         "website": "http://homes.soic.indiana.edu/jsiek/"
     },
@@ -695,9 +710,6 @@
     },
     "Cristina Matache": {
         "mailto": "cris.matache@gmail.com"
-    },
-    "Dominic P. Mulligan": {
-        "mailto": "Dominic.Mulligan@arm.com"
     },
     "Daniel Kirchner": {
         "mailto": "daniel@ekpyron.org"
@@ -759,12 +771,6 @@
     },
     "Dana Scott": {
         "website": "http://www.cs.cmu.edu/~scott/"
-    },
-    "Martin Kleppmann": {
-        "mailto": "mk428@cl.cam.ac.uk"
-    },
-    "Alastair R. Beresford": {
-        "mailto": "arb33@cl.cam.ac.uk"
     },
     "Angeliki Koutsoukou-Argyraki": {
         "website": "https://www.cl.cam.ac.uk/~ak2110/"
