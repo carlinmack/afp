@@ -1,17 +1,19 @@
-{{ partial "single_top.html" . }}
+{{ define "main" }}
 
 {{ with (index $.Site.Data.authors .Title )}}
+{{ with .website}}
 <table width="80%" class="entries">
   <tbody>
     <tr>
       <td>
-        Website: <a href="{{ .website }}">{{ .website }}</a>
+        Website: <a href="{{ . }}">{{ . }}</a>
       </td>
     </tr>
   </tbody>
 </table>
 
 <p>&nbsp;</p>
+{{ end }}
 {{ end }}
 
 <h2>Articles</h2>
@@ -36,4 +38,4 @@
   </tbody>
 </table>
 
-{{ partial "single_bottom.html" }}
+{{ end }}

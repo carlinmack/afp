@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body class="mathjax_ignore">
+  <table width="100%">
+    <tbody>
+      <tr>
+        <!-- Navigation -->
+        <td width="20%" align="center" valign="top">
+          {{ partial "navigation.html" . }}
+        </td>
+
+
+        <!-- Content -->
+        <td width="80%" valign="top">
+          <div align="center">
+            {{ partial "header.html" . }}
+
+            {{- block "main" . }}{{- end }}
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
 </html>

@@ -1,10 +1,19 @@
-{{ partial "single_top.html" . }}
+{{ define "main" }}
 
-<h1>Authors</h1>
-<ul>
-  {{ range .Data.Pages }}
-  <li><a href="{{ .Permalink }}">{{ .Params.name }}</a></li>
-  {{ end }}
-</ul>
 
-{{ partial "single_bottom.html" }}
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td>
+        <ul>
+          {{ range .Data.Pages.ByTitle }}
+          <li><a href="{{ .Permalink }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+{{ end }}

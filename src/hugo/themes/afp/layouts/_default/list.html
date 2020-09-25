@@ -1,42 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-{{ partial "head.html" . }}
+{{ define "main" }}
 
-<body>
-    <div id="content">
-        {{ partial "header.html" . }}
-        <div class="container wrapper">
+<h2>Articles</h2>
 
-            <div class="recent-posts section">
-                {{- range (.Data.Pages).GroupByDate "2006" -}}
-                    {{- if ne .Key "0001" -}}
-                    <h2 class="archive-title">year {{ .Key }}</h2>
-                    {{- range .Pages -}}
-                        {{ .Params.hidden }}
-                        <article class="archive-item">
-                            <span class="item-text">
-                                <h4><a class="title" href="{{ .RelPermalink }}">{{.Title}}</a></h4> &mdash;
-                                <span class="description">
-                                    {{- if isset .Params "description" -}}
-                                    {{- .Description -}}
-                                    {{- else if gt (len .RawContent) 120 -}}
-                                    {{- slicestr .RawContent 0 120 -}}...
-                                    {{- else -}}
-                                    {{- .RawContent -}}
-                                    {{- end -}}
-                                </span>
-                            </span>
-                            <span class="item-date">
-                                {{ .Date.Format "January 2" }}
-                            </span>
-                        </article>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            </div>
-        </div>
-    </div>
-    {{ partial "footer.html" . }}
-</body>
+{{- range (.Data.Pages).GroupByDate "2006" -}}
+{{- if ne .Key "0001" -}}
+<table width="80%" class="entries">
+  <tbody>
+    <tr>
+      <td class="head">{{ .Key }}</td>
+    </tr>
+    {{- range .Pages -}}
+    {{ .Params.hidden }}
+    <tr>
+      <td class="entry">
+        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a>
+      </td>
+    </tr>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </tbody>
+</table>
 
-</html>
+{{ end }}
