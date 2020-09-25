@@ -5,3 +5,5 @@ menu:
         name: "Statistics"
         weight: 7
 ---
+
+{{< statistics >}}

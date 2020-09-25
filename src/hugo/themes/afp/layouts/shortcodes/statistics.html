@@ -1,0 +1,12 @@
+<h2>Statistics</h2>
+
+<table>
+  <tr>
+    <td>Number of Articles:</td>
+    <td class="statsnumber">{{ len (where .Site.RegularPages "Section" "==" "entries") }}</td>
+  </tr>
+  <tr>
+    <td>Number of Authors:</td>
+    <td class="statsnumber">{{ len $.Site.Taxonomies.authors }}</td>
+  </tr>
+</table>
