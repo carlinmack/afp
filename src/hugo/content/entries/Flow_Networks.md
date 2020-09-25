@@ -1,0 +1,11 @@
+{
+    "title": "Flow Networks and the Min-Cut-Max-Flow Theorem",
+    "authors": [
+        "Peter Lammich",
+        "S. Reza Sefidgar"
+    ],
+    "topic": "Mathematics/Graph theory",
+    "date": "2017-06-01",
+    "notify": "lammich@in.tum.de",
+    "abstract": "\nWe present a formalization of flow networks and the Min-Cut-Max-Flow\ntheorem. Our formal proof closely follows a standard textbook proof,\nand is accessible even without being an expert in Isabelle/HOL, the\ninteractive theorem prover used for the formalization."
+}

@@ -1,0 +1,12 @@
+{
+    "title": "Abstract Soundness",
+    "authors": [
+        "Jasmin Christian Blanchette",
+        "Andrei Popescu",
+        "Dmitriy Traytel"
+    ],
+    "topic": "Logic/Proof theory",
+    "date": "2017-02-10",
+    "notify": "jasmin.blanchette@gmail.com",
+    "abstract": "\nA formalized coinductive account of the abstract development of\nBrotherston, Gorogiannis, and Petersen [APLAS 2012], in a slightly\nmore general form since we work with arbitrary infinite proofs, which\nmay be acyclic. This work is described in detail in an article by the\nauthors, published in 2017 in the <em>Journal of Automated\nReasoning</em>. The abstract proof can be instantiated for\nvarious formalisms, including first-order logic with inductive\npredicates."
+}

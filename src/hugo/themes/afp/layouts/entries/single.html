@@ -4,7 +4,7 @@
   <tbody>
     <tr>
       <td class="datahead" width="20%">Title:</td>
-      <td class="data" width="80%">{{ .Params.title }}</td>
+      <td class="data" width="80%">{{ htmlUnescape .Params.title }}</td>
     </tr>
 
     <tr>

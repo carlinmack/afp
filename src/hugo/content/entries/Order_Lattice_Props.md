@@ -1,0 +1,10 @@
+{
+    "title": "Properties of Orderings and Lattices",
+    "authors": [
+        "Georg Struth"
+    ],
+    "topic": "Mathematics/Order",
+    "date": "2018-12-11",
+    "notify": "g.struth@sheffield.ac.uk",
+    "abstract": "\nThese components add further fundamental order and lattice-theoretic\nconcepts and properties to Isabelle's libraries.  They follow by\nand large the introductory sections of the Compendium of Continuous\nLattices,  covering directed and filtered sets, down-closed and\nup-closed sets, ideals and filters, Galois connections, closure and\nco-closure operators. Some emphasis is on duality and morphisms\nbetween structures, as in the Compendium.  To this end, three ad-hoc\napproaches to duality are compared."
+}

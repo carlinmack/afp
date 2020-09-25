@@ -1,11 +1,892 @@
 {
-    "Andrei Popescu": {
-        "website": "https://www.andreipopescu.uk/"
+    "José Manuel Rodríguez Caballero": {
+        "website": "https://josephcmac.github.io/"
+    },
+    "Dominique Unruh": {
+        "website": "http://kodu.ut.ee/~unruh/",
+        "mailto": "unruh@ut.ee"
+    },
+    "Jose Manuel Rodriguez Caballero": {
+        "website": "https://josephcmac.github.io/",
+        "mailto": "jose.manuel.rodriguez.caballero@ut.ee"
+    },
+    "Filip Marić": {
+        "website": "http://poincare.matf.bg.ac.rs/~filip/",
+        "mailto": "filip@matf.bg.ac.rs"
+    },
+    "Danijela Simić": {
+        "website": "http://poincare.matf.bg.ac.rs/~danijela"
+    },
+    "Pierre Boutry": {
+        "mailto": "boutry@unistra.fr"
+    },
+    "Lawrence C Paulson": {
+        "website": "https://www.cl.cam.ac.uk/~lp15/"
+    },
+    "Jonas Rädle": {
+        "mailto": "jonas.raedle@tum.de"
+    },
+    "Lars Hupel": {
+        "website": "https://www21.in.tum.de/~hupel/",
+        "mailto": "hupel@in.tum.de"
+    },
+    "Julian Brunner": {
+        "website": "http://www21.in.tum.de/~brunnerj/"
+    },
+    "Mnacho Echenim": {
+        "website": "http://lig-membres.imag.fr/mechenim/"
     },
     "Manuel Eberl": {
-        "website": "https://www21.in.tum.de/~eberlm"
+        "website": "https://www21.in.tum.de/~eberlm",
+        "mailto": "eberlm@in.tum.de"
+    },
+    "Conrad Watt": {
+        "website": "http://www.cl.cam.ac.uk/~caw77/"
+    },
+    "Fabian Hellauer": {
+        "mailto": "hellauer@in.tum.de"
+    },
+    "Peter Lammich": {
+        "website": "http://www21.in.tum.de/~lammich",
+        "mailto": "lammich@in.tum.de"
+    },
+    "Michael Rawson": {
+        "mailto": "michaelrawson76@gmail.com"
+    },
+    "Julius Michaelis": {
+        "website": "http://liftm.de"
+    },
+    "Tobias Nipkow": {
+        "website": "http://www21.in.tum.de/~nipkow"
+    },
+    "Simon Foster": {
+        "mailto": "simon.foster@york.ac.uk",
+        "website": "https://www-users.cs.york.ac.uk/~simonf/"
+    },
+    "Frank Zeyda": {
+        "mailto": "frank.zeyda@york.ac.uk"
+    },
+    "Andreas Lochbihler": {
+        "website": "http://www.andreas-lochbihler.de"
+    },
+    "Bhargav Bhatt": {
+        "mailto": "bhargav.bhatt@inf.ethz.ch"
+    },
+    "David Aspinall": {
+        "website": "http://homepages.inf.ed.ac.uk/da/"
+    },
+    "David Butler": {
+        "mailto": "dbutler@turing.ac.uk",
+        "website": "https://www.turing.ac.uk/people/doctoral-students/david-butler"
+    },
+    "Sebastiaan Joosten": {
+        "mailto": "sebastiaan.joosten@uibk.ac.at",
+        "website": "http://sjcjoosten.nl/"
+    },
+    "René Thiemann": {
+        "mailto": "rene.thiemann@uibk.ac.at",
+        "website": "http://cl-informatik.uibk.ac.at/~thiemann/"
+    },
+    "Akihisa Yamada": {
+        "mailto": "ayamada@trs.cm.is.nagoya-u.ac.jp",
+        "website": "http://group-mmm.org/~ayamada/"
+    },
+    "René Neumann": {
+        "mailto": "rene.neumann@in.tum.de"
+    },
+    "Jeremy Sylvestre": {
+        "website": "http://ualberta.ca/~jsylvest/"
+    },
+    "Victor B. F. Gomes": {
+        "mailto": "vb358@cl.cam.ac.uk",
+        "website": "http://www.dcs.shef.ac.uk/~victor"
+    },
+    "Georg Struth": {
+        "mailto": "g.struth@sheffield.ac.uk",
+        "website": "http://staffwww.dcs.shef.ac.uk/people/G.Struth/"
+    },
+    "Maxime Buyse": {
+        "mailto": "maxime.buyse@polytechnique.edu"
+    },
+    "Jason Jaskolka": {
+        "website": "https://carleton.ca/jaskolka/"
+    },
+    "Lukas Bulwahn": {
+        "mailto": "lukas.bulwahn@gmail.com"
+    },
+    "Eugene W. Stark": {
+        "mailto": "stark@cs.stonybrook.edu"
+    },
+    "Fahad Ausaf": {
+        "website": "http://kcl.academia.edu/FahadAusaf"
+    },
+    "Roy Dyckhoff": {
+        "website": "https://rd.host.cs.st-andrews.ac.uk"
+    },
+    "Christian Urban": {
+        "website": "http://www.inf.kcl.ac.uk/staff/urbanc/"
+    },
+    "Steven Obua": {
+        "mailto": "steven@recursivemind.com"
+    },
+    "Hitoshi Furusawa": {
+        "website": "http://www.sci.kagoshima-u.ac.jp/~furusawa/"
+    },
+    "Pasquale Noce": {
+        "mailto": "pasquale.noce.lavoro@gmail.com"
+    },
+    "Peter Gammie": {
+        "website": "http://peteg.org",
+        "mailto": "peteg42@gmail.com"
+    },
+    "Tony Hosking": {
+        "website": "https://www.cs.purdue.edu/homes/hosking/"
+    },
+    "Maximilian P.L. Haslbeck": {
+        "website": "http://in.tum.de/~haslbema/"
+    },
+    "Achim D. Brucker": {
+        "mailto": "a.brucker@exeter.ac.uk",
+        "website": "https://www.brucker.ch/"
+    },
+    "Lukas Brügger": {
+        "mailto": "lukas.a.bruegger@gmail.com"
+    },
+    "Burkhart Wolff": {
+        "mailto": "burkhart.wolff@lri.fr",
+        "website": "https://www.lri.fr/~wolff/"
+    },
+    "Timothy Bourke": {
+        "website": "http://www.tbrk.org"
+    },
+    "Peter Höfner": {
+        "website": "http://www.hoefner-online.de/"
+    },
+    "Christian Sternagel": {
+        "mailto": "c.sternagel@gmail.com"
+    },
+    "Freek Verbeek": {
+        "mailto": "Freek.Verbeek@ou.nl"
+    },
+    "Sergey Tverdyshev": {
+        "mailto": "stv@sysgo.com"
+    },
+    "Oto Havle": {
+        "mailto": "oha@sysgo.com"
+    },
+    "Holger Blasum": {
+        "mailto": "holger.blasum@sysgo.com"
+    },
+    "Bruno Langenstein": {
+        "mailto": "langenstein@dfki.de"
+    },
+    "Werner Stephan": {
+        "mailto": "stephan@dfki.de"
+    },
+    "Yakoub Nemouchi": {
+        "mailto": "yakoub.nemouchi@york.ac.uk"
+    },
+    "Abderrahmane Feliachi": {
+        "mailto": "abderrahmane.feliachi@lri.fr"
+    },
+    "Julien Schmaltz": {
+        "mailto": "Julien.Schmaltz@ou.nl"
+    },
+    "David Cock": {
+        "mailto": "david.cock@nicta.com.au"
+    },
+    "Simon Wimmer": {
+        "website": "http://in.tum.de/~wimmers",
+        "mailto": "simon.wimmer@tum.de"
+    },
+    "John Wickerson": {
+        "website": "http://www.doc.ic.ac.uk/~jpw48"
+    },
+    "Danijela Petrovic": {
+        "website": "http://www.matf.bg.ac.rs/~danijela"
+    },
+    "Christine Rizkallah": {
+        "website": "https://www.mpi-inf.mpg.de/~crizkall/"
+    },
+    "Joachim Breitner": {
+        "website": "http://pp.ipd.kit.edu/~breitner",
+        "mailto": "mail@joachim-breitner.de"
+    },
+    "Jesper Bengtson": {
+        "website": "http://www.itu.dk/people/jebe"
+    },
+    "Kirstin Peters": {
+        "mailto": "kirstin.peters@tu-berlin.de"
+    },
+    "Rob van Glabbeek": {
+        "website": "http://theory.stanford.edu/~rvg/"
+    },
+    "Marie-Claude Gaudel": {
+        "mailto": "mcg@lri.fr"
+    },
+    "Benedikt Nordhoff": {
+        "mailto": "b_nord01@uni-muenster.de"
+    },
+    "Viorel Preoteasa": {
+        "website": "http://users.abo.fi/vpreotea/",
+        "mailto": "viorel.preoteasa@aalto.fi"
+    },
+    "Ralph Romanos": {
+        "mailto": "ralph.romanos@student.ecp.fr"
+    },
+    "Lawrence C. Paulson": {
+        "website": "https://www.cl.cam.ac.uk/~lp15/",
+        "mailto": "lp15@cam.ac.uk"
+    },
+    "Cornelius Diekmann": {
+        "website": "http://net.in.tum.de/~diekmann"
+    },
+    "T. J. M. Makarios": {
+        "mailto": "tjm1983@gmail.com"
+    },
+    "Rok Strniša": {
+        "website": "http://rok.strnisa.com/lj/"
+    },
+    "Matthew Parkinson": {
+        "website": "http://research.microsoft.com/people/mattpark/"
+    },
+    "Bogdan Grechuk": {
+        "mailto": "grechukbogdan@yandex.ru"
+    },
+    "Fabian Immler": {
+        "mailto": "immler@in.tum.de",
+        "website": "http://home.in.tum.de/~immler/"
+    },
+    "Alexander Krauss": {
+        "website": "http://www.in.tum.de/~krauss"
     },
     "Dmitriy Traytel": {
-        "website": "https://traytel.bitbucket.io/"
+        "mailto": "traytel@inf.ethz.ch",
+        "website": "http://people.inf.ethz.ch/trayteld/"
+    },
+    "Sebastiaan J. C. Joosten": {
+        "website": "http://sjcjoosten.nl/"
+    },
+    "Maksym Bortin": {
+        "mailto": "Maksym.Bortin@nicta.com.au"
+    },
+    "Stefan Berghofer": {
+        "website": "http://www.in.tum.de/~berghofe"
+    },
+    "Steffen Helke": {
+        "mailto": "helke@cs.tu-berlin.de"
+    },
+    "Florian Kammüller": {
+        "mailto": "flokam@cs.tu-berlin.de"
+    },
+    "Stephan Merz": {
+        "website": "http://www.loria.fr/~merz"
+    },
+    "Clemens Ballarin": {
+        "website": "http://www21.in.tum.de/~ballarin/"
+    },
+    "Johannes Hölzl": {
+        "mailto": "hoelzl@in.tum.de",
+        "website": "http://in.tum.de/~hoelzl"
+    },
+    "Ralph-Johan Back": {
+        "website": "http://users.abo.fi/Ralph-Johan.Back/"
+    },
+    "Sascha Böhme": {
+        "website": "http://www21.in.tum.de/~boehmes/"
+    },
+    "Mauro Jaskelioff": {
+        "website": "http://www.fceia.unr.edu.ar/~mauro/"
+    },
+    "Alwen Tiu": {
+        "website": "http://users.cecs.anu.edu.au/~tiu/",
+        "mailto": "ATiu@ntu.edu.sg"
+    },
+    "Damián Barsotti": {
+        "website": "http://www.cs.famaf.unc.edu.ar/~damian/"
+    },
+    "Henri Debrat": {
+        "mailto": "henri.debrat@loria.fr"
+    },
+    "Christoph Sprenger": {
+        "mailto": "sprenger@inf.ethz.ch"
+    },
+    "Joseph Lallemand": {
+        "mailto": "joseph.lallemand@loria.fr"
+    },
+    "Rachid Guerraoui": {
+        "mailto": "rachid.guerraoui@epfl.ch"
+    },
+    "Viktor Kuncak": {
+        "website": "http://lara.epfl.ch/~kuncak/"
+    },
+    "Giuliano Losa": {
+        "mailto": "giuliano@galois.com"
+    },
+    "Hauke Brinkop": {
+        "mailto": "hauke.brinkop@googlemail.com"
+    },
+    "Rene Meis": {
+        "mailto": "rene.meis@uni-due.de"
+    },
+    "Finn Nielsen": {
+        "mailto": "finn.nielsen@uni-muenster.de"
+    },
+    "Stefan Körner": {
+        "mailto": "s_koer03@uni-muenster.de"
+    },
+    "Karen Zee": {
+        "website": "http://www.mit.edu/~kkz/"
+    },
+    "T.V.H. Prathamesh": {
+        "mailto": "prathamesh@imsc.res.in"
+    },
+    "Jasmin Christian Blanchette": {
+        "website": "http://www21.in.tum.de/~blanchet",
+        "mailto": "j.c.blanchette@vu.nl"
+    },
+    "Brian Huffman": {
+        "website": "http://web.cecs.pdx.edu/~brianh/",
+        "mailto": "huffman@in.tum.de"
+    },
+    "Daniel Wasserrab": {
+        "website": "http://pp.info.uni-karlsruhe.de/personhp/daniel_wasserrab.php"
+    },
+    "J. Nathan Foster": {
+        "website": "http://www.cs.cornell.edu/~jnfoster/"
+    },
+    "Dimitrios Vytiniotis": {
+        "website": "http://research.microsoft.com/en-us/people/dimitris/"
+    },
+    "Gerwin Klein": {
+        "website": "http://www.cse.unsw.edu.au/~kleing/",
+        "mailto": "kleing@cse.unsw.edu.au"
+    },
+    "Ludovic Henrio": {
+        "mailto": "Ludovic.Henrio@sophia.inria.fr"
+    },
+    "Bianca Lutz": {
+        "mailto": "sowilo@cs.tu-berlin.de"
+    },
+    "Henry Sudhof": {
+        "mailto": "hsudhof@cs.tu-berlin.de"
+    },
+    "Florian Kammueller": {
+        "website": "http://www.cs.mdx.ac.uk/people/florian-kammueller/"
+    },
+    "Maria Spichkova": {
+        "mailto": "maria.spichkova@rmit.edu.au"
+    },
+    "Frédéric Tuong": {
+        "mailto": "tuong@users.gforge.inria.fr",
+        "website": "https://www.lri.fr/~ftuong/"
+    },
+    "Christian Doczkal": {
+        "mailto": "doczkal@ps.uni-saarland.de"
+    },
+    "Rafal Kolanski": {
+        "mailto": "rafal.kolanski@nicta.com.au"
+    },
+    "Andrew Boyton": {
+        "mailto": "andrew.boyton@nicta.com.au"
+    },
+    "Giampaolo Bella": {
+        "website": "http://www.dmi.unict.it/~giamp/"
+    },
+    "Andrei Popescu": {
+        "mailto": "a.popescu@mdx.ac.uk",
+        "website": "https://www.andreipopescu.uk"
+    },
+    "Sylvia Grewe": {
+        "mailto": "grewe@st.informatik.tu-darmstadt.de"
+    },
+    "Heiko Mantel": {
+        "mailto": "mantel@mais.informatik.tu-darmstadt.de"
+    },
+    "Daniel Schoepe": {
+        "mailto": "daniel@schoepe.org"
+    },
+    "Toby Murray": {
+        "website": "https://people.eng.unimelb.edu.au/tobym/"
+    },
+    "Alexander Lux": {
+        "mailto": "lux@mais.informatik.tu-darmstadt.de"
+    },
+    "Jens Sauer": {
+        "mailto": "sauer@mais.informatik.tu-darmstadt.de"
+    },
+    "Gregor Snelting": {
+        "website": "http://pp.info.uni-karlsruhe.de/personhp/gregor_snelting.php"
+    },
+    "Walter Guttmann": {
+        "website": "http://www.cosc.canterbury.ac.nz/walter.guttmann/"
+    },
+    "Tjark Weber": {
+        "website": "http://user.it.uu.se/~tjawe125/",
+        "mailto": "tjark.weber@it.uu.se"
+    },
+    "Martin Hofmann": {
+        "website": "http://www.tcs.informatik.uni-muenchen.de/~mhofmann"
+    },
+    "Gudmund Grov": {
+        "website": "http://homepages.inf.ed.ac.uk/ggrov"
+    },
+    "Klaus Aehlig": {
+        "website": "http://www.linta.de/~aehlig/"
+    },
+    "Markus Müller-Olm": {
+        "website": "http://cs.uni-muenster.de/u/mmo/"
+    },
+    "Nicole Rauch": {
+        "mailto": "rauch@informatik.uni-kl.de"
+    },
+    "Asta Halkjær From": {
+        "website": "https://people.compute.dtu.dk/ahfrom/"
+    },
+    "Uwe Waldmann": {
+        "mailto": "uwe@mpi-inf.mpg.de"
+    },
+    "Daniel Wand": {
+        "mailto": "dwand@mpi-inf.mpg.de"
+    },
+    "Heiko Becker": {
+        "mailto": "hbecker@mpi-sws.org"
+    },
+    "Alexander Bentkamp": {
+        "website": "https://www.cs.vu.nl/~abp290/",
+        "mailto": "bentkamp@gmail.com"
+    },
+    "Mathias Fleury": {
+        "mailto": "fleury@mpi-inf.mpg.de",
+        "website": "http://fmv.jku.at/fleury"
+    },
+    "Bart Kastermans": {
+        "website": "http://kasterma.net"
+    },
+    "Jose Divasón": {
+        "website": "https://www.unirioja.es/cu/jodivaso/"
+    },
+    "Jesús Aransay": {
+        "website": "http://www.unirioja.es/cu/jearansa"
+    },
+    "Stefan Richter": {
+        "website": "http://www-lti.informatik.rwth-aachen.de/~richter/"
+    },
+    "Alexander Maletzky": {
+        "website": "https://risc.jku.at/m/alexander-maletzky/"
+    },
+    "Florian Haftmann": {
+        "website": "http://isabelle.in.tum.de/~haftmann"
+    },
+    "Wenda Li": {
+        "mailto": "wl302@cam.ac.uk",
+        "website": "https://www.cl.cam.ac.uk/~wl302/"
+    },
+    "Salomon Sickert": {
+        "website": "https://www7.in.tum.de/~sickert",
+        "mailto": "s.sickert@tum.de"
+    },
+    "Alexander Schimpf": {
+        "mailto": "schimpfa@informatik.uni-freiburg.de"
+    },
+    "Javier Esparza": {
+        "website": "https://www7.in.tum.de/~esparza/"
+    },
+    "Jan-Georg Smaus": {
+        "website": "http://www.irit.fr/~Jan-Georg.Smaus"
+    },
+    "Mark Ijbema": {
+        "mailto": "ijbema@fmf.nl"
+    },
+    "Lars Noschinski": {
+        "website": "http://www21.in.tum.de/~noschinl/"
+    },
+    "Shuwei Hu": {
+        "mailto": "shuwei.hu@tum.de"
+    },
+    "Manfred Kerber": {
+        "website": "http://www.cs.bham.ac.uk/~mmk"
+    },
+    "Dongchen Jiang": {
+        "mailto": "dongchenjiang@googlemail.com"
+    },
+    "Jeremy Avigad": {
+        "website": "http://www.andrew.cmu.edu/user/avigad/"
+    },
+    "Stefan Hetzl": {
+        "website": "http://www.logic.at/people/hetzl/"
+    },
+    "Greg O'Keefe": {
+        "website": "http://users.rsise.anu.edu.au/~okeefe/"
+    },
+    "Alexander Katovsky": {
+        "mailto": "apk32@cam.ac.uk"
+    },
+    "Christoph Dittmann": {
+        "website": "http://logic.las.tu-berlin.de/Members/Dittmann/",
+        "mailto": "isabelle@christoph-d.de"
+    },
+    "Lei Yu": {
+        "mailto": "ly271@cam.ac.uk"
+    },
+    "Harald Zankl": {
+        "website": "http://cl-informatik.uibk.ac.at/users/hzankl"
+    },
+    "Bertram Felgenhauer": {
+        "mailto": "int-e@gmx.de"
+    },
+    "Christoph Benzmüller": {
+        "website": "http://christoph-benzmueller.de"
+    },
+    "Bruno Woltzenlogel Paleo": {
+        "website": "http://www.logic.at/staff/bruno/"
+    },
+    "David Fuenmayor": {
+        "mailto": "davfuenmayor@gmail.com"
+    },
+    "Ben Blumson": {
+        "website": "https://philpapers.org/profile/805"
+    },
+    "Brijesh Dongol": {
+        "mailto": "brijesh.dongol@brunel.ac.uk"
+    },
+    "Ian J. Hayes": {
+        "mailto": "ian.hayes@itee.uq.edu.au"
+    },
+    "Jakob von Raumer": {
+        "mailto": "psxjv4@nottingham.ac.uk"
+    },
+    "Stephan Adelsberger": {
+        "website": "http://nm.wu.ac.at/nm/sadelsbe"
+    },
+    "Florian Pollak": {
+        "mailto": "florian.pollak@gmail.com"
+    },
+    "Markus N. Rabe": {
+        "website": "http://www.react.uni-saarland.de/people/rabe.html"
+    },
+    "Alessandro Coglio": {
+        "website": "http://www.kestrel.edu/~coglio"
+    },
+    "Holden Lee": {
+        "mailto": "holdenl@princeton.edu"
+    },
+    "Rodrigo Raya": {
+        "website": "https://people.epfl.ch/rodrigo.raya"
+    },
+    "Alexandra Maximova": {
+        "mailto": "amaximov@student.ethz.ch"
+    },
+    "Sebastien Gouezel": {
+        "mailto": "sebastien.gouezel@univ-rennes1.fr",
+        "website": "http://www.math.sciences.univ-nantes.fr/~gouezel/"
+    },
+    "Frank J. Balbach": {
+        "mailto": "frank-balbach@gmx.de"
+    },
+    "Ondřej Kunčar": {
+        "website": "http://www21.in.tum.de/~kuncar/"
+    },
+    "Sebastian Ullrich": {
+        "mailto": "sebasti@nullri.ch"
+    },
+    "Denis Lohner": {
+        "website": "http://pp.ipd.kit.edu/person.php?id=88"
+    },
+    "Max Wagner": {
+        "mailto": "max@trollbu.de"
+    },
+    "Nicolas Peltier": {
+        "website": "http://membres-lig.imag.fr/peltier/"
+    },
+    "Cezary Kaliszyk": {
+        "website": "http://cl-informatik.uibk.ac.at/cek/"
+    },
+    "Julian Parsert": {
+        "mailto": "julian.parsert@gmail.com",
+        "website": "http://www.parsert.com/"
+    },
+    "Maximilian Haslbeck": {
+        "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
+    },
+    "Mike Stannett": {
+        "mailto": "m.stannett@sheffield.ac.uk"
+    },
+    "István Németi": {
+        "website": "http://www.renyi.hu/~nemeti/"
+    },
+    "Benjamin Bisping": {
+        "mailto": "benjamin.bisping@campus.tu-berlin.de"
+    },
+    "Paul-David Brodmann": {
+        "mailto": "p.brodmann@tu-berlin.de"
+    },
+    "Tim Jungnickel": {
+        "mailto": "tim.jungnickel@tu-berlin.de"
+    },
+    "Christina Rickmann": {
+        "mailto": "c.rickmann@tu-berlin.de"
+    },
+    "Henning Seidler": {
+        "mailto": "henning.seidler@mailbox.tu-berlin.de"
+    },
+    "Anke Stüber": {
+        "mailto": "anke.stueber@campus.tu-berlin.de"
+    },
+    "Arno Wilhelm-Weidner": {
+        "mailto": "arno.wilhelm-weidner@tu-berlin.de"
+    },
+    "Uwe Nestmann": {
+        "website": "https://www.mtv.tu-berlin.de/nestmann/"
+    },
+    "Anders Schlichtkrull": {
+        "website": "https://people.compute.dtu.dk/andschl/"
+    },
+    "Quentin Hibon": {
+        "mailto": "qh225@cl.cam.ac.uk"
+    },
+    "Zhe Hou": {
+        "mailto": "zhe.hou@ntu.edu.sg"
+    },
+    "David Sanan": {
+        "mailto": "sanan@ntu.edu.sg"
+    },
+    "Yang Liu": {
+        "mailto": "yangliu@ntu.edu.sg"
+    },
+    "Rajeev Gore": {
+        "mailto": "rajeev.gore@anu.edu.au"
+    },
+    "Ranald Clouston": {
+        "mailto": "ranald.clouston@cs.au.dk"
+    },
+    "Lars-Henrik Eriksson": {
+        "mailto": "lhe@it.uu.se"
+    },
+    "Joachim Parrow": {
+        "mailto": "joachim.parrow@it.uu.se"
+    },
+    "Johannes Borgström": {
+        "mailto": "johannes.borgstrom@it.uu.se"
+    },
+    "Ramunas Gutkovas": {
+        "mailto": "ramunas.gutkovas@it.uu.se"
+    },
+    "Jørgen Villadsen": {
+        "website": "https://people.compute.dtu.dk/jovi/"
+    },
+    "Julian Fell": {
+        "mailto": "julian.fell@uq.net.au"
+    },
+    "Andrius Velykis": {
+        "website": "http://andrius.velykis.lt"
+    },
+    "Alexander Birch Jensen": {
+        "website": "https://people.compute.dtu.dk/aleje/"
+    },
+    "Brandon Bohrer": {
+        "mailto": "bbohrer@cs.cmu.edu"
+    },
+    "Jeremy Siek": {
+        "website": "http://homes.soic.indiana.edu/jsiek/"
+    },
+    "Diego Marmsoler": {
+        "website": "http://marmsoler.com"
+    },
+    "Cristina Matache": {
+        "mailto": "cris.matache@gmail.com"
+    },
+    "Dominic P. Mulligan": {
+        "mailto": "Dominic.Mulligan@arm.com"
+    },
+    "Daniel Kirchner": {
+        "mailto": "daniel@ekpyron.org"
+    },
+    "Martin Rau": {
+        "mailto": "martin.rau@tum.de"
+    },
+    "Robin Eßmann": {
+        "mailto": "robin.essmann@tum.de"
+    },
+    "Simon Robillard": {
+        "website": "https://simon-robillard.net/"
+    },
+    "Florian Messner": {
+        "mailto": "florian.g.messner@uibk.ac.at"
+    },
+    "Jonas Schöpf": {
+        "mailto": "jonas.schoepf@uibk.ac.at"
+    },
+    "Sven Linker": {
+        "mailto": "s.linker@liverpool.ac.uk"
+    },
+    "Mohammad Abdulaziz": {
+        "mailto": "mohammad.abdulaziz8@gmail.com",
+        "website": "http://home.in.tum.de/~mansour/"
+    },
+    "Ben Fiedler": {
+        "mailto": "ben.fiedler@inf.ethz.ch"
+    },
+    "Max W. Haslbeck": {
+        "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
+    },
+    "Maximilian P. L. Haslbeck": {
+        "website": "http://www.in.tum.de/~haslbema"
+    },
+    "Felix Brandt": {
+        "website": "http://dss.in.tum.de/staff/brandt.html"
+    },
+    "Christian Saile": {
+        "website": "http://dss.in.tum.de/staff/christian-saile.html"
+    },
+    "Christian Stricker": {
+        "website": "http://dss.in.tum.de/staff/christian-stricker.html"
+    },
+    "Joshua Schneider": {
+        "mailto": "joshua.schneider@inf.ethz.ch"
+    },
+    "Oliver Bračevac": {
+        "mailto": "bracevac@st.informatik.tu-darmstadt.de"
+    },
+    "Richard Gay": {
+        "mailto": "gay@mais.informatik.tu-darmstadt.de"
+    },
+    "Henning Sudbrock": {
+        "mailto": "sudbrock@mais.informatik.tu-darmstadt.de"
+    },
+    "Markus Tasch": {
+        "mailto": "tasch@mais.informatik.tu-darmstadt.de"
+    },
+    "Dana Scott": {
+        "website": "http://www.cs.cmu.edu/~scott/"
+    },
+    "Martin Kleppmann": {
+        "mailto": "mk428@cl.cam.ac.uk"
+    },
+    "Alastair R. Beresford": {
+        "mailto": "arb33@cl.cam.ac.uk"
+    },
+    "Angeliki Koutsoukou-Argyraki": {
+        "website": "https://www.cl.cam.ac.uk/~ak2110/"
+    },
+    "Anthony Bordg": {
+        "website": "https://sites.google.com/site/anthonybordg/"
+    },
+    "Mirko Spasić": {
+        "mailto": "mirko@matf.bg.ac.rs"
+    },
+    "Bohua Zhan": {
+        "website": "http://lcs.ios.ac.cn/~bzhan/"
+    },
+    "Roy Overbeek": {
+        "mailto": "Roy.Overbeek@cwi.nl"
+    },
+    "Michael Herzberg": {
+        "website": "http://www.dcs.shef.ac.uk/cgi-bin/makeperson?M.Herzberg"
+    },
+    "Ernie Cohen": {
+        "mailto": "ecohen@amazon.com"
+    },
+    "Norbert Schirmer": {
+        "mailto": "norbert.schirmer@web.de"
+    },
+    "Ralph Bottesch": {
+        "website": "http://cl-informatik.uibk.ac.at/users/bottesch/"
+    },
+    "Safouan Taha": {
+        "mailto": "safouan.taha@lri.fr"
+    },
+    "Lina Ye": {
+        "mailto": "lina.ye@lri.fr"
+    },
+    "Lorenzo Gheri": {
+        "mailto": "lor.gheri@gmail.com"
+    },
+    "Benedikt Seidl": {
+        "mailto": "benedikt.seidl@tum.de"
+    },
+    "André Platzer": {
+        "website": "http://www.cs.cmu.edu/~aplatzer/"
+    },
+    "Jérémy Dubut": {
+        "website": "http://group-mmm.org/~dubut/"
+    },
+    "Peter Zeller": {
+        "mailto": "p_zeller@cs.uni-kl.de"
+    },
+    "Hai Nguyen Van": {
+        "mailto": "hai.nguyenvan.phie@gmail.com"
+    },
+    "Frédéric Boulanger": {
+        "mailto": "frederic.boulanger@centralesupelec.fr"
+    },
+    "Robert Sachtleben": {
+        "mailto": "rob_sac@uni-bremen.de"
+    },
+    "Yong Kiam Tan": {
+        "website": "https://www.cs.cmu.edu/~yongkiat/"
+    },
+    "Bernhard Möller": {
+        "website": "https://www.informatik.uni-augsburg.de/en/chairs/dbis/pmi/staff/moeller/"
+    },
+    "Martin Desharnais": {
+        "website": "https://martin.desharnais.me"
+    },
+    "Emin Karayel": {
+        "website": "https://orcid.org/0000-0003-3290-5034"
+    },
+    "Edgar Gonzàlez": {
+        "mailto": "edgargip@google.com"
+    },
+    "Sophie Tourret": {
+        "website": "https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/sophie-tourret"
+    },
+    "Jasmin Blanchette": {
+        "website": "https://www.cs.vu.nl/~jbe248/"
+    },
+    "Martin Raszyk": {
+        "mailto": "martin.raszyk@inf.ethz.ch"
+    },
+    "Chelsea Edmonds": {
+        "mailto": "cle47@cam.ac.uk"
+    },
+    "Ognjen Marić": {
+        "mailto": "ogi.afp@mynosefroze.com"
+    },
+    "Emmanuel Gunther": {
+        "mailto": "gunther@famaf.unc.edu.ar"
+    },
+    "Miguel Pagano": {
+        "website": "https://cs.famaf.unc.edu.ar/~mpagano/"
+    },
+    "Pedro Sánchez Terraf": {
+        "website": "https://cs.famaf.unc.edu.ar/~pedro/home_en"
+    },
+    "Georgy Dunaev": {
+        "mailto": "georgedunaev@gmail.com"
+    },
+    "Jonathan Julian Huerta y Munive": {
+        "mailto": "jjhuertaymunive1@sheffield.ac.uk"
+    },
+    "Andreas V. Hess": {
+        "mailto": "avhe@dtu.dk"
+    },
+    "Sebastian Mödersheim": {
+        "website": "https://people.compute.dtu.dk/samo/"
+    },
+    "Albert Rizaldi": {
+        "mailto": "albert.rizaldi@ntu.edu.sg"
+    },
+    "Daniela Kaufmann": {
+        "website": "http://fmv.jku.at/kaufmann"
+    },
+    "Michael Foster": {
+        "mailto": "jmafoster1@sheffield.ac.uk"
+    },
+    "Ramsay G. Taylor": {
+        "mailto": "r.g.taylor@sheffield.ac.uk"
+    },
+    "John Derrick": {
+        "mailto": "j.derrick@sheffield.ac.uk"
     }
 }

@@ -33,7 +33,7 @@
     {{ range .Pages }}
     <tr>
       <td class="entry">
-        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a> <br>
+        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{ htmlUnescape .Title }}</a> <br>
         Authors: {{ partial "authors.html" (dict "site" . "authors" .Params.authors) }}
       </td>
     </tr>

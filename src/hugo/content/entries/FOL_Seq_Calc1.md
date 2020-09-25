@@ -1,0 +1,11 @@
+{
+    "title": "A Sequent Calculus for First-Order Logic",
+    "authors": [
+        "Asta Halkjær From"
+    ],
+    "contributors": "Alexander Birch Jensen <https://people.compute.dtu.dk/aleje/>,\nAnders Schlichtkrull <https://people.compute.dtu.dk/andschl/>,\nJørgen Villadsen <https://people.compute.dtu.dk/jovi/>",
+    "topic": "Logic/Proof theory",
+    "date": "2019-07-18",
+    "notify": "ahfrom@dtu.dk",
+    "abstract": "\nThis work formalizes soundness and completeness of a one-sided sequent\ncalculus for first-order logic. The completeness is shown via a\ntranslation from a complete semantic tableau calculus, the proof of\nwhich is based on the First-Order Logic According to Fitting theory.\nThe calculi and proof techniques are taken from Ben-Ari's\nMathematical Logic for Computer Science."
+}

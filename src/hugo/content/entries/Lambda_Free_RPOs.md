@@ -1,0 +1,12 @@
+{
+    "title": "Formalization of Recursive Path Orders for Lambda-Free Higher-Order Terms",
+    "authors": [
+        "Jasmin Christian Blanchette",
+        "Uwe Waldmann",
+        "Daniel Wand"
+    ],
+    "date": "2016-09-23",
+    "topic": "Logic/Rewriting",
+    "abstract": "This Isabelle/HOL formalization defines recursive path orders (RPOs) for higher-order terms without lambda-abstraction and proves many useful properties about them. The main order fully coincides with the standard RPO on first-order terms also in the presence of currying, distinguishing it from previous work. An optimized variant is formalized as well. It appears promising as the basis of a higher-order superposition calculus.",
+    "notify": "jasmin.blanchette@gmail.com"
+}
