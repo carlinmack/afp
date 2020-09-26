@@ -9,5 +9,6 @@
         "Computer science-Programming languages-Language definitions"
     ],
     "abstract": "We formalize the type system, small-step operational semantics, and type soundness proof for Featherweight Java, a simple object calculus, in Isabelle/HOL.",
-    "notify": "kleing@cse.unsw.edu.au"
+    "notify": "kleing@cse.unsw.edu.au",
+    "licence": "BSD"
 }

@@ -31,7 +31,13 @@
 
     <tr>
       <td class="datahead">License:</td>
-      <td class="data">{{ $.Page.RenderString .Params.license }}</td>
+      <td class="data">
+        {{ if (eq .Params.licence "BSD") }}
+        <a href="http://isa-afp.org/LICENSE">BSD License</a>
+        {{ else }}
+        <a href="http://isa-afp.org/LICENSE.LGPL">GNU Lesser General Public License (LGPL)</a>
+        {{ end }}
+      </td>
     </tr>
 
     {{- with .Params.usedBy -}}<tr>

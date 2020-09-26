@@ -9,5 +9,6 @@
         "Mathematics-Algebra"
     ],
     "abstract": "This theory provides a compact formulation of Gauss-Jordan elimination for matrices represented as functions. Its distinctive feature is succinctness. It is not meant for large computations.",
-    "notify": "nipkow@in.tum.de"
+    "notify": "nipkow@in.tum.de",
+    "licence": "BSD"
 }

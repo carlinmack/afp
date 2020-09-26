@@ -12,5 +12,6 @@
         "Computer science-Data structures"
     ],
     "abstract": "\nWe present a verified and executable implementation of ROBDDs in\nIsabelle/HOL. Our implementation relates pointer-based computation in\nthe Heap monad to operations on an abstract definition of boolean\nfunctions. Internally, we implemented the if-then-else combinator in a\nrecursive fashion, following the Shannon decomposition of the argument\nfunctions. The implementation mixes and adapts known techniques and is\nbuilt with efficiency in mind.",
-    "notify": "bdd@liftm.de, haslbecm@in.tum.de"
+    "notify": "bdd@liftm.de, haslbecm@in.tum.de",
+    "licence": "BSD"
 }

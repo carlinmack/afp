@@ -9,5 +9,6 @@
         "Mathematics-Combinatorics"
     ],
     "abstract": "A proof of Bondy's theorem following B. Bollabas, Combinatorics, 1986, Cambridge University Press.",
-    "notify": "avigad@cmu.edu, hetzl@logic.at"
+    "notify": "avigad@cmu.edu, hetzl@logic.at",
+    "licence": "BSD"
 }

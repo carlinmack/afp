@@ -9,5 +9,6 @@
     ],
     "date": "2011-02-07",
     "abstract": "A fully-formalized and extensible minimal imperative fragment of Java.",
-    "notify": "rok@strnisa.com"
+    "notify": "rok@strnisa.com",
+    "licence": "BSD"
 }

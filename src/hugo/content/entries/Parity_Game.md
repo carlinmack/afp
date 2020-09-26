@@ -9,5 +9,6 @@
         "Mathematics-Graph theory"
     ],
     "abstract": "\nWe present a formalization of parity games (a two-player game on\ndirected graphs) and a proof of their positional determinacy in\nIsabelle/HOL.  This proof works for both finite and infinite games.",
-    "notify": ""
+    "notify": "",
+    "licence": "BSD"
 }

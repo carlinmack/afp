@@ -9,5 +9,6 @@
         "Computer science-Algorithms-Distributed"
     ],
     "abstract": "Disk Paxos is an algorithm for building arbitrary fault-tolerant distributed systems. The specification of Disk Paxos has been proved correct informally and tested using the TLC model checker, but up to now, it has never been fully formally verified. In this work we have formally verified its correctness using the Isabelle theorem prover and the HOL logic system, showing that Isabelle is a practical tool for verifying properties of TLA+ specifications.",
-    "notify": "kleing@cse.unsw.edu.au"
+    "notify": "kleing@cse.unsw.edu.au",
+    "licence": "BSD"
 }

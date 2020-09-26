@@ -11,5 +11,6 @@
     "date": "2017-05-05",
     "notify": "mail@andreas-lochbihler.de",
     "abstract": "\nThis AFP entry defines a probabilistic while operator based on\nsub-probability mass functions and formalises zero-one laws and variant\nrules for probabilistic loop termination. As applications, we\nimplement probabilistic algorithms for the Bernoulli, geometric and\narbitrary uniform distributions that only use fair coin flips, and\nprove them correct and terminating with probability 1.",
-    "extra-history": "\nChange history:\n[2018-02-02]:\nAdded a proof that probabilistic conditioning can be implemented by repeated sampling.\n(revision 305867c4e911)<br>"
+    "extra-history": "\nChange history:\n[2018-02-02]:\nAdded a proof that probabilistic conditioning can be implemented by repeated sampling.\n(revision 305867c4e911)<br>",
+    "licence": "BSD"
 }

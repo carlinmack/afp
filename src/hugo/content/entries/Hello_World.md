@@ -9,5 +9,6 @@
     ],
     "date": "2020-03-07",
     "notify": "diekmann@net.in.tum.de",
-    "abstract": "\nIn this article, we present a formalization of the well-known\n\"Hello, World!\" code, including a formal framework for\nreasoning about IO. Our model is inspired by the handling of IO in\nHaskell. We start by formalizing the 🌍 and embrace the IO monad\nafterwards. Then we present a sample main :: IO (), followed by its\nproof of correctness."
+    "abstract": "\nIn this article, we present a formalization of the well-known\n\"Hello, World!\" code, including a formal framework for\nreasoning about IO. Our model is inspired by the handling of IO in\nHaskell. We start by formalizing the 🌍 and embrace the IO monad\nafterwards. Then we present a sample main :: IO (), followed by its\nproof of correctness.",
+    "licence": "BSD"
 }

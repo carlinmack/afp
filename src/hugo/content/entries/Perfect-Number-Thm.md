@@ -8,5 +8,6 @@
         "Mathematics-Number theory"
     ],
     "abstract": "These theories present the mechanised proof of the Perfect Number Theorem.",
-    "notify": "nipkow@in.tum.de"
+    "notify": "nipkow@in.tum.de",
+    "licence": "BSD"
 }
