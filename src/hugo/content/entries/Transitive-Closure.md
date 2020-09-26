@@ -11,5 +11,20 @@
     "license": "LGPL",
     "abstract": "We provide a generic work-list algorithm to compute the transitive closure of finite relations where only successors of newly detected states are generated. This algorithm is then instantiated for lists over arbitrary carriers and red black trees (which are faster but require a linear order on the carrier), respectively.  Our formalization was performed as part of the IsaFoR/CeTA project where reflexive transitive closures of large tree automata have to be computed.",
     "extra-history": "\nChange history:\n[2014-09-04] added example simprocs in Finite_Transitive_Closure_Simprocs",
-    "notify": "c.sternagel@gmail.com, rene.thiemann@uibk.ac.at"
+    "notify": "c.sternagel@gmail.com, rene.thiemann@uibk.ac.at",
+    "olderReleases": {
+        "2011": "2011-03-14",
+        "2011-1": "2011-10-12",
+        "2012": "2012-05-24",
+        "2013": "2013-02-16",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

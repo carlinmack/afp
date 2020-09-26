@@ -12,5 +12,12 @@
         "Logic-Rewriting"
     ],
     "abstract": "\nWe formalize the Z property introduced by Dehornoy and van Oostrom.\nFirst we show that for any abstract rewrite system, Z implies\nconfluence. Then we give two examples of proofs using Z: confluence of\nlambda-calculus with respect to beta-reduction and confluence of\ncombinatory logic.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2016": "2016-06-30",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

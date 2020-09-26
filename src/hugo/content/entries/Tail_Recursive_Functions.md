@@ -9,5 +9,16 @@
     ],
     "abstract": "\n<p>\nTail-recursive function definitions are sometimes more straightforward than\nalternatives, but proving theorems on them may be roundabout because of the\npeculiar form of the resulting recursion induction rules.\n</p><p>\nThis paper describes a proof method that provides a general solution to\nthis problem by means of suitable invariants over inductive sets, and\nillustrates the application of such method by examining two case studies.\n</p>",
     "notify": "pasquale.noce.lavoro@gmail.com",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2013-1": "2013-12-02",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-06-13",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

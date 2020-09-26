@@ -9,5 +9,12 @@
     ],
     "abstract": "\nThis development provides a formalization of planarity based on\ncombinatorial maps and proves that Kuratowski's theorem implies\ncombinatorial planarity.\nMoreover, it contains verified implementations of programs checking\ncertificates for planarity (i.e., a combinatorial map) or non-planarity\n(i.e., a Kuratowski subgraph).",
     "notify": "noschinl@gmail.com",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

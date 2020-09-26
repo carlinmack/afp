@@ -10,5 +10,17 @@
     ],
     "abstract": "In 1975, Pratt introduced a proof system for certifying primes. He showed that a number <i>p</i> is prime iff a primality certificate for <i>p</i> exists. By showing a logarithmic upper bound on the length of the certificates in size of the prime number, he concluded that the decision problem for prime numbers is in NP. This work formalizes soundness and completeness of Pratt's proof system as well as an upper bound for the size of the certificate.",
     "notify": "noschinl@gmail.com, simon.wimmer@tum.de",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2013": "2013-07-29",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

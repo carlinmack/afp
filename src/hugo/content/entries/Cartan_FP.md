@@ -9,5 +9,12 @@
     ],
     "abstract": "\nThe Cartan fixed point theorems concern the group of holomorphic\nautomorphisms on a connected open set of C<sup>n</sup>. Ciolli et al.\nhave formalised the one-dimensional case of these theorems in HOL\nLight. This entry contains their proofs, ported to Isabelle/HOL.  Thus\nit addresses the authors' remark that \"it would be important to write\na formal proof in a language that can be read by both humans and\nmachines\".",
     "notify": "lp15@cam.ac.uk",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2016": "2016-03-09",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

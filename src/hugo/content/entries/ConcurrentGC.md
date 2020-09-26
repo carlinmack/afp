@@ -11,5 +11,14 @@
     ],
     "abstract": "\n<p>\nWe use ConcurrentIMP to model Schism, a state-of-the-art real-time\ngarbage collection scheme for weak memory, and show that it is safe\non x86-TSO.</p>\n<p>\nThis development accompanies the PLDI 2015 paper of the same name.\n</p>",
     "notify": "peteg42@gmail.com",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2014": "2015-04-15",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

@@ -10,5 +10,14 @@
     ],
     "abstract": "This entry provides several monads intended for the development of stand-alone certifiers via code generation from Isabelle/HOL. More specifically, there are three flavors of error monads (the sum type, for the case where all monadic functions are total; an instance of the former, the so called check monad, yielding either success without any further information or an error message; as well as a variant of the sum type that accommodates partial functions by providing an explicit bottom element) and a parser monad built on top. All of this monads are heavily used in the IsaFoR/CeTA project which thus provides many examples of their usage.",
     "notify": "c.sternagel@gmail.com, rene.thiemann@uibk.ac.at",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2014": "2014-10-08",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

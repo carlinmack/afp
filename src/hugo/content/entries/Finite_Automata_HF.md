@@ -9,5 +9,14 @@
     ],
     "abstract": "Finite Automata, both deterministic and non-deterministic, for regular languages.\nThe Myhill-Nerode Theorem. Closure under intersection, concatenation, etc.\nRegular expressions define regular languages. Closure under reversal;\nthe powerset construction mapping NFAs to DFAs. Left and right languages; minimal DFAs.\nBrzozowski's minimization algorithm. Uniqueness up to isomorphism of minimal DFAs.",
     "notify": "lp15@cam.ac.uk",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2014": "2015-02-05",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

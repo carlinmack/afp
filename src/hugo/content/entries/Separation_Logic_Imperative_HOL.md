@@ -10,5 +10,18 @@
     ],
     "license": "BSD",
     "abstract": "\nWe provide a framework for separation-logic based correctness proofs of\nImperative HOL programs. Our framework comes with a set of proof methods to\nautomate canonical tasks such as verification condition generation and\nframe inference. Moreover, we provide a set of examples that show the\napplicability of our framework. The examples include algorithms on lists,\nhash-tables, and union-find trees. We also provide abstract interfaces for\nlists, maps, and sets, that allow to develop generic imperative algorithms\nand use data-refinement techniques.\n<br>\nAs we target Imperative HOL, our programs can be translated to\nefficiently executable code in various target languages, including\nML, OCaml, Haskell, and Scala.",
-    "notify": "lammich@in.tum.de"
+    "notify": "lammich@in.tum.de",
+    "olderReleases": {
+        "2012": "2012-11-15",
+        "2013": "2013-03-02",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

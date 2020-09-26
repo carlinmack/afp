@@ -52,28 +52,28 @@
   </tbody>
 </table>
 <p></p>
-
+{{ $entryName := .File.TranslationBaseName }}
 <table class="links">
   <tbody>
     <tr>
       <td class="links">
-        <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/outline.pdf">Proof
+        <a href="../browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
           outline</a><br>
-        <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/document.pdf">Proof
+        <a href="../browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
           document</a>
       </td>
     </tr>
 
     <tr>
       <td class="links">
-        <a href="../browser_info/current/AFP/{{- .File.TranslationBaseName -}}/index.html">Browse
+        <a href="../browser_info/current/AFP/{{- $entryName -}}/index.html">Browse
           theories</a>
       </td>
     </tr>
 
     <tr>
       <td class="links">
-        <a href="../release/afp-{{- .File.TranslationBaseName -}}-current.tar.gz">Download this entry</a>
+        <a href="../release/afp-{{- $entryName -}}-current.tar.gz">Download this entry</a>
       </td>
     </tr>
 
@@ -81,10 +81,10 @@
       <td class="links">Older releases:
         <ul>
           {{ with .Params.olderReleases }}
-          {{ range . }}
-          <li>{{ index . 0 }}:
-            <a href="../release/{{ index . 1 }}.tar.gz">
-              {{ index . 1 }}
+          {{ range $key, $value := . }}
+          <li>Isabelle {{ $key }}:
+            <a href="../release/afp-{{- $entryName -}}-{{ $value }}.tar.gz">
+              afp-{{- $entryName -}}-{{ $value }}.tar.gz
             </a>
           </li>
           {{ end }}

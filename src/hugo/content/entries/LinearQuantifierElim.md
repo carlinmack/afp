@@ -9,5 +9,25 @@
     ],
     "abstract": "This article formalizes quantifier elimination procedures for dense linear orders, linear real arithmetic and Presburger arithmetic. In each case both a DNF-based non-elementary algorithm and one or more (doubly) exponential NNF-based algorithms are formalized, including the well-known algorithms by Ferrante and Rackoff and by Cooper. The NNF-based algorithms for dense linear orders are new but based on Ferrante and Rackoff and on an algorithm by Loos and Weisspfenning which simulates infenitesimals. All algorithms are directly executable. In particular, they yield reflective quantifier elimination procedures for HOL itself. The formalization makes heavy use of locales and is therefore highly modular.",
     "notify": "nipkow@in.tum.de",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2007": "2008-02-12",
+        "2008": "2008-06-10",
+        "2009": "2009-04-29",
+        "2009-1": "2009-12-12",
+        "2009-2": "2010-07-01",
+        "2011": "2011-02-11",
+        "2011-1": "2011-10-11",
+        "2012": "2012-05-24",
+        "2013": "2013-03-02",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

@@ -13,5 +13,15 @@
     ],
     "abstract": "\nWe formalise Kleene algebra with tests (KAT) and demonic refinement\nalgebra (DRA) in Isabelle/HOL. KAT is relevant for program verification\nand correctness proofs in the partial correctness setting. While DRA\ntargets similar applications in the context of total correctness. Our\nformalisation contains the two most important models of these algebras:\nbinary relations in the case of KAT and predicate transformers in the\ncase of DRA. In addition, we derive the inference rules for Hoare logic\nin KAT and its relational model and present a simple formally verified\nprogram verification tool prototype based on the algebraic approach.",
     "notify": "g.struth@dcs.shef.ac.uk",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2013-2": "2014-01-29",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

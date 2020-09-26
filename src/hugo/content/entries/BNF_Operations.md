@@ -11,5 +11,9 @@
     "date": "2017-12-19",
     "notify": "jasmin.blanchette@gmail.com,uuomul@yahoo.com,traytel@inf.ethz.ch",
     "abstract": "\nThis entry formalizes the closure property of bounded natural functors\n(BNFs) under seven operations. These operations and the corresponding\nproofs constitute the core of Isabelle's (co)datatype package. To\nbe close to the implemented tactics, the proofs are deliberately\nformulated as detailed apply scripts. The (co)datatypes together with\n(co)induction principles and (co)recursors are byproducts of the\nfixpoint operations LFP and GFP. Composition of BNFs is subdivided\ninto four simpler operations: Compose, Kill, Lift, and Permute. The\nN2M operation provides mutual (co)induction principles and\n(co)recursors for nested (co)datatypes.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

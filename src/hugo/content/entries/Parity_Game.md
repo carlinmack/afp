@@ -10,5 +10,13 @@
     ],
     "abstract": "\nWe present a formalization of parity games (a two-player game on\ndirected graphs) and a proof of their positional determinacy in\nIsabelle/HOL.  This proof works for both finite and infinite games.",
     "notify": "",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2015": "2015-11-02",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

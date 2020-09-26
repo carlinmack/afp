@@ -9,5 +9,22 @@
     ],
     "abstract": "This article presents a development of Category Theory in Isabelle/HOL. A Category is defined using records and locales. Functors and Natural Transformations are also defined. The main result that has been formalized is that the Yoneda functor is a full and faithful embedding. We also formalize the completeness of many sorted monadic equational logic. Extensive use is made of the HOLZF theory in both cases. For an informal description see <a href=\"http://www.srcf.ucam.org/~apk32/Isabelle/Category/Cat.pdf\">here [pdf]</a>.",
     "notify": "alexander.katovsky@cantab.net",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2009-1": "2010-06-21",
+        "2009-2": "2010-06-30",
+        "2011": "2011-02-11",
+        "2011-1": "2011-10-11",
+        "2012": "2012-05-24",
+        "2013": "2013-03-02",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2019-06-11"
+    }
 }

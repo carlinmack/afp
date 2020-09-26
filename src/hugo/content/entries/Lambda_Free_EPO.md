@@ -9,5 +9,9 @@
     "date": "2018-10-19",
     "notify": "a.bentkamp@vu.nl",
     "abstract": "\nThis Isabelle/HOL formalization defines the Embedding Path Order (EPO)\nfor higher-order terms without lambda-abstraction and proves many\nuseful properties about it. In contrast to the lambda-free recursive\npath orders, it does not fully coincide with RPO on first-order terms,\nbut it is compatible with arbitrary higher-order contexts.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2018": "2018-10-21",
+        "2019": "2019-06-11"
+    }
 }

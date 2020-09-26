@@ -10,5 +10,20 @@
     ],
     "abstract": "This theory provides a compact formulation of Gauss-Jordan elimination for matrices represented as functions. Its distinctive feature is succinctness. It is not meant for large computations.",
     "notify": "nipkow@in.tum.de",
-    "licence": "BSD"
+    "licence": "BSD",
+    "olderReleases": {
+        "2011": "2011-08-19",
+        "2011-1": "2011-10-11",
+        "2012": "2012-05-24",
+        "2013": "2013-02-16",
+        "2013-1": "2013-11-17",
+        "2013-2": "2013-12-11",
+        "2014": "2014-08-28",
+        "2015": "2015-05-27",
+        "2016": "2016-02-22",
+        "2016-1": "2016-12-17",
+        "2017": "2017-10-10",
+        "2018": "2018-08-16",
+        "2019": "2020-01-14"
+    }
 }
