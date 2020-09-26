@@ -7,7 +7,9 @@
         "Tools"
     ],
     "date": "2017-05-24",
-    "notify": "hupel@in.tum.de",
+    "notify": [
+        "hupel@in.tum.de"
+    ],
     "abstract": "\nIsabelle's code generator natively supports type classes. For\ntargets that do not have language support for classes and instances,\nit performs the well-known dictionary translation, as described by\nHaftmann and Nipkow. This translation happens outside the logic, i.e.,\nthere is no guarantee that it is correct, besides the pen-and-paper\nproof. This work implements a certified dictionary translation that\nproduces new class-free constants and derives equality theorems.",
     "licence": "BSD",
     "olderReleases": {

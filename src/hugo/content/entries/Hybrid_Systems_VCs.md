@@ -4,11 +4,14 @@
         "Jonathan Julian Huerta y Munive"
     ],
     "topics": [
-        "Mathematics-Algebra",
-        "Mathematics-Analysis"
+        "Mathematics/Algebra",
+        "Mathematics/Analysis"
     ],
     "date": "2019-09-10",
-    "notify": "jjhuertaymunive1@sheffield.ac.uk, jonjulian23@gmail.com",
+    "notify": [
+        "jjhuertaymunive1@sheffield.ac.uk",
+        "jonjulian23@gmail.com"
+    ],
     "abstract": "\nThese components formalise a semantic framework for the deductive\nverification of hybrid systems. They support reasoning about\ncontinuous evolutions of hybrid programs in the style of differential\ndynamics logic. Vector fields or flows model these evolutions, and\ntheir verification is done with invariants for the former or orbits\nfor the latter. Laws of modal Kleene algebra or categorical predicate\ntransformers implement the verification condition generation. Examples\nshow the approach at work.",
     "licence": "BSD",
     "olderReleases": {

@@ -4,12 +4,14 @@
         "René Thiemann"
     ],
     "topics": [
-        "Computer science-Functional programming"
+        "Computer science/Functional programming"
     ],
     "date": "2014-02-18",
     "license": "LGPL",
     "abstract": "We provide a wrapper around the partial-function command that supports mutual recursion.",
-    "notify": "rene.thiemann@uibk.ac.at",
+    "notify": [
+        "rene.thiemann@uibk.ac.at"
+    ],
     "olderReleases": {
         "2013-2": "2014-02-19",
         "2014": "2014-08-28",

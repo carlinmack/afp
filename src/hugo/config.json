@@ -16,5 +16,14 @@
                 "unsafe": true
             }
         }
+    },
+    "menu": {
+        "main": [
+           {
+              "name": "Index",
+              "url": "/topics/",
+              "weight": 8
+           }
+        ]
     }
 }

@@ -4,10 +4,12 @@
         "Manuel Eberl"
     ],
     "topics": [
-        "Mathematics-Number theory"
+        "Mathematics/Number theory"
     ],
     "date": "2017-10-12",
-    "notify": "eberlm@in.tum.de",
+    "notify": [
+        "eberlm@in.tum.de"
+    ],
     "abstract": "\nThis entry is a formalisation of much of Chapters 2, 3, and 11 of\nApostol's &ldquo;Introduction to Analytic Number\nTheory&rdquo;. This includes: <ul> <li>Definitions and\nbasic properties for several number-theoretic functions (Euler's\n&phi;, M&ouml;bius &mu;, Liouville's &lambda;,\nthe divisor function &sigma;, von Mangoldt's\n&Lambda;)</li> <li>Executable code for most of these\nfunctions, the most efficient implementations using the factoring\nalgorithm by Thiemann <i>et al.</i></li>\n<li>Dirichlet products and formal Dirichlet series</li>\n<li>Analytic results connecting convergent formal Dirichlet\nseries to complex functions</li> <li>Euler product\nexpansions</li> <li>Asymptotic estimates of\nnumber-theoretic functions including the density of squarefree\nintegers and the average number of divisors of a natural\nnumber</li> </ul> These results are useful as a basis for\ndeveloping more number-theoretic results, such as the Prime Number\nTheorem.",
     "licence": "BSD",
     "olderReleases": {

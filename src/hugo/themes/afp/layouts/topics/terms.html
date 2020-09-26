@@ -1,19 +1,46 @@
 {{ define "main" }}
 
+{{ $topics := .Site.Taxonomies.topics }}
 
-<table width="80%" class="entries">
+<table width="80%" class="descr">
   <tbody>
     <tr>
       <td>
-        <ul>
-          {{ range .Data.Pages.ByTitle }}
-          <li><a href="{{ .Permalink }}">{{ .Name }}</a></li>
+        {{ range $firstLevel, $secondLevelTaxonomy := .Site.Data.topics }}
+          <h2>{{ $firstLevel }}</h2>
+          {{ with (index $topics (urlize $firstLevel)) }}
+          <div class="list">
+            {{ range $key := .Pages.ByDate }}
+            <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+            {{ end }}
+          </div>
           {{ end }}
-        </ul>
+          {{ with $secondLevelTaxonomy }}
+            {{ range $secondLevel, $thirdLevelTaxonomy := . }}
+              <h3>{{ $secondLevel }}</h3>
+              <div class="list">
+                {{ with (index $topics (printf "%s/%s" (urlize $firstLevel) (urlize $secondLevel))) }}
+                  {{ range $key := .Pages.ByDate }}
+                  <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+                  {{ end }}
+                {{ end }}
+              {{ with $thirdLevelTaxonomy }}
+                {{ range $thirdLevel, $ignore := . }}
+                  <strong>{{ $thirdLevel }}</strong>
+                  {{ with (index $topics (printf "%s/%s/%s" (urlize $firstLevel) (urlize $secondLevel) (urlize $thirdLevel))) }}
+                    {{ range $key := .Pages.ByDate }}
+                    <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
       </td>
     </tr>
   </tbody>
 </table>
-
 
 {{ end }}

@@ -5,11 +5,13 @@
         "Matthew Parkinson"
     ],
     "topics": [
-        "Computer science-Programming languages-Language definitions"
+        "Computer science/Programming languages/Language definitions"
     ],
     "date": "2011-02-07",
     "abstract": "A fully-formalized and extensible minimal imperative fragment of Java.",
-    "notify": "rok@strnisa.com",
+    "notify": [
+        "rok@strnisa.com"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2011": "2011-03-02",

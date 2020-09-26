@@ -5,10 +5,12 @@
         "Simon Wimmer"
     ],
     "topics": [
-        "Computer science-Algorithms"
+        "Computer science/Algorithms"
     ],
     "date": "2018-04-27",
-    "notify": "lammich@in.tum.de",
+    "notify": [
+        "lammich@in.tum.de"
+    ],
     "abstract": "\n<a\nhref=\"http://www.pm.inf.ethz.ch/research/verifythis.html\">VerifyThis\n2018</a> was a program verification competition associated with\nETAPS 2018. It was the 7th event in the VerifyThis competition series.\nIn this entry, we present polished and completed versions of our\nsolutions that we created during the competition.",
     "licence": "BSD",
     "olderReleases": {

@@ -5,10 +5,12 @@
     ],
     "date": "2015-11-18",
     "topics": [
-        "Computer science-Algorithms"
+        "Computer science/Algorithms"
     ],
     "abstract": "We formalize the Tortoise and Hare cycle-finding algorithm ascribed to Floyd by Knuth, and an improved version due to Brent.",
-    "notify": "peteg42@gmail.com",
+    "notify": [
+        "peteg42@gmail.com"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2016": "2016-02-22",

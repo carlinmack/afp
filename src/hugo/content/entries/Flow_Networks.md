@@ -5,10 +5,12 @@
         "S. Reza Sefidgar"
     ],
     "topics": [
-        "Mathematics-Graph theory"
+        "Mathematics/Graph theory"
     ],
     "date": "2017-06-01",
-    "notify": "lammich@in.tum.de",
+    "notify": [
+        "lammich@in.tum.de"
+    ],
     "abstract": "\nWe present a formalization of flow networks and the Min-Cut-Max-Flow\ntheorem. Our formal proof closely follows a standard textbook proof,\nand is accessible even without being an expert in Isabelle/HOL, the\ninteractive theorem prover used for the formalization.",
     "licence": "BSD",
     "olderReleases": {

@@ -5,10 +5,12 @@
     ],
     "date": "2009-11-22",
     "topics": [
-        "Mathematics-Number theory"
+        "Mathematics/Number theory"
     ],
     "abstract": "These theories present the mechanised proof of the Perfect Number Theorem.",
-    "notify": "nipkow@in.tum.de",
+    "notify": [
+        "nipkow@in.tum.de"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2009": "2009-11-24",

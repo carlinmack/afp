@@ -5,10 +5,12 @@
     ],
     "date": "2012-02-06",
     "topics": [
-        "Mathematics-Graph theory"
+        "Mathematics/Graph theory"
     ],
     "abstract": "This works presents a formalization of the Girth-Chromatic number theorem in graph theory, stating that graphs with arbitrarily large girth and chromatic number exist. The proof uses the theory of Random Graphs to prove the existence with probabilistic arguments.",
-    "notify": "noschinl@gmail.com",
+    "notify": [
+        "noschinl@gmail.com"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2011-1": "2012-02-06",

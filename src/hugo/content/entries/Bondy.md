@@ -6,10 +6,13 @@
     ],
     "date": "2012-10-27",
     "topics": [
-        "Mathematics-Combinatorics"
+        "Mathematics/Combinatorics"
     ],
     "abstract": "A proof of Bondy's theorem following B. Bollabas, Combinatorics, 1986, Cambridge University Press.",
-    "notify": "avigad@cmu.edu, hetzl@logic.at",
+    "notify": [
+        "avigad@cmu.edu",
+        "hetzl@logic.at"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2012": "2012-10-27",

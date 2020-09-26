@@ -1,7 +1,10 @@
 <p>&nbsp;</p>
 <header>
-  {{ $title := default .Site.Title (default .Title .Params.name) }}
-  <h1>{{ title $title | replaceRE "[A-Z]" "<font class='first'>$0</font>" | safeHTML }}
+  {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
+  {{ if (eq (.Scratch.Get "title") "Topics") }}
+  {{ .Scratch.Set "title" "Index by Topic" }}
+  {{ end }}
+  <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<font class='first'>$0</font>" | safeHTML }}
   </h1>
 </header>
 <p>&nbsp;</p>

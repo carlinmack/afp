@@ -5,10 +5,12 @@
     ],
     "date": "2014-09-19",
     "topics": [
-        "Mathematics-Analysis"
+        "Mathematics/Analysis"
     ],
     "abstract": "We have formalized the Sturm-Tarski theorem (also referred as the Tarski theorem), which generalizes Sturm's theorem. Sturm's theorem is usually used as a way to count distinct real roots, while the Sturm-Tarksi theorem forms the basis for Tarski's classic quantifier elimination for real closed field.",
-    "notify": "wl302@cam.ac.uk",
+    "notify": [
+        "wl302@cam.ac.uk"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2014": "2014-12-05",

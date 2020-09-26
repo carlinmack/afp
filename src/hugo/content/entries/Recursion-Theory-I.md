@@ -5,10 +5,12 @@
     ],
     "date": "2008-04-05",
     "topics": [
-        "Logic-Computability"
+        "Logic/Computability"
     ],
     "abstract": "This document presents the formalization of introductory material from  recursion theory --- definitions and basic properties of primitive recursive  functions, Cantor pairing function and computably enumerable sets  (including a proof of existence of a one-complete computably enumerable set  and a proof of the Rice's theorem).",
-    "notify": "MichaelNedzelsky@yandex.ru",
+    "notify": [
+        "MichaelNedzelsky@yandex.ru"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2007": "2008-04-11",

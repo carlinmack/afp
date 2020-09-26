@@ -5,10 +5,12 @@
         "David Butler"
     ],
     "topics": [
-        "Computer science-Security"
+        "Computer science/Security"
     ],
     "date": "2019-05-09",
-    "notify": "dbutler@turing.ac.uk",
+    "notify": [
+        "dbutler@turing.ac.uk"
+    ],
     "abstract": "\nWe use CryptHOL to consider Multi-Party Computation (MPC) protocols.\nMPC was first considered by Yao in 1983 and recent advances in\nefficiency and an increased demand mean it is now deployed in the real\nworld. Security is considered using the real/ideal world paradigm. We\nfirst define security in the semi-honest security setting where\nparties are assumed not to deviate from the protocol transcript. In\nthis setting we prove multiple Oblivious Transfer (OT) protocols\nsecure and then show security for the gates of the GMW protocol. We\nthen define malicious security, this is a stronger notion of security\nwhere parties are assumed to be fully corrupted by an adversary. In\nthis setting we again consider OT, as it is a fundamental building\nblock of almost all MPC protocols.",
     "licence": "BSD",
     "olderReleases": {

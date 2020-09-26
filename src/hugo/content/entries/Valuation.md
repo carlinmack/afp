@@ -5,10 +5,12 @@
     ],
     "date": "2007-08-08",
     "topics": [
-        "Mathematics-Algebra"
+        "Mathematics/Algebra"
     ],
     "abstract": "Convergence with respect to a valuation is discussed as convergence of a Cauchy sequence. Cauchy sequences of polynomials are defined. They are used to formalize Hensel's lemma.",
-    "notify": "lp15@cam.ac.uk",
+    "notify": [
+        "lp15@cam.ac.uk"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2007": "2007-11-27",

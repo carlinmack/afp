@@ -5,10 +5,12 @@
     ],
     "date": "2010-05-22",
     "topics": [
-        "Mathematics-Algebra"
+        "Mathematics/Algebra"
     ],
     "abstract": "This document gives a formalization of the proof of the Robbins conjecture, following A. Mann, <i>A Complete Proof of the Robbins Conjecture</i>, 2003.",
-    "notify": "nipkow@in.tum.de",
+    "notify": [
+        "nipkow@in.tum.de"
+    ],
     "licence": "BSD",
     "olderReleases": {
         "2009-1": "2010-05-27",

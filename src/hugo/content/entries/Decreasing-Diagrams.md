@@ -6,10 +6,12 @@
     "license": "LGPL",
     "date": "2013-11-01",
     "topics": [
-        "Logic-Rewriting"
+        "Logic/Rewriting"
     ],
     "abstract": "This theory contains a formalization of decreasing diagrams showing that any locally decreasing abstract rewrite system is confluent. We consider the valley (van Oostrom, TCS 1994) and the conversion version (van Oostrom, RTA 2008) and closely follow the original proofs. As an application we prove Newman's lemma.",
-    "notify": "Harald.Zankl@uibk.ac.at",
+    "notify": [
+        "Harald.Zankl@uibk.ac.at"
+    ],
     "olderReleases": {
         "2013-1": "2013-12-02",
         "2013-2": "2013-12-11",
