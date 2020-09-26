@@ -3,7 +3,11 @@
     "authors": [
         "Asta Halkjær From"
     ],
-    "contributors": "Alexander Birch Jensen <https://people.compute.dtu.dk/aleje/>,\nAnders Schlichtkrull <https://people.compute.dtu.dk/andschl/>,\nJørgen Villadsen <https://people.compute.dtu.dk/jovi/>",
+    "contributors": [
+        "Alexander Birch Jensen",
+        "Anders Schlichtkrull",
+        "Jørgen Villadsen"
+    ],
     "topics": [
         "Logic/Proof theory"
     ],

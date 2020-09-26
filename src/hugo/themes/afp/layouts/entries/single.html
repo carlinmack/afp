@@ -1,5 +1,5 @@
 {{ define "main" }}
-
+{{ $site := .}}
 <table width="80%" class="data">
   <tbody>
     <tr>
@@ -8,9 +8,16 @@
     </tr>
 
     <tr>
-      <td class="datahead">Authors:</td>
+      <td class="datahead">Author{{- if (gt (len .Params.authors) 1) -}}s{{- end -}}:</td>
       <td class="data">{{ partial "authors.html" (dict "site" . "authors" .Params.authors) }}</td>
     </tr>
+
+    {{ with .Params.contributors }}
+    <tr>
+      <td class="datahead">Contributor{{- if (gt (len .) 1) -}}s{{- end -}}:</td>
+      <td class="data">{{ partial "authors.html" (dict "site" $site "authors" .) }}</td>
+    </tr>
+    {{ end }}
 
     <tr>
       <td class="datahead">Submission date:</td>
@@ -21,6 +28,15 @@
       <td class="datahead" valign="top">Abstract:</td>
       <td class="abstract mathjax_process">{{ $.Page.RenderString .Params.abstract }}</td>
     </tr>
+
+    {{ with .Params.extra }}
+    {{ range $key, $value := . }}
+    <tr>
+      <td class="datahead" valign="top">{{- humanize $key -}}:</td>
+      <td class="data">{{- $value -}}</td>
+    </tr>
+    {{ end }}
+    {{ end }}
 
     <tr>
       <td class="datahead" valign="top">BibTeX:</td>

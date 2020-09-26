@@ -17,4 +17,29 @@
   {{- template "_internal/twitter_cards.html" . -}}
   <link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/front.css" />
   <link rel="icon" href="/images/favicon.ico" type="image/icon">
+
+  {{ if (eq .Section "entries") }}
+    {{/*
+      The following is the MathJax configuration.
+      This means that formulae can be enclosed in either $ … $ or \( … \)
+    */}}
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        processEscapes: true,
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    {{/* The following can be used instead to use MathJax from their CDN as opposed to our local copy.
+      <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+      </script>
+    */}}
+    <script id="MathJax-script" async src="/js/mathjax/es5/tex-mml-chtml.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+  {{ end }}
 </head>

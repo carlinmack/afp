@@ -5,7 +5,9 @@
         "Xingyuan Zhang",
         "Christian Urban"
     ],
-    "contributors": "Manuel Eberl <https://www21.in.tum.de/~eberlm>",
+    "contributors": [
+        "Manuel Eberl"
+    ],
     "topics": [
         "Computer science/Automata and formal languages"
     ],

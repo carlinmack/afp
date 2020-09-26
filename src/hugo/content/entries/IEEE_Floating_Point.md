@@ -3,7 +3,10 @@
     "authors": [
         "Lei Yu"
     ],
-    "contributors": "Fabian Hellauer <mailto:hellauer@in.tum.de>, Fabian Immler <http://www21.in.tum.de/~immler>",
+    "contributors": [
+        "Fabian Hellauer",
+        "Fabian Immler"
+    ],
     "date": "2013-07-27",
     "topics": [
         "Computer science/Data structures"
@@ -13,7 +16,9 @@
         "lp15@cam.ac.uk",
         "immler@in.tum.de"
     ],
-    "extra-history": "\nChange history:\n[2017-09-25]: Added conversions from and to software floating point numbers\n(by Fabian Hellauer and Fabian Immler).<br>\n[2018-02-05]: 'Modernized' representation following the formalization in HOL4:\nformer \"float_format\" and predicate \"is_valid\" is now encoded in a type \"('e, 'f) float\" where\n'e and 'f encode the size of exponent and fraction.",
+    "extra": {
+        "Change history": "[2017-09-25] Added conversions from and to software floating point numbers\n(by Fabian Hellauer and Fabian Immler).<br>\n[2018-02-05] 'Modernized' representation following the formalization in HOL4\nformer \"float_format\" and predicate \"is_valid\" is now encoded in a type \"('e, 'f) float\" where\n'e and 'f encode the size of exponent and fraction."
+    },
     "licence": "BSD",
     "olderReleases": {
         "2013": "2013-07-28",

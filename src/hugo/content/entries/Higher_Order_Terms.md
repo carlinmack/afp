@@ -3,7 +3,9 @@
     "authors": [
         "Lars Hupel"
     ],
-    "contributors": "Yu Zhang <>",
+    "contributors": [
+        "Yu Zhang"
+    ],
     "topics": [
         "Computer science/Programming languages/Lambda calculi"
     ],

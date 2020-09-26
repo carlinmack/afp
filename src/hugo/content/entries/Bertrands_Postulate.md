@@ -4,7 +4,9 @@
         "Julian Biendarra",
         "Manuel Eberl"
     ],
-    "contributors": "Lawrence C. Paulson <http://www.cl.cam.ac.uk/~lp15/>",
+    "contributors": [
+        "Lawrence C. Paulson"
+    ],
     "topics": [
         "Mathematics/Number theory"
     ],

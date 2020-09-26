@@ -15,7 +15,9 @@
         "jovi@dtu.dk"
     ],
     "abstract": "\n<p>We present a certified declarative first-order prover with equality\nbased on John Harrison's Handbook of Practical Logic and\nAutomated Reasoning, Cambridge University Press, 2009. ML code\nreflection is used such that the entire prover can be executed within\nIsabelle as a very simple interactive proof assistant. As examples we\nconsider Pelletier's problems 1-46.</p>\n<p>Reference: Programming and Verifying a Declarative First-Order\nProver in Isabelle/HOL. Alexander Birch Jensen, John Bruntse Larsen,\nAnders Schlichtkrull & Jørgen Villadsen. AI Communications 31:281-299\n2018. <a href=\"https://content.iospress.com/articles/ai-communications/aic764\">\nhttps://content.iospress.com/articles/ai-communications/aic764</a></p>\n<p>See also: Students' Proof Assistant (SPA).\n<a href=https://github.com/logic-tools/spa>\nhttps://github.com/logic-tools/spa</a></p>",
-    "extra-history": "\nChange history:\n[2018-07-21]: Proof of Pelletier's problem 34 (Andrews's Challenge) thanks to Asta Halkjær From.",
+    "extra": {
+        "Change history": "[2018-07-21] Proof of Pelletier's problem 34 (Andrews's Challenge) thanks to Asta Halkjær From."
+    },
     "licence": "BSD",
     "olderReleases": {
         "2016-1": "2017-01-04",

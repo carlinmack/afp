@@ -11,7 +11,9 @@
     "notify": [
         "nipkow@in.tum.de"
     ],
-    "extra-history": "\nChange history:\n[2019-12-16]: Added theory Priority_Queue_Braun2 with second version of del_min",
+    "extra": {
+        "Change history": "[2019-12-16] Added theory Priority_Queue_Braun2 with second version of del_min"
+    },
     "licence": "BSD",
     "olderReleases": {
         "2014": "2014-09-04",

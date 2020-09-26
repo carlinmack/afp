@@ -3,7 +3,9 @@
     "authors": [
         "Florian Haftmann"
     ],
-    "contributors": "Amine Chaieb <>",
+    "contributors": [
+        "Amine Chaieb"
+    ],
     "date": "2014-04-13",
     "topics": [
         "Mathematics/Combinatorics"

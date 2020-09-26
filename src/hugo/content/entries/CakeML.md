@@ -4,7 +4,9 @@
         "Lars Hupel",
         "Yu Zhang"
     ],
-    "contributors": "Johannes Åman Pohjola <>",
+    "contributors": [
+        "Johannes Åman Pohjola"
+    ],
     "topics": [
         "Computer science/Programming languages/Language definitions"
     ],
