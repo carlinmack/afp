@@ -1,8 +1,8 @@
-import os
 import configparser
 import json
-import time
+import os
 import re
+import time
 
 
 def iniToJson():
@@ -17,7 +17,7 @@ def iniToJson():
 
     conf = configparser.ConfigParser()
     conf.read("metadata")
-    
+
     authorsDictionary = {}
     for section in conf.sections():
         data = {}
@@ -26,8 +26,8 @@ def iniToJson():
                 authors = val.split(",")
                 jsonAuthors = []
                 for author in authors:
-                    metadata = re.findall(" <(.*?)>", author)
-                    authorName = re.sub(" <(.*?)>", " ", author).strip()
+                    metadata = re.findall("<(.*?)>", author)
+                    authorName = re.sub("<(.*?)>", "", author).strip()
 
                     for datum in metadata:
                         if re.match("mailto:", datum):
@@ -45,9 +45,14 @@ def iniToJson():
                     jsonAuthors.append(authorName)
 
                 data["authors"] = jsonAuthors
+            elif key == "topic":
+                data["topics"] = list(
+                    map(lambda x: x.strip(), re.sub("/", "-", val).split(","))
+                )
             else:
                 data[key] = val
-
+        if "license" not in data:
+            data["licence"] = "BSD"
         with open(entriesDir + section + ".md", "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=4)
 
@@ -56,7 +61,5 @@ def iniToJson():
 
 
 if __name__ == "__main__":
-    tick = time.time()
     iniToJson()
-    print("--- %s seconds ---" % (time.time() - tick))
 
