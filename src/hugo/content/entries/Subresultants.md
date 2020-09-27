@@ -21,6 +21,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Jordan_Normal_Form",
         "Polynomial_Factorization"
     ]
 }

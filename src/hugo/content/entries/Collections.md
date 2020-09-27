@@ -39,7 +39,6 @@
     },
     "dependencies": [
         "Refine_Monadic",
-        "Collections",
         "Binomial-Heaps",
         "Finger-Trees",
         "Native_Word",

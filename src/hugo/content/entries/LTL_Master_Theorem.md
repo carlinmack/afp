@@ -19,6 +19,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Transition_Systems_and_Automata",
         "LTL",
         "Deriving"
     ]

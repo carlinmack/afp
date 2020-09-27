@@ -27,7 +27,6 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Deriving",
-        "Datatype_Order_Generator"
+        "Deriving"
     ]
 }

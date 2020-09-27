@@ -19,7 +19,6 @@
     },
     "dependencies": [
         "Count_Complex_Roots",
-        "Berlekamp_Zassenhaus",
         "Polynomial_Factorization"
     ]
 }

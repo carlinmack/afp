@@ -17,6 +17,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Order_Lattice_Props",
         "Kleene_Algebra",
         "Order_Lattice_Props"
     ]

@@ -22,10 +22,6 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Pre_BZ",
-        "Polynomial_Factorization",
-        "Polynomial_Interpolation",
-        "Efficient-Mergesort",
-        "Show"
+        "Pre_BZ"
     ]
 }

@@ -43,6 +43,7 @@
         "2019": "2020-01-14"
     },
     "dependencies": [
+        "Abstract-Rewriting",
         "Matrix",
         "Show",
         "Well_Quasi_Orders"

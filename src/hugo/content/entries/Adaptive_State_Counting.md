@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-08-19"
-    }
+    },
+    "dependencies": [
+        "Transition_Systems_and_Automata"
+    ]
 }

@@ -16,5 +16,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-06-24"
-    }
+    },
+    "dependencies": [
+        "LLL_Basis_Reduction"
+    ]
 }

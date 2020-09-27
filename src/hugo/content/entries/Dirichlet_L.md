@@ -18,6 +18,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Zeta_Function",
         "Landau_Symbols",
         "Dirichlet_Series",
         "Zeta_Function",

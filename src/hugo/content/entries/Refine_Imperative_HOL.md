@@ -21,10 +21,11 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Collections",
         "Sepref_Prereq",
-        "Sepref_Prereq",
-        "Sepref_Basic",
-        "Separation_Logic_Imperative_HOL"
+        "Isar_Ref",
+        "List-Index",
+        "Collections_Examples",
+        "DFS_Framework",
+        "Dijkstra_Shortest_Path"
     ]
 }

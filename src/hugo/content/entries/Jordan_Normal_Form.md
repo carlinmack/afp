@@ -29,6 +29,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "JNF-AFP-Lib",
         "Polynomial_Factorization"
     ]
 }

@@ -21,5 +21,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-07-05"
-    }
+    },
+    "dependencies": [
+        "Containers"
+    ]
 }

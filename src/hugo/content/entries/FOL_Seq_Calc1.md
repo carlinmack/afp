@@ -19,5 +19,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-07-18"
-    }
+    },
+    "dependencies": [
+        "FOL-Fitting"
+    ]
 }

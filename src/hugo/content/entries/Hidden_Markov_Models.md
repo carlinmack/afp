@@ -19,6 +19,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Markov_Models",
         "Monad_Memo_DP"
     ]
 }

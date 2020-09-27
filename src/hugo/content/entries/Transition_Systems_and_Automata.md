@@ -18,6 +18,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Collections",
         "DFS_Framework",
         "Gabow_SCC"
     ]

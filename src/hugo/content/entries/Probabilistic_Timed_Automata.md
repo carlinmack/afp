@@ -21,6 +21,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Markov_Models",
         "Timed_Automata"
     ]
 }

@@ -23,8 +23,6 @@
     },
     "dependencies": [
         "Routing",
-        "Iptables_Semantics",
-        "Iptables_Semantics_Examples",
         "Native_Word"
     ]
 }

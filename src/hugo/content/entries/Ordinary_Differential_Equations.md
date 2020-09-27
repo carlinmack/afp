@@ -31,7 +31,6 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Ordinary_Differential_Equations",
         "Triangle",
         "List-Index",
         "Affine_Arithmetic"

@@ -18,6 +18,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Abstract-Rewriting",
         "Recursion-Theory-I"
     ]
 }

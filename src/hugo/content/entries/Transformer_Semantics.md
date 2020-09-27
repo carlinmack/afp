@@ -18,6 +18,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Quantales",
         "Order_Lattice_Props",
         "Quantales"
     ]

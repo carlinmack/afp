@@ -28,11 +28,6 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "CAVA_Automata",
-        "SM_Base",
-        "CAVA_Automata",
-        "CAVA_Setup",
-        "Partial_Order_Reduction",
-        "DFS_Framework"
+        "CAVA_Setup"
     ]
 }

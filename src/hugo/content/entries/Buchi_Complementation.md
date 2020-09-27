@@ -16,5 +16,8 @@
         "2017": "2017-10-27",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Transition_Systems_and_Automata"
+    ]
 }

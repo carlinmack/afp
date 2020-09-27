@@ -22,11 +22,10 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Containers",
-        "Abstract-Rewriting",
-        "Gauss_Jordan Matrix",
+        "JNF-AFP-Lib",
+        "Partial_Function_MR",
         "Polynomial_Interpolation",
         "Show",
-        "VectorSpace"
+        "Sqrt_Babylonian"
     ]
 }

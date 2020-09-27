@@ -31,7 +31,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
-        "Containers",
+        "Deriving",
         "Finger-Trees",
         "Regular-Sets",
         "Automatic_Refinement",

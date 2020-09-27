@@ -10,3 +10,23 @@
     <td class="statsnumber">{{ len $.Site.Taxonomies.authors }}</td>
   </tr>
 </table>
+
+<h4>Most used AFP articles:</h4>
+<table id="most_used">
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Used by ? articles</th>
+  </tr>
+
+  {{ range $index, $element := first 12 .Site.Taxonomies.dependencies.ByCount }}
+  <tr>
+    <td>{{ add $index 1}}.</td>
+    <td><a href="{{ $element.Page.Permalink }}">{{ $element.Page.Title }}</a></td>
+    <td>{{ $element.Count }}</td>
+  </tr>
+  {{ end }}
+</table>
+<ul>
+
+</ul>

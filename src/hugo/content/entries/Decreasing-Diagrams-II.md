@@ -21,6 +21,7 @@
         "2019": "2019-06-11"
     },
     "dependencies": [
+        "Abstract-Rewriting",
         "Open_Induction",
         "Well_Quasi_Orders"
     ]
