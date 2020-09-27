@@ -41,7 +41,16 @@
     <tr>
       <td class="datahead" valign="top">BibTeX:</td>
       <td class="formatted">
-        <pre>{{ .Params.bibtex }}</pre>
+        <pre>@article{{ "{" }}{{ .File.TranslationBaseName }}-AFP,
+  author  = {{ "{" }}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
+  title   = {{ "{" }}{{- htmlUnescape .Params.title -}}},
+  journal = {Archive of Formal Proofs},
+  month   = {{ dateFormat "January" .Params.date }},
+  year    = {{ dateFormat "2006" .Params.date }},
+  note    = {\url{http://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html},
+            Formal proof development},
+  ISSN    = {2150-914x},
+}</pre>
       </td>
     </tr>
 
@@ -74,7 +83,8 @@
       {{- $Scratch.Add "dependents" (slice ($dependent)) -}}
       {{ end }}
       <td class="datahead">Used by:</td>
-      <td class="data">{{ delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString}}</td>
+      <td class="data">
+        {{ delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString}}</td>
     </tr>{{- end -}}
   </tbody>
 </table>
