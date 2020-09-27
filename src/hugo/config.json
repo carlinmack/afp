@@ -5,7 +5,8 @@
     "theme": "afp",
     "taxonomies": {
         "author": "authors",
-        "topic": "topics"
+        "topic": "topics",
+        "dependency": "dependencies" 
     },
     "params": { 
         "mainSections": ["entries"]

@@ -19,5 +19,9 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-14"
-    }
+    },
+    "dependencies": [
+        "Akra_Bazzi",
+        "Root_Balanced_Tree"
+    ]
 }

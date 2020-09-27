@@ -34,5 +34,16 @@
         "2017": "2017-10-10",
         "2018": "2018-08-17",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Binomial-Heaps",
+        "Finger-Trees",
+        "Automatic_Refinement",
+        "Coinductive",
+        "Collections",
+        "FinFun",
+        "Native_Word",
+        "Refine_Monadic",
+        "Trie"
+    ]
 }

@@ -16,5 +16,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-09-10"
-    }
+    },
+    "dependencies": [
+        "Ordinary_Differential_Equations",
+        "Transformer_Semantics",
+        "KAD"
+    ]
 }

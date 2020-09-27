@@ -17,5 +17,9 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-03-26"
-    }
+    },
+    "dependencies": [
+        "Certification_Monads",
+        "Datatype_Order_Generator"
+    ]
 }

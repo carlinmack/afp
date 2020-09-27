@@ -23,5 +23,9 @@
     "olderReleases": {
         "2018": "2019-03-25",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Jordan_Normal_Form",
+        "Deep_Learning"
+    ]
 }

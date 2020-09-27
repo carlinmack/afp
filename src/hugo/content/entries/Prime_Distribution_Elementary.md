@@ -15,5 +15,9 @@
     "olderReleases": {
         "2018": "2019-02-22",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Zeta_Function",
+        "Prime_Number_Theorem"
+    ]
 }

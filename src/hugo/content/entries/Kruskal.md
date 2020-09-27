@@ -18,5 +18,12 @@
     "olderReleases": {
         "2018": "2019-02-19",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Sepref_IICF",
+        "Refine_Monadic",
+        "Matroids",
+        "Collections",
+        "Refine_Imperative_HOL"
+    ]
 }

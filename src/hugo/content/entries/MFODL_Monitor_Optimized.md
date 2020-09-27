@@ -22,5 +22,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-04-12"
-    }
+    },
+    "dependencies": [
+        "MFOTL_Monitor",
+        "IEEE_Floating_Point",
+        "Generic_Join"
+    ]
 }

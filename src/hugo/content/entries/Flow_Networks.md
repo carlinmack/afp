@@ -18,5 +18,12 @@
         "2017": "2017-10-10",
         "2018": "2018-08-16",
         "2019": "2020-01-14"
-    }
+    },
+    "dependencies": [
+        "Sepref_IICF",
+        "Program-Conflict-Analysis",
+        "CAVA_Automata",
+        "DFS_Framework",
+        "Refine_Imperative_HOL"
+    ]
 }

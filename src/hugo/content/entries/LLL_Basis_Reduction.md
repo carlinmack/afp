@@ -30,5 +30,9 @@
         "2017": "2018-02-03",
         "2018": "2018-09-07",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Berlekamp_Zassenhaus",
+        "Algebraic_Numbers"
+    ]
 }

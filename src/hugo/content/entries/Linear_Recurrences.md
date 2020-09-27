@@ -16,5 +16,10 @@
         "2017": "2017-10-17",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Count_Complex_Roots",
+        "Berlekamp_Zassenhaus",
+        "Polynomial_Factorization"
+    ]
 }

@@ -17,5 +17,9 @@
     "olderReleases": {
         "2018": "2019-01-21",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Simplex",
+        "Jordan_Normal_Form"
+    ]
 }

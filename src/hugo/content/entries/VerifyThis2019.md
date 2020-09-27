@@ -16,5 +16,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-10-25"
-    }
+    },
+    "dependencies": [
+        "Sepref_IICF"
+    ]
 }

@@ -16,5 +16,8 @@
     "olderReleases": {
         "2018": "2019-05-10",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Game_Based_Crypto"
+    ]
 }

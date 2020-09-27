@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-06-13"
-    }
+    },
+    "dependencies": [
+        "IMP2"
+    ]
 }

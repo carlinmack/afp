@@ -15,5 +15,15 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-07-11"
-    }
+    },
+    "dependencies": [
+        "CakeML",
+        "Constructor_Funs",
+        "Dict_Construction",
+        "Higher_Order_Terms",
+        "Huffman",
+        "Pairing_Heap",
+        "Root_Balanced_Tree",
+        "Show"
+    ]
 }

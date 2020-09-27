@@ -20,5 +20,12 @@
         "2017": "2017-10-10",
         "2018": "2018-09-07",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Pre_BZ",
+        "Polynomial_Factorization",
+        "Polynomial_Interpolation",
+        "Efficient-Mergesort",
+        "Show"
+    ]
 }

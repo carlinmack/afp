@@ -18,5 +18,8 @@
     "olderReleases": {
         "2018": "2019-03-28",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Prime_Number_Theorem"
+    ]
 }

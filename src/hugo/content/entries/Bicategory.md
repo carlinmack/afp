@@ -17,5 +17,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-09"
-    }
+    },
+    "dependencies": [
+        "MonoidalCategory"
+    ]
 }

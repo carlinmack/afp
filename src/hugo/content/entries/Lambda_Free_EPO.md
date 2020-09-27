@@ -15,5 +15,8 @@
     "olderReleases": {
         "2018": "2018-10-21",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Lambda_Free_RPOs"
+    ]
 }

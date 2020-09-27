@@ -16,5 +16,9 @@
     "olderReleases": {
         "2018": "2018-12-19",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Order_Lattice_Props",
+        "Quantales"
+    ]
 }

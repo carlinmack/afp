@@ -14,5 +14,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-20"
-    }
+    },
+    "dependencies": [
+        "Pell",
+        "Native_Word",
+        "Probabilistic_Prime_Tests"
+    ]
 }

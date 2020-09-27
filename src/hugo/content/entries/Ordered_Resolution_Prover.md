@@ -20,5 +20,9 @@
         "2017": "2018-01-22",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Coinductive",
+        "Nested_Multisets_Ordinals"
+    ]
 }

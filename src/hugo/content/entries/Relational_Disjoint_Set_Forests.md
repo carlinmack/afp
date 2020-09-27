@@ -11,5 +11,9 @@
         "walter.guttmann@canterbury.ac.nz"
     ],
     "abstract": "\nWe give a simple relation-algebraic semantics of read and write\noperations on associative arrays. The array operations seamlessly\nintegrate with assignments in the Hoare-logic library. Using relation\nalgebras and Kleene algebras we verify the correctness of an\narray-based implementation of disjoint-set forests with a naive union\noperation and a find operation with path compression.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "dependencies": [
+        "Stone_Kleene_Relation_Algebras",
+        "Aggregation_Algebras"
+    ]
 }

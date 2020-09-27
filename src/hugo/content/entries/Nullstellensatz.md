@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-06-17"
-    }
+    },
+    "dependencies": [
+        "Groebner_Bases"
+    ]
 }

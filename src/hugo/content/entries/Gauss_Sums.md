@@ -15,5 +15,11 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-10"
-    }
+    },
+    "dependencies": [
+        "Dirichlet_Series",
+        "Polynomial_Interpolation",
+        "Dirichlet_Series",
+        "Dirichlet_L"
+    ]
 }

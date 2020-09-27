@@ -6,8 +6,8 @@ import time
 
 
 def iniToJson():
-    entriesDir = "../entries/"
-    dataDir = "../data/"
+    entriesDir = "entries/"
+    dataDir = "data/"
 
     if not os.path.exists(entriesDir):
         os.mkdir(entriesDir)
@@ -16,7 +16,7 @@ def iniToJson():
         os.mkdir(dataDir)
 
     conf = configparser.ConfigParser()
-    conf.read("metadata")
+    conf.read("metadata/metadata")
 
     authorsDictionary = {}
     for section in conf.sections():

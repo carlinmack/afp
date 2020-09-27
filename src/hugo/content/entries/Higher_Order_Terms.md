@@ -18,5 +18,10 @@
     "olderReleases": {
         "2018": "2019-01-15",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Datatype_Order_Generator",
+        "List-Index",
+        "Lambda_Free_RPOs"
+    ]
 }

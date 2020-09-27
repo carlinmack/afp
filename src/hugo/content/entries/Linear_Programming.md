@@ -16,5 +16,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-09-23"
-    }
+    },
+    "dependencies": [
+        "Jordan_Normal_Form",
+        "Farkas",
+        "Linear_Inequalities"
+    ]
 }

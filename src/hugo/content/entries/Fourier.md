@@ -14,5 +14,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-09-11"
-    }
+    },
+    "dependencies": [
+        "Lp"
+    ]
 }

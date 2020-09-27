@@ -18,5 +18,9 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-17"
-    }
+    },
+    "dependencies": [
+        "Complex_Geometry",
+        "Complex_Geometry"
+    ]
 }

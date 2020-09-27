@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-11-28"
-    }
+    },
+    "dependencies": [
+        "Word_Lib"
+    ]
 }

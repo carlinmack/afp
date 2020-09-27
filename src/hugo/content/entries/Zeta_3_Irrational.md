@@ -14,5 +14,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-12-28"
-    }
+    },
+    "dependencies": [
+        "Prime_Number_Theorem",
+        "E_Transcendental",
+        "Prime_Distribution_Elementary"
+    ]
 }

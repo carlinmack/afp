@@ -22,5 +22,9 @@
         "2017": "2018-02-07",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "LLL_Basis_Reduction",
+        "Perron_Frobenius"
+    ]
 }

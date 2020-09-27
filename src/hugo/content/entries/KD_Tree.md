@@ -19,5 +19,8 @@
     "olderReleases": {
         "2018": "2019-06-04",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Median_Of_Medians_Selection"
+    ]
 }

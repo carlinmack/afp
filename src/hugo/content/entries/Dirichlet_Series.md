@@ -16,5 +16,10 @@
         "2017": "2017-10-16",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Polynomial_Factorization",
+        "Landau_Symbols",
+        "Euler_MacLaurin"
+    ]
 }

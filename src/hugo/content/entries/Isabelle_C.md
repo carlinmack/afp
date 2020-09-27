@@ -18,5 +18,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-12-19"
-    }
+    },
+    "dependencies": [
+        "Isar_Ref"
+    ]
 }

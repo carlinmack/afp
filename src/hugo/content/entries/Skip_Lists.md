@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-10"
-    }
+    },
+    "dependencies": [
+        "Monad_Normalisation"
+    ]
 }

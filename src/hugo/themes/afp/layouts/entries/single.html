@@ -60,10 +60,17 @@
       <td class="datahead">Used by:</td>
       <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString}}</td>
     </tr>{{- end -}}
-
-    {{- with .Params.dependsOn -}}<tr>
+    
+    {{- $Scratch := newScratch -}}
+    {{- with .Params.dependencies -}}<tr>
+      {{- range . -}}
+      {{- $dependency := printf "[%s](%s%s)" . ("/dependencies/" | relLangURL) (. | urlize) -}}
+      {{- $Scratch.Add "dependencyList" (slice $dependency) -}}
+      {{- end -}}
       <td class="datahead">Depends On:</td>
-      <td class="data">{{ delimit . ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString }}</td>
+      <td class="data">
+        {{- delimit ($Scratch.Get "dependencyList") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
+      </td>
     </tr>{{- end -}}
   </tbody>
 </table>

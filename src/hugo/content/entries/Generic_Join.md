@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2019-09-18"
-    }
+    },
+    "dependencies": [
+        "MFOTL_Monitor"
+    ]
 }

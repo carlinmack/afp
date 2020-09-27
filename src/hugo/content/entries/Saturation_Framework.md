@@ -14,5 +14,10 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-04-10"
-    }
+    },
+    "dependencies": [
+        "Ordered_Resolution_Prover",
+        "Lambda_Free_RPOs",
+        "Well_Quasi_Orders"
+    ]
 }

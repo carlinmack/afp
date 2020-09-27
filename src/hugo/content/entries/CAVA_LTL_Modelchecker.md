@@ -26,5 +26,13 @@
         "2017": "2017-10-10",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "CAVA_Automata",
+        "SM_Base",
+        "CAVA_Automata",
+        "CAVA_Setup",
+        "Partial_Order_Reduction",
+        "DFS_Framework"
+    ]
 }

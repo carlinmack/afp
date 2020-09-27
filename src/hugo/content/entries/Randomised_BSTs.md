@@ -15,5 +15,9 @@
     "olderReleases": {
         "2018": "2018-10-19",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Random_BSTs",
+        "Monad_Normalisation"
+    ]
 }

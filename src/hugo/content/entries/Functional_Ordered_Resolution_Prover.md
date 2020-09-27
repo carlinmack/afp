@@ -19,5 +19,14 @@
     "olderReleases": {
         "2018": "2018-11-29",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Ordered_Resolution_Prover",
+        "First_Order_Terms",
+        "Knuth_Bendix_Order",
+        "Lambda_Free_RPOs",
+        "Nested_Multisets_Ordinals",
+        "Open_Induction",
+        "Polynomial_Factorization"
+    ]
 }

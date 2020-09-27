@@ -16,5 +16,11 @@
     "olderReleases": {
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Landau_Symbols",
+        "Dirichlet_Series",
+        "Zeta_Function",
+        "Bertrands_Postulate"
+    ]
 }

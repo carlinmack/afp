@@ -13,5 +13,9 @@
         "traytel@di.ku.dk"
     ],
     "abstract": "\nWe instantiate our syntax-independent logic infrastructure developed\nin <a\nhref=\"https://www.isa-afp.org/entries/Syntax_Independent_Logic.html\">a\nseparate AFP entry</a> to the FOL theory of Robinson arithmetic\n(also known as Q). The latter was formalised using Nominal Isabelle by\nadapting <a\nhref=\"https://www.isa-afp.org/entries/Incompleteness.html\">Larry\nPaulson’s formalization of the Hereditarily Finite Set\ntheory</a>.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "dependencies": [
+        "Syntax_Independent_Logic",
+        "Nominal2"
+    ]
 }

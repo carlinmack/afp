@@ -15,5 +15,8 @@
     "olderReleases": {
         "2018": "2018-09-26",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Polynomials"
+    ]
 }

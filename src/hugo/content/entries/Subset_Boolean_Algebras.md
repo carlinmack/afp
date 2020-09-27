@@ -15,5 +15,8 @@
     "licence": "BSD",
     "olderReleases": {
         "2019": "2020-01-31"
-    }
+    },
+    "dependencies": [
+        "Stone_Algebras"
+    ]
 }

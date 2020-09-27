@@ -29,5 +29,11 @@
         "2017": "2017-10-10",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Ordinary_Differential_Equations",
+        "Triangle",
+        "List-Index",
+        "Affine_Arithmetic"
+    ]
 }

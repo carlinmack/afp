@@ -20,5 +20,11 @@
         "2017": "2017-10-10",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Routing",
+        "Iptables_Semantics",
+        "Iptables_Semantics_Examples",
+        "Native_Word"
+    ]
 }

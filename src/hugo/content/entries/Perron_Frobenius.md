@@ -24,5 +24,11 @@
         "2017": "2017-10-18",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Jordan_Normal_Form",
+        "Polynomial_Factorization",
+        "Rank_Nullity_Theorem",
+        "Sturm_Sequences"
+    ]
 }

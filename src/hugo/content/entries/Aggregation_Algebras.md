@@ -15,5 +15,8 @@
     "olderReleases": {
         "2018": "2018-09-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Stone_Kleene_Relation_Algebras"
+    ]
 }

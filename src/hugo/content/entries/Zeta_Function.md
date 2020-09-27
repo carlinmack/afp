@@ -17,5 +17,12 @@
         "2017": "2017-10-16",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Dirichlet_Series",
+        "Euler_MacLaurin",
+        "Bernoulli",
+        "Dirichlet_Series",
+        "Winding_Number_Eval"
+    ]
 }

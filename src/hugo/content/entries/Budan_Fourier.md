@@ -16,5 +16,8 @@
     "olderReleases": {
         "2018": "2018-09-04",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Sturm_Tarski"
+    ]
 }

@@ -15,5 +15,9 @@
     "olderReleases": {
         "2018": "2018-10-02",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "E_Transcendental",
+        "Symmetric_Polynomials"
+    ]
 }

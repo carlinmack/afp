@@ -17,5 +17,9 @@
     "olderReleases": {
         "2018": "2019-04-17",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "LTL",
+        "Deriving"
+    ]
 }

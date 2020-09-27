@@ -17,5 +17,10 @@
         "2017": "2017-11-23",
         "2018": "2018-08-16",
         "2019": "2019-06-11"
-    }
+    },
+    "dependencies": [
+        "Markov_Models",
+        "Perron_Frobenius",
+        "Jordan_Normal_Form"
+    ]
 }
