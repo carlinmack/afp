@@ -1,10 +1,10 @@
-{{ $Scratch := newScratch }}
+{{- $Scratch := newScratch -}}
 
-{{ range .authors }}
+{{- range .authors -}}
 
-{{ $author := printf "[%s](%s%s)" . ("/authors/" | relLangURL) (. | urlize) }}
-{{ $Scratch.Add "authors" (slice $author) }}
+{{- $author := printf "[%s](%s%s)" . ("/authors/" | relLangURL) (. | urlize) -}}
+{{- $Scratch.Add "authors" (slice $author) -}}
 
-{{ end }}
+{{- end -}}
 
-{{ delimit ($Scratch.Get "authors")  ", " | replaceRE "(, )([^,]+$)" " and $2" | .site.RenderString }}
+{{- delimit ($Scratch.Get "authors")  ", " | replaceRE "(, )([^,]+$)" " and $2" | .site.RenderString -}}

@@ -1,53 +1,53 @@
-{{ define "main" }}
-{{ $site := .}}
+{{- define "main" -}}
+{{- $site := . -}}
 <table width="80%" class="data">
   <tbody>
     <tr>
       <td class="datahead" width="20%">Title:</td>
-      <td class="data" width="80%">{{ htmlUnescape .Params.title }}</td>
+      <td class="data" width="80%">{{- htmlUnescape .Params.title -}}</td>
     </tr>
 
     <tr>
       <td class="datahead">Author{{- if (gt (len .Params.authors) 1) -}}s{{- end -}}:</td>
-      <td class="data">{{ partial "authors.html" (dict "site" . "authors" .Params.authors) }}</td>
+      <td class="data">{{- partial "authors.html" (dict "site" . "authors" .Params.authors) -}}</td>
     </tr>
 
-    {{ with .Params.contributors }}
+    {{- with .Params.contributors -}}
     <tr>
       <td class="datahead">Contributor{{- if (gt (len .) 1) -}}s{{- end -}}:</td>
-      <td class="data">{{ partial "authors.html" (dict "site" $site "authors" .) }}</td>
+      <td class="data">{{- partial "authors.html" (dict "site" $site "authors" .) -}}</td>
     </tr>
-    {{ end }}
+    {{- end -}}
 
     <tr>
       <td class="datahead">Submission date:</td>
-      <td class="data">{{ dateFormat "2006-01-02" .Params.date }}</td>
+      <td class="data">{{- dateFormat "2006-01-02" .Params.date -}}</td>
     </tr>
 
     <tr>
       <td class="datahead" valign="top">Abstract:</td>
-      <td class="abstract mathjax_process">{{ $.Page.RenderString .Params.abstract }}</td>
+      <td class="abstract mathjax_process">{{- $.Page.RenderString .Params.abstract -}}</td>
     </tr>
 
-    {{ with .Params.extra }}
-    {{ range $key, $value := . }}
+    {{- with .Params.extra -}}
+    {{- range $key, $value := . -}}
     <tr>
       <td class="datahead" valign="top">{{- humanize $key -}}:</td>
       <td class="data">{{- $value -}}</td>
     </tr>
-    {{ end }}
-    {{ end }}
+    {{- end -}}
+    {{- end -}}
 
     <tr>
       <td class="datahead" valign="top">BibTeX:</td>
       <td class="formatted">
-        <pre>@article{{ "{" }}{{ .File.TranslationBaseName }}-AFP,
-  author  = {{ "{" }}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
-  title   = {{ "{" }}{{- htmlUnescape .Params.title -}}},
+        <pre>@article{{- "{" -}}{{- .File.TranslationBaseName -}}-AFP,
+  author  = {{- "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
+  title   = {{- "{" -}}{{- htmlUnescape .Params.title -}}},
   journal = {Archive of Formal Proofs},
-  month   = {{ dateFormat "January" .Params.date }},
-  year    = {{ dateFormat "2006" .Params.date }},
-  note    = {\url{http://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html},
+  month   = {{- dateFormat "January" .Params.date -}},
+  year    = {{- dateFormat "2006" .Params.date -}},
+  note    = {\url{http://isa-afp.org/entries/{{- .File.TranslationBaseName -}}.html},
             Formal proof development},
   ISSN    = {2150-914x},
 }</pre>
@@ -57,11 +57,11 @@
     <tr>
       <td class="datahead">License:</td>
       <td class="data">
-        {{ if (eq .Params.licence "BSD") }}
+        {{- if (eq .Params.licence "BSD") -}}
         <a href="http://isa-afp.org/LICENSE">BSD License</a>
-        {{ else }}
+        {{- else -}}
         <a href="http://isa-afp.org/LICENSE.LGPL">GNU Lesser General Public License (LGPL)</a>
-        {{ end }}
+        {{- end -}}
       </td>
     </tr>
     {{- $Scratch := newScratch -}}
@@ -77,19 +77,19 @@
       </td>
     </tr>{{- end -}}
 
-    {{ with (index .Site.Taxonomies.dependencies (urlize .File.TranslationBaseName)) }}<tr>
-      {{ range $key := .Pages.ByDate }}
+    {{- with (index .Site.Taxonomies.dependencies (urlize .File.TranslationBaseName)) -}}<tr>
+      {{- range $key := .Pages.ByDate -}}
       {{- $dependent := printf "[%s](%s)" .File.TranslationBaseName .RelPermalink -}}
       {{- $Scratch.Add "dependents" (slice ($dependent)) -}}
-      {{ end }}
+      {{- end -}}
       <td class="datahead">Used by:</td>
       <td class="data">
-        {{ delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString}}</td>
+        {{- delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}</td>
     </tr>{{- end -}}
   </tbody>
 </table>
 <p></p>
-{{ $entryName := .File.TranslationBaseName }}
+{{- $entryName := .File.TranslationBaseName -}}
 <table class="links">
   <tbody>
     <tr>
@@ -117,23 +117,23 @@
     <tr>
       <td class="links">Older releases:
         <ul>
-          {{ with .Params.olderReleases }}
-          {{ range $map := . }}
-          {{ range $key, $value := $map }}
-          <li>Isabelle {{ $key }}:
-            <a href="../release/afp-{{- $entryName -}}-{{ $value }}.tar.gz">
-              afp-{{- $entryName -}}-{{ $value }}.tar.gz
+          {{- with .Params.olderReleases -}}
+          {{- range $map := . -}}
+          {{- range $key, $value := $map -}}
+          <li>Isabelle {{- $key -}}:
+            <a href="../release/afp-{{- $entryName -}}-{{- $value -}}.tar.gz">
+              afp-{{- $entryName -}}-{{- $value -}}.tar.gz
             </a>
           </li>
-          {{ end }}
-          {{ end }}
-          {{ else }}
+          {{- end -}}
+          {{- end -}}
+          {{- else -}}
           None
-          {{ end }}
+          {{- end -}}
         </ul>
       </td>
     </tr>
   </tbody>
 </table>
 
-{{ end }}
+{{- end -}}
