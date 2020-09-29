@@ -15,10 +15,14 @@
     ],
     "abstract": "\nWe formalize the proofs of two transcendence criteria by J. Hančl\nand P. Rucki that assert the transcendence of the sums of certain\ninfinite series built up by sequences that fulfil certain properties.\nBoth proofs make use of Roth's celebrated theorem on diophantine\napproximations to algebraic numbers from 1955  which we implement as\nan assumption without having formalised its proof.",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2019-03-28",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2019-03-28"
+        }
+    ],
     "dependencies": [
         "Prime_Number_Theorem"
     ]

@@ -19,9 +19,11 @@
         "Change history": "[2020-08-13]\nadded the formalization of the abstract slicing framework and joint data\nslicer (revision b1639ed541b7)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2019-07-05"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-07-05"
+        }
+    ],
     "dependencies": [
         "Containers"
     ]

@@ -17,10 +17,18 @@
     ],
     "abstract": "\nThe Isabelle/HOLCF-Prelude is a formalization of a large part of\nHaskell's standard prelude in Isabelle/HOLCF. We use it to prove\nthe correctness of the Eratosthenes' Sieve, in its\nself-referential implementation commonly used to showcase\nHaskell's laziness; prove correctness of GHC's\n\"fold/build\" rule and related rewrite rules; and certify a\nnumber of hints suggested by HLint.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-07-15",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-07-15"
+        }
+    ]
 }

@@ -22,13 +22,23 @@
         "Change history": "[2017-01-13]\nImprove VCG for nested parallels and sequential sections\n(revision 30739dbc3dcb)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-11-29",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-11-29"
+        }
+    ],
     "dependencies": [
         "Word_Lib"
     ]

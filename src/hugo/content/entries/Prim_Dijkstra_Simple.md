@@ -13,9 +13,11 @@
     ],
     "abstract": "\nWe verify purely functional, simple and efficient implementations of\nPrim's and Dijkstra's algorithms. This constitutes the first\nverification of an executable and even efficient version of\nPrim's algorithm. This entry formalizes the second part of our\nITP-2019 proof pearl <em>Purely Functional, Simple and Efficient\nPriority Search Trees and Applications to Prim and Dijkstra</em>.",
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2019-06-29"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-29"
+        }
+    ],
     "dependencies": [
         "Priority_Search_Trees"
     ]

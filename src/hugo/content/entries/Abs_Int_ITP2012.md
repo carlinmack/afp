@@ -12,10 +12,18 @@
     ],
     "abstract": "\nThis is the Isabelle formalization of the material decribed in the\neponymous <a href=\"https://doi.org/10.1007/978-3-642-32347-8_9\">ITP 2012 paper</a>.\nIt develops a generic abstract interpreter for a\nwhile-language, including widening and narrowing. The collecting\nsemantics and the abstract interpreter operate on annotated commands:\nthe program is represented as a syntax tree with the semantic\ninformation directly embedded, without auxiliary labels. The aim of\nthe formalization is simplicity, not efficiency or\nprecision. This is motivated by the inclusion of the material in a\ntheorem prover based course on semantics. A similar (but more\npolished) development is covered in the book\n<a href=\"https://doi.org/10.1007/978-3-319-10542-0\">Concrete Semantics</a>.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        }
+    ]
 }

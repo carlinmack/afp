@@ -15,13 +15,23 @@
         "Change history": "[2018-05-29]\nRevised axioms for the category locale.  Introduced notation for composition and \"in hom\".\n(revision 8318366d4575)<br>\n[2020-02-15]\nMove ConcreteCategory.thy from Bicategory to Category3 and use it systematically.\nMake other minor improvements throughout.\n(revision a51840d36867)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-06-26",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-06-26"
+        }
+    ],
     "dependencies": [
         "HereditarilyFinite"
     ]

@@ -19,11 +19,21 @@
         "Change history": "[2016-08-19]\nRemoved unused \"stop\" parameter and \"stop_no_eval\" assumption from the sifum_security locale.\n(revision dbc482d36372)\n[2016-09-27]\nAdded security locale support for the imposition of requirements on the initial memory.\n(revision cce4ceb74ddb)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-06-25",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-06-25"
+        }
+    ]
 }

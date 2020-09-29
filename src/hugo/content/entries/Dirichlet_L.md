@@ -13,10 +13,14 @@
     ],
     "abstract": "\n<p>This article provides a formalisation of Dirichlet characters\nand Dirichlet <em>L</em>-functions including proofs of\ntheir basic properties &ndash; most notably their analyticity,\ntheir areas of convergence, and their non-vanishing for &Re;(s)\n&ge; 1. All of this is built in a very high-level style using\nDirichlet series. The proof of the non-vanishing follows a very short\nand elegant proof by Newman, which we attempt to reproduce faithfully\nin a similar level of abstraction in Isabelle.</p> <p>This\nalso leads to a relatively short proof of Dirichlet’s Theorem, which\nstates that, if <em>h</em> and <em>n</em> are\ncoprime, there are infinitely many primes <em>p</em> with\n<em>p</em> &equiv; <em>h</em> (mod\n<em>n</em>).</p>",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        }
+    ],
     "dependencies": [
         "Zeta_Function",
         "Landau_Symbols",

@@ -14,13 +14,23 @@
     ],
     "abstract": "\nWe present a big step semantics of the filtering behavior of the\nLinux/netfilter iptables firewall. We provide algorithms to simplify\ncomplex iptables rulests to a simple firewall model (c.f. AFP entry <a\nhref=\"https://www.isa-afp.org/entries/Simple_Firewall.html\">Simple_Firewall</a>)\nand to verify spoofing protection of a ruleset.\nInternally, we embed our semantics into ternary logic, ultimately\nsupporting every iptables match condition by abstracting over\nunknowns. Using this AFP entry and all entries it depends on, we\ncreated an easy-to-use, stand-alone haskell tool called <a\nhref=\"http://iptables.isabelle.systems\">fffuu</a>. The tool does not\nrequire any input &mdash;except for the <tt>iptables-save</tt> dump of\nthe analyzed firewall&mdash; and presents interesting results about\nthe user's ruleset. Real-Word firewall errors have been uncovered, and\nthe correctness of rulesets has been proved, with the help of\nour tool.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-09-09",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-09-09"
+        }
+    ],
     "dependencies": [
         "Routing",
         "Native_Word"

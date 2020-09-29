@@ -17,9 +17,11 @@
         "Change history": "[2020-14-04] Incorporate Time_Monad of the AFP entry Root_Balanced_Tree."
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2020-01-14"
-    },
+    "olderReleases": [
+        {
+            "2019": "2020-01-14"
+        }
+    ],
     "dependencies": [
         "Akra_Bazzi",
         "Root_Balanced_Tree"

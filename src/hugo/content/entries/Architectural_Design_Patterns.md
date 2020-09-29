@@ -15,11 +15,17 @@
         "Change history": "[2018-05-25] changing the major assumption for blockchain architectures from alternative minings to relative mining frequencies (revision 5043c5c71685)<br>\n[2019-04-08] adapting the terminology honest instead of trusted, dishonest instead of untrusted (revision 7af3431a22ae)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2018-03-01",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2018-03-01"
+        }
+    ],
     "dependencies": [
         "DynamicArchitectures"
     ]

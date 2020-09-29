@@ -18,13 +18,26 @@
         "Change history": "[2017-10-18]\nadded Perron-Frobenius theorem for irreducible matrices with generalization\n(revision bda1f1ce8a1c)<br/>\n[2018-05-17]\nprove conjecture of CPP'18 paper Jordan blocks of spectral radius have maximum size\n(revision ffdb3794e5d5)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-05-20",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-18",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-18"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-05-20"
+        }
+    ],
     "dependencies": [
         "Jordan_Normal_Form",
         "Polynomial_Factorization",

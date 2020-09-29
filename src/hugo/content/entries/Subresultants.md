@@ -14,12 +14,20 @@
     ],
     "abstract": "\nWe formalize the theory of subresultants and the subresultant\npolynomial remainder sequence as described by Brown and Traub. As a\nresult, we obtain efficient certified algorithms for computing the\nresultant and the greatest common divisor of polynomials.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-04-07",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-04-07"
+        }
+    ],
     "dependencies": [
         "Jordan_Normal_Form",
         "Polynomial_Factorization"

@@ -15,11 +15,20 @@
     ],
     "abstract": "\nWe provide our Isabelle/HOL formalization of a Conflict-free\nReplicated Datatype for Internet Message Access Protocol commands.\nWe show that Strong Eventual Consistency (SEC) is guaranteed\nby proving the commutativity of concurrent operations. We base our\nformalization on the recently proposed \"framework for\nestablishing Strong Eventual Consistency for Conflict-free Replicated\nDatatypes\" (AFP.CRDT) from Gomes et al. Hence, we provide an\nadditional example of how the recently proposed framework can be used\nto design and prove CRDTs.",
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2017-11-10",
-        "2018": "2018-08-16",
-        "2019": "2020-01-14"
-    },
+    "olderReleases": [
+        {
+            "2019": "2020-01-14"
+        },
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-11-10"
+        }
+    ],
     "dependencies": [
         "CRDT"
     ]

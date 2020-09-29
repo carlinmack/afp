@@ -16,10 +16,14 @@
     ],
     "abstract": "\nThis Isabelle/HOL formalization refines the abstract ordered\nresolution prover  presented in Section 4.3 of Bachmair and\nGanzinger's \"Resolution Theorem Proving\" chapter in the\n<i>Handbook of Automated Reasoning</i>. The result is a\nfunctional implementation of a first-order prover.",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2018-11-29",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-11-29"
+        }
+    ],
     "dependencies": [
         "Ordered_Resolution_Prover",
         "First_Order_Terms",

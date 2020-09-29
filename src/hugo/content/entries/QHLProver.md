@@ -20,10 +20,14 @@
     ],
     "abstract": "\nWe formalize quantum Hoare logic as given in [1]. In particular, we\nspecify the syntax and denotational semantics of a simple model of\nquantum programs. Then, we write down the rules of quantum Hoare logic\nfor partial correctness, and show the soundness and completeness of\nthe resulting proof system. As an application, we verify the\ncorrectness of Grover’s algorithm.",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2019-03-25",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2019-03-25"
+        }
+    ],
     "dependencies": [
         "Jordan_Normal_Form",
         "Deep_Learning"

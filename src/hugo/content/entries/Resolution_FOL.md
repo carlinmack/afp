@@ -15,13 +15,23 @@
         "Change history": "[2018-01-24] added several new versions of the soundness and completeness theorems as described in the paper [Sch18]. <br>\n[2018-03-20] added a concrete instance of the unification and completeness theorems using the First-Order Terms AFP-entry from IsaFoR as described in the papers [Sch16] and [Sch18]."
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-06-30",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-06-30"
+        }
+    ],
     "dependencies": [
         "First_Order_Terms"
     ]

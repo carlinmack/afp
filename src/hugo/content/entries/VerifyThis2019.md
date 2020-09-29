@@ -14,9 +14,11 @@
     ],
     "abstract": "\nVerifyThis 2019 (http://www.pm.inf.ethz.ch/research/verifythis.html)\nwas a program verification competition associated with ETAPS 2019. It\nwas the 8th event in the VerifyThis competition series. In this entry,\nwe present polished and completed versions of our solutions that we\ncreated during the competition.",
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2019-10-25"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-10-25"
+        }
+    ],
     "dependencies": [
         "Sepref_IICF"
     ]

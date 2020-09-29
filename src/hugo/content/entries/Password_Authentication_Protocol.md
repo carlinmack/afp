@@ -12,10 +12,18 @@
     ],
     "abstract": "\nThis paper constructs a formal model of a Diffie-Hellman\npassword-based authentication protocol between a user and a smart\ncard, and proves its security. The protocol provides for the dispatch\nof the user's password to the smart card on a secure messaging\nchannel established by means of Password Authenticated Connection\nEstablishment (PACE), where the mapping method being used is Chip\nAuthentication Mapping. By applying and suitably extending\nPaulson's Inductive Method, this paper proves that the protocol\nestablishes trustworthy secure messaging channels, preserves the\nsecrecy of users' passwords, and provides an effective mutual\nauthentication service. What is more, these security properties turn\nout to hold independently of the secrecy of the PACE authentication\nkey.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-01-06",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-01-06"
+        }
+    ]
 }

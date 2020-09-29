@@ -15,12 +15,20 @@
         "Change history": "[2017-05-18]\nIntegrated material from MonoidalCategory/Category3Adapter into Category3/ and deleted adapter.\n(revision 015543cdd069)<br>\n[2018-05-29]\nModifications required due to 'Category3' changes.  Introduced notation for \"in hom\".\n(revision 8318366d4575)<br>\n[2020-02-15]\nCosmetic improvements.\n(revision a51840d36867)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-05-05",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-05-05"
+        }
+    ],
     "dependencies": [
         "Category3"
     ]

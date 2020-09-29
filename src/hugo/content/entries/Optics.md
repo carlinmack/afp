@@ -17,10 +17,18 @@
         "Change history": "[2020-03-02]\nAdded partial bijective and symmetric lenses.\nImproved alphabet command generating additional lenses and results.\nSeveral additional lens relations, including observational equivalence.\nAdditional theorems throughout.\nAdaptations for Isabelle 2020.\n(revision 44e2e5c)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-06-01",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-06-01"
+        }
+    ]
 }

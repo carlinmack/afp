@@ -19,10 +19,18 @@
         "Change history": "[2018-07-21] Proof of Pelletier's problem 34 (Andrews's Challenge) thanks to Asta Halkjær From."
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-01-04",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-01-04"
+        }
+    ]
 }

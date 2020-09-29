@@ -13,9 +13,11 @@
     ],
     "abstract": "\nThis entry contains the formalization that accompanies my PhD thesis\n(see https://lars.hupel.info/research/codegen/). I develop a verified\ncompilation toolchain from executable specifications in Isabelle/HOL\nto CakeML abstract syntax trees. This improves over the\nstate-of-the-art in Isabelle by providing a trustworthy procedure for\ncode generation.",
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2019-07-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-07-11"
+        }
+    ],
     "dependencies": [
         "CakeML",
         "Constructor_Funs",

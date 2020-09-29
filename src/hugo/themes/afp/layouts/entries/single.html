@@ -118,12 +118,14 @@
       <td class="links">Older releases:
         <ul>
           {{ with .Params.olderReleases }}
-          {{ range $key, $value := . }}
+          {{ range $map := . }}
+          {{ range $key, $value := $map }}
           <li>Isabelle {{ $key }}:
             <a href="../release/afp-{{- $entryName -}}-{{ $value }}.tar.gz">
               afp-{{- $entryName -}}-{{ $value }}.tar.gz
             </a>
           </li>
+          {{ end }}
           {{ end }}
           {{ else }}
           None

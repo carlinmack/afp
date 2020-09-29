@@ -16,9 +16,15 @@
         "Change history": "[2019-05-12]\nRenamed discr_mkt predicate to stk_strict_subs and got rid of predicate A for a more natural definition of the type discrete_market;\nrenamed basic quantity processes for coherent notation;\nrenamed value_process into val_process and closing_value_process to cls_val_process;\nrelaxed hypothesis of lemma CRR_market_fair_price.\nAdded functions to price some basic options.\n(revision 0b813a1a833f)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2018-07-18",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2018-07-18"
+        }
+    ]
 }

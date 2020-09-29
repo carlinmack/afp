@@ -14,9 +14,15 @@
     ],
     "abstract": "\nComputers may help us to understand --not just verify-- philosophical\narguments. By utilizing modern proof assistants in an iterative\ninterpretive process, we can reconstruct and assess an argument by\nfully formal means. Through the mechanization of a variant of St.\nAnselm's ontological argument by E. J. Lowe, which is a\nparadigmatic example of a natural-language argument with strong ties\nto metaphysics and religion, we offer an ideal showcase for our\ncomputer-assisted interpretive method.",
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2017-10-16",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-16"
+        }
+    ]
 }

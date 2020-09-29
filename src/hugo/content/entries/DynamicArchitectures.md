@@ -15,12 +15,20 @@
         "Change history": "[2018-06-07] adding logical operators to specify configuration traces (revision 09178f08f050)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-07-31",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-07-31"
+        }
+    ],
     "dependencies": [
         "Coinductive"
     ]

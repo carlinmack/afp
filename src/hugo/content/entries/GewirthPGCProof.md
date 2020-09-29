@@ -17,8 +17,12 @@
         "Change history": "[2019-04-09]\nadded proof for a stronger variant of the PGC and examplary inferences\n(revision 88182cb0a2f6)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2018-10-31",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-10-31"
+        }
+    ]
 }

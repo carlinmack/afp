@@ -26,11 +26,20 @@
         "Change history": "[2018-04-16] Integrated formal complexity bounds (Haslbeck, Thiemann)\n[2018-05-25] Integrated much faster LLL implementation based on integer arithmetic (Bottesch, Haslbeck, Thiemann)"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2018-02-03",
-        "2018": "2018-09-07",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-09-07"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2018-02-03"
+        }
+    ],
     "dependencies": [
         "Berlekamp_Zassenhaus",
         "Algebraic_Numbers"

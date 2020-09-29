@@ -12,8 +12,12 @@
     ],
     "abstract": "\n<p>This article defines the combinatorial structures known as\n<em>Independence Systems</em> and\n<em>Matroids</em> and provides basic concepts and theorems\nrelated to them. These structures play an important role in\ncombinatorial optimisation, e. g. greedy algorithms such as\nKruskal's algorithm. The development is based on Oxley's\n<a href=\"http://www.math.lsu.edu/~oxley/survey4.pdf\">`What\nis a Matroid?'</a>.</p>",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2018-11-20",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-11-20"
+        }
+    ]
 }

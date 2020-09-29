@@ -19,7 +19,7 @@ def addOlderReleases():
 
     with open("metadata/releases", "r") as f:
         prevName = ""
-        entryReleases = {}
+        entryReleases = []
         for line in f:
             line = line.strip()
             name, entryDateString = re.findall(
@@ -29,28 +29,33 @@ def addOlderReleases():
 
             if name != prevName:
                 if entryReleases:
+                    # remove most recent release
+                    entryReleases = entryReleases[:-1]
+                    # reverse list for display
+                    entryReleases = list(reversed(entryReleases))
+
                     data = {}
                     with open("entries/" + prevName + ".md") as file:
                         data = json.load(file)
 
                     data["olderReleases"] = entryReleases
 
-                    with open(
-                        "entries/" + prevName + ".md", "w", encoding="utf-8"
-                    ) as f:
+                    with open("entries/" + prevName + ".md", "w", encoding="utf-8") as f:
                         json.dump(data, f, ensure_ascii=False, indent=4)
 
                 prevName = name
-                entryReleases = {}
+                entryReleases = []
 
             # - 1 as we ignore the most recent release
-            for i in range(len(releaseDates) - 1):
-                if (
-                    entryReleaseDate >= releaseDates[i]
-                    and entryReleaseDate < releaseDates[i + 1]
-                ):
-                    entryReleases[releaseNames[i]] = entryDateString
-                    break
+            numReleases = len(releaseDates)
+            for i in range(numReleases):
+                if i + 1 < numReleases:
+                    if (entryReleaseDate >= releaseDates[i] and
+                        entryReleaseDate < releaseDates[i + 1]):
+                        entryReleases.append({releaseNames[i]: entryDateString})
+                        break
+                else:
+                    entryReleases.append({releaseNames[-1]: entryDateString})
 
 
 if __name__ == "__main__":

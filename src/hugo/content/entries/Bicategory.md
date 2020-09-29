@@ -15,9 +15,11 @@
         "Change history": "[2020-02-15]\nMove ConcreteCategory.thy from Bicategory to Category3 and use it systematically.\nMake other minor improvements throughout.\n(revision a51840d36867)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2020-01-09"
-    },
+    "olderReleases": [
+        {
+            "2019": "2020-01-09"
+        }
+    ],
     "dependencies": [
         "MonoidalCategory"
     ]

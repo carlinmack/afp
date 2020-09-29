@@ -14,9 +14,11 @@
     ],
     "abstract": "\nThese components formalise a semantic framework for the deductive\nverification of hybrid systems. They support reasoning about\ncontinuous evolutions of hybrid programs in the style of differential\ndynamics logic. Vector fields or flows model these evolutions, and\ntheir verification is done with invariants for the former or orbits\nfor the latter. Laws of modal Kleene algebra or categorical predicate\ntransformers implement the verification condition generation. Examples\nshow the approach at work.",
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2019-09-10"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-09-10"
+        }
+    ],
     "dependencies": [
         "Ordinary_Differential_Equations",
         "Transformer_Semantics",

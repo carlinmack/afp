@@ -20,11 +20,21 @@
     ],
     "abstract": "\nThis entry contains an extension to the Isabelle library for\nfixed-width machine words. In particular, the entry adds quickcheck setup\nfor words, printing as hexadecimals, additional operations, reasoning\nabout alignment, signed words, enumerations of words, normalisation of\nword numerals, and an extensive library of properties about generic\nfixed-width words, as well as an instantiation of many of these to the\ncommonly used 32 and 64-bit bases.",
     "licence": "BSD",
-    "olderReleases": {
-        "2016": "2016-06-09",
-        "2016-1": "2016-12-17",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2016-12-17"
+        },
+        {
+            "2016": "2016-06-09"
+        }
+    ]
 }

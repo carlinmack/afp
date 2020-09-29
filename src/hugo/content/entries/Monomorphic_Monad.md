@@ -15,10 +15,18 @@
         "Change history": "[2018-02-15]\nadded further specifications and implementations of non-determinism;\nmore examples\n(revision bc5399eea78e)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-05-11",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-05-11"
+        }
+    ]
 }

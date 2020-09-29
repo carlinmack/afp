@@ -17,12 +17,20 @@
         "Change history": "[2018-02-02]\nAdded a proof that probabilistic conditioning can be implemented by repeated sampling.\n(revision 305867c4e911)<br>"
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2016-1": "2017-05-11",
-        "2017": "2017-10-10",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2017-10-10"
+        },
+        {
+            "2016-1": "2017-05-11"
+        }
+    ],
     "dependencies": [
         "MFMC_Countable",
         "Pre_BZ"

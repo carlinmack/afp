@@ -15,9 +15,15 @@
     ],
     "abstract": "\nWe formalize with Isabelle/HOL a proof of a theorem by J. Hancl asserting the\nirrationality of the sum of a series consisting of rational numbers, built up\nby sequences that fulfill certain properties. Even though the criterion is a\nnumber theoretic result, the proof makes use only of analytical arguments. We\nalso formalize a corollary of the theorem for a specific series fulfilling the\nassumptions of the theorem.",
     "licence": "BSD",
-    "olderReleases": {
-        "2017": "2018-05-26",
-        "2018": "2018-08-16",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-08-16"
+        },
+        {
+            "2017": "2018-05-26"
+        }
+    ]
 }

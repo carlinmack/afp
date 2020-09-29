@@ -16,10 +16,14 @@
         "Change history": "[2020-15-04] Change representation of k-dimensional points from 'list' to\nHOL-Analysis.Finite_Cartesian_Product 'vec'. Update proofs\nto incorporate HOL-Analysis 'dist' and 'cbox' primitives."
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2019-06-04",
-        "2019": "2019-06-11"
-    },
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2019-06-04"
+        }
+    ],
     "dependencies": [
         "Median_Of_Medians_Selection"
     ]

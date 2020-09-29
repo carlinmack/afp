@@ -12,8 +12,12 @@
     ],
     "abstract": "\nThis work is a formalization of epistemic logic with countably many\nagents. It includes proofs of soundness and completeness for the axiom\nsystem K. The completeness proof is based on the textbook\n\"Reasoning About Knowledge\" by Fagin, Halpern, Moses and\nVardi (MIT Press 1995).",
     "licence": "BSD",
-    "olderReleases": {
-        "2018": "2018-10-29",
-        "2019": "2019-06-11"
-    }
+    "olderReleases": [
+        {
+            "2019": "2019-06-11"
+        },
+        {
+            "2018": "2018-10-29"
+        }
+    ]
 }

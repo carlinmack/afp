@@ -15,7 +15,9 @@
         "Change history": "[2020-06-03] The fully restricted system has been shown complete by updating the synthetic completeness proof."
     },
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2020-01-07"
-    }
+    "olderReleases": [
+        {
+            "2019": "2020-01-07"
+        }
+    ]
 }

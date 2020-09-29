@@ -13,9 +13,11 @@
     ],
     "abstract": "\n<p>This article provides a full formalisation of Chapter 8 of\nApostol's <em><a\nhref=\"https://www.springer.com/de/book/9780387901633\">Introduction\nto Analytic Number Theory</a></em>. Subjects that are\ncovered are:</p> <ul> <li>periodic arithmetic\nfunctions and their finite Fourier series</li>\n<li>(generalised) Ramanujan sums</li> <li>Gauss sums\nand separable characters</li> <li>induced moduli and\nprimitive characters</li> <li>the\nPólya&mdash;Vinogradov inequality</li> </ul>",
     "licence": "BSD",
-    "olderReleases": {
-        "2019": "2020-01-10"
-    },
+    "olderReleases": [
+        {
+            "2019": "2020-01-10"
+        }
+    ],
     "dependencies": [
         "Dirichlet_Series",
         "Polynomial_Interpolation",
