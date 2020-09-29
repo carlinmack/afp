@@ -19,6 +19,7 @@ def iniToJson():
     conf.read("metadata/metadata")
 
     authorsDictionary = {}
+    noIndex = False
     for section in conf.sections():
         data = {}
         for (key, val) in conf.items(section):
@@ -42,20 +43,30 @@ def iniToJson():
                 sepValue = val.split(":")
                 extraKey = sepValue[0].strip()
                 extraVal = "".join(sepValue[1:]).strip()
-                
+
+                if extraKey == "no-index" and extraVal == "true":
+                    noIndex = True
+                    continue
+
                 if "extra" in data:
                     data["extra"][extraKey] = extraVal
                 else:
                     data["extra"] = {extraKey: extraVal}
             else:
                 data[key] = val
+        
         if "license" not in data:
             data["licence"] = "BSD"
-        with open(entriesDir + section + ".md", "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=4)
+
+        if not noIndex:
+            with open(entriesDir + section + ".md", "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=4)
+        else:
+            noIndex = False
 
     with open(dataDir + "authors.json", "w", encoding="utf-8") as f:
         json.dump(authorsDictionary, f, ensure_ascii=False, indent=4)
+
 
 def processName(val, authorsDictionary):
     authors = val.split(",")
@@ -83,4 +94,3 @@ def processName(val, authorsDictionary):
 
 if __name__ == "__main__":
     iniToJson()
-
