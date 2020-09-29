@@ -27,6 +27,54 @@
   </tr>
   {{ end }}
 </table>
-<ul>
 
-</ul>
+{{ $Scratch := newScratch }}
+
+{{ range ((where site.RegularPages "Section" "entries").GroupByDate "2006" ).Reverse }}
+  {{ $collection := .}}
+  {{ $Scratch.Add "years" (slice .Key) }}
+  {{ with $Scratch.Get "articles_year" }}
+    {{ $lastYearArticleCount := index (last 1 .) 0 }}
+    {{ $articleCount := len $collection.Pages}}
+    {{ $Scratch.Add "articles_year" (slice (int (add $articleCount $lastYearArticleCount))) }}
+  {{ else }}
+    {{ $Scratch.Add "articles_year" (slice (len .Pages)) }}
+  {{ end }}
+{{ end }}
+
+<script>
+  // DATA
+  var years = [{{- delimit ($Scratch.Get "years") ", " | safeJS -}}];
+  var no_articles = [{{- delimit ($Scratch.Get "articles_year") ", " | safeJS -}}];
+</script>
+
+<h4>Growth in number of articles:</h4>
+<script src="/js/Chart.js"></script>
+<div class="chart">
+<canvas id="NumberOfArticles" width="400" height="400"></canvas>
+</div>
+<script>
+var ctx = document.getElementById("NumberOfArticles");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: years,
+        datasets: [{
+            label: 'size of the AFP in # of articles',
+            data: no_articles,
+            backgroundColor: "rgba(46, 45, 78, 1)"
+        }],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        },
+     }
+});
+</script>
