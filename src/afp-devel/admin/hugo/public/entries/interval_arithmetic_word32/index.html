@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Interval Arithmetic on 32-bit Words-Archive of Formal Proofs</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Interval Arithmetic on 32-bit Words" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/entries/interval_arithmetic_word32/" />
+<meta property="article:published_time" content="2019-11-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-11-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Interval Arithmetic on 32-bit Words"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/front.css" />
+  <link rel="icon" href="/images/favicon.ico" type="image/icon">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        processEscapes: true,
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    
+    <script id="MathJax-script" async src="/js/mathjax/es5/tex-mml-chtml.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+  
+</head>
+
+<body class="mathjax_ignore">
+  <table width="100%">
+    <tbody>
+      <tr>
+        
+        <td width="20%" align="center" valign="top">
+          <p>&nbsp;</p>
+<a href="/">
+  <img src="/images/isabelle.png" width="100" height="88" border=0>
+</a>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table class="nav" width="80%">
+  
+    
+    <tr>
+      <td class="nav"><a href="/">Home</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/about/">About</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/submitting/">Submission</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/updating/">Updating Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/using/">Using Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/search/">Search</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/statistics/">Statistics</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/topics/">Index</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/download/">Download</a></td>
+    </tr>
+    
+</table>
+        </td>
+
+
+        
+        <td width="80%" valign="top">
+          <div align="center">
+            <p>&nbsp;</p>
+<header>
+  
+  
+  <h1><font class='first'>I</font>nterval <font class='first'>A</font>rithmetic on 32-<font class='first'>B</font>it <font class='first'>W</font>ords
+  </h1>
+</header>
+<p>&nbsp;</p><table width="80%" class="data">
+  <tbody>
+    <tr>
+      <td class="datahead" width="20%">Title:</td>
+      <td class="data" width="80%">Interval Arithmetic on 32-bit Words</td>
+    </tr>
+
+    <tr>
+      <td class="datahead">Author:</td>
+      <td class="data"><a href="/authors/brandon-bohrer">Brandon Bohrer</a></td>
+    </tr><tr>
+      <td class="datahead">Submission date:</td>
+      <td class="data">2019-11-27</td>
+    </tr>
+
+    <tr>
+      <td class="datahead" valign="top">Abstract:</td>
+      <td class="abstract mathjax_process">Interval_Arithmetic implements conservative interval arithmetic
+computations, then uses this interval arithmetic to implement a simple
+programming language where all terms have 32-bit signed word values,
+with explicit infinities for terms outside the representable bounds.
+Our target use case is interpreters for languages that must have a
+well-understood low-level behavior.  We include a formalization of
+bounded-length strings which are used for the identifiers of our
+language. Bounded-length identifiers are useful in some applications,
+for example the <a href="https://www.isa-afp.org/entries/Differential_Dynamic_Logic.html">Differential_Dynamic_Logic</a> article,
+where a Euclidean space indexed by identifiers demands that identifiers
+are finitely many.</td>
+    </tr><tr>
+      <td class="datahead" valign="top">BibTeX:</td>
+      <td class="formatted">
+        <pre>@article{Interval_Arithmetic_Word32-AFP,
+  author  ={Brandon Bohrer},
+  title   ={Interval Arithmetic on 32-bit Words},
+  journal = {Archive of Formal Proofs},
+  month   =November,
+  year    =2019,
+  note    = {\url{http://isa-afp.org/entries/Interval_Arithmetic_Word32.html},
+            Formal proof development},
+  ISSN    = {2150-914x},
+}</pre>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="datahead">License:</td>
+      <td class="data"><a href="http://isa-afp.org/LICENSE">BSD License</a></td>
+    </tr><tr><td class="datahead">Depends On:</td>
+      <td class="data"><a href="/entries/word_lib">Word_Lib</a></td>
+    </tr></tbody>
+</table>
+<p></p><table class="links">
+  <tbody>
+    <tr>
+      <td class="links">
+        <a href="../browser_info/current/AFP/Interval_Arithmetic_Word32/outline.pdf">Proof
+          outline</a><br>
+        <a href="../browser_info/current/AFP/Interval_Arithmetic_Word32/document.pdf">Proof
+          document</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">
+        <a href="../browser_info/current/AFP/Interval_Arithmetic_Word32/index.html">Browse
+          theories</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">
+        <a href="../release/afp-Interval_Arithmetic_Word32-current.tar.gz">Download this entry</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">Older releases:
+        <ul><li>Isabelle2019:
+            <a href="../release/afp-Interval_Arithmetic_Word32-2019-11-28.tar.gz">
+              afp-Interval_Arithmetic_Word32-2019-11-28.tar.gz
+            </a>
+          </li></ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

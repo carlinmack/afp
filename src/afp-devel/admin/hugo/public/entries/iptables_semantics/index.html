@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Iptables Semantics-Archive of Formal Proofs</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Iptables Semantics" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/entries/iptables_semantics/" />
+<meta property="article:published_time" content="2016-09-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-09-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Iptables Semantics"/>
+<meta name="twitter:description" content=""/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/front.css" />
+  <link rel="icon" href="/images/favicon.ico" type="image/icon">
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        processEscapes: true,
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    
+    <script id="MathJax-script" async src="/js/mathjax/es5/tex-mml-chtml.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+  
+</head>
+
+<body class="mathjax_ignore">
+  <table width="100%">
+    <tbody>
+      <tr>
+        
+        <td width="20%" align="center" valign="top">
+          <p>&nbsp;</p>
+<a href="/">
+  <img src="/images/isabelle.png" width="100" height="88" border=0>
+</a>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table class="nav" width="80%">
+  
+    
+    <tr>
+      <td class="nav"><a href="/">Home</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/about/">About</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/submitting/">Submission</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/updating/">Updating Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/using/">Using Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/search/">Search</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/statistics/">Statistics</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/topics/">Index</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/download/">Download</a></td>
+    </tr>
+    
+</table>
+        </td>
+
+
+        
+        <td width="80%" valign="top">
+          <div align="center">
+            <p>&nbsp;</p>
+<header>
+  
+  
+  <h1><font class='first'>I</font>ptables <font class='first'>S</font>emantics
+  </h1>
+</header>
+<p>&nbsp;</p><table width="80%" class="data">
+  <tbody>
+    <tr>
+      <td class="datahead" width="20%">Title:</td>
+      <td class="data" width="80%">Iptables Semantics</td>
+    </tr>
+
+    <tr>
+      <td class="datahead">Authors:</td>
+      <td class="data"><a href="/authors/cornelius-diekmann">Cornelius Diekmann</a> and <a href="/authors/lars-hupel">Lars Hupel</a></td>
+    </tr><tr>
+      <td class="datahead">Submission date:</td>
+      <td class="data">2016-09-09</td>
+    </tr>
+
+    <tr>
+      <td class="datahead" valign="top">Abstract:</td>
+      <td class="abstract mathjax_process">We present a big step semantics of the filtering behavior of the
+Linux/netfilter iptables firewall. We provide algorithms to simplify
+complex iptables rulests to a simple firewall model (c.f. AFP entry <a
+href="https://www.isa-afp.org/entries/Simple_Firewall.html">Simple_Firewall</a>)
+and to verify spoofing protection of a ruleset.
+Internally, we embed our semantics into ternary logic, ultimately
+supporting every iptables match condition by abstracting over
+unknowns. Using this AFP entry and all entries it depends on, we
+created an easy-to-use, stand-alone haskell tool called <a
+href="http://iptables.isabelle.systems">fffuu</a>. The tool does not
+require any input —except for the <tt>iptables-save</tt> dump of
+the analyzed firewall— and presents interesting results about
+the user&rsquo;s ruleset. Real-Word firewall errors have been uncovered, and
+the correctness of rulesets has been proved, with the help of
+our tool.</td>
+    </tr><tr>
+      <td class="datahead" valign="top">BibTeX:</td>
+      <td class="formatted">
+        <pre>@article{Iptables_Semantics-AFP,
+  author  ={Cornelius Diekmann and Lars Hupel},
+  title   ={Iptables Semantics},
+  journal = {Archive of Formal Proofs},
+  month   =September,
+  year    =2016,
+  note    = {\url{http://isa-afp.org/entries/Iptables_Semantics.html},
+            Formal proof development},
+  ISSN    = {2150-914x},
+}</pre>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="datahead">License:</td>
+      <td class="data"><a href="http://isa-afp.org/LICENSE">BSD License</a></td>
+    </tr><tr><td class="datahead">Depends On:</td>
+      <td class="data"><a href="/entries/routing">Routing</a> and <a href="/entries/native_word">Native_Word</a></td>
+    </tr><tr><td class="datahead">Used by:</td>
+      <td class="data"><a href="/entries/loft/">LOFT</a></td>
+    </tr></tbody>
+</table>
+<p></p><table class="links">
+  <tbody>
+    <tr>
+      <td class="links">
+        <a href="../browser_info/current/AFP/Iptables_Semantics/outline.pdf">Proof
+          outline</a><br>
+        <a href="../browser_info/current/AFP/Iptables_Semantics/document.pdf">Proof
+          document</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">
+        <a href="../browser_info/current/AFP/Iptables_Semantics/index.html">Browse
+          theories</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">
+        <a href="../release/afp-Iptables_Semantics-current.tar.gz">Download this entry</a>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="links">Older releases:
+        <ul><li>Isabelle2019:
+            <a href="../release/afp-Iptables_Semantics-2019-06-11.tar.gz">
+              afp-Iptables_Semantics-2019-06-11.tar.gz
+            </a>
+          </li><li>Isabelle2018:
+            <a href="../release/afp-Iptables_Semantics-2018-08-16.tar.gz">
+              afp-Iptables_Semantics-2018-08-16.tar.gz
+            </a>
+          </li><li>Isabelle2017:
+            <a href="../release/afp-Iptables_Semantics-2017-10-10.tar.gz">
+              afp-Iptables_Semantics-2017-10-10.tar.gz
+            </a>
+          </li><li>Isabelle2016-1:
+            <a href="../release/afp-Iptables_Semantics-2016-12-17.tar.gz">
+              afp-Iptables_Semantics-2016-12-17.tar.gz
+            </a>
+          </li><li>Isabelle2016:
+            <a href="../release/afp-Iptables_Semantics-2016-09-09.tar.gz">
+              afp-Iptables_Semantics-2016-09-09.tar.gz
+            </a>
+          </li></ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
