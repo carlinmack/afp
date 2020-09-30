@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Referring to AFP Entries-Archive of Formal Proofs</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Referring to AFP Entries" />
+<meta property="og:description" content="Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others without having to include the AFP articles you depend on, here is how to do it.
+If you are using Isabelle2020, and have downloaded your AFP directory to /home/myself/afp, you should run the following command [1] to make the AFP session ROOTS available to Isabelle:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/using/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Referring to AFP Entries"/>
+<meta name="twitter:description" content="Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others without having to include the AFP articles you depend on, here is how to do it.
+If you are using Isabelle2020, and have downloaded your AFP directory to /home/myself/afp, you should run the following command [1] to make the AFP session ROOTS available to Isabelle:"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/css/front.css" />
+  <link rel="icon" href="/images/favicon.ico" type="image/icon">
+</head>
+
+<body class="mathjax_ignore">
+  <table width="100%">
+    <tbody>
+      <tr>
+        
+        <td width="20%" align="center" valign="top">
+          <p>&nbsp;</p>
+<a href="/">
+  <img src="/images/isabelle.png" width="100" height="88" border=0>
+</a>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<table class="nav" width="80%">
+  
+    
+    <tr>
+      <td class="nav"><a href="/">Home</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/about/">About</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/submitting/">Submission</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/updating/">Updating Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/using/">Using Entries</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/search/">Search</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/statistics/">Statistics</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/topics/">Index</a></td>
+    </tr>
+    
+    <tr>
+      <td class="nav"><a href="/download/">Download</a></td>
+    </tr>
+    
+</table>
+        </td>
+
+
+        
+        <td width="80%" valign="top">
+          <div align="center">
+            <p>&nbsp;</p>
+<header>
+  
+  
+  <h1><font class='first'>R</font>eferring to <font class='first'>A</font><font class='first'>F</font><font class='first'>P</font> <font class='first'>E</font>ntries
+  </h1>
+</header>
+<p>&nbsp;</p>
+<table class='descr' width="80%" >
+  <tbody>
+    <tr>
+      <td>
+        <div>
+          <p>Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others <em>without</em> having to include the AFP articles you depend on, here is how to do it.</p>
+<p>If you are using Isabelle2020, and have downloaded your AFP directory to <code>/home/myself/afp</code>, you should run the following command <a href="#1">[1]</a> to make the AFP session ROOTS available to Isabelle:</p>
+<pre><code>echo &quot;/home/myself/afp/thys&quot; &gt;&gt; ~/.isabelle/Isabelle2020/ROOTS
+</code></pre>
+<p>You can now refer to article <code>ABC</code> from the AFP in some theory of yours via</p>
+<pre><code>imports &quot;ABC.Some\_ABC\_Theory&quot;
+</code></pre>
+<p>This allows you to distribute your material separately from any AFP theories. Users of your distribution also need to install the AFP in the above manner.</p>
+<p>[1]: Tested for Linux and Mac installations ‐ it should be the same under cygwin on Windows.</p>
+
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
