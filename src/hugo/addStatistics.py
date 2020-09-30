@@ -4,13 +4,14 @@ import os
 import sys
 import json
 
-sys.path.append('admin/sitegen-lib')
+sys.path.append("admin/sitegen-lib")
 
 import templates
 from config import options, release_pattern
 from sitegen import parse, associate_releases, read_versions
 import metadata
 import afpstats
+
 
 def addStatistics():
     dataDir = "data/"
@@ -28,22 +29,24 @@ def addStatistics():
 
     stats = builder.generate_statistics()
 
-    loc_articles = [ article.loc for article in stats["articles_by_time"] ];
+    loc_articles = [article.loc for article in stats["articles_by_time"]]
 
-    all_articles = [ a.name for a in stats["articles_by_time"] ]
+    all_articles = [a.name for a in stats["articles_by_time"]]
 
-    data = {"num_lemmas": stats["num_lemmas"],
-              "num_loc": stats["num_loc"],
-              "articles_year": stats["articles_year"],
-              "loc_years": stats["loc_years"],
-              "author_years": stats["author_years"],
-              "author_years_cumulative": stats["author_years_cumulative"], 
-              "loc_articles": loc_articles,
-              "all_articles": all_articles}
-    
+    data = {
+        "num_lemmas": stats["num_lemmas"],
+        "num_loc": stats["num_loc"],
+        "articles_year": stats["articles_year"],
+        "loc_years": stats["loc_years"],
+        "author_years": stats["author_years"],
+        "author_years_cumulative": stats["author_years_cumulative"],
+        "loc_articles": loc_articles,
+        "all_articles": all_articles,
+    }
+
     with open(dataDir + "statistics.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     addStatistics()
