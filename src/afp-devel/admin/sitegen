@@ -33,7 +33,8 @@ else
 fi
 
 log "Checking presence of Pip ..."
-if [[ "$PYTHON -m pip --version" == *"No module named pip"* ]]; then
+
+if $PYTHON -m pip --version |& grep -q 'No module named pip'; then
   echo "Error: PIP not installed. See https://pip.pypa.io/en/stable/installing/"
   exit 1
 else
