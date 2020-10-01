@@ -224,6 +224,9 @@
     "Marie-Claude Gaudel": {
         "mailto": "mcg@lri.fr"
     },
+    "Makarius Wenzel": {
+        "mailto": "Makarius.wenzel@lri.fr"
+    },
     "Benedikt Nordhoff": {
         "mailto": "b_nord01@uni-muenster.de"
     },
@@ -488,6 +491,9 @@
     "Salomon Sickert": {
         "website": "https://www7.in.tum.de/~sickert",
         "mailto": "s.sickert@tum.de"
+    },
+    "Benedikt Seidl": {
+        "mailto": "benedikt.seidl@tum.de"
     },
     "Alexander Schimpf": {
         "mailto": "schimpfa@informatik.uni-freiburg.de"
@@ -807,9 +813,6 @@
     },
     "Lorenzo Gheri": {
         "mailto": "lor.gheri@gmail.com"
-    },
-    "Benedikt Seidl": {
-        "mailto": "benedikt.seidl@tum.de"
     },
     "André Platzer": {
         "website": "http://www.cs.cmu.edu/~aplatzer/"

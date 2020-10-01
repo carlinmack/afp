@@ -4,7 +4,8 @@ import re
 
 
 def addDependencies():
-    entriesDir = "entries/"
+    hugoDir = "admin/hugo/"
+    entriesDir = hugoDir + "content/entries/"
     rootDir = "thys"
 
     for entry in os.listdir(rootDir):
@@ -36,12 +37,12 @@ def addDependencies():
 
             if dependencies:
                 data = {}
-                with open("entries/" + entry + ".md") as file:
+                with open(entriesDir + entry + ".md") as file:
                     data = json.load(file)
 
                 data["dependencies"] = dependencies
 
-                with open("entries/" + entry + ".md", "w", encoding="utf-8") as f:
+                with open(entriesDir + entry + ".md", "w", encoding="utf-8") as f:
                     json.dump(data, f, ensure_ascii=False, indent=4)
 
 

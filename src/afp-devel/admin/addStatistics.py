@@ -14,7 +14,8 @@ import afpstats
 
 
 def addStatistics():
-    dataDir = "data/"
+    hugoDir = "admin/hugo/"
+    dataDir = hugoDir + "data/"
     options.templates_dir = "metadata/templates"
 
     entries = parse(os.path.join("metadata", "metadata"))

@@ -10,6 +10,9 @@ def addOlderReleases():
     releaseNames = []
     releaseDates = []
 
+    hugoDir = "admin/hugo/"
+    entriesDir = hugoDir + "content/entries/"
+
     with open("metadata/release-dates", "r") as f:
         for line in f.readlines():
             line = line.strip()
@@ -35,12 +38,12 @@ def addOlderReleases():
                     entryReleases = list(reversed(entryReleases))
 
                     data = {}
-                    with open("entries/" + prevName + ".md") as file:
+                    with open(entriesDir + prevName + ".md") as file:
                         data = json.load(file)
 
                     data["olderReleases"] = entryReleases
 
-                    with open("entries/" + prevName + ".md", "w", encoding="utf-8") as f:
+                    with open(entriesDir + prevName + ".md", "w", encoding="utf-8") as f:
                         json.dump(data, f, ensure_ascii=False, indent=4)
 
                 prevName = name

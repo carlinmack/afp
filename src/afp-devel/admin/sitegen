@@ -1,54 +1,63 @@
 #!/usr/bin/env bash
 
-# standard invocation of sitegen.py
+# For verbose output, pass -v
 
-# while getopts "t:r:p" OPT
-# do
-#     case "$OPT" in
-#       r)
-#         VERSION="$OPTARG"
-#         ;;
-#       t)
-#         ISABELLE_TOOL="$OPTARG"
-#         ;;
-#       p)
-#         USE_PYTHON_3=true
-#         ;;
-#     esac
-# done
-# shift $((OPTIND-1))
+_V=0
 
-# set_isabelle_tool
+while getopts "v" OPTION
+do
+  case $OPTION in
+    v) _V=1
+       ;;
+    *) 
+       ;;
+  esac
+done
 
-# echo "Checking presence of Hugo ..."
+function log () {
+    if [[ $_V -eq 1 ]]; then
+        echo "$@"
+    fi
+}
 
-# case "$(uname -s)" in
-#   Darwin)
-#     echo "Running on macOS, using system python"
-#     PYTHON="/usr/bin/python"
-#     ;;
-#   *)
-#     if [ "$USE_PYTHON_3" = false ]; then
-#       echo "Running on Linux, trying to find Python 2.x"
-#       PYTHON="$(which python2 2> /dev/null)"
-#       if [ -z "$PYTHON" ]; then
-#         PYTHON="$(which python 2> /dev/null)"
-#       fi
-#     else
-#       echo "Running on Linux, trying to find Python 3.x"
-#       PYTHON="$(which python3 2> /dev/null)"
-#     fi
-#     ;;
-# esac
+start=$(date +%s)
 
-# if [ ! -f "$PYTHON" ]; then
-#   fail "No suitable Python found"
-# else
-#   echo "Found Python at '$PYTHON'"
-# fi
+log "Checking presence of Python ..."
+PYTHON="$(command -v python3 2> /dev/null)"
 
+if [ ! -f "$PYTHON" ]; then
+  echo "No suitable Python found"
+  exit 1
+else
+  log "Found Python at '$PYTHON'"
+fi
 
-echo "Running sitegen ..."
-cd admin/hugo && hugo
+log "Checking presence of Pip ..."
+if [[ "$PYTHON -m pip --version" == *"No module named pip"* ]]; then
+  echo "Error: PIP not installed. See https://pip.pypa.io/en/stable/installing/"
+  exit 1
+else
+  log "Found Pip"
+fi
 
-cp -r public/* ../../web/
+log "Installing dependancies ..."
+$PYTHON -m pip install -r admin/requirements.txt -q
+
+log "Checking presence of Hugo ..."
+HUGO="$(command -v hugo 2> /dev/null)"
+
+if [ ! -f "$HUGO" ]; then
+  echo "Error: Hugo not installed. See https://gohugo.io/getting-started/installing/"
+  exit 1
+else
+  log "Found Hugo at '$HUGO'"
+fi
+
+log "Export metadata ..."
+$PYTHON admin/exportMetadata.py
+
+cd admin/hugo && $HUGO
+
+end=$(date +%s)
+runtime=$((end-start))
+echo "Total time: $runtime seconds" 

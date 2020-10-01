@@ -1,18 +1,25 @@
-import time
+from tqdm import tqdm
 
-from addOlderReleases import addOlderReleases
-from iniToJson import iniToJson
 from addDependencies import addDependencies
+from addOlderReleases import addOlderReleases
 from addStatistics import addStatistics
+from iniToJson import iniToJson
 
 if __name__ == "__main__":
-    tick = time.time()
+    t = tqdm(total=4, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s')
     
+    t.set_description("Export metadata to JSON")
     iniToJson()
+    t.update()
+    t.set_description("Add older releases")
     addOlderReleases()
+    t.update()
+    t.set_description("Add dependancies")
     addDependencies()
+    t.update()
+    t.set_description("Export statistics")
     # for this to work add `return data` at line 212 in templates.py
     addStatistics()
+    t.update()
 
-    print("--- %s seconds ---" % (time.time() - tick))
-
+    t.close()

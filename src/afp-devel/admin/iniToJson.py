@@ -6,8 +6,9 @@ import time
 
 
 def iniToJson():
-    entriesDir = "entries/"
-    dataDir = "data/"
+    hugoDir = "admin/hugo/"
+    entriesDir = hugoDir + "content/entries/"
+    dataDir = hugoDir + "data/"
 
     if not os.path.exists(entriesDir):
         os.mkdir(entriesDir)

@@ -1,2 +1,3 @@
 src/hugo/public/*
 src/afp-devel/.hg/
+**/__pycache__/

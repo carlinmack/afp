@@ -52,8 +52,6 @@
 {{- $Scratch.Add "all_articles" (slice (printf "'%s'" .File.TranslationBaseName )) -}}
 {{- end }}
 
-
-
 <script>
   // DATA
   var years = [{{- delimit ($Scratch.Get "years") ", " | safeJS -}}];

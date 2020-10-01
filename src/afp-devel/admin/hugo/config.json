@@ -3,6 +3,7 @@
     "languageCode": "en-gb",
     "title": "Archive of Formal Proofs",
     "theme": "afp",
+    "publishDir": "../../web",
     "taxonomies": {
         "author": "authors",
         "topic": "topics",
