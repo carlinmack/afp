@@ -122,13 +122,13 @@ first define the basic concepts and semantics of diagonal-free timed
 automata.  Based on this, we prove two types of decidability results
 for the language emptiness problem.    The first is the classic result
 of Alur and Dill [AD90, AD94],  which uses a finite partitioning of
-the state space into so-called <code>regions</code>.    Our second result focuses
-on an approach based on <code>Difference Bound Matrices (DBMs)</code>,  which is
+the state space into so-called `regions`.    Our second result focuses
+on an approach based on `Difference Bound Matrices (DBMs)`,  which is
 practically used by model checkers.  We prove the correctness of the
 basic forward analysis operations on DBMs.  One of these operations is
 the Floyd-Warshall algorithm for the all-pairs shortest paths problem.
 To obtain a finite search space, a widening operation has to be used
-for this kind of analysis.  We use Patricia Bouyer&rsquo;s [Bou04] approach
+for this kind of analysis.  We use Patricia Bouyer's [Bou04] approach
 to prove that this widening operation  is correct in the sense that
 DBM-based forward analysis in combination with the widening operation
 also decides language emptiness. The interesting property of this

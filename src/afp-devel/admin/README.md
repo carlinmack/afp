@@ -20,8 +20,9 @@ python3 get-pip.py
 sudo apt install hugo -y
 hugo version
 ```
-If the version is greater than 0.6 it should be good. Otherwise select a relevant version https://github.com/gohugoio/hugo/releases
+If the version is less than 0.62, select a relevant version https://github.com/gohugoio/hugo/releases and perform the following.
 ```bash
 wget https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Linux-64bit.deb
 sudo apt install ./hugo_0.75.1_Linux-64bit.deb
 ```
+you may need to add `/usr/local/bin/` to your path

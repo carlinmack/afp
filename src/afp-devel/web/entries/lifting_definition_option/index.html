@@ -113,12 +113,12 @@
 
     <tr>
       <td class="datahead" valign="top">Abstract:</td>
-      <td class="abstract mathjax_process"><p>We implemented a command that can be used to easily generate
-elements of a restricted type <tt>{x :: &lsquo;a. P x}</tt>,
+      <td class="abstract mathjax_process">We implemented a command that can be used to easily generate
+elements of a restricted type <tt>{x :: 'a. P x}</tt>,
 provided the definition is of the form
-<tt>f ys = (if check ys then Some(generate ys :: &lsquo;a) else None)</tt> where
-<tt>ys</tt> is a list of variables <tt>y1 &hellip; yn</tt> and
-<tt>check ys ==&gt; P(generate ys)</tt> can be proved.</p>
+<tt>f ys = (if check ys then Some(generate ys :: 'a) else None)</tt> where
+<tt>ys</tt> is a list of variables <tt>y1 ... yn</tt> and
+<tt>check ys ==> P(generate ys)</tt> can be proved.
 <p>
 In principle, such a definition is also directly possible using the
 <tt>lift_definition</tt> command. However, then this definition will not be

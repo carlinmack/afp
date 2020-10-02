@@ -26,7 +26,7 @@
 
     <tr>
       <td class="datahead" valign="top">Abstract:</td>
-      <td class="abstract mathjax_process">{{- $.Page.RenderString .Params.abstract -}}</td>
+      <td class="abstract mathjax_process">{{- trim .Params.abstract "\n" | safeHTML -}}</td>
     </tr>
 
     {{- with .Params.extra -}}
@@ -84,7 +84,8 @@
       {{- end -}}
       <td class="datahead">Used by:</td>
       <td class="data">
-        {{- delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}</td>
+        {{- delimit  ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
+      </td>
     </tr>{{- end -}}
   </tbody>
 </table>
@@ -116,8 +117,8 @@
 
     <tr>
       <td class="links">Older releases:
+        {{ with .Params.olderReleases -}}
         <ul>
-          {{- with .Params.olderReleases -}}
           {{- range $map := . -}}
           {{- range $key, $value := $map -}}
           <li>Isabelle {{- $key -}}:
@@ -127,10 +128,10 @@
           </li>
           {{- end -}}
           {{- end -}}
-          {{- else -}}
-          None
-          {{- end -}}
         </ul>
+        {{- else -}}
+        None
+        {{- end }}
       </td>
     </tr>
   </tbody>
