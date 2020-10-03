@@ -14,7 +14,7 @@ if __name__ == "__main__":
     t.set_description("Add older releases")
     addOlderReleases()
     t.update()
-    t.set_description("Add dependancies")
+    t.set_description("Add dependencies")
     addDependencies()
     t.update()
     t.set_description("Export statistics")
