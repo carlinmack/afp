@@ -27,5 +27,8 @@
               "weight": 8
            }
         ]
+    },
+    "outputs": {
+        "home": ["html", "rss", "json"]
     }
 }
