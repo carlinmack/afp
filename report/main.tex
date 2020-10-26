@@ -1,4 +1,4 @@
-\documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}    
+\documentclass[frontabs,bsc,singlespacing,parskip,deptreport]{infthesis}    
 
 \begin{document}
 
@@ -13,52 +13,201 @@
 \date{\today}
 
 \abstract{
-This is an example of {\tt infthesis} style.
+The Archive of Formal Proofs is the primary repository for Isabelle formal logic proofs on the internet. It functions as a journal with annual releases and to date over 350 authors have contributed. The AFP is  currently functional, however it is very demanding to maintain and unintuitive to browse. This report aims to improve upon the existing AFP by conducting user surveys and using this to guide development in the areas of user experience and maintainability. 
 }
 
 \maketitle
 
 \section*{Acknowledgements}
-Acknowledgements go here. 
+I would like to thank my family, my supervisor and my friends for supporting me throughout my university career.
 
 \tableofcontents
 
 %\pagenumbering{arabic}
 
-
 \chapter{Introduction}
 
-\section{Citations}
+The Archive of Formal Proofs is an online repository for Isabelle formal proofs. It functions as a journal as all entries are reviewed before being added. There are currently over 560 articles by over 360 authors. 
 
-Note that citations 
-(like \cite{Wenzel2019} or \cite{Goodwin2020})
-can be generated using {\tt BibTeX} or by using the
-{\tt thebibliography} environment. This makes sure that the
-table of contents includes an entry for the bibliography.
-Of course you may use any other method as well.
-
-\section{Options}
-
-There are various documentclass options, see the documentation.  Here we are
-using an option ({\tt bsc} or {\tt minf}) to choose the degree type, plus:
-\begin{itemize}
-\item {\tt frontabs} (recommended) to put the abstract on the front page;
-\item {\tt twoside} (recommended) to format for two-sided printing, with
-  each chapter starting on a right-hand page;
-\item {\tt singlespacing} (required) for single-spaced formating; and
-\item {\tt parskip} (a matter of taste) which alters the paragraph formatting so that
-paragraphs are separated by a vertical space, and there is no
-indentation at the start of each paragraph.
-\end{itemize}
+Unfortunately, the website for the AFP has not been updated visually or functionally in at least 16 years. This project aims to not only improve the user interface, but navigation and site generation too.
 
 \chapter{Background}
 
-Of course
-you may want to use several chapters and much more text than here.
+\section{Previous Work}
 
-\chapter{Implemenation}
+This is the second project at the University of Edinburgh which aims to improve the Archive of Formal Proofs. Goodwin\cite{Goodwin2020} outlined the development life cycle and re-implementation of the Archive with modern frameworks. The project completely overhauled the functionality and created a single page application with a database, log in and search. The final system is impressive, but the report lacks detail about the intricacies of the system. 
+
+\section{Formal Proof Assistants}
+
+\subsection{Mizar}
+
+The Mizar System was one of the first proof assisstants as it was created in 1973. Proofs are written in a single script file in the Mizar language and are collected in the Mizar Mathematical Library (MML). As of 2009 it was the largest formal maths library, and currently features 2,357 articles by 263 authors. The MML is very basic and is distributed by MML Query and a quarterly journal, \textit{Formalized Mathematics}. Submissions are reviewed by three experts in a double-blind process. Searching of the library is provided by MML Query, but it is in beta and seems to be early in development.
+
+\subsection{Isabelle}
+
+Isabelle is a theorem prover that was first released in 1986. It's written in Standard ML and users write their proofs in the Isar language, which is inspired by Mizar. It is generic and allows for many different object logics such as Zermelo–Fraenkel set theory or Higher Order Logic, the most popular. The Archive of Formal Proofs is where Isabelle entries are collected and so far over 360 authors have contributed 560 entries. Submission to the AFP is dependant on review from one of the editors of the project.
+
+\subsection{Coq}
+
+Shortly after Isabelle, Coq was released in 1989. Users write proofs in the Gallina language which is based on the Calculus of Inductive Constructions. It is written in OCaml and so far 308 people have contributed to 326 packages. Submission to the package index is performed through GitHub pull requests and each package is reviewed by a developer of Coq before accepting.
+
+\subsection{Lean}
+
+A new research project from Microsoft, Lean is a theorem prover that was created in 2013 and is based on the Calculus of Constructions, a predecessor to calculus used by Coq. It is written in C++ and proofs are written in the Lean language which can be compiled to Javascript. To date 116 people have contributed to the proof library, mathlib. Contributing to mathlib is also managed through GitHub pull requests and each proof must be approved by a reviewer.
+
+\section{The Archive of Formal Proofs}
+
+The Archive of Formal Proofs (AFP) is the primary online repository of Isabelle proofs. It first appeared on the internet in 2004 hosted as a static site on SourceForge at https://afp.sourceforge.net. Since then it has taken residence on it's own domain at https://isa-afp.org, however the site has visually and functionally stagnated since.
+
+As a product of it's time, it features a table based layout. This was the only non-Javascript way to make complex, structured layouts. However, since 2014 (\verb|flexbox|) and 2018 (\verb|grid|) much more responsive and cleaner layouts are achieveable.
+
+Searching for entries is provided by a Google SiteSearch, which is a Google search with "site:isa-afp.org" appended. This experience is functional, but relies on Google's indexing of content which may be outdated or incomplete. 
+
+It is possible to browse the code of each entry on the website, however the experience is very lacklustre. The pages are presented with barely any styling, but thankfully there syntax highlighting is applied. There is no outline of the lemmas available, so the navigation is manual scrolling or using the browser's find feature.
+
+The structure of the site itself can also prevent users from engaging with the content fully. It is not possible to see all the proofs by a user, other proofs in this topic or even the most frequently accessed proofs. This is likely because the site is generated via handwritten Python scripts which are maintained by a few developers. This means that maintenance of the site itself is kept to only functional needs. 
+
+Similarly, entries are expected to be maintained to work with the latest version of Isabelle. The process for doing so is involved and requires checking out the entire AFP repository and knowledge of the Mercurial version control. 
+
+Finally, submission to the Archive is similar to journal submission, but many requirements are placed on the the format of the proof. Once a submission is accepted, there is a 11 step process to update the repository and push the code to the live website. 
+
+If the user experience, user interface and maintainability were to all be improved, it is likely that engagement with the Archive would increase. In addition, reducing the barrier to make and maintain submissions would hopefully encourage more proofs to be contributed.
+
+\subsection{Repository}
+
+The Archive of Formal Proof consists of the following directory structure:
+
+\begin{itemize}
+  \item admin — site generation scripts and continuous integration configs
+  \item doc — documentation
+  \item etc — various data files
+  \item metadata — jinja2 templates and data files for topics, release dates and all entries
+  \item thys — directories containing every entry of the AFP
+  \item tools — various tools for checking and building the AFP (non-site generation)
+  \item web - the public AFP website
+\end{itemize}
+
+Site generation is performed by \verb|admin/sitegen-lib/sitegen.py| which is a handwritten Python static site generator. It builds various Python objects for each page, which is then rendered with Jinja2 templates. 
+
+\subsection{Entry information}
+
+The information about each entry can be found in \verb|metadata/metadata| which is an INI file. The INI file format is very simple and has two main elements, \verb|[sections]| and \verb|key = value| pairs. Each entry of the AFP stores it's information (apart from previous releases) in this 10,000 line file, which is used to generate the site.
+
+\chapter{User Survey}
+
+In order to understand users and their requirements, a structured survey was created to poll the \textit{Artificial Intelligence Modelling Lab}. 
+
+\section{Survey Design}
+
+The survey had the following six sections in order: 
+
+\begin{itemize}
+  \item Familiarity questions
+  \begin{itemize}
+    \item The first five questions of the survey filter users into different groups depending on their experience with the AFP.
+  \end{itemize}
+  \item SUS questions
+  \begin{itemize}
+    \item The 10 standard SUS questions were asked as an indicator of the usability of the current AFP. 
+  \end{itemize}
+  \item Navigation questions
+  \begin{itemize}
+    \item Investigate how easy it is to find pages and which pages are accessed most
+  \end{itemize}
+  \item Design questions
+  \begin{itemize}
+    \item Simple ratings of the look and feel and if it is intuitive
+  \end{itemize}
+  \item Browsing code within theories questions
+  \begin{itemize}
+    \item Rating the experience and a short answer question about features
+  \end{itemize}
+  \item Ranking priorities question
+  \begin{itemize}
+    \item Ranking which areas are most important to the user.
+  \end{itemize}
+\end{itemize}
+
+The survey was distributed via Microsoft Forms as it allows for complex surveys to be created and answered easily.
+
+\section{Results}
+
+The survey had 10 total respondants, and 6 respondants who use the Archive. 
+
+\chapter{Automated Audits}
+
+A number of structural website issues can be automatically detected by validators, auditors, and accessibility checkers. They cannot detect all issues, nor large structural problems, however they are a good bell weather for detecting whether good practises are followed.
+
+\section{W3C Validation}
+
+The W3C Validator is a very basic and only checks whether the syntax of the HTML is correct. It is maintained by the World Wide Web Consortium which is the organisation that is responsible for the HTML standard amoung many others.
+
+\textbf{HTML Results}
+
+The validator found 33 errors. Of these:
+
+\begin{itemize}
+    \item 3 for use of obsolete \verb|font| element
+    \item 6 for obsolete attributes on the \verb|td| element
+    \item 20 for obsolete attributes on the \verb|table| element
+    \item Use of obsolete \verb|align| attribute on the \verb|div| element
+    \item Use of obsolete \verb|border| attribute on the \verb|img| element
+    \item Lack of \verb|alt| attribute on the \verb|img| element
+    \item Extra unopened \verb|h1| tag
+\end{itemize}
+
+The validator advises using CSS to fix all but the last two issues, which would be instead be solved with HTML.
+
+\textbf{CSS Results}
+
+The validator found 10 errors. Of these:
+
+\begin{itemize}
+    \item 2 value errors for the \verb|font| property
+    \item 8 for non-existant values on properties (\verb|vertical-alignment|, \verb|text-transformation|, \verb|text-alignment|, \verb|text-indentation|)
+\end{itemize}
+
+All issues can be fixed by inferring what the intent of the CSS is, and correcting it.
+
+\section{Google Lighthouse}
+
+\section{Other Validators}
+
+\chapter{Implementation}
+
+\section{Site Generation}
+
+In order to extend the website, site generation must be understood so that changes can be made. I briefly examined the code base to see how extendable and maintainable the current solution was. It was clear that the code, while well structured, was not capable of competing with existing static site generators (SSGs), and would add a lot of time to the project to get all the moving parts working.
+
+I have had previous professional and personal experience with Hugo, a static site generator created in 2013. Over many other SSGs, Hugo excels in it's speed due to being written and templated in the Go language, a statically typed, compiled programming language. It allows for reusable components, functions, unlimited content types and support for generating pages from Markdown, JSON etc.
+
+\subsection{Structure}
+
+The new hugo site generator has the following structure. In contrast to the previous site generator all data and layouts are stored in the same directory, increasing cohesion. 
+
+\begin{itemize}
+    \item archetypes/default.md — A file which Structure for pages created with \verb|hugo new entry|
+    \item content — Markdown files for the non-entry pages (home, about, search, etc)
+    \begin{itemize}
+        \item entries — Markdown files for each entry in the AFP
+    \end{itemize}
+    \item data — JSON files which contain data about the authors, topics and for the statistics
+    \item themes/afp/
+    \begin{itemize}
+        \item layouts — HTML templates for each section and page type
+        \item static — Javascript, CSS and images for the website
+    \end{itemize}
+\end{itemize}
+
+\section{User Interface}
+
+\section{Navigation}
+
+\section{Code Browsing}
 
 \chapter{Conclusion}
+
+\section{Future Work}
 
 \bibliographystyle{plain}
 \bibliography{afp}
