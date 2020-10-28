@@ -146,6 +146,7 @@ td.entry {
  display: block;
  white-space: normal;
  list-style-position: inside;
+ position: relative;
 }
 
 table.data {
@@ -322,4 +323,26 @@ pre.code {
 
 .nobr {
  white-space: nowrap;
+}
+
+a[download] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #d9d9d9;
+    padding: 5px 7.5px;
+}
+
+a[download]::after {
+    content: url('/images/download.svg');
+    height: 1em;
+    position: relative;
+    top: 0.12em;
+    left: 0.3em;
+    width: 1em;
+}
+
+a[download]:hover,
+a[download]:focus {
+    text-decoration: none;
 }

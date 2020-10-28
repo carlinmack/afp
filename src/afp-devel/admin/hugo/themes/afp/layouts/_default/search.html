@@ -7,7 +7,7 @@
 {{ define "main" }}
 <form action="{{ "search" | absURL }}">
   <input id="searchInput" type="text" size="31" maxlength="255" value="">
-  <input type="submit" value="Search">
+  <button id="searchButton" type="button">Search</button>
 </form> <br>
 <table width="80%" class="entries">
   <tbody id="search-results">
@@ -20,9 +20,10 @@
 <script id="search-result-template" type="text/x-js-template">
     <tr>
       <td class="entry" id="summary-${key}">
+        <a download href="/release/afp-${shortname}-current.tar.gz">Download</a>
         <a class="title" href="${link}">${title}</a> <br>
         <p>${snippet}</p>
-        <i>${ isset topics }<p>Topics: ${topics}</p>${ end }</i>
+        <p><i>${ isset topics }Topics: ${topics}${ end }</i></p>
       </td>
     </tr>
 </script>

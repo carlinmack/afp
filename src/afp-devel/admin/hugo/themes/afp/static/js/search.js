@@ -12,11 +12,19 @@ document.getElementById("searchInput").onkeyup = function () {
 document.getElementById("searchInput").onkeydown = function (e) {
     if (e.key == "Enter") {
         e.preventDefault();
-        if ("undefined" !== typeof history.pushState) {
-            history.pushState({}, "Search the Archive - " + this.value, "?s=" + this.value);
-        } else {
-            window.location.assign(url);
-        }
+        handleSubmit(this.value);
+    }
+}
+
+document.getElementById("searchButton").addEventListener("click", () => {
+    handleSubmit(document.getElementById("searchInput").value)
+});
+
+function handleSubmit(value) {
+    if ("undefined" !== typeof history.pushState) {
+        history.pushState({}, "Search the Archive - " + value, "?s=" + value);
+    } else {
+        window.location.assign(url);
     }
 }
 
@@ -120,20 +128,17 @@ function populateResults(result) {
             title: value.item.title,
             link: value.item.permalink,
             topics: value.item.topics,
+            shortname: value.item.shortname,
             snippet: snippet
         });
 
         $('#search-results').append(output);
-
-        // console.log(snippetHighlights);
-        console.log("-----------");
 
         snippetHighlights.forEach(function (snipvalue, snipkey) {
             new Mark(document.getElementById("summary-" + resultKey)).mark(snipvalue);
         });
 
     });
-    console.log("===============");
 }
 
 
