@@ -2,8 +2,8 @@ var fuse;
 summaryInclude = 250;
 
 document.getElementById("searchInput").onkeyup = function () {
-    if (this.value) {
-        executeSearch(this.value);
+    if (this.value && this.value.length > 1) {
+            executeSearch(this.value);
     } else {
         document.getElementById("search-results").innerHTML =
             "<p>Please enter a word or phrase above</p>";
@@ -44,8 +44,7 @@ function loadSearch() {
                     threshold: 0.2,
                     minMatchCharLength: 3,
                     includeScore: true,
-                    keys: [
-                        {
+                    keys: [{
                             name: "title",
                             weight: 0.8,
                         },
@@ -70,24 +69,26 @@ function loadSearch() {
     httpRequest.send();
 }
 
-function executeSearch(searchQuery) {
+function executeSearch(searchQuery, all=false) {
     var result = fuse.search(searchQuery);
 
     if (result.length > 0) {
-        populateResults(result, searchQuery);
+        populateResults(result, searchQuery, all);
     } else {
         document.getElementById("search-results").innerHTML = "<p>No matches found</p>";
     }
 }
 
-function populateResults(result, searchQuery) {
+function populateResults(result, searchQuery, all=false) {
     document.getElementById("search-results").innerHTML =
-        '<tr id="search-results"> <td class="head">Matching pages</td> </tr>';
+        '<tr id="search-results"> <td class="head">Matching entries</td> </tr>';
 
-    result.slice(0, 15).forEach(function (value, resultKey) {
-        var contents = value.item.abstract;
+    var limit = all ? result.length : 15;
+
+    result.slice(0, limit).forEach(function (value, resultKey) {
+        var abstract = value.item.abstract;
         var snippet = "";
-        var snippetHighlights = [];
+        var snippetHighlights = [searchQuery];
 
         // console.log(value);
 
@@ -99,9 +100,9 @@ function populateResults(result, searchQuery) {
                     );
                 }
             } else if (mvalue.key == "abstract") {
-                if (contents.length < summaryInclude) {
+                if (abstract.length < summaryInclude) {
                     start = 0;
-                    end = contents.length - 1;
+                    end = abstract.length - 1;
                     index = 0;
                 } else {
                     // find index of longest match
@@ -113,11 +114,11 @@ function populateResults(result, searchQuery) {
                         start = mvalue.indices[index][0] - summaryInclude / 2;
                         if (
                             mvalue.indices[index][1] + summaryInclude / 2 <
-                            contents.length
+                            abstract.length
                         ) {
                             end = mvalue.indices[index][1] + summaryInclude / 2;
                         } else {
-                            end = contents.length;
+                            end = abstract.length;
                         }
                     } else {
                         start = 0;
@@ -125,7 +126,7 @@ function populateResults(result, searchQuery) {
                     }
                 }
 
-                snippet += contents.substring(start, end);
+                snippet += abstract.substring(start, end);
                 snippetHighlights.push(
                     mvalue.value.substring(
                         mvalue.indices[index][0],
@@ -161,12 +162,20 @@ function populateResults(result, searchQuery) {
                 snipvalue,
                 markOptions
             );
-            new Mark(document.getElementById("summary-" + resultKey)).mark(
-                searchQuery,
-                markOptions
-            );
         });
     });
+
+    if (!all) {
+        var btn = document.createElement("button"); 
+        btn.innerHTML = "Show all results";
+
+        btn.addEventListener("click", function () {
+            var searchQuery = document.getElementById("searchInput").value;
+            executeSearch(searchQuery, true);
+        })
+
+        document.getElementById('search-results').appendChild(btn);
+    }
 }
 
 function render(templateString, data) {
