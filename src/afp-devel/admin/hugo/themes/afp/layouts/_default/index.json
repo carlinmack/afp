@@ -2,8 +2,8 @@
 	{{-  jsonify . -}}
 {{ else }}
 	{{- $.Scratch.Add "index" slice -}}
-	{{- range where .Site.RegularPages "Type" "eq"  "entries" -}}
-		{{- $.Scratch.Add "index" (dict "title" .Title "abstract" (replaceRE "\n" " " .Params.abstract) "topics" .Params.topics "permalink" .Permalink "date" (.Date.Format "January 2") "shortname" .File.TranslationBaseName ) -}}
+	{{- range $index, $element := where .Site.RegularPages "Type" "eq"  "entries" -}}
+		{{- $.Scratch.Add "index" (dict "id" $index "title" $element.Title "abstract" (replaceRE "\n" " " $element.Params.abstract) "topics" $element.Params.topics "permalink" $element.Permalink "date" (.Date.Format "January 2") "shortname" $element.File.TranslationBaseName ) -}}
 	{{- end -}}
 	{{- $.Scratch.Get "index" | jsonify -}}
 {{ end }}
