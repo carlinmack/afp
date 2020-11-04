@@ -10,4 +10,3 @@ $(document).ready(function() {
 			.append(' <a id="bib" href="" onclick="show(this);return false;">[...]</a>');
 	});
 });
-

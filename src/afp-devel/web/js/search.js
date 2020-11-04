@@ -13,7 +13,7 @@ function handleSubmit(value) {
     if (typeof history.pushState !== "undefined") {
         history.pushState({}, "Search the Archive - " + value, "?s=" + value);
     } else {
-        var url = "TODO"
+        var url = "TODO";
         window.location.assign(url);
     }
 }
@@ -24,11 +24,8 @@ function loadSearch(entries, authors, topics) {
         tokenize: "forward",
         doc: {
             id: "id",
-            field: [
-                "title",
-                "abstract"
-            ]
-        }
+            field: ["title", "abstract"],
+        },
     });
 
     var authorIndex = new FlexSearch({
@@ -37,7 +34,7 @@ function loadSearch(entries, authors, topics) {
         doc: {
             id: "id",
             field: "name",
-        }
+        },
     });
 
     var topicIndex = new FlexSearch({
@@ -46,14 +43,14 @@ function loadSearch(entries, authors, topics) {
         doc: {
             id: "id",
             field: "name",
-        }
+        },
     });
 
     var indices = {
-        "entry": entryIndex,
-        "author": authorIndex,
-        "topic": topicIndex
-    }
+        entry: entryIndex,
+        author: authorIndex,
+        topic: topicIndex,
+    };
 
     indices["entry"].add(entries);
     indices["author"].add(authors);
@@ -92,17 +89,21 @@ function executeSearch(indices, searchQuery) {
         limit: 3,
     });
 
-
     if (entryResults.length > 0) {
         populateResults(entryResults, searchQuery, indices);
     } else {
-        document.getElementById("search-results").innerHTML = "<p>No matches found</p>";
+        var text = "<p>No matches found</p><br><a href='https://www.google.com/search?q=";
+        text += searchQuery + " site:isa-afp.org' target='_blank' rel='noreferrer noopener'>";
+        text += "Search with Google</a>";
+        document.getElementById("search-results").innerHTML = text;
     }
 
-    document.getElementById("authorTopic").innerHTML = '';
+    document.getElementById("authorTopic").innerHTML = "";
 
-    if (authorResults.length > 0) populateSmallResults(authorResults, searchQuery, 'author', indices);
-    if (topicResults.length > 0) populateSmallResults(topicResults, searchQuery, 'topic', indices);
+    if (authorResults.length > 0)
+        populateSmallResults(authorResults, searchQuery, "author", indices);
+    if (topicResults.length > 0)
+        populateSmallResults(topicResults, searchQuery, "topic", indices);
 }
 
 function populateResults(results, searchQuery, indices, all = false) {
@@ -124,10 +125,10 @@ function populateResults(results, searchQuery, indices, all = false) {
             link: value.permalink,
             topics: value.topics,
             shortname: value.shortname,
-            abstract: value.abstract
+            abstract: value.abstract,
         });
 
-        $("#search-results").append(output);
+        resultsTable.insertAdjacentHTML("beforeend", output);
     });
 
     if (results.length > 15 && !all) {
@@ -136,11 +137,11 @@ function populateResults(results, searchQuery, indices, all = false) {
 
         btn.addEventListener("click", function () {
             var entryResults = indices["entry"].search({
-                query: searchQuery
+                query: searchQuery,
             });
 
             populateResults(entryResults, searchQuery, indices, true);
-        })
+        });
 
         resultsTable.appendChild(btn);
     }
@@ -149,33 +150,32 @@ function populateResults(results, searchQuery, indices, all = false) {
 }
 
 function populateSmallResults(results, searchQuery, key, indices, all = false) {
-    var resultsTable = document.getElementById(key + '-results')
-    var name = key[0].toUpperCase() + key.substring(1) + "s"
+    var resultsTable = document.getElementById(key + "-results");
+    var name = key[0].toUpperCase() + key.substring(1) + "s";
 
     if (!resultsTable) {
+        var base =
+            '<table width="40%" class="entries"><tbody id="' + key + '-results"><tr>';
+        base += '<td class="head">' + name + "</td></tr></tbody></table>";
 
-        var base = '<table width="40%" class="entries"><tbody id="' + key + '-results"><tr>'
-        base += '<td class="head">' + name + '</td></tr></tbody></table>'
-
-        document.getElementById('authorTopic').insertAdjacentHTML('beforeend', base);
-        resultsTable = document.getElementById(key + '-results')
+        document.getElementById("authorTopic").insertAdjacentHTML("beforeend", base);
+        resultsTable = document.getElementById(key + "-results");
     } else {
-        resultsTable.innerHTML = '<tr><td class="head">' + name + '</td></tr>'
+        resultsTable.innerHTML = '<tr><td class="head">' + name + "</td></tr>";
     }
 
-    var list = document.createElement('p')
-
     var limit = all ? results.length : 2;
+    var list = document.createElement("p");
 
     results.slice(0, limit).forEach((result, resultKey) => {
-        var anchor = document.createElement('a');
+        var anchor = document.createElement("a");
         anchor.href = result.link;
         anchor.innerHTML = result.name;
-        list.appendChild(anchor)
-        if (resultKey != results.length - 1) list.append(", ")
-    })
+        list.appendChild(anchor);
+        if (resultKey != results.length - 1) list.append(", ");
+    });
 
-    resultsTable.insertAdjacentElement('beforeend', list)
+    resultsTable.insertAdjacentElement("beforeend", list);
 
     if (results.length > 2 && !all) {
         var btn = document.createElement("button");
@@ -183,11 +183,11 @@ function populateSmallResults(results, searchQuery, key, indices, all = false) {
 
         btn.addEventListener("click", function () {
             var entryResults = indices[key].search({
-                query: searchQuery
+                query: searchQuery,
             });
 
             populateSmallResults(entryResults, searchQuery, key, indices, true);
-        })
+        });
 
         resultsTable.appendChild(btn);
     }
@@ -228,11 +228,13 @@ function param(name) {
 
 document.addEventListener("DOMContentLoaded", function () {
     Promise.all([
-        fetch('/index.json'),
-        fetch('/authors/index.json'),
-        fetch('/topics/index.json')
-    ]).then(function (responses) {
-        // Get a JSON object from each of the responses
-        return Promise.all(responses.map((response) => response.json()));
-    }).then(data => loadSearch(...data));
+        fetch("/index.json"),
+        fetch("/authors/index.json"),
+        fetch("/topics/index.json"),
+    ])
+        .then(function (responses) {
+            // Get a JSON object from each of the responses
+            return Promise.all(responses.map((response) => response.json()));
+        })
+        .then((data) => loadSearch(...data));
 });

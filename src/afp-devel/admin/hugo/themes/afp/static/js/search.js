@@ -92,7 +92,10 @@ function executeSearch(indices, searchQuery) {
     if (entryResults.length > 0) {
         populateResults(entryResults, searchQuery, indices);
     } else {
-        document.getElementById("search-results").innerHTML = "<p>No matches found</p>";
+        var text = "<p>No matches found</p><br><a href='https://www.google.com/search?q=";
+        text += searchQuery + " site:isa-afp.org' target='_blank' rel='noreferrer noopener'>";
+        text += "Search with Google</a>";
+        document.getElementById("search-results").innerHTML = text;
     }
 
     document.getElementById("authorTopic").innerHTML = "";
@@ -125,7 +128,7 @@ function populateResults(results, searchQuery, indices, all = false) {
             abstract: value.abstract,
         });
 
-        $("#search-results").append(output);
+        resultsTable.insertAdjacentHTML("beforeend", output);
     });
 
     if (results.length > 15 && !all) {
