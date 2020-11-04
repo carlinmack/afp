@@ -13,7 +13,7 @@ function handleSubmit(value) {
     if (typeof history.pushState !== "undefined") {
         history.pushState({}, "Search the Archive - " + value, "?s=" + value);
     } else {
-        var url = "TODO"
+        var url = "TODO";
         window.location.assign(url);
     }
 }
@@ -24,11 +24,8 @@ function loadSearch(entries, authors, topics) {
         tokenize: "forward",
         doc: {
             id: "id",
-            field: [
-                "title",
-                "abstract"
-            ]
-        }
+            field: ["title", "abstract"],
+        },
     });
 
     var authorIndex = new FlexSearch({
@@ -37,7 +34,7 @@ function loadSearch(entries, authors, topics) {
         doc: {
             id: "id",
             field: "name",
-        }
+        },
     });
 
     var topicIndex = new FlexSearch({
@@ -46,14 +43,14 @@ function loadSearch(entries, authors, topics) {
         doc: {
             id: "id",
             field: "name",
-        }
+        },
     });
 
     var indices = {
-        "entry": entryIndex,
-        "author": authorIndex,
-        "topic": topicIndex
-    }
+        entry: entryIndex,
+        author: authorIndex,
+        topic: topicIndex,
+    };
 
     indices["entry"].add(entries);
     indices["author"].add(authors);
@@ -76,48 +73,45 @@ function loadSearch(entries, authors, topics) {
     };
 }
 
-function executeSearch(indices, searchQuery, all = false) {
-    var entryResults;
-    if (all) {
-        entryResults = indices["entry"].search({
-            query: searchQuery
-        });
-    } else {
-        entryResults = indices["entry"].search({
-            query: searchQuery,
-            limit: 15,
-        });
-    }
+function executeSearch(indices, searchQuery) {
+    var entryResults = indices["entry"].search({
+        query: searchQuery,
+        limit: 16,
+    });
 
     var topicResults = indices["topic"].search({
-        query: searchQuery
+        query: searchQuery,
+        limit: 3,
     });
 
     var authorResults = indices["author"].search({
-        query: searchQuery
+        query: searchQuery,
+        limit: 3,
     });
 
-
     if (entryResults.length > 0) {
-        populateResults(indices, entryResults, searchQuery, all);
+        populateResults(entryResults, searchQuery, indices);
     } else {
         document.getElementById("search-results").innerHTML = "<p>No matches found</p>";
     }
 
-    document.getElementById("authorTopic").innerHTML = '';
+    document.getElementById("authorTopic").innerHTML = "";
 
-    if (authorResults.length > 0) populateAuthorResults(authorResults, searchQuery, all);
-    if (topicResults.length > 0) populateTopicResults(topicResults, searchQuery, all);
-
-    new Mark(document.getElementById("search-results")).mark(searchQuery);
-    new Mark(document.getElementById("authorTopic")).mark(searchQuery);
+    if (authorResults.length > 0)
+        populateSmallResults(authorResults, searchQuery, "author", indices);
+    if (topicResults.length > 0)
+        populateSmallResults(topicResults, searchQuery, "topic", indices);
 }
 
-function populateResults(indices, results, searchQuery, all = false) {
-    document.getElementById("search-results").innerHTML =
+function populateResults(results, searchQuery, indices, all = false) {
+    const resultsTable = document.getElementById("search-results");
+
+    resultsTable.innerHTML =
         '<tr id="search-results"> <td class="head">Entries</td> </tr>';
 
-    results.forEach(function (value, resultKey) {
+    var limit = all ? results.length : 15;
+
+    results.slice(0, limit).forEach(function (value, resultKey) {
         // pull template from hugo template definition
         var templateDefinition = document.getElementById("search-result-template")
             .innerHTML;
@@ -128,60 +122,74 @@ function populateResults(indices, results, searchQuery, all = false) {
             link: value.permalink,
             topics: value.topics,
             shortname: value.shortname,
-            abstract: value.abstract
+            abstract: value.abstract,
         });
 
         $("#search-results").append(output);
     });
 
-    if (results.length >= 15 && !all) {
+    if (results.length > 15 && !all) {
         var btn = document.createElement("button");
         btn.innerHTML = "Show all results";
 
         btn.addEventListener("click", function () {
-            var searchQuery = document.getElementById("searchInput").value;
-            executeSearch(indices, searchQuery, true);
-        })
+            var entryResults = indices["entry"].search({
+                query: searchQuery,
+            });
 
-        document.getElementById('search-results').appendChild(btn);
+            populateResults(entryResults, searchQuery, indices, true);
+        });
+
+        resultsTable.appendChild(btn);
     }
+
+    new Mark(resultsTable).mark(searchQuery);
 }
 
-function populateAuthorResults(results, searchQuery, all = false) {
-    var base = `<table width="40%" class="entries"><tbody id="author-results"><tr>
-    <td class="head">Authors</td></tr></tbody></table>`
+function populateSmallResults(results, searchQuery, key, indices, all = false) {
+    var resultsTable = document.getElementById(key + "-results");
+    var name = key[0].toUpperCase() + key.substring(1) + "s";
 
-    document.getElementById('authorTopic').insertAdjacentHTML('beforeend', base);
+    if (!resultsTable) {
+        var base =
+            '<table width="40%" class="entries"><tbody id="' + key + '-results"><tr>';
+        base += '<td class="head">' + name + "</td></tr></tbody></table>";
 
-    var list = document.createElement('p')
+        document.getElementById("authorTopic").insertAdjacentHTML("beforeend", base);
+        resultsTable = document.getElementById(key + "-results");
+    } else {
+        resultsTable.innerHTML = '<tr><td class="head">' + name + "</td></tr>";
+    }
 
-    results.forEach((result, key) => {
-        var anchor = document.createElement('a');
+    var limit = all ? results.length : 2;
+    var list = document.createElement("p");
+
+    results.slice(0, limit).forEach((result, resultKey) => {
+        var anchor = document.createElement("a");
         anchor.href = result.link;
         anchor.innerHTML = result.name;
-        list.appendChild(anchor)
-        if (key != results.length - 1) list.append(", ")
-    })
-    document.getElementById('author-results').insertAdjacentElement('beforeend', list)
-}
+        list.appendChild(anchor);
+        if (resultKey != results.length - 1) list.append(", ");
+    });
 
-function populateTopicResults(results, searchQuery, all = false) {
-    var base = `<table width="40%" class="entries"><tbody id="topic-results"><tr>
-    <td class="head">Topics</td></tr></tbody></table>`
+    resultsTable.insertAdjacentElement("beforeend", list);
 
-    document.getElementById('authorTopic').insertAdjacentHTML('beforeend', base);
+    if (results.length > 2 && !all) {
+        var btn = document.createElement("button");
+        btn.innerHTML = "Show all";
 
-    var list = document.createElement('p')
+        btn.addEventListener("click", function () {
+            var entryResults = indices[key].search({
+                query: searchQuery,
+            });
 
-    results.forEach((result, key) => {
-        var anchor = document.createElement('a');
-        anchor.href = result.link;
-        anchor.innerHTML = result.name;
-        list.appendChild(anchor)
-        if (key != results.length - 1) list.append(", ")
-    })
+            populateSmallResults(entryResults, searchQuery, key, indices, true);
+        });
 
-    document.getElementById('topic-results').insertAdjacentElement('beforeend', list)
+        resultsTable.appendChild(btn);
+    }
+
+    new Mark(resultsTable).mark(searchQuery);
 }
 
 function render(templateString, data) {
@@ -217,11 +225,13 @@ function param(name) {
 
 document.addEventListener("DOMContentLoaded", function () {
     Promise.all([
-        fetch('/index.json'),
-        fetch('/authors/index.json'),
-        fetch('/topics/index.json')
-    ]).then(function (responses) {
-        // Get a JSON object from each of the responses
-        return Promise.all(responses.map((response) => response.json()));
-    }).then(data => loadSearch(...data));
+        fetch("/index.json"),
+        fetch("/authors/index.json"),
+        fetch("/topics/index.json"),
+    ])
+        .then(function (responses) {
+            // Get a JSON object from each of the responses
+            return Promise.all(responses.map((response) => response.json()));
+        })
+        .then((data) => loadSearch(...data));
 });
