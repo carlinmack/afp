@@ -29,6 +29,7 @@
         ]
     },
     "outputs": {
-        "home": ["html", "rss", "json"]
+        "home": ["html", "rss", "json"],
+        "taxonomyTerm": ["html", "json"]
     }
 }

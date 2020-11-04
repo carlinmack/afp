@@ -3,17 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Search the Archive-Archive of Formal Proofs</title><meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Search the Archive" />
-<meta property="og:description" content="Use Google to search the archive. It will look in entry descriptions as well as in the Isabelle theories and PDF proof documents
-Web Archive of Formal Proofs
- Google may take some time to index new pages. Very new Submissions might be missed." />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/search/" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Search the Archive"/>
-<meta name="twitter:description" content="Use Google to search the archive. It will look in entry descriptions as well as in the Isabelle theories and PDF proof documents
-Web Archive of Formal Proofs
- Google may take some time to index new pages. Very new Submissions might be missed."/>
+<meta name="twitter:description" content=""/>
 <link rel="stylesheet" type="text/css" media="screen" href="/css/front.css" />
   <link rel="icon" href="/images/favicon.ico" type="image/icon">
 </head>
@@ -84,37 +80,33 @@
   </h1>
 </header>
 <p>&nbsp;</p>
-<table  width="80%" >
-  <tbody>
+<form action="/search">
+  <input id="searchInput" type="text" size="31" maxlength="255" value=""><button id="searchButton" type="button">Search</button>
+</form> <br>
+<div id="authorTopic"></div> <br>
+<table width="80%" class="entries">
+  <tbody id="search-results">
     <tr>
-      <td>
-        <div>
-          <p>Use Google to search the archive. It will look in entry descriptions as well as in the Isabelle theories and PDF proof documents</p>
-<FORM method=GET action="https://www.google.com/search">
-  <TABLE bgcolor="#FFFFFF">
-    <tr>
-      <td>
-        <A HREF="https://www.google.com/">
-          <IMG SRC="https://www.google.com/logos/Logo_40wht.gif" border="0" ALT="Google"></A>
-      </td>
-      <td>
-        <INPUT TYPE=text name=q size=31 maxlength=255 value="">
-        <INPUT type=submit name=btnG VALUE="Google Search">
-        <font size=-1>
-          <input type=hidden name=domains value="isa-afp.org"><br><input type=radio name=sitesearch value=""> Web <input
-            type=radio name=sitesearch value="isa-afp.org" checked>Archive of Formal Proofs<br>
-        </font>
-      </td>
-    </tr>
-  </TABLE>
-</FORM>
-<p>Google may take some time to index new pages. Very new Submissions might be missed.</p>
-
-        </div>
-      </td>
+      <td class="head">Matching entries</td>
     </tr>
   </tbody>
 </table>
+
+<script id="search-result-template" type="text/x-js-template">
+    <tr>
+      <td class="entry" id="summary-${key}">
+        <a download href="/release/afp-${shortname}-current.tar.gz">Download</a>
+        <a class="title" href="${link}">${title}</a> <br>
+        <p>${abstract}</p>
+        <p><i>${ isset topics }Topics: ${topics}${ end }</i></p>
+      </td>
+    </tr>
+</script>
+
+<script src="/js/flexsearch.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="/js/search.js"></script>
 
           </div>
         </td>
