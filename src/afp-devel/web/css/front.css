@@ -346,3 +346,47 @@ a[download]:hover,
 a[download]:focus {
     text-decoration: none;
 }
+/* Inline #1 | http://localhost:1313/search/?s=site */
+
+#searchInputautocomplete-list {
+    width: 214px;
+    position: absolute;
+    margin-bottom: 24px;
+    font-weight: 400;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.form-container {
+    width: 290px;
+    text-align: left;
+}
+
+#searchInputautocomplete-list div {
+    padding: 5px 0;
+    padding: 8px 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+#searchButton {
+    height: 23px;
+}
+
+#searchInput {
+    width: 215px;
+    height: 25px;
+    padding: 2px 6px;
+}
+
+#searchButton {
+    width: 60px;
+    height: 26px;
+}
+
+.autocomplete-active {
+    background: #eee;
+}

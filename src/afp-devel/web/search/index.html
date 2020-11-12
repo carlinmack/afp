@@ -81,7 +81,13 @@
 </header>
 <p>&nbsp;</p>
 <form action="/search">
-  <input id="searchInput" type="text" size="31" maxlength="255" value=""><button id="searchButton" type="button">Search</button>
+  <div class='form-container'>
+    <input id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
+      type="button">Search</button>
+    <div id="searchInputautocomplete-list" style="display: none">
+      <div></div>
+    </div>
+  </div>
 </form> <br>
 <div id="authorTopic"></div> <br>
 <table width="80%" class="entries">
@@ -95,8 +101,8 @@
 <script id="search-result-template" type="text/x-js-template">
     <tr>
       <td class="entry" id="summary-${key}">
-        <a download href="/release/afp-${shortname}-current.tar.gz">Download</a>
-        <a class="title" href="${link}">${title}</a> <br>
+        <a download href="https://isa-afp.org/release/afp-${shortname}-current.tar.gz">Download</a>
+        <a class="title" href="https://isa-afp.org/entries/${link}.html">${title}</a> <br>
         <p>${abstract}</p>
         <p><i>${ isset topics }Topics: ${topics}${ end }</i></p>
       </td>

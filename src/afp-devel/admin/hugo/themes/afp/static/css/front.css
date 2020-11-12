@@ -346,3 +346,45 @@ a[download]:hover,
 a[download]:focus {
     text-decoration: none;
 }
+
+#searchInputautocomplete-list {
+    width: 214px;
+    position: absolute;
+    margin-bottom: 24px;
+    font-weight: 400;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.form-container {
+    width: 290px;
+    text-align: left;
+}
+
+#searchInputautocomplete-list div {
+    padding: 5px 0;
+    padding: 8px 12px;
+    line-height: 16px;
+    cursor: pointer;
+}
+
+
+#searchInput {
+    width: 215px;
+    padding: 6px;
+    font-size: 16px;
+}
+
+#searchButton {
+    width: 68px;
+    height: 34px;
+    font-size: 16px;
+}
+
+.autocomplete-active,
+#searchInputautocomplete-list div:hover {
+    background: #eee;
+}
