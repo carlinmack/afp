@@ -346,7 +346,6 @@ a[download]:hover,
 a[download]:focus {
     text-decoration: none;
 }
-/* Inline #1 | http://localhost:1313/search/?s=site */
 
 #searchInputautocomplete-list {
     width: 214px;
@@ -372,21 +371,20 @@ a[download]:focus {
     cursor: pointer;
 }
 
-#searchButton {
-    height: 23px;
-}
 
 #searchInput {
     width: 215px;
-    height: 25px;
-    padding: 2px 6px;
+    padding: 6px;
+    font-size: 16px;
 }
 
 #searchButton {
-    width: 60px;
-    height: 26px;
+    width: 68px;
+    height: 34px;
+    font-size: 16px;
 }
 
-.autocomplete-active {
+.autocomplete-active,
+#searchInputautocomplete-list div:hover {
     background: #eee;
 }

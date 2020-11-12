@@ -61,6 +61,10 @@ function loadSearch(entries, authors, topics, keywords) {
             case "ArrowUp":
             case "Down":
             case "ArrowDown":
+            case "Left":
+            case "ArrowLeft":
+            case "Right":
+            case "ArrowRight":
                 break;
             case "Escape":
                 hideAutocomplete();
@@ -69,13 +73,23 @@ function loadSearch(entries, authors, topics, keywords) {
                 if (this.value && this.value.length > 1) {
                     executeSearch(indices, this.value);
                 } else {
-                    clearAutocomplete()
+                    hideAutocomplete()
+                    hideFindFacts()
                     document.getElementById("authorTopic").innerHTML = "";
                     document.getElementById("search-results").innerHTML =
                         "<p>Please enter a word or phrase above</p>";
                 }
         }
     });
+
+    var memoQueryFindFacts = memoizer(queryFindFacts)
+    input.addEventListener('keyup', debounce(() => {
+        var searchTerm = input.value
+        if (searchTerm && searchTerm.length > 2) {
+            memoQueryFindFacts(searchTerm)
+                .then(results => populateFindFactsResults(searchTerm, results))
+        }
+    }, 400))
 
     input.addEventListener("blur", () => {
         setTimeout(hideAutocomplete, 100)
@@ -92,12 +106,11 @@ function loadSearch(entries, authors, topics, keywords) {
     input.addEventListener("keydown", function (event) {
         switch (event.key) {
             case "Enter":
+                event.preventDefault(); // prevent the form from being submitted
                 if (currentFocus > -1) {
-                    event.preventDefault(); // prevent the form from being submitted
                     items[currentFocus].click();
                     currentFocus = -1;
                 } else {
-                    e.preventDefault();
                     handleSubmit(this.value);
                 }
                 break;
@@ -119,9 +132,48 @@ function loadSearch(entries, authors, topics, keywords) {
         item.addEventListener('touchstart', handleClick)
         item.addEventListener('click', handleClick)
     }
+
+    async function queryFindFacts(searchTerm) {
+        var body = '{"filters":[{"field":"SourceCode","filter":{"Term":{"inner":"';
+        body += searchTerm + '"}}}],';
+        body += '"fields":["Command","ConstantTypeFacet","Kind","SourceTheoryFacet"],';
+        body += '"maxFacets":5}';
+
+        const response = await fetch('https://search.isabelle.in.tum.de/v1/default_Isabelle2020_AFP2020/facet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'accept': 'application/json',
+            },
+            body: body
+        });
+        const data = await response.json();
+        return data["Kind"];
+    }
+
+    function debounce(callback, wait) {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(function () {
+                callback.apply(this, args)
+            }, wait);
+        };
+    }
+
+    function memoizer(fun) {
+        let cache = {}
+        return function (n) {
+            if (cache[n] != undefined) {
+                return cache[n]
+            } else {
+                let result = fun(n)
+                cache[n] = result
+                return result
+            }
+        }
+    }
 }
-
-
 
 function executeSearch(indices, searchQuery) {
     var entryResults = indices["entry"].search({
@@ -147,11 +199,9 @@ function executeSearch(indices, searchQuery) {
     if (entryResults.length > 0) {
         populateResults(entryResults, searchQuery, indices);
     } else {
-        var text = '<p>No matches found</p><br>Search for definitions or constants with '
-        text += '<a href=\'https://search.isabelle.in.tum.de#search/default_Isabelle2020_AFP2020?q={"term"%3A"'
-        text += searchQuery + '"}\' target="_blank" rel="noreferrer noopener">FindFacts'
-        text += '</a> or on all pages of the AFP, including PDFs, with <a href="https://www.google.com/search?q='
-        text += searchQuery + ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
+        var text = '<p>No matches found</p><br>Search on all pages of the AFP, including'
+        text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery
+        text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
         text += "Google</a><br/>";
         document.getElementById("search-results").innerHTML = text;
     }
@@ -168,10 +218,24 @@ function executeSearch(indices, searchQuery) {
 }
 
 function populateResults(results, searchQuery, indices, all = false) {
+    if (searchQuery.length < 3) {
+        hideFindFacts()
+    } else {
+        var findFacts = document.getElementById('findFacts')
+        if (!findFacts) {
+            // create FindFacts results table
+            findFactsTable = '<div id="findFacts"><br><table width="80%" class="entries"><tbody><tr>'
+            findFactsTable += '<td class="head">FindFacts Results</td></tr><tr><td class="entry"'
+            findFactsTable += ' id="find-facts-results">...</td></tr></tbody></table</div>'
+            document.getElementById('authorTopic').insertAdjacentHTML("afterend", findFactsTable)
+        } else {
+            document.getElementById("find-facts-results").innerHTML = "..."
+        }
+    }
+
     const resultsTable = document.getElementById("search-results");
 
-    resultsTable.innerHTML =
-        '<tr id="search-results"> <td class="head">Entries</td> </tr>';
+    resultsTable.innerHTML = '<tr> <td class="head">Entries</td> </tr>';
 
     var limit = all ? results.length : 15;
 
@@ -208,6 +272,38 @@ function populateResults(results, searchQuery, indices, all = false) {
     }
 
     new Mark(resultsTable).mark(searchQuery);
+
+    function render(templateString, data) {
+        var conditionalMatches, conditionalPattern, copy;
+        conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
+        // since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
+        copy = templateString;
+        while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
+            if (data[conditionalMatches[1]]) {
+                // valid key, remove conditionals, leave contents.
+                copy = copy.replace(conditionalMatches[0], conditionalMatches[2]);
+            } else {
+                // not valid, remove entire section
+                copy = copy.replace(conditionalMatches[0], "");
+            }
+        }
+        templateString = copy;
+        // now any conditionals removed we can do simple substitution
+        var key, find, re;
+        for (key in data) {
+            find = "\\$\\{\\s*" + key + "\\s*\\}";
+            re = new RegExp(find, "g");
+            templateString = templateString.replace(re, data[key]);
+        }
+        return templateString;
+    }
+}
+
+function hideFindFacts() {
+    var findFacts = document.getElementById('findFacts');
+    if (findFacts) {
+        findFacts.outerHTML = "";
+    }
 }
 
 function populateSmallResults(results, searchQuery, key, indices, all = false) {
@@ -256,35 +352,25 @@ function populateSmallResults(results, searchQuery, key, indices, all = false) {
     new Mark(resultsTable).mark(searchQuery);
 }
 
-function render(templateString, data) {
-    var conditionalMatches, conditionalPattern, copy;
-    conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
-    // since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
-    copy = templateString;
-    while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
-        if (data[conditionalMatches[1]]) {
-            // valid key, remove conditionals, leave contents.
-            copy = copy.replace(conditionalMatches[0], conditionalMatches[2]);
-        } else {
-            // not valid, remove entire section
-            copy = copy.replace(conditionalMatches[0], "");
-        }
-    }
-    templateString = copy;
-    // now any conditionals removed we can do simple substitution
-    var key, find, re;
-    for (key in data) {
-        find = "\\$\\{\\s*" + key + "\\s*\\}";
-        re = new RegExp(find, "g");
-        templateString = templateString.replace(re, data[key]);
-    }
-    return templateString;
-}
+function populateFindFactsResults(searchTerm, data) {
+    var resultsElement = document.getElementById('find-facts-results')
+    if (Object.keys(data).length !== 0 && resultsElement) {
+        let urlPrefix = 'https://search.isabelle.in.tum.de/#search/default_Isabelle2020_AFP2020?q={"term":"'
+        urlPrefix += searchTerm + '","facets":{"Kind":["'
+        const urlSuffix = '"]}}'
 
-function param(name) {
-    return decodeURIComponent(
-        (location.search.split(name + "=")[1] || "").split("&")[0]
-    ).replace(/\+/g, " ");
+        links = []
+
+        Object.entries(data).forEach(([name, count]) => {
+            let value = "<a href='" + urlPrefix + name + urlSuffix + "' target='_blank' "
+            value += "rel='noreferrer noopener' >" + count + " " + name + "s</a>"
+            links.push(value)
+        });
+        
+        resultsElement.innerHTML = links.join(", ")
+    } else {
+        resultsElement.innerHTML = "No results"
+    }
 }
 
 function handleSubmit(value) {
@@ -296,30 +382,7 @@ function handleSubmit(value) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    var input = document.getElementById("searchInput");
-    var urlQuery = param("s");
-    if (urlQuery) {
-        input.value = urlQuery;
-    }
-    input.focus();
-
-    document.getElementById("searchButton").addEventListener("click", () => {
-        handleSubmit(document.getElementById("searchInput").value);
-    });
-
-    Promise.all([
-            fetch("/index.json"),
-            fetch("/authors/index.json"),
-            fetch("/topics/index.json"),
-            fetch("/data/keywords.json")
-        ])
-        .then(function (responses) {
-            // Get a JSON object from each of the responses
-            return Promise.all(responses.map((response) => response.json()));
-        })
-        .then((data) => loadSearch(...data));
-});
+// Autocomplete ------------------------------------------------------------------------
 
 function hideAutocomplete() {
     var list = document.getElementById("searchInputautocomplete-list");
@@ -401,3 +464,34 @@ function getItems() {
         if (items) return items;
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    var input = document.getElementById("searchInput");
+    var urlQuery = param("s");
+    if (urlQuery) {
+        input.value = urlQuery;
+    }
+    input.focus();
+
+    document.getElementById("searchButton").addEventListener("click", () => {
+        handleSubmit(document.getElementById("searchInput").value);
+    });
+
+    Promise.all([
+            fetch("/index.json"),
+            fetch("/authors/index.json"),
+            fetch("/topics/index.json"),
+            fetch("/data/keywords.json")
+        ])
+        .then(function (responses) {
+            // Get a JSON object from each of the responses
+            return Promise.all(responses.map((response) => response.json()));
+        })
+        .then((data) => loadSearch(...data));
+
+    function param(name) {
+        return decodeURIComponent(
+            (location.search.split(name + "=")[1] || "").split("&")[0]
+        ).replace(/\+/g, " ");
+    }
+});
