@@ -30,5 +30,8 @@
     "dependencies": [
         "Coinductive",
         "Nested_Multisets_Ordinals"
+    ],
+    "relatedEntries": [
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

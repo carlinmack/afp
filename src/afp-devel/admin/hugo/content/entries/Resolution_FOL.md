@@ -34,5 +34,8 @@
     ],
     "dependencies": [
         "First_Order_Terms"
+    ],
+    "relatedEntries": [
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

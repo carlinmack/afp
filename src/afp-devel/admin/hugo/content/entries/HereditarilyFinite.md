@@ -43,5 +43,10 @@
         {
             "2013-1": "2013-11-17"
         }
+    ],
+    "relatedEntries": [
+        "Incompleteness",
+        "Goedel_HFSet_Semantic",
+        "Syntax_Independent_Logic"
     ]
 }

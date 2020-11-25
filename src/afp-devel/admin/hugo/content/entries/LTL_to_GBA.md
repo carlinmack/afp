@@ -43,5 +43,10 @@
         "CAVA_Automata",
         "LTL",
         "Stuttering_Equivalence"
+    ],
+    "relatedEntries": [
+        "LTL_to_DRA",
+        "Stuttering_Equivalence",
+        "LTL_Master_Theorem"
     ]
 }

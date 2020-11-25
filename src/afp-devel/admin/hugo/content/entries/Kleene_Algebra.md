@@ -54,5 +54,10 @@
         {
             "2012": "2013-01-16"
         }
+    ],
+    "relatedEntries": [
+        "KAD",
+        "KAT_and_DRA",
+        "Relation_Algebra"
     ]
 }

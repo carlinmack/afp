@@ -4,9 +4,9 @@ import re
 
 
 def addDependencies():
-    hugoDir = "admin/hugo/"
+    hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
-    rootDir = "thys"
+    rootDir = "../thys"
 
     for entry in os.listdir(rootDir):
         rootFile = os.path.join(rootDir, entry, "ROOT")
@@ -15,9 +15,12 @@ def addDependencies():
                 lines = f.read()
 
                 parent = re.search(
-                    rf"session \"?{re.escape(entry)}\"? .* = ([\w\"-]+) +", lines)
+                    rf"session \"?{re.escape(entry)}\"? .* = ([\w\"-]+) +", lines
+                )
                 imported = re.findall(
-                    rf"session \"?{re.escape(entry)}\"? (.|\n)*?sessions([\s\w\"-]+?)\n  \w", lines)
+                    rf"session \"?{re.escape(entry)}\"? (.|\n)*?sessions([\s\w\"-]+?)\n  \w",
+                    lines,
+                )
 
                 if parent:
                     parent = [parent.group(1)]
@@ -32,8 +35,11 @@ def addDependencies():
                     dependencies = parent
 
                 dependencies = [x.strip().replace('"', "") for x in dependencies]
-                dependencies = [x for x in dependencies
-                                if len(x) > 0 and not re.match("HOL", x)]
+                dependencies = [
+                    x for x in dependencies if len(x) > 0 and not re.match("HOL", x)
+                ]
+                # remove duplicates but preserve order
+                dependencies = list(dict.fromkeys(dependencies))
 
             if dependencies:
                 data = {}
@@ -46,5 +52,5 @@ def addDependencies():
                     json.dump(data, f, ensure_ascii=False, indent=4)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     addDependencies()

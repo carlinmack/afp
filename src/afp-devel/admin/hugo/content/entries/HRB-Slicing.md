@@ -64,5 +64,10 @@
     ],
     "dependencies": [
         "Jinja"
+    ],
+    "relatedEntries": [
+        "Slicing",
+        "InformationFlowSlicing",
+        "InformationFlowSlicing_Inter"
     ]
 }

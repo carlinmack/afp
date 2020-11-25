@@ -23,5 +23,8 @@
         "Jordan_Normal_Form",
         "Farkas",
         "Linear_Inequalities"
+    ],
+    "relatedEntries": [
+        "Farkas"
     ]
 }

@@ -31,5 +31,8 @@
     ],
     "dependencies": [
         "Incompleteness"
+    ],
+    "relatedEntries": [
+        "Goedel_HFSet_Semantic"
     ]
 }

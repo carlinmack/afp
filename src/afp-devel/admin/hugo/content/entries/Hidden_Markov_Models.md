@@ -27,5 +27,8 @@
     "dependencies": [
         "Markov_Models",
         "Monad_Memo_DP"
+    ],
+    "relatedEntries": [
+        "Optimal_BST"
     ]
 }

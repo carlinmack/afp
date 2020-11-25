@@ -35,5 +35,8 @@
     "dependencies": [
         "Noninterference_CSP",
         "List_Interleaving"
+    ],
+    "relatedEntries": [
+        "Noninterference_Generic_Unwinding"
     ]
 }

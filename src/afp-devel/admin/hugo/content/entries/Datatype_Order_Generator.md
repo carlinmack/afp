@@ -53,5 +53,8 @@
     "dependencies": [
         "Deriving",
         "Native_Word"
+    ],
+    "relatedEntries": [
+        "Deriving"
     ]
 }

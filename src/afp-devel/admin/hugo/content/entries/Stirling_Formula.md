@@ -28,7 +28,11 @@
     ],
     "dependencies": [
         "Bernoulli",
-        "Bernoulli",
         "Landau_Symbols"
+    ],
+    "relatedEntries": [
+        "Euler_MacLaurin",
+        "Error_Function",
+        "Lambert_W"
     ]
 }

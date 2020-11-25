@@ -34,5 +34,10 @@
     ],
     "dependencies": [
         "Discrete_Summation"
+    ],
+    "relatedEntries": [
+        "Bell_Numbers_Spivey",
+        "Card_Equiv_Relations",
+        "Card_Number_Partitions"
     ]
 }

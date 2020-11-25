@@ -39,5 +39,8 @@
     "dependencies": [
         "Heard_Of",
         "Stuttering_Equivalence"
+    ],
+    "relatedEntries": [
+        "Heard_Of"
     ]
 }

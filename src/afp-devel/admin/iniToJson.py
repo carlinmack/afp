@@ -6,7 +6,7 @@ import time
 
 
 def iniToJson():
-    hugoDir = "admin/hugo/"
+    hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
     dataDir = hugoDir + "data/"
 
@@ -17,7 +17,7 @@ def iniToJson():
         os.mkdir(dataDir)
 
     conf = configparser.ConfigParser()
-    conf.read("metadata/metadata")
+    conf.read("../metadata/metadata")
 
     authorsDictionary = {}
     noIndex = False

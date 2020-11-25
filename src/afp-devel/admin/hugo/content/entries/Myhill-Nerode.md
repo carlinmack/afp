@@ -63,5 +63,10 @@
         "Regular-Sets",
         "Open_Induction",
         "Well_Quasi_Orders"
+    ],
+    "relatedEntries": [
+        "Finite_Automata_HF",
+        "Decreasing-Diagrams-II",
+        "Posix-Lexing"
     ]
 }

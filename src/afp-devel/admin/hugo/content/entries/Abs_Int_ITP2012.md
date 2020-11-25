@@ -25,5 +25,8 @@
         {
             "2016-1": "2016-12-17"
         }
+    ],
+    "relatedEntries": [
+        "Root_Balanced_Tree"
     ]
 }

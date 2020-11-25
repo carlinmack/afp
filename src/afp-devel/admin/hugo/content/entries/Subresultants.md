@@ -31,5 +31,8 @@
     "dependencies": [
         "Jordan_Normal_Form",
         "Polynomial_Factorization"
+    ],
+    "relatedEntries": [
+        "Perron_Frobenius"
     ]
 }

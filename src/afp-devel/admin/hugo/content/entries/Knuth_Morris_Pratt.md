@@ -27,5 +27,8 @@
     ],
     "dependencies": [
         "Sepref_IICF"
+    ],
+    "relatedEntries": [
+        "Kruskal"
     ]
 }

@@ -47,5 +47,9 @@
         "Regular-Sets",
         "Efficient-Mergesort",
         "Spec_Check"
+    ],
+    "relatedEntries": [
+        "Myhill-Nerode",
+        "Posix-Lexing"
     ]
 }

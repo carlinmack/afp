@@ -35,5 +35,8 @@
         {
             "2016": "2016-06-25"
         }
+    ],
+    "relatedEntries": [
+        "Dependent_SIFUM_Refinement"
     ]
 }

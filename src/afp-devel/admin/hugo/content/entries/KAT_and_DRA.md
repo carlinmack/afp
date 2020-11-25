@@ -44,5 +44,10 @@
     ],
     "dependencies": [
         "Kleene_Algebra"
+    ],
+    "relatedEntries": [
+        "KAD",
+        "Algebraic_VCs",
+        "Relation_Algebra"
     ]
 }

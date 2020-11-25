@@ -32,5 +32,10 @@
         "Nested_Multisets_Ordinals",
         "Open_Induction",
         "Polynomial_Factorization"
+    ],
+    "relatedEntries": [
+        "Ordered_Resolution_Prover",
+        "Saturation_Framework_Extensions",
+        "Saturation_Framework"
     ]
 }

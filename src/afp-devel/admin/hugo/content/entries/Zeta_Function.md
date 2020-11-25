@@ -28,7 +28,11 @@
         "Dirichlet_Series",
         "Euler_MacLaurin",
         "Bernoulli",
-        "Dirichlet_Series",
         "Winding_Number_Eval"
+    ],
+    "relatedEntries": [
+        "Dirichlet_Series",
+        "Dirichlet_L",
+        "Gauss_Sums"
     ]
 }

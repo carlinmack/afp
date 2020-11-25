@@ -47,5 +47,10 @@
     "dependencies": [
         "HereditarilyFinite",
         "Nominal2"
+    ],
+    "relatedEntries": [
+        "Goedel_HFSet_Semanticless",
+        "HereditarilyFinite",
+        "Goedel_HFSet_Semantic"
     ]
 }

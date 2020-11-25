@@ -41,5 +41,8 @@
     ],
     "dependencies": [
         "CAVA_Automata"
+    ],
+    "relatedEntries": [
+        "DFS_Framework"
     ]
 }

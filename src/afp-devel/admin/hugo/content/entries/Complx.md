@@ -41,5 +41,8 @@
     ],
     "dependencies": [
         "Word_Lib"
+    ],
+    "relatedEntries": [
+        "Simpl"
     ]
 }

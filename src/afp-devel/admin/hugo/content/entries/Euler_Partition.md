@@ -34,5 +34,9 @@
     ],
     "dependencies": [
         "Card_Number_Partitions"
+    ],
+    "relatedEntries": [
+        "Descartes_Sign_Rule",
+        "Twelvefold_Way"
     ]
 }

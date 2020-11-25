@@ -25,7 +25,11 @@
         "Zeta_Function",
         "Landau_Symbols",
         "Dirichlet_Series",
-        "Zeta_Function",
         "Bertrands_Postulate"
+    ],
+    "relatedEntries": [
+        "Dirichlet_Series",
+        "Gauss_Sums",
+        "Prime_Distribution_Elementary"
     ]
 }

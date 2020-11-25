@@ -17,5 +17,8 @@
         "Sepref_IICF",
         "Polynomials",
         "Nested_Multisets_Ordinals"
+    ],
+    "relatedEntries": [
+        "Lambda_Free_KBOs"
     ]
 }

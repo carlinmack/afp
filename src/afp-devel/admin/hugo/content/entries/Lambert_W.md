@@ -15,5 +15,10 @@
     "dependencies": [
         "Bernoulli",
         "Stirling_Formula"
+    ],
+    "relatedEntries": [
+        "Euler_MacLaurin",
+        "Stirling_Formula",
+        "Zeta_Function"
     ]
 }

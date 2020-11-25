@@ -31,5 +31,9 @@
     ],
     "dependencies": [
         "HRB-Slicing"
+    ],
+    "relatedEntries": [
+        "InformationFlowSlicing",
+        "HRB-Slicing"
     ]
 }

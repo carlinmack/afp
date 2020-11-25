@@ -52,5 +52,8 @@
         {
             "2011-1": "2012-05-11"
         }
+    ],
+    "relatedEntries": [
+        "Separata"
     ]
 }

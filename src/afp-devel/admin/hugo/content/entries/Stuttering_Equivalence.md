@@ -58,5 +58,10 @@
     ],
     "dependencies": [
         "LTL"
+    ],
+    "relatedEntries": [
+        "LTL_to_GBA",
+        "LTL_Master_Theorem",
+        "LTL_Normal_Form"
     ]
 }

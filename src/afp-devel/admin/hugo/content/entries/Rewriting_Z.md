@@ -37,5 +37,9 @@
     "dependencies": [
         "Nominal2",
         "Abstract-Rewriting"
+    ],
+    "relatedEntries": [
+        "Decreasing-Diagrams-II",
+        "Decreasing-Diagrams"
     ]
 }

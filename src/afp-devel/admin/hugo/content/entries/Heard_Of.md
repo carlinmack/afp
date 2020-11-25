@@ -53,5 +53,8 @@
     ],
     "dependencies": [
         "Stuttering_Equivalence"
+    ],
+    "relatedEntries": [
+        "Consensus_Refined"
     ]
 }

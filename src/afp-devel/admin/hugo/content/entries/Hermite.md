@@ -37,5 +37,8 @@
     ],
     "dependencies": [
         "Echelon_Form"
+    ],
+    "relatedEntries": [
+        "Echelon_Form"
     ]
 }

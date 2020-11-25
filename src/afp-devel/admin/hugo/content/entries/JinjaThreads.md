@@ -87,5 +87,10 @@
         "Native_Word",
         "Refine_Monadic",
         "Trie"
+    ],
+    "relatedEntries": [
+        "Collections",
+        "Containers",
+        "ROBDD"
     ]
 }

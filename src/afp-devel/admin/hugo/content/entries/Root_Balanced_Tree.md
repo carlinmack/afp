@@ -28,5 +28,8 @@
     ],
     "dependencies": [
         "Amortized_Complexity"
+    ],
+    "relatedEntries": [
+        "Abs_Int_ITP2012"
     ]
 }

@@ -26,5 +26,10 @@
         "Transition_Systems_and_Automata",
         "LTL",
         "Deriving"
+    ],
+    "relatedEntries": [
+        "LTL_to_DRA",
+        "LTL_Normal_Form",
+        "LTL_to_GBA"
     ]
 }

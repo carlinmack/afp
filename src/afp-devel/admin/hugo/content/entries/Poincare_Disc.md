@@ -22,7 +22,6 @@
         }
     ],
     "dependencies": [
-        "Complex_Geometry",
         "Complex_Geometry"
     ]
 }

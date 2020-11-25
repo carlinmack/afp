@@ -43,5 +43,10 @@
         "Polynomial_Factorization",
         "Rank_Nullity_Theorem",
         "Sturm_Sequences"
+    ],
+    "relatedEntries": [
+        "Jordan_Normal_Form",
+        "Subresultants",
+        "Algebraic_Numbers"
     ]
 }

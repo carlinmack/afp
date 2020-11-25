@@ -19,5 +19,8 @@
     "dependencies": [
         "Prime_Number_Theorem",
         "Prime_Distribution_Elementary"
+    ],
+    "relatedEntries": [
+        "Zeta_3_Irrational"
     ]
 }

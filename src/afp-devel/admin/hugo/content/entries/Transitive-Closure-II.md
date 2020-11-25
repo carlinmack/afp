@@ -55,5 +55,8 @@
     ],
     "dependencies": [
         "Regular-Sets"
+    ],
+    "relatedEntries": [
+        "Transitive-Closure"
     ]
 }

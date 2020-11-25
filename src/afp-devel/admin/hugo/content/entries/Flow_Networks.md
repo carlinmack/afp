@@ -36,5 +36,8 @@
         "CAVA_Automata",
         "DFS_Framework",
         "Refine_Imperative_HOL"
+    ],
+    "relatedEntries": [
+        "Kruskal"
     ]
 }

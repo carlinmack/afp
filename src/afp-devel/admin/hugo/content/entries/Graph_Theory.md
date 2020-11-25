@@ -43,5 +43,8 @@
         {
             "2013": "2013-05-02"
         }
+    ],
+    "relatedEntries": [
+        "Koenigsberg_Friendship"
     ]
 }

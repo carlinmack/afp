@@ -23,5 +23,8 @@
     ],
     "dependencies": [
         "Groebner_Bases"
+    ],
+    "relatedEntries": [
+        "Nullstellensatz"
     ]
 }

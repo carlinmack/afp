@@ -31,5 +31,8 @@
         {
             "2015": "2016-01-14"
         }
+    ],
+    "relatedEntries": [
+        "Card_Partitions"
     ]
 }

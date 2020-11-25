@@ -29,5 +29,10 @@
         "Matroids",
         "Collections",
         "Refine_Imperative_HOL"
+    ],
+    "relatedEntries": [
+        "Knuth_Morris_Pratt",
+        "Koenigsberg_Friendship",
+        "Menger"
     ]
 }

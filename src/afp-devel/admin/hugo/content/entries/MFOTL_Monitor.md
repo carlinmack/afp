@@ -26,5 +26,8 @@
     ],
     "dependencies": [
         "Containers"
+    ],
+    "relatedEntries": [
+        "MFODL_Monitor_Optimized"
     ]
 }

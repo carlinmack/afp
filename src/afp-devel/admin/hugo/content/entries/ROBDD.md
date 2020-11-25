@@ -39,5 +39,10 @@
         "Automatic_Refinement",
         "Collections",
         "Native_Word"
+    ],
+    "relatedEntries": [
+        "JinjaThreads",
+        "Separation_Logic_Imperative_HOL",
+        "Containers"
     ]
 }

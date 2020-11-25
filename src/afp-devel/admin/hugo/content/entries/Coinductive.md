@@ -70,5 +70,8 @@
         {
             "2009-1": "2010-02-14"
         }
+    ],
+    "relatedEntries": [
+        "Stream_Fusion_Code"
     ]
 }

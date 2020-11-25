@@ -21,7 +21,10 @@
     "dependencies": [
         "Dirichlet_Series",
         "Polynomial_Interpolation",
-        "Dirichlet_Series",
         "Dirichlet_L"
+    ],
+    "relatedEntries": [
+        "Dirichlet_L",
+        "Zeta_Function"
     ]
 }

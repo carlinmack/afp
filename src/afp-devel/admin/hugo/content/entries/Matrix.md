@@ -66,5 +66,8 @@
     ],
     "dependencies": [
         "Abstract-Rewriting"
+    ],
+    "relatedEntries": [
+        "Polynomials"
     ]
 }

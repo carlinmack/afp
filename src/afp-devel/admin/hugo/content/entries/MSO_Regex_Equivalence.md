@@ -44,5 +44,9 @@
     "dependencies": [
         "List-Index",
         "Deriving"
+    ],
+    "relatedEntries": [
+        "Formula_Derivatives",
+        "Affine_Arithmetic"
     ]
 }

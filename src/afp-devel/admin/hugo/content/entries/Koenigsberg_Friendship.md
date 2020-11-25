@@ -46,5 +46,10 @@
     ],
     "dependencies": [
         "Dijkstra_Shortest_Path"
+    ],
+    "relatedEntries": [
+        "Graph_Theory",
+        "Menger",
+        "Kruskal"
     ]
 }

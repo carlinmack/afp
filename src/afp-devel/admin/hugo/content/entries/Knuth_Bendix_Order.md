@@ -18,5 +18,8 @@
         "First_Order_Terms",
         "Matrix",
         "Polynomial_Factorization"
+    ],
+    "relatedEntries": [
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

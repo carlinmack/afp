@@ -25,5 +25,9 @@
         {
             "2016-1": "2017-02-27"
         }
+    ],
+    "relatedEntries": [
+        "Koenigsberg_Friendship",
+        "Kruskal"
     ]
 }

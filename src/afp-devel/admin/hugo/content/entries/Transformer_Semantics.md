@@ -23,7 +23,9 @@
     ],
     "dependencies": [
         "Quantales",
-        "Order_Lattice_Props",
+        "Order_Lattice_Props"
+    ],
+    "relatedEntries": [
         "Quantales"
     ]
 }

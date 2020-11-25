@@ -46,5 +46,9 @@
     ],
     "dependencies": [
         "Abstract-Rewriting"
+    ],
+    "relatedEntries": [
+        "Decreasing-Diagrams-II",
+        "Rewriting_Z"
     ]
 }

@@ -70,5 +70,8 @@
     ],
     "dependencies": [
         "Jinja"
+    ],
+    "relatedEntries": [
+        "HRB-Slicing"
     ]
 }

@@ -31,5 +31,8 @@
         {
             "2015": "2016-01-05"
         }
+    ],
+    "relatedEntries": [
+        "Euler_Partition"
     ]
 }

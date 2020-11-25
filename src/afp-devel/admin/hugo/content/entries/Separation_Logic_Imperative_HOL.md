@@ -55,5 +55,10 @@
         "Automatic_Refinement",
         "Collections",
         "Native_Word"
+    ],
+    "relatedEntries": [
+        "JinjaThreads",
+        "ROBDD",
+        "Containers"
     ]
 }

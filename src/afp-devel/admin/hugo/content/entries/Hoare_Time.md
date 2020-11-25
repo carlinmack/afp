@@ -26,5 +26,8 @@
     ],
     "dependencies": [
         "Separation_Algebra"
+    ],
+    "relatedEntries": [
+        "Separata"
     ]
 }

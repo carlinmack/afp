@@ -41,5 +41,8 @@
     "dependencies": [
         "Certification_Monads",
         "Show"
+    ],
+    "relatedEntries": [
+        "Certification_Monads"
     ]
 }

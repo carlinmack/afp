@@ -31,5 +31,10 @@
         "Card_Multisets",
         "Card_Number_Partitions",
         "Card_Partitions"
+    ],
+    "relatedEntries": [
+        "Bell_Numbers_Spivey",
+        "Card_Equiv_Relations",
+        "Card_Partitions"
     ]
 }

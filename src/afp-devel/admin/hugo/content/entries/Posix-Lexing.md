@@ -33,5 +33,9 @@
     ],
     "dependencies": [
         "Regular-Sets"
+    ],
+    "relatedEntries": [
+        "Myhill-Nerode",
+        "Regex_Equivalence"
     ]
 }

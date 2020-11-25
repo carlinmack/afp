@@ -31,5 +31,9 @@
         "Regular-Sets",
         "Comparison_Sort_Lower_Bound",
         "Landau_Symbols"
+    ],
+    "relatedEntries": [
+        "Comparison_Sort_Lower_Bound",
+        "List_Update"
     ]
 }

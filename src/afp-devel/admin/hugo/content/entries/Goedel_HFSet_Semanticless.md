@@ -18,5 +18,10 @@
         "Goedel_Incompleteness",
         "HereditarilyFinite",
         "Nominal2"
+    ],
+    "relatedEntries": [
+        "Goedel_HFSet_Semantic",
+        "Incompleteness",
+        "Robinson_Arithmetic"
     ]
 }

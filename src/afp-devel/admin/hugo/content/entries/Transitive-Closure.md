@@ -64,5 +64,8 @@
     "dependencies": [
         "Collections",
         "Matrix"
+    ],
+    "relatedEntries": [
+        "Transitive-Closure-II"
     ]
 }

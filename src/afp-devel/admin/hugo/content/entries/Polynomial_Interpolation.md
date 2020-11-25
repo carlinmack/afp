@@ -33,5 +33,8 @@
     ],
     "dependencies": [
         "Sqrt_Babylonian"
+    ],
+    "relatedEntries": [
+        "Polynomial_Factorization"
     ]
 }

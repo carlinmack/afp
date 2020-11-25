@@ -4,22 +4,29 @@ from addDependencies import addDependencies
 from addOlderReleases import addOlderReleases
 from addStatistics import addStatistics
 from iniToJson import iniToJson
+from relatedEntries import addRelatedEntries
+
+def updateProgressBar(desc, t):
+    t.update()
+    t.set_description(desc)
 
 if __name__ == "__main__":
-    t = tqdm(total=4, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s')
+    t = tqdm(total=5, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s')
     
-    t.set_description("Export metadata to JSON")
+    updateProgressBar("Export metadata to JSON", t)
     iniToJson()
-    t.update()
-    t.set_description("Add older releases")
+
+    updateProgressBar("Add older releases", t)
     addOlderReleases()
-    t.update()
-    t.set_description("Add dependencies")
+
+    updateProgressBar("Add dependencies", t)
     addDependencies()
-    t.update()
-    t.set_description("Export statistics")
+
+    updateProgressBar("Export statistics", t)
     # for this to work add `return data` at line 212 in templates.py
     addStatistics()
-    t.update()
+    
+    updateProgressBar("Add related entries", t)
+    addRelatedEntries()
 
     t.close()

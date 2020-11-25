@@ -21,5 +21,9 @@
         "Ordered_Resolution_Prover",
         "Lambda_Free_RPOs",
         "Well_Quasi_Orders"
+    ],
+    "relatedEntries": [
+        "Saturation_Framework_Extensions",
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

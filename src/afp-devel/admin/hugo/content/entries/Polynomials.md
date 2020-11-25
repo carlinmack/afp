@@ -78,5 +78,10 @@
         "Matrix",
         "Show",
         "Well_Quasi_Orders"
+    ],
+    "relatedEntries": [
+        "Matrix",
+        "Decreasing-Diagrams-II",
+        "Myhill-Nerode"
     ]
 }

@@ -30,5 +30,8 @@
     ],
     "dependencies": [
         "Nested_Multisets_Ordinals"
+    ],
+    "relatedEntries": [
+        "Lambda_Free_KBOs"
     ]
 }

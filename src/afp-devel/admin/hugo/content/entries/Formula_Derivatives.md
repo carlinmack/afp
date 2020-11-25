@@ -37,5 +37,9 @@
         "List-Index",
         "Coinductive_Languages",
         "Deriving"
+    ],
+    "relatedEntries": [
+        "MSO_Regex_Equivalence",
+        "Affine_Arithmetic"
     ]
 }

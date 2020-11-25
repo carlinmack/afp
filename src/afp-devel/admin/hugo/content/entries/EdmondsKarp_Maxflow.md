@@ -32,5 +32,8 @@
     ],
     "dependencies": [
         "Flow_Networks"
+    ],
+    "relatedEntries": [
+        "Prpu_Maxflow"
     ]
 }

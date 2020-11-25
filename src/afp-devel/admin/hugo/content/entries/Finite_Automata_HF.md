@@ -38,5 +38,8 @@
     "dependencies": [
         "Regular-Sets",
         "HereditarilyFinite"
+    ],
+    "relatedEntries": [
+        "Myhill-Nerode"
     ]
 }

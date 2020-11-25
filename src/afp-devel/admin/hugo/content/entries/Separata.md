@@ -36,5 +36,9 @@
     ],
     "dependencies": [
         "Separation_Algebra"
+    ],
+    "relatedEntries": [
+        "Separation_Algebra",
+        "Hoare_Time"
     ]
 }

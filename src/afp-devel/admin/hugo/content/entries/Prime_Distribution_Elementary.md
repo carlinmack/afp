@@ -23,5 +23,10 @@
     "dependencies": [
         "Zeta_Function",
         "Prime_Number_Theorem"
+    ],
+    "relatedEntries": [
+        "Dirichlet_L",
+        "Prime_Number_Theorem",
+        "Zeta_3_Irrational"
     ]
 }

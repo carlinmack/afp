@@ -37,5 +37,8 @@
         {
             "2014": "2014-08-28"
         }
+    ],
+    "relatedEntries": [
+        "Splay_Tree"
     ]
 }

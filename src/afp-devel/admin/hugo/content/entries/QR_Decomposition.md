@@ -46,5 +46,9 @@
         "Rank_Nullity_Theorem",
         "Real_Impl",
         "Sqrt_Babylonian"
+    ],
+    "relatedEntries": [
+        "Echelon_Form",
+        "Gauss_Jordan"
     ]
 }

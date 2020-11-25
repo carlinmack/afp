@@ -22,5 +22,8 @@
     ],
     "dependencies": [
         "Lambda_Free_RPOs"
+    ],
+    "relatedEntries": [
+        "Lambda_Free_KBOs"
     ]
 }

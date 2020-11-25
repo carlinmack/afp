@@ -35,5 +35,8 @@
         "Polynomial_Interpolation",
         "Polynomials",
         "VectorSpace"
+    ],
+    "relatedEntries": [
+        "Groebner_Bases"
     ]
 }

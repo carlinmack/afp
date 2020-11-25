@@ -56,5 +56,10 @@
         "Regular-Sets",
         "Automatic_Refinement",
         "Collections"
+    ],
+    "relatedEntries": [
+        "JinjaThreads",
+        "ROBDD",
+        "Collections"
     ]
 }

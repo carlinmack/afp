@@ -4,7 +4,7 @@ import os
 import sys
 import json
 
-sys.path.append("admin/sitegen-lib")
+sys.path.append("sitegen-lib")
 
 import templates
 from config import options, release_pattern
@@ -14,17 +14,17 @@ import afpstats
 
 
 def addStatistics():
-    hugoDir = "admin/hugo/"
+    hugoDir = "hugo/"
     dataDir = hugoDir + "data/"
-    options.templates_dir = "metadata/templates"
+    options.templates_dir = "../metadata/templates"
 
-    entries = parse(os.path.join("metadata", "metadata"))
-    versions = read_versions(os.path.join("metadata", "release-dates"))
-    associate_releases(entries, versions, os.path.join("metadata", "releases"))
+    entries = parse(os.path.join("..", "metadata", "metadata"))
+    versions = read_versions(os.path.join("..", "metadata", "release-dates"))
+    associate_releases(entries, versions, os.path.join("..", "metadata", "releases"))
 
     deps_dict = metadata.empty_deps(entries)
 
-    afp_dict = afpstats.afp_dict(entries, "thys", deps_dict)
+    afp_dict = afpstats.afp_dict(entries, "../thys", deps_dict)
     afp_dict.build_stats()
     builder = templates.Builder(options, entries, afp_dict)
 

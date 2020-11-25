@@ -41,5 +41,9 @@
         {
             "2013-2": "2014-04-24"
         }
+    ],
+    "relatedEntries": [
+        "WHATandWHERE_Security",
+        "SIFUM_Type_Systems"
     ]
 }

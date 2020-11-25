@@ -24,5 +24,10 @@
     "dependencies": [
         "Zeta_Function",
         "Stirling_Formula"
+    ],
+    "relatedEntries": [
+        "Dirichlet_L",
+        "Prime_Distribution_Elementary",
+        "Ptolemys_Theorem"
     ]
 }

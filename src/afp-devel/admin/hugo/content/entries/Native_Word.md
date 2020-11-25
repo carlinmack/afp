@@ -49,5 +49,8 @@
     ],
     "dependencies": [
         "Word_Lib"
+    ],
+    "relatedEntries": [
+        "IEEE_Floating_Point"
     ]
 }

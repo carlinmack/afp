@@ -36,5 +36,8 @@
     "dependencies": [
         "Coinductive",
         "Graph_Theory"
+    ],
+    "relatedEntries": [
+        "ShortestPath"
     ]
 }

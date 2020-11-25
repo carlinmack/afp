@@ -33,5 +33,8 @@
     ],
     "dependencies": [
         "Flow_Networks"
+    ],
+    "relatedEntries": [
+        "EdmondsKarp_Maxflow"
     ]
 }

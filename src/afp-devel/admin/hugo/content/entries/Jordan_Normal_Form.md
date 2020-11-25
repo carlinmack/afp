@@ -43,5 +43,8 @@
     "dependencies": [
         "JNF-AFP-Lib",
         "Polynomial_Factorization"
+    ],
+    "relatedEntries": [
+        "Perron_Frobenius"
     ]
 }

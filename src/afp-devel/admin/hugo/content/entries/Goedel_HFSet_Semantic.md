@@ -17,5 +17,10 @@
     "dependencies": [
         "Goedel_Incompleteness",
         "Incompleteness"
+    ],
+    "relatedEntries": [
+        "Goedel_HFSet_Semanticless",
+        "Syntax_Independent_Logic",
+        "HereditarilyFinite"
     ]
 }

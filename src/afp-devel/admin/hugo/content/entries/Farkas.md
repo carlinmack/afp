@@ -25,5 +25,8 @@
     "dependencies": [
         "Simplex",
         "Jordan_Normal_Form"
+    ],
+    "relatedEntries": [
+        "Linear_Programming"
     ]
 }

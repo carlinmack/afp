@@ -53,5 +53,9 @@
     "dependencies": [
         "Abstract-Rewriting",
         "Open_Induction"
+    ],
+    "relatedEntries": [
+        "Decreasing-Diagrams-II",
+        "Myhill-Nerode"
     ]
 }

@@ -32,5 +32,8 @@
     ],
     "dependencies": [
         "Noninterference_Ipurge_Unwinding"
+    ],
+    "relatedEntries": [
+        "Noninterference_Concurrent_Composition"
     ]
 }

@@ -18,5 +18,9 @@
         "Ordered_Resolution_Prover",
         "First_Order_Terms",
         "Well_Quasi_Orders"
+    ],
+    "relatedEntries": [
+        "Functional_Ordered_Resolution_Prover",
+        "Saturation_Framework"
     ]
 }

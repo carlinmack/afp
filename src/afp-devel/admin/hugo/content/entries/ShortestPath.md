@@ -46,5 +46,8 @@
     ],
     "dependencies": [
         "Graph_Theory"
+    ],
+    "relatedEntries": [
+        "Parity_Game"
     ]
 }

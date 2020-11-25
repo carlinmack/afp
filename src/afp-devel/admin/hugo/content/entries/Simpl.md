@@ -72,5 +72,9 @@
         {
             "2007": "2008-03-07"
         }
+    ],
+    "relatedEntries": [
+        "Abstract-Hoare-Logics",
+        "Complx"
     ]
 }

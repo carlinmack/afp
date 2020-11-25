@@ -32,5 +32,8 @@
     ],
     "dependencies": [
         "Noninterference_Sequential_Composition"
+    ],
+    "relatedEntries": [
+        "Noninterference_Sequential_Composition"
     ]
 }

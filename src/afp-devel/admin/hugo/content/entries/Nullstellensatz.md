@@ -20,5 +20,8 @@
     ],
     "dependencies": [
         "Groebner_Bases"
+    ],
+    "relatedEntries": [
+        "Signature_Groebner"
     ]
 }

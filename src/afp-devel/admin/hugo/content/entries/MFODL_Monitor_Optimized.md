@@ -32,5 +32,8 @@
         "MFOTL_Monitor",
         "IEEE_Floating_Point",
         "Generic_Join"
+    ],
+    "relatedEntries": [
+        "MFOTL_Monitor"
     ]
 }

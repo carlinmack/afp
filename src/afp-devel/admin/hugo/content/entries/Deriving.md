@@ -35,5 +35,8 @@
     ],
     "dependencies": [
         "Collections"
+    ],
+    "relatedEntries": [
+        "Datatype_Order_Generator"
     ]
 }

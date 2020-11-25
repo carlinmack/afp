@@ -31,5 +31,8 @@
     ],
     "dependencies": [
         "Randomised_Social_Choice"
+    ],
+    "relatedEntries": [
+        "Fishburn_Impossibility"
     ]
 }

@@ -39,5 +39,9 @@
     ],
     "dependencies": [
         "Rank_Nullity_Theorem"
+    ],
+    "relatedEntries": [
+        "Echelon_Form",
+        "QR_Decomposition"
     ]
 }

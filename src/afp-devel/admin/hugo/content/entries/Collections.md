@@ -84,5 +84,9 @@
         "Finger-Trees",
         "Native_Word",
         "Trie"
+    ],
+    "relatedEntries": [
+        "JinjaThreads",
+        "Containers"
     ]
 }

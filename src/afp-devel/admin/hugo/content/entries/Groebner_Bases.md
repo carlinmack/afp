@@ -38,5 +38,8 @@
         "Polynomials",
         "Jordan_Normal_Form",
         "Deriving"
+    ],
+    "relatedEntries": [
+        "Deep_Learning"
     ]
 }

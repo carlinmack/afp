@@ -41,5 +41,8 @@
     "dependencies": [
         "CAVA_Automata",
         "LTL"
+    ],
+    "relatedEntries": [
+        "LTL_to_GBA"
     ]
 }

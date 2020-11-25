@@ -35,5 +35,8 @@
     ],
     "dependencies": [
         "CAVA_Automata"
+    ],
+    "relatedEntries": [
+        "Gabow_SCC"
     ]
 }

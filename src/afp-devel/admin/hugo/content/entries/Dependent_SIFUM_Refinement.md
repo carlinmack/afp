@@ -37,5 +37,8 @@
     ],
     "dependencies": [
         "Dependent_SIFUM_Type_Systems"
+    ],
+    "relatedEntries": [
+        "Dependent_SIFUM_Type_Systems"
     ]
 }

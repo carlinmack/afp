@@ -17,5 +17,9 @@
     "dependencies": [
         "Syntax_Independent_Logic",
         "Nominal2"
+    ],
+    "relatedEntries": [
+        "Goedel_HFSet_Semanticless",
+        "Incompleteness"
     ]
 }

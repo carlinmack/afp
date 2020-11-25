@@ -18,5 +18,8 @@
         "Perron_Frobenius",
         "List-Index",
         "Berlekamp_Zassenhaus"
+    ],
+    "relatedEntries": [
+        "Algebraic_Numbers"
     ]
 }

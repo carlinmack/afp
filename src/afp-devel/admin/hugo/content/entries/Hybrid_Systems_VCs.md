@@ -23,5 +23,8 @@
         "Ordinary_Differential_Equations",
         "Transformer_Semantics",
         "KAD"
+    ],
+    "relatedEntries": [
+        "Algebraic_VCs"
     ]
 }

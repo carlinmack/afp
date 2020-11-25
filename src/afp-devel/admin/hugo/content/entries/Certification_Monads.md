@@ -40,5 +40,9 @@
     "dependencies": [
         "Partial_Function_MR",
         "Show"
+    ],
+    "relatedEntries": [
+        "XML",
+        "Polynomial_Factorization"
     ]
 }

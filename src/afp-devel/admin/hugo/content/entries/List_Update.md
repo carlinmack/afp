@@ -39,5 +39,8 @@
     "dependencies": [
         "List-Index",
         "Regular-Sets"
+    ],
+    "relatedEntries": [
+        "Quick_Sort_Cost"
     ]
 }

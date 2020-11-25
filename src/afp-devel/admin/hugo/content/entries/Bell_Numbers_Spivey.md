@@ -31,5 +31,10 @@
     ],
     "dependencies": [
         "Card_Partitions"
+    ],
+    "relatedEntries": [
+        "Twelvefold_Way",
+        "Card_Equiv_Relations",
+        "Card_Partitions"
     ]
 }

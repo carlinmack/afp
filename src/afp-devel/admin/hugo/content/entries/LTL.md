@@ -38,5 +38,8 @@
     ],
     "dependencies": [
         "Boolean_Expression_Checkers"
+    ],
+    "relatedEntries": [
+        "LTL_to_DRA"
     ]
 }

@@ -34,5 +34,10 @@
         "Regular-Sets",
         "Lambda_Free_RPOs",
         "Polynomials"
+    ],
+    "relatedEntries": [
+        "Lambda_Free_RPOs",
+        "Lambda_Free_EPO",
+        "PAC_Checker"
     ]
 }

@@ -42,5 +42,10 @@
         "Cayley_Hamilton",
         "Gauss_Jordan",
         "Rank_Nullity_Theorem"
+    ],
+    "relatedEntries": [
+        "QR_Decomposition",
+        "Gauss_Jordan",
+        "Hermite"
     ]
 }

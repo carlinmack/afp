@@ -37,5 +37,10 @@
         "Polynomial_Interpolation",
         "Show",
         "Sqrt_Babylonian"
+    ],
+    "relatedEntries": [
+        "Polynomial_Interpolation",
+        "Certification_Monads",
+        "Real_Impl"
     ]
 }

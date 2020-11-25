@@ -34,5 +34,9 @@
     "dependencies": [
         "KAT_and_DRA",
         "KAD"
+    ],
+    "relatedEntries": [
+        "KAT_and_DRA",
+        "Hybrid_Systems_VCs"
     ]
 }

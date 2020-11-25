@@ -46,5 +46,8 @@
         {
             "2012": "2012-06-14"
         }
+    ],
+    "relatedEntries": [
+        "Pi_Calculus"
     ]
 }

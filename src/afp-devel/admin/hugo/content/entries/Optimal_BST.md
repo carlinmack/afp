@@ -27,5 +27,8 @@
     ],
     "dependencies": [
         "Monad_Memo_DP"
+    ],
+    "relatedEntries": [
+        "Hidden_Markov_Models"
     ]
 }

@@ -10,17 +10,17 @@ def addOlderReleases():
     releaseNames = []
     releaseDates = []
 
-    hugoDir = "admin/hugo/"
+    hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
 
-    with open("metadata/release-dates", "r") as f:
+    with open("../metadata/release-dates", "r") as f:
         for line in f.readlines():
             line = line.strip()
             tuple = line.split(" = ")
             releaseNames.append(tuple[0])
             releaseDates.append(date.fromisoformat(tuple[1]))
 
-    with open("metadata/releases", "r") as f:
+    with open("../metadata/releases", "r") as f:
         prevName = ""
         entryReleases = []
         for line in f:

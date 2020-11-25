@@ -27,5 +27,9 @@
         "Polynomial_Factorization",
         "Landau_Symbols",
         "Euler_MacLaurin"
+    ],
+    "relatedEntries": [
+        "Zeta_Function",
+        "Dirichlet_L"
     ]
 }

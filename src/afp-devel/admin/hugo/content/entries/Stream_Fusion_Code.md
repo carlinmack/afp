@@ -41,5 +41,10 @@
     ],
     "dependencies": [
         "Coinductive"
+    ],
+    "relatedEntries": [
+        "Coinductive",
+        "Stream-Fusion",
+        "Topology"
     ]
 }

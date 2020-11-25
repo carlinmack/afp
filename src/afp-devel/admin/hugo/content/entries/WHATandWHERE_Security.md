@@ -44,5 +44,9 @@
     ],
     "dependencies": [
         "Strong_Security"
+    ],
+    "relatedEntries": [
+        "Strong_Security",
+        "SIFUM_Type_Systems"
     ]
 }

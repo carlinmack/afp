@@ -45,5 +45,9 @@
         "Sqrt_Babylonian",
         "Show",
         "Deriving"
+    ],
+    "relatedEntries": [
+        "Affine_Arithmetic",
+        "Polynomial_Factorization"
     ]
 }

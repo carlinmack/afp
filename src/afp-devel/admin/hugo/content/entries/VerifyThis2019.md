@@ -21,5 +21,8 @@
     ],
     "dependencies": [
         "Sepref_IICF"
+    ],
+    "relatedEntries": [
+        "VerifyThis2018"
     ]
 }

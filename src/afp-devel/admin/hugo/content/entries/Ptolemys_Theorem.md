@@ -28,5 +28,8 @@
         {
             "2016": "2016-08-08"
         }
+    ],
+    "relatedEntries": [
+        "Prime_Number_Theorem"
     ]
 }

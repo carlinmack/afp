@@ -35,5 +35,10 @@
     ],
     "dependencies": [
         "Kleene_Algebra"
+    ],
+    "relatedEntries": [
+        "KAD",
+        "KAT_and_DRA",
+        "Relation_Algebra"
     ]
 }

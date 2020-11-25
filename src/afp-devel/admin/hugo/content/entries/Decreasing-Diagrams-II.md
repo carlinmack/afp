@@ -36,5 +36,10 @@
         "Abstract-Rewriting",
         "Open_Induction",
         "Well_Quasi_Orders"
+    ],
+    "relatedEntries": [
+        "Decreasing-Diagrams",
+        "Myhill-Nerode",
+        "Rewriting_Z"
     ]
 }

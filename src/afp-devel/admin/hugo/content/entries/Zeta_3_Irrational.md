@@ -21,5 +21,9 @@
         "Prime_Number_Theorem",
         "E_Transcendental",
         "Prime_Distribution_Elementary"
+    ],
+    "relatedEntries": [
+        "Irrational_Series_Erdos_Straus",
+        "Prime_Distribution_Elementary"
     ]
 }

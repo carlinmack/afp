@@ -64,5 +64,9 @@
     ],
     "dependencies": [
         "Slicing"
+    ],
+    "relatedEntries": [
+        "InformationFlowSlicing_Inter",
+        "HRB-Slicing"
     ]
 }

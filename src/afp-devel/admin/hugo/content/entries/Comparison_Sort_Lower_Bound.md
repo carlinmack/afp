@@ -30,5 +30,8 @@
         "Stirling_Formula",
         "List-Index",
         "Landau_Symbols"
+    ],
+    "relatedEntries": [
+        "Quick_Sort_Cost"
     ]
 }

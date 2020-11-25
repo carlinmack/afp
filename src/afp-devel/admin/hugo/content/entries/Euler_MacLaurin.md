@@ -29,5 +29,10 @@
     "dependencies": [
         "Bernoulli",
         "Landau_Symbols"
+    ],
+    "relatedEntries": [
+        "Stirling_Formula",
+        "Lambert_W",
+        "Error_Function"
     ]
 }

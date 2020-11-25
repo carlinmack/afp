@@ -25,5 +25,9 @@
     ],
     "dependencies": [
         "Landau_Symbols"
+    ],
+    "relatedEntries": [
+        "Euler_MacLaurin",
+        "Stirling_Formula"
     ]
 }

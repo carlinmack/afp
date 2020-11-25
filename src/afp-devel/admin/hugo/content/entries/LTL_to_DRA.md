@@ -40,5 +40,10 @@
         "List-Index",
         "Boolean_Expression_Checkers",
         "KBPs"
+    ],
+    "relatedEntries": [
+        "LTL_to_GBA",
+        "LTL_Master_Theorem",
+        "LTL"
     ]
 }

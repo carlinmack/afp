@@ -42,5 +42,9 @@
     "dependencies": [
         "Berlekamp_Zassenhaus",
         "Sturm_Sequences"
+    ],
+    "relatedEntries": [
+        "Smith_Normal_Form",
+        "Perron_Frobenius"
     ]
 }

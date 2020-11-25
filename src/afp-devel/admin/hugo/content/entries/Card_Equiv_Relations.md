@@ -31,5 +31,10 @@
     ],
     "dependencies": [
         "Bell_Numbers_Spivey"
+    ],
+    "relatedEntries": [
+        "Twelvefold_Way",
+        "Bell_Numbers_Spivey",
+        "Card_Partitions"
     ]
 }

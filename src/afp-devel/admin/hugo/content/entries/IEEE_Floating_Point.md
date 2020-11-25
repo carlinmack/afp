@@ -54,5 +54,8 @@
     ],
     "dependencies": [
         "Word_Lib"
+    ],
+    "relatedEntries": [
+        "Native_Word"
     ]
 }

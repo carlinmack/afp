@@ -43,5 +43,9 @@
         {
             "2013-2": "2014-04-24"
         }
+    ],
+    "relatedEntries": [
+        "Strong_Security",
+        "WHATandWHERE_Security"
     ]
 }
