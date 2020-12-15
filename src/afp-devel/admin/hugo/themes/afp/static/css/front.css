@@ -1,7 +1,18 @@
 body {
-  color: #000000;
-  background: #FFFFFF;
-  font-family: sans-serif;
+ color: #000000;
+ background: #FFFFFF;
+ font-family: sans-serif;
+ display: grid;
+ grid-template-columns: 20% 80%;
+ grid-template-areas: "sidebar content";
+}
+
+.sidebar {
+ grid-area: sidebar;
+}
+
+.content {
+ grid-area: content;
 }
 
 a:link    { color: #0000EE }
@@ -9,113 +20,137 @@ a:visited { color: #551A8B }
 a:hover   { color: #0000EE }
 
 h1 {
- font: normal small-caps bold large sans-serif;
+ font-variant: small-caps;
  color: #FFFFFF;
  background: #2E2D4E;
- padding-top: 10px;
- padding-right: 10px;
- padding-bottom: 10px;
- padding-left: 10px;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ padding: 10px;
+ border-width: thin;
+}
+
+h1,
+h2 {
+ font-weight: 700;
+ font-size: large;
+ font-family: sans-serif;
+ border-style: none;
 }
 
 h2 {
- font: normal normal bold huge sans-serif;
- padding: 0ex 0ex 0ex 0ex;
- margin: 1.5ex 0ex 1ex 0ex;
- border-style: none none none none;
+ padding: 0;
+ margin: 1.5ex 0 1ex;
 }
 
 h3 {
- font: normal normal bold larger sans-serif;
- padding: 0ex 0ex 0ex 0ex;
- margin: 1ex 0ex 0.2ex 2ex;
- border-style: none none none none;
+ font-stretch: normal;
+ font-size: larger;
+ padding: 0;
+ margin: 1ex 0 .2ex 2ex;
+}
+
+h3,
+h4 {
+ font-weight: 700;
+ font-family: sans-serif;
+ border-style: none;
 }
 
 h4 {
- font: normal normal bold normal sans-serif;
- margin-bottom: 0.5ex;
- border-style: none none none none;
+ margin-bottom: .5ex;
 }
 
-
 h1 font.first {
- font: normal normal bold x-large sans-serif;
+ font-size: x-large;
+}
+
+h1 font.first,
+table.nav {
+ font-weight: 700;
+ font-family: sans-serif;
 }
 
 table.nav {
- font: normal normal bold medium sans-serif;
+ font-size: medium;
  background-color: #D0D0D0;
- border-width: thin thin thin thin;
- border-style: solid solid solid solid;
+ border-width: thin;
+ border-style: solid;
  margin-top: 8ex;
 }
 
-
-table.nav a:link { font-weight:bold; color:#000000; text-decoration:none }
-table.nav a:visited { font-weight:bold; color:#000000; text-decoration:none }
-table.nav a:hover { font-weight:bold; color:#000080; text-decoration:underline }
-table.nav a:active { font-weight:bold; color:#000000; text-decoration:underline
+table.nav a:link,
+table.nav a:visited {
+ font-weight: 700;
+ color: #000000;
+ text-decoration: none;
 }
-table.nav a:focus { font-weight:bold; color:#000000; text-decoration:underline }
 
+table.nav a:hover {
+ color: #000080;
+}
+
+table.nav a:active,
+table.nav a:hover {
+ font-weight: 700;
+ text-decoration: underline;
+}
+
+table.nav a:active {
+ color: #000000;
+}
+
+table.nav a:focus {
+ font-weight: 700;
+ color: #000000;
+ text-decoration: underline;
+}
 
 td.nav {
  background-color: #FFFFFF;
- margin-top: 20px;
- margin-right: 20px;
- margin-bottom: 20px;
- margin-left: 20px;
- padding-top: 5px;
- padding-right: 5px;
- padding-bottom: 5px;
- padding-left: 5px;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 20px;
+ padding: 5px;
+ border-width: thin;
+ border-style: none;
 }
 
 table.descr {
- font: normal normal normal medium sans-serif;
- background-color: #D0D0D0;
  margin-top: 20px;
- padding:  2ex 2ex 2ex 2ex;
- border-width: thin thin thin thin;
- border-style: solid solid solid solid;
+ border-width: thin;
+ border-style: solid;
 }
 
+table.descr,
+td.descr {
+ padding: 2ex;
+}
+
+table.descr,
+table.entries,
 td.descr {
  font: normal normal normal medium sans-serif;
  background-color: #D0D0D0;
- padding:  2ex 2ex 2ex 2ex;
 }
 
 table.entries {
- font: normal normal normal medium sans-serif;
- background-color: #D0D0D0;
- border-width: thin thin thin thin;
- border-style: solid solid solid solid;
+ border-width: thin;
+ border-style: solid;
 }
 
 td.head {
- font: normal normal bold medium sans-serif;
+ font: normal normal 700 medium sans-serif;
  color: #E2E2E2;
  background-color: #2e2d4e;
- word-spacing: normal;
+ margin: .5em 1em .5em 0;
+ width: 95%
+}
+
+td.entry,
+td.head {
  letter-spacing: normal;
  text-decoration: none;
  word-spacing: normal;
- vertical-alignment: baseline;
- text-transformation: none;
- text-alignment: left;
- text-indentation: 2em;
  line-height: normal;
- margin:  0.5em 1em 0.5em 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
- width: 95%;
+ padding: .5ex;
+ border-width: thin;
+ border-style: none;
  height: auto;
  clear: none;
  display: block;
@@ -127,99 +162,67 @@ td.entry {
  font: normal normal normal medium sans-serif;
  color: #000000;
  background-color: #E2E2E2;
- word-spacing: normal;
- letter-spacing: normal;
- text-decoration: none;
- word-spacing: normal;
- vertical-alignment: baseline;
- text-transformation: none;
- text-alignment: left;
- text-indentation: 2em;
- line-height: normal;
- margin:  0em 0.1em 0.1em 5%;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 0 .1em .1em 5%;
  width: 90%;
- height: auto;
- clear: none;
- display: block;
- white-space: normal;
- list-style-position: inside;
  position: relative;
 }
 
 table.data {
- margin:  0em 0em 0em 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: solid solid solid solid;
+ margin: 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: solid;
 }
 
 td.datahead {
- font: normal normal bold medium sans-serif;
- color: #000000;
  background-color: #E2E2E2;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+}
+
+td.datahead,
+td.status-ok {
+ font: normal normal 700 medium sans-serif;
+ color: #000000;
+ margin: 1em 1em auto 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: none;
 }
 
 td.status-ok {
  text-align: center;
  vertical-align: middle;
- font: normal normal bold medium sans-serif;
- color: #000000;
  background-color: #00FF99;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
 }
 
 td.status-failed {
- text-align: center;
- vertical-align: middle;
- font: normal normal bold medium sans-serif;
- color: #000000;
  background-color: #DD2222;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
 }
 
+td.status-failed,
 td.status-skipped {
  text-align: center;
  vertical-align: middle;
- font: normal normal bold medium sans-serif;
+ font: normal normal 700 medium sans-serif;
  color: #000000;
- background-color: #FFFF99;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 1em 1em auto 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: none;
 }
 
+td.status-skipped {
+ background-color: #FFFF99;
+}
+
+td.abstract,
 td.data {
  font: normal normal normal medium sans-serif;
  color: #000000;
  background-color: #E2E2E2;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
-}
-
-td.abstract {
- font: normal normal normal medium sans-serif;
- color: #000000;
- background-color: #E2E2E2;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 1em 1em auto 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: none;
 }
 
 td.abstract p:first-child {
@@ -234,91 +237,98 @@ td.formatted {
  font: normal normal normal medium sans-serif;
  color: #000000;
  background-color: #E2E2E2;
- margin:  1em 1em auto 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 1em 1em auto 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: none;
 }
 
 a#bib {
-  text-decoration: underline;
-  color: #0000EE;
+ text-decoration: underline;
+ color: #0000EE;
 }
 
 table.links {
- margin:  0em 0em 0em 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: solid solid solid solid;
+ margin: 0;
+ padding: .5ex;
+ border-width: thin;
+ border-style: solid;
 }
 
 td.links {
  font: normal normal normal medium sans-serif;
- color: #000000;
  background-color: #E2E2E2;
- margin:  1em 1em 0em 0em;
- padding:  0.5ex 0.5ex 0.5ex 0.5ex;
- border-width: thin thin thin thin;
- border-style: none none none none;
+ margin: 1em 1em 0 0;
+ padding: .5ex;
+}
+
+div.date,
+td.links {
+ color: #000000;
+ border-width: thin;
+ border-style: none;
 }
 
 div.date {
-	font-family: sans-serif;
-	font-size: small;
-	color: #000000;
-	margin-top: 5ex;
-	padding-top: 1ex;
-	border-width: thin thin thin thin;
- 	border-style: none none none none;
-	width: 100%;
+ font-family: sans-serif;
+ margin-top: 5ex;
+ padding-top: 1ex;
+ width: 100%
 }
 
-div.cite {
-  font-size: small;
+div.cite,
+div.date {
+ font-size: small;
 }
 
 div.list {
-  margin: 0ex 0ex 0ex 4ex;
-  padding: 0ex 0ex 0ex 0ex;
+ margin: 0 0 0 4ex;
+ padding: 0;
 }
 
-div.list a:link { text-decoration:none }
-div.list a:visited { text-decoration:none }
-div.list a:hover { text-decoration:underline }
-div.list a:active { text-decoration:underline }
-div.list a:focus { text-decoration:underline }
+div.list a:link,
+div.list a:visited {
+ text-decoration: none;
+}
+
+div.list a:active,
+div.list a:focus,
+div.list a:hover {
+ text-decoration: underline;
+}
 
 pre.bibtex {
-  white-space: pre;
-  border-width: thin thin thin thin;
-  border-style: solid;
+ white-space: pre;
+ border-width: thin;
+ border-style: solid;
 }
 
 code {
-  background-color: #F2F2F2;
-  color: #303030;
-  padding: 1px 2px 2px 2px;
-  border-radius: 4px;
+ padding: 1px 2px 2px;
+}
+
+code,
+pre.code {
+ background-color: #F2F2F2;
+ color: #303030;
+ border-radius: 4px;
 }
 
 pre.code {
-  white-space: pre;
-  background-color: #F2F2F2;
-  color: #303030;
-  padding: 10px 2px 10px 2px;
-  border-radius: 4px;
+ white-space: pre;
+ padding: 10px 2px;
 }
 
 .chart {
-  height: 400px;
-  width: 400px;
-  background: white;
-  margin: 20px auto 40px auto;
-  border: 1px solid black;
+ height: 400px;
+ width: 400px;
+ background: white;
+ margin: 20px auto 40px;
+ border: 1px solid black;
 }
 
 #most_used td {
-  padding: 0 10px 0 0;
+ padding: 0 10px 0 0;
 }
 
 .nobr {
@@ -326,65 +336,62 @@ pre.code {
 }
 
 a[download] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: #d9d9d9;
-    padding: 5px 7.5px;
+ position: absolute;
+ top: 0;
+ right: 0;
+ background: #d9d9d9;
+ padding: 5px 7.5px;
 }
 
-a[download]::after {
-    content: url('/images/download.svg');
-    height: 1em;
-    position: relative;
-    top: 0.12em;
-    left: 0.3em;
-    width: 1em;
+a[download]:after {
+ content: url(/images/download.svg);
+ height: 1em;
+ position: relative;
+ top: .12em;
+ left: .3em;
+ width: 1em;
 }
 
-a[download]:hover,
-a[download]:focus {
-    text-decoration: none;
+a[download]:focus,
+a[download]:hover {
+ text-decoration: none;
 }
 
 #searchInputautocomplete-list {
-    width: 214px;
-    position: absolute;
-    margin-bottom: 24px;
-    font-weight: 400;
-    padding: 8px 0;
-    background-color: #fff;
-    border: 1px solid #dbdbdb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1;
+ width: 214px;
+ position: absolute;
+ margin-bottom: 24px;
+ font-weight: 400;
+ padding: 8px 0;
+ background-color: #fff;
+ border: 1px solid #dbdbdb;
+ box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+ z-index: 1;
 }
 
 .form-container {
-    width: 290px;
-    text-align: left;
+ width: 290px;
+ text-align: left;
 }
 
 #searchInputautocomplete-list div {
-    padding: 5px 0;
-    padding: 8px 12px;
-    line-height: 16px;
-    cursor: pointer;
+ padding: 8px 12px;
+ line-height: 16px;
+ cursor: pointer;
 }
 
-
 #searchInput {
-    width: 215px;
-    padding: 6px;
-    font-size: 16px;
+ width: 215px;
+ padding: 6px;
+ font-size: 16px;
 }
 
 #searchButton {
-    width: 68px;
-    height: 34px;
-    font-size: 16px;
+ height: 34px;
+ font-size: 16px;
 }
 
-.autocomplete-active,
-#searchInputautocomplete-list div:hover {
-    background: #eee;
+#searchInputautocomplete-list div:hover,
+.autocomplete-active {
+ background: #eee;
 }
