@@ -2,7 +2,7 @@
 
 {{ $topics := .Site.Taxonomies.topics }}
 
-<table width="80%" class="descr">
+<table class="descr">
   <tbody>
     <tr>
       <td>
@@ -11,7 +11,7 @@
           {{ with (index $topics (urlize $firstLevel)) }}
           <div class="list">
             {{ range $key := .Pages.ByDate }}
-            <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+            <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html}">{{ .File.TranslationBaseName }}</a> &nbsp;
             {{ end }}
           </div>
           {{ end }}
@@ -21,7 +21,7 @@
               <div class="list">
                 {{ with (index $topics (printf "%s/%s" (urlize $firstLevel) (urlize $secondLevel))) }}
                   {{ range $key := .Pages.ByDate }}
-                  <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+                  <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{ .File.TranslationBaseName }}</a> &nbsp;
                   {{ end }}
                 {{ end }}
               {{ with $thirdLevelTaxonomy }}
@@ -29,7 +29,7 @@
                   <strong>{{ $thirdLevel }}</strong>
                   {{ with (index $topics (printf "%s/%s/%s" (urlize $firstLevel) (urlize $secondLevel) (urlize $thirdLevel))) }}
                     {{ range $key := .Pages.ByDate }}
-                    <a href="{{ .RelPermalink }}">{{ .File.TranslationBaseName }}</a> &nbsp;
+                    <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{ .File.TranslationBaseName }}</a> &nbsp;
                     {{ end }}
                   {{ end }}
                 {{ end }}

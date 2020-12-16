@@ -4,7 +4,7 @@
 
 {{- range (.Data.Pages).GroupByDate "2006" -}}
 {{- if ne .Key "0001" -}}
-<table width="80%" class="entries">
+<table class="entries">
   <tbody>
     <tr>
       <td class="head">{{ .Key }}</td>
@@ -13,7 +13,7 @@
     {{ .Params.hidden }}
     <tr>
       <td class="entry">
-        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{.Title}}</a>
+        {{ .Date.Format "January 2" }}: <a class="title" href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{.Title}}</a>
       </td>
     </tr>
     {{ end }}

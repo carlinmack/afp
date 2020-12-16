@@ -5,14 +5,20 @@ body {
  display: grid;
  grid-template-columns: 20% 80%;
  grid-template-areas: "sidebar content";
+ justify-items: center;
 }
 
 .sidebar {
  grid-area: sidebar;
+ width: 80%;
 }
 
 .content {
  grid-area: content;
+}
+
+.content div {
+ width: 80%;
 }
 
 a:link    { color: #0000EE }
@@ -58,11 +64,11 @@ h4 {
  margin-bottom: .5ex;
 }
 
-h1 font.first {
+h1 span.first {
  font-size: x-large;
 }
 
-h1 font.first,
+h1 span.first,
 table.nav {
  font-weight: 700;
  font-family: sans-serif;
@@ -74,6 +80,7 @@ table.nav {
  border-width: thin;
  border-style: solid;
  margin-top: 8ex;
+ width: 100%;
 }
 
 table.nav a:link,
@@ -132,6 +139,7 @@ td.descr {
 table.entries {
  border-width: thin;
  border-style: solid;
+ width: 100%;
 }
 
 td.head {

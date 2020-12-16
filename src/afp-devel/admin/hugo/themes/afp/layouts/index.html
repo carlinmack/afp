@@ -1,6 +1,6 @@
-{{ define "main" }}
+{{- define "main" -}}
 
-<table width="80%" class="entries">
+<table class="entries">
   <tbody>
     <tr>
       <td>
@@ -24,24 +24,23 @@
 
 <p>&nbsp;</p>
 
-{{ range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" }}
-<table width="80%" class="entries">
+{{- range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
+<table class="entries">
   <tbody>
     <tr>
-      <td class="head">{{ .Key }}</td>
+      <td class="head">{{- .Key -}}</td>
     </tr>
-    {{ range .Pages }}
+    {{- range .Pages -}}
     <tr>
       <td class="entry">
-        {{ .Date.Format "January 2" }}: <a class="title" href="{{ .RelPermalink }}">{{ htmlUnescape .Title }}</a> <br>
-        Authors: {{ partial "authors.html" (dict "site" . "authors" .Params.authors) }}
+        {{- .Date.Format "January 2" -}}: <a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
+        Authors: {{- partial "authors.html" (dict "site" . "authors" .Params.authors) -}}
       </td>
     </tr>
-    {{ end }}
+    {{- end -}}
   </tbody>
 </table>
 <p>&nbsp;</p>
-{{ end }}
-</div>
+{{- end -}}
 
-{{ end }}
+{{- end -}}
