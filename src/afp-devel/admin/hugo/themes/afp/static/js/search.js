@@ -49,7 +49,7 @@ function loadSearch(entries, authors, topics, keywords) {
 
     const input = document.getElementById("searchInput");
 
-    var searchQuery = input.value
+    var searchQuery = input.value;
     if (searchQuery) {
         executeSearch(indices, searchQuery);
     }
@@ -73,8 +73,8 @@ function loadSearch(entries, authors, topics, keywords) {
                 if (this.value && this.value.length > 1) {
                     executeSearch(indices, this.value);
                 } else {
-                    hideAutocomplete()
-                    hideFindFacts()
+                    hideAutocomplete();
+                    hideFindFacts();
                     document.getElementById("authorTopic").innerHTML = "";
                     document.getElementById("search-results").innerHTML =
                         "<p>Please enter a word or phrase above</p>";
@@ -82,26 +82,30 @@ function loadSearch(entries, authors, topics, keywords) {
         }
     });
 
-    var memoQueryFindFacts = memoizer(queryFindFacts)
-    input.addEventListener('keyup', debounce(() => {
-        var searchTerm = input.value
-        if (searchTerm && searchTerm.length > 2) {
-            memoQueryFindFacts(searchTerm)
-                .then(results => populateFindFactsResults(searchTerm, results))
-        }
-    }, 400))
+    var memoQueryFindFacts = memoizer(queryFindFacts);
+    input.addEventListener(
+        "keyup",
+        debounce(() => {
+            var searchTerm = input.value;
+            if (searchTerm && searchTerm.length > 2) {
+                memoQueryFindFacts(searchTerm).then((results) =>
+                    populateFindFactsResults(searchTerm, results)
+                );
+            }
+        }, 300)
+    );
 
     input.addEventListener("blur", () => {
-        setTimeout(hideAutocomplete, 100)
-    })
+        setTimeout(hideAutocomplete, 100);
+    });
 
     input.addEventListener("focus", () => {
         clearAutocomplete();
-        input.dispatchEvent(new KeyboardEvent('keyup'))
-    })
+        input.dispatchEvent(new KeyboardEvent("keyup"));
+    });
 
     var currentFocus = -1;
-    var items = getItems()
+    var items = getItems();
 
     input.addEventListener("keydown", function (event) {
         switch (event.key) {
@@ -129,8 +133,8 @@ function loadSearch(entries, authors, topics, keywords) {
     });
 
     for (var item of items) {
-        item.addEventListener('touchstart', handleClick)
-        item.addEventListener('click', handleClick)
+        item.addEventListener("touchstart", handleClick);
+        item.addEventListener("click", handleClick);
     }
 
     async function queryFindFacts(searchTerm) {
@@ -139,14 +143,16 @@ function loadSearch(entries, authors, topics, keywords) {
         body += '"fields":["Command","ConstantTypeFacet","Kind","SourceTheoryFacet"],';
         body += '"maxFacets":5}';
 
-        const response = await fetch('https://search.isabelle.in.tum.de/v1/default_Isabelle2020_AFP2020/facet', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'accept': 'application/json',
-            },
-            body: body
-        });
+        const response = await fetch(
+            "https://search.isabelle.in.tum.de/v1/default_Isabelle2020_AFP2020/facet", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    accept: "application/json",
+                },
+                body: body,
+            }
+        );
         const data = await response.json();
         return data["Kind"];
     }
@@ -156,22 +162,22 @@ function loadSearch(entries, authors, topics, keywords) {
         return (...args) => {
             clearTimeout(timeout);
             timeout = setTimeout(function () {
-                callback.apply(this, args)
+                callback.apply(this, args);
             }, wait);
         };
     }
 
     function memoizer(fun) {
-        let cache = {}
+        let cache = {};
         return function (n) {
             if (cache[n] != undefined) {
-                return cache[n]
+                return cache[n];
             } else {
-                let result = fun(n)
-                cache[n] = result
-                return result
+                let result = fun(n);
+                cache[n] = result;
+                return result;
             }
-        }
+        };
     }
 }
 
@@ -193,14 +199,15 @@ function executeSearch(indices, searchQuery) {
 
     var suggestResults = indices["suggest"].search({
         query: searchQuery,
-        limit: 10
+        limit: 10,
     });
 
     if (entryResults.length > 0) {
         populateResults(entryResults, searchQuery, indices);
     } else {
-        var text = '<p>No matches found</p><br>Search on all pages of the AFP, including'
-        text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery
+        var text =
+            "<p>No matches found</p><br>Search on all pages of the AFP, including";
+        text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery;
         text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
         text += "Google</a><br/>";
         document.getElementById("search-results").innerHTML = text;
@@ -214,22 +221,27 @@ function executeSearch(indices, searchQuery) {
         populateSmallResults(topicResults, searchQuery, "topic", indices);
 
     clearAutocomplete();
-    filterAutocomplete(suggestResults)
+    filterAutocomplete(suggestResults);
 }
 
 function populateResults(results, searchQuery, indices, all = false) {
     if (searchQuery.length < 3) {
-        hideFindFacts()
+        hideFindFacts();
     } else {
-        var findFacts = document.getElementById('findFacts')
+        var findFacts = document.getElementById("findFacts");
         if (!findFacts) {
             // create FindFacts results table
-            findFactsTable = '<div id="findFacts"><br><table width="80%" class="entries"><tbody><tr>'
-            findFactsTable += '<td class="head">FindFacts Results</td></tr><tr><td class="entry"'
-            findFactsTable += ' id="find-facts-results">...</td></tr></tbody></table</div>'
-            document.getElementById('authorTopic').insertAdjacentHTML("afterend", findFactsTable)
+            findFactsTable =
+                '<div id="findFacts"><br><table width="80%" class="entries"><tbody><tr>';
+            findFactsTable +=
+                '<td class="head">FindFacts Results</td></tr><tr><td class="entry"';
+            findFactsTable +=
+                ' id="find-facts-results">...</td></tr></tbody></table</div>';
+            document
+                .getElementById("authorTopic")
+                .insertAdjacentHTML("afterend", findFactsTable);
         } else {
-            document.getElementById("find-facts-results").innerHTML = "..."
+            document.getElementById("find-facts-results").innerHTML = "...";
         }
     }
 
@@ -238,17 +250,35 @@ function populateResults(results, searchQuery, indices, all = false) {
     resultsTable.innerHTML = '<tr> <td class="head">Entries</td> </tr>';
 
     var limit = all ? results.length : 15;
+    var templateDefinition = document.getElementById("search-result-template")
+        .innerHTML;
 
     results.slice(0, limit).forEach(function (value, resultKey) {
+        var topicHrefs = value.topics
+            .map((x) => x.toLowerCase())
+            .map((x) => x.replace(/\s+/, "-"))
+            .map((x) => "/topics/" + x + "/");
+
+        var topics = []
+
+        value.topics.forEach((value, key) => {
+            topics[key] = "<a href=" + topicHrefs[key] + ">" + value + "</a>"
+        })
+
+        var topicString;
+        if (topics.length <= 2) {
+            topicString = topics.join(' and ');
+        } else {
+            topicString = topics.slice(0, -1).join(', ') + ' and ' + topics[topics.length - 1];
+        }
+
         // pull template from hugo template definition
-        var templateDefinition = document.getElementById("search-result-template")
-            .innerHTML;
         // replace values
         var output = render(templateDefinition, {
             key: resultKey,
             title: value.title,
             link: value.shortname,
-            topics: value.topics,
+            topics: topicString,
             shortname: value.shortname,
             abstract: value.abstract,
         });
@@ -278,7 +308,9 @@ function populateResults(results, searchQuery, indices, all = false) {
         conditionalPattern = /\$\{\s*isset ([a-zA-Z]*) \s*\}(.*)\$\{\s*end\s*}/g;
         // since loop below depends on re.lastInxdex, we use a copy to capture any manipulations whilst inside the loop
         copy = templateString;
-        while ((conditionalMatches = conditionalPattern.exec(templateString)) !== null) {
+        while (
+            (conditionalMatches = conditionalPattern.exec(templateString)) !== null
+        ) {
             if (data[conditionalMatches[1]]) {
                 // valid key, remove conditionals, leave contents.
                 copy = copy.replace(conditionalMatches[0], conditionalMatches[2]);
@@ -300,7 +332,7 @@ function populateResults(results, searchQuery, indices, all = false) {
 }
 
 function hideFindFacts() {
-    var findFacts = document.getElementById('findFacts');
+    var findFacts = document.getElementById("findFacts");
     if (findFacts) {
         findFacts.outerHTML = "";
     }
@@ -353,23 +385,25 @@ function populateSmallResults(results, searchQuery, key, indices, all = false) {
 }
 
 function populateFindFactsResults(searchTerm, data) {
-    var resultsElement = document.getElementById('find-facts-results')
+    var resultsElement = document.getElementById("find-facts-results");
     if (Object.keys(data).length !== 0 && resultsElement) {
-        let urlPrefix = 'https://search.isabelle.in.tum.de/#search/default_Isabelle2020_AFP2020?q={"term":"'
-        urlPrefix += searchTerm + '","facets":{"Kind":["'
-        const urlSuffix = '"]}}'
+        let urlPrefix =
+            'https://search.isabelle.in.tum.de/#search/default_Isabelle2020_AFP2020?q={"term":"';
+        urlPrefix += searchTerm + '","facets":{"Kind":["';
+        const urlSuffix = '"]}}';
 
-        links = []
+        links = [];
 
         Object.entries(data).forEach(([name, count]) => {
-            let value = "<a href='" + urlPrefix + name + urlSuffix + "' target='_blank' "
-            value += "rel='noreferrer noopener' >" + count + " " + name + "s</a>"
-            links.push(value)
+            let value =
+                "<a href='" + urlPrefix + name + urlSuffix + "' target='_blank' ";
+            value += "rel='noreferrer noopener' >" + count + " " + name + "s</a>";
+            links.push(value);
         });
-        
-        resultsElement.innerHTML = links.join(", ")
+
+        resultsElement.innerHTML = links.join(", ");
     } else {
-        resultsElement.innerHTML = "No results"
+        resultsElement.innerHTML = "No results";
     }
 }
 
@@ -387,8 +421,8 @@ function handleSubmit(value) {
 function hideAutocomplete() {
     var list = document.getElementById("searchInputautocomplete-list");
     if (list) {
-        list.style = "display: none"
-    };
+        list.style = "display: none";
+    }
 }
 
 function clearAutocomplete() {
@@ -400,13 +434,13 @@ function clearAutocomplete() {
 
 function filterAutocomplete(values) {
     var added = false;
-    var input = document.getElementById("searchInput")
+    var input = document.getElementById("searchInput");
     values.forEach((value, _key) => {
         if (value.keyword != input.value) {
             addItem(value.keyword);
             added = true;
         }
-    })
+    });
 
     if (!added) {
         hideAutocomplete();
@@ -418,7 +452,7 @@ function addItem(value) {
 
     item.innerHTML = value;
 
-    item.addEventListener('touchstart', handleClick)
+    item.addEventListener("touchstart", handleClick);
     item.addEventListener("click", handleClick);
 
     var list = document.getElementById("searchInputautocomplete-list");
@@ -429,12 +463,12 @@ function addItem(value) {
 }
 
 function handleClick(event) {
-    event.preventDefault() // so that two click events aren't registered
-    var input = document.getElementById("searchInput")
+    event.preventDefault(); // so that two click events aren't registered
+    var input = document.getElementById("searchInput");
     var currentValue = this.innerHTML;
     input.value = currentValue;
     clearAutocomplete();
-    input.dispatchEvent(new KeyboardEvent('keyup'))
+    input.dispatchEvent(new KeyboardEvent("keyup"));
     input.focus();
 }
 
@@ -444,7 +478,7 @@ function addActive(items, currentFocus) {
     removeActive(items);
     if (currentFocus >= items.length) currentFocus = 0;
     if (currentFocus < 0) {
-        currentFocus = -1
+        currentFocus = -1;
     } else {
         items[currentFocus].classList.add("autocomplete-active");
     }
@@ -481,7 +515,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch("/index.json"),
             fetch("/authors/index.json"),
             fetch("/topics/index.json"),
-            fetch("/data/keywords.json")
+            fetch("/data/keywords.json"),
         ])
         .then(function (responses) {
             // Get a JSON object from each of the responses

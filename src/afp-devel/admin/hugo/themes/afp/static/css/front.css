@@ -1,16 +1,46 @@
 body {
- color: #000000;
- background: #FFFFFF;
- font-family: sans-serif;
- display: grid;
- grid-template-columns: 20% 80%;
- grid-template-areas: "sidebar content";
- justify-items: center;
+    color: #000000;
+    background: #FFFFFF;
+    font-family: sans-serif;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-areas: "sidebar content";
+    justify-items: center;
+    margin: 0;
 }
 
-.sidebar {
- grid-area: sidebar;
- width: 80%;
+aside {
+    grid-area: sidebar;
+    width: 80%;
+    background-color: #2E2D4E;
+    width: 20vw;
+    margin: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+aside img {
+    width: 40%;
+    height: auto;
+    padding: 10%;
+}
+
+aside>a {
+    display: block;
+    text-align: center;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li a:link,
+aside ul li a:visited {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .content {
@@ -66,56 +96,6 @@ h4 {
 
 h1 span.first {
  font-size: x-large;
-}
-
-h1 span.first,
-table.nav {
- font-weight: 700;
- font-family: sans-serif;
-}
-
-table.nav {
- font-size: medium;
- background-color: #D0D0D0;
- border-width: thin;
- border-style: solid;
- margin-top: 8ex;
- width: 100%;
-}
-
-table.nav a:link,
-table.nav a:visited {
- font-weight: 700;
- color: #000000;
- text-decoration: none;
-}
-
-table.nav a:hover {
- color: #000080;
-}
-
-table.nav a:active,
-table.nav a:hover {
- font-weight: 700;
- text-decoration: underline;
-}
-
-table.nav a:active {
- color: #000000;
-}
-
-table.nav a:focus {
- font-weight: 700;
- color: #000000;
- text-decoration: underline;
-}
-
-td.nav {
- background-color: #FFFFFF;
- margin: 20px;
- padding: 5px;
- border-width: thin;
- border-style: none;
 }
 
 table.descr {
