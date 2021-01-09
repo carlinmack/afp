@@ -45,10 +45,7 @@ aside ul li a:visited {
 
 .content {
  grid-area: content;
-}
-
-.content div {
- width: 80%;
+ padding: 0 20%;
 }
 
 a:link    { color: #0000EE }
@@ -56,20 +53,11 @@ a:visited { color: #551A8B }
 a:hover   { color: #0000EE }
 
 h1 {
- font-variant: small-caps;
- color: #FFFFFF;
- background: #2E2D4E;
- padding: 10px;
- border-width: thin;
+    font-size: 2em;
+    padding: 20px 0;
+    border-bottom: 2px #555555 solid;
 }
 
-h1,
-h2 {
- font-weight: 700;
- font-size: large;
- font-family: sans-serif;
- border-style: none;
-}
 
 h2 {
  padding: 0;
@@ -95,7 +83,7 @@ h4 {
 }
 
 h1 span.first {
- font-size: x-large;
+ /* font-size: x-large; */
 }
 
 table.descr {
@@ -382,4 +370,22 @@ a[download]:hover {
 #searchInputautocomplete-list div:hover,
 .autocomplete-active {
  background: #eee;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+}
+
+.item-text {
+    width: 85%;
+}
+
+.item-date {
+    color: var(--color-heading);
+    font-size: 14px;
+    text-align: right;
+    width: 15%;
+
+    transition: color var(--duration) var(--timing);
 }

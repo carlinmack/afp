@@ -1,46 +1,32 @@
 {{- define "main" -}}
 
-<table class="entries">
-  <tbody>
-    <tr>
-      <td>
-        The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific
-        developments,
-        mechanically checked in the theorem prover <a href="http://isabelle.in.tum.de/">Isabelle</a>. It
-        is organized in the way
-        of a scientific journal, is indexed by <a href="http://dblp.uni-trier.de/db/journals/afp/">dblp</a> and has an
-        ISSN:
-        2150-914x. Submissions are refereed. The preferred citation style is available <a href="/citing/">[here]</a>.
-        We encourage companion AFP submissions to conference and journal
-        publications.
-        <br><br>A <a href="http://devel.isa-afp.org">development version</a> of the archive is available
-        as well. 
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
+<p>
+  The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific
+  developments,
+  mechanically checked in the theorem prover <a href="http://isabelle.in.tum.de/">Isabelle</a>. It
+  is organized in the way
+  of a scientific journal, is indexed by <a href="http://dblp.uni-trier.de/db/journals/afp/">dblp</a> and has an
+  ISSN:
+  2150-914x. Submissions are refereed. The preferred citation style is available <a href="/citing/">[here]</a>.
+  We encourage companion AFP submissions to conference and journal
+  publications.
+  <br><br>A <a href="http://devel.isa-afp.org">development version</a> of the archive is available
+  as well.
+</p>
 
 {{- range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
-<table class="entries">
-  <tbody>
-    <tr>
-      <td class="head">{{- .Key -}}</td>
-    </tr>
-    {{- range .Pages -}}
-    <tr>
-      <td class="entry">
-        {{- .Date.Format "January 2" -}}: <a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
-        Authors: {{- partial "authors.html" (dict "site" . "authors" .Params.authors) -}}
-      </td>
-    </tr>
-    {{- end -}}
-  </tbody>
-</table>
-<p>&nbsp;</p>
-{{- end -}}
 
+<h2 class="head">{{- .Key -}}</h2>
+{{- range .Pages -}}
+<article class="entry">
+  <span class="item-text">
+    <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
+    by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}</p>
+  </span>
+  <span class="item-date">
+    {{ .Date.Format "January 2" }}
+  </span>
+</article>
+{{- end -}}
+{{- end -}}
 {{- end -}}

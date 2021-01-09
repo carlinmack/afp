@@ -1,4 +1,3 @@
-<p>&nbsp;</p>
 <header>
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
   {{ if (eq (.Scratch.Get "title") "Topics") }}
@@ -7,4 +6,3 @@
   <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
 </header>
-<p>&nbsp;</p>
