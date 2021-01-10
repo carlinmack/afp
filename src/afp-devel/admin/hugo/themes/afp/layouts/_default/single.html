@@ -1,13 +1,5 @@
-{{ define "main" }}
-<table {{ cond (ne .File.TranslationBaseName "search") "class='descr'" "" | safeHTMLAttr }} >
-  <tbody>
-    <tr>
-      <td>
-        <div>
-          {{ .Content }}
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-{{ end }}
+{{- define "main" -}}
+<div>
+  {{ .Content }}
+</div>
+{{- end -}}

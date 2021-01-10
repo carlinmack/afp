@@ -45,11 +45,13 @@ aside ul li a:visited {
 
 .content {
  grid-area: content;
- padding: 0 20%;
+ padding: 0 15vw;
+ max-width: 50vw;
 }
 
 .content div {
     line-height: 1.35em;
+    width: 100%;
 }
 
 a:link {
@@ -93,7 +95,7 @@ h4 {
 }
 
 h1 span.first {
- /* font-size: x-large; */
+ font-size: 2.3rem
 }
 
 table.descr {
