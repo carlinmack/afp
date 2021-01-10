@@ -7,11 +7,22 @@
   </h1>
   <form action="{{ " search" | absURL }}">
     <div class='form-container'>
-      <input id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
-        type="button">Search</button>
+      <input style="display: none" id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
+        type="button"><img src="/images/search.svg"/></button>
       <div id="searchInputautocomplete-list" style="display: none">
         <div></div>
       </div>
     </div>
   </form>
+  {{- $site := . -}}
+  {{ with .Params.authors}}
+  <p>{{- partial "authors.html" (dict "site" $site "authors" .) -}}
+    {{ with $site.Params.contributors }}
+    with contributions from {{ partial "authors.html" (dict "site" $site "authors" .) -}}
+    {{ end }}
+  </p>
+  {{ end }}
+  {{ with .Params.date }}
+  <p class="date">{{- dateFormat "2 January 2006" . -}}</p>
+  {{ end }}
 </header>

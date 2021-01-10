@@ -61,6 +61,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .content {
@@ -72,6 +73,45 @@ header {
 .content div {
     line-height: 1.35em;
     width: 100%;
+}
+
+.entries > div {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.entries nav {
+    text-align: right;
+}
+
+.links button,
+.links a {
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.links button {
+    border: none;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    background: #2E2D4E;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: background 200ms ease,
+    transform 150ms ease;
+    font-weight: bold;
+    font-size: 0.9rem;
+    width: 80%;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:active {
+    transform: scale(0.99);
 }
 
 a:link {
@@ -106,6 +146,10 @@ h3 {
  font-size: larger;
  padding: 0;
  margin: 2.5em 0 0 0;
+}
+
+h3:first-child {
+    margin: 0.5rem 0 0 0;
 }
 
 h3,
@@ -422,9 +466,12 @@ a[download]:hover {
     width: 85%;
 }
 
-.item-date {
+.date {
     color: #777;
     font-size: 14px;
+}
+
+.entry .date {
     text-align: right;
     width: 15%;
     font-family: Consolas, monospace;

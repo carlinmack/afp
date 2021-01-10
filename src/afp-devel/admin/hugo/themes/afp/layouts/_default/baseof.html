@@ -7,7 +7,7 @@
     {{- partial "navigation.html" . -}}
   </aside>
 
-  <div class='content'>
+  <div class='content {{ if (eq .Section "entries") -}}entries{{- end -}}'>
     {{- partial "header.html" . -}}
     <div>
       {{- block "main" . }}{{- end }}
