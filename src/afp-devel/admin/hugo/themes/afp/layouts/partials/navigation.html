@@ -1,9 +1,17 @@
+<div>
+  <div>
 <a href="/">
-  <img src="/images/afp.png" width="100" height="88" alt='Logo of the Archive of Formal Proofs'>
+  <img src="/images/afp.png" width="100" height="88" alt='Logo of the Archive of Formal Proofs' class="logo">
 </a>
 {{- $currentPage := . -}}
-{{- range .Site.Menus.main -}}
 <ul>
+{{- range .Site.Menus.main -}}
   <li><a href="{{- .URL -}}">{{- .Name -}}</a></li>
-</ul>
 {{- end -}}
+</ul></div>
+<ul>
+{{- range .Site.Menus.bottom -}}
+  <li><a href="{{- .URL -}}">{{- .Name -}}</a></li>
+{{- end -}}
+</ul>
+  </div>

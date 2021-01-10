@@ -3,7 +3,7 @@ title: Statistics
 menu: 
     main:
         name: "Statistics"
-        weight: 7
+        weight: 5
 ---
 
 {{< statistics >}}

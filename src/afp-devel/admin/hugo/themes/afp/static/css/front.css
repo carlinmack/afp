@@ -21,13 +21,21 @@ aside {
     min-width: 200px;
 }
 
-aside img {
+aside > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+    height: 100vh;
+}
+
+.logo {
     width: 40%;
     height: auto;
     padding: 10%;
 }
 
-aside>a {
+aside div > a {
     display: block;
     text-align: center;
 }
@@ -41,6 +49,10 @@ aside ul li a:visited {
     color: white;
     text-decoration: none;
     font-weight: bold;
+}
+
+aside li {
+    margin: 1em 0;
 }
 
 .content {

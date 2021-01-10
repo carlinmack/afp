@@ -22,9 +22,9 @@
     "menu": {
         "main": [
            {
-              "name": "Index",
+              "name": "Topics",
               "url": "/topics/",
-              "weight": 8
+              "weight": 2
            }
         ]
     },

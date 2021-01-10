@@ -1,9 +1,8 @@
 ---
 title: Contribution
 menu: 
-    main:
+    bottom:
         name: "Contribution"
-        weight: 3
 ---
 
 ## Submission Guidelines

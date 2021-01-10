@@ -1,8 +1,9 @@
 ---
+title: "About"
 menu: 
     main:
         name: "About"
-        weight: 2
+        weight: 6
 ---
 
 ## About

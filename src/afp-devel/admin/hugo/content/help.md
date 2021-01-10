@@ -3,7 +3,7 @@ title: Help
 menu: 
     main:
         name: "Help"
-        weight: 5
+        weight: 4
 ---
 
 [Help with Isabelle](http://isabelle.in.tum.de/)

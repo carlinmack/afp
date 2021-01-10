@@ -3,7 +3,7 @@ title: Download the Archive
 menu: 
     main:
         name: "Download"
-        weight: 9
+        weight: 3
 ---
 
 ### **Current stable version** (for current Isabelle release):
