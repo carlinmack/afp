@@ -500,6 +500,14 @@ function getItems() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    var inputs = document.getElementsByTagName("input");
+
+    for (var input of inputs) {
+        if (input.type = "search") {
+            
+        }
+    }
+
     var input = document.getElementById("searchInput");
     var urlQuery = param("s");
     if (urlQuery) {

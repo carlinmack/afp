@@ -5,4 +5,13 @@
   {{ end }}
   <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
+  <form action="{{ " search" | absURL }}">
+    <div class='form-container'>
+      <input id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
+        type="button">Search</button>
+      <div id="searchInputautocomplete-list" style="display: none">
+        <div></div>
+      </div>
+    </div>
+  </form>
 </header>
