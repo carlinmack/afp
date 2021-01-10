@@ -48,9 +48,19 @@ aside ul li a:visited {
  padding: 0 20%;
 }
 
-a:link    { color: #0000EE }
-a:visited { color: #551A8B }
-a:hover   { color: #0000EE }
+.content div {
+    line-height: 1.35em;
+}
+
+a:link {
+    color: #0600C8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover   { 
+    color: #0000EE 
+}
 
 h1 {
     font-size: 2em;
@@ -382,10 +392,9 @@ a[download]:hover {
 }
 
 .item-date {
-    color: var(--color-heading);
+    color: #777;
     font-size: 14px;
     text-align: right;
     width: 15%;
-
-    transition: color var(--duration) var(--timing);
+    font-family: Consolas, monospace;
 }
