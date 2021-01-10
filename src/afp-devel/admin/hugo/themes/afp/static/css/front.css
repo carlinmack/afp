@@ -11,7 +11,6 @@ body {
 
 aside {
     grid-area: sidebar;
-    width: 80%;
     background-color: #2E2D4E;
     width: 20vw;
     margin: 0;
@@ -19,6 +18,7 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
+    min-width: 200px;
 }
 
 aside img {
@@ -80,7 +80,7 @@ h3 {
  font-stretch: normal;
  font-size: larger;
  padding: 0;
- margin: 1ex 0 .2ex 2ex;
+ margin: 2.5em 0 0 0;
 }
 
 h3,
@@ -283,6 +283,10 @@ div.list a:active,
 div.list a:focus,
 div.list a:hover {
  text-decoration: underline;
+}
+
+img {
+    max-width: 90%;
 }
 
 pre.bibtex {

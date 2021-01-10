@@ -14,7 +14,7 @@ menu:
 
 Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others _without_ having to include the AFP articles you depend on, here is how to do it.
 
-If you are using Isabelle2020, and have downloaded your AFP directory to `/home/myself/afp`, you should run the following command [\[1\]](#1) to make the AFP session ROOTS available to Isabelle:
+If you are using Isabelle2020, and have downloaded your AFP directory to `/home/myself/afp`, you should run the following command to make the AFP session ROOTS available to Isabelle:
 
     echo "/home/myself/afp/thys" >> ~/.isabelle/Isabelle2020/ROOTS
 
