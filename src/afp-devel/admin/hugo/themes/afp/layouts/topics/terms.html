@@ -2,10 +2,7 @@
 
 {{ $topics := .Site.Taxonomies.topics }}
 
-<table class="descr">
-  <tbody>
-    <tr>
-      <td>
+
         {{ range $firstLevel, $secondLevelTaxonomy := .Site.Data.topics }}
           <h2>{{ $firstLevel }}</h2>
           {{ with (index $topics (urlize $firstLevel)) }}
@@ -38,9 +35,5 @@
             {{ end }}
           {{ end }}
         {{ end }}
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 {{ end }}
