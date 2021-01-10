@@ -80,6 +80,10 @@ header {
     grid-template-columns: 3fr 1fr;
 }
 
+.entries main {
+    padding-right: 2%;
+}
+
 .entries nav {
     text-align: right;
 }
@@ -90,27 +94,27 @@ header {
     margin: 0.5rem 0;
 }
 
-.links button {
+.popUpButton {
     border: none;
     padding: 0.75rem 2rem;
     text-decoration: none;
-    background: #2E2D4E;
+    background-color: #2E2D4E;
     color: white;
     cursor: pointer;
     text-align: center;
-    transition: background 200ms ease,
+    transition: background-color 200ms ease,
     transform 150ms ease;
     font-weight: bold;
     font-size: 0.9rem;
-    width: 80%;
+    width: 50%;
 }
 
 button:hover,
 button:focus {
-    background: #0053ba;
+    background-color: #0053ba;
 }
 
-button:active {
+.popUpButton:active {
     transform: scale(0.99);
 }
 
@@ -369,10 +373,12 @@ code {
 }
 
 code,
-pre.code {
+pre {
+ font-family: Consolas, monospace;
  background-color: #F2F2F2;
  color: #303030;
  border-radius: 4px;
+ padding: 5px;
 }
 
 pre.code {
@@ -475,4 +481,61 @@ a[download]:hover {
     text-align: right;
     width: 15%;
     font-family: Consolas, monospace;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.25);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay .cancel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: default;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content .popup {
+    background: white;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, .2),
+    0 4px 10px 0 rgba(0, 0, 0, .1);
+    padding: 20px;
+    display: block;
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popup .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 20px;
+    opacity: 0.8;
+    transition: all 200ms;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #666;
+}
+
+.popup .close:hover {
+    opacity: 1;
 }

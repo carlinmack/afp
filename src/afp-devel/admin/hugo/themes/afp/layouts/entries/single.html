@@ -51,8 +51,8 @@
 </main>
 
 <nav class='links'>{{- $entryName := .File.TranslationBaseName -}}
-  <button>Cite</button>
-  <button href="../release/afp-{{- $entryName -}}-current.tar.gz">Download</button>
+  <a class='popUpButton' href="#citePopUp">Cite</a>
+  <a class='popUpButton' href="../release/afp-{{- $entryName -}}-current.tar.gz">Download</a>
   <a href="../browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
     outline</a>
   <a href="../browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
@@ -60,5 +60,26 @@
   <a href="../browser_info/current/AFP/{{- $entryName -}}/index.html">Browse
     theories</a>
 </nav>
+
+<div id="citePopUp" class="overlay">
+  <a class="cancel" href="#"></a>
+  <div class="popup">
+    <h2>Cite</h2>
+    <a class="close" href="#">&times;</a>
+    <div>
+      <pre>@article{{- "{" -}}{{- .File.TranslationBaseName -}}-AFP,
+        author  = {{- "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
+        title   = {{- "{" -}}{{- htmlUnescape .Params.title -}}},
+        journal = {Archive of Formal Proofs},
+        month   = {{- dateFormat "January" .Params.date -}},
+        year    = {{- dateFormat "2006" .Params.date -}},
+        note    = {\url{http://isa-afp.org/entries/{{- .File.TranslationBaseName -}}.html},
+                  Formal proof development},
+        ISSN    = {2150-914x},
+      }</pre>
+      <button>Copy</button> <button>Download</button>
+    </div>
+  </div>
+</div>
 
 {{- end -}}
