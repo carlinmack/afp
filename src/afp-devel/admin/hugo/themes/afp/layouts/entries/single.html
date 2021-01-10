@@ -52,7 +52,7 @@
 
 <nav class='links'>{{- $entryName := .File.TranslationBaseName -}}
   <a class='popUpButton' href="#citePopUp">Cite</a>
-  <a class='popUpButton' href="../release/afp-{{- $entryName -}}-current.tar.gz">Download</a>
+  <a class='popUpButton' href="#downloadPopUp">Download</a>
   <a href="../browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
     outline</a>
   <a href="../browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
@@ -79,6 +79,29 @@
       }</pre>
       <button>Copy</button> <button>Download</button>
     </div>
+  </div>
+</div>
+
+<div id="downloadPopUp" class="overlay">
+  <a class="cancel" href="#"></a>
+  <div class="popup">
+    <h2>Download</h2>
+    <a class="close" href="#">&times;</a>
+    <a href="../release/afp-{{- $entryName -}}-current.tar.gz" download>Download latest</a>
+    {{ with .Params.olderReleases -}}
+    <p>Older releases:</p>
+    <ul>
+      {{- range $map := . -}}
+      {{- range $key, $value := $map -}}
+      <li>Isabelle {{- $key -}}:
+        <a href="../release/afp-{{- $entryName -}}-{{- $value -}}.tar.gz">
+          afp-{{- $entryName -}}-{{- $value -}}.tar.gz
+        </a>
+      </li>
+      {{- end -}}
+      {{- end -}}
+    </ul>
+    {{- end }}
   </div>
 </div>
 

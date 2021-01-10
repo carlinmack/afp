@@ -403,11 +403,20 @@ pre.code {
 }
 
 a[download] {
+    background: #d9d9d9;
+    padding: 5px 7.5px;
+}
+
+.entry a[download] {
  position: absolute;
  top: 0;
  right: 0;
- background: #d9d9d9;
- padding: 5px 7.5px;
+}
+
+.popup a[download] {
+    display: block;
+    width: 146px;
+    margin: 0 auto;
 }
 
 a[download]:after {
@@ -420,7 +429,9 @@ a[download]:after {
 }
 
 a[download]:focus,
-a[download]:hover {
+a[download]:hover,
+.popUpButton:focus,
+.popUpButton:hover {
  text-decoration: none;
 }
 
