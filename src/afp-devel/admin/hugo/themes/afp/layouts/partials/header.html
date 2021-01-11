@@ -14,6 +14,11 @@
       </div>
     </div>
   </form>
+  {{ if (eq .Section "authors") -}}
+  {{ with (index $.Site.Data.authors .Title )}}
+  {{ with .website}}
+  <p><a href="{{ . }}">{{ . }}</a></p>
+  {{- end -}}{{- end -}}{{- end -}}
   {{- $site := . -}}
   {{ with .Params.authors}}
   <p>{{- partial "authors.html" (dict "site" $site "authors" .) -}}

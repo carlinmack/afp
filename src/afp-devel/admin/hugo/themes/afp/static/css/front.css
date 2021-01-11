@@ -202,8 +202,8 @@ h1 {
 }
 
 header h1 {
-    margin: 10px 0;
-    padding: 20px 0;
+    margin: 30px 0;
+    padding: 0;
 }
 
 .content div h1 {
@@ -487,8 +487,8 @@ a[download] {
 
 .popup a[download] {
     display: block;
-    width: 146px;
-    margin: 0 auto;
+    width: 154px;
+    margin: 2.5rem auto 0;
 }
 
 a[download]:after {

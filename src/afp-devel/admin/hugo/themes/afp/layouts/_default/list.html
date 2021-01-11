@@ -1,26 +1,19 @@
 {{ define "main" }}
-
-<h2>Entries</h2>
-
+{{- $site := . -}}
 {{- range (.Data.Pages).GroupByDate "2006" -}}
 {{- if ne .Key "0001" -}}
-<table class="entries">
-  <tbody>
-    <tr>
-      <td class="head">{{ .Key }}</td>
-    </tr>
-    {{- range .Pages -}}
-    {{ .Params.hidden }}
-    <tr>
-      <td class="entry">
-        {{ .Date.Format "January 2" }}: <a class="title" href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{.Title}}</a>
-      </td>
-    </tr>
-    {{ end }}
-  </tbody>
-</table>
-<p>&nbsp;</p>
+<h2 class="head">{{- .Key -}}</h2>
+{{- range .Pages -}}
+<article class="entry">
+  <span class="item-text">
+    <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
+      {{- with .Params.authors -}}by {{ partial "authors.html" (dict "site" $site "authors" .) -}}{{- end -}}</p>
+  </span>
+  <span class="date">
+    {{ .Date.Format "02 Jan" }}
+  </span>
+</article>
 {{ end }}
 {{ end }}
-
+{{ end }}
 {{ end }}
