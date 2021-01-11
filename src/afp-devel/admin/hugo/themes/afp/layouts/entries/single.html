@@ -68,11 +68,11 @@
     <a class="close" href="#">&times;</a>
     <div>
       <pre>@article{{- "{" -}}{{- .File.TranslationBaseName -}}-AFP,
-        author  = {{- "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
-        title   = {{- "{" -}}{{- htmlUnescape .Params.title -}}},
+        author  = {{ "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
+        title   = {{ "{" -}}{{- htmlUnescape .Params.title -}}},
         journal = {Archive of Formal Proofs},
-        month   = {{- dateFormat "January" .Params.date -}},
-        year    = {{- dateFormat "2006" .Params.date -}},
+        month   = {{ dateFormat "January" .Params.date -}},
+        year    = {{ dateFormat "2006" .Params.date -}},
         note    = {\url{http://isa-afp.org/entries/{{- .File.TranslationBaseName -}}.html},
                   Formal proof development},
         ISSN    = {2150-914x},
