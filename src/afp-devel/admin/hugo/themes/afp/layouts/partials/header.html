@@ -5,15 +5,17 @@
   {{ end }}
   <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
+  {{- if (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
     <div class='form-container'>
-      <input style="display: none" id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
+      <input {{ if (eq .Section "entries") -}}style="display: none"{{- end }} class="searchInput" type="search" size="31" maxlength="255" value=""><button class="searchButton"
         type="button"><img src="/images/search.svg"/></button>
       <div id="searchInputautocomplete-list" style="display: none">
         <div></div>
       </div>
     </div>
   </form>
+  {{- end -}}
   {{ if (eq .Section "authors") -}}
   {{ with (index $.Site.Data.authors .Title )}}
   {{ with .website}}

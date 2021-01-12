@@ -474,6 +474,19 @@ pre.code {
     white-space: nowrap;
 }
 
+#search-results > div {
+    position: relative;
+}
+
+#search-results a[download] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #d9d9d9;
+    padding: 5px 7.5px;
+    width: 105px;
+}
+
 a[download] {
     background: #d9d9d9;
     padding: 5px 7.5px;
@@ -507,6 +520,45 @@ a[download]:hover,
     text-decoration: none;
 }
 
+div div form {
+    margin: 0 auto;
+    width: max-content;
+}
+
+.form-container {
+    width: 290px;
+    text-align: left;
+}
+
+.searchInput,
+.searchButton {
+    border: 1px solid #777;
+    font-size: 16px;
+    vertical-align: middle;
+    height: 2rem;
+    background-color: white;
+    padding: 7px;
+    line-height: 0;
+}
+
+.searchInput {
+    width: 215px;
+    border-right: none;
+    font-family: "Open Sans",     sans-serif;
+}
+
+header .searchInput {
+    width: 175px;
+}
+
+header .searchButton {
+    width: 2rem;
+}
+
+.searchButton img {
+    max-width: 1rem;
+}
+
 #searchInputautocomplete-list {
     width: 214px;
     position: absolute;
@@ -519,26 +571,10 @@ a[download]:hover,
     z-index: 1;
 }
 
-.form-container {
-    width: 290px;
-    text-align: left;
-}
-
 #searchInputautocomplete-list div {
     padding: 8px 12px;
     line-height: 16px;
     cursor: pointer;
-}
-
-#searchInput {
-    width: 215px;
-    padding: 6px;
-    font-size: 16px;
-}
-
-#searchButton {
-    height: 34px;
-    font-size: 16px;
 }
 
 #searchInputautocomplete-list div:hover,

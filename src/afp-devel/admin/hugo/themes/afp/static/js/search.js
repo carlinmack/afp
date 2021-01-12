@@ -1,57 +1,77 @@
-function loadSearch(entries, authors, topics, keywords) {
-    var entryIndex = new FlexSearch({
-        encode: "advanced",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: ["title", "abstract"],
-        },
-    });
+function loadSearch(input, keywords, entries, authors, topics) {
+    if (entries) {
+        var entryIndex = new FlexSearch({
+            encode: "advanced",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: ["title", "abstract"],
+            },
+        });
 
-    var authorIndex = new FlexSearch({
-        encode: "advanced",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "name",
-        },
-    });
+        var authorIndex = new FlexSearch({
+            encode: "advanced",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "name",
+            },
+        });
 
-    var topicIndex = new FlexSearch({
-        encode: "icase",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "name",
-        },
-    });
+        var topicIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "name",
+            },
+        });
 
-    var suggestIndex = new FlexSearch({
-        encode: "icase",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "keyword",
-        },
-    });
+        var suggestIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "keyword",
+            },
+        });
 
-    var indices = {
-        entry: entryIndex,
-        author: authorIndex,
-        topic: topicIndex,
-        suggest: suggestIndex,
-    };
+        var indices = {
+            entry: entryIndex,
+            author: authorIndex,
+            topic: topicIndex,
+            suggest: suggestIndex,
+        };
 
-    indices["entry"].add(entries);
-    indices["author"].add(authors);
-    indices["topic"].add(topics);
-    indices["suggest"].add(keywords);
+        indices["entry"].add(entries);
+        indices["author"].add(authors);
+        indices["topic"].add(topics);
+        indices["suggest"].add(keywords);
 
-    const input = document.getElementById("searchInput");
+        var searchQuery = input.value;
+        if (searchQuery) {
+            executeSearch(input, indices, searchQuery);
+        }
+    } else {
+        var suggestIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "keyword",
+            },
+        });
 
-    var searchQuery = input.value;
-    if (searchQuery) {
-        executeSearch(indices, searchQuery);
+        var indices = {
+            suggest: suggestIndex,
+        };
+
+        indices["suggest"].add(keywords);
+
+        var searchQuery = input.value;
+        if (searchQuery) {
+            executeSearch(input, indices, searchQuery);
+        }
     }
 
     input.addEventListener("keyup", function (event) {
@@ -144,7 +164,8 @@ function loadSearch(entries, authors, topics, keywords) {
         body += '"maxFacets":5}';
 
         const response = await fetch(
-            "https://search.isabelle.in.tum.de/v1/default_Isabelle2020_AFP2020/facet", {
+            "https://search.isabelle.in.tum.de/v1/default_Isabelle2020_AFP2020/facet",
+            {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -181,47 +202,56 @@ function loadSearch(entries, authors, topics, keywords) {
     }
 }
 
-function executeSearch(indices, searchQuery) {
-    var entryResults = indices["entry"].search({
-        query: searchQuery,
-        limit: 16,
-    });
+function executeSearch(input, indices, searchQuery) {
+    if (indices["entry"]) {
+        var entryResults = indices["entry"].search({
+            query: searchQuery,
+            limit: 16,
+        });
 
-    var topicResults = indices["topic"].search({
-        query: searchQuery,
-        limit: 3,
-    });
+        var topicResults = indices["topic"].search({
+            query: searchQuery,
+            limit: 3,
+        });
 
-    var authorResults = indices["author"].search({
-        query: searchQuery,
-        limit: 3,
-    });
+        var authorResults = indices["author"].search({
+            query: searchQuery,
+            limit: 3,
+        });
 
-    var suggestResults = indices["suggest"].search({
-        query: searchQuery,
-        limit: 10,
-    });
+        var suggestResults = indices["suggest"].search({
+            query: searchQuery,
+            limit: 10,
+        });
 
-    if (entryResults.length > 0) {
-        populateResults(entryResults, searchQuery, indices);
+        if (entryResults.length > 0) {
+            populateResults(entryResults, searchQuery, indices);
+        } else {
+            var text =
+                "<p>No matches found</p><br>Search on all pages of the AFP, including";
+            text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery;
+            text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
+            text += "Google</a><br/>";
+            document.getElementById("search-results").innerHTML = text;
+        }
+
+        document.getElementById("authorTopic").innerHTML = "";
+
+        if (authorResults.length > 0)
+            populateSmallResults(authorResults, searchQuery, "author", indices);
+        if (topicResults.length > 0)
+            populateSmallResults(topicResults, searchQuery, "topic", indices);
+
+        clearAutocomplete();
+        filterAutocomplete(input, suggestResults);
     } else {
-        var text =
-            "<p>No matches found</p><br>Search on all pages of the AFP, including";
-        text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery;
-        text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
-        text += "Google</a><br/>";
-        document.getElementById("search-results").innerHTML = text;
+        var suggestResults = indices["suggest"].search({
+            query: searchQuery,
+            limit: 10,
+        });
+
+        filterAutocomplete(input, suggestResults);
     }
-
-    document.getElementById("authorTopic").innerHTML = "";
-
-    if (authorResults.length > 0)
-        populateSmallResults(authorResults, searchQuery, "author", indices);
-    if (topicResults.length > 0)
-        populateSmallResults(topicResults, searchQuery, "topic", indices);
-
-    clearAutocomplete();
-    filterAutocomplete(suggestResults);
 }
 
 function populateResults(results, searchQuery, indices, all = false) {
@@ -232,11 +262,9 @@ function populateResults(results, searchQuery, indices, all = false) {
         if (!findFacts) {
             // create FindFacts results table
             findFactsTable =
-                '<div id="findFacts"><br><table width="80%" class="entries"><tbody><tr>';
+                '<div id="findFacts"><h2>FindFacts Results</h2><div';
             findFactsTable +=
-                '<td class="head">FindFacts Results</td></tr><tr><td class="entry"';
-            findFactsTable +=
-                ' id="find-facts-results">...</td></tr></tbody></table</div>';
+                ' id="find-facts-results">...</div></div>';
             document
                 .getElementById("authorTopic")
                 .insertAdjacentHTML("afterend", findFactsTable);
@@ -247,7 +275,7 @@ function populateResults(results, searchQuery, indices, all = false) {
 
     const resultsTable = document.getElementById("search-results");
 
-    resultsTable.innerHTML = '<tr> <td class="head">Entries</td> </tr>';
+    resultsTable.innerHTML = "<h2>Entries</h2>";
 
     var limit = all ? results.length : 15;
     var templateDefinition = document.getElementById("search-result-template")
@@ -344,13 +372,13 @@ function populateSmallResults(results, searchQuery, key, indices, all = false) {
 
     if (!resultsTable) {
         var base =
-            '<table width="40%" class="entries"><tbody id="' + key + '-results"><tr>';
-        base += '<td class="head">' + name + "</td></tr></tbody></table>";
+            '<div id="' + key + '-results">';
+        base += "<h2>" + name + "</h2>";
 
         document.getElementById("authorTopic").insertAdjacentHTML("beforeend", base);
         resultsTable = document.getElementById(key + "-results");
     } else {
-        resultsTable.innerHTML = '<tr><td class="head">' + name + "</td></tr>";
+        resultsTable.innerHTML = '<td class="head">' + name + "</div>";
     }
 
     var limit = all ? results.length : 2;
@@ -432,9 +460,9 @@ function clearAutocomplete() {
     }
 }
 
-function filterAutocomplete(values) {
+function filterAutocomplete(input, values) {
     var added = false;
-    var input = document.getElementById("searchInput");
+    
     values.forEach((value, _key) => {
         if (value.keyword != input.value) {
             addItem(value.keyword);
@@ -500,40 +528,60 @@ function getItems() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var inputs = document.getElementsByTagName("input");
+    var header = document.getElementsByTagName("header");
 
-    for (var input of inputs) {
-        if (input.type = "search") {
-            
+    var input = header[0].querySelector("input");
+    if (input) {
+        var button = document.getElementsByClassName("searchButton");
+        if (button) {
+            button = button[0];
+            button.addEventListener("click", () => {
+                handleSubmit(document.getElementById("searchInput").value);
+            });
         }
-    }
 
-    var input = document.getElementById("searchInput");
-    var urlQuery = param("s");
-    if (urlQuery) {
-        input.value = urlQuery;
-    }
-    input.focus();
-
-    document.getElementById("searchButton").addEventListener("click", () => {
-        handleSubmit(document.getElementById("searchInput").value);
-    });
-
-    Promise.all([
-            fetch("/index.json"),
-            fetch("/authors/index.json"),
-            fetch("/topics/index.json"),
+        Promise.all([
             fetch("/data/keywords.json"),
         ])
         .then(function (responses) {
             // Get a JSON object from each of the responses
             return Promise.all(responses.map((response) => response.json()));
         })
-        .then((data) => loadSearch(...data));
+        .then((data) => loadSearch(input, ...data));
+    } else {
+        var input = document.getElementsByClassName("searchInput");
+        if (input) {
+            input = input[0];
+            var urlQuery = param("s");
+            if (urlQuery) {
+                input.value = urlQuery;
+            }
+            input.focus();
 
-    function param(name) {
-        return decodeURIComponent(
-            (location.search.split(name + "=")[1] || "").split("&")[0]
-        ).replace(/\+/g, " ");
+            var button = document.getElementsByClassName("searchButton");
+            if (button) {
+                button = button[0];
+                button.addEventListener("click", () => {
+                    handleSubmit(document.getElementById("searchInput").value);
+                });
+            }
+
+            Promise.all([
+                fetch("/data/keywords.json"),
+                fetch("/index.json"),
+                fetch("/authors/index.json"),
+                fetch("/topics/index.json"),
+            ])
+                .then(function (responses) {
+                    // Get a JSON object from each of the responses
+                    return Promise.all(responses.map((response) => response.json()));
+                })
+                .then((data) => loadSearch(input, ...data));
+        }
+        function param(name) {
+            return decodeURIComponent(
+                (location.search.split(name + "=")[1] || "").split("&")[0]
+            ).replace(/\+/g, " ");
+        }
     }
 });
