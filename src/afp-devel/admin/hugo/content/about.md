@@ -6,8 +6,6 @@ menu:
         weight: 6
 ---
 
-## About
-
 The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover [Isabelle](http://isabelle.in.tum.de/). It is organized in the way of a scientific journal. [Submissions](/submitting) are refereed.
 
 The archive repository is hosted on [Heptapod](https://foss.heptapod.net/isa-afp/) to provide easy free access to archive entries. The entries are tested and maintained continuously against the current stable release of Isabelle. Older versions of archive entries will remain available.

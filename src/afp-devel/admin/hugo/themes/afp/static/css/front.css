@@ -106,6 +106,7 @@ aside div>a {
 
 aside ul {
     list-style: none;
+    padding: 0;
 }
 
 aside ul li a:link,
@@ -116,11 +117,15 @@ aside ul li a:visited {
 }
 
 aside li {
-    margin: 1em 0;
+    padding: 0.5em 40px;
 }
 
 li {
     margin: 0.25em 0;
+}
+
+aside .active {
+    background-color: #444373;
 }
 
 .entries ul {
@@ -575,6 +580,9 @@ a[download] {
 button {
     height: 2rem;
     padding: 7px;
+}
+
+button {
     font-weight: bold;
 }
 
