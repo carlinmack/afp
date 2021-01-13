@@ -147,7 +147,7 @@
     },
     "Achim D. Brucker": {
         "mailto": "a.brucker@exeter.ac.uk",
-        "website": "https://www.brucker.ch/"
+        "website": "https://www.brucker.ch"
     },
     "Lukas Brügger": {
         "mailto": "lukas.a.bruegger@gmail.com"
@@ -267,8 +267,7 @@
         "website": "http://www.in.tum.de/~krauss"
     },
     "Dmitriy Traytel": {
-        "mailto": "traytel@inf.ethz.ch",
-        "website": "http://people.inf.ethz.ch/trayteld/"
+        "website": "https://traytel.bitbucket.io"
     },
     "Sebastiaan J. C. Joosten": {
         "website": "http://sjcjoosten.nl/"
@@ -400,7 +399,6 @@
         "website": "http://www.dmi.unict.it/~giamp/"
     },
     "Andrei Popescu": {
-        "mailto": "a.popescu@mdx.ac.uk",
         "website": "https://www.andreipopescu.uk"
     },
     "Sylvia Grewe": {
@@ -739,7 +737,6 @@
         "mailto": "s.linker@liverpool.ac.uk"
     },
     "Mohammad Abdulaziz": {
-        "mailto": "mohammad.abdulaziz8@gmail.com",
         "website": "http://home.in.tum.de/~mansour/"
     },
     "Ben Fiedler": {
@@ -782,7 +779,8 @@
         "website": "https://www.cl.cam.ac.uk/~ak2110/"
     },
     "Anthony Bordg": {
-        "website": "https://sites.google.com/site/anthonybordg/"
+        "website": "https://sites.google.com/site/anthonybordg/",
+        "mailto": "apdb3@cam.ac.uk"
     },
     "Mirko Spasić": {
         "mailto": "mirko@matf.bg.ac.rs"
@@ -869,7 +867,7 @@
         "website": "https://cs.famaf.unc.edu.ar/~mpagano/"
     },
     "Pedro Sánchez Terraf": {
-        "website": "https://cs.famaf.unc.edu.ar/~pedro/home_en"
+        "website": "https://cs.famaf.unc.edu.ar/~pedro/home_en.html"
     },
     "Georgy Dunaev": {
         "mailto": "georgedunaev@gmail.com"
@@ -897,5 +895,14 @@
     },
     "John Derrick": {
         "mailto": "j.derrick@sheffield.ac.uk"
+    },
+    "Hanna Lachnitt": {
+        "mailto": "lachnitt@stanford.edu"
+    },
+    "Yijun He": {
+        "mailto": "yh403@cam.ac.uk"
+    },
+    "Javier Díaz": {
+        "mailto": "javier.diaz.manzi@gmail.com"
     }
 }

@@ -27,8 +27,8 @@
     <p>{{- delimit ($Scratch.Get "dependencies") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
     </p>
   </tr>{{- end -}}
-
-  {{- with (index .Site.Taxonomies.dependencies (urlize .File.TranslationBaseName)) -}}<tr>
+  {{- $entryName := .File.TranslationBaseName -}}
+  {{- with (index .Site.Taxonomies.dependencies (urlize $entryName)) -}}<tr>
     {{- range $key := .Pages.ByDate -}}
     {{- $dependent := printf "[%s](%s)" .File.TranslationBaseName .RelPermalink -}}
     {{- $Scratch.Add "dependents" (slice ($dependent)) -}}
@@ -48,16 +48,25 @@
     {{- delimit ($Scratch.Get "relatedEntries") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
   </p>
   {{- end -}}
+
+  {{- with .Params.theories -}}
+  <h3>Theories</h3>
+  <ul>
+    {{- range . -}}
+    <li>{{- printf "[%s](https://www.isa-afp.org/browser_info/current/AFP/%s/%s.html)" . $entryName . | $.Page.RenderString -}}</li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
 </main>
 
-<nav class='links'>{{- $entryName := .File.TranslationBaseName -}}
+<nav class='links'>
   <a class='popUpButton' href="#citePopUp">Cite</a>
   <a class='popUpButton' href="#downloadPopUp">Download</a>
-  <a href="../browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
+  <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
     outline</a>
-  <a href="../browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
+  <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
     document</a>
-  <a href="../browser_info/current/AFP/{{- $entryName -}}/index.html">Browse
+  <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/index.html">Browse
     theories</a>
 </nav>
 
@@ -67,13 +76,13 @@
     <h2>Cite</h2>
     <a class="close" href="#">&times;</a>
     <div>
-      <pre>@article{{- "{" -}}{{- .File.TranslationBaseName -}}-AFP,
+      <pre>@article{{- "{" -}}{{- $entryName -}}-AFP,
         author  = {{ "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
         title   = {{ "{" -}}{{- htmlUnescape .Params.title -}}},
         journal = {Archive of Formal Proofs},
         month   = {{ dateFormat "January" .Params.date -}},
         year    = {{ dateFormat "2006" .Params.date -}},
-        note    = {\url{http://isa-afp.org/entries/{{- .File.TranslationBaseName -}}.html},
+        note    = {\url{http://isa-afp.org/entries/{{- $entryName -}}.html},
                   Formal proof development},
         ISSN    = {2150-914x},
       }</pre>
