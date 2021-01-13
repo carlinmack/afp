@@ -33,5 +33,13 @@
         {
             "2015": "2015-05-28"
         }
+    ],
+    "theories": [
+        "Bool_Bounded_Set",
+        "Finitely_Bounded_Set_Counterexample",
+        "Nonempty_Bounded_Set",
+        "Probabilistic_Hierarchy",
+        "Vardi",
+        "Vardi_Counterexample"
     ]
 }

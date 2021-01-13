@@ -31,5 +31,8 @@
         {
             "2015": "2015-06-13"
         }
+    ],
+    "theories": [
+        "ListInterleaving"
     ]
 }

@@ -19,5 +19,8 @@
         {
             "2018": "2019-02-21"
         }
+    ],
+    "theories": [
+        "List_Inversions"
     ]
 }

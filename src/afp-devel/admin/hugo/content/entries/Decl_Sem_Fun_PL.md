@@ -25,5 +25,31 @@
         {
             "2016-1": "2017-07-24"
         }
+    ],
+    "theories": [
+        "BigStepLam",
+        "ChangeEnv",
+        "DeclSemAsDenot",
+        "DeclSemAsDenotFSet",
+        "DeclSemAsNDInterpFSet",
+        "DenotCompleteFSet",
+        "DenotCongruenceFSet",
+        "DenotEqualitiesFSet",
+        "DenotLam5",
+        "DenotSoundFSet",
+        "EquivDenotInterTypes",
+        "EquivRelationalDenotFSet",
+        "InterTypeSystem",
+        "Lambda",
+        "MutableRef",
+        "MutableRefProps",
+        "Optimizer",
+        "RelationalSemFSet",
+        "SmallStepLam",
+        "SystemF",
+        "ValueProps",
+        "Values",
+        "ValuesFSet",
+        "ValuesFSetProps"
     ]
 }

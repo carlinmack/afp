@@ -19,5 +19,19 @@
         {
             "2018": "2019-03-14"
         }
+    ],
+    "theories": [
+        "Errorable",
+        "Finite_Map_Ext",
+        "Object_Model",
+        "OCL_Basic_Types",
+        "OCL_Examples",
+        "OCL_Normalization",
+        "OCL_Object_Model",
+        "OCL_Syntax",
+        "OCL_Types",
+        "OCL_Typing",
+        "Transitive_Closure_Ext",
+        "Tuple"
     ]
 }

@@ -27,5 +27,18 @@
         {
             "2016-1": "2017-01-04"
         }
+    ],
+    "theories": [
+        "Conjunction",
+        "Conjunctive_Iteration",
+        "Conjunctive_Sequential",
+        "CRA",
+        "Galois_Connections",
+        "Infimum_Nat",
+        "Iteration",
+        "Parallel",
+        "Refinement_Lattice",
+        "Rely_Quotient",
+        "Sequential"
     ]
 }

@@ -16,5 +16,17 @@
         {
             "2019": "2019-06-24"
         }
+    ],
+    "theories": [
+        "Axioms",
+        "Coincidence",
+        "Denotational_Semantics",
+        "Differential_Game_Logic",
+        "Identifiers",
+        "Ids",
+        "Lib",
+        "Static_Semantics",
+        "Syntax",
+        "USubst"
     ]
 }

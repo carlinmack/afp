@@ -32,6 +32,11 @@
             "2015": "2016-01-14"
         }
     ],
+    "theories": [
+        "Additions_to_Main",
+        "Card_Number_Partitions",
+        "Number_Partition"
+    ],
     "relatedEntries": [
         "Card_Partitions"
     ]

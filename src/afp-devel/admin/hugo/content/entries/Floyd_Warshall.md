@@ -29,5 +29,10 @@
     ],
     "dependencies": [
         "Refine_Imperative_HOL"
+    ],
+    "theories": [
+        "Floyd_Warshall",
+        "FW_Code",
+        "Recursion_Combinators"
     ]
 }

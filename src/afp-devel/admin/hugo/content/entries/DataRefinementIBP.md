@@ -65,5 +65,12 @@
     ],
     "dependencies": [
         "LatticeProperties"
+    ],
+    "theories": [
+        "DataRefinement",
+        "Diagram",
+        "Hoare",
+        "Preliminaries",
+        "Statements"
     ]
 }

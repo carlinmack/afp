@@ -68,5 +68,12 @@
     ],
     "dependencies": [
         "DataRefinementIBP"
+    ],
+    "theories": [
+        "DSWMark",
+        "Graph",
+        "LinkMark",
+        "SetMark",
+        "StackMark"
     ]
 }

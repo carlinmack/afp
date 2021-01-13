@@ -44,9 +44,14 @@
         "LTL",
         "Stuttering_Equivalence"
     ],
+    "theories": [
+        "All_Of_LTL_to_GBA",
+        "LTL_to_GBA",
+        "LTL_to_GBA_impl"
+    ],
     "relatedEntries": [
-        "LTL_to_DRA",
         "Stuttering_Equivalence",
-        "LTL_Master_Theorem"
+        "LTL_Master_Theorem",
+        "LTL_Normal_Form"
     ]
 }

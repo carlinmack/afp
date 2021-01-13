@@ -35,5 +35,11 @@
     ],
     "dependencies": [
         "Applicative_Lifting"
+    ],
+    "theories": [
+        "Bird_Tree",
+        "Cotree",
+        "Cotree_Algebra",
+        "Stern_Brocot_Tree"
     ]
 }

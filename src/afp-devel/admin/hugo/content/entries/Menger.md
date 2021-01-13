@@ -26,8 +26,14 @@
             "2016-1": "2017-02-27"
         }
     ],
-    "relatedEntries": [
-        "Koenigsberg_Friendship",
-        "Kruskal"
+    "theories": [
+        "DisjointPaths",
+        "Graph",
+        "Helpers",
+        "Menger",
+        "MengerInduction",
+        "Separations",
+        "Y_eq_new_last",
+        "Y_neq_new_last"
     ]
 }

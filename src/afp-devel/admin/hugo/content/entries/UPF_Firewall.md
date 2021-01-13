@@ -31,5 +31,8 @@
     ],
     "dependencies": [
         "UPF"
+    ],
+    "theories": [
+        "UPF-Firewall"
     ]
 }

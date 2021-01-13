@@ -42,6 +42,16 @@
     "dependencies": [
         "Word_Lib"
     ],
+    "theories": [
+        "Language",
+        "OG_Annotations",
+        "OG_Hoare",
+        "OG_Soundness",
+        "OG_Syntax",
+        "OG_Tactics",
+        "SeqCatch_decomp",
+        "SmallStep"
+    ],
     "relatedEntries": [
         "Simpl"
     ]

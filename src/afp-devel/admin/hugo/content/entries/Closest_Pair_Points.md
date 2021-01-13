@@ -25,5 +25,10 @@
     "dependencies": [
         "Akra_Bazzi",
         "Root_Balanced_Tree"
+    ],
+    "theories": [
+        "Closest_Pair",
+        "Closest_Pair_Alternative",
+        "Common"
     ]
 }

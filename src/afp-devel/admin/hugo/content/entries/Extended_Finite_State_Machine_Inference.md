@@ -18,5 +18,13 @@
     "licence": "BSD",
     "dependencies": [
         "Extended_Finite_State_Machines"
+    ],
+    "theories": [
+        "Code_Generation",
+        "efsm2sal",
+        "EFSM_Dot",
+        "Inference",
+        "SelectionStrategies",
+        "Subsumption"
     ]
 }

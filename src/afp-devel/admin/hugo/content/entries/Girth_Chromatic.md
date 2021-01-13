@@ -49,5 +49,10 @@
         {
             "2011-1": "2012-02-06"
         }
+    ],
+    "theories": [
+        "Girth_Chromatic",
+        "Girth_Chromatic_Misc",
+        "Ugraphs"
     ]
 }

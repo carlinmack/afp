@@ -82,5 +82,13 @@
         {
             "2004": "2005-04-21"
         }
+    ],
+    "theories": [
+        "Cat",
+        "Functors",
+        "HomFunctors",
+        "NatTrans",
+        "SetCat",
+        "Yoneda"
     ]
 }

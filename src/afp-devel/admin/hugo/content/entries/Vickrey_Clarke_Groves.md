@@ -40,5 +40,20 @@
         {
             "2014": "2015-04-30"
         }
+    ],
+    "theories": [
+        "Argmax",
+        "CombinatorialAuction",
+        "CombinatorialAuctionCodeExtraction",
+        "CombinatorialAuctionExamples",
+        "FirstPrice",
+        "MiscTools",
+        "Partitions",
+        "RelationOperators",
+        "RelationProperties",
+        "SetUtils",
+        "StrictCombinatorialAuction",
+        "UniformTieBreaking",
+        "Universes"
     ]
 }

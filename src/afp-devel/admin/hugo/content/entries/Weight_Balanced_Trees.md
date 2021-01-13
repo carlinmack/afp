@@ -23,5 +23,9 @@
         {
             "2017": "2018-03-13"
         }
+    ],
+    "theories": [
+        "Weight_Balanced_Trees",
+        "Weight_Balanced_Trees_log"
     ]
 }

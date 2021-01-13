@@ -41,5 +41,18 @@
         {
             "2014": "2014-11-30"
         }
+    ],
+    "theories": [
+        "Analysis",
+        "ElementaryPolicies",
+        "Monads",
+        "Normalisation",
+        "NormalisationTestSpecification",
+        "ParallelComposition",
+        "SeqComposition",
+        "Service",
+        "ServiceExample",
+        "UPF",
+        "UPFCore"
     ]
 }

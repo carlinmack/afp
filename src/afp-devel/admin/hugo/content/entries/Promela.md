@@ -42,6 +42,16 @@
         "CAVA_Automata",
         "LTL"
     ],
+    "theories": [
+        "All_Of_Promela",
+        "Promela",
+        "PromelaAST",
+        "PromelaDatastructures",
+        "PromelaInvariants",
+        "PromelaLTL",
+        "PromelaLTLConv",
+        "PromelaStatistics"
+    ],
     "relatedEntries": [
         "LTL_to_GBA"
     ]

@@ -27,5 +27,38 @@
         {
             "2016-1": "2017-02-03"
         }
+    ],
+    "theories": [
+        "AuthenticationI",
+        "AuthenticationN",
+        "Channels",
+        "dhlvl1",
+        "dhlvl2",
+        "dhlvl3",
+        "dhlvl3_asymmetric",
+        "dhlvl3_symmetric",
+        "IK",
+        "Implem",
+        "Implem_asymmetric",
+        "Implem_lemmas",
+        "Implem_symmetric",
+        "Import_all",
+        "Infra",
+        "Messages",
+        "Message_derivation",
+        "Payloads",
+        "pfslvl1",
+        "pfslvl2",
+        "pfslvl3",
+        "pfslvl3_asymmetric",
+        "pfslvl3_symmetric",
+        "Refinement",
+        "Runs",
+        "Secrecy",
+        "sklvl1",
+        "sklvl2",
+        "sklvl3",
+        "sklvl3_asymmetric",
+        "sklvl3_symmetric"
     ]
 }

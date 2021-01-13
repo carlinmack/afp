@@ -20,5 +20,10 @@
     ],
     "dependencies": [
         "Word_Lib"
+    ],
+    "theories": [
+        "Finite_String",
+        "Interpreter",
+        "Interval_Word32"
     ]
 }

@@ -48,5 +48,10 @@
     ],
     "dependencies": [
         "CAVA_Setup"
+    ],
+    "theories": [
+        "All_Of_CAVA_LTL_Modelchecker",
+        "CAVA_Abstract",
+        "CAVA_Impl"
     ]
 }

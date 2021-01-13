@@ -33,6 +33,9 @@
     "dependencies": [
         "Noninterference_Sequential_Composition"
     ],
+    "theories": [
+        "ConcurrentComposition"
+    ],
     "relatedEntries": [
         "Noninterference_Sequential_Composition"
     ]

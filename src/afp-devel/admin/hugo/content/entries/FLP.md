@@ -36,5 +36,14 @@
         {
             "2016": "2016-05-18"
         }
+    ],
+    "theories": [
+        "AsynchronousSystem",
+        "Execution",
+        "FLPExistingSystem",
+        "FLPSystem",
+        "FLPTheorem",
+        "ListUtilities",
+        "Multiset"
     ]
 }

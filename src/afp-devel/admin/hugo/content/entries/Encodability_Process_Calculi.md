@@ -32,5 +32,17 @@
         {
             "2015": "2015-08-11"
         }
+    ],
+    "theories": [
+        "CombinedCriteria",
+        "DivergenceReflection",
+        "Encodings",
+        "FullAbstraction",
+        "OperationalCorrespondence",
+        "ProcessCalculi",
+        "Relations",
+        "SimulationRelations",
+        "SourceTargetRelation",
+        "SuccessSensitiveness"
     ]
 }

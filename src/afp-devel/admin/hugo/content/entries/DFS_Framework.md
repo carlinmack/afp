@@ -36,6 +36,11 @@
     "dependencies": [
         "CAVA_Automata"
     ],
+    "theories": [
+        "DFS_Chapter_Framework",
+        "DFS_Framework",
+        "Param_DFS"
+    ],
     "relatedEntries": [
         "Gabow_SCC"
     ]

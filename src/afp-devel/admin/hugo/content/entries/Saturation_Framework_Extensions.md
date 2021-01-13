@@ -19,6 +19,13 @@
         "First_Order_Terms",
         "Well_Quasi_Orders"
     ],
+    "theories": [
+        "Clausal_Calculus",
+        "FO_Ordered_Resolution_Prover_Revisited",
+        "Given_Clause_Architectures_Revisited",
+        "Soundness",
+        "Standard_Redundancy_Criterion"
+    ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover",
         "Saturation_Framework"

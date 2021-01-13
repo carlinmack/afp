@@ -17,5 +17,8 @@
         {
             "2019": "2020-03-26"
         }
+    ],
+    "theories": [
+        "RelationalIncorrectness"
     ]
 }

@@ -28,5 +28,13 @@
     ],
     "dependencies": [
         "DynamicArchitectures"
+    ],
+    "theories": [
+        "Auxiliary",
+        "Blackboard",
+        "Blockchain",
+        "Publisher_Subscriber",
+        "RF_LTL",
+        "Singleton"
     ]
 }

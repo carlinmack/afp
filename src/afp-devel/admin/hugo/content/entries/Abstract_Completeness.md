@@ -42,5 +42,9 @@
     ],
     "dependencies": [
         "Collections"
+    ],
+    "theories": [
+        "Abstract_Completeness",
+        "Propositional_Logic"
     ]
 }

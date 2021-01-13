@@ -25,5 +25,10 @@
         {
             "2016-1": "2017-03-01"
         }
+    ],
+    "theories": [
+        "Elliptic_Axclass",
+        "Elliptic_Locale",
+        "Elliptic_Test"
     ]
 }

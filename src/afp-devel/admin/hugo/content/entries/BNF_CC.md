@@ -25,5 +25,16 @@
         {
             "2017": "2018-04-25"
         }
+    ],
+    "theories": [
+        "Axiomatised_BNF_CC",
+        "Composition",
+        "Concrete_Examples",
+        "DDS",
+        "Fixpoints",
+        "Operation_Examples",
+        "Preliminaries",
+        "Quotient_Preservation",
+        "Subtypes"
     ]
 }

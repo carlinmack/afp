@@ -14,5 +14,12 @@
     "licence": "BSD",
     "dependencies": [
         "Polynomial_Factorization"
+    ],
+    "theories": [
+        "Gaussian_Integers",
+        "Gaussian_Integers_Everything",
+        "Gaussian_Integers_Pythagorean_Triples",
+        "Gaussian_Integers_Sums_Of_Two_Squares",
+        "Gaussian_Integers_Test"
     ]
 }

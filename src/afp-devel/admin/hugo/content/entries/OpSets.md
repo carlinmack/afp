@@ -26,5 +26,12 @@
         {
             "2017": "2018-05-25"
         }
+    ],
+    "theories": [
+        "Insert_Spec",
+        "Interleaving",
+        "List_Spec",
+        "OpSet",
+        "RGA"
     ]
 }

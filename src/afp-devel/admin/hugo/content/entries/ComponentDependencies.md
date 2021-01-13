@@ -37,5 +37,10 @@
         {
             "2013-2": "2014-04-29"
         }
+    ],
+    "theories": [
+        "DataDependencies",
+        "DataDependenciesCaseStudy",
+        "DataDependenciesConcreteValues"
     ]
 }

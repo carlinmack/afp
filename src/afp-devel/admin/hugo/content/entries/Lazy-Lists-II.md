@@ -79,5 +79,8 @@
     ],
     "dependencies": [
         "Coinductive"
+    ],
+    "theories": [
+        "LList2"
     ]
 }

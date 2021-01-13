@@ -32,5 +32,9 @@
         {
             "2015": "2016-01-05"
         }
+    ],
+    "theories": [
+        "Liouville_Numbers",
+        "Liouville_Numbers_Misc"
     ]
 }

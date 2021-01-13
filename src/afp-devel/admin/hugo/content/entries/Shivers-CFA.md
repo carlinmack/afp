@@ -59,5 +59,21 @@
         {
             "2009-2": "2010-11-17"
         }
+    ],
+    "theories": [
+        "AbsCF",
+        "AbsCFComp",
+        "AbsCFCorrect",
+        "Computability",
+        "CPSScheme",
+        "CPSUtils",
+        "Eval",
+        "ExCF",
+        "ExCFSV",
+        "FixTransform",
+        "HOLCFUtils",
+        "MapSets",
+        "SetMap",
+        "Utils"
     ]
 }

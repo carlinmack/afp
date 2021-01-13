@@ -15,5 +15,8 @@
     "dependencies": [
         "Pratt_Certificate",
         "Polynomial_Factorization"
+    ],
+    "theories": [
+        "Amicable_Numbers"
     ]
 }

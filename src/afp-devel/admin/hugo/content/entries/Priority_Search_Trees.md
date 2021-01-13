@@ -17,5 +17,10 @@
         {
             "2019": "2019-06-29"
         }
+    ],
+    "theories": [
+        "Prio_Map_Specs",
+        "PST_General",
+        "PST_RBT"
     ]
 }

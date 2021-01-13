@@ -20,6 +20,9 @@
         "Prime_Number_Theorem",
         "Prime_Distribution_Elementary"
     ],
+    "theories": [
+        "Irrational_Series_Erdos_Straus"
+    ],
     "relatedEntries": [
         "Zeta_3_Irrational"
     ]

@@ -37,5 +37,15 @@
         {
             "2013-2": "2014-04-06"
         }
+    ],
+    "theories": [
+        "Kernel_programming_language",
+        "KPL_execution_group",
+        "KPL_execution_kernel",
+        "KPL_execution_thread",
+        "KPL_state",
+        "KPL_syntax",
+        "KPL_wellformedness",
+        "Misc"
     ]
 }

@@ -22,5 +22,17 @@
         {
             "2017": "2017-11-09"
         }
+    ],
+    "theories": [
+        "Cars",
+        "HMLSL",
+        "Length",
+        "Move",
+        "NatInt",
+        "RealInt",
+        "Restriction",
+        "Sensors",
+        "Traffic",
+        "Views"
     ]
 }

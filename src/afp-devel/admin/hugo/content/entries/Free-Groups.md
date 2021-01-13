@@ -61,5 +61,14 @@
     ],
     "dependencies": [
         "Applicative_Lifting"
+    ],
+    "theories": [
+        "C2",
+        "Cancelation",
+        "FreeGroups",
+        "Generators",
+        "Isomorphisms",
+        "PingPongLemma",
+        "UnitGroup"
     ]
 }

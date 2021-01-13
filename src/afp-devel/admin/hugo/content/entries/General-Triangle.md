@@ -52,5 +52,8 @@
         {
             "2011": "2011-04-01"
         }
+    ],
+    "theories": [
+        "GeneralTriangle"
     ]
 }

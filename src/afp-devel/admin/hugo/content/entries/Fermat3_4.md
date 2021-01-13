@@ -68,5 +68,10 @@
         {
             "2007": "2007-11-27"
         }
+    ],
+    "theories": [
+        "Fermat3",
+        "Fermat4",
+        "Quad_Form"
     ]
 }

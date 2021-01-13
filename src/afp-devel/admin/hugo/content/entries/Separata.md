@@ -37,6 +37,9 @@
     "dependencies": [
         "Separation_Algebra"
     ],
+    "theories": [
+        "Separata"
+    ],
     "relatedEntries": [
         "Separation_Algebra",
         "Hoare_Time"

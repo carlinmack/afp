@@ -52,5 +52,11 @@
     ],
     "dependencies": [
         "Cauchy"
+    ],
+    "theories": [
+        "Log_Impl",
+        "NthRoot_Impl",
+        "Sqrt_Babylonian",
+        "Sqrt_Babylonian_Auxiliary"
     ]
 }

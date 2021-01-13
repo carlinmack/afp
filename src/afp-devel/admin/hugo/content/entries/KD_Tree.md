@@ -26,5 +26,11 @@
     ],
     "dependencies": [
         "Median_Of_Medians_Selection"
+    ],
+    "theories": [
+        "Build",
+        "KD_Tree",
+        "Nearest_Neighbors",
+        "Range_Search"
     ]
 }

@@ -22,67 +22,66 @@ fun len :: "'a tree \<Rightarrow> nat" where
 
 fun \<Phi> :: "'a tree \<Rightarrow> real" where
   "\<Phi> Leaf = 0"
-| "\<Phi> (Node l _ r) = \<Phi> l + \<Phi> r + log 2 (1 + size l + size r)"
+| "\<Phi> (Node l x r) = log 2 (size (Node l x r)) + \<Phi> l + \<Phi> r"
 
-lemma link_size[simp]: "size (link h) = size h" 
-  by (cases h rule: link.cases) simp_all
+lemma link_size[simp]: "size (link hp) = size hp" 
+  by (cases hp rule: link.cases) simp_all
 
-lemma size_pass\<^sub>1: "size (pass\<^sub>1 h) = size h" 
-  by (induct h rule: pass\<^sub>1.induct) simp_all
+lemma size_pass\<^sub>1: "size (pass\<^sub>1 hp) = size hp" 
+  by (induct hp rule: pass\<^sub>1.induct) simp_all
 
-lemma size_pass\<^sub>2: "size (pass\<^sub>2 h) = size h" 
-  by (induct h rule: pass\<^sub>2.induct) simp_all
+lemma size_pass\<^sub>2: "size (pass\<^sub>2 hp) = size hp" 
+  by (induct hp rule: pass\<^sub>2.induct) simp_all
 
 lemma size_merge: 
   "is_root h1 \<Longrightarrow> is_root h2 \<Longrightarrow> size (merge h1 h2) = size h1 + size h2"
   by (simp split: tree.splits)
 
-lemma \<Delta>\<Phi>_insert: "is_root h \<Longrightarrow> \<Phi> (insert x h) - \<Phi> h \<le> log 2  (size h + 1)"
+lemma \<Delta>\<Phi>_insert: "is_root hp \<Longrightarrow> \<Phi> (insert x hp) - \<Phi> hp \<le> log 2  (size hp + 1)"
   by (simp split: tree.splits)
 
 lemma \<Delta>\<Phi>_merge:
-  assumes "h1 = Node lx x Leaf" "h2 = Node ly y Leaf" 
+  assumes "h1 = Node hs1 x1 Leaf" "h2 = Node hs2 x2 Leaf" 
   shows "\<Phi> (merge h1 h2) - \<Phi> h1 - \<Phi> h2 \<le> log 2 (size h1 + size h2) + 1" 
 proof -
-  let ?hs = "Node lx x (Node ly y Leaf)"
+  let ?hs = "Node hs1 x1 (Node hs2 x2 Leaf)"
   have "\<Phi> (merge h1 h2) = \<Phi> (link ?hs)" using assms by simp
-  also have "\<dots> = \<Phi> lx + \<Phi> ly + log 2 (size lx + size ly + 1) + log 2 (size lx + size ly + 2)"
+  also have "\<dots> = \<Phi> hs1 + \<Phi> hs2 + log 2 (size hs1 + size hs2 + 1) + log 2 (size hs1 + size hs2 + 2)"
     by (simp add: algebra_simps)
-  also have "\<dots> = \<Phi> lx + \<Phi> ly + log 2 (size lx + size ly + 1) + log 2 (size h1 + size h2)"
+  also have "\<dots> = \<Phi> hs1 + \<Phi> hs2 + log 2 (size hs1 + size hs2 + 1) + log 2 (size h1 + size h2)"
      using assms by simp
   finally have "\<Phi> (merge h1 h2) = \<dots>" .
   have "\<Phi> (merge h1 h2) - \<Phi> h1 - \<Phi> h2 =
-   log 2 (size lx + size ly + 1) + log 2 (size h1 + size h2)
-   - log 2 (size lx + 1) - log 2 (size ly + 1)"
+   log 2 (size hs1 + size hs2 + 1) + log 2 (size h1 + size h2)
+   - log 2 (size hs1 + 1) - log 2 (size hs2 + 1)"
      using assms by (simp add: algebra_simps)
   also have "\<dots> \<le> log 2 (size h1 + size h2) + 1"
-    using ld_le_2ld[of "size lx" "size ly"] assms by (simp add: algebra_simps)
+    using ld_le_2ld[of "size hs1" "size hs2"] assms by (simp add: algebra_simps)
   finally show ?thesis .
 qed
 
-fun upperbound :: "'a tree \<Rightarrow> real" where
-  "upperbound Leaf = 0"
-| "upperbound (Node _ _ Leaf) = 0"
-| "upperbound (Node lx _ (Node ly _ Leaf)) = 2*log 2 (size lx + size ly + 2)" 
-| "upperbound (Node lx _ (Node ly _ ry)) = 2*log 2 (size lx + size ly + size ry + 2) 
-    - 2*log 2 (size ry) - 2 + upperbound ry"
+fun ub_pass\<^sub>1 :: "'a tree \<Rightarrow> real" where
+  "ub_pass\<^sub>1 (Node _ _ Leaf) = 0"
+| "ub_pass\<^sub>1 (Node hs1 _ (Node hs2 _ Leaf)) = 2*log 2 (size hs1 + size hs2 + 2)" 
+| "ub_pass\<^sub>1 (Node hs1 _ (Node hs2 _ hs)) = 2*log 2 (size hs1 + size hs2 + size hs + 2) 
+    - 2*log 2 (size hs) - 2 + ub_pass\<^sub>1 hs"
 
-lemma \<Delta>\<Phi>_pass1_upperbound: "\<Phi> (pass\<^sub>1 hs) - \<Phi> hs  \<le> upperbound hs"
-proof (induction hs rule: upperbound.induct)
-  case (3 lx x ly y)
+lemma \<Delta>\<Phi>_pass1_ub_pass1: "hs \<noteq> Leaf \<Longrightarrow> \<Phi> (pass\<^sub>1 hs) - \<Phi> hs  \<le> ub_pass\<^sub>1 hs"
+proof (induction hs rule: ub_pass\<^sub>1.induct)
+  case (2 lx x ly y)
   have "log 2  (size lx + size ly + 1) - log 2  (size ly + 1) 
     \<le> log 2 (size lx + size ly + 1)" by simp
   also have "\<dots> \<le> log 2 (size lx + size ly + 2)" by simp
   also have "\<dots> \<le> 2*\<dots>" by simp
   finally show ?case by (simp add: algebra_simps)
 next
-  case (4 lx x ly y lz z rz)
+  case (3 lx x ly y lz z rz)
   let ?ry = "Node lz z rz"
   let ?rx = "Node ly y ?ry"
   let ?h = "Node lx x ?rx"
   let ?t ="log 2 (size lx + size ly + 1) - log 2 (size ly + size ?ry + 1)"
-  have "\<Phi> (pass\<^sub>1 ?h) - \<Phi> ?h \<le> ?t + upperbound ?ry" 
-    using "4.IH" by (simp add: size_pass\<^sub>1 algebra_simps)
+  have "\<Phi> (pass\<^sub>1 ?h) - \<Phi> ?h \<le> ?t + ub_pass\<^sub>1 ?ry" 
+    using "3.IH" by (simp add: size_pass\<^sub>1 algebra_simps)
   moreover have "log 2 (size lx + size ly + 1) + 2 * log 2 (size ?ry) + 2
     \<le> 2 * log 2 (size ?h) + log 2 (size ly + size ?ry + 1)" (is "?l \<le> ?r")
   proof -
@@ -99,9 +98,9 @@ qed simp_all
 lemma \<Delta>\<Phi>_pass1: assumes "hs \<noteq> Leaf"
   shows "\<Phi> (pass\<^sub>1 hs) - \<Phi> hs \<le> 2*log 2 (size hs) - len hs + 2"
 proof -
-  from assms have "upperbound hs \<le> 2*log 2 (size hs) - len hs + 2" 
-    by (induct hs rule: upperbound.induct) (simp_all add: algebra_simps)
-  thus ?thesis using \<Delta>\<Phi>_pass1_upperbound [of "hs"] order_trans by blast
+  from assms have "ub_pass\<^sub>1 hs \<le> 2*log 2 (size hs) - len hs + 2" 
+    by (induct hs rule: ub_pass\<^sub>1.induct) (simp_all add: algebra_simps)
+  thus ?thesis using \<Delta>\<Phi>_pass1_ub_pass1 [OF assms] order_trans by blast
 qed
 
 lemma \<Delta>\<Phi>_pass2: "hs \<noteq> Leaf \<Longrightarrow> \<Phi> (pass\<^sub>2 hs) - \<Phi> hs \<le> log 2 (size hs)"
@@ -128,7 +127,7 @@ proof (induction hs)
     finally show ?thesis .
   qed simp
 qed simp
-
+(*
 lemma \<Delta>\<Phi>_mergepairs: assumes "hs \<noteq> Leaf"
   shows "\<Phi> (merge_pairs hs) - \<Phi> hs \<le> 3 * log 2 (size hs) - len hs + 2"
 proof -
@@ -136,19 +135,19 @@ proof -
   with assms \<Delta>\<Phi>_pass1[of hs] \<Delta>\<Phi>_pass2[of "pass\<^sub>1 hs"]
   show ?thesis by (auto simp add: size_pass\<^sub>1 pass12_merge_pairs)
 qed
-
-lemma \<Delta>\<Phi>_del_min: assumes "lx \<noteq> Leaf"
-shows "\<Phi> (del_min (Node lx x Leaf)) - \<Phi> (Node lx x Leaf) 
-  \<le> 3*log 2 (size lx) - len lx + 2"
+*)
+lemma \<Delta>\<Phi>_del_min: assumes "hs \<noteq> Leaf"
+shows "\<Phi> (del_min (Node hs x Leaf)) - \<Phi> (Node hs x Leaf) 
+  \<le> 3*log 2 (size hs) - len hs + 2"
 proof -
-  let ?h = "Node lx x Leaf"
-  let ?\<Delta>\<Phi>\<^sub>1 = "\<Phi> lx - \<Phi> ?h" 
-  let ?\<Delta>\<Phi>\<^sub>2 = "\<Phi>(pass\<^sub>2(pass\<^sub>1 lx)) - \<Phi> lx"
+  let ?h = "Node hs x Leaf"
+  let ?\<Delta>\<Phi>\<^sub>1 = "\<Phi> hs - \<Phi> ?h" 
+  let ?\<Delta>\<Phi>\<^sub>2 = "\<Phi>(pass\<^sub>2(pass\<^sub>1 hs)) - \<Phi> hs"
   let ?\<Delta>\<Phi> = "\<Phi> (del_min ?h) - \<Phi> ?h"
-  have "lx \<noteq> Leaf \<Longrightarrow> \<Phi>(pass\<^sub>2(pass\<^sub>1 lx)) - \<Phi> (pass\<^sub>1 lx) \<le> log 2  (size lx)" 
-    using \<Delta>\<Phi>_pass2 [of "pass\<^sub>1 lx"] by(metis eq_size_0 size_pass\<^sub>1)
-  moreover have "lx \<noteq> Leaf \<Longrightarrow> \<Phi> (pass\<^sub>1 lx) - \<Phi> lx \<le>  2*\<dots> - len lx + 2" 
-    using \<Delta>\<Phi>_pass1 by metis
+  have "\<Phi>(pass\<^sub>2(pass\<^sub>1 hs)) - \<Phi> (pass\<^sub>1 hs) \<le> log 2  (size hs)" 
+    using \<Delta>\<Phi>_pass2 [of "pass\<^sub>1 hs"] assms by(metis eq_size_0 size_pass\<^sub>1)
+  moreover have "\<Phi> (pass\<^sub>1 hs) - \<Phi> hs \<le>  2*\<dots> - len hs + 2" 
+    by(rule \<Delta>\<Phi>_pass1[OF assms])
   moreover have "?\<Delta>\<Phi> \<le> ?\<Delta>\<Phi>\<^sub>2" by simp
   ultimately show ?thesis using assms by linarith
 qed
@@ -185,19 +184,19 @@ fun exec :: "'a :: linorder op \<Rightarrow> 'a tree list \<Rightarrow> 'a tree"
 "exec (Insert x) [h] = insert x h" |
 "exec Merge [h1,h2] = merge h1 h2"
 
-fun t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 :: "'a tree \<Rightarrow> nat" where
-  "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 Leaf = 1"
-| "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 (Node _ _ Leaf) = 1"
-| "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 (Node _ _ (Node _ _ ry)) = t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 ry + 1"
+fun T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 :: "'a tree \<Rightarrow> nat" where
+  "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 Leaf = 1"
+| "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 (Node _ _ Leaf) = 1"
+| "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 (Node _ _ (Node _ _ ry)) = T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 ry + 1"
 
-fun t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 :: "'a tree \<Rightarrow> nat" where
-  "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 Leaf = 1"
-| "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (Node _ _ rx) = t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 rx + 1"
+fun T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 :: "'a tree \<Rightarrow> nat" where
+  "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 Leaf = 1"
+| "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (Node _ _ rx) = T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 rx + 1"
 
 fun cost :: "'a :: linorder op \<Rightarrow> 'a tree list \<Rightarrow> nat" where
   "cost Empty [] = 1"
 | "cost Del_min [Leaf] = 1"
-| "cost Del_min [Node lx _  _] = t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (pass\<^sub>1 lx) + t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 lx"
+| "cost Del_min [Node lx _  _] = T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (pass\<^sub>1 lx) + T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 lx"
 | "cost (Insert a) _ = 1"
 | "cost Merge _ = 1"
 
@@ -229,7 +228,7 @@ next
     show ?thesis
     proof (cases h)
       case [simp]: (Node lx x rx)
-      have "t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (pass\<^sub>1 lx) + t\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 lx \<le> len lx + 2"
+      have "T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>2 (pass\<^sub>1 lx) + T\<^sub>p\<^sub>a\<^sub>s\<^sub>s\<^sub>1 lx \<le> len lx + 2"
         by (induct lx rule: pass\<^sub>1.induct) simp_all
       hence "cost f ss \<le> \<dots>" by simp 
       moreover have "\<Phi> (del_min h) - \<Phi> h \<le> 3*log 2 (size h + 1) - len lx + 2"

@@ -38,6 +38,10 @@
     "dependencies": [
         "Echelon_Form"
     ],
+    "theories": [
+        "Hermite",
+        "Hermite_IArrays"
+    ],
     "relatedEntries": [
         "Echelon_Form"
     ]

@@ -57,5 +57,15 @@
     ],
     "dependencies": [
         "LatticeProperties"
+    ],
+    "theories": [
+        "Examples",
+        "LeftComplementedMonoid",
+        "Operations",
+        "PseudoHoopFilters",
+        "PseudoHoops",
+        "PseudoWaisbergAlgebra",
+        "RightComplementedMonoid",
+        "SpecialPseudoHoops"
     ]
 }

@@ -70,5 +70,8 @@
         {
             "2007": "2007-11-27"
         }
+    ],
+    "theories": [
+        "MuchAdoAboutTwo"
     ]
 }

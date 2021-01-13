@@ -24,5 +24,15 @@
         "Transition_Systems_and_Automata",
         "Coinductive",
         "Stuttering_Equivalence"
+    ],
+    "theories": [
+        "Ample_Abstract",
+        "Ample_Analysis",
+        "Ample_Correctness",
+        "Formula",
+        "Traces",
+        "Transition_System_Extensions",
+        "Transition_System_Interpreted_Traces",
+        "Transition_System_Traces"
     ]
 }

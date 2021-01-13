@@ -48,6 +48,18 @@
         "Efficient-Mergesort",
         "Spec_Check"
     ],
+    "theories": [
+        "After2",
+        "Automaton",
+        "Before2",
+        "Benchmark",
+        "Derivatives_Finite",
+        "Deriv_Autos",
+        "Deriv_PDeriv",
+        "Examples",
+        "Position_Autos",
+        "Regex_Equivalence"
+    ],
     "relatedEntries": [
         "Myhill-Nerode",
         "Posix-Lexing"

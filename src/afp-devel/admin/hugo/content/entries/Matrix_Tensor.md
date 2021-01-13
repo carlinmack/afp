@@ -38,5 +38,8 @@
     ],
     "dependencies": [
         "Matrix"
+    ],
+    "theories": [
+        "Matrix_Tensor"
     ]
 }

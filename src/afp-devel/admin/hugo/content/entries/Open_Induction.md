@@ -47,5 +47,9 @@
         {
             "2013": "2013-02-16"
         }
+    ],
+    "theories": [
+        "Open_Induction",
+        "Restricted_Predicates"
     ]
 }

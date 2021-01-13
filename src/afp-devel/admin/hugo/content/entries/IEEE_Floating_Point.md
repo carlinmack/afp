@@ -55,6 +55,13 @@
     "dependencies": [
         "Word_Lib"
     ],
+    "theories": [
+        "Conversion_IEEE_Float",
+        "Double",
+        "FP64",
+        "IEEE",
+        "IEEE_Properties"
+    ],
     "relatedEntries": [
         "Native_Word"
     ]

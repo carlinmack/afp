@@ -51,5 +51,12 @@
         {
             "2012": "2013-01-16"
         }
+    ],
+    "theories": [
+        "Dim_Formula",
+        "Dual_Order",
+        "Fundamental_Subspaces",
+        "Miscellaneous",
+        "Mod_Type"
     ]
 }

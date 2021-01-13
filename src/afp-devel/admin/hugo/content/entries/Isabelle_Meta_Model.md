@@ -36,5 +36,9 @@
         {
             "2015": "2015-09-25"
         }
+    ],
+    "theories": [
+        "Antiquote_Setup",
+        "Init"
     ]
 }

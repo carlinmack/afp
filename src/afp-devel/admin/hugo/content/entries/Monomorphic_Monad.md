@@ -28,5 +28,11 @@
         {
             "2016-1": "2017-05-11"
         }
+    ],
+    "theories": [
+        "Interpreter",
+        "Just_Do_It_Examples",
+        "Monad_Overloading",
+        "Monomorphic_Monad"
     ]
 }

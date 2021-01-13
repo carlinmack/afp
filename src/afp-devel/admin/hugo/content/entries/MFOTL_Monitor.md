@@ -27,6 +27,17 @@
     "dependencies": [
         "Containers"
     ],
+    "theories": [
+        "Abstract_Monitor",
+        "Examples",
+        "Interval",
+        "MFOTL",
+        "Monitor",
+        "Monitor_Code",
+        "Slicing",
+        "Table",
+        "Trace"
+    ],
     "relatedEntries": [
         "MFODL_Monitor_Optimized"
     ]

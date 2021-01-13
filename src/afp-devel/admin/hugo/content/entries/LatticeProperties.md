@@ -58,5 +58,13 @@
         {
             "2011": "2011-09-27"
         }
+    ],
+    "theories": [
+        "Complete_Lattice_Prop",
+        "Conj_Disj",
+        "Lattice_Ordered_Group",
+        "Lattice_Prop",
+        "Modular_Distrib_Lattice",
+        "WellFoundedTransitive"
     ]
 }

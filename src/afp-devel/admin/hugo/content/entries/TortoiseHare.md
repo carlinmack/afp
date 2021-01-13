@@ -28,5 +28,10 @@
         {
             "2016": "2016-02-22"
         }
+    ],
+    "theories": [
+        "Basis",
+        "Brent",
+        "TortoiseHare"
     ]
 }

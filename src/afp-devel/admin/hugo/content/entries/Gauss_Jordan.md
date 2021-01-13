@@ -40,6 +40,36 @@
     "dependencies": [
         "Rank_Nullity_Theorem"
     ],
+    "theories": [
+        "Bases_Of_Fundamental_Subspaces",
+        "Bases_Of_Fundamental_Subspaces_IArrays",
+        "Code_Generation_IArrays",
+        "Code_Generation_IArrays_Haskell",
+        "Code_Generation_IArrays_SML",
+        "Code_Matrix",
+        "Code_Rational",
+        "Code_Real_Approx_By_Float_Haskell",
+        "Code_Set",
+        "Code_Z2",
+        "Determinants2",
+        "Determinants_IArrays",
+        "Elementary_Operations",
+        "Examples_Gauss_Jordan_Abstract",
+        "Examples_Gauss_Jordan_IArrays",
+        "Gauss_Jordan",
+        "Gauss_Jordan_IArrays",
+        "Gauss_Jordan_PA",
+        "Gauss_Jordan_PA_IArrays",
+        "IArray_Addenda",
+        "Inverse",
+        "Inverse_IArrays",
+        "Linear_Maps",
+        "Matrix_To_IArray",
+        "Rank",
+        "Rref",
+        "System_Of_Equations",
+        "System_Of_Equations_IArrays"
+    ],
     "relatedEntries": [
         "Echelon_Form",
         "QR_Decomposition"

@@ -23,5 +23,8 @@
         {
             "2017": "2017-10-27"
         }
+    ],
+    "theories": [
+        "KuratowskiClosureComplementTheorem"
     ]
 }

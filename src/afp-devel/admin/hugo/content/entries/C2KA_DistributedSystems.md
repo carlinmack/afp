@@ -19,5 +19,12 @@
         {
             "2019": "2019-08-06"
         }
+    ],
+    "theories": [
+        "C2KA",
+        "CKA",
+        "Communication_C2KA",
+        "Stimuli",
+        "Topology_C2KA"
     ]
 }

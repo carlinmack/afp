@@ -33,6 +33,11 @@
     "dependencies": [
         "Noninterference_Ipurge_Unwinding"
     ],
+    "theories": [
+        "Counterexamples",
+        "Propaedeutics",
+        "SequentialComposition"
+    ],
     "relatedEntries": [
         "Noninterference_Concurrent_Composition"
     ]

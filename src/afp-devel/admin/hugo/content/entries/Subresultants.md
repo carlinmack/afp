@@ -32,6 +32,15 @@
         "Jordan_Normal_Form",
         "Polynomial_Factorization"
     ],
+    "theories": [
+        "Binary_Exponentiation",
+        "Coeff_Int",
+        "Dichotomous_Lazard",
+        "More_Homomorphisms",
+        "Resultant_Prelim",
+        "Subresultant",
+        "Subresultant_Gcd"
+    ],
     "relatedEntries": [
         "Perron_Frobenius"
     ]

@@ -34,5 +34,9 @@
         {
             "2014": "2014-09-25"
         }
+    ],
+    "theories": [
+        "Imperative_Insertion_Sort",
+        "Imperative_Loops"
     ]
 }

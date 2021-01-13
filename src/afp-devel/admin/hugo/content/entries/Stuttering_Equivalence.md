@@ -59,6 +59,11 @@
     "dependencies": [
         "LTL"
     ],
+    "theories": [
+        "PLTL",
+        "Samplers",
+        "StutterEquivalence"
+    ],
     "relatedEntries": [
         "LTL_to_GBA",
         "LTL_Master_Theorem",

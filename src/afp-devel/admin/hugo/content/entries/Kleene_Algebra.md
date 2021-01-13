@@ -55,9 +55,25 @@
             "2012": "2013-01-16"
         }
     ],
+    "theories": [
+        "Conway",
+        "Dioid",
+        "Dioid_Models",
+        "DRA",
+        "Finite_Suprema",
+        "Formal_Power_Series",
+        "Inf_Matrix",
+        "Kleene_Algebra",
+        "Kleene_Algebra_Models",
+        "Matrix",
+        "Omega_Algebra",
+        "Omega_Algebra_Models",
+        "PHL_DRA",
+        "PHL_KA",
+        "Signatures"
+    ],
     "relatedEntries": [
         "KAD",
-        "KAT_and_DRA",
-        "Relation_Algebra"
+        "KAT_and_DRA"
     ]
 }

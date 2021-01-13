@@ -28,7 +28,7 @@
     "dependencies": [
         "Sepref_IICF"
     ],
-    "relatedEntries": [
-        "Kruskal"
+    "theories": [
+        "KMP"
     ]
 }

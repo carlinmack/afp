@@ -20,5 +20,8 @@
     ],
     "dependencies": [
         "Stone_Algebras"
+    ],
+    "theories": [
+        "Subset_Boolean_Algebras"
     ]
 }

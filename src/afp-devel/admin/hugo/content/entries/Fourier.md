@@ -19,5 +19,13 @@
     ],
     "dependencies": [
         "Lp"
+    ],
+    "theories": [
+        "Confine",
+        "Fourier",
+        "Fourier_Aux2",
+        "Lspace",
+        "Periodic",
+        "Square_Integrable"
     ]
 }

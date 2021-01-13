@@ -29,6 +29,9 @@
             "2016": "2016-08-08"
         }
     ],
+    "theories": [
+        "Ptolemys_Theorem"
+    ],
     "relatedEntries": [
         "Prime_Number_Theorem"
     ]

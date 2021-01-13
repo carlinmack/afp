@@ -32,6 +32,10 @@
     "dependencies": [
         "HRB-Slicing"
     ],
+    "theories": [
+        "LiftingInter",
+        "NonInterferenceInter"
+    ],
     "relatedEntries": [
         "InformationFlowSlicing",
         "HRB-Slicing"

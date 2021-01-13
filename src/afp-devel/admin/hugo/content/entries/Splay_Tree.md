@@ -38,6 +38,11 @@
             "2014": "2014-08-28"
         }
     ],
+    "theories": [
+        "Splay_Heap",
+        "Splay_Map",
+        "Splay_Tree"
+    ],
     "relatedEntries": [
         "Skew_Heap"
     ]

@@ -24,5 +24,19 @@
         {
             "2018": "2019-02-12"
         }
+    ],
+    "theories": [
+        "Abacus",
+        "Abacus_Defs",
+        "Abacus_Hoare",
+        "Abacus_Mopup",
+        "Recs",
+        "Recursive",
+        "Rec_Def",
+        "Turing",
+        "Turing_Hoare",
+        "UF",
+        "Uncomputable",
+        "UTM"
     ]
 }

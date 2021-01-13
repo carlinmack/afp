@@ -27,6 +27,11 @@
         "LTL",
         "Deriving"
     ],
+    "theories": [
+        "Code_Export",
+        "Omega_Words_Fun_Stream",
+        "Quotient_Type"
+    ],
     "relatedEntries": [
         "LTL_to_DRA",
         "LTL_Normal_Form",

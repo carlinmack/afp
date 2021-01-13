@@ -62,5 +62,13 @@
         {
             "2009": "2009-09-01"
         }
+    ],
+    "theories": [
+        "ModalSequents",
+        "MultiSequents",
+        "NominalSequents",
+        "SequentInvertibility",
+        "SingleSuccedent",
+        "SRCTransforms"
     ]
 }

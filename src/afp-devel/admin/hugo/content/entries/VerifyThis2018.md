@@ -27,6 +27,13 @@
     "dependencies": [
         "Sepref_IICF"
     ],
+    "theories": [
+        "Challenge1",
+        "Challenge1_short",
+        "Challenge2",
+        "Challenge3",
+        "Snippets"
+    ],
     "relatedEntries": [
         "VerifyThis2019"
     ]

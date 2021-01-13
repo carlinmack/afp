@@ -42,9 +42,13 @@
     "dependencies": [
         "Coinductive"
     ],
+    "theories": [
+        "Stream_Fusion",
+        "Stream_Fusion_Examples",
+        "Stream_Fusion_List",
+        "Stream_Fusion_LList"
+    ],
     "relatedEntries": [
-        "Coinductive",
-        "Stream-Fusion",
-        "Topology"
+        "Stream-Fusion"
     ]
 }

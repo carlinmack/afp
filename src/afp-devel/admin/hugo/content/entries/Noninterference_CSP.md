@@ -40,5 +40,10 @@
         {
             "2013-2": "2014-05-24"
         }
+    ],
+    "theories": [
+        "ClassicalNoninterference",
+        "CSPNoninterference",
+        "GeneralizedNoninterference"
     ]
 }

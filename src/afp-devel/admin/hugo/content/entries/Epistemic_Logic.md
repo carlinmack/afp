@@ -19,5 +19,8 @@
         {
             "2018": "2018-10-29"
         }
+    ],
+    "theories": [
+        "Epistemic_Logic"
     ]
 }

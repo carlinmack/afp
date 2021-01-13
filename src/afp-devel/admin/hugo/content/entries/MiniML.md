@@ -86,5 +86,13 @@
         {
             "2003": "2004-03-23"
         }
+    ],
+    "theories": [
+        "Generalize",
+        "Instance",
+        "Maybe",
+        "MiniML",
+        "Type",
+        "W"
     ]
 }

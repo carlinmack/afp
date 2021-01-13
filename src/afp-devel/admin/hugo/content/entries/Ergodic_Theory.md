@@ -29,5 +29,19 @@
         {
             "2016": "2016-02-22"
         }
+    ],
+    "theories": [
+        "Asymptotic_Density",
+        "Ergodicity",
+        "Fekete",
+        "Gouezel_Karlsson",
+        "Invariants",
+        "Kingman",
+        "Kohlberg_Neyman_Karlsson",
+        "Measure_Preserving_Transformations",
+        "Normalizing_Sequences",
+        "Recurrence",
+        "SG_Library_Complement",
+        "Transfer_Operator"
     ]
 }

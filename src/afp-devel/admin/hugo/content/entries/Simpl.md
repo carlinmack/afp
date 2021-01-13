@@ -73,8 +73,32 @@
             "2007": "2008-03-07"
         }
     ],
+    "theories": [
+        "AlternativeSmallStep",
+        "DPC0Expressions",
+        "DPC0Library",
+        "Generalise",
+        "HeapList",
+        "Hoare",
+        "HoarePartial",
+        "HoarePartialDef",
+        "HoarePartialProps",
+        "HoareTotal",
+        "HoareTotalDef",
+        "HoareTotalProps",
+        "Language",
+        "Semantic",
+        "Simpl",
+        "Simpl_Heap",
+        "SmallStep",
+        "StateSpace",
+        "SyntaxTest",
+        "Termination",
+        "UserGuide",
+        "Vcg",
+        "XVcg"
+    ],
     "relatedEntries": [
-        "Abstract-Hoare-Logics",
         "Complx"
     ]
 }

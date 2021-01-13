@@ -61,5 +61,8 @@
         {
             "2009-1": "2010-03-29"
         }
+    ],
+    "theories": [
+        "Free_Boolean_Algebra"
     ]
 }

@@ -41,9 +41,21 @@
         "Boolean_Expression_Checkers",
         "KBPs"
     ],
+    "theories": [
+        "af",
+        "DTS",
+        "Logical_Characterization",
+        "LTL_FGXU",
+        "LTL_Rabin",
+        "LTL_Rabin_Unfold_Opt",
+        "Mojmir",
+        "Mojmir_Rabin",
+        "Rabin",
+        "Semi_Mojmir"
+    ],
     "relatedEntries": [
-        "LTL_to_GBA",
         "LTL_Master_Theorem",
-        "LTL"
+        "LTL",
+        "LTL_Normal_Form"
     ]
 }

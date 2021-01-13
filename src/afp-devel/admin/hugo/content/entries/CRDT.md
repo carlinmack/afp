@@ -30,5 +30,14 @@
         {
             "2016-1": "2017-07-07"
         }
+    ],
+    "theories": [
+        "Convergence",
+        "Counter",
+        "Network",
+        "Ordered_List",
+        "ORSet",
+        "RGA",
+        "Util"
     ]
 }

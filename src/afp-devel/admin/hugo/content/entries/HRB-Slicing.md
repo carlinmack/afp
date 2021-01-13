@@ -65,6 +65,9 @@
     "dependencies": [
         "Jinja"
     ],
+    "theories": [
+        "HRBSlicing"
+    ],
     "relatedEntries": [
         "Slicing",
         "InformationFlowSlicing",

@@ -42,5 +42,14 @@
     "dependencies": [
         "Coinductive",
         "Markov_Models"
+    ],
+    "theories": [
+        "Compositionality",
+        "Concrete",
+        "Interface",
+        "Language_Semantics",
+        "Resumption_Based",
+        "Syntactic_Criteria",
+        "Trace_Based"
     ]
 }

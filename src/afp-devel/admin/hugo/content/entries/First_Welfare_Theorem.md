@@ -33,5 +33,11 @@
         {
             "2016-1": "2017-09-04"
         }
+    ],
+    "theories": [
+        "Argmax",
+        "Preferences",
+        "Syntax",
+        "Utility_Functions"
     ]
 }

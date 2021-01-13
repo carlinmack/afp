@@ -39,5 +39,12 @@
         {
             "2013-2": "2014-04-24"
         }
+    ],
+    "theories": [
+        "BD_Security",
+        "Bounded_Deducibility_Security",
+        "Compositional_Reasoning",
+        "IO_Automaton",
+        "Trivia"
     ]
 }

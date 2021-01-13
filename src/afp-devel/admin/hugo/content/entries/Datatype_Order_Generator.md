@@ -54,6 +54,13 @@
         "Deriving",
         "Native_Word"
     ],
+    "theories": [
+        "Derive",
+        "Derive_Aux",
+        "Derive_Examples",
+        "Hash_Generator",
+        "Order_Generator"
+    ],
     "relatedEntries": [
         "Deriving"
     ]

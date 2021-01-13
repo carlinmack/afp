@@ -27,5 +27,20 @@
         "Datatype_Order_Generator",
         "List-Index",
         "Lambda_Free_RPOs"
+    ],
+    "theories": [
+        "Disjoint_Sets",
+        "Find_First",
+        "Fresh_Class",
+        "Fresh_Monad",
+        "Lambda_Free_Compat",
+        "Name",
+        "Nterm",
+        "Pats",
+        "Term",
+        "Term_Class",
+        "Term_to_Nterm",
+        "Term_Utils",
+        "Unification_Compat"
     ]
 }

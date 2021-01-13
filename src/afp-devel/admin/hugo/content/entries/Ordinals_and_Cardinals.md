@@ -68,5 +68,8 @@
         {
             "2009": "2009-09-07"
         }
+    ],
+    "theories": [
+        "Cardinal_Order_Relation_discontinued"
     ]
 }

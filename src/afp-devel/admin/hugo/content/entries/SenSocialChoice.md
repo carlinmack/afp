@@ -67,5 +67,13 @@
         {
             "2008": "2008-11-17"
         }
+    ],
+    "theories": [
+        "Arrow",
+        "FSext",
+        "May",
+        "RPRs",
+        "SCFs",
+        "Sen"
     ]
 }

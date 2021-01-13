@@ -34,5 +34,8 @@
     ],
     "dependencies": [
         "Marriage"
+    ],
+    "theories": [
+        "Latin_Square"
     ]
 }

@@ -31,5 +31,12 @@
     "dependencies": [
         "Random_BSTs",
         "Comparison_Sort_Lower_Bound"
+    ],
+    "theories": [
+        "Probability_Misc",
+        "Random_List_Permutation",
+        "Random_Treap",
+        "Treap",
+        "Treap_Sort_and_BSTs"
     ]
 }

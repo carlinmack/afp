@@ -18,6 +18,9 @@
         "Goedel_Incompleteness",
         "Incompleteness"
     ],
+    "theories": [
+        "Instance"
+    ],
     "relatedEntries": [
         "Goedel_HFSet_Semanticless",
         "Syntax_Independent_Logic",

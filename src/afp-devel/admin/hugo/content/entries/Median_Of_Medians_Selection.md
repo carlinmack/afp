@@ -22,5 +22,8 @@
         {
             "2017": "2017-12-22"
         }
+    ],
+    "theories": [
+        "Median_Of_Medians_Selection"
     ]
 }

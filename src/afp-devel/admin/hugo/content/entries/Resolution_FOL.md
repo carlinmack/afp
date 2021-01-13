@@ -35,6 +35,15 @@
     "dependencies": [
         "First_Order_Terms"
     ],
+    "theories": [
+        "Completeness",
+        "Completeness_Instance",
+        "Examples",
+        "Resolution",
+        "TermsAndLiterals",
+        "Tree",
+        "Unification_Theorem"
+    ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"
     ]

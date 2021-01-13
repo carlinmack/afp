@@ -25,6 +25,13 @@
         "Zeta_Function",
         "Stirling_Formula"
     ],
+    "theories": [
+        "Mertens_Theorems",
+        "Newman_Ingham_Tauberian",
+        "Prime_Counting_Functions",
+        "Prime_Number_Theorem",
+        "Prime_Number_Theorem_Library"
+    ],
     "relatedEntries": [
         "Dirichlet_L",
         "Prime_Distribution_Elementary",

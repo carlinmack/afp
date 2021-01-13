@@ -39,6 +39,28 @@
         "Jordan_Normal_Form",
         "Deriving"
     ],
+    "theories": [
+        "Algorithm_Schema",
+        "Algorithm_Schema_Impl",
+        "Auto_Reduction",
+        "Benchmarks",
+        "Buchberger",
+        "Buchberger_Examples",
+        "Code_Target_Rat",
+        "Confluence",
+        "F4",
+        "F4_Examples",
+        "General",
+        "Groebner_Bases",
+        "Groebner_PM",
+        "Macaulay_Matrix",
+        "More_MPoly_Type_Class",
+        "Reduced_GB",
+        "Reduced_GB_Examples",
+        "Reduction",
+        "Syzygy",
+        "Syzygy_Examples"
+    ],
     "relatedEntries": [
         "Deep_Learning"
     ]

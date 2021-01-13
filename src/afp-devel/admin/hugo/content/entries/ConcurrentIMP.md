@@ -34,5 +34,14 @@
         {
             "2014": "2015-04-15"
         }
+    ],
+    "theories": [
+        "CIMP",
+        "CIMP_lang",
+        "CIMP_pred",
+        "CIMP_vcg",
+        "CIMP_vcg_rules",
+        "Infinite_Sequences",
+        "LTL"
     ]
 }

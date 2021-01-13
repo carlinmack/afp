@@ -29,5 +29,8 @@
     "dependencies": [
         "Quick_Sort_Cost",
         "Landau_Symbols"
+    ],
+    "theories": [
+        "Random_BSTs"
     ]
 }

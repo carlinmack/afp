@@ -31,5 +31,12 @@
         {
             "2015": "2015-07-15"
         }
+    ],
+    "theories": [
+        "Group_Sort",
+        "Landau_Library",
+        "Landau_More",
+        "Landau_Real_Products",
+        "Landau_Simprocs"
     ]
 }

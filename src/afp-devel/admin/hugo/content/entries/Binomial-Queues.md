@@ -52,5 +52,10 @@
         {
             "2011": "2011-02-11"
         }
+    ],
+    "theories": [
+        "Binomial_Queue",
+        "PQ",
+        "PQ_Implementation"
     ]
 }

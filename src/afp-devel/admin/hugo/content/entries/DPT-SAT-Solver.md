@@ -61,5 +61,9 @@
         {
             "2009-1": "2009-12-12"
         }
+    ],
+    "theories": [
+        "DPT_SAT_Solver",
+        "DPT_SAT_Tests"
     ]
 }

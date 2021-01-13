@@ -35,6 +35,9 @@
     "dependencies": [
         "Card_Number_Partitions"
     ],
+    "theories": [
+        "Euler_Partition"
+    ],
     "relatedEntries": [
         "Descartes_Sign_Rule",
         "Twelvefold_Way"

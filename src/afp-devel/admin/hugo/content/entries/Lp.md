@@ -28,5 +28,9 @@
     ],
     "dependencies": [
         "Ergodic_Theory"
+    ],
+    "theories": [
+        "Functional_Spaces",
+        "Lp"
     ]
 }

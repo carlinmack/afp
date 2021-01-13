@@ -22,6 +22,14 @@
         "Lambda_Free_RPOs",
         "Well_Quasi_Orders"
     ],
+    "theories": [
+        "Calculus",
+        "Calculus_Variations",
+        "Given_Clause_Architectures",
+        "Intersection_Calculus",
+        "Labeled_Lifting_to_Non_Ground_Calculi",
+        "Lifting_to_Non_Ground_Calculi"
+    ],
     "relatedEntries": [
         "Saturation_Framework_Extensions",
         "Functional_Ordered_Resolution_Prover"

@@ -17,5 +17,11 @@
         {
             "2019": "2020-03-23"
         }
+    ],
+    "theories": [
+        "HelloWorld",
+        "HelloWorld_Proof",
+        "IO",
+        "RunningCodeFromIsabelle"
     ]
 }

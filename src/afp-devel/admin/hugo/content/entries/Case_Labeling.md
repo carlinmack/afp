@@ -38,5 +38,9 @@
         {
             "2015": "2015-07-24"
         }
+    ],
+    "theories": [
+        "Case_Labeling",
+        "Case_Labeling_Examples"
     ]
 }

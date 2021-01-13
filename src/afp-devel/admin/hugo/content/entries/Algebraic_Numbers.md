@@ -8,6 +8,9 @@
         "Akihisa Yamada",
         "Sebastiaan Joosten"
     ],
+    "contributors": [
+        "Manuel Eberl"
+    ],
     "date": "2015-12-22",
     "abstract": "Based on existing libraries for matrices, factorization of rational polynomials, and Sturm's theorem, we formalized algebraic numbers in Isabelle/HOL. Our development serves as an implementation for real and complex numbers, and it admits to compute roots and completely factorize real and complex polynomials, provided that all coefficients are rational numbers. Moreover, we provide two implementations to display algebraic numbers, an injective and expensive one, or a faster but approximative version.\n</p><p>\nTo this end, we mechanized several results on resultants, which also required us to prove that polynomials over a unique factorization domain form again a unique factorization domain.\n</p>",
     "extra": {
@@ -42,6 +45,26 @@
     "dependencies": [
         "Berlekamp_Zassenhaus",
         "Sturm_Sequences"
+    ],
+    "theories": [
+        "Algebraic_Numbers",
+        "Algebraic_Numbers_External_Code",
+        "Algebraic_Numbers_Prelim",
+        "Algebraic_Number_Tests",
+        "Bivariate_Polynomials",
+        "Compare_Complex",
+        "Complex_Algebraic_Numbers",
+        "Complex_Roots_Real_Poly",
+        "Factors_of_Int_Poly",
+        "Interval_Arithmetic",
+        "Real_Algebraic_Numbers",
+        "Real_Factorization",
+        "Real_Roots",
+        "Resultant",
+        "Show_Real_Alg",
+        "Show_Real_Approx",
+        "Show_Real_Precise",
+        "Sturm_Rat"
     ],
     "relatedEntries": [
         "Smith_Normal_Form",

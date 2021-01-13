@@ -19,6 +19,20 @@
         "HereditarilyFinite",
         "Nominal2"
     ],
+    "theories": [
+        "Coding",
+        "Coding_Predicates",
+        "Functions",
+        "Goedel_I",
+        "II_Prelims",
+        "Instance",
+        "Pf_Predicates",
+        "Predicates",
+        "Pseudo_Coding",
+        "Quote",
+        "Sigma",
+        "SyntaxN"
+    ],
     "relatedEntries": [
         "Goedel_HFSet_Semantic",
         "Incompleteness",

@@ -29,5 +29,8 @@
         {
             "2016": "2016-10-19"
         }
+    ],
+    "theories": [
+        "Source_Coding_Theorem"
     ]
 }

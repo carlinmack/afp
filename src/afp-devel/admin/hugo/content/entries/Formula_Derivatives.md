@@ -38,6 +38,18 @@
         "Coinductive_Languages",
         "Deriving"
     ],
+    "theories": [
+        "Abstract_Formula",
+        "Automaton",
+        "FSet_More",
+        "Presburger_Formula",
+        "While_Default",
+        "WS1S_Alt_Formula",
+        "WS1S_Formula",
+        "WS1S_Nameful",
+        "WS1S_Prelim",
+        "WS1S_Presburger_Equivalence"
+    ],
     "relatedEntries": [
         "MSO_Regex_Equivalence",
         "Affine_Arithmetic"

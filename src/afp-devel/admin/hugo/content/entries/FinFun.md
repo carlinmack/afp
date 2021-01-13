@@ -67,5 +67,9 @@
         {
             "2009": "2009-05-25"
         }
+    ],
+    "theories": [
+        "FinFun",
+        "FinFunPred"
     ]
 }

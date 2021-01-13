@@ -25,5 +25,9 @@
         {
             "2016-1": "2017-04-20"
         }
+    ],
+    "theories": [
+        "Lazy_Case",
+        "Test_Lazy_Case"
     ]
 }

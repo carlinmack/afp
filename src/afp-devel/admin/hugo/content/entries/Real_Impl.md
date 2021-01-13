@@ -46,6 +46,12 @@
         "Show",
         "Deriving"
     ],
+    "theories": [
+        "Prime_Product",
+        "Real_Impl",
+        "Real_Impl_Auxiliary",
+        "Real_Unique_Impl"
+    ],
     "relatedEntries": [
         "Affine_Arithmetic",
         "Polynomial_Factorization"

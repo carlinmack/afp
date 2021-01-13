@@ -24,5 +24,15 @@
         {
             "2017": "2018-01-12"
         }
+    ],
+    "theories": [
+        "CircExample",
+        "Derivs",
+        "DiamExample",
+        "General_Utils",
+        "Green",
+        "Integrals",
+        "Paths",
+        "SymmetricR2Shapes"
     ]
 }

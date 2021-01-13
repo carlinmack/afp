@@ -22,5 +22,19 @@
     ],
     "dependencies": [
         "Ergodic_Theory"
+    ],
+    "theories": [
+        "Bonk_Schramm_Extension",
+        "Boundary_Extension",
+        "Busemann_Function",
+        "Eexp_Eln",
+        "Gromov_Boundary",
+        "Gromov_Hyperbolicity",
+        "Hausdorff_Distance",
+        "Isometries",
+        "Isometries_Classification",
+        "Library_Complements",
+        "Metric_Completion",
+        "Morse_Gromov_Theorem"
     ]
 }

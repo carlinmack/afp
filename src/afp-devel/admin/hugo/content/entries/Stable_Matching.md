@@ -28,5 +28,14 @@
         {
             "2016": "2016-10-24"
         }
+    ],
+    "theories": [
+        "Basis",
+        "Bossiness",
+        "Choice_Functions",
+        "Contracts",
+        "COP",
+        "Sotomayor",
+        "Strategic"
     ]
 }

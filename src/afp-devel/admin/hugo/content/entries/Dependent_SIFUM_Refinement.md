@@ -38,6 +38,9 @@
     "dependencies": [
         "Dependent_SIFUM_Type_Systems"
     ],
+    "theories": [
+        "CompositionalRefinement"
+    ],
     "relatedEntries": [
         "Dependent_SIFUM_Type_Systems"
     ]

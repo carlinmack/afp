@@ -24,5 +24,15 @@
         {
             "2018": "2018-08-27"
         }
+    ],
+    "theories": [
+        "Abstract_Linear_Poly",
+        "Linear_Poly_Maps",
+        "QDelta",
+        "Rel_Chain",
+        "Simplex",
+        "Simplex_Algebra",
+        "Simplex_Auxiliary",
+        "Simplex_Incremental"
     ]
 }

@@ -21,5 +21,19 @@
         {
             "2019": "2019-07-31"
         }
+    ],
+    "theories": [
+        "Config_Morphisms",
+        "Corecursive_Prop",
+        "Denotational",
+        "Hygge_Theory",
+        "Introduction",
+        "Operational",
+        "Run",
+        "Stuttering",
+        "StutteringDefs",
+        "StutteringLemmas",
+        "SymbolicPrimitive",
+        "TESL"
     ]
 }

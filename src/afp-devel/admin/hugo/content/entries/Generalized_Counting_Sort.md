@@ -17,5 +17,11 @@
         {
             "2019": "2019-12-09"
         }
+    ],
+    "theories": [
+        "Algorithm",
+        "Conservation",
+        "Sorting",
+        "Stability"
     ]
 }

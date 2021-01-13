@@ -67,5 +67,14 @@
         {
             "2007": "2008-04-11"
         }
+    ],
+    "theories": [
+        "CPair",
+        "PRecFinSet",
+        "PRecFun",
+        "PRecFun2",
+        "PRecList",
+        "PRecUnGr",
+        "RecEnSet"
     ]
 }

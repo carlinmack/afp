@@ -20,5 +20,8 @@
     ],
     "dependencies": [
         "IMP2"
+    ],
+    "theories": [
+        "IMP2_Binary_Heap"
     ]
 }

@@ -37,5 +37,9 @@
         {
             "2014": "2014-09-20"
         }
+    ],
+    "theories": [
+        "PolyMisc",
+        "Sturm_Tarski"
     ]
 }

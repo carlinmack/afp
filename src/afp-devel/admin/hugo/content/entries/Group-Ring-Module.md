@@ -84,5 +84,16 @@
         {
             "2004": "2004-05-19"
         }
+    ],
+    "theories": [
+        "Algebra1",
+        "Algebra2",
+        "Algebra3",
+        "Algebra4",
+        "Algebra5",
+        "Algebra6",
+        "Algebra7",
+        "Algebra8",
+        "Algebra9"
     ]
 }

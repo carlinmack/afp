@@ -42,5 +42,34 @@
     ],
     "dependencies": [
         "Nominal2"
+    ],
+    "theories": [
+        "Bisimilarity_Implies_Equivalence",
+        "Disjunction",
+        "Equivalence_Implies_Bisimilarity",
+        "Expressive_Completeness",
+        "FL_Bisimilarity_Implies_Equivalence",
+        "FL_Equivalence_Implies_Bisimilarity",
+        "FL_Formula",
+        "FL_Logical_Equivalence",
+        "FL_Transition_System",
+        "FL_Validity",
+        "Formula",
+        "FS_Set",
+        "Logical_Equivalence",
+        "L_Transform",
+        "Nominal_Bounded_Set",
+        "Nominal_Wellfounded",
+        "Residual",
+        "S_Transform",
+        "Transition_System",
+        "Validity",
+        "Weak_Bisimilarity_Implies_Equivalence",
+        "Weak_Equivalence_Implies_Bisimilarity",
+        "Weak_Expressive_Completeness",
+        "Weak_Formula",
+        "Weak_Logical_Equivalence",
+        "Weak_Transition_System",
+        "Weak_Validity"
     ]
 }

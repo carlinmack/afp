@@ -43,5 +43,10 @@
         {
             "2013-1": "2013-12-02"
         }
+    ],
+    "theories": [
+        "CaseStudy1",
+        "CaseStudy2",
+        "Method"
     ]
 }

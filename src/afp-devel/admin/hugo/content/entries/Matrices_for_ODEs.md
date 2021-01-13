@@ -15,5 +15,12 @@
     "licence": "BSD",
     "dependencies": [
         "Hybrid_Systems_VCs"
+    ],
+    "theories": [
+        "MTX_Examples",
+        "MTX_Flows",
+        "MTX_Norms",
+        "MTX_Preliminaries",
+        "SQ_MTX"
     ]
 }

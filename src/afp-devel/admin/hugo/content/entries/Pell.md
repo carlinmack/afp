@@ -22,5 +22,11 @@
         {
             "2017": "2018-06-25"
         }
+    ],
+    "theories": [
+        "Efficient_Discrete_Sqrt",
+        "Pell",
+        "Pell_Algorithm",
+        "Pell_Algorithm_Test"
     ]
 }

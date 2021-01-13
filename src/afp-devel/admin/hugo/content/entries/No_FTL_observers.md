@@ -29,5 +29,11 @@
         {
             "2016": "2016-04-28"
         }
+    ],
+    "theories": [
+        "Axioms",
+        "SomeFunc",
+        "SpaceTime",
+        "SpecRel"
     ]
 }

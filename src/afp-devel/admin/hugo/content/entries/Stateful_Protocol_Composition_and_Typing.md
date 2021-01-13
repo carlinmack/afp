@@ -20,5 +20,22 @@
     "licence": "BSD",
     "dependencies": [
         "First_Order_Terms"
+    ],
+    "theories": [
+        "Examples",
+        "Intruder_Deduction",
+        "Labeled_Stateful_Strands",
+        "Labeled_Strands",
+        "Lazy_Intruder",
+        "Messages",
+        "Miscellaneous",
+        "More_Unification",
+        "Parallel_Compositionality",
+        "Stateful_Compositionality",
+        "Stateful_Strands",
+        "Stateful_Typing",
+        "Strands_and_Constraints",
+        "Typed_Model",
+        "Typing_Result"
     ]
 }

@@ -35,5 +35,34 @@
         {
             "2015": "2015-12-22"
         }
+    ],
+    "theories": [
+        "Abstract_AF",
+        "Applicative",
+        "Applicative_DNEList",
+        "Applicative_Environment",
+        "Applicative_Environment_Algebra",
+        "Applicative_Examples",
+        "Applicative_Filter",
+        "Applicative_Functor",
+        "Applicative_List",
+        "Applicative_Monoid",
+        "Applicative_Open_State",
+        "Applicative_Option",
+        "Applicative_PMF",
+        "Applicative_Probability_List",
+        "Applicative_Set",
+        "Applicative_Star",
+        "Applicative_State",
+        "Applicative_Stream",
+        "Applicative_Sum",
+        "Applicative_Test",
+        "Applicative_Vector",
+        "Beta_Eta",
+        "Combinators",
+        "Idiomatic_Terms",
+        "Joinable",
+        "Stream_Algebra",
+        "Tree_Relabelling"
     ]
 }

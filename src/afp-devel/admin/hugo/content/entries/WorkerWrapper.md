@@ -65,5 +65,21 @@
         {
             "2009": "2009-10-30"
         }
+    ],
+    "theories": [
+        "Accumulator",
+        "Backtracking",
+        "Continuations",
+        "CounterExample",
+        "FixedPointTheorems",
+        "Last",
+        "LList",
+        "Maybe",
+        "Nats",
+        "Nub",
+        "Streams",
+        "UnboxedNats",
+        "WorkerWrapper",
+        "WorkerWrapperNew"
     ]
 }

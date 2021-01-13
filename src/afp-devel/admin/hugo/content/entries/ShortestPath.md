@@ -47,6 +47,10 @@
     "dependencies": [
         "Graph_Theory"
     ],
+    "theories": [
+        "ShortestPath",
+        "ShortestPathNeg"
+    ],
     "relatedEntries": [
         "Parity_Game"
     ]

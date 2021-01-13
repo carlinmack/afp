@@ -26,5 +26,9 @@
     "dependencies": [
         "Abstract-Rewriting",
         "Recursion-Theory-I"
+    ],
+    "theories": [
+        "Minsky",
+        "Recursive_Inseparability"
     ]
 }

@@ -24,6 +24,15 @@
         "Order_Lattice_Props",
         "Kleene_Algebra"
     ],
+    "theories": [
+        "Dioid_Models_New",
+        "Quantales",
+        "Quantale_Left_Sided",
+        "Quantale_Models",
+        "Quantale_Modules",
+        "Quantale_Star",
+        "Quantic_Nuclei_Conuclei"
+    ],
     "relatedEntries": [
         "Transformer_Semantics"
     ]

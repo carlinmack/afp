@@ -39,6 +39,9 @@
         "Regular-Sets",
         "HereditarilyFinite"
     ],
+    "theories": [
+        "Finite_Automata_HF"
+    ],
     "relatedEntries": [
         "Myhill-Nerode"
     ]

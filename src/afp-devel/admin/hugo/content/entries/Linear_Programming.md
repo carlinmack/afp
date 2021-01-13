@@ -24,6 +24,12 @@
         "Farkas",
         "Linear_Inequalities"
     ],
+    "theories": [
+        "Linear_Programming",
+        "LP_Preliminaries",
+        "Matrix_LinPoly",
+        "More_Jordan_Normal_Forms"
+    ],
     "relatedEntries": [
         "Farkas"
     ]

@@ -36,6 +36,12 @@
     "dependencies": [
         "Collections"
     ],
+    "theories": [
+        "Derive",
+        "Derive_Examples",
+        "Derive_Manager",
+        "Generator_Aux"
+    ],
     "relatedEntries": [
         "Datatype_Order_Generator"
     ]

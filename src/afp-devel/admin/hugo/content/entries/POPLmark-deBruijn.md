@@ -70,5 +70,12 @@
         {
             "2007": "2007-11-27"
         }
+    ],
+    "theories": [
+        "Basis",
+        "Execute",
+        "POPLmark",
+        "POPLmarkRecord",
+        "POPLmarkRecordCtxt"
     ]
 }

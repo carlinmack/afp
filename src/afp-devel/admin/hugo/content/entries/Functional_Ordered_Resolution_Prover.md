@@ -33,6 +33,13 @@
         "Open_Induction",
         "Polynomial_Factorization"
     ],
+    "theories": [
+        "Deterministic_FO_Ordered_Resolution_Prover",
+        "Executable_FO_Ordered_Resolution_Prover",
+        "Executable_Subsumption",
+        "IsaFoR_Term",
+        "Weighted_FO_Ordered_Resolution_Prover"
+    ],
     "relatedEntries": [
         "Ordered_Resolution_Prover",
         "Saturation_Framework_Extensions",

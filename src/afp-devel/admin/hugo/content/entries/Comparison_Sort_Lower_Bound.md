@@ -31,6 +31,10 @@
         "List-Index",
         "Landau_Symbols"
     ],
+    "theories": [
+        "Comparison_Sort_Lower_Bound",
+        "Linorder_Relations"
+    ],
     "relatedEntries": [
         "Quick_Sort_Cost"
     ]

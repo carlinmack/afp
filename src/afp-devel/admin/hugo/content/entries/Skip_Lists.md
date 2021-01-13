@@ -20,5 +20,11 @@
     ],
     "dependencies": [
         "Monad_Normalisation"
+    ],
+    "theories": [
+        "Geometric_PMF",
+        "Misc",
+        "Pi_pmf",
+        "Skip_List"
     ]
 }

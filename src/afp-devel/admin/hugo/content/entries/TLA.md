@@ -53,5 +53,17 @@
         {
             "2011-1": "2011-11-27"
         }
+    ],
+    "theories": [
+        "Buffer",
+        "Even",
+        "Inc",
+        "Intensional",
+        "Liveness",
+        "PreFormulas",
+        "Rules",
+        "Semantics",
+        "Sequence",
+        "State"
     ]
 }

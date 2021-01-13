@@ -64,5 +64,8 @@
     ],
     "dependencies": [
         "Applicative_Lifting"
+    ],
+    "theories": [
+        "Locally_Nameless_Sigma"
     ]
 }

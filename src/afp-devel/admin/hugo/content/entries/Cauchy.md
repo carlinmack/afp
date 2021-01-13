@@ -70,5 +70,9 @@
         {
             "2005": "2006-03-14"
         }
+    ],
+    "theories": [
+        "CauchySchwarz",
+        "CauchysMeanTheorem"
     ]
 }

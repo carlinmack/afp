@@ -66,5 +66,18 @@
         {
             "2008": "2008-11-13"
         }
+    ],
+    "theories": [
+        "ContextOBJ",
+        "ContextVS",
+        "HuntSands",
+        "IMP",
+        "Lattice",
+        "OBJ",
+        "PBIJ",
+        "VDM",
+        "VDM_OBJ",
+        "VS",
+        "VS_OBJ"
     ]
 }

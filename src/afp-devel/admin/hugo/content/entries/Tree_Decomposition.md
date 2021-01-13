@@ -31,5 +31,13 @@
         {
             "2016": "2016-05-31"
         }
+    ],
+    "theories": [
+        "ExampleInstantiations",
+        "Graph",
+        "Tree",
+        "TreeDecomposition",
+        "TreewidthCompleteGraph",
+        "TreewidthTree"
     ]
 }

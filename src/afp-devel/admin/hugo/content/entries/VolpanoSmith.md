@@ -66,5 +66,10 @@
         {
             "2008": "2008-09-05"
         }
+    ],
+    "theories": [
+        "Execute",
+        "secTypes",
+        "Semantics"
     ]
 }

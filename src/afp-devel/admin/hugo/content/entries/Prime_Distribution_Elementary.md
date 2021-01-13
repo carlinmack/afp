@@ -24,6 +24,20 @@
         "Zeta_Function",
         "Prime_Number_Theorem"
     ],
+    "theories": [
+        "Elementary_Prime_Bounds",
+        "Lcm_Nat_Upto",
+        "Moebius_Mu_Sum",
+        "More_Dirichlet_Misc",
+        "Partial_Zeta_Bounds",
+        "PNT_Consequences",
+        "Primes_Omega",
+        "Prime_Distribution_Elementary_Library",
+        "Primorial",
+        "Selberg_Asymptotic_Formula",
+        "Shapiro_Tauberian",
+        "Summatory_Divisor_Sigma_Bounds"
+    ],
     "relatedEntries": [
         "Dirichlet_L",
         "Prime_Number_Theorem",

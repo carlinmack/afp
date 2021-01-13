@@ -16,5 +16,10 @@
         {
             "2019": "2019-09-01"
         }
+    ],
+    "theories": [
+        "Group_Theory",
+        "Ring_Theory",
+        "Set_Theory"
     ]
 }

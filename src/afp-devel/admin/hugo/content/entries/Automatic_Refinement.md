@@ -40,5 +40,9 @@
         {
             "2013-1": "2013-11-17"
         }
+    ],
+    "theories": [
+        "Automatic_Refinement",
+        "Autoref_Bindings_HOL"
     ]
 }

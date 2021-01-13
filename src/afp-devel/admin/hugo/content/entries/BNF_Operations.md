@@ -23,5 +23,14 @@
         {
             "2018": "2018-08-16"
         }
+    ],
+    "theories": [
+        "Compose",
+        "GFP",
+        "Kill",
+        "LFP",
+        "Lift",
+        "N2M",
+        "Permute"
     ]
 }

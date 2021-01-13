@@ -29,7 +29,9 @@
     "dependencies": [
         "Amortized_Complexity"
     ],
-    "relatedEntries": [
-        "Abs_Int_ITP2012"
+    "theories": [
+        "Root_Balanced_Tree",
+        "Root_Balanced_Tree_Tab",
+        "Time_Monad"
     ]
 }

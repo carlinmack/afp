@@ -74,5 +74,19 @@
         {
             "2005": "2005-10-14"
         }
+    ],
+    "theories": [
+        "Crypt",
+        "Cryptinverts",
+        "EMSAPSS",
+        "Mod",
+        "Pdifference",
+        "Productdivides",
+        "RSAPSS",
+        "SHA1",
+        "SHA1Padding",
+        "Word",
+        "Wordarith",
+        "WordOperations"
     ]
 }

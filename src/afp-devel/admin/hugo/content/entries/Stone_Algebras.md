@@ -31,5 +31,11 @@
         {
             "2016": "2016-09-06"
         }
+    ],
+    "theories": [
+        "Filters",
+        "Lattice_Basics",
+        "P_Algebras",
+        "Stone_Construction"
     ]
 }

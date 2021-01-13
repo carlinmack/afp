@@ -70,5 +70,17 @@
         {
             "2005": "2005-11-16"
         }
+    ],
+    "theories": [
+        "Ordinal",
+        "OrdinalArith",
+        "OrdinalCont",
+        "OrdinalDef",
+        "OrdinalFix",
+        "OrdinalInduct",
+        "OrdinalInverse",
+        "OrdinalOmega",
+        "OrdinalRec",
+        "OrdinalVeblen"
     ]
 }

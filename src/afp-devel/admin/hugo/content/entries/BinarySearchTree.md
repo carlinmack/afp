@@ -79,5 +79,10 @@
         {
             "2004": "2004-04-20"
         }
+    ],
+    "theories": [
+        "BinaryTree",
+        "BinaryTree_Map",
+        "BinaryTree_TacticStyle"
     ]
 }

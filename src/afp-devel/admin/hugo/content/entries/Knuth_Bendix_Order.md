@@ -19,6 +19,13 @@
         "Matrix",
         "Polynomial_Factorization"
     ],
+    "theories": [
+        "KBO",
+        "Lexicographic_Extension",
+        "Order_Pair",
+        "Subterm_and_Context",
+        "Term_Aux"
+    ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"
     ]

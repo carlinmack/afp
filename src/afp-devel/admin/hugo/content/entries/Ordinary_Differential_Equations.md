@@ -56,5 +56,9 @@
         "Triangle",
         "List-Index",
         "Affine_Arithmetic"
+    ],
+    "theories": [
+        "ODE_Analysis",
+        "ODE_Auxiliarities"
     ]
 }

@@ -28,5 +28,9 @@
         {
             "2016": "2016-03-11"
         }
+    ],
+    "theories": [
+        "Prime_Implicates",
+        "Propositional_Resolution"
     ]
 }

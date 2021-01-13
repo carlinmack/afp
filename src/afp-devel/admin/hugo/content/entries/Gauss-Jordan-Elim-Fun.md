@@ -56,5 +56,8 @@
         {
             "2011": "2011-08-19"
         }
+    ],
+    "theories": [
+        "Gauss_Jordan_Elim_Fun"
     ]
 }

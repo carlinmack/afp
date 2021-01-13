@@ -40,5 +40,13 @@
         {
             "2014": "2014-08-29"
         }
+    ],
+    "theories": [
+        "FunctionLemmas",
+        "LinearCombinations",
+        "MonoidSums",
+        "RingModuleFacts",
+        "SumSpaces",
+        "VectorSpace"
     ]
 }

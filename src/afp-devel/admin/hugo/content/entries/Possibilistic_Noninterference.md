@@ -48,5 +48,16 @@
         {
             "2012": "2012-09-10"
         }
+    ],
+    "theories": [
+        "After_Execution",
+        "Bisim",
+        "Compositionality",
+        "Concrete",
+        "During_Execution",
+        "Interface",
+        "Language_Semantics",
+        "MyTactics",
+        "Syntactic_Criteria"
     ]
 }

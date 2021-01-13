@@ -36,6 +36,10 @@
         "Noninterference_CSP",
         "List_Interleaving"
     ],
+    "theories": [
+        "DeterministicProcesses",
+        "IpurgeUnwinding"
+    ],
     "relatedEntries": [
         "Noninterference_Generic_Unwinding"
     ]

@@ -32,6 +32,9 @@
             "2015": "2016-01-05"
         }
     ],
+    "theories": [
+        "Descartes_Sign_Rule"
+    ],
     "relatedEntries": [
         "Euler_Partition"
     ]

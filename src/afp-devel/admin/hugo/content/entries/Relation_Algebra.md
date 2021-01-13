@@ -48,9 +48,19 @@
     "dependencies": [
         "Kleene_Algebra"
     ],
+    "theories": [
+        "More_Boolean_Algebra",
+        "Relation_Algebra",
+        "Relation_Algebra_Direct_Products",
+        "Relation_Algebra_Functions",
+        "Relation_Algebra_Models",
+        "Relation_Algebra_RTC",
+        "Relation_Algebra_Tests",
+        "Relation_Algebra_Vectors"
+    ],
     "relatedEntries": [
         "KAD",
         "KAT_and_DRA",
-        "Kleene_Algebra"
+        "Multirelations"
     ]
 }

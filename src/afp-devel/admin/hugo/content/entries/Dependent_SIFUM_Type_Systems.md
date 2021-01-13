@@ -36,6 +36,14 @@
             "2016": "2016-06-25"
         }
     ],
+    "theories": [
+        "Compositionality",
+        "Language",
+        "LocallySoundModeUse",
+        "Preliminaries",
+        "Security",
+        "TypeSystem"
+    ],
     "relatedEntries": [
         "Dependent_SIFUM_Refinement"
     ]

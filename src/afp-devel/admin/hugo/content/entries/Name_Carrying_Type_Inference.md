@@ -26,5 +26,11 @@
         {
             "2016-1": "2017-07-15"
         }
+    ],
+    "theories": [
+        "Fresh",
+        "Permutation",
+        "PreSimplyTyped",
+        "SimplyTyped"
     ]
 }

@@ -67,6 +67,11 @@
     "dependencies": [
         "Abstract-Rewriting"
     ],
+    "theories": [
+        "Matrix_Legacy",
+        "Ordered_Semiring",
+        "Utility"
+    ],
     "relatedEntries": [
         "Polynomials"
     ]

@@ -18,6 +18,10 @@
         "Syntax_Independent_Logic",
         "Nominal2"
     ],
+    "theories": [
+        "Instance",
+        "Robinson_Arithmetic"
+    ],
     "relatedEntries": [
         "Goedel_HFSet_Semanticless",
         "Incompleteness"

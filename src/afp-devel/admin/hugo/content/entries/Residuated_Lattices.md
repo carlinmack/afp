@@ -41,5 +41,13 @@
     ],
     "dependencies": [
         "Relation_Algebra"
+    ],
+    "theories": [
+        "Action_Algebra",
+        "Action_Algebra_Models",
+        "Involutive_Residuated",
+        "Residuated_Boolean_Algebras",
+        "Residuated_Lattices",
+        "Residuated_Relation_Algebra"
     ]
 }

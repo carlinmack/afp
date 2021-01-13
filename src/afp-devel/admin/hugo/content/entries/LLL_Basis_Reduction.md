@@ -43,5 +43,21 @@
     "dependencies": [
         "Berlekamp_Zassenhaus",
         "Algebraic_Numbers"
+    ],
+    "theories": [
+        "Cost",
+        "FPLLL_Solver",
+        "Gram_Schmidt_2",
+        "Gram_Schmidt_Int",
+        "Int_Rat_Operations",
+        "List_Representation",
+        "LLL",
+        "LLL_Certification",
+        "LLL_Complexity",
+        "LLL_Impl",
+        "LLL_Number_Bounds",
+        "Missing_Lemmas",
+        "More_IArray",
+        "Norms"
     ]
 }

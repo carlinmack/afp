@@ -40,5 +40,11 @@
         {
             "2013-2": "2014-04-13"
         }
+    ],
+    "theories": [
+        "Discrete_Summation",
+        "Examples",
+        "Factorials",
+        "Summation_Conversion"
     ]
 }

@@ -30,5 +30,19 @@
         {
             "2016": "2016-08-18"
         }
+    ],
+    "theories": [
+        "Aexp",
+        "ArcExt",
+        "Bexp",
+        "Conf",
+        "Graph",
+        "Labels",
+        "LTS",
+        "RB",
+        "Store",
+        "SubExt",
+        "SubRel",
+        "SymExec"
     ]
 }

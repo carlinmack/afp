@@ -20,5 +20,16 @@
         {
             "2018": "2018-11-28"
         }
+    ],
+    "theories": [
+        "CombinedCorrectness",
+        "GraphRewriting",
+        "LabeledGraphs",
+        "LabeledGraphSemantics",
+        "MissingRelation",
+        "RulesAndChains",
+        "RuleSemanticsConnection",
+        "StandardModels",
+        "StandardRules"
     ]
 }

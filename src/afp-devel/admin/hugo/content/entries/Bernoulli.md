@@ -27,5 +27,11 @@
         {
             "2016-1": "2017-01-24"
         }
+    ],
+    "theories": [
+        "Bernoulli",
+        "Bernoulli_FPS",
+        "Bernoulli_Zeta",
+        "Periodic_Bernpoly"
     ]
 }

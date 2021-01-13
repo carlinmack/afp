@@ -47,5 +47,23 @@
         {
             "2013": "2013-07-01"
         }
+    ],
+    "theories": [
+        "CM",
+        "CU",
+        "E",
+        "Encodings",
+        "G",
+        "M",
+        "Mcalc",
+        "Mcalc2",
+        "Mcalc2C",
+        "Mono",
+        "Preliminaries",
+        "Sig",
+        "T",
+        "TermsAndClauses",
+        "T_G_Prelim",
+        "U"
     ]
 }

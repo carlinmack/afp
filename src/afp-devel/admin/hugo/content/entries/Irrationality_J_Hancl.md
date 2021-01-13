@@ -25,5 +25,8 @@
         {
             "2017": "2018-05-26"
         }
+    ],
+    "theories": [
+        "Irrationality_J_Hancl"
     ]
 }

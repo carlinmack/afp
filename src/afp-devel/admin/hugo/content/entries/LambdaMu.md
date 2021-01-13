@@ -29,5 +29,16 @@
         {
             "2016-1": "2017-08-21"
         }
+    ],
+    "theories": [
+        "ContextFacts",
+        "DeBruijn",
+        "Peirce",
+        "Progress",
+        "Reduction",
+        "Substitution",
+        "Syntax",
+        "TypePreservation",
+        "Types"
     ]
 }

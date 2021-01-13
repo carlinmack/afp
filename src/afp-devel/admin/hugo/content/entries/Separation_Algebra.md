@@ -53,6 +53,14 @@
             "2011-1": "2012-05-11"
         }
     ],
+    "theories": [
+        "Map_Extra",
+        "Separation_Algebra",
+        "Separation_Algebra_Alt",
+        "Sep_Eq",
+        "Sep_Heap_Instance",
+        "Sep_Tactics"
+    ],
     "relatedEntries": [
         "Separata"
     ]

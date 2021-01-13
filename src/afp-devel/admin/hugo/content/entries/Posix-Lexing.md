@@ -34,6 +34,10 @@
     "dependencies": [
         "Regular-Sets"
     ],
+    "theories": [
+        "Lexer",
+        "Simplifying"
+    ],
     "relatedEntries": [
         "Myhill-Nerode",
         "Regex_Equivalence"

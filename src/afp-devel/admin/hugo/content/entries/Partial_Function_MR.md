@@ -37,5 +37,9 @@
         {
             "2013-2": "2014-02-19"
         }
+    ],
+    "theories": [
+        "Partial_Function_MR",
+        "Partial_Function_MR_Examples"
     ]
 }

@@ -54,6 +54,21 @@
         "Abstract-Rewriting",
         "Open_Induction"
     ],
+    "theories": [
+        "Almost_Full",
+        "Almost_Full_Relations",
+        "Higman_OI",
+        "Infinite_Sequences",
+        "Kruskal",
+        "Kruskal_Examples",
+        "Least_Enum",
+        "Minimal_Bad_Sequences",
+        "Minimal_Elements",
+        "Multiset_Extension",
+        "Well_Quasi_Orders",
+        "Wqo_Instances",
+        "Wqo_Multiset"
+    ],
     "relatedEntries": [
         "Decreasing-Diagrams-II",
         "Myhill-Nerode"

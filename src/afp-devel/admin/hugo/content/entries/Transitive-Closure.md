@@ -65,6 +65,13 @@
         "Collections",
         "Matrix"
     ],
+    "theories": [
+        "Finite_Transitive_Closure_Simprocs",
+        "RBT_Map_Set_Extension",
+        "Transitive_Closure_Impl",
+        "Transitive_Closure_List_Impl",
+        "Transitive_Closure_RBT_Impl"
+    ],
     "relatedEntries": [
         "Transitive-Closure-II"
     ]

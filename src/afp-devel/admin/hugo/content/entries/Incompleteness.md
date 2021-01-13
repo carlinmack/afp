@@ -48,9 +48,22 @@
         "HereditarilyFinite",
         "Nominal2"
     ],
+    "theories": [
+        "Coding",
+        "Coding_Predicates",
+        "Functions",
+        "Goedel_I",
+        "Goedel_II",
+        "II_Prelims",
+        "Pf_Predicates",
+        "Predicates",
+        "Pseudo_Coding",
+        "Quote",
+        "Sigma",
+        "SyntaxN"
+    ],
     "relatedEntries": [
         "Goedel_HFSet_Semanticless",
-        "HereditarilyFinite",
-        "Goedel_HFSet_Semantic"
+        "Robinson_Arithmetic"
     ]
 }

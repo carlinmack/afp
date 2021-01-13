@@ -44,5 +44,15 @@
         {
             "2013-2": "2014-01-16"
         }
+    ],
+    "theories": [
+        "UML_Contracts",
+        "UML_Library",
+        "UML_Logic",
+        "UML_Main",
+        "UML_PropertyProfiles",
+        "UML_State",
+        "UML_Tools",
+        "UML_Types"
     ]
 }

@@ -24,5 +24,10 @@
         {
             "2018": "2018-10-31"
         }
+    ],
+    "theories": [
+        "CJDDLplus",
+        "ExtendedDDL",
+        "GewirthArgument"
     ]
 }

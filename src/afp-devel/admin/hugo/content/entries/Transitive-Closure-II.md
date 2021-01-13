@@ -56,6 +56,9 @@
     "dependencies": [
         "Regular-Sets"
     ],
+    "theories": [
+        "RTrancl"
+    ],
     "relatedEntries": [
         "Transitive-Closure"
     ]

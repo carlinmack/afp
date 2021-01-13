@@ -55,5 +55,18 @@
         {
             "2012": "2012-05-29"
         }
+    ],
+    "theories": [
+        "Circus_Actions",
+        "Circus_Syntax",
+        "CSP_Processes",
+        "Denotational_Semantics",
+        "Designs",
+        "Reactive_Processes",
+        "Refinement",
+        "Refinement_Example",
+        "Relations",
+        "Var",
+        "Var_list"
     ]
 }

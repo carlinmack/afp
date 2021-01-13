@@ -74,5 +74,10 @@
         {
             "2004": "2004-12-15"
         }
+    ],
+    "theories": [
+        "CArrays",
+        "FileRefinement",
+        "ResizableArrays"
     ]
 }

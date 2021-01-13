@@ -36,5 +36,9 @@
         {
             "2014": "2014-09-16"
         }
+    ],
+    "theories": [
+        "Cayley_Hamilton",
+        "Square_Matrix"
     ]
 }

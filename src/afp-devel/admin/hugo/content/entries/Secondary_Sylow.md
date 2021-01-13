@@ -37,5 +37,10 @@
         {
             "2013-2": "2014-01-29"
         }
+    ],
+    "theories": [
+        "GroupAction",
+        "SndSylow",
+        "SubgroupConjugation"
     ]
 }

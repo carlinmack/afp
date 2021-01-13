@@ -71,6 +71,9 @@
     "dependencies": [
         "Jinja"
     ],
+    "theories": [
+        "Slicing"
+    ],
     "relatedEntries": [
         "HRB-Slicing"
     ]

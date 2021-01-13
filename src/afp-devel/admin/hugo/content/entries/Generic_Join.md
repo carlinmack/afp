@@ -20,5 +20,10 @@
     ],
     "dependencies": [
         "MFOTL_Monitor"
+    ],
+    "theories": [
+        "Examples_Join",
+        "Generic_Join",
+        "Generic_Join_Correctness"
     ]
 }

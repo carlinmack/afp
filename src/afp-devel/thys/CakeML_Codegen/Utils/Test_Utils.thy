@@ -65,8 +65,6 @@ ML\<open>
 export_code huffman checking SML Scala
 
 export_code
-  Leftist_Heap.rank
-  Leftist_Heap.rk
   Leftist_Heap.ltree
   Leftist_Heap.node
   Leftist_Heap.merge
@@ -78,7 +76,6 @@ export_code
   Pairing_Heap_Tree.link
   Pairing_Heap_Tree.pass\<^sub>1
   Pairing_Heap_Tree.pass\<^sub>2
-  Pairing_Heap_Tree.merge_pairs
   Pairing_Heap_Tree.is_root
   Pairing_Heap_Tree.pheap
   checking SML Scala

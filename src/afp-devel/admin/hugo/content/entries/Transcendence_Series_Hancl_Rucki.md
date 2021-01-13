@@ -25,5 +25,8 @@
     ],
     "dependencies": [
         "Prime_Number_Theorem"
+    ],
+    "theories": [
+        "Transcendence_Series"
     ]
 }

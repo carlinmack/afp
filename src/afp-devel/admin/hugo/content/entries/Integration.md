@@ -81,5 +81,13 @@
         {
             "2004": "2004-11-22"
         }
+    ],
+    "theories": [
+        "Failure",
+        "Integral",
+        "Measure",
+        "MonConv",
+        "RealRandVar",
+        "Sigma_Algebra"
     ]
 }

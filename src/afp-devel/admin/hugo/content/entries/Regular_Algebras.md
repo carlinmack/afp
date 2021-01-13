@@ -44,6 +44,13 @@
     "dependencies": [
         "Kleene_Algebra"
     ],
+    "theories": [
+        "Dioid_Power_Sum",
+        "Pratts_Counterexamples",
+        "Regular_Algebras",
+        "Regular_Algebra_Models",
+        "Regular_Algebra_Variants"
+    ],
     "relatedEntries": [
         "KAD",
         "KAT_and_DRA",

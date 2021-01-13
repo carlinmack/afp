@@ -30,6 +30,10 @@
         "Bernoulli",
         "Landau_Symbols"
     ],
+    "theories": [
+        "Euler_MacLaurin",
+        "Euler_MacLaurin_Landau"
+    ],
     "relatedEntries": [
         "Stirling_Formula",
         "Lambert_W",

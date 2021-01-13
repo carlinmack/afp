@@ -22,6 +22,14 @@
     "dependencies": [
         "Sepref_IICF"
     ],
+    "theories": [
+        "Challenge1A",
+        "Challenge1B",
+        "Challenge2A",
+        "Challenge2B",
+        "Challenge3",
+        "Parallel_Multiset_Fold"
+    ],
     "relatedEntries": [
         "VerifyThis2018"
     ]

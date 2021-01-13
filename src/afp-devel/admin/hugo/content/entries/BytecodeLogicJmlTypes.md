@@ -65,5 +65,14 @@
         {
             "2008": "2008-12-22"
         }
+    ],
+    "theories": [
+        "AssocLists",
+        "Cachera",
+        "Language",
+        "Logic",
+        "MultiStep",
+        "Reachability",
+        "Sound"
     ]
 }

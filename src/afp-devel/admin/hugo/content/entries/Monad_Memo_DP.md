@@ -29,5 +29,9 @@
     ],
     "dependencies": [
         "Show"
+    ],
+    "theories": [
+        "Index",
+        "Pure_Monad"
     ]
 }

@@ -37,5 +37,10 @@
         {
             "2014": "2014-09-04"
         }
+    ],
+    "theories": [
+        "Priority_Queue_Braun",
+        "Priority_Queue_Braun2",
+        "Sorting_Braun"
     ]
 }

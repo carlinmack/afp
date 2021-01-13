@@ -50,6 +50,35 @@
     "dependencies": [
         "Word_Lib"
     ],
+    "theories": [
+        "Bits_Integer",
+        "Code_Symbolic_Bits_Int",
+        "Code_Target_Bits_Int",
+        "Code_Target_Word_Base",
+        "More_Bits_Int",
+        "Native_Cast",
+        "Native_Cast_Uint",
+        "Native_Word_Imperative_HOL",
+        "Native_Word_Test",
+        "Native_Word_Test_Emu",
+        "Native_Word_Test_GHC",
+        "Native_Word_Test_MLton",
+        "Native_Word_Test_MLton2",
+        "Native_Word_Test_OCaml",
+        "Native_Word_Test_OCaml2",
+        "Native_Word_Test_PolyML",
+        "Native_Word_Test_PolyML2",
+        "Native_Word_Test_PolyML64",
+        "Native_Word_Test_Scala",
+        "Native_Word_Test_SMLNJ",
+        "Native_Word_Test_SMLNJ2",
+        "Uint",
+        "Uint16",
+        "Uint32",
+        "Uint64",
+        "Uint8",
+        "Uint_Userguide"
+    ],
     "relatedEntries": [
         "IEEE_Floating_Point"
     ]

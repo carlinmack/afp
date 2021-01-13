@@ -32,6 +32,10 @@
     "dependencies": [
         "Bell_Numbers_Spivey"
     ],
+    "theories": [
+        "Card_Equiv_Relations",
+        "Card_Partial_Equiv_Relations"
+    ],
     "relatedEntries": [
         "Twelvefold_Way",
         "Bell_Numbers_Spivey",

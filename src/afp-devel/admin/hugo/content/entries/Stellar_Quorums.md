@@ -16,5 +16,8 @@
         {
             "2019": "2019-08-03"
         }
+    ],
+    "theories": [
+        "Stellar_Quorums"
     ]
 }

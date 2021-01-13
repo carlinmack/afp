@@ -24,5 +24,10 @@
     ],
     "dependencies": [
         "FOL-Fitting"
+    ],
+    "theories": [
+        "Common",
+        "Sequent",
+        "Tableau"
     ]
 }

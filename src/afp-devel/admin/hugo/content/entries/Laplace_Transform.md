@@ -16,5 +16,13 @@
         {
             "2019": "2019-08-16"
         }
+    ],
+    "theories": [
+        "Existence",
+        "Laplace_Transform",
+        "Laplace_Transform_Library",
+        "Lerch_Lemma",
+        "Piecewise_Continuous",
+        "Uniqueness"
     ]
 }

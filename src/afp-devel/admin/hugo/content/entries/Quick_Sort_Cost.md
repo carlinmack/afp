@@ -32,6 +32,10 @@
         "Comparison_Sort_Lower_Bound",
         "Landau_Symbols"
     ],
+    "theories": [
+        "Quick_Sort_Average_Case",
+        "Randomised_Quick_Sort"
+    ],
     "relatedEntries": [
         "Comparison_Sort_Lower_Bound",
         "List_Update"

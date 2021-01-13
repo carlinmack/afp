@@ -35,5 +35,8 @@
         "Transitive-Closure",
         "Case_Labeling",
         "Graph_Theory"
+    ],
+    "theories": [
+        "Planarity_Certificates"
     ]
 }

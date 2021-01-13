@@ -36,6 +36,10 @@
     "dependencies": [
         "Kleene_Algebra"
     ],
+    "theories": [
+        "C_Algebras",
+        "Multirelations"
+    ],
     "relatedEntries": [
         "KAD",
         "KAT_and_DRA",

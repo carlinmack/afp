@@ -37,6 +37,21 @@
         "Coinductive",
         "Graph_Theory"
     ],
+    "theories": [
+        "AttractingStrategy",
+        "Attractor",
+        "AttractorInductive",
+        "AttractorStrategy",
+        "Graph_TheoryCompatibility",
+        "MoreCoinductiveList",
+        "ParityGame",
+        "PositionalDeterminacy",
+        "Strategy",
+        "UniformStrategy",
+        "WellOrderedStrategy",
+        "WinningRegion",
+        "WinningStrategy"
+    ],
     "relatedEntries": [
         "ShortestPath"
     ]

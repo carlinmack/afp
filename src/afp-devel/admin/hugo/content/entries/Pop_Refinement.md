@@ -37,5 +37,13 @@
         {
             "2013-2": "2014-07-03"
         }
+    ],
+    "theories": [
+        "Definition",
+        "First_Example",
+        "Future_Work",
+        "General_Remarks",
+        "Related_Work",
+        "Second_Example"
     ]
 }

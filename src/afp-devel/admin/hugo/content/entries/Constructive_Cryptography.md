@@ -28,5 +28,14 @@
     ],
     "dependencies": [
         "CryptHOL"
+    ],
+    "theories": [
+        "Constructive_Cryptography",
+        "Converter",
+        "Converter_Rewrite",
+        "Distinguisher",
+        "Random_System",
+        "Resource",
+        "Wiring"
     ]
 }

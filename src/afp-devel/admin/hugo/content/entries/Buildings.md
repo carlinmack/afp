@@ -29,5 +29,13 @@
         {
             "2016": "2016-07-01"
         }
+    ],
+    "theories": [
+        "Algebra",
+        "Building",
+        "Chamber",
+        "Coxeter",
+        "Prelim",
+        "Simplicial"
     ]
 }

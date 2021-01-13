@@ -28,5 +28,12 @@
         {
             "2016": "2016-09-06"
         }
+    ],
+    "theories": [
+        "equational_clausal_logic",
+        "multisets_continued",
+        "superposition",
+        "terms",
+        "well_founded_continued"
     ]
 }

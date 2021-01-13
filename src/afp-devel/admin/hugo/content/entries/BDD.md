@@ -72,5 +72,16 @@
     ],
     "dependencies": [
         "Simpl"
+    ],
+    "theories": [
+        "BinDag",
+        "EvalProof",
+        "General",
+        "LevellistProof",
+        "NormalizeTotalProof",
+        "ProcedureSpecs",
+        "RepointProof",
+        "ShareReduceRepListProof",
+        "ShareRepProof"
     ]
 }

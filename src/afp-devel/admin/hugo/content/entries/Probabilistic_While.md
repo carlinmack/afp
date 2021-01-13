@@ -34,5 +34,12 @@
     "dependencies": [
         "MFMC_Countable",
         "Pre_BZ"
+    ],
+    "theories": [
+        "Bernoulli",
+        "Fast_Dice_Roll",
+        "Geometric",
+        "Resampling",
+        "While_SPMF"
     ]
 }

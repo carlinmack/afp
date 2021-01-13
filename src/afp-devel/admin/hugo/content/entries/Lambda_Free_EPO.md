@@ -23,6 +23,11 @@
     "dependencies": [
         "Lambda_Free_RPOs"
     ],
+    "theories": [
+        "Chop",
+        "Embeddings",
+        "Lambda_Free_EPO"
+    ],
     "relatedEntries": [
         "Lambda_Free_KBOs"
     ]

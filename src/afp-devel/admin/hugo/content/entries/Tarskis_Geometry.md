@@ -49,5 +49,15 @@
         {
             "2012": "2012-11-08"
         }
+    ],
+    "theories": [
+        "Action",
+        "Euclid_Tarski",
+        "Hyperbolic_Tarski",
+        "Linear_Algebra2",
+        "Metric",
+        "Miscellany",
+        "Projective",
+        "Tarski"
     ]
 }

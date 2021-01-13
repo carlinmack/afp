@@ -78,5 +78,8 @@
     ],
     "dependencies": [
         "List-Index"
+    ],
+    "theories": [
+        "Jinja"
     ]
 }

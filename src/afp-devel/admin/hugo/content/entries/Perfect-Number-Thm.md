@@ -61,5 +61,10 @@
         {
             "2009": "2009-11-24"
         }
+    ],
+    "theories": [
+        "Perfect",
+        "PerfectBasics",
+        "Sigma"
     ]
 }

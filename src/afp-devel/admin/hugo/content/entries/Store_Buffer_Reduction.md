@@ -20,5 +20,15 @@
         {
             "2018": "2019-01-11"
         }
+    ],
+    "theories": [
+        "Abbrevs",
+        "PIMP",
+        "Preliminaries",
+        "ReduceStoreBuffer",
+        "ReduceStoreBufferSimulation",
+        "SyntaxTweaks",
+        "Text",
+        "Variants"
     ]
 }

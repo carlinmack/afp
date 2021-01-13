@@ -34,5 +34,10 @@
         {
             "2014": "2014-10-08"
         }
+    ],
+    "theories": [
+        "Reactive",
+        "Refinement",
+        "Temporal"
     ]
 }

@@ -35,6 +35,11 @@
     "dependencies": [
         "Discrete_Summation"
     ],
+    "theories": [
+        "Card_Partitions",
+        "Injectivity_Solver",
+        "Set_Partition"
+    ],
     "relatedEntries": [
         "Bell_Numbers_Spivey",
         "Card_Equiv_Relations",

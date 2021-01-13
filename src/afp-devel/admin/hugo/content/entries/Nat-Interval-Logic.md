@@ -55,5 +55,10 @@
     ],
     "dependencies": [
         "List-Infinite"
+    ],
+    "theories": [
+        "IL_Interval",
+        "IL_IntervalOperators",
+        "IL_TemporalOperators"
     ]
 }

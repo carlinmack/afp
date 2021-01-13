@@ -73,5 +73,9 @@
         {
             "2005": "2006-03-15"
         }
+    ],
+    "theories": [
+        "ICAInstance",
+        "LynchInstance"
     ]
 }

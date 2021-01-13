@@ -76,5 +76,10 @@
     ],
     "dependencies": [
         "Group-Ring-Module"
+    ],
+    "theories": [
+        "Valuation1",
+        "Valuation2",
+        "Valuation3"
     ]
 }

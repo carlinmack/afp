@@ -30,6 +30,10 @@
         "Bernoulli",
         "Landau_Symbols"
     ],
+    "theories": [
+        "Gamma_Asymptotics",
+        "Stirling_Formula"
+    ],
     "relatedEntries": [
         "Euler_MacLaurin",
         "Error_Function",

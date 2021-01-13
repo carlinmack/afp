@@ -26,5 +26,10 @@
     "dependencies": [
         "Discrete_Summation",
         "Card_Partitions"
+    ],
+    "theories": [
+        "Falling_Factorial_Sum_Combinatorics",
+        "Falling_Factorial_Sum_Induction",
+        "Falling_Factorial_Sum_Vandermonde"
     ]
 }

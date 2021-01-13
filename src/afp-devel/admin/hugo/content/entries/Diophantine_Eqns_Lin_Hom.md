@@ -28,5 +28,14 @@
         {
             "2017": "2017-10-15"
         }
+    ],
+    "theories": [
+        "Algorithm",
+        "Linear_Diophantine_Equations",
+        "List_Vector",
+        "Minimize_Wrt",
+        "Simple_Algorithm",
+        "Solver_Code",
+        "Sorted_Wrt"
     ]
 }

@@ -26,5 +26,8 @@
         {
             "2016-1": "2017-01-13"
         }
+    ],
+    "theories": [
+        "E_Transcendental"
     ]
 }

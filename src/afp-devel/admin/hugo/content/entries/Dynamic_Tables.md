@@ -37,5 +37,9 @@
     ],
     "dependencies": [
         "Amortized_Complexity"
+    ],
+    "theories": [
+        "Tables_nat",
+        "Tables_real"
     ]
 }

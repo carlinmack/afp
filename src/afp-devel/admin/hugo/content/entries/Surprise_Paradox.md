@@ -32,6 +32,9 @@
     "dependencies": [
         "Incompleteness"
     ],
+    "theories": [
+        "Surprise_Paradox"
+    ],
     "relatedEntries": [
         "Goedel_HFSet_Semantic"
     ]

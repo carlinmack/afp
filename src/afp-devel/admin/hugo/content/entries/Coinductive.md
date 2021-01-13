@@ -71,7 +71,17 @@
             "2009-1": "2010-02-14"
         }
     ],
-    "relatedEntries": [
-        "Stream_Fusion_Code"
+    "theories": [
+        "Coinductive",
+        "Coinductive_List",
+        "Coinductive_List_Prefix",
+        "Coinductive_Nat",
+        "Coinductive_Stream",
+        "Lazy_LList",
+        "Lazy_TLList",
+        "Quotient_Coinductive_List",
+        "Quotient_TLList",
+        "TLList",
+        "TLList_CCPO"
     ]
 }

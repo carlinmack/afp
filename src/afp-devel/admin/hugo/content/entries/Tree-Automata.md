@@ -78,5 +78,12 @@
     "dependencies": [
         "Collections",
         "Collections_Examples"
+    ],
+    "theories": [
+        "AbsAlgo",
+        "Ta",
+        "Ta_impl",
+        "Ta_impl_codegen",
+        "Tree"
     ]
 }

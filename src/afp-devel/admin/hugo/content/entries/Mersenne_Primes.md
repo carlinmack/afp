@@ -21,5 +21,10 @@
         "Pell",
         "Native_Word",
         "Probabilistic_Prime_Tests"
+    ],
+    "theories": [
+        "Lucas_Lehmer",
+        "Lucas_Lehmer_Auxiliary",
+        "Lucas_Lehmer_Code"
     ]
 }

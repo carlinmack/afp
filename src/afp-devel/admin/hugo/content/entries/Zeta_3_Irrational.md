@@ -22,6 +22,9 @@
         "E_Transcendental",
         "Prime_Distribution_Elementary"
     ],
+    "theories": [
+        "Zeta_3_Irrational"
+    ],
     "relatedEntries": [
         "Irrational_Series_Erdos_Straus",
         "Prime_Distribution_Elementary"

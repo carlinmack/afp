@@ -28,5 +28,12 @@
         "Markov_Models",
         "Perron_Frobenius",
         "Jordan_Normal_Form"
+    ],
+    "theories": [
+        "Eigenspace",
+        "Stochastic_Matrix",
+        "Stochastic_Matrix_Markov_Models",
+        "Stochastic_Matrix_Perron_Frobenius",
+        "Stochastic_Vector_PMF"
     ]
 }

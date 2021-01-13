@@ -30,6 +30,12 @@
         "Bernoulli",
         "Winding_Number_Eval"
     ],
+    "theories": [
+        "Hadjicostas_Chapman",
+        "Zeta_Function",
+        "Zeta_Laurent_Expansion",
+        "Zeta_Library"
+    ],
     "relatedEntries": [
         "Dirichlet_Series",
         "Dirichlet_L",

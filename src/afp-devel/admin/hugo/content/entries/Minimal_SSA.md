@@ -29,5 +29,8 @@
     ],
     "dependencies": [
         "Formal_SSA"
+    ],
+    "theories": [
+        "Irreducible"
     ]
 }

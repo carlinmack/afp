@@ -18,5 +18,11 @@
         {
             "2019": "2020-01-16"
         }
+    ],
+    "theories": [
+        "Approx_BP_Hoare",
+        "Approx_LB_Hoare",
+        "Approx_MIS_Hoare",
+        "Approx_VC_Hoare"
     ]
 }

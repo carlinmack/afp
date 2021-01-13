@@ -46,5 +46,13 @@
         {
             "2012": "2012-07-03"
         }
+    ],
+    "theories": [
+        "Basis",
+        "Continuations",
+        "Logical_Relations",
+        "OpSem",
+        "PCF",
+        "SmallStep"
     ]
 }

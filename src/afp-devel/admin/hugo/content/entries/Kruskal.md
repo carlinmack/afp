@@ -30,9 +30,21 @@
         "Collections",
         "Refine_Imperative_HOL"
     ],
+    "theories": [
+        "Graph_Definition",
+        "Graph_Definition_Aux",
+        "Graph_Definition_Impl",
+        "Kruskal",
+        "Kruskal_Impl",
+        "Kruskal_Misc",
+        "Kruskal_Refine",
+        "MinWeightBasis",
+        "SeprefUF",
+        "UGraph",
+        "UGraph_Impl"
+    ],
     "relatedEntries": [
-        "Knuth_Morris_Pratt",
-        "Koenigsberg_Friendship",
-        "Menger"
+        "JinjaThreads",
+        "Flow_Networks"
     ]
 }

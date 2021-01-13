@@ -40,5 +40,13 @@
         {
             "2013-2": "2014-04-16"
         }
+    ],
+    "theories": [
+        "Deep",
+        "Finite_Noninterference",
+        "HyperCTL",
+        "Noninterference",
+        "Prelim",
+        "Shallow"
     ]
 }

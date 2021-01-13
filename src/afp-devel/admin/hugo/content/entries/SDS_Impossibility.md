@@ -32,6 +32,9 @@
     "dependencies": [
         "Randomised_Social_Choice"
     ],
+    "theories": [
+        "SDS_Impossibility"
+    ],
     "relatedEntries": [
         "Fishburn_Impossibility"
     ]

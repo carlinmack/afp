@@ -73,5 +73,37 @@
         {
             "2005": "2006-05-16"
         }
+    ],
+    "theories": [
+        "Annotate",
+        "Auxiliary",
+        "BigStep",
+        "ClassRel",
+        "Conform",
+        "CoreC++",
+        "CWellForm",
+        "Decl",
+        "DefAss",
+        "Determinism",
+        "Equivalence",
+        "Exceptions",
+        "Execute",
+        "Expr",
+        "HeapExtension",
+        "Objects",
+        "Progress",
+        "SmallStep",
+        "State",
+        "SubObj",
+        "Syntax",
+        "SystemClasses",
+        "Type",
+        "TypeRel",
+        "TypeSafe",
+        "Value",
+        "WellForm",
+        "WellType",
+        "WellTypeRT",
+        "WWellForm"
     ]
 }

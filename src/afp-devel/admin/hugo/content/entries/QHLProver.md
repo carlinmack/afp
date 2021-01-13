@@ -31,5 +31,14 @@
     "dependencies": [
         "Jordan_Normal_Form",
         "Deep_Learning"
+    ],
+    "theories": [
+        "Complex_Matrix",
+        "Gates",
+        "Grover",
+        "Matrix_Limit",
+        "Partial_State",
+        "Quantum_Hoare",
+        "Quantum_Program"
     ]
 }

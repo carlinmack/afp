@@ -27,5 +27,14 @@
         {
             "2016-1": "2017-05-02"
         }
+    ],
+    "theories": [
+        "AndersonProof",
+        "FittingProof",
+        "GoedelProof_P1",
+        "GoedelProof_P2",
+        "IHOML",
+        "IHOML_Examples",
+        "Relations"
     ]
 }

@@ -25,5 +25,9 @@
         {
             "2016-1": "2017-04-20"
         }
+    ],
+    "theories": [
+        "Constructor_Funs",
+        "Test_Constructor_Funs"
     ]
 }

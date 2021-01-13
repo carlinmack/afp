@@ -20,5 +20,9 @@
         {
             "2018": "2018-09-16"
         }
+    ],
+    "theories": [
+        "Cross_Product_7",
+        "Octonions"
     ]
 }

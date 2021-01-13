@@ -63,5 +63,10 @@
         {
             "2009-1": "2009-12-12"
         }
+    ],
+    "theories": [
+        "DFS",
+        "Exec",
+        "Presburger_Automata"
     ]
 }

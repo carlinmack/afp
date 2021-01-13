@@ -52,5 +52,8 @@
         {
             "2011": "2011-02-11"
         }
+    ],
+    "theories": [
+        "Lower_Semicontinuous"
     ]
 }

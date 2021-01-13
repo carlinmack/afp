@@ -35,8 +35,15 @@
         "KAT_and_DRA",
         "KAD"
     ],
+    "theories": [
+        "Domain_Quantale",
+        "KAD_is_KAT",
+        "P2S2R",
+        "RKAT",
+        "RKAT_Models"
+    ],
     "relatedEntries": [
-        "KAT_and_DRA",
-        "Hybrid_Systems_VCs"
+        "Hybrid_Systems_VCs",
+        "KAT_and_DRA"
     ]
 }

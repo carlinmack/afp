@@ -40,6 +40,14 @@
     "dependencies": [
         "Kleene_Algebra"
     ],
+    "theories": [
+        "Antidomain_Semiring",
+        "Domain_Semiring",
+        "Modal_Kleene_Algebra",
+        "Modal_Kleene_Algebra_Applications",
+        "Modal_Kleene_Algebra_Models",
+        "Range_Semiring"
+    ],
     "relatedEntries": [
         "KAT_and_DRA",
         "Relation_Algebra",

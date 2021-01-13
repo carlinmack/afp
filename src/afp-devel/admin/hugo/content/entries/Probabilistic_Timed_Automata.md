@@ -29,5 +29,9 @@
     "dependencies": [
         "Markov_Models",
         "Timed_Automata"
+    ],
+    "theories": [
+        "PTA",
+        "PTA_Reachability"
     ]
 }

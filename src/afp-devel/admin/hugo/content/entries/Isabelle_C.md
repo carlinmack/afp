@@ -23,5 +23,8 @@
     ],
     "dependencies": [
         "Isar_Ref"
+    ],
+    "theories": [
+        "README"
     ]
 }

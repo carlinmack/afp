@@ -24,5 +24,13 @@
     ],
     "dependencies": [
         "Nominal2"
+    ],
+    "theories": [
+        "Agreement",
+        "FMap_Lemmas",
+        "Nominal2_Lemmas",
+        "Results",
+        "Semantics",
+        "Syntax"
     ]
 }

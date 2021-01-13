@@ -29,5 +29,10 @@
         {
             "2016-1": "2016-12-17"
         }
+    ],
+    "theories": [
+        "Pairing_Heap_List1",
+        "Pairing_Heap_List2",
+        "Pairing_Heap_Tree"
     ]
 }

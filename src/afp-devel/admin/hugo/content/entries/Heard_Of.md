@@ -54,6 +54,11 @@
     "dependencies": [
         "Stuttering_Equivalence"
     ],
+    "theories": [
+        "HOModel",
+        "Majorities",
+        "Reduction"
+    ],
     "relatedEntries": [
         "Consensus_Refined"
     ]

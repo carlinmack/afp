@@ -61,5 +61,14 @@
         {
             "2009-1": "2010-06-21"
         }
+    ],
+    "theories": [
+        "Category",
+        "Functors",
+        "MonadicEquationalTheory",
+        "NatTrans",
+        "SetCat",
+        "Universe",
+        "Yoneda"
     ]
 }

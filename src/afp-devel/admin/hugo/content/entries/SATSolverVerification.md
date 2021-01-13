@@ -67,5 +67,22 @@
         {
             "2008": "2008-07-27"
         }
+    ],
+    "theories": [
+        "AssertLiteral",
+        "BasicDPLL",
+        "CNF",
+        "ConflictAnalysis",
+        "Decide",
+        "FunctionalImplementation",
+        "Initialization",
+        "KrsticGoel",
+        "MoreList",
+        "NieuwenhuisOliverasTinelli",
+        "SatSolverCode",
+        "SatSolverVerification",
+        "SolveLoop",
+        "Trail",
+        "UnitPropagate"
     ]
 }

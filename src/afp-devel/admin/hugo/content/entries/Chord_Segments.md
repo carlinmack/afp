@@ -31,5 +31,8 @@
     ],
     "dependencies": [
         "Triangle"
+    ],
+    "theories": [
+        "Chord_Segments"
     ]
 }

@@ -35,5 +35,14 @@
         {
             "2016": "2016-09-29"
         }
+    ],
+    "theories": [
+        "allen",
+        "axioms",
+        "disjoint_relations",
+        "examples",
+        "jointly_exhaustive",
+        "nest",
+        "xor_cal"
     ]
 }

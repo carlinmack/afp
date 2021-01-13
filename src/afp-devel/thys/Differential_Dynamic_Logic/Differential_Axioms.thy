@@ -922,7 +922,7 @@ proof -
      subgoal for x using geq' by auto 
     using t int_s t apply auto
     subgoal for x
-      by (metis int_s mult.commute mult.right_neutral order.trans real_mult_le_cancel_iff2)
+      by (metis int_s mult.commute mult.right_neutral order.trans mult_le_cancel_iff2)
     done
   then show "?thesis" by auto 
 qed
@@ -2179,7 +2179,7 @@ proof -
         using deriv1_args[OF ivl] by auto
       have gderiv:"(?g has_derivative ?g') (at (?f s) within (?f ` ?ivl))"
         using good_interp unfolding is_interp_def 
-        using  has_derivative_within_subset by blast
+        using  has_derivative_subset by blast
       have gfderiv:"((?g \<circ> ?f) has_derivative (?g' \<circ> ?f')) (at s within ?ivl)"
         using fderiv gderiv diff_chain_within by blast
       show "((\<lambda>x. sterm_sem I (f1 fid vid1) (?flow x)) has_derivative

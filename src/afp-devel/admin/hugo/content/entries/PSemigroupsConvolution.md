@@ -29,5 +29,13 @@
         {
             "2016-1": "2017-06-13"
         }
+    ],
+    "theories": [
+        "Binary_Modalities",
+        "Partial_Semigroups",
+        "Partial_Semigroup_Lifting",
+        "Partial_Semigroup_Models",
+        "Quantales",
+        "Unary_Modalities"
     ]
 }

@@ -52,5 +52,14 @@
         {
             "2011-1": "2012-03-02"
         }
+    ],
+    "theories": [
+        "Consensus",
+        "Idempotence",
+        "IOA",
+        "RDR",
+        "Sequences",
+        "Simulations",
+        "SLin"
     ]
 }

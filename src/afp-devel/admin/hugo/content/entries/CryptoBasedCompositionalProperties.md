@@ -40,5 +40,13 @@
         {
             "2013-2": "2014-01-11"
         }
+    ],
+    "theories": [
+        "CompLocalSecrets",
+        "inout",
+        "KnowledgeKeysSecrets",
+        "ListExtras",
+        "Secrecy",
+        "Secrecy_types"
     ]
 }

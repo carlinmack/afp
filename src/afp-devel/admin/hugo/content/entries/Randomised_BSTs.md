@@ -23,5 +23,8 @@
     "dependencies": [
         "Random_BSTs",
         "Monad_Normalisation"
+    ],
+    "theories": [
+        "Randomised_BSTs"
     ]
 }

@@ -48,5 +48,9 @@
     ],
     "dependencies": [
         "Lehmer"
+    ],
+    "theories": [
+        "Pratt_Certificate",
+        "Pratt_Certificate_Code"
     ]
 }

@@ -14,5 +14,8 @@
     "licence": "BSD",
     "dependencies": [
         "ZF"
+    ],
+    "theories": [
+        "recursion"
     ]
 }

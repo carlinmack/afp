@@ -22,5 +22,23 @@
         {
             "2018": "2019-04-29"
         }
+    ],
+    "theories": [
+        "Assertions",
+        "Bot",
+        "Conclusion",
+        "CopyBuffer",
+        "CSP",
+        "Det",
+        "Hide",
+        "Introduction",
+        "Mndet",
+        "Mprefix",
+        "Ndet",
+        "Process",
+        "Seq",
+        "Skip",
+        "Stop",
+        "Sync"
     ]
 }

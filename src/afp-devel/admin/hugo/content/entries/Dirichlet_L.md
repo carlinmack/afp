@@ -27,6 +27,13 @@
         "Dirichlet_Series",
         "Bertrands_Postulate"
     ],
+    "theories": [
+        "Dirichlet_Characters",
+        "Dirichlet_L_Functions",
+        "Dirichlet_Theorem",
+        "Group_Adjoin",
+        "Multiplicative_Characters"
+    ],
     "relatedEntries": [
         "Dirichlet_Series",
         "Gauss_Sums",

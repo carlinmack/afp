@@ -37,6 +37,10 @@
         "Open_Induction",
         "Well_Quasi_Orders"
     ],
+    "theories": [
+        "Decreasing_Diagrams_II",
+        "Decreasing_Diagrams_II_Aux"
+    ],
     "relatedEntries": [
         "Decreasing-Diagrams",
         "Myhill-Nerode",

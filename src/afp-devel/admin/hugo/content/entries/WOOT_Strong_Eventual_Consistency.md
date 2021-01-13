@@ -23,5 +23,22 @@
     "dependencies": [
         "Certification_Monads",
         "Datatype_Order_Generator"
+    ],
+    "theories": [
+        "BasicAlgorithms",
+        "Consistency",
+        "CreateAlgorithms",
+        "CreateConsistent",
+        "Data",
+        "DistributedExecution",
+        "ErrorMonad",
+        "Example",
+        "IntegrateAlgorithm",
+        "IntegrateInsertCommute",
+        "Psi",
+        "SEC",
+        "Sorting",
+        "SortKeys",
+        "StrongConvergence"
     ]
 }

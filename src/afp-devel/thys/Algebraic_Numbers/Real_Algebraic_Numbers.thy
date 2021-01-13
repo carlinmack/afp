@@ -29,7 +29,13 @@ imports
   Jordan_Normal_Form.Gauss_Jordan_IArray_Impl
   Algebraic_Numbers
   Sturm_Rat
+  Factors_of_Int_Poly
 begin
+
+text \<open>For algebraic numbers, it turned out that @{const gcd_int_poly} is not
+  preferable to the default implementation of @{const gcd}, which just implements
+  Collin's primitive remainder sequence.\<close>
+declare gcd_int_poly_code[code_unfold del]
 
 (*TODO: move *)
 lemma ex1_imp_Collect_singleton: "(\<exists>!x. P x) \<and> P x \<longleftrightarrow> Collect P = {x}"
@@ -3533,8 +3539,15 @@ declare [[code drop:
 
 declare real_alg_code_eqns [code equation]
 
-lemma [code]:
+lemma Ratreal_code[code]:
   "Ratreal = real_of \<circ> of_rat_real_alg"
   by (transfer, transfer) (simp add: fun_eq_iff of_rat_2)
+
+lemma real_of_post[code_post]: "real_of (Real_Alg_Quotient (Real_Alg_Invariant (Rational x))) = of_rat x" 
+proof (transfer)
+  fix x
+  show "real_of_3 (Real_Alg_Invariant (Rational x)) = real_of_rat x" 
+    by (simp add: Real_Alg_Invariant_inverse real_of_3.rep_eq)
+qed
 
 end

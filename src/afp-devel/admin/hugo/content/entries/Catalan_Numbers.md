@@ -28,5 +28,9 @@
     ],
     "dependencies": [
         "Landau_Symbols"
+    ],
+    "theories": [
+        "Catalan_Auxiliary_Integral",
+        "Catalan_Numbers"
     ]
 }

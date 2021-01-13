@@ -22,5 +22,22 @@
         {
             "2018": "2018-10-16"
         }
+    ],
+    "theories": [
+        "ActionSeqProcess",
+        "Acyclicity",
+        "AcycSspace",
+        "Dependency",
+        "FactoredSystem",
+        "FactoredSystemLib",
+        "FmapUtils",
+        "FSSublist",
+        "HoArithUtils",
+        "Invariants",
+        "ListUtils",
+        "RelUtils",
+        "SetUtils",
+        "SystemAbstraction",
+        "TopologicalProps"
     ]
 }

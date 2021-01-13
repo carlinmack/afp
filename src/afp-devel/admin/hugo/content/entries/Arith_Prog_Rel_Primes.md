@@ -16,5 +16,8 @@
         {
             "2019": "2020-02-10"
         }
+    ],
+    "theories": [
+        "Arith_Prog_Rel_Primes"
     ]
 }

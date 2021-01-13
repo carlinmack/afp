@@ -32,6 +32,9 @@
     "dependencies": [
         "Card_Partitions"
     ],
+    "theories": [
+        "Bell_Numbers"
+    ],
     "relatedEntries": [
         "Twelvefold_Way",
         "Card_Equiv_Relations",

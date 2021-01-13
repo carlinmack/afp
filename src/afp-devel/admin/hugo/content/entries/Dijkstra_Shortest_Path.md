@@ -59,5 +59,19 @@
     ],
     "dependencies": [
         "Collections"
+    ],
+    "theories": [
+        "Dijkstra",
+        "Dijkstra_Impl",
+        "Dijkstra_Impl_Adet",
+        "Dijkstra_Misc",
+        "Graph",
+        "GraphByMap",
+        "GraphGA",
+        "GraphSpec",
+        "HashGraphImpl",
+        "Introduction",
+        "Test",
+        "Weight"
     ]
 }

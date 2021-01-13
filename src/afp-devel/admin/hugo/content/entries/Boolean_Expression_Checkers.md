@@ -41,5 +41,10 @@
         {
             "2013-2": "2014-06-08"
         }
+    ],
+    "theories": [
+        "Boolean_Expression_Checkers",
+        "Boolean_Expression_Checkers_AList_Mapping",
+        "Boolean_Expression_Example"
     ]
 }

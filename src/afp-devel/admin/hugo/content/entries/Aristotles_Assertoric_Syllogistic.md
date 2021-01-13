@@ -16,5 +16,8 @@
         {
             "2019": "2019-10-17"
         }
+    ],
+    "theories": [
+        "AristotlesAssertoric"
     ]
 }

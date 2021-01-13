@@ -42,7 +42,12 @@
         "Certification_Monads",
         "Show"
     ],
+    "theories": [
+        "Xml",
+        "Xmlt"
+    ],
     "relatedEntries": [
-        "Certification_Monads"
+        "Certification_Monads",
+        "AI_Planning_Languages_Semantics"
     ]
 }

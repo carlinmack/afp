@@ -23,6 +23,15 @@
         "Polynomial_Interpolation",
         "Dirichlet_L"
     ],
+    "theories": [
+        "Complex_Roots_Of_Unity",
+        "Finite_Fourier_Series",
+        "Gauss_Sums",
+        "Gauss_Sums_Auxiliary",
+        "Periodic_Arithmetic",
+        "Polya_Vinogradov",
+        "Ramanujan_Sums"
+    ],
     "relatedEntries": [
         "Dirichlet_L",
         "Zeta_Function"

@@ -88,6 +88,9 @@
         "Refine_Monadic",
         "Trie"
     ],
+    "theories": [
+        "JinjaThreads"
+    ],
     "relatedEntries": [
         "Collections",
         "Containers",

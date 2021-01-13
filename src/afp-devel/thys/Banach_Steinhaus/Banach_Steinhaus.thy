@@ -241,12 +241,8 @@ proof(rule classical)
   assume \<open>\<not>(bounded (range f))\<close>
   have sum_1: \<open>\<exists>K. \<forall>n. sum (\<lambda>k. inverse (real_of_nat 3^k)) {0..n} \<le> K\<close>
   proof-
-    have \<open>summable (\<lambda>n. (inverse (real_of_nat 3))^n)\<close>
-      using Series.summable_geometric_iff [where c = "inverse (real_of_nat 3)"] by auto
-    moreover have \<open>(inverse (real_of_nat 3))^n = inverse (real_of_nat 3^n)\<close> for n::nat
-      using power_inverse by blast        
-    ultimately have \<open>summable (\<lambda>n. inverse (real_of_nat 3^n))\<close>
-      by auto
+    have \<open>summable (\<lambda>n. inverse ((3::real) ^ n))\<close>
+      by (simp flip: power_inverse)
     hence \<open>bounded (range (\<lambda>n. sum (\<lambda> k. inverse (real 3 ^ k)) {0..<n}))\<close>
       using summable_imp_sums_bounded[where f = "(\<lambda>n. inverse (real_of_nat 3^n))"]
         lessThan_atLeast0 by auto
@@ -456,7 +452,7 @@ proof-
       apply transfer apply auto by (metis mult.commute onorm) 
     thus  ?thesis using \<open>\<exists> M. \<forall> n. norm (f n) \<le> M\<close>
       by (metis (no_types, hide_lams) dual_order.trans norm_eq_zero order_refl 
-          real_mult_le_cancel_iff2 vector_space_over_itself.scale_zero_left zero_less_norm_iff)
+          mult_le_cancel_iff2 vector_space_over_itself.scale_zero_left zero_less_norm_iff)
   qed 
   have norm_F_x: \<open>\<exists>K. \<forall>x. norm (F x) \<le> norm x * K\<close>
   proof-

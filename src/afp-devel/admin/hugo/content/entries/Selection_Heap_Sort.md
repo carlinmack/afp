@@ -37,5 +37,13 @@
         {
             "2013-2": "2014-02-18"
         }
+    ],
+    "theories": [
+        "Heap",
+        "HeapFunctional",
+        "HeapImperative",
+        "RemoveMax",
+        "SelectionSort_Functional",
+        "Sort"
     ]
 }

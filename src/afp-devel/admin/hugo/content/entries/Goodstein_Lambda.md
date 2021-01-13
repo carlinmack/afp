@@ -16,5 +16,8 @@
         {
             "2019": "2020-02-24"
         }
+    ],
+    "theories": [
+        "Goodstein_Lambda"
     ]
 }

@@ -84,7 +84,8 @@
         "Coinductive",
         "Lazy-Lists-II"
     ],
-    "relatedEntries": [
-        "Stream_Fusion_Code"
+    "theories": [
+        "LList_Topology",
+        "Topology"
     ]
 }

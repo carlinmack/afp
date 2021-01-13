@@ -61,5 +61,8 @@
         {
             "2009": "2009-04-29"
         }
+    ],
+    "theories": [
+        "FunWithFunctions"
     ]
 }

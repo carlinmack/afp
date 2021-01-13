@@ -18,5 +18,15 @@
         {
             "2019": "2019-12-18"
         }
+    ],
+    "theories": [
+        "Affine_Arithmetic_Misc",
+        "Analysis_Misc",
+        "Examples",
+        "Invariance",
+        "Limit_Set",
+        "ODE_Misc",
+        "Periodic_Orbit",
+        "Poincare_Bendixson"
     ]
 }

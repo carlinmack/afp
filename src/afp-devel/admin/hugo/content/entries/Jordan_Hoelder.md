@@ -37,5 +37,14 @@
     ],
     "dependencies": [
         "Secondary_Sylow"
+    ],
+    "theories": [
+        "CompositionSeries",
+        "GroupIsoClasses",
+        "JordanHolder",
+        "MaximalNormalSubgroups",
+        "SimpleGroups",
+        "SndIsomorphismGrp",
+        "SubgroupsAndNormalSubgroups"
     ]
 }

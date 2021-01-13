@@ -32,5 +32,8 @@
     ],
     "dependencies": [
         "Pratt_Certificate"
+    ],
+    "theories": [
+        "Bertrand"
     ]
 }

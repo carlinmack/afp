@@ -30,5 +30,8 @@
         {
             "2016": "2016-12-08"
         }
+    ],
+    "theories": [
+        "Paraconsistency"
     ]
 }

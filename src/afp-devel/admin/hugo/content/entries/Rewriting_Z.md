@@ -38,6 +38,11 @@
         "Nominal2",
         "Abstract-Rewriting"
     ],
+    "theories": [
+        "CL_Z",
+        "Lambda_Z",
+        "Z"
+    ],
     "relatedEntries": [
         "Decreasing-Diagrams-II",
         "Decreasing-Diagrams"

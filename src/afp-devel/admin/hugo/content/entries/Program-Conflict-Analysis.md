@@ -71,5 +71,18 @@
         {
             "2007": "2007-12-20"
         }
+    ],
+    "theories": [
+        "AcquisitionHistory",
+        "ConsInterleave",
+        "ConstraintSystems",
+        "Flowgraph",
+        "Interleave",
+        "LTS",
+        "MainResult",
+        "Misc",
+        "Normalization",
+        "Semantics",
+        "ThreadTracking"
     ]
 }

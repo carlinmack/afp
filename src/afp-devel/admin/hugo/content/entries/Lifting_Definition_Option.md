@@ -34,5 +34,8 @@
         {
             "2014": "2014-10-15"
         }
+    ],
+    "theories": [
+        "Lifting_Definition_Option_Examples"
     ]
 }

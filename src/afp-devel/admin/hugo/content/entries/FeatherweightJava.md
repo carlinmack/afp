@@ -74,5 +74,12 @@
         {
             "2005": "2006-04-05"
         }
+    ],
+    "theories": [
+        "Execute",
+        "Featherweight_Java",
+        "FJAux",
+        "FJDefs",
+        "FJSound"
     ]
 }

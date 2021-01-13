@@ -28,5 +28,8 @@
     ],
     "dependencies": [
         "Triangle"
+    ],
+    "theories": [
+        "Stewart_Apollonius"
     ]
 }

@@ -61,7 +61,9 @@
             "2009-2": "2010-10-28"
         }
     ],
-    "relatedEntries": [
-        "Finger-Trees"
+    "theories": [
+        "BinomialHeap",
+        "SkewBinomialHeap",
+        "Test"
     ]
 }

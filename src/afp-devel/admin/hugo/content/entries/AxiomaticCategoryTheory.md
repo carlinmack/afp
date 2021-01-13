@@ -23,5 +23,8 @@
         {
             "2017": "2018-05-23"
         }
+    ],
+    "theories": [
+        "AxiomaticCategoryTheory"
     ]
 }

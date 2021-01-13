@@ -19,5 +19,14 @@
         {
             "2018": "2019-01-03"
         }
+    ],
+    "theories": [
+        "Data",
+        "Determinacy",
+        "Executions",
+        "Occurrences",
+        "OperationalSemantics",
+        "Renaming",
+        "Substitution"
     ]
 }

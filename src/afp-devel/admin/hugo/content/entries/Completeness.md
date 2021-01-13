@@ -83,5 +83,14 @@
         {
             "2004": "2004-09-20"
         }
+    ],
+    "theories": [
+        "Base",
+        "Completeness",
+        "Formula",
+        "PermutationLemmas",
+        "Sequents",
+        "Soundness",
+        "Tree"
     ]
 }

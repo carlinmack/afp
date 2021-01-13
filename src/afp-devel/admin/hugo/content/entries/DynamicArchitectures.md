@@ -31,5 +31,9 @@
     ],
     "dependencies": [
         "Coinductive"
+    ],
+    "theories": [
+        "Configuration_Traces",
+        "Dynamic_Architecture_Calculus"
     ]
 }

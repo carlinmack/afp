@@ -85,5 +85,21 @@
     ],
     "dependencies": [
         "Regular-Sets"
+    ],
+    "theories": [
+        "Automata",
+        "AutoMaxChop",
+        "AutoProj",
+        "AutoRegExp",
+        "DA",
+        "Execute",
+        "Functional_Automata",
+        "MaxChop",
+        "MaxPrefix",
+        "NA",
+        "NAe",
+        "RegExp2NA",
+        "RegExp2NAe",
+        "RegSet_of_nat_DA"
     ]
 }

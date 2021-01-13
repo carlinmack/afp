@@ -18,5 +18,10 @@
         {
             "2019": "2019-06-28"
         }
+    ],
+    "theories": [
+        "Binary_Relations",
+        "Complete_Relations",
+        "Fixed_Points"
     ]
 }

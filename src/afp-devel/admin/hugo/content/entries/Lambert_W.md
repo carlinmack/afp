@@ -16,6 +16,10 @@
         "Bernoulli",
         "Stirling_Formula"
     ],
+    "theories": [
+        "Lambert_W",
+        "Lambert_W_MacLaurin_Series"
+    ],
     "relatedEntries": [
         "Euler_MacLaurin",
         "Stirling_Formula",

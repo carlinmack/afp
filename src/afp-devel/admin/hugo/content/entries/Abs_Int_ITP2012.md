@@ -26,7 +26,17 @@
             "2016-1": "2016-12-17"
         }
     ],
-    "relatedEntries": [
-        "Root_Balanced_Tree"
+    "theories": [
+        "Abs_Int0",
+        "Abs_Int1",
+        "Abs_Int1_const",
+        "Abs_Int1_parity",
+        "Abs_Int2",
+        "Abs_Int2_ivl",
+        "Abs_Int3",
+        "Abs_State",
+        "ACom",
+        "Collecting",
+        "Complete_Lattice_ix"
     ]
 }

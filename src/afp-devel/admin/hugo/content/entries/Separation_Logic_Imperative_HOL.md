@@ -56,6 +56,14 @@
         "Collections",
         "Native_Word"
     ],
+    "theories": [
+        "Assertions",
+        "Automation",
+        "Hoare_Triple",
+        "Run",
+        "Sep_Examples",
+        "Sep_Main"
+    ],
     "relatedEntries": [
         "JinjaThreads",
         "ROBDD",

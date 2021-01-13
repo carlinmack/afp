@@ -31,5 +31,10 @@
         {
             "2015": "2016-01-05"
         }
+    ],
+    "theories": [
+        "Prime_Harmonic",
+        "Prime_Harmonic_Misc",
+        "Squarefree_Nat"
     ]
 }

@@ -23,5 +23,22 @@
         {
             "2018": "2019-04-08"
         }
+    ],
+    "theories": [
+        "Binding_Syntax",
+        "Equiv_Relation2",
+        "Iteration",
+        "Pick",
+        "Preliminaries",
+        "QuasiTerms_Environments_Substitution",
+        "QuasiTerms_PickFresh_Alpha",
+        "QuasiTerms_Swap_Fresh",
+        "Recursion",
+        "Semantic_Domains",
+        "Terms",
+        "Transition_QuasiTerms_Terms",
+        "Univ",
+        "Variable",
+        "Well_Sorted_Terms"
     ]
 }

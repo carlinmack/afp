@@ -36,6 +36,9 @@
     "dependencies": [
         "Noninterference_Ipurge_Unwinding"
     ],
+    "theories": [
+        "GenericUnwinding"
+    ],
     "relatedEntries": [
         "Noninterference_Ipurge_Unwinding",
         "Noninterference_Inductive_Unwinding"

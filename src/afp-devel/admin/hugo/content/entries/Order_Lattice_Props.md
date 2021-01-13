@@ -22,5 +22,16 @@
         {
             "2018": "2018-12-19"
         }
+    ],
+    "theories": [
+        "Closure_Operators",
+        "Fixpoint_Fusion",
+        "Galois_Connections",
+        "Order_Duality",
+        "Order_Lattice_Props",
+        "Order_Lattice_Props_Loc",
+        "Order_Lattice_Props_Wenzel",
+        "Representations",
+        "Sup_Lattice"
     ]
 }

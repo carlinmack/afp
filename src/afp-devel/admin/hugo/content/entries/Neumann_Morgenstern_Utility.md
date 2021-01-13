@@ -27,5 +27,11 @@
     ],
     "dependencies": [
         "First_Welfare_Theorem"
+    ],
+    "theories": [
+        "Expected_Utility",
+        "Lotteries",
+        "Neumann_Morgenstern_Utility_Theorem",
+        "PMF_Composition"
     ]
 }

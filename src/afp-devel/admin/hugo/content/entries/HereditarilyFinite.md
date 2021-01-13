@@ -44,8 +44,15 @@
             "2013-1": "2013-11-17"
         }
     ],
+    "theories": [
+        "Finitary",
+        "Finite_Automata",
+        "HF",
+        "OrdArith",
+        "Ordinal",
+        "Rank"
+    ],
     "relatedEntries": [
-        "Incompleteness",
         "Goedel_HFSet_Semantic",
         "Syntax_Independent_Logic"
     ]

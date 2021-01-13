@@ -38,5 +38,15 @@
     "dependencies": [
         "Automatic_Refinement",
         "Separation_Logic_Imperative_HOL"
+    ],
+    "theories": [
+        "Down",
+        "Grid",
+        "Grid_Point",
+        "Imperative",
+        "Triangular_Function",
+        "Up",
+        "UpDown_Scheme",
+        "Up_Down"
     ]
 }

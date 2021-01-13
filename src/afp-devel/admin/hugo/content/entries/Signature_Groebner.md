@@ -24,6 +24,12 @@
     "dependencies": [
         "Groebner_Bases"
     ],
+    "theories": [
+        "More_MPoly",
+        "Prelims",
+        "Signature_Examples",
+        "Signature_Groebner"
+    ],
     "relatedEntries": [
         "Nullstellensatz"
     ]

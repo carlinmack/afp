@@ -30,5 +30,20 @@
         {
             "2016-1": "2017-06-01"
         }
+    ],
+    "theories": [
+        "Interp",
+        "Lenses",
+        "Lens_Algebra",
+        "Lens_Instances",
+        "Lens_Laws",
+        "Lens_Order",
+        "Lens_Record_Example",
+        "Lens_State",
+        "Lens_Symmetric",
+        "Optics",
+        "Prisms",
+        "Scenes",
+        "Two"
     ]
 }

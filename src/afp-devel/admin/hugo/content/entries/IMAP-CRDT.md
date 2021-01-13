@@ -31,5 +31,12 @@
     ],
     "dependencies": [
         "CRDT"
+    ],
+    "theories": [
+        "IMAP-def",
+        "IMAP-proof-commute",
+        "IMAP-proof-helpers",
+        "IMAP-proof-independent",
+        "IMAP-proof"
     ]
 }

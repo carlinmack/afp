@@ -20,5 +20,9 @@
         {
             "2018": "2018-11-21"
         }
+    ],
+    "theories": [
+        "Derive",
+        "Tagged_Prod_Sum"
     ]
 }

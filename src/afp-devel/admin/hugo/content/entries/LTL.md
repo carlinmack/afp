@@ -39,6 +39,13 @@
     "dependencies": [
         "Boolean_Expression_Checkers"
     ],
+    "theories": [
+        "Code_Equations",
+        "Disjunctive_Normal_Form",
+        "Equivalence_Relations",
+        "LTL",
+        "Rewriting"
+    ],
     "relatedEntries": [
         "LTL_to_DRA"
     ]

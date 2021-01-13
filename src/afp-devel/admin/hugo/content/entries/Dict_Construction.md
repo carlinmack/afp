@@ -27,5 +27,11 @@
         "Automatic_Refinement",
         "Lazy_Case",
         "Show"
+    ],
+    "theories": [
+        "Dict_Construction",
+        "Test_Dict_Construction",
+        "Test_Lazy_Case",
+        "Test_Side_Conditions"
     ]
 }

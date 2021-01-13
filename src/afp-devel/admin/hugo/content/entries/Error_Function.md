@@ -26,6 +26,10 @@
     "dependencies": [
         "Landau_Symbols"
     ],
+    "theories": [
+        "Error_Function",
+        "Error_Function_Asymptotics"
+    ],
     "relatedEntries": [
         "Euler_MacLaurin",
         "Stirling_Formula"

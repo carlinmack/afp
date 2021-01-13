@@ -67,5 +67,13 @@
         {
             "2007": "2007-11-27"
         }
+    ],
+    "theories": [
+        "Basis",
+        "Equivalence",
+        "NewCard",
+        "Notation",
+        "State",
+        "Trace"
     ]
 }

@@ -37,5 +37,24 @@
         {
             "2013-2": "2014-07-13"
         }
+    ],
+    "theories": [
+        "Algebra",
+        "Automation",
+        "Continuity",
+        "Determinism",
+        "Embedding",
+        "Expectations",
+        "Healthiness",
+        "Induction",
+        "LoopInduction",
+        "Loops",
+        "Misc",
+        "pGCL",
+        "StructuredReasoning",
+        "Sublinearity",
+        "Termination",
+        "Transformers",
+        "WellDefined"
     ]
 }

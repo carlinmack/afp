@@ -18,5 +18,10 @@
     "licence": "BSD",
     "dependencies": [
         "Sturm_Sequences"
+    ],
+    "theories": [
+        "Evaluation",
+        "Safe_Distance",
+        "Safe_Distance_Reaction"
     ]
 }

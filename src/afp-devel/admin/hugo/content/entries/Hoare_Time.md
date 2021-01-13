@@ -27,6 +27,36 @@
     "dependencies": [
         "Separation_Algebra"
     ],
+    "theories": [
+        "AExp",
+        "BExp",
+        "Big_Step",
+        "Big_StepT",
+        "Big_StepT_Partial",
+        "Com",
+        "Discussion",
+        "DiscussionO",
+        "Hoare_Time",
+        "Nielson_Examples",
+        "Nielson_Hoare",
+        "Nielson_Sqrt",
+        "Nielson_VCG",
+        "Nielson_VCGi",
+        "Nielson_VCGi_complete",
+        "Partial_Evaluation",
+        "QuantK_Examples",
+        "QuantK_Hoare",
+        "QuantK_Sqrt",
+        "QuantK_VCG",
+        "Quant_Examples",
+        "Quant_Hoare",
+        "Quant_VCG",
+        "SepLogK_Hoare",
+        "SepLogK_VCG",
+        "SepLog_Examples",
+        "SepLog_Hoare",
+        "Vars"
+    ],
     "relatedEntries": [
         "Separata"
     ]

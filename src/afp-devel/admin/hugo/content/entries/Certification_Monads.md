@@ -41,6 +41,14 @@
         "Partial_Function_MR",
         "Show"
     ],
+    "theories": [
+        "Check_Monad",
+        "Error_Monad",
+        "Error_Syntax",
+        "Misc",
+        "Parser_Monad",
+        "Strict_Sum"
+    ],
     "relatedEntries": [
         "XML",
         "Polynomial_Factorization"

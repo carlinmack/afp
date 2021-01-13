@@ -56,5 +56,19 @@
         {
             "2009-2": "2010-08-18"
         }
+    ],
+    "theories": [
+        "CarAudioSystem",
+        "Contrib",
+        "Data",
+        "DataSpace",
+        "Expr",
+        "HA",
+        "HAKripke",
+        "HAOps",
+        "HASem",
+        "Kripke",
+        "SA",
+        "Update"
     ]
 }

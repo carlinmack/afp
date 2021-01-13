@@ -1,6 +1,8 @@
 theory NumberWang_IPv6
 imports 
   Word_Lib.Word_Lemmas
+  Word_Lib.Word_Syntax
+  Word_Lib.Reversed_Bit_Lists
 begin
 
 section\<open>Helper Lemmas for Low-Level Operations on Machine Words\<close>
@@ -39,22 +41,22 @@ qed
 
 lemma length_drop_mask_outer: fixes ip::"'a::len word"
   shows "LENGTH('a) - n' = len \<Longrightarrow> length (dropWhile Not (to_bl (ip AND (mask n << n') >> n'))) \<le> len"
-  apply(subst Word_Lemmas.word_and_mask_shiftl)
-  apply(subst Word_Lib.shiftl_shiftr1)
+  apply(subst word_and_mask_shiftl)
+  apply(subst shiftl_shiftr1)
    apply(simp; fail)
   apply(simp)
-  apply(subst Word_Lib.and_mask)
+  apply(subst and_mask)
   apply(simp add: word_size)
   apply(simp add: length_drop_mask)
   done
 lemma length_drop_mask_inner: fixes ip::"'a::len word"
   shows "n \<le> LENGTH('a) - n' \<Longrightarrow> length (dropWhile Not (to_bl (ip AND (mask n << n') >> n'))) \<le> n"
-  apply(subst Word_Lemmas.word_and_mask_shiftl)
-  apply(subst Word_Lemmas.shiftl_shiftr3)
+  apply(subst word_and_mask_shiftl)
+  apply(subst shiftl_shiftr3)
    apply(simp; fail)
   apply(simp)
   apply(simp add: word_size)
-  apply(simp add: Word_Lemmas.mask_twice)
+  apply(simp add: mask_twice)
   apply(simp add: length_drop_mask)
   done
 
@@ -101,9 +103,9 @@ proof -
      apply(simp; fail)
     by(rule of_bl_length_less) simp+
   have mnhelper3: "(of_bl::bool list \<Rightarrow> 128 word) (to_bl b) * 2 ^ n < 2 ^ m"
-    apply(rule Word.div_lt_mult)
-     apply(rule Word_Lemmas.word_less_two_pow_divI)
-       using assms by(simp_all add: mnhelper2 Word_Lib.p2_gt_0)
+    apply(rule div_lt_mult)
+     apply(rule word_less_two_pow_divI)
+       using assms by(simp_all add: mnhelper2 p2_gt_0)
 
   from assms show ?thesis
     apply(subst ucast_bl)+
@@ -176,13 +178,13 @@ qed
   from assms have "unat ((2 ^ n)::128 word) * unat ((of_bl::bool list \<Rightarrow> 128 word) (to_bl b)) mod 2 ^ LENGTH(128) =
         2 ^ m * (2 ^ (n - m) * unat ((of_bl::bool list \<Rightarrow> 128 word) (to_bl b)) mod 2 ^ LENGTH(128))"
      apply(subst nat_mod_eq')
-      subgoal apply(subst Aligned.unat_power_lower)
+      subgoal apply(subst unat_power_lower)
        subgoal by(simp; fail)
       subgoal by (rule power_less_128_helper) simp
       done
      apply(subst nat_mod_eq')
       subgoal by(rule power_less_128_helper) simp
-     apply(subst Aligned.unat_power_lower)
+     apply(subst unat_power_lower)
       apply(simp; fail)
      apply(simp only: *)
      done
@@ -190,9 +192,9 @@ qed
      by blast
 
    hence aligned: "is_aligned ((of_bl::bool list \<Rightarrow> 128 word) (to_bl b) << n) m"
-     unfolding is_aligned_def
+     unfolding is_aligned_iff_dvd_nat
      unfolding dvd_def
-     unfolding Word.shiftl_t2n
+     unfolding shiftl_t2n
      unfolding Word.unat_word_ariths(2)
      by assumption
 

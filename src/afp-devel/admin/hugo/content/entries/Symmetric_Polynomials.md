@@ -22,5 +22,10 @@
     ],
     "dependencies": [
         "Polynomials"
+    ],
+    "theories": [
+        "Symmetric_Polynomials",
+        "Symmetric_Polynomials_Code",
+        "Vieta"
     ]
 }
