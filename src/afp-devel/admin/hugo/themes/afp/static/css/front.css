@@ -119,6 +119,11 @@ aside li {
     margin: 1em 0;
 }
 
+aside a:focus {
+    outline: 1px #acabcf solid;
+    outline-offset: 3.5px;
+}
+
 header {
     border-bottom: 2px #555555 solid;
     display: flex;
@@ -178,13 +183,8 @@ header {
     width: 130px;
 }
 
-button:hover,
-button:focus {
-    background-color: #0053ba;
-}
-
 .popUpButton:active {
-    transform: scale(0.99);
+    transform: scale(0.98);
 }
 
 a:link {
@@ -197,7 +197,10 @@ a:hover {
     color: #0000EE
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 1.5em 0 0 0;
 }
 
@@ -479,23 +482,27 @@ pre.code {
     white-space: nowrap;
 }
 
-#search-results > div {
+#search-results>div {
     position: relative;
+    margin: 1.5rem 0;
+    border-bottom: 2px #ddd solid;
 }
 
 #search-results a[download] {
     position: absolute;
     top: 0;
     right: 0;
-    background: #d9d9d9;
     padding: 5px 7.5px;
     width: 105px;
 }
 
 a[download] {
-    background: #d9d9d9;
-    padding: 5px 7.5px;
+    display: inline-block;
+    line-height: 0;
+    height: 22px;
+    padding: 4px 7px;
 }
+
 
 .entry a[download] {
     position: absolute;
@@ -509,13 +516,12 @@ a[download] {
     margin: 2.5rem auto 0;
 }
 
-a[download]:after {
+a[download]::after {
     content: url(/images/download.svg);
-    height: 1em;
     position: relative;
     top: .12em;
-    left: .3em;
-    width: 1em;
+    left: 5px;
+    padding-right: 5px;
 }
 
 a[download]:focus,
@@ -536,20 +542,52 @@ div div form {
 }
 
 #searchInput,
-#searchButton {
+#searchButton,
+button,
+a[download] {
     border: 1px solid #777;
-    font-size: 16px;
+    font-size: 1rem;
     vertical-align: middle;
-    height: 2rem;
     background-color: white;
-    padding: 7px;
+    color: black;
     line-height: 0;
+    cursor: pointer;
+    font-family: Open Sans, sans-serif;
 }
+
+#searchInput,
+#searchButton,
+button {
+    height: 2rem;
+    padding: 7px;
+    font-weight: bold;
+}
+
+#searchButton:hover,
+button:hover,
+a[download]:hover {
+    background-color: #ddd;
+}
+
+#searchButton:active,
+button:active,
+a[download]:active {
+    background-color: #bbb;
+}
+
+#searchButton:focus,
+button:focus,
+a[download]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #c5c4ddbb;
+}
+
+
 
 #searchInput {
     width: 215px;
     border-right: none;
-    font-family: "Open Sans",     sans-serif;
+    font-family: "Open Sans", sans-serif;
 }
 
 header #searchInput {
