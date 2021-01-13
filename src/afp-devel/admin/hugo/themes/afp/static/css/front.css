@@ -535,8 +535,8 @@ div div form {
     text-align: left;
 }
 
-.searchInput,
-.searchButton {
+#searchInput,
+#searchButton {
     border: 1px solid #777;
     font-size: 16px;
     vertical-align: middle;
@@ -546,21 +546,21 @@ div div form {
     line-height: 0;
 }
 
-.searchInput {
+#searchInput {
     width: 215px;
     border-right: none;
     font-family: "Open Sans",     sans-serif;
 }
 
-header .searchInput {
+header #searchInput {
     width: 175px;
 }
 
-header .searchButton {
+header #searchButton {
     width: 2rem;
 }
 
-.searchButton img {
+#searchButton img {
     max-width: 1rem;
 }
 

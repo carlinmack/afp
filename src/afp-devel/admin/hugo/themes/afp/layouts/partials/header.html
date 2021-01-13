@@ -5,7 +5,7 @@
   {{- if (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
     <div class='form-container'>
-      <input {{ if (eq .Section "entries") -}}style="display: none"{{- end }} class="searchInput" type="search" size="31" maxlength="255" value=""><button class="searchButton"
+      <input {{ if (eq .Section "entries") -}}style="display: none"{{- end }} id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
         type="button"><img src="/images/search.svg"/></button>
       <div id="searchInputautocomplete-list" style="display: none">
         <div></div>
