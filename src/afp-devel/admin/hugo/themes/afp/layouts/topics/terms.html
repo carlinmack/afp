@@ -1,39 +1,35 @@
 {{ define "main" }}
-
-{{ $topics := .Site.Taxonomies.topics }}
-
-
-        {{ range $firstLevel, $secondLevelTaxonomy := .Site.Data.topics }}
-          <h2>{{ $firstLevel }}</h2>
-          {{ with (index $topics (urlize $firstLevel)) }}
-          <div class="list">
-            {{ range $key := .Pages.ByDate }}
+  {{ $topics := .Site.Taxonomies.topics }}
+  {{ range $firstLevel, $secondLevelTaxonomy := .Site.Data.topics }}
+    <h2>{{ $firstLevel }}</h2>
+    {{ with (index $topics (urlize $firstLevel)) }}
+      <div class="list">
+          {{ range $key := .Pages.ByDate }}
             <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html}">{{ .File.TranslationBaseName }}</a> &nbsp;
+        {{ end }}
+      </div>
+    {{ end }}
+    {{ with $secondLevelTaxonomy }}
+      {{ range $secondLevel, $thirdLevelTaxonomy := . }}
+        <h3>{{ $secondLevel }}</h3>
+        <div class="list">
+          {{ with (index $topics (printf "%s/%s" (urlize $firstLevel) (urlize $secondLevel))) }}
+            {{ range $key := .Pages.ByDate }}
+              <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{ .File.TranslationBaseName }}</a> &nbsp;
             {{ end }}
-          </div>
           {{ end }}
-          {{ with $secondLevelTaxonomy }}
-            {{ range $secondLevel, $thirdLevelTaxonomy := . }}
-              <h3>{{ $secondLevel }}</h3>
-              <div class="list">
-                {{ with (index $topics (printf "%s/%s" (urlize $firstLevel) (urlize $secondLevel))) }}
-                  {{ range $key := .Pages.ByDate }}
+          {{ with $thirdLevelTaxonomy }}
+            {{ range $thirdLevel, $ignore := . }}
+              <br><i>{{ $thirdLevel }}</i> &nbsp;
+              {{ with (index $topics (printf "%s/%s/%s" (urlize $firstLevel) (urlize $secondLevel) (urlize $thirdLevel))) }}
+                {{ range $key := .Pages.ByDate }}
                   <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{ .File.TranslationBaseName }}</a> &nbsp;
-                  {{ end }}
-                {{ end }}
-              {{ with $thirdLevelTaxonomy }}
-                {{ range $thirdLevel, $ignore := . }}
-                  <strong>{{ $thirdLevel }}</strong>
-                  {{ with (index $topics (printf "%s/%s/%s" (urlize $firstLevel) (urlize $secondLevel) (urlize $thirdLevel))) }}
-                    {{ range $key := .Pages.ByDate }}
-                    <a href="https://isa-afp.org/entries/{{ .File.TranslationBaseName }}.html">{{ .File.TranslationBaseName }}</a> &nbsp;
-                    {{ end }}
-                  {{ end }}
                 {{ end }}
               {{ end }}
-              </div>
             {{ end }}
           {{ end }}
-        {{ end }}
-
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
 {{ end }}

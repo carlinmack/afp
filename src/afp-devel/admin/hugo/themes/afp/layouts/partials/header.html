@@ -1,8 +1,5 @@
 <header>
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
-  {{ if (eq (.Scratch.Get "title") "Topics") }}
-  {{ .Scratch.Set "title" "Index by Topic" }}
-  {{ end }}
   <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
   {{- if (ne .File.TranslationBaseName "search") -}}

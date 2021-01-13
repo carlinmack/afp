@@ -1,57 +1,77 @@
-function loadSearch(entries, authors, topics, keywords) {
-    var entryIndex = new FlexSearch({
-        encode: "advanced",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: ["title", "abstract"],
-        },
-    });
+function loadSearch(input, keywords, entries, authors, topics) {
+    if (entries) {
+        var entryIndex = new FlexSearch({
+            encode: "advanced",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: ["title", "abstract"],
+            },
+        });
 
-    var authorIndex = new FlexSearch({
-        encode: "advanced",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "name",
-        },
-    });
+        var authorIndex = new FlexSearch({
+            encode: "advanced",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "name",
+            },
+        });
 
-    var topicIndex = new FlexSearch({
-        encode: "icase",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "name",
-        },
-    });
+        var topicIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "name",
+            },
+        });
 
-    var suggestIndex = new FlexSearch({
-        encode: "icase",
-        tokenize: "forward",
-        doc: {
-            id: "id",
-            field: "keyword",
-        },
-    });
+        var suggestIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "keyword",
+            },
+        });
 
-    var indices = {
-        entry: entryIndex,
-        author: authorIndex,
-        topic: topicIndex,
-        suggest: suggestIndex,
-    };
+        var indices = {
+            entry: entryIndex,
+            author: authorIndex,
+            topic: topicIndex,
+            suggest: suggestIndex,
+        };
 
-    indices["entry"].add(entries);
-    indices["author"].add(authors);
-    indices["topic"].add(topics);
-    indices["suggest"].add(keywords);
+        indices["entry"].add(entries);
+        indices["author"].add(authors);
+        indices["topic"].add(topics);
+        indices["suggest"].add(keywords);
 
-    const input = document.getElementById("searchInput");
+        var searchQuery = input.value;
+        if (searchQuery) {
+            executeSearch(input, indices, searchQuery);
+        }
+    } else {
+        var suggestIndex = new FlexSearch({
+            encode: "icase",
+            tokenize: "forward",
+            doc: {
+                id: "id",
+                field: "keyword",
+            },
+        });
 
-    var searchQuery = input.value;
-    if (searchQuery) {
-        executeSearch(indices, searchQuery);
+        var indices = {
+            suggest: suggestIndex,
+        };
+
+        indices["suggest"].add(keywords);
+
+        var searchQuery = input.value;
+        if (searchQuery) {
+            executeSearch(input, indices, searchQuery);
+        }
     }
 
     input.addEventListener("keyup", function (event) {
@@ -71,7 +91,7 @@ function loadSearch(entries, authors, topics, keywords) {
                 break;
             default:
                 if (this.value && this.value.length > 1) {
-                    executeSearch(indices, this.value);
+                    executeSearch(input, indices, this.value);
                 } else {
                     hideAutocomplete();
                     hideFindFacts();
@@ -184,46 +204,57 @@ function loadSearch(entries, authors, topics, keywords) {
     }
 }
 
-function executeSearch(indices, searchQuery) {
-    var entryResults = indices["entry"].search({
-        query: searchQuery,
-        limit: 16,
-    });
+function executeSearch(input, indices, searchQuery) {
+    if (indices["entry"]) {
+        var entryResults = indices["entry"].search({
+            query: searchQuery,
+            limit: 16,
+        });
 
-    var topicResults = indices["topic"].search({
-        query: searchQuery,
-        limit: 3,
-    });
+        var topicResults = indices["topic"].search({
+            query: searchQuery,
+            limit: 3,
+        });
 
-    var authorResults = indices["author"].search({
-        query: searchQuery,
-        limit: 3,
-    });
+        var authorResults = indices["author"].search({
+            query: searchQuery,
+            limit: 3,
+        });
 
-    var suggestResults = indices["suggest"].search({
-        query: searchQuery,
-        limit: 10,
-    });
+        var suggestResults = indices["suggest"].search({
+            query: searchQuery,
+            limit: 10,
+        });
 
-    if (entryResults.length > 0) {
-        populateResults(entryResults, searchQuery, indices);
+        if (entryResults.length > 0) {
+            populateResults(entryResults, searchQuery, indices);
+        } else {
+            var text =
+                "<p>No matches found</p><br>Search on all pages of the AFP, including";
+            text +=
+                ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery;
+            text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
+            text += "Google</a><br/>";
+            setInnerHTMLOfID("search-results", text);
+        }
+
+        setInnerHTMLOfID("authorTopic", "");
+
+        if (authorResults.length > 0)
+            populateSmallResults(authorResults, searchQuery, "author", indices);
+        if (topicResults.length > 0)
+            populateSmallResults(topicResults, searchQuery, "topic", indices);
+
+        clearAutocomplete();
+        filterAutocomplete(input, suggestResults);
     } else {
-        var text =
-            "<p>No matches found</p><br>Search on all pages of the AFP, including";
-        text += ' PDFs, with <a href="https://www.google.com/search?q=' + searchQuery;
-        text += ' site:isa-afp.org" target="_blank" rel="noreferrer noopener">';
-        setInnerHTMLOfID("search-results", text);
+        var suggestResults = indices["suggest"].search({
+            query: searchQuery,
+            limit: 10,
+        });
+
+        filterAutocomplete(input, suggestResults);
     }
-
-    setInnerHTMLOfID("authorTopic", "");
-
-    if (authorResults.length > 0)
-        populateSmallResults(authorResults, searchQuery, "author", indices);
-    if (topicResults.length > 0)
-        populateSmallResults(topicResults, searchQuery, "topic", indices);
-
-    clearAutocomplete();
-    filterAutocomplete(suggestResults);
 }
 
 function populateResults(results, searchQuery, indices, all = false) {
@@ -243,7 +274,7 @@ function populateResults(results, searchQuery, indices, all = false) {
         }
     }
 
-    const resultsTable = document.getElementById("search-results");
+    const resultsTable = document.getElementById();
 
     setInnerHTMLOfID("search-results", "<h2>Entries</h2>");
 
@@ -430,9 +461,9 @@ function clearAutocomplete() {
     }
 }
 
-function filterAutocomplete(values) {
+function filterAutocomplete(input, values) {
     var added = false;
-    var input = document.getElementById("searchInput");
+
     values.forEach((value, _key) => {
         if (value.keyword != input.value) {
             addItem(value.keyword);
@@ -462,7 +493,7 @@ function addItem(value) {
 
 function handleClick(event) {
     event.preventDefault(); // so that two click events aren't registered
-    var input = document.getElementById("searchInput");
+    var input = getInput();
     var currentValue = this.innerHTML;
     input.value = currentValue;
     clearAutocomplete();
@@ -497,6 +528,19 @@ function getItems() {
     }
 }
 
+function getInput() {
+    var header = document.getElementsByTagName("header");
+    var input = header[0].querySelector("input");
+    if (!input) {
+        var input = document.getElementsByClassName("searchInput");
+        if (input) {
+            input = input[0];
+        }
+    }
+
+    return input;
+}
+
 function setInnerHTMLOfID(id, str) {
     const elem = document.getElementById(id);
     if (elem) {
@@ -507,32 +551,58 @@ function setInnerHTMLOfID(id, str) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    var input = document.getElementById("searchInput");
-    var urlQuery = param("s");
-    if (urlQuery) {
-        input.value = urlQuery;
-    }
-    input.focus();
+    var header = document.getElementsByTagName("header");
 
-    document.getElementById("searchButton").addEventListener("click", () => {
-        handleSubmit(document.getElementById("searchInput").value);
-    });
+    var input = header[0].querySelector("input");
+    if (input) {
+        var button = document.getElementsByClassName("searchButton");
+        if (button) {
+            button = button[0];
+            button.addEventListener("click", () => {
+                handleSubmit(document.getElementById("searchInput").value);
+            });
+        }
 
-    Promise.all([
-        fetch("/index.json"),
-        fetch("/authors/index.json"),
-        fetch("/topics/index.json"),
-        fetch("/data/keywords.json"),
-    ])
-        .then(function (responses) {
-            // Get a JSON object from each of the responses
-            return Promise.all(responses.map((response) => response.json()));
-        })
-        .then((data) => loadSearch(...data));
+        Promise.all([fetch("/data/keywords.json")])
+            .then(function (responses) {
+                // Get a JSON object from each of the responses
+                return Promise.all(responses.map((response) => response.json()));
+            })
+            .then((data) => loadSearch(input, ...data));
+    } else {
+        var input = document.getElementsByClassName("searchInput");
+        if (input) {
+            input = input[0];
+            var urlQuery = param("s");
+            if (urlQuery) {
+                input.value = urlQuery;
+            }
+            input.focus();
 
-    function param(name) {
-        return decodeURIComponent(
-            (location.search.split(name + "=")[1] || "").split("&")[0]
-        ).replace(/\+/g, " ");
+            var button = document.getElementsByClassName("searchButton");
+            if (button) {
+                button = button[0];
+                button.addEventListener("click", () => {
+                    handleSubmit(document.getElementById("searchInput").value);
+                });
+            }
+
+            Promise.all([
+                fetch("/data/keywords.json"),
+                fetch("/index.json"),
+                fetch("/authors/index.json"),
+                fetch("/topics/index.json"),
+            ])
+                .then(function (responses) {
+                    // Get a JSON object from each of the responses
+                    return Promise.all(responses.map((response) => response.json()));
+                })
+                .then((data) => loadSearch(input, ...data));
+        }
+        function param(name) {
+            return decodeURIComponent(
+                (location.search.split(name + "=")[1] || "").split("&")[0]
+            ).replace(/\+/g, " ");
+        }
     }
 });

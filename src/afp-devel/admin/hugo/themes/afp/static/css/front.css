@@ -67,7 +67,7 @@ body {
     background: #FFFFFF;
     font-family: "Open Sans", sans-serif;
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: max(20%, 200px) 1fr;
     grid-template-areas: "sidebar content";
     justify-items: center;
     margin: 0;
@@ -130,8 +130,9 @@ header {
 
 .content {
     grid-area: content;
-    padding: 0 15vw;
+    margin: 0 auto;
     max-width: 50vw;
+    min-width: 400px;
 }
 
 .content div {
@@ -158,9 +159,13 @@ header {
     margin: 0.5rem 0;
 }
 
-.popUpButton {
+.popUpButton:visited {
+    color: white
+}
+
+.popUpButton:link {
     border: none;
-    padding: 0.75rem 2rem;
+    padding: 0.75rem 0;
     text-decoration: none;
     background-color: #2E2D4E;
     color: white;
@@ -170,7 +175,7 @@ header {
         transform 150ms ease;
     font-weight: bold;
     font-size: 0.9rem;
-    width: 50%;
+    width: 130px;
 }
 
 button:hover,
