@@ -268,6 +268,15 @@ h1 span.first {
     font-size: 2.3rem;
 }
 
+.year {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 2px #555 solid;
+}
+
 img {
     max-width: 90%;
 }

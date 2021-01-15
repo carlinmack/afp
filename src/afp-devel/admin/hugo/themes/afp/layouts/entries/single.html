@@ -18,7 +18,7 @@
   {{- end -}}
   {{- end -}}
   {{- $Scratch := newScratch -}}
-  {{- with .Params.dependencies -}}<tr>
+  {{- with .Params.dependencies -}}
     {{- range . -}}
     {{- $dependency := printf "[%s](%s%s)" . ("/entries/" | relLangURL) (. | urlize) -}}
     {{- $Scratch.Add "dependencies" (slice $dependency) -}}
@@ -26,9 +26,9 @@
     <h3>Depends On</h3>
     <p>{{- delimit ($Scratch.Get "dependencies") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
     </p>
-  </tr>{{- end -}}
+  {{- end -}}
   {{- $entryName := .File.TranslationBaseName -}}
-  {{- with (index .Site.Taxonomies.dependencies (urlize $entryName)) -}}<tr>
+  {{- with (index .Site.Taxonomies.dependencies (urlize $entryName)) -}}
     {{- range $key := .Pages.ByDate -}}
     {{- $dependent := printf "[%s](%s)" .File.TranslationBaseName .RelPermalink -}}
     {{- $Scratch.Add "dependents" (slice ($dependent)) -}}
@@ -36,7 +36,7 @@
     <h3>Used by</h3>
     <p>{{- delimit ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
     </p>
-  </tr>{{- end -}}
+  {{- end -}}
 
   {{- with .Params.relatedEntries -}}
   {{- range . -}}
