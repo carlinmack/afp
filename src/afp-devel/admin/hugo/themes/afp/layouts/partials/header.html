@@ -1,32 +1,32 @@
 <header>
+  <form action="{{ " search" | absURL }}">
+  <div class='form-container'>
+    <input id="searchInput" type="search" size="31" maxlength="255" value=""><button
+      id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg" alt="Search" /></button>
+    <div id="searchInputautocomplete-list" style="display: none">
+      <div></div>
+    </div>
+  </div>
+  </form>
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
   <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
-  {{- if (ne .File.TranslationBaseName "search") -}}
-  <form action="{{ " search" | absURL }}">
-    <div class='form-container'>
-      <input {{ if (eq .Section "entries") -}}style="display: none"{{- end }} id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
-        type="button"><img src="{{- .Site.BaseURL -}}images/search.svg" alt="Search"/></button>
-      <div id="searchInputautocomplete-list" style="display: none">
-        <div></div>
-      </div>
-    </div>
-  </form>
-  {{- end -}}
+  <div>
   {{ if (eq .Section "authors") -}}
-  {{ with (index $.Site.Data.authors .Title )}}
-  {{ with .website}}
-  <p><a href="{{ . }}">{{ . }}</a></p>
+    {{ with (index $.Site.Data.authors .Title )}}
+    {{ with .website}}
+    <p><a href="{{ . }}">{{ . }}</a></p>
   {{- end -}}{{- end -}}{{- end -}}
   {{- $site := . -}}
   {{ with .Params.authors}}
-  <p>{{- partial "authors.html" (dict "site" $site "authors" .) -}}
+    <p>{{- partial "authors.html" (dict "site" $site "authors" .) -}}
     {{ with $site.Params.contributors }}
-    with contributions from {{ partial "authors.html" (dict "site" $site "authors" .) -}}
+      with contributions from {{ partial "authors.html" (dict "site" $site "authors" .) -}}
     {{ end }}
-  </p>
+    </p>
   {{ end }}
   {{ with .Params.date }}
-  <p class="date">{{- dateFormat "2 January 2006" . -}}</p>
+    <p class="date">{{- dateFormat "2 January 2006" . -}}</p>
   {{ end }}
+  </div>
 </header>
