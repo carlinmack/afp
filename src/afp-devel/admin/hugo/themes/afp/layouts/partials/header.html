@@ -1,4 +1,5 @@
 <header>
+  {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
   <div class='form-container'>
     <input id="searchInput" type="search" size="31" maxlength="255" value=""><button
@@ -8,8 +9,9 @@
     </div>
   </div>
   </form>
+  {{ end -}}
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
-  <h1>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
+  <h1 {{ if or (eq .Kind "home") (eq .File.TranslationBaseName "search") -}}style="margin-top: 48px;"{{ end -}}>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML }}
   </h1>
   <div>
   {{ if (eq .Section "authors") -}}
