@@ -53,7 +53,7 @@
   <h3>Theories</h3>
   <ul>
     {{- range . -}}
-    <li>{{- printf "[%s](https://www.isa-afp.org/browser_info/current/AFP/%s/%s.html)" . $entryName . | $.Page.RenderString -}}</li>
+    <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
     {{- end -}}
   </ul>
   {{- end -}}

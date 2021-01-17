@@ -4,10 +4,14 @@
 
 <body class="mathjax_ignore">
   <aside>
+    {{ if ne .Section "theories"}}
     {{- partial "navigation.html" . -}}
+    {{ else }}
+    {{- partial "theory-navigation.html" . -}}
+    {{ end }}
   </aside>
 
-  <div class='content {{ if (eq .Section "entries") -}}entries{{- end -}}'>
+  <div class='content {{- if (eq .Section "entries") }} entries{{- end -}} {{- if (eq .Section "theories") }} theories{{- end -}}'>
     {{- partial "header.html" . -}}
     <div>
       {{- block "main" . }}{{- end }}

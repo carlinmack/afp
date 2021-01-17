@@ -150,7 +150,14 @@ aside {
             outline-offset: 3.5px;
         }
     }
+
+    hr {
+        margin: 0 40px;
+        border: none;
+        border-top: 2px solid $dark-grey;
+    }
 }
+
 
 .logo {
     width: 40%;
@@ -160,38 +167,6 @@ aside {
 
 li {
     margin: 0.25em 0;
-}
-
-.entries {
-    ul {
-        list-style-type: none;
-    }
-
-    li {
-        //Instead of the line below you could use @include word-break($value)
-        word-break: break-all;
-    }
-
-    li::before {
-        content: "–";
-        position: absolute;
-        margin-left: -1.3em;
-    }
-
-    > div {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-    }
-
-    main {
-        padding-right: 2%;
-        max-width: 90ch;
-    }
-
-    nav {
-        width: 130px;
-        margin-left: auto;
-    }
 }
 
 header {
@@ -295,6 +270,42 @@ header {
         transform: translate(-50%, -50%);
         overflow-y: auto;
     }
+}
+
+.entries {
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        //Instead of the line below you could use @include word-break($value)
+        word-break: break-all;
+    }
+
+    li::before {
+        content: "–";
+        position: absolute;
+        margin-left: -1.3em;
+    }
+
+    >div {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    main {
+        padding-right: 2%;
+        max-width: 90ch;
+    }
+
+    nav {
+        width: 130px;
+        margin-left: auto;
+    }
+}
+
+.theories {
+    width: 60vw;
 }
 
 .links {
@@ -626,4 +637,9 @@ button {
         visibility: visible;
         opacity: 1;
     }
+}
+
+iframe {
+    width: 100%;
+    height: 90vh;
 }

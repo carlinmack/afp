@@ -1,0 +1,30 @@
+{
+    "theories": [
+        "BigStepLam",
+        "ChangeEnv",
+        "DeclSemAsDenot",
+        "DeclSemAsDenotFSet",
+        "DeclSemAsNDInterpFSet",
+        "DenotCompleteFSet",
+        "DenotCongruenceFSet",
+        "DenotEqualitiesFSet",
+        "DenotLam5",
+        "DenotSoundFSet",
+        "EquivDenotInterTypes",
+        "EquivRelationalDenotFSet",
+        "InterTypeSystem",
+        "Lambda",
+        "MutableRef",
+        "MutableRefProps",
+        "Optimizer",
+        "RelationalSemFSet",
+        "SmallStepLam",
+        "SystemF",
+        "ValueProps",
+        "Values",
+        "ValuesFSet",
+        "ValuesFSetProps"
+    ],
+    "url": "entries/decl_sem_fun_pl/theories",
+    "title": "Session Decl_Sem_Fun_PL"
+}

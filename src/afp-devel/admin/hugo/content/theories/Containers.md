@@ -1,0 +1,30 @@
+{
+    "theories": [
+        "AssocList",
+        "Card_Datatype",
+        "Closure_Set",
+        "Collection_Enum",
+        "Collection_Eq",
+        "Collection_Order",
+        "Compatibility_Containers_Regular_Sets",
+        "Containers",
+        "Containers_Auxiliary",
+        "Containers_Generator",
+        "Containers_Userguide",
+        "DList_Set",
+        "Equal",
+        "Extend_Partial_Order",
+        "Lexicographic_Order",
+        "List_Fusion",
+        "List_Proper_Interval",
+        "Mapping_Impl",
+        "Map_To_Mapping",
+        "RBT_ext",
+        "RBT_Mapping2",
+        "RBT_Set2",
+        "Set_Impl",
+        "Set_Linorder"
+    ],
+    "url": "entries/containers/theories",
+    "title": "Session Containers"
+}

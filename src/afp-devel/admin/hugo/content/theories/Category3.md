@@ -1,0 +1,30 @@
+{
+    "theories": [
+        "Adjunction",
+        "BinaryFunctor",
+        "CartesianCategory",
+        "CartesianClosedCategory",
+        "Category",
+        "CategoryWithFiniteLimits",
+        "CategoryWithPullbacks",
+        "ConcreteCategory",
+        "DiscreteCategory",
+        "DualCategory",
+        "EpiMonoIso",
+        "EquivalenceOfCategories",
+        "FreeCategory",
+        "Functor",
+        "FunctorCategory",
+        "HFSetCat",
+        "InitialTerminal",
+        "Limit",
+        "NaturalTransformation",
+        "ProductCategory",
+        "SetCat",
+        "SetCategory",
+        "Subcategory",
+        "Yoneda"
+    ],
+    "url": "entries/category3/theories",
+    "title": "Session Category3"
+}

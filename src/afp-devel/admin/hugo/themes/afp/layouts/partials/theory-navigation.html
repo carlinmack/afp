@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <a href="{{- .Site.BaseURL -}}">
+      <img src="{{- .Site.BaseURL -}}images/afp.png" alt='Logo of the Archive of Formal Proofs'
+        class="logo">
+    </a>
+    {{ $currentPage := . -}}
+    <ul>
+      <a href="{{- .Site.BaseURL -}}entries/{{- .File.TranslationBaseName | urlize -}}"><li>Return to entry</li></a>
+    </ul>
+    <hr>
+    <ul>
+      {{- range .Params.theories }}
+      <a href="#{{- . -}}"><li>{{- . -}}</li></a>
+      {{- end }}
+    </ul>
+  </div>
+</div>

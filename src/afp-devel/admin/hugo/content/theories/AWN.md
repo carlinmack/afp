@@ -1,0 +1,33 @@
+{
+    "theories": [
+        "AWN",
+        "AWN_Cterms",
+        "AWN_Invariants",
+        "AWN_Labels",
+        "AWN_Main",
+        "AWN_SOS",
+        "AWN_SOS_Labels",
+        "AWN_Term_Graph",
+        "Closed",
+        "Invariants",
+        "Inv_Cterms",
+        "Lib",
+        "OAWN_Convert",
+        "OAWN_Invariants",
+        "OAWN_SOS",
+        "OAWN_SOS_Labels",
+        "OClosed_Lifting",
+        "OClosed_Transfer",
+        "OInvariants",
+        "ONode_Lifting",
+        "OPnet",
+        "OPnet_Lifting",
+        "Pnet",
+        "Qmsg",
+        "Qmsg_Lifting",
+        "Toy",
+        "TransitionSystems"
+    ],
+    "url": "entries/awn/theories",
+    "title": "Session AWN"
+}

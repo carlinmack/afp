@@ -1,0 +1,30 @@
+{
+    "theories": [
+        "CFG",
+        "Derivations",
+        "InductRules",
+        "Ladder",
+        "Limit",
+        "ListTools",
+        "LLEarleyParsing",
+        "LocalLexing",
+        "LocalLexingLemmas",
+        "MainTheorems",
+        "PathLemmas",
+        "TheoremD10",
+        "TheoremD11",
+        "TheoremD12",
+        "TheoremD13",
+        "TheoremD14",
+        "TheoremD2",
+        "TheoremD4",
+        "TheoremD5",
+        "TheoremD6",
+        "TheoremD7",
+        "TheoremD8",
+        "TheoremD9",
+        "Validity"
+    ],
+    "url": "entries/locallexing/theories",
+    "title": "Session LocalLexing"
+}
