@@ -15,7 +15,9 @@
 
   {{- template "_internal/opengraph.html" . -}}
   {{- template "_internal/twitter_cards.html" . -}}
-  <link rel="stylesheet" type="text/css" media="screen" href="{{- .Site.BaseURL -}}css/front.css" />
+  {{ $options := (dict "enableSourceMap" true "targetPath" "css/front.css") }}
+  {{ $style := resources.Get "sass/main.scss" | toCSS $options }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
   <link rel="icon" href="{{- .Site.BaseURL -}}images/favicon.ico" type="image/icon">
 
   {{- if (eq .Section "entries") -}}
