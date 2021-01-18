@@ -15,9 +15,10 @@
 
   {{- template "_internal/opengraph.html" . -}}
   {{- template "_internal/twitter_cards.html" . -}}
-  {{ $options := (dict "enableSourceMap" true "targetPath" "css/front.css") }}
-  {{ $style := resources.Get "sass/main.scss" | toCSS $options }}
-  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
+  {{ $options := (dict "targetPath" "css/front.css") }}
+  {{ $style := resources.Get "sass/main.scss" | toCSS $options | minify }}
+  {{ $cssFP := $style | resources.Fingerprint }}
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" integrity="{{ $cssFP.Data.Integrity }}">
   <link rel="icon" href="{{- .Site.BaseURL -}}images/favicon.ico" type="image/icon">
 
   {{- if (eq .Section "entries") -}}

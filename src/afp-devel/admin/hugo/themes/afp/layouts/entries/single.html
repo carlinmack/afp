@@ -62,12 +62,12 @@
 <nav class='links'>
   <a class='popUpButton' href="#citePopUp">Cite</a>
   <a class='popUpButton' href="#downloadPopUp">Download</a>
+  <h4>PDFs</h4>
   <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/outline.pdf">Proof
     outline</a>
   <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/document.pdf">Proof
     document</a>
-  <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/index.html">Browse
-    theories</a>
+  <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/session_graph.pdf">Dependencies</a>
 </nav>
 
 <div id="citePopUp" class="overlay">
@@ -96,14 +96,14 @@
   <div class="popup">
     <h2>Download</h2>
     <a class="close" href="#">&times;</a>
-    <a href="../release/afp-{{- $entryName -}}-current.tar.gz" download>Download latest</a>
+    <a href="https://isa-afp.org/release/afp-{{- $entryName -}}-current.tar.gz" download>Download latest</a>
     {{ with .Params.olderReleases -}}
     <p>Older releases:</p>
     <ul>
       {{- range $map := . -}}
       {{- range $key, $value := $map -}}
       <li>Isabelle {{- $key -}}:
-        <a href="../release/afp-{{- $entryName -}}-{{- $value -}}.tar.gz">
+        <a href="https://isa-afp.org/release/afp-{{- $entryName -}}-{{- $value -}}.tar.gz">
           afp-{{- $entryName -}}-{{- $value -}}.tar.gz
         </a>
       </li>

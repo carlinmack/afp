@@ -108,6 +108,8 @@ aside {
     top: 0;
     left: 0;
     min-width: 200px;
+    word-break: break-all;
+    overflow-y: auto;
 
     > div {
         display: flex;
@@ -301,6 +303,10 @@ header {
     nav {
         width: 130px;
         margin-left: auto;
+
+        h4 {
+            color: $dark-grey;
+        }
     }
 }
 
