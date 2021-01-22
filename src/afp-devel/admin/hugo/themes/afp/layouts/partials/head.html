@@ -1,15 +1,18 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   {{- $siteTitle := ( .Site.Title ) -}}
-  {{- if .IsHome -}}
+  {{- if or .IsHome (not .Params.title) -}}
   <title>{{- $siteTitle -}} </title>
   {{- else -}}
   <title>{{- .Params.title }} - {{ $siteTitle -}}</title>
   {{- end -}}
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   {{- with .OutputFormats.Get "rss" -}}
+
+  <meta name="description" content="A collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover Isabelle.">
+
   {{- printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML -}}
   {{- end -}}
 
