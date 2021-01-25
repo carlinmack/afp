@@ -25,12 +25,12 @@ if __name__ == "__main__":
     
     updateProgressBar("Add theories", t)
     addTheories()
+    
+    updateProgressBar("Add related entries", t)
+    addRelatedEntries()
 
     updateProgressBar("Export statistics", t)
     # for this to work add `return data` at line 212 in templates.py
     addStatistics()
-    
-    updateProgressBar("Add related entries", t)
-    addRelatedEntries()
 
     t.close()

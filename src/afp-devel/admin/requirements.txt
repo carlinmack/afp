@@ -3,3 +3,6 @@ pytz
 tdqm
 termcolor
 unidecode
+bs4
+warnings
+requests

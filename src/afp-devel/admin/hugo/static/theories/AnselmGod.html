@@ -1,0 +1,318 @@
+<div id="AnselmGod">
+<div class="head"><h1>Theory AnselmGod</h1>
+<span class="command">theory</span> <span class="name">AnselmGod</span><br/>
+<span class="keyword">imports</span> <a href="../../HOL/HOL/Main.html"><span class="name">Main</span></a><br/>
+</div>
+<div class="source">
+<pre class="source"><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Introduction›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theory</span></span><span> </span><span>AnselmGod</span><span>
+</span><span class="keyword2"><span class="keyword">imports</span></span><span> </span><span>Main</span><span>
+</span><span class="keyword2"><span class="keyword">begin</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹This paper presents an automated verification of Anselm's ontological argument, as
+reconstructed by Paul Oppenheimer and Edward Zalta @{cite "oppenheimer_logic_1991"}, in
+Isabelle/HOL, an interactive theorem prover for higher-order logic. Previously, the argument has being
+automated by Oppenheimer and Zalta in Prover9 @{cite "oppenheimer_computationally-discovered_2011"},
+an automated theorem prover for first-order logic, and by John Rushby in PVS
+@{cite "rushby_ontological_2013"}, an automated theorem prover for higher-order logic. Automations of
+other versions of the argument include @{cite "benzmuller_godels_2013"}, @{cite "rushby_mechanized_2016"} 
+and @{cite "fuenmayor_types_2017"}. My purpose here is to present a basis for comparison in the spirit 
+of @{cite "wiedijk_seventeen_2006"}, which compares automated proofs of the irrationality 
+of $\sqrt 2$.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Oppenheimer and Zalta's reconstruction is based on the idea of treating `that than 
+which nothing greater can be conceived' as a definite description, and treating definite
+descriptions as singular terms. But in Isabelle/HOL all terms, including definite descriptions, 
+are assumed to denote. So the main task is to embed a free logic for definite descriptions within 
+Isabelle/HOL. (Previously, a free logic has been embedded into  Isabelle/HOL by  Christoph
+Benzmuller and Dana Scott @{cite "benzmuller_automating_2016"}. But theirs differs from Zalta
+and Oppenheimer's in several ways). Once Isabelle/HOL is equipped with free definite descriptions,
+reconstructing the argument is straightforward.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Free Logic›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Isabelle treats definite descriptions as singular terms of the form @{term "THE x. φ x"}.
+However, all terms in Isabelle are assumed to denote, and so from universal elimination we have 
+the validity of the argument form:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"∀ x. ψ x ⟹ ψ (THE x. φ x)"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>rule</span><span> </span><span>allE</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In the presence of definite descriptions which do not denote, this argument form is invalid;
+for example, from  `everyone has hair' we should not infer `the present King of France has hair',
+since the present King of France does not exist.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹This problem can be avoided by introducing a null individual @{term "n"} to serve as the
+reference of non-denoting definite descriptions, as follows:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">typedecl</span></span><span> </span><span>i</span><span> </span><span class="comment">― ‹the type of individuals›</span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>n</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"n"</span></span></span><span class="delimiter">)</span><span> </span><span class="comment">― ‹the null individual›</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Then the universal and particular quantifiers can be restricted to
+individuals excluding the null-individual as follows, where the new free quantifiers
+are distinguished from the classical quantifiers by bold type:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>universal_quantifier</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span>"</span></span></span><span class="delimiter">)</span><span> 
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> φ ≡ ∀x::i. (¬ x = n ⟶ φ x)"</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>universal_syntax</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">binder</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span>"</span></span></span><span> </span><span class="delimiter">[</span><span>8</span><span class="delimiter">]</span><span> </span><span>9</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> x. φ x ≡ <span class="hidden">❙</span><span class="bold">∀</span> φ"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>particular_quantifier</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span>"</span></span></span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> φ ≡ ∃x::i. (x ≠ n ∧ φ x)"</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>particular_syntax</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">binder</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span>"</span></span></span><span> </span><span class="delimiter">[</span><span>8</span><span class="delimiter">]</span><span> </span><span>9</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. φ x ≡ <span class="hidden">❙</span><span class="bold">∃</span> φ"</span></span></span><span>    
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Note that the quantifiers here range over both existent and non-existent individuals, whereas 
+the quantifiers in @{cite "benzmuller_automating_2016"} range only over existent individuals.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In the free logic employed by Oppenheimer and Zalta, statements of identity in which terms
+do not denote are always false @{cite "oppenheimer_logic_1991"}, p. 511. So the domain of the identity
+relation should be restricted to exclude the null-individual:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>identity</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i ⇒ i ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"is"</span></span></span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"is x y ≡ x ≠ n ∧ x = y"</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>identity_syntax</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i ⇒ i ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">infix</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">=</span>"</span></span></span><span> </span><span>50</span><span> </span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"x <span class="hidden">❙</span><span class="bold">=</span> y ≡ is x y"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Once identity is introduced, the uniqueness quantifier can then be defined in the usual way:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>uniqueness_quantifier</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"unique"</span></span></span><span class="delimiter">)</span><span>
+</span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"unique φ ≡ (<span class="hidden">❙</span><span class="bold">∃</span> x::i. φ x ∧ (<span class="hidden">❙</span><span class="bold">∀</span> y::i. φ y ⟶ x <span class="hidden">❙</span><span class="bold">=</span> y))"</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>uniqueness_syntax</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">binder</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"unique"</span></span></span><span> </span><span class="delimiter">[</span><span>8</span><span class="delimiter">]</span><span> </span><span>9</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"unique x. φ x ≡ unique φ"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Finally, the logic employed by Oppenheimer and Zalta is a negative free logic, in that
+applications of atomic predicates to non-denoting terms are always false
+@{cite "oppenheimer_logic_1991"}, p. 511. So it's necessary to introduce a higher-order predicate
+distinguishing between atomic and non-atomic predicates, and to introduce an axiom stipulating that
+no atomic predicate is true of the null individual:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>atomic_predicates</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ bool "</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"atomic"</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">axiomatization</span></span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span>negativity_constraint</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"atomic φ ⟹ ¬ φ n"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In addition, it has to be stated that identity is atomic:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">axiomatization</span></span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span>identity_atomic</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"⋀ x. atomic (is x)"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹One of the most controversial premises of  the ontological argument is that `exists'
+is a genuine or atomic  predicate. But surprisingly, we shall see below that the argument
+does not require this premise.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Definite Descriptions›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The main idea of Oppenheimer and Zalta's reconstruction of the ontological argument is to
+treat definite descriptions as genuine singular terms, which leads to the following syntax in
+Isabelle/HOL:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>definite_description</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ i"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">τ</span>"</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>description_syntax</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"(i ⇒ bool) ⇒ i"</span></span></span><span> </span><span class="delimiter">(</span><span class="keyword2"><span class="keyword">binder</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">τ</span>"</span></span></span><span> </span><span class="delimiter">[</span><span>8</span><span class="delimiter">]</span><span> </span><span>9</span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">τ</span> x. φ x ≡ <span class="hidden">❙</span><span class="bold">τ</span> φ"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In Oppenheimer and Zalta's reconstruction of the argument, definite descriptions
+are governed by the Russellian axiom schema @{cite "oppenheimer_logic_1991"}, p. 513:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">axiomatization</span></span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span>description_axiom</span><span class="delimiter">:</span><span>
+</span><span class="string"><span class="delete"><span class="delete">"atomic ψ ⟹ ψ (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x) ≡ (<span class="hidden">❙</span><span class="bold">∃</span> x. φ x ∧ (<span class="hidden">❙</span><span class="bold">∀</span> y. φ y ⟶ x <span class="hidden">❙</span><span class="bold">=</span> y) ∧ ψ x)"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹From this axiom schema, Oppenheimer and Zalta derive two intermediary theorems
+ to be used in the reconstruction of their argument  @{cite "oppenheimer_logic_1991"}, pp. 513-4. 
+According to the first:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span>  </span><span>description_theorem_1</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"unique x. φ x ⟹ <span class="hidden">❙</span><span class="bold">∃</span> y. y <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x)"</span></span></span><span>
+</span><span class="keyword1"><span class="command">using</span></span><span> </span><span>description_axiom</span><span> </span><span>identity_atomic</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The second theorem follows directly from the following lemma:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>lemma_1</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"a <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x) ⟹ φ (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x)"</span></span></span><span>
+</span><span class="keyword1"><span class="command">using</span></span><span> </span><span>description_axiom</span><span> </span><span>identity_atomic</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span> </span><span>description_theorem_2</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. x <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x) ⟹ φ (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x)"</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>simp</span><span> </span><span>add</span><span class="delimiter">:</span><span> </span><span>lemma_1</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In the course of verifying the argument using Prover9, Oppenheimer and Zalta discovered 
+a simplified proof which uses instead @{cite "oppenheimer_computationally-discovered_2011"}, p. 345:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span> </span><span>description_theorem_3</span><span class="delimiter">:</span><span>
+</span><span class="string"><span class="delete"><span class="delete">"atomic ψ ⟹ ψ (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x) ⟹ <span class="hidden">❙</span><span class="bold">∃</span> y. y <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. φ x)"</span></span></span><span> 
+</span><span class="keyword1"><span class="command">using</span></span><span> </span><span>negativity_constraint</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>fastforce</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Notice that it is only this last theorem which presupposes the negativity constraint,
+whereas the first two theorems depend only on the atomicity of identity.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Anselm's Argument›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The argument proper employs the following non-logical vocabulary:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>existence</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i ⇒ bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"E"</span></span></span><span class="delimiter">)</span><span> </span><span class="comment">― ‹exists in reality›</span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>greater_than</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i⇒i⇒bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"G"</span></span></span><span class="delimiter">)</span><span> </span><span class="comment">― ‹is greater than›</span><span>
+</span><span class="keyword1"><span class="command">consts</span></span><span> </span><span>conceivable</span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i⇒bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"C"</span></span></span><span class="delimiter">)</span><span> </span><span class="comment">― ‹exists in the understanding›</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Note that @{term "E a"} is not intended by Oppenheimer and Zalta to be equivalent to
+@{term "<span class="hidden">❙</span><span class="bold">∃</span> x. a = x"} since according to their reading of the argument, some things do not exist
+in reality @{cite "oppenheimer_logic_1991"}, p. 514.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Finally, the presentation of the argument is simplified by introducing
+the following abbreviation for the predicate `is a being greater than which none can be conceived':›</span></span></span><span>
+</span><span class="keyword1"><span class="command">abbreviation</span></span><span> </span><span>none_greater_than</span><span> </span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i⇒bool"</span></span></span><span> </span><span class="delimiter">(</span><span class="string"><span class="delete"><span class="delete">"Φ"</span></span></span><span class="delimiter">)</span><span>
+</span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"Φ x ≡ (C x ∧ ¬(<span class="hidden">❙</span><span class="bold">∃</span> y. G y x ∧ C y))"</span></span></span><span>
+</span><span>  
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹With this vocabulary in place, a name for God can be introduced as an abbreviation
+for the description `the being greater than which none can be conceived':›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">definition</span></span><span> </span><span>g</span><span> </span><span class="delimiter">::</span><span> </span><span class="string"><span class="delete"><span class="delete">"i"</span></span></span><span> </span><span class="keyword2"><span class="keyword">where</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"g ≡ (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)"</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In Oppenheimer and Zalta's presentation every name is assumed to denote, so a name for
+God cannot be introduced until it is proved that the description @{term "(<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)"} denotes
+ @{cite "oppenheimer_logic_1991"}, p, 520. But since it's not assumed in this presentation that every
+name denotes or, in other words, since it's not assumed that no names denote the null individual,
+ it's not necessary to postpone this step.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The final quasi-logical premise in Oppenheimer and Zalta's reconstruction of the argument
+is the connectivity of `is greater than', which is used in the proof of the following lemma
+@{cite "oppenheimer_logic_1991"}, p. 518:›</span></span></span><span>
+</span><span>  
+</span><span class="keyword1"><span class="command">lemma</span></span><span> </span><span>lemma_2</span><span class="delimiter">:</span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>connectivity</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> x. <span class="hidden">❙</span><span class="bold">∀</span> y. G x y ∨ G y x ∨ x <span class="hidden">❙</span><span class="bold">=</span> y"</span></span></span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. Φ x ⟹ unique x. Φ x"</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>connectivity</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>blast</span><span> 
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Note that ‹connectivity› disallows any ties with respect to greatness. This is
+implausible, since you and I, for example, may be equally great, without being the same person. So
+‹connectivity› should not be thought of as merely stipulative, and a weaker premise would
+be desirable.›</span></span></span><span>    
+</span><span>    
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹With this vocabulary in place, Anselm's ontological argument, as reconstructed by
+Oppenheimer and Zalta, can be stated as follows:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span> 
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>premise_1</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. Φ x"</span></span></span><span>
+</span><span> </span><span class="comment">― ‹there exists in the understanding a being greater than which
+none can be conceived›</span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>premise_2</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span>
+</span><span> </span><span class="comment">― ‹if the being greater than which none can be conceived does not exist in reality,
+then  a being exists in the understanding which is greater than the being greater than
+which none can be conceived›</span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>connectivity</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> x. <span class="hidden">❙</span><span class="bold">∀</span> y. G x y ∨ G y x ∨ x <span class="hidden">❙</span><span class="bold">=</span> y"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"E g"</span></span></span><span> </span><span class="comment">― ‹God exists.›</span><span>
+</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Isabelle can verify the argument in one line with the command ‹using premise_1 premise_2 connectivity lemma_1 g_def description_theorem_1 by smt›.
+But since proofs in Isabelle using ‹smt› are currently considered impermanent, I instead give Zalta
+and Oppenheimer's handwritten proof @{cite "oppenheimer_computationally-discovered_2011"}, p. 337:›</span></span></span><span>  
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span class="delimiter">(</span><span>rule</span><span> </span><span>ccontr</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword3"><span class="command">assume</span></span><span> </span><span>atheism</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"¬ E g"</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">from</span></span><span> </span><span>premise_1</span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>connectivity</span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>lemma_2</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"unique x. Φ x"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>description_theorem_1</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> y. y <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>description_theorem_2</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"Φ (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">hence</span></span><span> </span><span>god_is_greatest</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"¬(<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x.  Φ x) ∧ C y)"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>rule</span><span> </span><span>conjE</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">from</span></span><span>  </span><span>atheism</span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>premise_2</span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>g_def</span><span> </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"(<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>simp</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">with</span></span><span> </span><span>god_is_greatest</span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span>False</span><span class="keyword1"><span class="command">..</span></span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>  
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Note that neither Oppenheimer and Zalta's proof nor the one line ‹smt› proof
+depend on the negativity constraint or whether any of the non-logical vocabulary is atomic
+(though they do depend indirectly on the atomicity of identity).›</span></span></span><span>
+</span><span>  
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The Prover9 Argument›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹In the course of verifying the argument using Prover9, Oppenheimer and Zalta 
+discovered a simplified version which employs only ‹premise_2›, but not ‹premise_1›
+or the connectivity of `greater than' @{cite "oppenheimer_computationally-discovered_2011"}.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span>
+</span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>premise_2</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"E g"</span></span></span><span> </span><span class="keyword1"><span class="command">nitpick</span></span><span> </span><span class="delimiter">[</span><span>user_axioms</span><span class="delimiter">]</span><span> </span><span class="keyword1"><span class="command">oops</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹However, Isabelle not only fails to verify this argument, but finds a counterexample 
+using ‹nitpick›. The reason is that it needs to be specified that `greater than' is atomic, 
+in order for ‹description_theorem_3› to be applicable:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span> </span><span>Prover9Argument</span><span class="delimiter">:</span><span>
+</span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>premise_2</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>G_atomic</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"⋀ x. atomic (G x)"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"E g"</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Once the atomicity of `greater than' is added as a premise, a call to ‹sledgehammer›
+suggests the following two-step proof, which Isabelle verifies easily:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"C g ∧ (∀i. i = n ∨ ¬ G i g ∨ ¬ C i) ∨ n = g"</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>lifting</span><span class="delimiter">,</span><span> </span><span>full_types</span><span class="delimiter">)</span><span> </span><span>g_def</span><span> </span><span>lemma_1</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">then</span></span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>lifting</span><span class="delimiter">)</span><span> </span><span>G_atomic</span><span> </span><span>g_def</span><span> </span><span>negativity_constraint</span><span> </span><span>premise_2</span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>    
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹If provided with all premises, ‹sledgehammer› still suggests a proof using only
+‹premise_2›:›</span></span></span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span> 
+</span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>connectivity</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> x. <span class="hidden">❙</span><span class="bold">∀</span> y. G x y ∨ G y x ∨ x <span class="hidden">❙</span><span class="bold">=</span> y"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>premise_1</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. Φ x"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>premise_2</span><span class="delimiter">:</span><span>  </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>G_atomic</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"⋀ x. atomic (G x)"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"E g"</span></span></span><span>
+</span><span class="keyword1"><span class="command">proof</span></span><span> </span><span>-</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">have</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"Φ g ∨ n = g"</span></span></span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>lifting</span><span class="delimiter">,</span><span> </span><span>full_types</span><span class="delimiter">)</span><span> </span><span>g_def</span><span> </span><span>lemma_1</span><span class="delimiter">)</span><span>
+</span><span>  </span><span class="keyword1"><span class="command">then</span></span><span> </span><span class="keyword3"><span class="command">show</span></span><span> </span><span class="var">?thesis</span><span>
+</span><span>    </span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>lifting</span><span class="delimiter">)</span><span> </span><span>G_atomic</span><span> </span><span>g_def</span><span> </span><span>negativity_constraint</span><span> </span><span>premise_2</span><span class="delimiter">)</span><span>
+</span><span class="keyword1"><span class="command">qed</span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Note that this version of the argument does employ the ‹negativity_constraint›,
+as well as the premise that identity is atomic via ‹lemma_1›. So although it has less
+non-logical premises than the original version of the argument, it has more, and more
+controversial, logical premises.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Soundness›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Since ‹premise_1› and the connectivity of `is greater than' are both dispensable, and 
+the atomicity of `is greater than' is not especially controversial, the main non-logical premise 
+of the argument turns out to be ‹premise_2›. Note that ‹premise_2› is entailed
+by God's existence:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">theorem</span></span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>theism</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"E g"</span></span></span><span>
+</span><span>  </span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∧ C y)"</span></span></span><span>
+</span><span>  </span><span class="keyword1"><span class="command">using</span></span><span> </span><span>g_def</span><span> </span><span>theism</span><span> </span><span class="keyword1"><span class="command">by</span></span><span> </span><span>auto</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹So under the supposition that `is greater than' is atomic, ‹premise_2›
+is equivalent to God's existence, suggesting an atheist might wish to reject it as question-begging
+(see @{cite "oppenheimer_computationally-discovered_2011"}, pp. 348-9 and
+@{cite "garbacz_prover9s_2012"} for more detailed discussion of this point).›</span></span></span><span> 
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹However, Ted Parent has pointed out that ‹premise_2› need not stand on its own,
+but may be further supported by the following argument @{cite "parent_prover9_2015"},
+ p. 478:›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">lemma</span></span><span>
+</span><span class="keyword2"><span class="keyword">assumes</span></span><span> </span><span>premise_3</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∀</span> y. <span class="hidden">❙</span><span class="bold">∀</span> z. ((E y ∧ ¬ E z) ⟶ ((y <span class="hidden">❙</span><span class="bold">=</span> (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ∨ z = (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)) ⟶ y =  (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x)))"</span></span></span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>something_exists</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"<span class="hidden">❙</span><span class="bold">∃</span> x. E x"</span></span></span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>god_is_conceivable</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"C g"</span></span></span><span> </span><span class="keyword2"><span class="keyword">and</span></span><span> </span><span>C_atomic</span><span class="delimiter">:</span><span> </span><span class="string"><span class="delete"><span class="delete">"atomic C"</span></span></span><span>
+</span><span class="keyword2"><span class="keyword">shows</span></span><span> </span><span class="string"><span class="delete"><span class="delete">"¬ E (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x) ⟶ (<span class="hidden">❙</span><span class="bold">∃</span> y. C y ∧ G y (<span class="hidden">❙</span><span class="bold">τ</span> x. Φ x))"</span></span></span><span>
+</span><span class="keyword1"><span class="command">by</span></span><span> </span><span class="delimiter">(</span><span>metis</span><span> </span><span class="delimiter">(</span><span>no_types</span><span class="delimiter">,</span><span> </span><span>lifting</span><span class="delimiter">)</span><span> </span><span>C_atomic</span><span> </span><span>description_theorem_3</span><span> </span><span>g_def</span><span> </span><span>god_is_conceivable</span><span> </span><span>premise_3</span><span> </span><span>something_exists</span><span class="delimiter">)</span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹But as Parent says, the premise that `exists in the understanding' is atomic is
+particularly questionable. If `exists in the understanding' is atomic, then it follows from
+‹description_theorem_3› that, for example, if the largest  positive integer exists in
+the understanding, then something is the largest positive integer. But since `the largest positive
+integer' is a grammatical description, there is a case to be made that the largest positive integer
+does exist in the understanding, even though nothing is the largest positive integer
+@{cite "parent_prover9_2015"}, p. 480-1.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Conclusion›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹The main difference between Oppenheimer and Zalta's reconstruction of the argument in 
+Prover9 and the reconstruction presented here in Isabelle/HOL is that whereas  Prover9 employs 
+first-order logic, Isabelle/HOL employs higher-order logic. That means that the Russellian 
+‹description_axiom› schema can be stated directly in Isabelle/HOL, whereas in Prover9 
+it has to be represented indirectly using first-order quantifiers ranging over predicates and
+relations @{cite "oppenheimer_computationally-discovered_2011"}, pp. 338-41.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Because of the way Oppenheimer and Zalta carry out this embedding, it is presupposed
+in their presentation that all the non-logical predicates which occur in their argument are 
+atomic. In contrast, in the presentation in Isabelle/HOL, whenever the assumption that a certain 
+predicate is atomic is needed, this has to be made explicit as a premise of the argument. This 
+is not a merely practical matter since, as Parent points out, the question of whether `exists 
+in the understanding' is an atomic predicate turns out to be crucial.›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Abstracting from the peculiarities of different software, a surprising result is that 
+whereas every version of the argument requires the premise that identity is atomic, and some
+versions require the additional premises that `is greater than' is atomic  and `exists in the
+understanding' is atomic, no version of the argument requires the premises that `exists in
+reality', or in other words `exists' simpliciter, is atomic. This is in spite of the fact that
+ the question of whether `exists' is a genuine  predicate has historically being one of the most
+controversial questions raised by Anselm's argument.›</span></span></span><span>
+</span><span>
+</span><span class="keyword2"><span class="keyword">end</span></span><span>
+</span><span>  
+</span><span class="keyword1"><span class="command">section</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹Acknowledgements›</span></span></span><span>
+</span><span>
+</span><span class="keyword1"><span class="command">text</span></span><span> </span><span class="cartouche"><span class="delete"><span class="delete">‹I thank Bob Beddor, Christoph Benzmuller, Dana Goswick, Frank Jackson, Paul Oppenheimer, 
+Michael Pelczar, Abelard Podgorski, Hsueh Qu, Neil Sinhababu, Weng-Hong Tang, Jennifer Wang, 
+Alastair Wilson and an audience at the University of Sydney for comments on this paper.
+›</span></span></span><span>
+</span></pre>
+</div>
+</div>

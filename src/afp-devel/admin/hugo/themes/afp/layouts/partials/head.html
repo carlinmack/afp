@@ -22,6 +22,9 @@
   {{ $style := resources.Get "sass/main.scss" | toCSS $options | minify }}
   {{ $cssFP := $style | resources.Fingerprint }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" integrity="{{ $cssFP.Data.Integrity }}">
+  {{- if (eq .Section "theories") -}}
+  <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isabelle.css">
+  {{ end }}
   <link rel="icon" href="{{- .Site.BaseURL -}}images/favicon.ico" type="image/icon">
 
   {{- if (eq .Section "entries") -}}
