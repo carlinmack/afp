@@ -1,8 +1,8 @@
 {
     "theories": [
         "Floyd_Warshall",
-        "FW_Code",
-        "Recursion_Combinators"
+        "Recursion_Combinators",
+        "FW_Code"
     ],
     "url": "entries/floyd_warshall/theories",
     "title": "Session Floyd_Warshall"

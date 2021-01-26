@@ -1,15 +1,15 @@
 {
     "theories": [
-        "Axioms",
-        "Coincidence",
-        "Denotational_Semantics",
-        "Differential_Game_Logic",
-        "Identifiers",
-        "Ids",
         "Lib",
-        "Static_Semantics",
+        "Identifiers",
         "Syntax",
-        "USubst"
+        "Denotational_Semantics",
+        "Static_Semantics",
+        "Coincidence",
+        "USubst",
+        "Ids",
+        "Axioms",
+        "Differential_Game_Logic"
     ],
     "url": "entries/differential_game_logic/theories",
     "title": "Session Differential_Game_Logic"

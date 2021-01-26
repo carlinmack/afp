@@ -1,10 +1,10 @@
 {
     "theories": [
-        "Dim_Formula",
         "Dual_Order",
-        "Fundamental_Subspaces",
+        "Mod_Type",
         "Miscellaneous",
-        "Mod_Type"
+        "Fundamental_Subspaces",
+        "Dim_Formula"
     ],
     "url": "entries/rank_nullity_theorem/theories",
     "title": "Session Rank_Nullity_Theorem"

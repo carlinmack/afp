@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Binary_Modalities",
         "Partial_Semigroups",
-        "Partial_Semigroup_Lifting",
         "Partial_Semigroup_Models",
         "Quantales",
-        "Unary_Modalities"
+        "Binary_Modalities",
+        "Unary_Modalities",
+        "Partial_Semigroup_Lifting"
     ],
     "url": "entries/psemigroupsconvolution/theories",
     "title": "Session PSemigroupsConvolution"

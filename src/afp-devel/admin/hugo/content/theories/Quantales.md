@@ -2,11 +2,11 @@
     "theories": [
         "Dioid_Models_New",
         "Quantales",
-        "Quantale_Left_Sided",
-        "Quantale_Models",
-        "Quantale_Modules",
         "Quantale_Star",
-        "Quantic_Nuclei_Conuclei"
+        "Quantale_Modules",
+        "Quantale_Models",
+        "Quantic_Nuclei_Conuclei",
+        "Quantale_Left_Sided"
     ],
     "url": "entries/quantales/theories",
     "title": "Session Quantales"

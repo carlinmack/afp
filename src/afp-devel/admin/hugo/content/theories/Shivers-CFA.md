@@ -1,19 +1,19 @@
 {
     "theories": [
-        "AbsCF",
-        "AbsCFComp",
-        "AbsCFCorrect",
-        "Computability",
-        "CPSScheme",
-        "CPSUtils",
-        "Eval",
-        "ExCF",
-        "ExCFSV",
-        "FixTransform",
         "HOLCFUtils",
-        "MapSets",
+        "CPSScheme",
+        "Eval",
+        "Utils",
         "SetMap",
-        "Utils"
+        "AbsCF",
+        "ExCF",
+        "AbsCFCorrect",
+        "ExCFSV",
+        "Computability",
+        "FixTransform",
+        "CPSUtils",
+        "MapSets",
+        "AbsCFComp"
     ],
     "url": "entries/shivers-cfa/theories",
     "title": "Session Shivers-CFA"

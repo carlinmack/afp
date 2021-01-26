@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Agreement",
-        "FMap_Lemmas",
         "Nominal2_Lemmas",
-        "Results",
+        "FMap_Lemmas",
+        "Syntax",
         "Semantics",
-        "Syntax"
+        "Agreement",
+        "Results"
     ],
     "url": "entries/lambdaauth/theories",
     "title": "Session LambdaAuth"

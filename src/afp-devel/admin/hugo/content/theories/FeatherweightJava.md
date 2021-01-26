@@ -1,10 +1,10 @@
 {
     "theories": [
-        "Execute",
-        "Featherweight_Java",
-        "FJAux",
         "FJDefs",
-        "FJSound"
+        "FJAux",
+        "FJSound",
+        "Execute",
+        "Featherweight_Java"
     ],
     "url": "entries/featherweightjava/theories",
     "title": "Session FeatherweightJava"

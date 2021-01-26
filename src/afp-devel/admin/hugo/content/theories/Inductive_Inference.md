@@ -1,16 +1,16 @@
 {
     "theories": [
-        "CONS_LIM",
-        "CP_FIN_NUM",
+        "Partial_Recursive",
+        "Universal",
+        "Standard_Results",
         "Inductive_Inference_Basics",
+        "CP_FIN_NUM",
+        "CONS_LIM",
         "Lemma_R",
         "LIM_BC",
-        "Partial_Recursive",
-        "R1_BC",
-        "Standard_Results",
         "TOTAL_CONS",
-        "Union",
-        "Universal"
+        "R1_BC",
+        "Union"
     ],
     "url": "entries/inductive_inference/theories",
     "title": "Session Inductive_Inference"

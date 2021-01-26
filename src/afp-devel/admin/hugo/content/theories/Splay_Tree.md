@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Splay_Heap",
+        "Splay_Tree",
         "Splay_Map",
-        "Splay_Tree"
+        "Splay_Heap"
     ],
     "url": "entries/splay_tree/theories",
     "title": "Session Splay_Tree"

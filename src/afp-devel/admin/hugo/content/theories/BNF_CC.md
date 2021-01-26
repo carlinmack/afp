@@ -1,14 +1,14 @@
 {
     "theories": [
+        "Preliminaries",
         "Axiomatised_BNF_CC",
         "Composition",
-        "Concrete_Examples",
-        "DDS",
         "Fixpoints",
-        "Operation_Examples",
-        "Preliminaries",
+        "Subtypes",
         "Quotient_Preservation",
-        "Subtypes"
+        "Operation_Examples",
+        "Concrete_Examples",
+        "DDS"
     ],
     "url": "entries/bnf_cc/theories",
     "title": "Session BNF_CC"

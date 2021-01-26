@@ -1,20 +1,22 @@
 {
     "theories": [
-        "Examples",
-        "Intruder_Deduction",
-        "Labeled_Stateful_Strands",
-        "Labeled_Strands",
-        "Lazy_Intruder",
-        "Messages",
         "Miscellaneous",
+        "Messages",
         "More_Unification",
-        "Parallel_Compositionality",
-        "Stateful_Compositionality",
+        "Intruder_Deduction",
+        "Strands_and_Constraints",
+        "Lazy_Intruder",
+        "Typed_Model",
+        "Typing_Result",
         "Stateful_Strands",
         "Stateful_Typing",
-        "Strands_and_Constraints",
-        "Typed_Model",
-        "Typing_Result"
+        "Labeled_Strands",
+        "Parallel_Compositionality",
+        "Labeled_Stateful_Strands",
+        "Stateful_Compositionality",
+        "Example_Keyserver",
+        "Example_TLS",
+        "Examples"
     ],
     "url": "entries/stateful_protocol_composition_and_typing/theories",
     "title": "Session Stateful_Protocol_Composition_and_Typing"

@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Arrow",
         "FSext",
-        "May",
         "RPRs",
         "SCFs",
-        "Sen"
+        "Arrow",
+        "Sen",
+        "May"
     ],
     "url": "entries/sensocialchoice/theories",
     "title": "Session SenSocialChoice"

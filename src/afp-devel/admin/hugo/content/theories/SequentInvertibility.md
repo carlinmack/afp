@@ -1,11 +1,11 @@
 {
     "theories": [
-        "ModalSequents",
         "MultiSequents",
-        "NominalSequents",
-        "SequentInvertibility",
         "SingleSuccedent",
-        "SRCTransforms"
+        "NominalSequents",
+        "ModalSequents",
+        "SRCTransforms",
+        "SequentInvertibility"
     ],
     "url": "entries/sequentinvertibility/theories",
     "title": "Session SequentInvertibility"

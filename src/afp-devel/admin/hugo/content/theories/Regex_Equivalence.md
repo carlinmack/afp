@@ -1,15 +1,15 @@
 {
     "theories": [
-        "After2",
         "Automaton",
-        "Before2",
-        "Benchmark",
         "Derivatives_Finite",
-        "Deriv_Autos",
         "Deriv_PDeriv",
-        "Examples",
+        "Deriv_Autos",
         "Position_Autos",
-        "Regex_Equivalence"
+        "After2",
+        "Before2",
+        "Regex_Equivalence",
+        "Examples",
+        "Benchmark"
     ],
     "url": "entries/regex_equivalence/theories",
     "title": "Session Regex_Equivalence"

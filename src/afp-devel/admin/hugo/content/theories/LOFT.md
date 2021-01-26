@@ -1,15 +1,17 @@
 {
     "theories": [
+        "OpenFlow_Helpers",
+        "Sort_Descending",
+        "List_Group",
+        "OpenFlow_Matches",
+        "OpenFlow_Action",
+        "Semantics_OpenFlow",
+        "OpenFlow_Serialize",
         "Featherweight_OpenFlow_Comparison",
         "LinuxRouter_OpenFlow_Translation",
-        "List_Group",
-        "OpenFlow_Action",
-        "OpenFlow_Documentation",
-        "OpenFlow_Helpers",
-        "OpenFlow_Matches",
-        "OpenFlow_Serialize",
-        "Semantics_OpenFlow",
-        "Sort_Descending"
+        "OF_conv_test",
+        "RFC2544",
+        "OpenFlow_Documentation"
     ],
     "url": "entries/loft/theories",
     "title": "Session LOFT"

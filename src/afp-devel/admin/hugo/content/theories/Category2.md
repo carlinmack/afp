@@ -1,11 +1,11 @@
 {
     "theories": [
         "Category",
-        "Functors",
+        "Universe",
         "MonadicEquationalTheory",
+        "Functors",
         "NatTrans",
         "SetCat",
-        "Universe",
         "Yoneda"
     ],
     "url": "entries/category2/theories",

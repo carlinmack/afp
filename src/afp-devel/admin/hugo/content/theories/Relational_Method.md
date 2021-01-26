@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Anonymity",
-        "Authentication",
         "Definitions",
+        "Authentication",
+        "Anonymity",
         "Possibility"
     ],
     "url": "entries/relational_method/theories",

@@ -1,14 +1,14 @@
 {
     "theories": [
-        "CombinedCorrectness",
-        "GraphRewriting",
-        "LabeledGraphs",
-        "LabeledGraphSemantics",
         "MissingRelation",
+        "LabeledGraphs",
         "RulesAndChains",
-        "RuleSemanticsConnection",
+        "GraphRewriting",
+        "LabeledGraphSemantics",
         "StandardModels",
-        "StandardRules"
+        "RuleSemanticsConnection",
+        "StandardRules",
+        "CombinedCorrectness"
     ],
     "url": "entries/graph_saturation/theories",
     "title": "Session Graph_Saturation"

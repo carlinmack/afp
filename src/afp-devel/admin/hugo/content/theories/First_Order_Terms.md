@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Abstract_Matching",
-        "Abstract_Unification",
-        "Fun_More",
-        "Matching",
-        "Option_Monad",
+        "Transitive_Closure_More",
         "Seq_More",
-        "Subsumption",
+        "Fun_More",
+        "Option_Monad",
         "Term",
         "Term_Pair_Multiset",
-        "Transitive_Closure_More",
+        "Abstract_Matching",
+        "Unifiers",
+        "Abstract_Unification",
         "Unification",
-        "Unifiers"
+        "Matching",
+        "Subsumption"
     ],
     "url": "entries/first_order_terms/theories",
     "title": "Session First_Order_Terms"

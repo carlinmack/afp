@@ -1,16 +1,16 @@
 {
     "theories": [
         "Hyperbolic_Functions",
-        "Poincare",
-        "Poincare_Between",
-        "Poincare_Circles",
-        "Poincare_Distance",
+        "Tarski",
         "Poincare_Lines",
-        "Poincare_Lines_Axis_Intersections",
         "Poincare_Lines_Ideal_Points",
+        "Poincare_Distance",
+        "Poincare_Circles",
+        "Poincare_Between",
+        "Poincare_Lines_Axis_Intersections",
         "Poincare_Perpendicular",
-        "Poincare_Tarski",
-        "Tarski"
+        "Poincare",
+        "Poincare_Tarski"
     ],
     "url": "entries/poincare_disc/theories",
     "title": "Session Poincare_Disc"

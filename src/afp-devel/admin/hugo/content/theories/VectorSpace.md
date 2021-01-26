@@ -1,9 +1,9 @@
 {
     "theories": [
-        "FunctionLemmas",
-        "LinearCombinations",
-        "MonoidSums",
         "RingModuleFacts",
+        "FunctionLemmas",
+        "MonoidSums",
+        "LinearCombinations",
         "SumSpaces",
         "VectorSpace"
     ],

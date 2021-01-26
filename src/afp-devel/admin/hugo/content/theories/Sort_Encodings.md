@@ -1,21 +1,21 @@
 {
     "theories": [
-        "CM",
-        "CU",
-        "E",
-        "Encodings",
-        "G",
+        "Preliminaries",
+        "TermsAndClauses",
+        "Sig",
         "M",
+        "CM",
+        "Mono",
         "Mcalc",
+        "T_G_Prelim",
         "Mcalc2",
         "Mcalc2C",
-        "Mono",
-        "Preliminaries",
-        "Sig",
+        "G",
         "T",
-        "TermsAndClauses",
-        "T_G_Prelim",
-        "U"
+        "U",
+        "CU",
+        "E",
+        "Encodings"
     ],
     "url": "entries/sort_encodings/theories",
     "title": "Session Sort_Encodings"

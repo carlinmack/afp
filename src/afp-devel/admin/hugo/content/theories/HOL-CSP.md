@@ -1,21 +1,21 @@
 {
     "theories": [
-        "Assertions",
-        "Bot",
-        "Conclusion",
-        "CopyBuffer",
-        "CSP",
-        "Det",
-        "Hide",
         "Introduction",
-        "Mndet",
-        "Mprefix",
-        "Ndet",
         "Process",
-        "Seq",
+        "Bot",
         "Skip",
         "Stop",
-        "Sync"
+        "Mprefix",
+        "Det",
+        "Ndet",
+        "Seq",
+        "Hide",
+        "Sync",
+        "Mndet",
+        "CSP",
+        "Assertions",
+        "Conclusion",
+        "CopyBuffer"
     ],
     "url": "entries/hol-csp/theories",
     "title": "Session HOL-CSP"

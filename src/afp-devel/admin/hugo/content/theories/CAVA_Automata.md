@@ -1,15 +1,15 @@
 {
     "theories": [
-        "All_Of_CAVA_Automata",
-        "Automata",
-        "Automata_Impl",
-        "Digraph",
         "Digraph_Basic",
-        "Digraph_Impl",
+        "Digraph",
+        "Automata",
         "Lasso",
         "Simulation",
         "Step_Conv",
-        "Stuttering_Extension"
+        "Stuttering_Extension",
+        "Digraph_Impl",
+        "Automata_Impl",
+        "All_Of_CAVA_Automata"
     ],
     "url": "entries/cava_automata/theories",
     "title": "Session CAVA_Automata"

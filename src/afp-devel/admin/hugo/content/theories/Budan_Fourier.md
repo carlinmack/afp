@@ -2,8 +2,8 @@
     "theories": [
         "BF_Misc",
         "Budan_Fourier",
-        "Descartes_Roots_Test",
-        "Sturm_Multiple_Roots"
+        "Sturm_Multiple_Roots",
+        "Descartes_Roots_Test"
     ],
     "url": "entries/budan_fourier/theories",
     "title": "Session Budan_Fourier"

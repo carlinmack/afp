@@ -1,10 +1,10 @@
 {
     "theories": [
         "Group_Sort",
-        "Landau_Library",
-        "Landau_More",
         "Landau_Real_Products",
-        "Landau_Simprocs"
+        "Landau_Simprocs",
+        "files/landau_simprocs.ML",
+        "Landau_More"
     ],
     "url": "entries/landau_symbols/theories",
     "title": "Session Landau_Symbols"

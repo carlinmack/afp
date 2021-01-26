@@ -1,16 +1,16 @@
 {
     "theories": [
-        "ContextOBJ",
-        "ContextVS",
-        "HuntSands",
         "IMP",
-        "Lattice",
-        "OBJ",
-        "PBIJ",
         "VDM",
-        "VDM_OBJ",
         "VS",
-        "VS_OBJ"
+        "ContextVS",
+        "Lattice",
+        "HuntSands",
+        "OBJ",
+        "VDM_OBJ",
+        "PBIJ",
+        "VS_OBJ",
+        "ContextOBJ"
     ],
     "url": "entries/sifpl/theories",
     "title": "Session SIFPL"

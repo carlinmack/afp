@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Existence",
-        "Laplace_Transform",
         "Laplace_Transform_Library",
-        "Lerch_Lemma",
         "Piecewise_Continuous",
-        "Uniqueness"
+        "Existence",
+        "Lerch_Lemma",
+        "Uniqueness",
+        "Laplace_Transform"
     ],
     "url": "entries/laplace_transform/theories",
     "title": "Session Laplace_Transform"

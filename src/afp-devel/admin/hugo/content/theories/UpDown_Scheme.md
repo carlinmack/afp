@@ -1,13 +1,13 @@
 {
     "theories": [
-        "Down",
-        "Grid",
         "Grid_Point",
-        "Imperative",
+        "Grid",
         "Triangular_Function",
-        "Up",
         "UpDown_Scheme",
-        "Up_Down"
+        "Up",
+        "Down",
+        "Up_Down",
+        "Imperative"
     ],
     "url": "entries/updown_scheme/theories",
     "title": "Session UpDown_Scheme"

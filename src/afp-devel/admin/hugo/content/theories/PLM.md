@@ -1,6 +1,5 @@
 {
     "theories": [
-        "TAO_10_PossibleWorlds",
         "TAO_1_Embedding",
         "TAO_2_Semantics",
         "TAO_3_Quantifiable",
@@ -9,10 +8,11 @@
         "TAO_6_Identifiable",
         "TAO_7_Axioms",
         "TAO_8_Definitions",
-        "TAO_98_ArtificialTheorems",
-        "TAO_99_Paradox",
-        "TAO_99_SanityTests",
         "TAO_9_PLM",
+        "TAO_10_PossibleWorlds",
+        "TAO_98_ArtificialTheorems",
+        "TAO_99_SanityTests",
+        "TAO_99_Paradox",
         "Thesis"
     ],
     "url": "entries/plm/theories",

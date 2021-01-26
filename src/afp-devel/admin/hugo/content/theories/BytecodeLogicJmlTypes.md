@@ -1,12 +1,12 @@
 {
     "theories": [
         "AssocLists",
-        "Cachera",
         "Language",
         "Logic",
         "MultiStep",
         "Reachability",
-        "Sound"
+        "Sound",
+        "Cachera"
     ],
     "url": "entries/bytecodelogicjmltypes/theories",
     "title": "Session BytecodeLogicJmlTypes"

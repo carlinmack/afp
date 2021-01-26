@@ -1,5 +1,5 @@
 """
-Designed to be run once on new release of Isabelle. Takes around 40 minutes.
+Designed to be run once on new release of Isabelle. Takes around 24 minutes/42 minutes.
 """
 import argparse
 
@@ -15,11 +15,15 @@ import warnings
 from writeFile import writeFile
 
 
-def getTheories(all=False):
+def getTheories(all=False, entry=""):
     hugoDir = "hugo/"
     theoriesHtmlDir = hugoDir + "static/theories/"
     theoriesJsonDir = hugoDir + "content/theories/"
     rootDir = "../thys"
+
+    if entry:
+        processURL(entry, theoriesHtmlDir, theoriesJsonDir)
+        return
 
     numEntries = len(os.listdir(rootDir))
 
@@ -30,36 +34,57 @@ def getTheories(all=False):
 
     for entry in os.listdir(rootDir):
         updateProgressBar(entry, t)
-        entryPath = os.path.join(rootDir, entry)
 
+        entryPath = os.path.join(rootDir, entry)
         if entry != "Example-Submission" and os.path.isdir(entryPath):
             if all or not os.path.isfile(theoriesHtmlDir + entry + ".html"):
-                url = "https://devel.isa-afp.org/browser_info/current/AFP/%s/" % entry
-
-                names, links = theoryLinks(url)
-
-                if links != 0:
-                    theories = ""
-
-                    for i, link in enumerate(links):
-                        theories += getTheory(url + link, names[i])
-
-                    with open(theoriesHtmlDir + entry + ".html", "w") as w:
-                        w.write(theories)
-
-                    writeFile(theoriesJsonDir + entry + ".md", {"theories": names})
+                processURL(entry, theoriesHtmlDir, theoriesJsonDir)
 
 
-def theoryLinks(url):
-    content = requests.get(url).content
-    soup = BeautifulSoup(content, features="lxml")
+def processURL(entry, theoriesHtmlDir, theoriesJsonDir):
+    names, links = theoryLinks(entry)
+
+    if links != 0:
+        theories = ""
+
+        for i, link in enumerate(links):
+            theories += getTheory(link, names[i])
+
+        with open(theoriesHtmlDir + entry + ".html", "w") as w:
+            w.write(theories)
+
+        writeFile(theoriesJsonDir + entry + ".md", {"theories": names})
+
+
+def theoryLinks(entry):
+    def getTheoryLinks(url, divClass):
+        content = requests.get(url).content
+        soup = BeautifulSoup(content, features="lxml")
+        theories = soup.find("div", {"class": divClass}).findAll("a")
+
+        return theories
+
+    def getOutput(theories, url):
+        names = [re.sub(".html$", "", a["href"]) for a in theories]
+        links = [url + a["href"] for a in theories]
+        return names, links
+
+
+    url = "https://devel.isa-afp.org/browser_info/current/AFP/%s/" % entry
     try:
-        theories = soup.find("div", {"class": "contents"}).findAll("a")
+        theories = getTheoryLinks(url, "contents")
+        names, links = getOutput(theories, url)
+
     except AttributeError:
-        warnings.warn("%s not found" % url, Warning)
-        return 0
-    links = [a["href"] for a in theories]
-    names = [a.text for a in theories]
+        url = "https://www.isa-afp.org/browser_info/current/AFP/%s/" % entry
+        try:
+            theories = getTheoryLinks(url, "theories")
+            names, links = getOutput(theories, url)
+
+        except AttributeError:
+            warnings.warn("%s not found" % url, Warning)
+            return 0, 0
+
     return names, links
 
 
@@ -87,6 +112,8 @@ def defineArgParser():
         "-a", "--all", help="Get all theories, update all files", action="store_true"
     )
 
+    parser.add_argument("-e", "--entry", help="Name of entry")
+
     return parser
 
 
@@ -94,4 +121,4 @@ if __name__ == "__main__":
     argParser = defineArgParser()
     clArgs = argParser.parse_args()
 
-    getTheories(clArgs.all)
+    getTheories(clArgs.all, clArgs.entry)

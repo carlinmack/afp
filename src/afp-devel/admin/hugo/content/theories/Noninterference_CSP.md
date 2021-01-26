@@ -1,7 +1,7 @@
 {
     "theories": [
-        "ClassicalNoninterference",
         "CSPNoninterference",
+        "ClassicalNoninterference",
         "GeneralizedNoninterference"
     ],
     "url": "entries/noninterference_csp/theories",

@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Aexp",
-        "ArcExt",
-        "Bexp",
-        "Conf",
         "Graph",
+        "Aexp",
+        "Bexp",
         "Labels",
-        "LTS",
-        "RB",
         "Store",
-        "SubExt",
+        "Conf",
+        "SymExec",
+        "LTS",
         "SubRel",
-        "SymExec"
+        "ArcExt",
+        "SubExt",
+        "RB"
     ],
     "url": "entries/infpathelimination/theories",
     "title": "Session InfPathElimination"

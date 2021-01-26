@@ -1,11 +1,11 @@
 {
     "theories": [
+        "Sotomayor",
         "Basis",
-        "Bossiness",
         "Choice_Functions",
         "Contracts",
         "COP",
-        "Sotomayor",
+        "Bossiness",
         "Strategic"
     ],
     "url": "entries/stable_matching/theories",

@@ -1,10 +1,10 @@
 {
     "theories": [
         "Probability_Misc",
-        "Random_List_Permutation",
-        "Random_Treap",
         "Treap",
-        "Treap_Sort_and_BSTs"
+        "Random_List_Permutation",
+        "Treap_Sort_and_BSTs",
+        "Random_Treap"
     ],
     "url": "entries/treaps/theories",
     "title": "Session Treaps"

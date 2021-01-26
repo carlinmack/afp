@@ -1,18 +1,18 @@
 {
     "theories": [
-        "Argmax",
-        "CombinatorialAuction",
-        "CombinatorialAuctionCodeExtraction",
-        "CombinatorialAuctionExamples",
-        "FirstPrice",
-        "MiscTools",
+        "SetUtils",
         "Partitions",
         "RelationOperators",
         "RelationProperties",
-        "SetUtils",
+        "Argmax",
+        "MiscTools",
         "StrictCombinatorialAuction",
+        "Universes",
         "UniformTieBreaking",
-        "Universes"
+        "CombinatorialAuction",
+        "CombinatorialAuctionCodeExtraction",
+        "FirstPrice",
+        "CombinatorialAuctionExamples"
     ],
     "url": "entries/vickrey_clarke_groves/theories",
     "title": "Session Vickrey_Clarke_Groves"

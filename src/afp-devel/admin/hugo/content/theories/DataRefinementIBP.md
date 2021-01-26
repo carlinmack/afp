@@ -1,10 +1,10 @@
 {
     "theories": [
-        "DataRefinement",
-        "Diagram",
-        "Hoare",
         "Preliminaries",
-        "Statements"
+        "Statements",
+        "Hoare",
+        "Diagram",
+        "DataRefinement"
     ],
     "url": "entries/datarefinementibp/theories",
     "title": "Session DataRefinementIBP"

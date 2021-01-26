@@ -1,10 +1,11 @@
 {
     "theories": [
         "CPair",
-        "PRecFinSet",
         "PRecFun",
-        "PRecFun2",
+        "files/Utils.ML",
         "PRecList",
+        "PRecFun2",
+        "PRecFinSet",
         "PRecUnGr",
         "RecEnSet"
     ],

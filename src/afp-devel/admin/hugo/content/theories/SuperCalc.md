@@ -1,10 +1,10 @@
 {
     "theories": [
-        "equational_clausal_logic",
         "multisets_continued",
-        "superposition",
+        "well_founded_continued",
         "terms",
-        "well_founded_continued"
+        "equational_clausal_logic",
+        "superposition"
     ],
     "url": "entries/supercalc/theories",
     "title": "Session SuperCalc"

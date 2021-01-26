@@ -1,13 +1,13 @@
 {
     "theories": [
-        "Examples",
-        "LeftComplementedMonoid",
         "Operations",
-        "PseudoHoopFilters",
-        "PseudoHoops",
-        "PseudoWaisbergAlgebra",
+        "LeftComplementedMonoid",
         "RightComplementedMonoid",
-        "SpecialPseudoHoops"
+        "PseudoHoops",
+        "PseudoHoopFilters",
+        "PseudoWaisbergAlgebra",
+        "SpecialPseudoHoops",
+        "Examples"
     ],
     "url": "entries/pseudohoops/theories",
     "title": "Session PseudoHoops"

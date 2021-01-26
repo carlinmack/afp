@@ -1,8 +1,8 @@
 {
     "theories": [
+        "IO",
         "HelloWorld",
         "HelloWorld_Proof",
-        "IO",
         "RunningCodeFromIsabelle"
     ],
     "url": "entries/hello_world/theories",

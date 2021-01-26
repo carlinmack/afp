@@ -1,11 +1,11 @@
 {
     "theories": [
-        "ExampleInstantiations",
         "Graph",
         "Tree",
         "TreeDecomposition",
+        "TreewidthTree",
         "TreewidthCompleteGraph",
-        "TreewidthTree"
+        "ExampleInstantiations"
     ],
     "url": "entries/tree_decomposition/theories",
     "title": "Session Tree_Decomposition"

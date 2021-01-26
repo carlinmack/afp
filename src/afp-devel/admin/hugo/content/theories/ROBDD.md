@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Abstract_Impl",
-        "Array_List",
-        "BDD_Code",
-        "BDD_Examples",
-        "BDT",
         "Bool_Func",
+        "BDT",
+        "Option_Helpers",
+        "Abstract_Impl",
+        "Pointer_Map",
+        "Middle_Impl",
+        "Array_List",
+        "Pointer_Map_Impl",
         "Conc_Impl",
         "Level_Collapse",
-        "Middle_Impl",
-        "Option_Helpers",
-        "Pointer_Map",
-        "Pointer_Map_Impl"
+        "BDD_Examples",
+        "BDD_Code"
     ],
     "url": "entries/robdd/theories",
     "title": "Session ROBDD"

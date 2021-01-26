@@ -1,17 +1,17 @@
 {
     "theories": [
+        "SyntaxN",
         "Coding",
+        "Predicates",
+        "Sigma",
         "Coding_Predicates",
+        "Pf_Predicates",
         "Functions",
         "Goedel_I",
-        "Goedel_II",
         "II_Prelims",
-        "Pf_Predicates",
-        "Predicates",
         "Pseudo_Coding",
         "Quote",
-        "Sigma",
-        "SyntaxN"
+        "Goedel_II"
     ],
     "url": "entries/incompleteness/theories",
     "title": "Session Incompleteness"

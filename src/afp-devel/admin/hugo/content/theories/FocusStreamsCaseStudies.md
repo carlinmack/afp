@@ -1,20 +1,20 @@
 {
     "theories": [
         "ArithExtras",
-        "arith_hints",
-        "BitBoolTS",
-        "FR",
-        "FR_proof",
-        "FR_types",
-        "Gateway",
-        "Gateway_proof",
-        "Gateway_proof_aux",
-        "Gateway_types",
-        "JoinSplitTime",
         "ListExtras",
+        "arith_hints",
+        "stream",
+        "BitBoolTS",
+        "JoinSplitTime",
         "SteamBoiler",
         "SteamBoiler_proof",
-        "stream"
+        "FR_types",
+        "FR",
+        "FR_proof",
+        "Gateway_types",
+        "Gateway",
+        "Gateway_proof_aux",
+        "Gateway_proof"
     ],
     "url": "entries/focusstreamscasestudies/theories",
     "title": "Session FocusStreamsCaseStudies"

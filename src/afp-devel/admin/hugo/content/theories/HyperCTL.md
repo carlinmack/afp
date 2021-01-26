@@ -1,11 +1,11 @@
 {
     "theories": [
+        "Prelim",
+        "Shallow",
+        "Noninterference",
         "Deep",
         "Finite_Noninterference",
-        "HyperCTL",
-        "Noninterference",
-        "Prelim",
-        "Shallow"
+        "HyperCTL"
     ],
     "url": "entries/hyperctl/theories",
     "title": "Session HyperCTL"

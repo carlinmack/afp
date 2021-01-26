@@ -1,14 +1,17 @@
 {
     "theories": [
+        "Fofu_Abs_Base",
+        "Fofu_Impl_Base",
+        "Refine_Add_Fofu",
+        "Graph",
+        "Network",
+        "Residual_Graph",
         "Augmenting_Flow",
         "Augmenting_Path",
         "Ford_Fulkerson",
-        "Graph",
         "Graph_Impl",
-        "NetCheck",
-        "Network",
         "Network_Impl",
-        "Residual_Graph"
+        "NetCheck"
     ],
     "url": "entries/flow_networks/theories",
     "title": "Session Flow_Networks"

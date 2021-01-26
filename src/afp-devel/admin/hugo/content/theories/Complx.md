@@ -1,13 +1,16 @@
 {
     "theories": [
         "Language",
+        "SmallStep",
         "OG_Annotations",
         "OG_Hoare",
-        "OG_Soundness",
-        "OG_Syntax",
-        "OG_Tactics",
         "SeqCatch_decomp",
-        "SmallStep"
+        "OG_Soundness",
+        "Cache_Tactics",
+        "OG_Tactics",
+        "OG_Syntax",
+        "Examples",
+        "SumArr"
     ],
     "url": "entries/complx/theories",
     "title": "Session Complx"

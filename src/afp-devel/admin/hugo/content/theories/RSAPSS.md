@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Crypt",
-        "Cryptinverts",
+        "Word",
+        "WordOperations",
+        "SHA1Padding",
+        "SHA1",
+        "Wordarith",
         "EMSAPSS",
         "Mod",
+        "Crypt",
         "Pdifference",
         "Productdivides",
-        "RSAPSS",
-        "SHA1",
-        "SHA1Padding",
-        "Word",
-        "Wordarith",
-        "WordOperations"
+        "Cryptinverts",
+        "RSAPSS"
     ],
     "url": "entries/rsapss/theories",
     "title": "Session RSAPSS"

@@ -1,7 +1,7 @@
 {
     "theories": [
-        "Gamma_Asymptotics",
-        "Stirling_Formula"
+        "Stirling_Formula",
+        "Gamma_Asymptotics"
     ],
     "url": "entries/stirling_formula/theories",
     "title": "Session Stirling_Formula"

@@ -1,10 +1,11 @@
 {
     "theories": [
-        "Code_Equations",
-        "Disjunctive_Normal_Form",
-        "Equivalence_Relations",
         "LTL",
-        "Rewriting"
+        "Rewriting",
+        "Equivalence_Relations",
+        "Disjunctive_Normal_Form",
+        "Code_Equations",
+        "Example"
     ],
     "url": "entries/ltl/theories",
     "title": "Session LTL"

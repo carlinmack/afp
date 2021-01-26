@@ -1,5 +1,7 @@
-import json
 import os
+import json 
+
+from writeFile import writeFile
 
 
 def addRelatedEntries():
@@ -43,6 +45,8 @@ def addRelatedEntries():
         if len(values) > 10:
             keywords.pop(keyword)
 
+    # writeFile("rake.json", keywords)
+
     relatedEntries = {}
 
     for dataSet in [(keywords, 1), (dependencies, 1.5), (topics, 0.5)]:
@@ -58,16 +62,23 @@ def addRelatedEntries():
     for keyword, values in relatedEntries.items():
         finalRelatedEntries[keyword] = topThree(values)
 
+    # relatedEntriesData = {"nodes": [], "edges": []}
+
+    # source = set()
+    # target = set()
+
     for entry, related in finalRelatedEntries.items():
         if related:
-            data = {}
-            with open(entriesDir + entry + ".md") as file:
-                data = json.load(file)
+            data = {"relatedEntries": related}
+            writeFile(entriesDir + entry + ".md", data)
 
-            data["relatedEntries"] = related
+            # source.add(entry)
+            # for r in related:
+            #     target.add(r)
 
-            with open(entriesDir + entry + ".md", "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            # dataAppend(relatedEntriesData, entry, related)
+
+    # writeFile("relatedEntries.json", relatedEntriesData)
 
 
 def populateRelated(dataSet, relatedEntries, modifier=1):
@@ -86,6 +97,15 @@ def populateRelated(dataSet, relatedEntries, modifier=1):
 
 def topThree(dictionary):
     return sorted(dictionary, key=dictionary.get, reverse=True)[:3]
+
+
+# def dataAppend(data, entry, relatedEntries):
+#     data["nodes"].append({"data": {"id": "id" + entry, "name": entry}})
+
+#     for related in relatedEntries:
+#         data["edges"].append(
+#             {"data": {"source": "id" + entry, "target": "id" + related}}
+#         )
 
 
 if __name__ == "__main__":

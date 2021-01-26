@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Augmenting_Path_BFS",
-        "Edka_Benchmark_Export",
-        "Edka_Checked_Impl",
-        "EdmondsKarp_Algo",
-        "EdmondsKarp_Impl",
+        "FordFulkerson_Algo",
         "EdmondsKarp_Termination_Abstract",
-        "FordFulkerson_Algo"
+        "EdmondsKarp_Algo",
+        "Augmenting_Path_BFS",
+        "EdmondsKarp_Impl",
+        "Edka_Checked_Impl",
+        "Edka_Benchmark_Export"
     ],
     "url": "entries/edmondskarp_maxflow/theories",
     "title": "Session EdmondsKarp_Maxflow"

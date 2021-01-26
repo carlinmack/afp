@@ -1,6 +1,7 @@
-import json
 import os
 import re
+
+from writeFile import writeFile
 
 
 def addDependencies():
@@ -42,14 +43,8 @@ def addDependencies():
                 dependencies = list(dict.fromkeys(dependencies))
 
             if dependencies:
-                data = {}
-                with open(entriesDir + entry + ".md") as file:
-                    data = json.load(file)
-
-                data["dependencies"] = dependencies
-
-                with open(entriesDir + entry + ".md", "w", encoding="utf-8") as f:
-                    json.dump(data, f, ensure_ascii=False, indent=4)
+                data = {"dependencies": dependencies}
+                writeFile(entriesDir + entry + ".md", data)
 
 
 if __name__ == "__main__":

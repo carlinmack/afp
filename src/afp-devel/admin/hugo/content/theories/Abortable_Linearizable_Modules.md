@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Consensus",
-        "Idempotence",
+        "Sequences",
         "IOA",
         "RDR",
-        "Sequences",
+        "SLin",
         "Simulations",
-        "SLin"
+        "Idempotence",
+        "Consensus"
     ],
     "url": "entries/abortable_linearizable_modules/theories",
     "title": "Session Abortable_Linearizable_Modules"

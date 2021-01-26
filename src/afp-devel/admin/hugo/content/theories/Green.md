@@ -1,13 +1,13 @@
 {
     "theories": [
-        "CircExample",
-        "Derivs",
-        "DiamExample",
         "General_Utils",
-        "Green",
+        "Derivs",
         "Integrals",
         "Paths",
-        "SymmetricR2Shapes"
+        "Green",
+        "SymmetricR2Shapes",
+        "CircExample",
+        "DiamExample"
     ],
     "url": "entries/green/theories",
     "title": "Session Green"

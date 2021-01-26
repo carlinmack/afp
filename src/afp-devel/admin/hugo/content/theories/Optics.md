@@ -1,18 +1,19 @@
 {
     "theories": [
         "Interp",
-        "Lenses",
-        "Lens_Algebra",
-        "Lens_Instances",
+        "Two",
         "Lens_Laws",
+        "Lens_Algebra",
         "Lens_Order",
-        "Lens_Record_Example",
-        "Lens_State",
         "Lens_Symmetric",
-        "Optics",
+        "Lens_Instances",
+        "files/Lens_Record.ML",
+        "Lenses",
         "Prisms",
         "Scenes",
-        "Two"
+        "Optics",
+        "Lens_Record_Example",
+        "Lens_State"
     ],
     "url": "entries/optics/theories",
     "title": "Session Optics"

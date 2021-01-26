@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Card_Partitions",
+        "Set_Partition",
         "Injectivity_Solver",
-        "Set_Partition"
+        "Card_Partitions"
     ],
     "url": "entries/card_partitions/theories",
     "title": "Session Card_Partitions"

@@ -1,13 +1,13 @@
 {
     "theories": [
-        "CRR_Model",
-        "Disc_Cond_Expect",
-        "Fair_Price",
-        "Filtration",
         "Generated_Subalgebra",
-        "Geometric_Random_Walk",
-        "Infinite_Coin_Toss_Space",
+        "Filtration",
         "Martingale",
+        "Disc_Cond_Expect",
+        "Infinite_Coin_Toss_Space",
+        "Geometric_Random_Walk",
+        "Fair_Price",
+        "CRR_Model",
         "Option_Price_Examples"
     ],
     "url": "entries/discretepricing/theories",

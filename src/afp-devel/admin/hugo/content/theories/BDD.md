@@ -1,14 +1,14 @@
 {
     "theories": [
         "BinDag",
-        "EvalProof",
         "General",
-        "LevellistProof",
-        "NormalizeTotalProof",
         "ProcedureSpecs",
-        "RepointProof",
+        "EvalProof",
+        "LevellistProof",
+        "ShareRepProof",
         "ShareReduceRepListProof",
-        "ShareRepProof"
+        "RepointProof",
+        "NormalizeTotalProof"
     ],
     "url": "entries/bdd/theories",
     "title": "Session BDD"

@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Auxiliary",
-        "Blackboard",
-        "Blockchain",
+        "Singleton",
         "Publisher_Subscriber",
+        "Blackboard",
+        "Auxiliary",
         "RF_LTL",
-        "Singleton"
+        "Blockchain"
     ],
     "url": "entries/architectural_design_patterns/theories",
     "title": "Session Architectural_Design_Patterns"

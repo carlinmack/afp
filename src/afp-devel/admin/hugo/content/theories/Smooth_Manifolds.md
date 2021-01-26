@@ -1,17 +1,17 @@
 {
     "theories": [
         "Analysis_More",
+        "Smooth",
         "Bump_Function",
         "Chart",
-        "Cotangent_Space",
+        "Topological_Manifold",
         "Differentiable_Manifold",
         "Partition_Of_Unity",
-        "Product_Manifold",
-        "Projective_Space",
-        "Smooth",
-        "Sphere",
         "Tangent_Space",
-        "Topological_Manifold"
+        "Cotangent_Space",
+        "Product_Manifold",
+        "Sphere",
+        "Projective_Space"
     ],
     "url": "entries/smooth_manifolds/theories",
     "title": "Session Smooth_Manifolds"

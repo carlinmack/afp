@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Axioms",
-        "SomeFunc",
         "SpaceTime",
+        "SomeFunc",
+        "Axioms",
         "SpecRel"
     ],
     "url": "entries/no_ftl_observers/theories",

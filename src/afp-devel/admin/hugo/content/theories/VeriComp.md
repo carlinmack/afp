@@ -1,13 +1,13 @@
 {
     "theories": [
         "Behaviour",
-        "Compiler",
-        "Fixpoint",
+        "Well_founded",
         "Inf",
-        "Language",
         "Semantics",
+        "Language",
         "Simulation",
-        "Well_founded"
+        "Compiler",
+        "Fixpoint"
     ],
     "url": "entries/vericomp/theories",
     "title": "Session VeriComp"

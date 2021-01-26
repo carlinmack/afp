@@ -1,17 +1,17 @@
 {
     "theories": [
-        "CarAudioSystem",
         "Contrib",
-        "Data",
         "DataSpace",
+        "Data",
+        "Update",
         "Expr",
+        "SA",
         "HA",
-        "HAKripke",
-        "HAOps",
         "HASem",
         "Kripke",
-        "SA",
-        "Update"
+        "HAKripke",
+        "HAOps",
+        "CarAudioSystem"
     ],
     "url": "entries/statecharts/theories",
     "title": "Session Statecharts"

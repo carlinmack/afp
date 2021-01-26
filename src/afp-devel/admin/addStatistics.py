@@ -2,15 +2,16 @@
 
 import os
 import sys
-import json
+
+from writeFile import writeFile
 
 sys.path.append("sitegen-lib")
 
+import afpstats
+import metadata
 import templates
 from config import options, release_pattern
-from sitegen import parse, associate_releases, read_versions
-import metadata
-import afpstats
+from sitegen import associate_releases, parse, read_versions
 
 
 def addStatistics():
@@ -45,8 +46,7 @@ def addStatistics():
         "all_articles": all_articles,
     }
 
-    with open(dataDir + "statistics.json", "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    writeFile(dataDir + "statistics.json", data) 
 
 
 if __name__ == "__main__":

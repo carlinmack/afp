@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Heap",
-        "HeapFunctional",
-        "HeapImperative",
+        "Sort",
         "RemoveMax",
         "SelectionSort_Functional",
-        "Sort"
+        "Heap",
+        "HeapFunctional",
+        "HeapImperative"
     ],
     "url": "entries/selection_heap_sort/theories",
     "title": "Session Selection_Heap_Sort"

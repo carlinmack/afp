@@ -1,10 +1,10 @@
 {
     "theories": [
+        "While_SPMF",
         "Bernoulli",
-        "Fast_Dice_Roll",
         "Geometric",
-        "Resampling",
-        "While_SPMF"
+        "Fast_Dice_Roll",
+        "Resampling"
     ],
     "url": "entries/probabilistic_while/theories",
     "title": "Session Probabilistic_While"

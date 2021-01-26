@@ -1,20 +1,20 @@
 {
     "theories": [
         "Cyclic_Group_Ext",
-        "DH_Ext",
+        "Number_Theory_Aux",
+        "Uniform_Sampling",
+        "Semi_Honest_Def",
+        "OT_Functionalities",
         "ETP",
         "ETP_OT",
         "ETP_RSA_OT",
-        "GMW",
-        "Malicious_Defs",
-        "Malicious_OT",
         "Noar_Pinkas_OT",
-        "Number_Theory_Aux",
         "OT14",
-        "OT_Functionalities",
+        "GMW",
         "Secure_Multiplication",
-        "Semi_Honest_Def",
-        "Uniform_Sampling"
+        "DH_Ext",
+        "Malicious_Defs",
+        "Malicious_OT"
     ],
     "url": "entries/multi_party_computation/theories",
     "title": "Session Multi_Party_Computation"

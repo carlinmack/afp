@@ -2,17 +2,17 @@
     "theories": [
         "Basics",
         "Binary_Nat",
+        "Quantum",
         "Complex_Vectors",
+        "Tensor",
+        "More_Tensor",
+        "Measurement",
+        "Entanglement",
+        "Quantum_Teleportation",
         "Deutsch",
         "Deutsch_Jozsa",
-        "Entanglement",
-        "Measurement",
-        "More_Tensor",
         "No_Cloning",
-        "Quantum",
-        "Quantum_Prisoners_Dilemma",
-        "Quantum_Teleportation",
-        "Tensor"
+        "Quantum_Prisoners_Dilemma"
     ],
     "url": "entries/isabelle_marries_dirac/theories",
     "title": "Session Isabelle_Marries_Dirac"

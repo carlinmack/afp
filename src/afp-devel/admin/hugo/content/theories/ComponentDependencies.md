@@ -1,8 +1,8 @@
 {
     "theories": [
+        "DataDependenciesConcreteValues",
         "DataDependencies",
-        "DataDependenciesCaseStudy",
-        "DataDependenciesConcreteValues"
+        "DataDependenciesCaseStudy"
     ],
     "url": "entries/componentdependencies/theories",
     "title": "Session ComponentDependencies"

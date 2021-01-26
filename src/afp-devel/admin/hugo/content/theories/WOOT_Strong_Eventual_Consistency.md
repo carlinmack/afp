@@ -1,20 +1,20 @@
 {
     "theories": [
-        "BasicAlgorithms",
-        "Consistency",
-        "CreateAlgorithms",
-        "CreateConsistent",
-        "Data",
-        "DistributedExecution",
         "ErrorMonad",
-        "Example",
+        "Data",
+        "BasicAlgorithms",
+        "CreateAlgorithms",
         "IntegrateAlgorithm",
-        "IntegrateInsertCommute",
-        "Psi",
-        "SEC",
-        "Sorting",
+        "DistributedExecution",
         "SortKeys",
-        "StrongConvergence"
+        "Psi",
+        "Sorting",
+        "Consistency",
+        "CreateConsistent",
+        "IntegrateInsertCommute",
+        "StrongConvergence",
+        "SEC",
+        "Example"
     ],
     "url": "entries/woot_strong_eventual_consistency/theories",
     "title": "Session WOOT_Strong_Eventual_Consistency"

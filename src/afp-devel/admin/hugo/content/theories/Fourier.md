@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Confine",
-        "Fourier",
-        "Fourier_Aux2",
-        "Lspace",
         "Periodic",
-        "Square_Integrable"
+        "Lspace",
+        "Square_Integrable",
+        "Confine",
+        "Fourier_Aux2",
+        "Fourier"
     ],
     "url": "entries/fourier/theories",
     "title": "Session Fourier"

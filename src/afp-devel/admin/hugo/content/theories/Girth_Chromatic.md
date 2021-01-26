@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Girth_Chromatic",
         "Girth_Chromatic_Misc",
-        "Ugraphs"
+        "Ugraphs",
+        "Girth_Chromatic"
     ],
     "url": "entries/girth_chromatic/theories",
     "title": "Session Girth_Chromatic"

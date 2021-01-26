@@ -1,15 +1,15 @@
 {
     "theories": [
-        "Ordinal",
-        "OrdinalArith",
-        "OrdinalCont",
         "OrdinalDef",
-        "OrdinalFix",
         "OrdinalInduct",
-        "OrdinalInverse",
-        "OrdinalOmega",
+        "OrdinalCont",
         "OrdinalRec",
-        "OrdinalVeblen"
+        "OrdinalArith",
+        "OrdinalInverse",
+        "OrdinalFix",
+        "OrdinalOmega",
+        "OrdinalVeblen",
+        "Ordinal"
     ],
     "url": "entries/ordinal/theories",
     "title": "Session Ordinal"

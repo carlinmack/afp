@@ -1,8 +1,8 @@
 import configparser
-import json
 import os
 import re
-import time
+
+from writeFile import writeFile
 
 
 def iniToJson():
@@ -60,13 +60,11 @@ def iniToJson():
             data["licence"] = "BSD"
 
         if not noIndex:
-            with open(entriesDir + section + ".md", "w", encoding="utf-8") as f:
-                json.dump(data, f, ensure_ascii=False, indent=4)
+            writeFile(entriesDir + section + ".md", data)
         else:
             noIndex = False
 
-    with open(dataDir + "authors.json", "w", encoding="utf-8") as f:
-        json.dump(authorsDictionary, f, ensure_ascii=False, indent=4)
+    writeFile(dataDir + "authors.json", authorsDictionary)
 
 
 def processName(val, authorsDictionary):

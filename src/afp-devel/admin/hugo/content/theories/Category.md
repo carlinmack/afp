@@ -1,10 +1,10 @@
 {
     "theories": [
         "Cat",
+        "SetCat",
         "Functors",
         "HomFunctors",
         "NatTrans",
-        "SetCat",
         "Yoneda"
     ],
     "url": "entries/category/theories",

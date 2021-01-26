@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Compose",
-        "GFP",
-        "Kill",
         "LFP",
+        "GFP",
+        "Compose",
+        "Kill",
         "Lift",
-        "N2M",
-        "Permute"
+        "Permute",
+        "N2M"
     ],
     "url": "entries/bnf_operations/theories",
     "title": "Session BNF_Operations"

@@ -1,12 +1,17 @@
 {
     "theories": [
-        "Constructive_Cryptography",
+        "Resource",
         "Converter",
         "Converter_Rewrite",
-        "Distinguisher",
         "Random_System",
-        "Resource",
-        "Wiring"
+        "Distinguisher",
+        "Wiring",
+        "Constructive_Cryptography",
+        "System_Construction",
+        "One_Time_Pad",
+        "Message_Authentication_Code",
+        "Secure_Channel",
+        "Examples"
     ],
     "url": "entries/constructive_cryptography/theories",
     "title": "Session Constructive_Cryptography"

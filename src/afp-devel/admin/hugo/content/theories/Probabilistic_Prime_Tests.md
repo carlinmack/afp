@@ -1,16 +1,16 @@
 {
     "theories": [
+        "Legendre_Symbol",
         "Algebraic_Auxiliaries",
-        "Carmichael_Numbers",
+        "Jacobi_Symbol",
+        "Residues_Nat",
+        "QuadRes",
         "Euler_Witness",
-        "Fermat_Test",
+        "Carmichael_Numbers",
         "Fermat_Witness",
         "Generalized_Primality_Test",
-        "Jacobi_Symbol",
-        "Legendre_Symbol",
+        "Fermat_Test",
         "Miller_Rabin_Test",
-        "QuadRes",
-        "Residues_Nat",
         "Solovay_Strassen_Test"
     ],
     "url": "entries/probabilistic_prime_tests/theories",

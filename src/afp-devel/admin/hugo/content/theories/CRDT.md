@@ -1,12 +1,12 @@
 {
     "theories": [
+        "Util",
         "Convergence",
-        "Counter",
         "Network",
         "Ordered_List",
-        "ORSet",
         "RGA",
-        "Util"
+        "Counter",
+        "ORSet"
     ],
     "url": "entries/crdt/theories",
     "title": "Session CRDT"

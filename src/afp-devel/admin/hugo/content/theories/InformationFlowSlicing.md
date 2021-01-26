@@ -1,7 +1,7 @@
 {
     "theories": [
-        "LiftingIntra",
         "NonInterferenceIntra",
+        "LiftingIntra",
         "NonInterferenceWhile"
     ],
     "url": "entries/informationflowslicing/theories",

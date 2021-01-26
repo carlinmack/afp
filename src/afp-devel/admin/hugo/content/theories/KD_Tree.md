@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Build",
         "KD_Tree",
-        "Nearest_Neighbors",
-        "Range_Search"
+        "Build",
+        "Range_Search",
+        "Nearest_Neighbors"
     ],
     "url": "entries/kd_tree/theories",
     "title": "Session KD_Tree"

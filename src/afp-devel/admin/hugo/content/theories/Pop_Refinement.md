@@ -2,10 +2,10 @@
     "theories": [
         "Definition",
         "First_Example",
-        "Future_Work",
+        "Second_Example",
         "General_Remarks",
         "Related_Work",
-        "Second_Example"
+        "Future_Work"
     ],
     "url": "entries/pop_refinement/theories",
     "title": "Session Pop_Refinement"

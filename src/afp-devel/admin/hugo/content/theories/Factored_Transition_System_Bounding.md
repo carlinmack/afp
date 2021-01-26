@@ -1,20 +1,20 @@
 {
     "theories": [
-        "ActionSeqProcess",
-        "Acyclicity",
-        "AcycSspace",
-        "Dependency",
-        "FactoredSystem",
         "FactoredSystemLib",
-        "FmapUtils",
+        "ListUtils",
         "FSSublist",
         "HoArithUtils",
-        "Invariants",
-        "ListUtils",
+        "FmapUtils",
+        "FactoredSystem",
+        "ActionSeqProcess",
         "RelUtils",
+        "Dependency",
+        "Invariants",
         "SetUtils",
+        "TopologicalProps",
         "SystemAbstraction",
-        "TopologicalProps"
+        "Acyclicity",
+        "AcycSspace"
     ],
     "url": "entries/factored_transition_system_bounding/theories",
     "title": "Session Factored_Transition_System_Bounding"

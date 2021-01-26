@@ -1,21 +1,19 @@
 {
     "theories": [
-        "Bicategory",
-        "BicategoryOfSpans",
-        "CanonicalIsos",
-        "Coherence",
-        "EquivalenceOfBicategories",
-        "InternalAdjunction",
-        "InternalEquivalence",
         "IsomorphismClass",
-        "Modification",
         "Prebicategory",
-        "Pseudofunctor",
-        "PseudonaturalTransformation",
-        "SpanBicategory",
-        "Strictness",
+        "Bicategory",
+        "Coherence",
+        "CanonicalIsos",
+        "CategoryWithPullbacks",
         "Subbicategory",
-        "Tabulation"
+        "InternalEquivalence",
+        "Pseudofunctor",
+        "Strictness",
+        "InternalAdjunction",
+        "SpanBicategory",
+        "Tabulation",
+        "BicategoryOfSpans"
     ],
     "url": "entries/bicategory/theories",
     "title": "Session Bicategory"

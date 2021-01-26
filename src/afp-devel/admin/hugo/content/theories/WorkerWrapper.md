@@ -1,19 +1,19 @@
 {
     "theories": [
-        "Accumulator",
-        "Backtracking",
-        "Continuations",
-        "CounterExample",
-        "FixedPointTheorems",
-        "Last",
+        "Nats",
         "LList",
         "Maybe",
-        "Nats",
-        "Nub",
-        "Streams",
-        "UnboxedNats",
+        "FixedPointTheorems",
         "WorkerWrapper",
-        "WorkerWrapperNew"
+        "CounterExample",
+        "WorkerWrapperNew",
+        "Accumulator",
+        "UnboxedNats",
+        "Streams",
+        "Continuations",
+        "Backtracking",
+        "Nub",
+        "Last"
     ],
     "url": "entries/workerwrapper/theories",
     "title": "Session WorkerWrapper"

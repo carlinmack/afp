@@ -1,7 +1,7 @@
 {
     "theories": [
-        "Tables_nat",
-        "Tables_real"
+        "Tables_real",
+        "Tables_nat"
     ],
     "url": "entries/dynamic_tables/theories",
     "title": "Session Dynamic_Tables"

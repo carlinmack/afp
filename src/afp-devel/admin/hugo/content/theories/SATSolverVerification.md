@@ -1,20 +1,20 @@
 {
     "theories": [
-        "AssertLiteral",
-        "BasicDPLL",
+        "MoreList",
         "CNF",
+        "Trail",
+        "SatSolverVerification",
+        "BasicDPLL",
+        "NieuwenhuisOliverasTinelli",
+        "KrsticGoel",
+        "SatSolverCode",
+        "AssertLiteral",
+        "UnitPropagate",
+        "Initialization",
         "ConflictAnalysis",
         "Decide",
-        "FunctionalImplementation",
-        "Initialization",
-        "KrsticGoel",
-        "MoreList",
-        "NieuwenhuisOliverasTinelli",
-        "SatSolverCode",
-        "SatSolverVerification",
         "SolveLoop",
-        "Trail",
-        "UnitPropagate"
+        "FunctionalImplementation"
     ],
     "url": "entries/satsolververification/theories",
     "title": "Session SATSolverVerification"

@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Basis",
-        "Equivalence",
-        "NewCard",
         "Notation",
+        "Basis",
         "State",
-        "Trace"
+        "NewCard",
+        "Trace",
+        "Equivalence"
     ],
     "url": "entries/hotelkeycards/theories",
     "title": "Session HotelKeyCards"

@@ -1,13 +1,13 @@
 {
     "theories": [
-        "All_Of_Promela",
-        "Promela",
+        "PromelaStatistics",
         "PromelaAST",
         "PromelaDatastructures",
         "PromelaInvariants",
+        "Promela",
         "PromelaLTL",
         "PromelaLTLConv",
-        "PromelaStatistics"
+        "All_Of_Promela"
     ],
     "url": "entries/promela/theories",
     "title": "Session Promela"

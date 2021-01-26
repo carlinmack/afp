@@ -1,19 +1,19 @@
 {
     "theories": [
-        "Arithmetic_Summatory",
-        "Arithmetic_Summatory_Asymptotics",
-        "Dirichlet_Efficient_Code",
         "Dirichlet_Misc",
+        "Multiplicative_Function",
         "Dirichlet_Product",
         "Dirichlet_Series",
-        "Dirichlet_Series_Analysis",
-        "Divisor_Count",
-        "Euler_Products",
-        "Liouville_Lambda",
         "Moebius_Mu",
         "More_Totient",
-        "Multiplicative_Function",
-        "Partial_Summation"
+        "Liouville_Lambda",
+        "Divisor_Count",
+        "Arithmetic_Summatory",
+        "Partial_Summation",
+        "Euler_Products",
+        "Dirichlet_Series_Analysis",
+        "Arithmetic_Summatory_Asymptotics",
+        "Dirichlet_Efficient_Code"
     ],
     "url": "entries/dirichlet_series/theories",
     "title": "Session Dirichlet_Series"

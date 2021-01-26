@@ -1,16 +1,16 @@
 {
     "theories": [
-        "Eulerian_Polynomials",
-        "Factorizations",
-        "Linear_Homogenous_Recurrences",
-        "Linear_Inhomogenous_Recurrences",
-        "Linear_Recurrences_Common",
+        "RatFPS",
+        "Pochhammer_Polynomials",
         "Linear_Recurrences_Misc",
         "Partial_Fraction_Decomposition",
-        "Pochhammer_Polynomials",
-        "RatFPS",
-        "Rational_FPS_Asymptotics",
-        "Rational_FPS_Solver"
+        "Factorizations",
+        "Rational_FPS_Solver",
+        "Linear_Recurrences_Common",
+        "Linear_Homogenous_Recurrences",
+        "Eulerian_Polynomials",
+        "Linear_Inhomogenous_Recurrences",
+        "Rational_FPS_Asymptotics"
     ],
     "url": "entries/linear_recurrences/theories",
     "title": "Session Linear_Recurrences"

@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Hadjicostas_Chapman",
+        "Zeta_Library",
         "Zeta_Function",
         "Zeta_Laurent_Expansion",
-        "Zeta_Library"
+        "Hadjicostas_Chapman"
     ],
     "url": "entries/zeta_function/theories",
     "title": "Session Zeta_Function"

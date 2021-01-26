@@ -1,11 +1,11 @@
 {
     "theories": [
+        "Prelim",
         "Algebra",
-        "Building",
+        "Simplicial",
         "Chamber",
         "Coxeter",
-        "Prelim",
-        "Simplicial"
+        "Building"
     ],
     "url": "entries/buildings/theories",
     "title": "Session Buildings"

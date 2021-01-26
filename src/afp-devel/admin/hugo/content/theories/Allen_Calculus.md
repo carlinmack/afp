@@ -1,12 +1,12 @@
 {
     "theories": [
-        "allen",
+        "xor_cal",
         "axioms",
+        "allen",
         "disjoint_relations",
-        "examples",
         "jointly_exhaustive",
-        "nest",
-        "xor_cal"
+        "examples",
+        "nest"
     ],
     "url": "entries/allen_calculus/theories",
     "title": "Session Allen_Calculus"

@@ -1,10 +1,10 @@
 {
     "theories": [
-        "Cauchy_Index_Theorem",
-        "Missing_Algebraic",
-        "Missing_Analysis",
         "Missing_Topology",
+        "Missing_Algebraic",
         "Missing_Transcendental",
+        "Missing_Analysis",
+        "Cauchy_Index_Theorem",
         "Winding_Number_Eval",
         "Winding_Number_Eval_Examples"
     ],

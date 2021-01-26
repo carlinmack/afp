@@ -1,16 +1,16 @@
 {
     "theories": [
-        "Analysis",
-        "ElementaryPolicies",
         "Monads",
+        "UPFCore",
+        "ElementaryPolicies",
+        "SeqComposition",
+        "ParallelComposition",
         "Normalisation",
         "NormalisationTestSpecification",
-        "ParallelComposition",
-        "SeqComposition",
-        "Service",
-        "ServiceExample",
+        "Analysis",
         "UPF",
-        "UPFCore"
+        "Service",
+        "ServiceExample"
     ],
     "url": "entries/upf/theories",
     "title": "Session UPF"

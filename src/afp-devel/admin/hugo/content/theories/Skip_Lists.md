@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Geometric_PMF",
-        "Misc",
         "Pi_pmf",
+        "Misc",
+        "Geometric_PMF",
         "Skip_List"
     ],
     "url": "entries/skip_lists/theories",

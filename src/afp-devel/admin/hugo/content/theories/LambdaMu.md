@@ -1,14 +1,14 @@
 {
     "theories": [
-        "ContextFacts",
-        "DeBruijn",
-        "Peirce",
-        "Progress",
-        "Reduction",
-        "Substitution",
         "Syntax",
+        "Types",
+        "DeBruijn",
+        "Substitution",
+        "Reduction",
+        "ContextFacts",
         "TypePreservation",
-        "Types"
+        "Progress",
+        "Peirce"
     ],
     "url": "entries/lambdamu/theories",
     "title": "Session LambdaMu"

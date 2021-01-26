@@ -1,7 +1,7 @@
 {
     "theories": [
-        "Chop",
         "Embeddings",
+        "Chop",
         "Lambda_Free_EPO"
     ],
     "url": "entries/lambda_free_epo/theories",

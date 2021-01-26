@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Failure",
-        "Integral",
-        "Measure",
+        "Sigma_Algebra",
         "MonConv",
+        "Measure",
         "RealRandVar",
-        "Sigma_Algebra"
+        "Integral",
+        "Failure"
     ],
     "url": "entries/integration/theories",
     "title": "Session Integration"

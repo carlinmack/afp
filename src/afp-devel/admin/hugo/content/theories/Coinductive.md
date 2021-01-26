@@ -1,16 +1,24 @@
 {
     "theories": [
-        "Coinductive",
+        "Coinductive_Nat",
         "Coinductive_List",
         "Coinductive_List_Prefix",
-        "Coinductive_Nat",
         "Coinductive_Stream",
-        "Lazy_LList",
-        "Lazy_TLList",
+        "TLList",
         "Quotient_Coinductive_List",
         "Quotient_TLList",
-        "TLList",
-        "TLList_CCPO"
+        "Coinductive",
+        "Lazy_LList",
+        "Lazy_TLList",
+        "CCPO_Topology",
+        "LList_CCPO_Topology",
+        "TLList_CCPO",
+        "TLList_CCPO_Examples",
+        "Koenigslemma",
+        "LMirror",
+        "Hamming_Stream",
+        "Resumption",
+        "Coinductive_Examples"
     ],
     "url": "entries/coinductive/theories",
     "title": "Session Coinductive"

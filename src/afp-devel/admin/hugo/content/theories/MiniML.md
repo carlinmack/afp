@@ -1,10 +1,10 @@
 {
     "theories": [
-        "Generalize",
-        "Instance",
         "Maybe",
-        "MiniML",
         "Type",
+        "Instance",
+        "Generalize",
+        "MiniML",
         "W"
     ],
     "url": "entries/miniml/theories",

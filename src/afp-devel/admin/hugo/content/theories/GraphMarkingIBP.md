@@ -1,10 +1,10 @@
 {
     "theories": [
-        "DSWMark",
         "Graph",
-        "LinkMark",
         "SetMark",
-        "StackMark"
+        "StackMark",
+        "LinkMark",
+        "DSWMark"
     ],
     "url": "entries/graphmarkingibp/theories",
     "title": "Session GraphMarkingIBP"

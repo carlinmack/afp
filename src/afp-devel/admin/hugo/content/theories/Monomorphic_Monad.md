@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Interpreter",
-        "Just_Do_It_Examples",
+        "Monomorphic_Monad",
         "Monad_Overloading",
-        "Monomorphic_Monad"
+        "Interpreter",
+        "Just_Do_It_Examples"
     ],
     "url": "entries/monomorphic_monad/theories",
     "title": "Session Monomorphic_Monad"

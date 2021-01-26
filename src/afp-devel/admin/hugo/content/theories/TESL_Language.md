@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Config_Morphisms",
-        "Corecursive_Prop",
-        "Denotational",
-        "Hygge_Theory",
         "Introduction",
-        "Operational",
+        "TESL",
         "Run",
-        "Stuttering",
+        "Denotational",
+        "SymbolicPrimitive",
+        "Operational",
+        "Corecursive_Prop",
+        "Hygge_Theory",
         "StutteringDefs",
         "StutteringLemmas",
-        "SymbolicPrimitive",
-        "TESL"
+        "Stuttering",
+        "Config_Morphisms"
     ],
     "url": "entries/tesl_language/theories",
     "title": "Session TESL_Language"

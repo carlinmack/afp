@@ -1,10 +1,10 @@
 {
     "theories": [
         "Basis",
-        "Continuations",
         "Logical_Relations",
-        "OpSem",
         "PCF",
+        "OpSem",
+        "Continuations",
         "SmallStep"
     ],
     "url": "entries/pcf/theories",

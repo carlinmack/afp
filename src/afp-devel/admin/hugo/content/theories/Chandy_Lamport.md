@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Co_Snapshot",
         "Distributed_System",
-        "Example",
-        "Snapshot",
-        "Swap",
         "Trace",
-        "Util"
+        "Util",
+        "Swap",
+        "Snapshot",
+        "Co_Snapshot",
+        "Example"
     ],
     "url": "entries/chandy_lamport/theories",
     "title": "Session Chandy_Lamport"

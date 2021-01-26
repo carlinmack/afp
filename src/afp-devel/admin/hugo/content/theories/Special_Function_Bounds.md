@@ -1,7 +1,7 @@
 {
     "theories": [
-        "Atan_CF_Bounds",
         "Bounds_Lemmas",
+        "Atan_CF_Bounds",
         "Exp_Bounds",
         "Log_CF_Bounds",
         "Sin_Cos_Bounds",

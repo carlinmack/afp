@@ -1,8 +1,8 @@
 {
     "theories": [
+        "Seq",
         "Abstract_Rewriting",
         "Relative_Rewriting",
-        "Seq",
         "SN_Orders",
         "SN_Order_Carrier"
     ],

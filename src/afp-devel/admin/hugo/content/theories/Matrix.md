@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Matrix_Legacy",
+        "Utility",
         "Ordered_Semiring",
-        "Utility"
+        "Matrix_Legacy"
     ],
     "url": "entries/matrix/theories",
     "title": "Session Matrix"

@@ -1,8 +1,13 @@
 {
     "theories": [
-        "Sturm",
+        "Sturm_Library_Document",
+        "Misc_Polynomial",
+        "Sturm_Library",
+        "Sturm_Theorem",
         "Sturm_Method",
-        "Sturm_Theorem"
+        "files/sturm.ML",
+        "Sturm",
+        "Sturm_Ex"
     ],
     "url": "entries/sturm_sequences/theories",
     "title": "Session Sturm_Sequences"

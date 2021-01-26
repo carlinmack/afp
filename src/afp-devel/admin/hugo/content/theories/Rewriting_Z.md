@@ -1,8 +1,8 @@
 {
     "theories": [
-        "CL_Z",
+        "Z",
         "Lambda_Z",
-        "Z"
+        "CL_Z"
     ],
     "url": "entries/rewriting_z/theories",
     "title": "Session Rewriting_Z"

@@ -1,17 +1,17 @@
 {
     "theories": [
+        "SyntaxN",
         "Coding",
-        "Coding_Predicates",
-        "Functions",
-        "Goedel_I",
-        "II_Prelims",
-        "Instance",
-        "Pf_Predicates",
         "Predicates",
+        "Sigma",
+        "Coding_Predicates",
+        "Pf_Predicates",
+        "II_Prelims",
         "Pseudo_Coding",
         "Quote",
-        "Sigma",
-        "SyntaxN"
+        "Functions",
+        "Goedel_I",
+        "Instance"
     ],
     "url": "entries/goedel_hfset_semanticless/theories",
     "title": "Session Goedel_HFSet_Semanticless"

@@ -1,13 +1,13 @@
 {
     "theories": [
-        "Abbrevs",
-        "PIMP",
-        "Preliminaries",
         "ReduceStoreBuffer",
         "ReduceStoreBufferSimulation",
+        "PIMP",
         "SyntaxTweaks",
+        "Abbrevs",
+        "Variants",
         "Text",
-        "Variants"
+        "Preliminaries"
     ],
     "url": "entries/store_buffer_reduction/theories",
     "title": "Session Store_Buffer_Reduction"

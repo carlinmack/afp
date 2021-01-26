@@ -1,14 +1,14 @@
 {
     "theories": [
-        "After_Execution",
-        "Bisim",
-        "Compositionality",
-        "Concrete",
-        "During_Execution",
-        "Interface",
-        "Language_Semantics",
         "MyTactics",
-        "Syntactic_Criteria"
+        "Interface",
+        "Bisim",
+        "Language_Semantics",
+        "During_Execution",
+        "Compositionality",
+        "Syntactic_Criteria",
+        "After_Execution",
+        "Concrete"
     ],
     "url": "entries/possibilistic_noninterference/theories",
     "title": "Session Possibilistic_Noninterference"

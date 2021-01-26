@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Insert_Spec",
-        "Interleaving",
-        "List_Spec",
         "OpSet",
+        "Insert_Spec",
+        "List_Spec",
+        "Interleaving",
         "RGA"
     ],
     "url": "entries/opsets/theories",

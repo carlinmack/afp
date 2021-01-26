@@ -1,11 +1,11 @@
 {
     "theories": [
         "Isotone_Transformers",
-        "Kleisli_Quantale",
-        "Kleisli_Quantaloid",
-        "Kleisli_Transformers",
+        "Sup_Inf_Preserving_Transformers",
         "Powerset_Monad",
-        "Sup_Inf_Preserving_Transformers"
+        "Kleisli_Transformers",
+        "Kleisli_Quantaloid",
+        "Kleisli_Quantale"
     ],
     "url": "entries/transformer_semantics/theories",
     "title": "Session Transformer_Semantics"

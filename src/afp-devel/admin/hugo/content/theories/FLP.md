@@ -1,12 +1,12 @@
 {
     "theories": [
+        "Multiset",
         "AsynchronousSystem",
+        "ListUtilities",
         "Execution",
-        "FLPExistingSystem",
         "FLPSystem",
         "FLPTheorem",
-        "ListUtilities",
-        "Multiset"
+        "FLPExistingSystem"
     ],
     "url": "entries/flp/theories",
     "title": "Session FLP"

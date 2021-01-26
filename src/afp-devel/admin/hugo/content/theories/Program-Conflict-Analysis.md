@@ -1,16 +1,16 @@
 {
     "theories": [
-        "AcquisitionHistory",
-        "ConsInterleave",
-        "ConstraintSystems",
-        "Flowgraph",
-        "Interleave",
-        "LTS",
-        "MainResult",
         "Misc",
-        "Normalization",
+        "Interleave",
+        "ConsInterleave",
+        "AcquisitionHistory",
+        "LTS",
+        "ThreadTracking",
+        "Flowgraph",
         "Semantics",
-        "ThreadTracking"
+        "Normalization",
+        "ConstraintSystems",
+        "MainResult"
     ],
     "url": "entries/program-conflict-analysis/theories",
     "title": "Session Program-Conflict-Analysis"

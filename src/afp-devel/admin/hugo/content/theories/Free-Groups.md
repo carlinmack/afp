@@ -1,12 +1,12 @@
 {
     "theories": [
-        "C2",
         "Cancelation",
-        "FreeGroups",
         "Generators",
+        "FreeGroups",
+        "UnitGroup",
+        "C2",
         "Isomorphisms",
-        "PingPongLemma",
-        "UnitGroup"
+        "PingPongLemma"
     ],
     "url": "entries/free-groups/theories",
     "title": "Session Free-Groups"

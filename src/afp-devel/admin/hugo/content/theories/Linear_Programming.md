@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Linear_Programming",
-        "LP_Preliminaries",
+        "More_Jordan_Normal_Forms",
         "Matrix_LinPoly",
-        "More_Jordan_Normal_Forms"
+        "LP_Preliminaries",
+        "Linear_Programming"
     ],
     "url": "entries/linear_programming/theories",
     "title": "Session Linear_Programming"

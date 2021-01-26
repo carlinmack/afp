@@ -1,15 +1,15 @@
 {
     "theories": [
-        "Buffer",
-        "Even",
-        "Inc",
+        "Sequence",
         "Intensional",
-        "Liveness",
+        "Semantics",
         "PreFormulas",
         "Rules",
-        "Semantics",
-        "Sequence",
-        "State"
+        "Liveness",
+        "State",
+        "Even",
+        "Inc",
+        "Buffer"
     ],
     "url": "entries/tla/theories",
     "title": "Session TLA"

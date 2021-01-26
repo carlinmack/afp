@@ -1,9 +1,9 @@
 {
     "theories": [
-        "CartesianMonoidalCategory",
-        "FreeMonoidalCategory",
         "MonoidalCategory",
-        "MonoidalFunctor"
+        "MonoidalFunctor",
+        "FreeMonoidalCategory",
+        "CartesianMonoidalCategory"
     ],
     "url": "entries/monoidalcategory/theories",
     "title": "Session MonoidalCategory"

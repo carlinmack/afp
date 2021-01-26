@@ -1,10 +1,10 @@
 {
     "theories": [
-        "Binary_Exponentiation",
-        "Coeff_Int",
-        "Dichotomous_Lazard",
-        "More_Homomorphisms",
         "Resultant_Prelim",
+        "Dichotomous_Lazard",
+        "Binary_Exponentiation",
+        "More_Homomorphisms",
+        "Coeff_Int",
         "Subresultant",
         "Subresultant_Gcd"
     ],

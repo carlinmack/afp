@@ -1,22 +1,22 @@
 {
     "theories": [
-        "Arc_Walk",
-        "Bidirected_Digraph",
+        "Rtrancl_On",
+        "Stuff",
         "Digraph",
+        "Bidirected_Digraph",
+        "Arc_Walk",
+        "Pair_Digraph",
         "Digraph_Component",
+        "Vertex_Walk",
         "Digraph_Component_Vwalk",
         "Digraph_Isomorphism",
-        "Euler",
         "Funpow",
-        "Graph_Theory",
-        "Kuratowski",
-        "Pair_Digraph",
-        "Rtrancl_On",
-        "Shortest_Path",
-        "Stuff",
         "Subdivision",
-        "Vertex_Walk",
-        "Weighted_Graph"
+        "Euler",
+        "Kuratowski",
+        "Weighted_Graph",
+        "Shortest_Path",
+        "Graph_Theory"
     ],
     "url": "entries/graph_theory/theories",
     "title": "Session Graph_Theory"

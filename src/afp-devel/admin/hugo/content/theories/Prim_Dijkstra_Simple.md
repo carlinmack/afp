@@ -1,18 +1,18 @@
 {
     "theories": [
-        "Chapter_Dijkstra",
-        "Chapter_Prim",
         "Common",
-        "Dijkstra_Abstract",
-        "Dijkstra_Impl",
-        "Directed_Graph",
-        "Directed_Graph_Impl",
-        "Directed_Graph_Specs",
-        "Prim_Abstract",
-        "Prim_Impl",
+        "Chapter_Prim",
         "Undirected_Graph",
+        "Undirected_Graph_Specs",
+        "Prim_Abstract",
         "Undirected_Graph_Impl",
-        "Undirected_Graph_Specs"
+        "Prim_Impl",
+        "Chapter_Dijkstra",
+        "Directed_Graph",
+        "Directed_Graph_Specs",
+        "Dijkstra_Abstract",
+        "Directed_Graph_Impl",
+        "Dijkstra_Impl"
     ],
     "url": "entries/prim_dijkstra_simple/theories",
     "title": "Session Prim_Dijkstra_Simple"

@@ -1,11 +1,11 @@
 {
     "theories": [
-        "CompLocalSecrets",
-        "inout",
-        "KnowledgeKeysSecrets",
         "ListExtras",
+        "Secrecy_types",
+        "inout",
         "Secrecy",
-        "Secrecy_types"
+        "CompLocalSecrets",
+        "KnowledgeKeysSecrets"
     ],
     "url": "entries/cryptobasedcompositionalproperties/theories",
     "title": "Session CryptoBasedCompositionalProperties"

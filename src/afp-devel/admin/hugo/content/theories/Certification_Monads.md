@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Check_Monad",
-        "Error_Monad",
         "Error_Syntax",
-        "Misc",
+        "Error_Monad",
+        "Check_Monad",
+        "Strict_Sum",
         "Parser_Monad",
-        "Strict_Sum"
+        "Misc"
     ],
     "url": "entries/certification_monads/theories",
     "title": "Session Certification_Monads"

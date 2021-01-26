@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Cantor_NF",
+        "ZFC_Library",
+        "ZFC_in_HOL",
+        "ZFC_Cardinals",
         "Kirby",
         "Ordinal_Exp",
-        "ZFC_Cardinals",
-        "ZFC_in_HOL",
-        "ZFC_Library",
+        "Cantor_NF",
         "ZFC_Typeclasses"
     ],
     "url": "entries/zfc_in_hol/theories",

@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Base",
-        "Completeness",
-        "Formula",
         "PermutationLemmas",
+        "Base",
+        "Formula",
         "Sequents",
-        "Soundness",
-        "Tree"
+        "Tree",
+        "Completeness",
+        "Soundness"
     ],
     "url": "entries/completeness/theories",
     "title": "Session Completeness"

@@ -1,11 +1,11 @@
 {
     "theories": [
-        "Cardinal_Library",
+        "ZF_Library",
         "Cofinality",
-        "Cohen_Posets",
-        "Delta_System",
+        "Cardinal_Library",
         "Konig",
-        "ZF_Library"
+        "Delta_System",
+        "Cohen_Posets"
     ],
     "url": "entries/delta_system_lemma/theories",
     "title": "Session Delta_System_Lemma"

@@ -1,19 +1,19 @@
 {
     "theories": [
-        "Approx_Beta",
-        "Closure",
+        "Floyd_Warshall",
+        "Timed_Automata",
         "DBM",
+        "Paths_Cycles",
         "DBM_Basics",
-        "DBM_Normalization",
         "DBM_Operations",
         "DBM_Zone_Semantics",
-        "Floyd_Warshall",
         "Misc",
-        "Normalized_Zone_Semantics",
-        "Paths_Cycles",
-        "Regions",
+        "DBM_Normalization",
         "Regions_Beta",
-        "Timed_Automata"
+        "Regions",
+        "Closure",
+        "Approx_Beta",
+        "Normalized_Zone_Semantics"
     ],
     "url": "entries/timed_automata/theories",
     "title": "Session Timed_Automata"

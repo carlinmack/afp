@@ -1,10 +1,7 @@
-import configparser
-import json
-import os
 import re
-import time
 from datetime import date
 
+from writeFile import writeFile
 
 def addOlderReleases():
     releaseNames = []
@@ -37,14 +34,8 @@ def addOlderReleases():
                     # reverse list for display
                     entryReleases = list(reversed(entryReleases))
 
-                    data = {}
-                    with open(entriesDir + prevName + ".md") as file:
-                        data = json.load(file)
-
-                    data["olderReleases"] = entryReleases
-
-                    with open(entriesDir + prevName + ".md", "w", encoding="utf-8") as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
+                    data = {"olderReleases": entryReleases}
+                    writeFile(entriesDir + prevName + ".md", data)
 
                 prevName = name
                 entryReleases = []

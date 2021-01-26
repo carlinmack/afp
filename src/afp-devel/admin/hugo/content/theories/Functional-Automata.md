@@ -1,19 +1,19 @@
 {
     "theories": [
-        "Automata",
-        "AutoMaxChop",
         "AutoProj",
-        "AutoRegExp",
         "DA",
-        "Execute",
-        "Functional_Automata",
-        "MaxChop",
-        "MaxPrefix",
         "NA",
         "NAe",
+        "Automata",
         "RegExp2NA",
         "RegExp2NAe",
-        "RegSet_of_nat_DA"
+        "AutoRegExp",
+        "MaxPrefix",
+        "MaxChop",
+        "AutoMaxChop",
+        "RegSet_of_nat_DA",
+        "Execute",
+        "Functional_Automata"
     ],
     "url": "entries/functional-automata/theories",
     "title": "Session Functional-Automata"

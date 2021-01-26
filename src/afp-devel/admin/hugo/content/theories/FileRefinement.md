@@ -1,8 +1,8 @@
 {
     "theories": [
         "CArrays",
-        "FileRefinement",
-        "ResizableArrays"
+        "ResizableArrays",
+        "FileRefinement"
     ],
     "url": "entries/filerefinement/theories",
     "title": "Session FileRefinement"

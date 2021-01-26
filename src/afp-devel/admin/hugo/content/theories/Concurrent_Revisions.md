@@ -1,12 +1,12 @@
 {
     "theories": [
         "Data",
-        "Determinacy",
-        "Executions",
         "Occurrences",
-        "OperationalSemantics",
         "Renaming",
-        "Substitution"
+        "Substitution",
+        "OperationalSemantics",
+        "Executions",
+        "Determinacy"
     ],
     "url": "entries/concurrent_revisions/theories",
     "title": "Session Concurrent_Revisions"

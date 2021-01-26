@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Bonk_Schramm_Extension",
-        "Boundary_Extension",
-        "Busemann_Function",
+        "Library_Complements",
         "Eexp_Eln",
-        "Gromov_Boundary",
-        "Gromov_Hyperbolicity",
         "Hausdorff_Distance",
         "Isometries",
-        "Isometries_Classification",
-        "Library_Complements",
         "Metric_Completion",
-        "Morse_Gromov_Theorem"
+        "Gromov_Hyperbolicity",
+        "Morse_Gromov_Theorem",
+        "Bonk_Schramm_Extension",
+        "Gromov_Boundary",
+        "Boundary_Extension",
+        "Busemann_Function",
+        "Isometries_Classification"
     ],
     "url": "entries/gromov_hyperbolicity/theories",
     "title": "Session Gromov_Hyperbolicity"

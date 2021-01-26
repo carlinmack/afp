@@ -1,14 +1,14 @@
 {
     "theories": [
+        "Trace",
+        "Table",
         "Abstract_Monitor",
-        "Examples",
         "Interval",
         "MFOTL",
         "Monitor",
-        "Monitor_Code",
         "Slicing",
-        "Table",
-        "Trace"
+        "Monitor_Code",
+        "Examples"
     ],
     "url": "entries/mfotl_monitor/theories",
     "title": "Session MFOTL_Monitor"

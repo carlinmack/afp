@@ -1,17 +1,17 @@
 {
     "theories": [
-        "Computations",
-        "Example",
-        "Kauffman_Invariance",
-        "Kauffman_Matrix",
-        "Knot_Theory",
-        "Linkrel_Kauffman",
-        "Link_Algebra",
         "Preliminaries",
         "Tangles",
         "Tangle_Algebra",
+        "Tangle_Relation",
         "Tangle_Moves",
-        "Tangle_Relation"
+        "Link_Algebra",
+        "Example",
+        "Kauffman_Matrix",
+        "Computations",
+        "Linkrel_Kauffman",
+        "Kauffman_Invariance",
+        "Knot_Theory"
     ],
     "url": "entries/knot_theory/theories",
     "title": "Session Knot_Theory"

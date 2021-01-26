@@ -1,20 +1,20 @@
 {
     "theories": [
-        "Basis_Extension",
-        "Cone",
-        "Convex_Hull",
-        "Decomposition_Theorem",
-        "Dim_Span",
-        "Farkas_Lemma",
-        "Farkas_Minkowsky_Weyl",
-        "Fundamental_Theorem_Linear_Inequalities",
-        "Integer_Hull",
-        "Integral_Bounded_Vectors",
         "Missing_Matrix",
         "Missing_VS_Connect",
-        "Mixed_Integer_Solutions",
+        "Basis_Extension",
+        "Sum_Vec_Set",
+        "Integral_Bounded_Vectors",
+        "Cone",
+        "Convex_Hull",
         "Normal_Vector",
-        "Sum_Vec_Set"
+        "Dim_Span",
+        "Fundamental_Theorem_Linear_Inequalities",
+        "Farkas_Lemma",
+        "Farkas_Minkowsky_Weyl",
+        "Decomposition_Theorem",
+        "Mixed_Integer_Solutions",
+        "Integer_Hull"
     ],
     "url": "entries/linear_inequalities/theories",
     "title": "Session Linear_Inequalities"

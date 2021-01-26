@@ -1,9 +1,9 @@
 {
     "theories": [
-        "Discrete_Summation",
-        "Examples",
         "Factorials",
-        "Summation_Conversion"
+        "Discrete_Summation",
+        "Summation_Conversion",
+        "Examples"
     ],
     "url": "entries/discrete_summation/theories",
     "title": "Session Discrete_Summation"

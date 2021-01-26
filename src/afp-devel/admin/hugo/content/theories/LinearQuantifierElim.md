@@ -1,0 +1,21 @@
+{
+    "theories": [
+        "Logic",
+        "QE",
+        "DLO",
+        "QEdlo",
+        "QEdlo_ex",
+        "QEdlo_fr",
+        "QEdlo_inf",
+        "LinArith",
+        "QElin",
+        "QElin_opt",
+        "FRE",
+        "QElin_inf",
+        "PresArith",
+        "QEpres",
+        "Cooper",
+        "CertDlo",
+        "CertLin"
+    ]
+}

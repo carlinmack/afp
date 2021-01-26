@@ -1,9 +1,9 @@
 {
     "theories": [
+        "MC",
         "AT",
-        "GDPRhealthcare",
         "Infrastructure",
-        "MC"
+        "GDPRhealthcare"
     ],
     "url": "entries/attack_trees/theories",
     "title": "Session Attack_Trees"

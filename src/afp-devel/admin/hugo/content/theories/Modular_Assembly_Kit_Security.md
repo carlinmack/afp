@@ -1,0 +1,22 @@
+{
+    "theories": [
+        "Projection",
+        "Prefix",
+        "EventSystems",
+        "StateEventSystems",
+        "Views",
+        "FlowPolicies",
+        "BasicSecurityPredicates",
+        "InformationFlowProperties",
+        "BSPTaxonomy",
+        "PropertyLibrary",
+        "SecureSystems",
+        "UnwindingConditions",
+        "AuxiliaryLemmas",
+        "UnwindingResults",
+        "CompositionBase",
+        "CompositionSupport",
+        "GeneralizedZippingLemma",
+        "CompositionalityResults"
+    ]
+}

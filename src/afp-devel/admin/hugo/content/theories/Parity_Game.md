@@ -1,18 +1,18 @@
 {
     "theories": [
-        "AttractingStrategy",
-        "Attractor",
-        "AttractorInductive",
-        "AttractorStrategy",
-        "Graph_TheoryCompatibility",
         "MoreCoinductiveList",
         "ParityGame",
-        "PositionalDeterminacy",
         "Strategy",
-        "UniformStrategy",
+        "AttractingStrategy",
+        "Attractor",
+        "WinningStrategy",
         "WellOrderedStrategy",
         "WinningRegion",
-        "WinningStrategy"
+        "UniformStrategy",
+        "AttractorStrategy",
+        "PositionalDeterminacy",
+        "AttractorInductive",
+        "Graph_TheoryCompatibility"
     ],
     "url": "entries/parity_game/theories",
     "title": "Session Parity_Game"

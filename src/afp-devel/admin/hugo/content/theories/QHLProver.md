@@ -1,12 +1,13 @@
 {
     "theories": [
         "Complex_Matrix",
-        "Gates",
-        "Grover",
+        "files/mat_alg.ML",
         "Matrix_Limit",
+        "Quantum_Program",
         "Partial_State",
+        "Gates",
         "Quantum_Hoare",
-        "Quantum_Program"
+        "Grover"
     ],
     "url": "entries/qhlprover/theories",
     "title": "Session QHLProver"

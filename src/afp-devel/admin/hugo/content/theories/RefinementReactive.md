@@ -1,8 +1,8 @@
 {
     "theories": [
-        "Reactive",
+        "Temporal",
         "Refinement",
-        "Temporal"
+        "Reactive"
     ],
     "url": "entries/refinementreactive/theories",
     "title": "Session RefinementReactive"

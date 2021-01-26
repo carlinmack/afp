@@ -1,8 +1,8 @@
 {
     "theories": [
         "Basis",
-        "Brent",
-        "TortoiseHare"
+        "TortoiseHare",
+        "Brent"
     ],
     "url": "entries/tortoisehare/theories",
     "title": "Session TortoiseHare"

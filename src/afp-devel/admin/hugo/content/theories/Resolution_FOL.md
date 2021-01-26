@@ -1,12 +1,12 @@
 {
     "theories": [
-        "Completeness",
-        "Completeness_Instance",
-        "Examples",
-        "Resolution",
         "TermsAndLiterals",
         "Tree",
-        "Unification_Theorem"
+        "Resolution",
+        "Completeness",
+        "Examples",
+        "Unification_Theorem",
+        "Completeness_Instance"
     ],
     "url": "entries/resolution_fol/theories",
     "title": "Session Resolution_FOL"

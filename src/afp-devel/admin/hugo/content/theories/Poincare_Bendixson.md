@@ -1,13 +1,13 @@
 {
     "theories": [
-        "Affine_Arithmetic_Misc",
         "Analysis_Misc",
-        "Examples",
+        "ODE_Misc",
         "Invariance",
         "Limit_Set",
-        "ODE_Misc",
         "Periodic_Orbit",
-        "Poincare_Bendixson"
+        "Poincare_Bendixson",
+        "Affine_Arithmetic_Misc",
+        "Examples"
     ],
     "url": "entries/poincare_bendixson/theories",
     "title": "Session Poincare_Bendixson"

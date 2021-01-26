@@ -1,16 +1,16 @@
 {
     "theories": [
-        "Binomial_Int",
-        "Cone_Decomposition",
-        "Degree_Bound_Utils",
         "Degree_Section",
-        "Dube_Bound",
-        "Dube_Prelims",
+        "Degree_Bound_Utils",
         "Groebner_Macaulay",
-        "Groebner_Macaulay_Examples",
-        "Hilbert_Function",
+        "Binomial_Int",
+        "Poly_Fun",
         "Monomial_Module",
-        "Poly_Fun"
+        "Dube_Prelims",
+        "Hilbert_Function",
+        "Cone_Decomposition",
+        "Dube_Bound",
+        "Groebner_Macaulay_Examples"
     ],
     "url": "entries/groebner_macaulay/theories",
     "title": "Session Groebner_Macaulay"

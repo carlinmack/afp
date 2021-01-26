@@ -1,18 +1,19 @@
 {
     "theories": [
-        "Bij_Nat",
         "Cancel_Card_Constraint",
-        "Check_Matrix_Growth",
+        "files/cancel_card_constraint.ML",
+        "Bij_Nat",
         "HMA_Connect",
-        "Hom_Gauss_Jordan",
-        "Perron_Frobenius",
         "Perron_Frobenius_Aux",
-        "Perron_Frobenius_General",
-        "Perron_Frobenius_Irreducible",
+        "Perron_Frobenius",
         "Roots_Unity",
-        "Spectral_Radius_Largest_Jordan_Block",
+        "Perron_Frobenius_Irreducible",
+        "Perron_Frobenius_General",
         "Spectral_Radius_Theory",
-        "Spectral_Radius_Theory_2"
+        "Spectral_Radius_Largest_Jordan_Block",
+        "Hom_Gauss_Jordan",
+        "Spectral_Radius_Theory_2",
+        "Check_Matrix_Growth"
     ],
     "url": "entries/perron_frobenius/theories",
     "title": "Session Perron_Frobenius"
