@@ -1,8 +1,7 @@
 jinja2
 pytz
-tdqm
+tqdm
 termcolor
 unidecode
 bs4
-warnings
 requests
