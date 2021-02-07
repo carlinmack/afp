@@ -1,8 +1,14 @@
-(*  Authors:    Thomas Sewell, NICTA and Sascha Boehme, TU Muenchen
-*)
+(*
+ * Copyright Thomas Sewell, NICTA and Sascha Boehme, TU Muenchen
+ *
+ * SPDX-License-Identifier: BSD-2-Clause
+ *)
 
 theory Bitwise
-  imports "HOL-Word.Word" "HOL-Word.Misc_Arithmetic" "HOL-Word.Misc_msb"
+  imports
+    "HOL-Library.Word"
+    More_Arithmetic
+    Reversed_Bit_Lists
 begin
 
 text \<open>Helper constants used in defining addition\<close>
@@ -293,38 +299,6 @@ lemma word_less_rbl: "x < y \<longleftrightarrow> rev_bl_order False (rev (to_bl
   for x y :: "'a::len word"
   by (simp add: word_less_alt rev_bl_order_bl_to_bin)
 
-lemma word_sint_msb_eq: "sint x = uint x - (if msb x then 2 ^ size x else 0)"
-  apply (cases "msb x")
-   apply (rule word_sint.Abs_eqD[where 'a='a], simp_all)
-    apply (simp add: word_size wi_hom_syms word_of_int_2p_len)
-   apply (simp add: sints_num word_size)
-   apply (rule conjI)
-    apply (simp add: le_diff_eq')
-    apply (rule order_trans[where y="2 ^ (LENGTH('a) - 1)"])
-     apply (simp add: power_Suc[symmetric])
-    apply (simp add: linorder_not_less[symmetric] mask_eq_iff[symmetric])
-    apply (rule notI, drule word_eqD[where x="size x - 1"])
-    apply (simp add: msb_nth word_ops_nth_size word_size)
-   apply (simp add: order_less_le_trans[where y=0])
-  apply (rule word_uint.Abs_eqD[where 'a='a], simp_all)
-  apply (simp add: linorder_not_less uints_num word_msb_sint)
-  apply (rule order_less_le_trans[OF sint_lt])
-  apply simp
-  done
-
-lemma word_sle_msb_le: "x <=s y \<longleftrightarrow> (msb y \<longrightarrow> msb x) \<and> ((msb x \<and> \<not> msb y) \<or> x \<le> y)"
-  apply (simp add: word_sle_eq word_sint_msb_eq word_size word_le_def)
-  apply safe
-   apply (rule order_trans[OF _ uint_ge_0])
-   apply (simp add: order_less_imp_le)
-  apply (erule notE[OF leD])
-  apply (rule order_less_le_trans[OF _ uint_ge_0])
-  apply simp
-  done
-
-lemma word_sless_msb_less: "x <s y \<longleftrightarrow> (msb y \<longrightarrow> msb x) \<and> ((msb x \<and> \<not> msb y) \<or> x < y)"
-  by (auto simp add: word_sless_eq word_sle_msb_le)
-
 definition "map_last f xs = (if xs = [] then [] else butlast xs @ [f (last xs)])"
 
 lemma map_last_simps:
@@ -392,6 +366,11 @@ lemma upt_eq_list_intros:
 
 subsection \<open>Tactic definition\<close>
 
+lemma if_bool_simps:
+  "If p True y = (p \<or> y) \<and> If p False y = (\<not> p \<and> y) \<and>
+    If p y True = (p \<longrightarrow> y) \<and> If p y False = (p \<and> y)"
+  by auto
+
 ML \<open>
 structure Word_Bitwise_Tac =
 struct
@@ -448,7 +427,7 @@ val word_len_simproc =
 
 fun nat_get_Suc_simproc_fn n_sucs ctxt ct =
   let
-    val (f $ arg) = Thm.term_of ct;
+    val (f, arg) = dest_comb (Thm.term_of ct);
     val n =
       (case arg of \<^term>\<open>nat\<close> $ n => n | n => n)
       |> HOLogic.dest_number |> snd;

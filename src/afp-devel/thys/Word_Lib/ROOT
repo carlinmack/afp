@@ -1,12 +1,11 @@
 chapter AFP
 
-session Word_Lib (AFP) = "HOL-Word" +
+session Word_Lib (AFP) = HOL +
   options [timeout = 300]
   sessions
     "HOL-Eisbach"
   theories
-    Word_Lemmas_32
-    Word_Lemmas_64
+    Guide
     Examples
   document_files
     "root.tex"

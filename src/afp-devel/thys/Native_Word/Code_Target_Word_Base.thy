@@ -5,27 +5,12 @@
 chapter \<open>Common base for target language implementations of word types\<close>
 
 theory Code_Target_Word_Base imports
-  "HOL-Word.Word"
-  "Word_Lib.Word_Lib"
+  "HOL-Library.Word"
+  "Word_Lib.Signed_Division_Word"
   Bits_Integer
 begin
 
-(* TODO: Move to Word ? *)
-lemma dflt_size_word_pow_ne_zero [simp]:
-  "(2 :: 'a word) ^ (LENGTH('a::len) - Suc 0) \<noteq> 0"
-  by (simp add: not_le)
-
 text \<open>More lemmas\<close>
-
-lemma nat_div_eq_Suc_0_iff: "n div m = Suc 0 \<longleftrightarrow> m \<le> n \<and> n < 2 * m"
-  apply auto
-  using div_greater_zero_iff apply fastforce
-   apply (metis One_nat_def div_greater_zero_iff dividend_less_div_times mult.right_neutral mult_Suc mult_numeral_1 numeral_2_eq_2 zero_less_numeral)
-  apply (simp add: div_nat_eqI)
-  done
-
-lemma Suc_0_lt_2p_len_of: "Suc 0 < 2 ^ LENGTH('a :: len)"
-  by (metis One_nat_def len_gt_0 lessI numeral_2_eq_2 one_less_power)
 
 lemma div_half_nat:
   fixes x y :: nat
@@ -59,26 +44,6 @@ proof -
   qed
 qed
 
-lemma unat_p2: "n < LENGTH('a :: len) \<Longrightarrow> unat (2 ^ n :: 'a word) = 2 ^ n"
-proof(induct n)
-  case 0 thus ?case by simp
-next
-  case (Suc n)
-  then obtain n' where "LENGTH('a) = Suc n'" by(cases "LENGTH('a)") simp_all
-  with Suc show ?case by (simp add: unat_word_ariths bintrunc_mod2p)
-qed
-
-lemma word_div_lt_eq_0:
-  "x < y \<Longrightarrow> x div y = 0" for x :: "'a :: len word"
-  by (simp add: word_eq_iff word_less_def word_test_bit_def uint_div)
-
-lemma word_div_eq_1_iff: "n div m = 1 \<longleftrightarrow> n \<ge> m \<and> unat n < 2 * unat (m :: 'a :: len word)"
-apply(simp only: word_arith_nat_defs word_le_nat_alt nat_div_eq_Suc_0_iff[symmetric])
-apply(rule word_unat.Abs_inject)
- apply(simp only: unat_div[symmetric] word_unat.Rep)
-apply(simp add: unats_def Suc_0_lt_2p_len_of)
-done
-
 lemma div_half_word:
   fixes x y :: "'a :: len word"
   assumes "y \<noteq> 0"
@@ -103,7 +68,7 @@ proof -
   have "2 * (n div 2 div m) * m < 2 ^ LENGTH('a)" using n unfolding div_mult2_eq[symmetric]
     by(subst (2) mult.commute)(simp add: minus_mod_eq_div_mult [symmetric] diff_mult_distrib minus_mod_eq_mult_div [symmetric] div_mult2_eq)
   moreover have "2 * (n div 2 div m) * m \<le> n"
-    by (metis div_mult2_eq dtle mult.assoc mult.left_commute)
+    by (simp flip: div_mult2_eq ac_simps)
   ultimately
   have r: "x - ?q * y = of_nat (n - ?q' * m)"
     and "y \<le> x - ?q * y \<Longrightarrow> of_nat (n - ?q' * m) - y = of_nat (n - ?q' * m - m)"
@@ -124,7 +89,7 @@ lemma word_test_bit_set_bits: "(BITS n. f n :: 'a :: len word) !! n \<longleftri
   by (simp add: test_bit_eq_bit bit_set_bits_word_iff)
 
 lemma word_of_int_conv_set_bits: "word_of_int i = (BITS n. i !! n)"
-  by (rule word_eqI) (auto simp add: word_test_bit_set_bits test_bit.eq_norm)
+  by (rule word_eqI) (auto simp add: word_test_bit_set_bits)
 
 lemma word_and_mask_or_conv_and_mask:
   "n !! index \<Longrightarrow> (n AND mask index) OR (1 << index) = n AND mask (index + 1)"
@@ -174,7 +139,7 @@ proof -
   have *: \<open>k mod l = k - k div l * l\<close> for k l :: int
     by (simp add: minus_div_mult_eq_mod)
   show ?thesis
-    by (simp add: smod_word_def signed_modulo_int_def signed_divide_int_def * sgn_if) (simp add: signed_eq_0_iff)
+    by (simp add: smod_word_def signed_modulo_int_def signed_divide_int_def * sgn_if Let_def)
 qed
 
 text \<open>
@@ -198,7 +163,7 @@ proof(cases "1 << (LENGTH('a) - 1) \<le> y")
   proof(cases "x < y")
     case True
     then have "x mod y = x"
-      by (cases x, cases y) (simp add: word_less_def word_mod_def)
+      by transfer simp
     thus ?thesis using True y by(simp add: word_div_lt_eq_0)
   next
     case False
@@ -222,9 +187,8 @@ next
   obtain n where n: "x = of_nat n" "n < 2 ^ LENGTH('a)"
     by (rule that [of \<open>unat x\<close>]) simp_all
   hence "int n div 2 + 2 ^ (LENGTH('a) - Suc 0) < 2 ^ LENGTH('a)"
-    by (cases "LENGTH('a)")
-      (simp_all, simp only: of_nat_numeral [where ?'a = int, symmetric]
-      zdiv_int [symmetric] of_nat_power [symmetric])
+    by (cases \<open>LENGTH('a)\<close>)
+      (auto dest: less_imp_of_nat_less [where ?'a = int])
   with y n have "sint (x >> 1) = uint (x >> 1)"
     by (simp add: sint_uint sbintrunc_mod2p shiftr_div_2n take_bit_nat_eq_self)
   moreover have "uint y + 2 ^ (LENGTH('a) - Suc 0) < 2 ^ LENGTH('a)"
@@ -318,7 +282,7 @@ proof -
       by(cases "LENGTH('a)")(auto simp add: not_le elim: less_le_trans)
     moreover
     have "word_of_int (i' - shift) = (word_of_int i :: 'a word)" using \<open>i' < shift\<close>
-      by (simp add: i'_def shift_def mask_def shiftl_eq_push_bit push_bit_of_1 flip: take_bit_eq_mask)
+      by (simp add: i'_def shift_def mask_def shiftl_eq_push_bit push_bit_of_1 word_of_int_eq_iff flip: take_bit_eq_mask)
     ultimately show ?thesis using True by(simp add: Let_def i'_def)
   next
     case False
@@ -342,7 +306,9 @@ qed
 
 text \<open>Quickcheck conversion functions\<close>
 
-notation scomp (infixl "\<circ>\<rightarrow>" 60)
+context
+  includes state_combinator_syntax
+begin
 
 definition qc_random_cnv ::
   "(natural \<Rightarrow> 'a::term_of) \<Rightarrow> natural \<Rightarrow> Random.seed
@@ -351,7 +317,7 @@ definition qc_random_cnv ::
        let n = a_of_natural k
        in (n, \<lambda>_. Code_Evaluation.term_of n)))"
 
-no_notation scomp (infixl "\<circ>\<rightarrow>" 60)
+end
 
 definition qc_exhaustive_cnv :: "(natural \<Rightarrow> 'a) \<Rightarrow> ('a \<Rightarrow> (bool \<times> term list) option)
   \<Rightarrow> natural \<Rightarrow> (bool \<times> term list) option"
@@ -423,7 +389,5 @@ setup \<open>Code_Target.add_derived_target ("SML_word", [(Code_ML.target_SML, I
 
 code_identifier code_module Code_Target_Word_Base \<rightharpoonup>
   (SML) Word and (Haskell) Word and (OCaml) Word and (Scala) Word
-
-export_code signed_take_bit \<open>mask :: nat \<Rightarrow> int\<close> in SML module_name Code
 
 end

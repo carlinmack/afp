@@ -46,6 +46,7 @@ Binding_Syntax_Theory
 Binomial-Heaps
 Binomial-Queues
 BirdKMP
+Blue_Eyes
 Bondy
 Boolean_Expression_Checkers
 Bounded_Deducibility_Security
@@ -224,6 +225,7 @@ Hermite
 Hidden_Markov_Models
 Higher_Order_Terms
 Hoare_Time
+Hood_Melville_Queue
 HotelKeyCards
 Huffman
 Hybrid_Logic
@@ -254,8 +256,10 @@ Irrationality_J_Hancl
 Isabelle_C
 Isabelle_Marries_Dirac
 Isabelle_Meta_Model
+IsaGeoCoq
 Jacobson_Basic_Algebra
 Jinja
+JinjaDCI
 JinjaThreads
 JiveDataStoreModel
 Jordan_Hoelder

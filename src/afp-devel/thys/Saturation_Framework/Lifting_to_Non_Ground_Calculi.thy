@@ -21,7 +21,6 @@ subsection \<open>Standard Lifting\<close>
 locale standard_lifting = inference_system Inf_F +
   ground: calculus Bot_G Inf_G entails_G Red_I_G Red_F_G
   for
-    Bot_F :: \<open>'f set\<close> and
     Inf_F :: \<open>'f inference set\<close> and
     Bot_G :: \<open>'g set\<close> and
     Inf_G ::  \<open>'g inference set\<close> and
@@ -29,6 +28,7 @@ locale standard_lifting = inference_system Inf_F +
     Red_I_G :: \<open>'g set \<Rightarrow> 'g inference set\<close> and
     Red_F_G :: \<open>'g set \<Rightarrow> 'g set\<close>
   + fixes
+    Bot_F :: \<open>'f set\<close> and
     \<G>_F :: \<open>'f \<Rightarrow> 'g set\<close> and
     \<G>_I :: \<open>'f inference \<Rightarrow> 'g inference set option\<close>
   assumes
@@ -104,7 +104,6 @@ subsection \<open>Strong Standard Lifting\<close>
 locale strong_standard_lifting = inference_system Inf_F +
   ground: calculus Bot_G Inf_G entails_G Red_I_G Red_F_G
   for
-    Bot_F :: \<open>'f set\<close> and
     Inf_F :: \<open>'f inference set\<close> and
     Bot_G :: \<open>'g set\<close> and
     Inf_G ::  \<open>'g inference set\<close> and
@@ -112,6 +111,7 @@ locale strong_standard_lifting = inference_system Inf_F +
     Red_I_G :: \<open>'g set \<Rightarrow> 'g inference set\<close> and
     Red_F_G :: \<open>'g set \<Rightarrow> 'g set\<close>
   + fixes
+    Bot_F :: \<open>'f set\<close> and
     \<G>_F :: \<open>'f \<Rightarrow> 'g set\<close> and
     \<G>_I :: \<open>'f inference \<Rightarrow> 'g inference set option\<close>
   assumes
@@ -123,7 +123,7 @@ locale strong_standard_lifting = inference_system Inf_F +
     inf_map_in_Inf: \<open>\<iota> \<in> Inf_F \<Longrightarrow> \<G>_I \<iota> \<noteq> None \<Longrightarrow> the (\<G>_I \<iota>) \<subseteq> Inf_G\<close>
 begin
 
-sublocale standard_lifting Bot_F Inf_F Bot_G Inf_G "(\<Turnstile>G)" Red_I_G Red_F_G \<G>_F \<G>_I
+sublocale standard_lifting Inf_F Bot_G Inf_G "(\<Turnstile>G)" Red_I_G Red_F_G Bot_F \<G>_F \<G>_I
 proof
   show "Bot_F \<noteq> {}" using Bot_F_not_empty .
 next
@@ -157,7 +157,7 @@ end
 subsection \<open>Lifting with a Family of Tiebreaker Orderings\<close>
 
 locale tiebreaker_lifting =
-  empty_ord?: standard_lifting Bot_F Inf_F Bot_G Inf_G entails_G Red_I_G Red_F_G \<G>_F \<G>_I
+  empty_ord?: standard_lifting Inf_F Bot_G Inf_G entails_G Red_I_G Red_F_G Bot_F \<G>_F \<G>_I
   for
     Bot_F :: \<open>'f set\<close> and
     Inf_F :: \<open>'f inference set\<close> and
@@ -419,8 +419,8 @@ end
 lemma wf_empty_rel: "minimal_element (\<lambda>_ _. False) UNIV"
   by (simp add: minimal_element.intro po_on_def transp_onI wfp_on_imp_irreflp_on)
 
-lemma standard_empty_tiebreaker_equiv: "standard_lifting Bot_F Inf_F Bot_G Inf_G entails_G Red_I_G
-  Red_F_G \<G>_F \<G>_I = tiebreaker_lifting Bot_F Inf_F Bot_G entails_G Inf_G Red_I_G
+lemma standard_empty_tiebreaker_equiv: "standard_lifting Inf_F Bot_G Inf_G entails_G Red_I_G
+  Red_F_G Bot_F \<G>_F \<G>_I = tiebreaker_lifting Bot_F Inf_F Bot_G entails_G Inf_G Red_I_G
   Red_F_G \<G>_F \<G>_I (\<lambda>g C C'. False)"
 proof -
   have "tiebreaker_lifting_axioms (\<lambda>g C C'. False)"
@@ -445,8 +445,8 @@ begin
   lemma grounded_inf_in_ground_inf: "\<iota> \<in> Inf_F \<Longrightarrow> \<G>_I \<iota> \<noteq> None \<Longrightarrow> the (\<G>_I \<iota>) \<subseteq> Inf_G"
     using inf_map ground.Red_I_to_Inf by blast
 
-  abbreviation ground_Inf_redundant :: "'f set \<Rightarrow> bool" where
-    "ground_Inf_redundant N \<equiv> ground.Inf_from (\<G>_Fset N)
+  abbreviation ground_Inf_overapproximated :: "'f set \<Rightarrow> bool" where
+    "ground_Inf_overapproximated N \<equiv> ground.Inf_from (\<G>_Fset N)
       \<subseteq> {\<iota>. \<exists>\<iota>'\<in> Inf_from N. \<G>_I \<iota>' \<noteq> None \<and> \<iota> \<in> the (\<G>_I \<iota>')} \<union> Red_I_G (\<G>_Fset N)"
 
 (* abbreviation "saturated \<equiv> calc.saturated" *)
@@ -460,14 +460,15 @@ begin
       using assms Red_I_\<G>_def unfolding saturated_def by auto
 
 (* lem:sat-wrt-finf *)
-  lemma sat_imp_ground_sat: "saturated N \<Longrightarrow> ground_Inf_redundant N \<Longrightarrow> ground.saturated (\<G>_Fset N)"
+  lemma sat_imp_ground_sat:
+    "saturated N \<Longrightarrow> ground_Inf_overapproximated N \<Longrightarrow> ground.saturated (\<G>_Fset N)"
     unfolding ground.saturated_def using sat_inf_imp_ground_red by auto
 
 (* thm:finf-complete *)
   theorem stat_ref_comp_to_non_ground:
     assumes
       stat_ref_G: "statically_complete_calculus Bot_G Inf_G entails_G Red_I_G Red_F_G" and
-      sat_n_imp: "\<And>N. saturated N \<Longrightarrow> ground_Inf_redundant N"
+      sat_n_imp: "\<And>N. saturated N \<Longrightarrow> ground_Inf_overapproximated N"
     shows
       "statically_complete_calculus Bot_F Inf_F entails_\<G> Red_I_\<G> Red_F_\<G>"
   proof
@@ -654,8 +655,8 @@ proof -
     using grounding by blast
 qed
 
-abbreviation ground_Inf_redundant :: "'q \<Rightarrow> 'f set \<Rightarrow> bool" where
-  "ground_Inf_redundant q N \<equiv>
+abbreviation ground_Inf_overapproximated :: "'q \<Rightarrow> 'f set \<Rightarrow> bool" where
+  "ground_Inf_overapproximated q N \<equiv>
    ground.Inf_from_q q (\<G>_Fset_q q N)
    \<subseteq> {\<iota>. \<exists>\<iota>'\<in> Inf_from N. \<G>_I_q q \<iota>' \<noteq> None \<and> \<iota> \<in> the (\<G>_I_q q \<iota>')} \<union> Red_I_q q (\<G>_Fset_q q N)"
 
@@ -663,7 +664,7 @@ abbreviation ground_saturated :: "'q \<Rightarrow> 'f set \<Rightarrow> bool" wh
   "ground_saturated q N \<equiv> ground.Inf_from_q q (\<G>_Fset_q q N) \<subseteq> Red_I_q q (\<G>_Fset_q q N)"
 
 lemma sat_imp_ground_sat_fam_inter:
-  "saturated N \<Longrightarrow> q \<in> Q \<Longrightarrow> ground_Inf_redundant q N \<Longrightarrow> ground_saturated q N"
+  "saturated N \<Longrightarrow> q \<in> Q \<Longrightarrow> ground_Inf_overapproximated q N \<Longrightarrow> ground_saturated q N"
   using sat_inf_imp_ground_red_fam_inter by auto
 
 (* thm:intersect-finf-complete *)
@@ -672,7 +673,7 @@ theorem stat_ref_comp_to_non_ground_fam_inter:
     stat_ref_G:
       "\<forall>q \<in> Q. statically_complete_calculus Bot_G (Inf_G_q q) (entails_q q) (Red_I_q q)
         (Red_F_q q)" and
-    sat_n_imp: "\<And>N. saturated N \<Longrightarrow> \<exists>q \<in> Q. ground_Inf_redundant q N"
+    sat_n_imp: "\<And>N. saturated N \<Longrightarrow> \<exists>q \<in> Q. ground_Inf_overapproximated q N"
   shows
     "statically_complete_calculus Bot_F Inf_F entails_\<G> Red_I_\<G> Red_F_\<G>_empty"
     using empty_ord.calculus_axioms unfolding statically_complete_calculus_def
@@ -739,4 +740,3 @@ theorem stat_eq_dyn_ref_comp_fam_inter: "statically_complete_calculus Bot_F Inf_
 end
 
 end
-

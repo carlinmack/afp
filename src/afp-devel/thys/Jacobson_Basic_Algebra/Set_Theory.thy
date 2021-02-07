@@ -41,7 +41,7 @@ lemma map_closed [intro, simp]:
 using graph by fast
   
 text \<open>p 5, ll 21--25\<close>
-lemma map_undefined [intro, simp]:
+lemma map_undefined [intro]:
   "a \<notin> S \<Longrightarrow> \<alpha> a = undefined"
 using graph by fast
 
@@ -190,7 +190,7 @@ proof
   fix a and b and c
   assume "(a, b) \<in> E" and "c \<in> Class a"
   then have "(c, a) \<in> E" by auto
-  also note `(a, b) \<in> E`
+  also note \<open>(a, b) \<in> E\<close>
   finally have "(c, b) \<in> E" by simp
   then show "c \<in> Class b" by auto
 qed
@@ -207,8 +207,8 @@ proof
   fix a and b
   assume "a \<in> S" "b \<in> S" "Class a = Class b"
   then have "a \<in> Class a" by auto
-  also note `Class a = Class b`
-  finally show "(a, b) \<in> E" by (fast intro: `b \<in> S`)
+  also note \<open>Class a = Class b\<close>
+  finally show "(a, b) \<in> E" by (fast intro: \<open>b \<in> S\<close>)
 qed (rule Class_eq)
 
 text \<open>p 12, ll 5--7\<close>
@@ -224,7 +224,7 @@ proof -
 qed
 
 text \<open>p 12, ll 7--8\<close>
-definition "Partition = {Class a | a. a \<in> S}"
+definition "Partition = Class ` S"
 
 text \<open>p 12, ll 7--8\<close>
 lemma Class_in_Partition [intro, simp]:
@@ -328,7 +328,7 @@ text \<open>p 12, ll 12--14\<close>
 theorem Class_is_Block:
   assumes "a \<in> S" shows "Class a = Block a"
 proof -
-  from `a \<in> S` and block_exists obtain A where block: "a \<in> A \<and> A \<in> P" by blast
+  from \<open>a \<in> S\<close> and block_exists obtain A where block: "a \<in> A \<and> A \<in> P" by blast
   show ?thesis
     apply (simp add: Block_def Class_def)
     apply (rule theI2)
@@ -349,7 +349,7 @@ qed
 text \<open>p 12, l 14\<close>
 theorem partition_of_equivalence:
   "Partition = P"
-  by (auto simp add: Partition_def Class_equals_Block) (metis Block_self element_exists)
+  by (auto simp add: Partition_def Class_equals_Block image_iff) (metis Block_self element_exists)
 
 end (* partition *)
 
@@ -459,10 +459,11 @@ qed (simp add: induced_def)
 
 text \<open>p 13, ll 12--13\<close>
 sublocale induced: injective_map induced "S / E(\<alpha>)" T
-  apply unfold_locales
-  apply (rule inj_onI)
-  apply (metis Fiber_equality Block_self element_exists induced_Fiber_simp)
-  done
+proof
+  show "inj_on induced Partition"
+    unfolding inj_on_def
+    by (metis Fiber_equality Block_self element_exists induced_Fiber_simp)
+qed
 
 text \<open>p 13, ll 16--19\<close>
 theorem factorization_lemma:
@@ -471,7 +472,7 @@ theorem factorization_lemma:
 
 text \<open>p 13, ll 16--19\<close>
 theorem factorization [simp]: "compose S induced Class = \<alpha>"
-  by (rule ext) (simp add: compose_def)
+  by (rule ext) (simp add: compose_def map_undefined)
 
 text \<open>p 14, ll 2--4\<close>
 theorem uniqueness:

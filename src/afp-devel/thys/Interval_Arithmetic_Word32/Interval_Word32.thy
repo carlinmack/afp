@@ -2,11 +2,7 @@
 theory Interval_Word32
 imports
   Complex_Main
-  "HOL-Word.More_Word"
-  Word_Lib.Word_Lemmas
-  Word_Lib.Word_Lib
-  Word_Lib.Word_Syntax
-  Word_Lib.Bitwise
+  Word_Lib.Word_Lib_Sumo
 begin
 
 abbreviation signed_real_of_word :: \<open>'a::len word \<Rightarrow> real\<close>
@@ -1061,7 +1057,7 @@ next
         \<and> r' = real_of_int (sint w)
         \<and> (real_of_int (sint w)) <  (real_of_int (sint POS_INF)) 
         \<and> less (real_of_int (sint (uminus (minus(2 ^ 31) 1))))  (real_of_int (sint w))))"
-       using  leq anImp geq by auto
+       using leq anImp geq by meson
    qed
    have int_case:"\<not>(((scast POS_INF)::64 Word.word) <=s ?sum) 
               \<Longrightarrow> \<not> (?sum <=s ((scast NEG_INF)::64 Word.word)) 
@@ -1752,7 +1748,8 @@ next
            r' =  (real_of_int (sint w)) \<and>
             (real_of_int (sint w)) <  (real_of_int (sint POS_INF)) 
         \<and> less ( (real_of_int (sint (uminus (minus(2 ^ 31) 1))))) ((real_of_int (sint w)))))"
-    using  leq geq by auto
+    using leq geq
+    by (meson dual_order.strict_trans linorder_not_le order_less_irrefl) 
   qed
   have bigThree:"0x7FFFFFFF <=s ((scast w1)::64 Word.word) + ((scast w2)::64 Word.word) 
     \<Longrightarrow> \<exists>r'\<le>r1 + r2. 2147483647 \<le> r'"
@@ -2455,7 +2452,7 @@ next
     from a3 have h5:"-z \<ge> 1" by (simp add: leD leI)
     have h4:"-x * -z \<ge> -y"
       using  a1 a2 a3 a4 h1 h2 h5 dual_order.trans mult.right_neutral
-      by (metis mult.commute neg_0_less_iff_less real_mult_le_cancel_iff1)
+      by (metis mult.commute neg_0_less_iff_less mult_le_cancel_iff1)
     have h3:"-x * -z = x * z" by auto
     show "- y \<le> x * z "
       using a1 a2 a3 a4 h1 h2 h3 h4 h5 
@@ -3732,8 +3729,8 @@ lemma msb_succ:
       using neq2 by auto
     then have neqneg2:"w \<noteq> (2^31)-1" by auto
     show ?thesis using neq1 neq2  unfolding msb_big
-    using Word_Lemmas.word_le_make_less[of "w + 1" "0x80000000"] 
-          Word_Lemmas.word_le_make_less[of "w " "0x80000000"]
+    using word_le_make_less[of "w + 1" "0x80000000"] 
+          word_le_make_less[of "w " "0x80000000"]
           neqneg1 neqneg2
       by auto
   qed
@@ -3826,7 +3823,7 @@ lemma msb_pos:
           proof -
             assume geq:"w \<ge> 0x80000000"
             then have "msb w"
-              using Word_Lemmas.msb_big[of w] by auto
+              using msb_big [of w] by auto
             then show False using msb2 by auto
           qed
         have mylem:"\<And>w1 w2::word. uint w1 \<ge> uint w2 \<Longrightarrow> w1 \<ge> w2" 
@@ -3884,7 +3881,7 @@ lemma msb_neg:
       proof -
         assume geq:"w \<le> 0x80000000"
         then have "(msb (-w))"
-          using Word_Lemmas.msb_big[of "-w"] Word_Lemmas.msb_big[of "w"] 
+          using msb_big [of "- w"] msb_big [of "w"] 
           by (simp add: msb2) 
         then show False using msb1 by auto
       qed

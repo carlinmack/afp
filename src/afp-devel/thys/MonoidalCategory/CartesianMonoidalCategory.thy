@@ -6,7 +6,7 @@
 chapter "Cartesian Monoidal Category"
 
 theory CartesianMonoidalCategory
-imports MonoidalCategory.MonoidalCategory Category3.CartesianCategory
+imports MonoidalCategory Category3.CartesianCategory
 begin
 
   locale symmetric_monoidal_category =
@@ -383,7 +383,7 @@ begin
       using \<rho>.map_simp_ide inverse_arrows_runit ide_some_terminal
       by unfold_locales auto
     interpretation R: equivalence_functor C C \<open>\<lambda>f. Prod (f, cod \<iota>)\<close>
-      using \<rho>.natural_isomorphism_axioms naturally_isomorphic_def     
+      using \<rho>.natural_isomorphism_axioms naturally_isomorphic_def
             R.isomorphic_to_identity_is_equivalence
       by blast
 

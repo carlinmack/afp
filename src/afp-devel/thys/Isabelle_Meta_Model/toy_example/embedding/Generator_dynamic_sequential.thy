@@ -524,6 +524,7 @@ fun all_meta aux ret = let open META open META_overload in fn
        |> (   Expression.add_locale_cmd
                 (To_sbinding (META.holThyLocale_name data))
                 Binding.empty
+                []
                 ([], [])
                 (List.concat
                   (map
@@ -538,12 +539,11 @@ fun all_meta aux ret = let open META open META_overload in fn
            #> snd)
        |> fold (fold (semi__theory Local_Theory.background_theory
                                    (fn f =>
-                                     \<comment> \<open>Note: This function is not equivalent to \<^ML>\<open>Local_Theory.subtarget\<close>.\<close>
                                      Local_Theory.new_group
                                      #> f
                                      #> Local_Theory.reset_group
                                      #> (fn lthy =>
-                                          #1 (Named_Target.switch NONE (Context.Proof lthy)) lthy
+                                          #1 (Target_Context.switch_named_cmd NONE (Context.Proof lthy)) lthy
                                           |> Context.the_proof)))) l
        |> Local_Theory.exit_global)
 | META_boot_generation_syntax _ => ret o I
@@ -1050,7 +1050,7 @@ fun f_command l_mode =
               let val tmp_export_code = Deep.mk_path_export_code tmp_export_code ml_compiler i
                   fun mk_fic s = Path.append tmp_export_code (Path.make [s])
                   val () = Deep0.Find.check_compil ml_compiler ()
-                  val () = Isabelle_System.mkdirs tmp_export_code in
+                  val _ = Isabelle_System.make_directory tmp_export_code in
               ((( (ml_compiler, ml_module)
                 , Path.implode (if Deep0.Find.export_mode ml_compiler = Deep0.Export_code_env.Directory then
                                   tmp_export_code

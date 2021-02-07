@@ -30,8 +30,8 @@ begin
 fun merge :: "('a::linorder) heap \<Rightarrow> 'a heap \<Rightarrow> 'a heap" where
 "merge h Empty = h" |
 "merge Empty h = h" |
-"merge (Hp x lx =: hx) (Hp y ly =: hy) = 
-    (if x < y then Hp x (hy # lx) else Hp y (hx # ly))"
+"merge (Hp x hsx =: hx) (Hp y hsy =: hy) = 
+    (if x < y then Hp x (hy # hsx) else Hp y (hx # hsy))"
 
 end
 
@@ -39,9 +39,8 @@ fun insert :: "('a::linorder) \<Rightarrow> 'a heap \<Rightarrow> 'a heap" where
 "insert x h = merge (Hp x []) h"
 
 fun pass\<^sub>1 :: "('a::linorder) heap list \<Rightarrow> 'a heap list" where
-  "pass\<^sub>1 [] = []"
-| "pass\<^sub>1 [h] = [h]" 
-| "pass\<^sub>1 (h1#h2#hs) = merge h1 h2 # pass\<^sub>1 hs"
+"pass\<^sub>1 (h1#h2#hs) = merge h1 h2 # pass\<^sub>1 hs" |
+"pass\<^sub>1 hs = hs"
 
 fun pass\<^sub>2 :: "('a::linorder) heap list \<Rightarrow> 'a heap" where
   "pass\<^sub>2 [] = Empty"
@@ -71,7 +70,7 @@ subsubsection \<open>Invariants\<close>
 
 fun mset_heap :: "'a heap \<Rightarrow>'a multiset" where
 "mset_heap Empty = {#}" |
-"mset_heap (Hp x hs) = {#x#} + Union_mset(mset(map mset_heap hs))"
+"mset_heap (Hp x hs) = {#x#} + sum_mset(mset(map mset_heap hs))"
 
 fun pheap :: "('a :: linorder) heap \<Rightarrow> bool" where
 "pheap Empty = True" |
@@ -80,17 +79,20 @@ fun pheap :: "('a :: linorder) heap \<Rightarrow> bool" where
 lemma pheap_merge: "pheap h1 \<Longrightarrow> pheap h2 \<Longrightarrow> pheap (merge h1 h2)"
 by (induction h1 h2 rule: merge.induct) fastforce+
 
+lemma pheap_merge_pairs: "\<forall>h \<in> set hs. pheap h \<Longrightarrow> pheap (merge_pairs hs)"
+by (induction hs rule: merge_pairs.induct)(auto simp: pheap_merge)
+
 lemma pheap_insert: "pheap h \<Longrightarrow> pheap (insert x h)"
 by (auto simp: pheap_merge)
-
+(*
 lemma pheap_pass1: "\<forall>h \<in> set hs. pheap h \<Longrightarrow> \<forall>h \<in> set (pass\<^sub>1 hs). pheap h"
 by(induction hs rule: pass\<^sub>1.induct) (auto simp: pheap_merge)
 
 lemma pheap_pass2: "\<forall>h \<in> set hs. pheap h \<Longrightarrow> pheap (pass\<^sub>2 hs)"
 by (induction hs)(auto simp: pheap_merge)
-
+*)
 lemma pheap_del_min: "pheap h \<Longrightarrow> pheap (del_min h)"
-by(induction h rule: del_min.induct) (auto intro!: pheap_pass1 pheap_pass2)
+by(cases h) (auto simp: pass12_merge_pairs pheap_merge_pairs)
 
 
 subsubsection \<open>Functional Correctness\<close>
@@ -113,12 +115,12 @@ by(induction h1 h2 rule: merge.induct)(auto simp: add_ac)
 lemma mset_insert: "mset_heap (insert a h) = {#a#} + mset_heap h"
 by(cases h) (auto simp add: mset_merge insert_def add_ac)
 
-lemma mset_merge_pairs: "mset_heap (merge_pairs hs) = Union_mset(image_mset mset_heap(mset hs))"
+lemma mset_merge_pairs: "mset_heap (merge_pairs hs) = sum_mset(image_mset mset_heap(mset hs))"
 by(induction hs rule: merge_pairs.induct)(auto simp: mset_merge)
 
 lemma mset_del_min: "h \<noteq> Empty \<Longrightarrow>
   mset_heap (del_min h) = mset_heap h - {#get_min h#}"
-by(induction h rule: del_min.induct) (auto simp: pass12_merge_pairs mset_merge_pairs)
+by(cases h) (auto simp: pass12_merge_pairs mset_merge_pairs)
 
 
 text \<open>Last step: prove all axioms of the priority queue specification:\<close>

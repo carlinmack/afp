@@ -491,7 +491,7 @@ struct
 val theory = Context.map_theory
 fun local_theory' target f gthy =
   let
-    val (finish, lthy) = Named_Target.switch target gthy;
+    val (finish, lthy) = Target_Context.switch_named_cmd target gthy;
     val lthy' = lthy
       |> Local_Theory.new_group
       |> f false
@@ -923,7 +923,7 @@ val semi = Scan.option \<^keyword>\<open>;\<close>;
 
 val _ =
   Outer_Syntax.command \<^command_keyword>\<open>C_file\<close> "read and evaluate Isabelle/C file"
-    (Resources.parse_files "C_file" --| semi >> (Toplevel.generic_theory o C_Outer_File.C));
+    (Resources.parse_files single --| semi >> (Toplevel.generic_theory o C_Outer_File.C));
 
 val _ =
   Outer_Syntax.command \<^command_keyword>\<open>C_export_boot\<close>
