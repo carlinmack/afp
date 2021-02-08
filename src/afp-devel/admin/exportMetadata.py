@@ -29,8 +29,9 @@ if __name__ == "__main__":
     updateProgressBar("Add related entries", t)
     addRelatedEntries()
 
-    updateProgressBar("Export statistics", t)
-    # for this to work add `return data` at line 212 in templates.py
-    addStatistics()
+    if False:
+        updateProgressBar("Export statistics", t)
+        # for this to work add `return data` at line 212 in templates.py
+        addStatistics()
 
     t.close()
