@@ -31,10 +31,10 @@
         "Winding_Number_Eval"
     ],
     "theories": [
+        "Zeta_Library",
         "Hadjicostas_Chapman",
         "Zeta_Function",
-        "Zeta_Laurent_Expansion",
-        "Zeta_Library"
+        "Zeta_Laurent_Expansion"
     ],
     "relatedEntries": [
         "Dirichlet_Series",

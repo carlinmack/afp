@@ -22,9 +22,9 @@
     "theories": [
         "Clausal_Calculus",
         "FO_Ordered_Resolution_Prover_Revisited",
-        "Given_Clause_Architectures_Revisited",
         "Soundness",
-        "Standard_Redundancy_Criterion"
+        "Standard_Redundancy_Criterion",
+        "Given_Clause_Architectures_Revisited"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover",

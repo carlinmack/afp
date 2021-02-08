@@ -37,10 +37,10 @@
         "Collections"
     ],
     "theories": [
-        "Derive",
         "Derive_Examples",
-        "Derive_Manager",
-        "Generator_Aux"
+        "Derive",
+        "Generator_Aux",
+        "Derive_Manager"
     ],
     "relatedEntries": [
         "Datatype_Order_Generator"

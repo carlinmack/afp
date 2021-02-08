@@ -30,11 +30,11 @@
     ],
     "theories": [
         "AndersonProof",
-        "FittingProof",
-        "GoedelProof_P1",
-        "GoedelProof_P2",
         "IHOML",
+        "GoedelProof_P1",
+        "Relations",
+        "FittingProof",
         "IHOML_Examples",
-        "Relations"
+        "GoedelProof_P2"
     ]
 }

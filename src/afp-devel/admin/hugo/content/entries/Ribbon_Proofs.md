@@ -48,13 +48,13 @@
         }
     ],
     "theories": [
+        "Ribbons_Stratified",
         "JHelper",
-        "More_Finite_Map",
-        "Proofchain",
+        "Ribbons_Graphical_Soundness",
         "Ribbons_Basic",
         "Ribbons_Graphical",
-        "Ribbons_Graphical_Soundness",
         "Ribbons_Interfaces",
-        "Ribbons_Stratified"
+        "More_Finite_Map",
+        "Proofchain"
     ]
 }

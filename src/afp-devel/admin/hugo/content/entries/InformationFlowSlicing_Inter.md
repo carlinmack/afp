@@ -33,8 +33,8 @@
         "HRB-Slicing"
     ],
     "theories": [
-        "LiftingInter",
-        "NonInterferenceInter"
+        "NonInterferenceInter",
+        "LiftingInter"
     ],
     "relatedEntries": [
         "InformationFlowSlicing",

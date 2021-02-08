@@ -17,8 +17,8 @@
         "Stirling_Formula"
     ],
     "theories": [
-        "Lambert_W",
-        "Lambert_W_MacLaurin_Series"
+        "Lambert_W_MacLaurin_Series",
+        "Lambert_W"
     ],
     "relatedEntries": [
         "Euler_MacLaurin",

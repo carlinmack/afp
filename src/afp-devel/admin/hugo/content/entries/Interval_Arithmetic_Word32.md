@@ -22,8 +22,8 @@
         "Word_Lib"
     ],
     "theories": [
-        "Finite_String",
+        "Interval_Word32",
         "Interpreter",
-        "Interval_Word32"
+        "Finite_String"
     ]
 }

@@ -50,8 +50,8 @@
         "CAVA_Setup"
     ],
     "theories": [
-        "All_Of_CAVA_LTL_Modelchecker",
         "CAVA_Abstract",
+        "All_Of_CAVA_LTL_Modelchecker",
         "CAVA_Impl"
     ]
 }

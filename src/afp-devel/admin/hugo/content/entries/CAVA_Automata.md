@@ -42,15 +42,15 @@
         "CAVA_Base"
     ],
     "theories": [
-        "All_Of_CAVA_Automata",
-        "Automata",
         "Automata_Impl",
-        "Digraph",
-        "Digraph_Basic",
         "Digraph_Impl",
-        "Lasso",
+        "All_Of_CAVA_Automata",
+        "Stuttering_Extension",
         "Simulation",
+        "Automata",
+        "Lasso",
+        "Digraph_Basic",
         "Step_Conv",
-        "Stuttering_Extension"
+        "Digraph"
     ]
 }

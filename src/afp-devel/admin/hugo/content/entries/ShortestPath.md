@@ -48,8 +48,8 @@
         "Graph_Theory"
     ],
     "theories": [
-        "ShortestPath",
-        "ShortestPathNeg"
+        "ShortestPathNeg",
+        "ShortestPath"
     ],
     "relatedEntries": [
         "Parity_Game"

@@ -33,8 +33,8 @@
         "Landau_Symbols"
     ],
     "theories": [
-        "Quick_Sort_Average_Case",
-        "Randomised_Quick_Sort"
+        "Randomised_Quick_Sort",
+        "Quick_Sort_Average_Case"
     ],
     "relatedEntries": [
         "Comparison_Sort_Lower_Bound",

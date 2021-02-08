@@ -75,7 +75,7 @@
         }
     ],
     "theories": [
-        "ICAInstance",
-        "LynchInstance"
+        "LynchInstance",
+        "ICAInstance"
     ]
 }

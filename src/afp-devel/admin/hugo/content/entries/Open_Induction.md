@@ -49,7 +49,7 @@
         }
     ],
     "theories": [
-        "Open_Induction",
-        "Restricted_Predicates"
+        "Restricted_Predicates",
+        "Open_Induction"
     ]
 }

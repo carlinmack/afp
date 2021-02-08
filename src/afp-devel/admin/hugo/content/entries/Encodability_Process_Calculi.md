@@ -34,15 +34,15 @@
         }
     ],
     "theories": [
-        "CombinedCriteria",
-        "DivergenceReflection",
-        "Encodings",
-        "FullAbstraction",
         "OperationalCorrespondence",
-        "ProcessCalculi",
+        "SuccessSensitiveness",
+        "DivergenceReflection",
+        "SourceTargetRelation",
+        "CombinedCriteria",
+        "Encodings",
         "Relations",
         "SimulationRelations",
-        "SourceTargetRelation",
-        "SuccessSensitiveness"
+        "FullAbstraction",
+        "ProcessCalculi"
     ]
 }

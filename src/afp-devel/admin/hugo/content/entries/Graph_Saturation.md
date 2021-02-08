@@ -22,14 +22,14 @@
         }
     ],
     "theories": [
-        "CombinedCorrectness",
-        "GraphRewriting",
-        "LabeledGraphs",
         "LabeledGraphSemantics",
-        "MissingRelation",
-        "RulesAndChains",
         "RuleSemanticsConnection",
         "StandardModels",
-        "StandardRules"
+        "LabeledGraphs",
+        "StandardRules",
+        "GraphRewriting",
+        "CombinedCorrectness",
+        "RulesAndChains",
+        "MissingRelation"
     ]
 }

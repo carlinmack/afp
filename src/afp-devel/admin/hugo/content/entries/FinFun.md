@@ -69,7 +69,7 @@
         }
     ],
     "theories": [
-        "FinFun",
-        "FinFunPred"
+        "FinFunPred",
+        "FinFun"
     ]
 }

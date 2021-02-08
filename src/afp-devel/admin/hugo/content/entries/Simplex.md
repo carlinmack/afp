@@ -26,13 +26,13 @@
         }
     ],
     "theories": [
-        "Abstract_Linear_Poly",
-        "Linear_Poly_Maps",
-        "QDelta",
         "Rel_Chain",
-        "Simplex",
+        "Abstract_Linear_Poly",
         "Simplex_Algebra",
+        "Linear_Poly_Maps",
+        "Simplex",
         "Simplex_Auxiliary",
+        "QDelta",
         "Simplex_Incremental"
     ]
 }

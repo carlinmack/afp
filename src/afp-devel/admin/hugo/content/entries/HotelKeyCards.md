@@ -70,10 +70,10 @@
     ],
     "theories": [
         "Basis",
-        "Equivalence",
-        "NewCard",
+        "Trace",
         "Notation",
         "State",
-        "Trace"
+        "NewCard",
+        "Equivalence"
     ]
 }

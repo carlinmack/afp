@@ -24,13 +24,13 @@
         "Dirichlet_L"
     ],
     "theories": [
-        "Complex_Roots_Of_Unity",
         "Finite_Fourier_Series",
-        "Gauss_Sums",
-        "Gauss_Sums_Auxiliary",
-        "Periodic_Arithmetic",
+        "Ramanujan_Sums",
         "Polya_Vinogradov",
-        "Ramanujan_Sums"
+        "Periodic_Arithmetic",
+        "Complex_Roots_Of_Unity",
+        "Gauss_Sums_Auxiliary",
+        "Gauss_Sums"
     ],
     "relatedEntries": [
         "Dirichlet_L",

@@ -55,9 +55,9 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
+        "Reduction",
         "HOModel",
-        "Majorities",
-        "Reduction"
+        "Majorities"
     ],
     "relatedEntries": [
         "Consensus_Refined"

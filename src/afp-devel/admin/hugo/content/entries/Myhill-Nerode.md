@@ -65,17 +65,17 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
-        "Closures",
         "Closures2",
-        "Folds",
-        "Myhill",
-        "Myhill_1",
         "Myhill_2",
-        "Non_Regular_Languages"
+        "Myhill_1",
+        "Non_Regular_Languages",
+        "Folds",
+        "Closures",
+        "Myhill"
     ],
     "relatedEntries": [
         "Finite_Automata_HF",
         "Decreasing-Diagrams-II",
-        "Posix-Lexing"
+        "Regex_Equivalence"
     ]
 }

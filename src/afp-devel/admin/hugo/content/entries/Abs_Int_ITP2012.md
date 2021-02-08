@@ -27,16 +27,16 @@
         }
     ],
     "theories": [
-        "Abs_Int0",
-        "Abs_Int1",
         "Abs_Int1_const",
-        "Abs_Int1_parity",
-        "Abs_Int2",
-        "Abs_Int2_ivl",
-        "Abs_Int3",
+        "Abs_Int1",
         "Abs_State",
+        "Abs_Int2",
+        "Abs_Int3",
+        "Abs_Int1_parity",
+        "Abs_Int2_ivl",
         "ACom",
         "Collecting",
-        "Complete_Lattice_ix"
+        "Complete_Lattice_ix",
+        "Abs_Int0"
     ]
 }

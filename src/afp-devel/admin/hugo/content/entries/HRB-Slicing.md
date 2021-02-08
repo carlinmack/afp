@@ -70,7 +70,7 @@
     ],
     "relatedEntries": [
         "Slicing",
-        "InformationFlowSlicing",
-        "InformationFlowSlicing_Inter"
+        "InformationFlowSlicing_Inter",
+        "InformationFlowSlicing"
     ]
 }

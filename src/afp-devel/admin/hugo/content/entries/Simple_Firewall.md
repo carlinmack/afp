@@ -37,12 +37,12 @@
     ],
     "theories": [
         "Firewall_Common_Decision_State",
-        "Generic_SimpleFw",
-        "Service_Matrix",
+        "Simple_Packet",
         "Shadowed",
-        "SimpleFw_Semantics",
+        "Generic_SimpleFw",
         "SimpleFw_Syntax",
-        "SimpleFw_toString",
-        "Simple_Packet"
+        "SimpleFw_Semantics",
+        "Service_Matrix",
+        "SimpleFw_toString"
     ]
 }

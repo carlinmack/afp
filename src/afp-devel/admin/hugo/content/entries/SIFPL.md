@@ -68,16 +68,16 @@
         }
     ],
     "theories": [
-        "ContextOBJ",
-        "ContextVS",
-        "HuntSands",
-        "IMP",
         "Lattice",
         "OBJ",
+        "ContextOBJ",
+        "VS",
+        "VDM_OBJ",
         "PBIJ",
         "VDM",
-        "VDM_OBJ",
-        "VS",
-        "VS_OBJ"
+        "VS_OBJ",
+        "IMP",
+        "ContextVS",
+        "HuntSands"
     ]
 }

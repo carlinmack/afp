@@ -36,16 +36,16 @@
         "EdmondsKarp_Maxflow"
     ],
     "theories": [
-        "Matrix_For_Marginals",
-        "Max_Flow_Min_Cut_Countable",
-        "MFMC_Bounded",
-        "MFMC_Finite",
-        "MFMC_Flow_Attainability",
+        "Rel_PMF_Characterisation",
         "MFMC_Misc",
-        "MFMC_Network",
-        "MFMC_Reduction",
+        "Max_Flow_Min_Cut_Countable",
+        "MFMC_Finite",
         "MFMC_Unbounded",
         "MFMC_Web",
-        "Rel_PMF_Characterisation"
+        "MFMC_Reduction",
+        "MFMC_Flow_Attainability",
+        "Matrix_For_Marginals",
+        "MFMC_Network",
+        "MFMC_Bounded"
     ]
 }

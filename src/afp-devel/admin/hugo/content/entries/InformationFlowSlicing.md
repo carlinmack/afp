@@ -66,9 +66,9 @@
         "Slicing"
     ],
     "theories": [
-        "LiftingIntra",
+        "NonInterferenceWhile",
         "NonInterferenceIntra",
-        "NonInterferenceWhile"
+        "LiftingIntra"
     ],
     "relatedEntries": [
         "InformationFlowSlicing_Inter",

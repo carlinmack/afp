@@ -39,8 +39,8 @@
         }
     ],
     "theories": [
-        "Priority_Queue_Braun",
         "Priority_Queue_Braun2",
+        "Priority_Queue_Braun",
         "Sorting_Braun"
     ]
 }

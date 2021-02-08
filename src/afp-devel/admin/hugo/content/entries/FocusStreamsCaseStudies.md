@@ -43,20 +43,20 @@
         }
     ],
     "theories": [
-        "ArithExtras",
-        "arith_hints",
-        "BitBoolTS",
+        "stream",
+        "SteamBoiler_proof",
+        "Gateway_proof",
         "FR",
-        "FR_proof",
         "FR_types",
         "Gateway",
-        "Gateway_proof",
         "Gateway_proof_aux",
-        "Gateway_types",
         "JoinSplitTime",
         "ListExtras",
+        "BitBoolTS",
+        "ArithExtras",
+        "arith_hints",
+        "Gateway_types",
         "SteamBoiler",
-        "SteamBoiler_proof",
-        "stream"
+        "FR_proof"
     ]
 }

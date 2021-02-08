@@ -19,14 +19,14 @@
     ],
     "theories": [
         "Axioms",
+        "USubst",
         "Coincidence",
-        "Denotational_Semantics",
-        "Differential_Game_Logic",
-        "Identifiers",
-        "Ids",
-        "Lib",
         "Static_Semantics",
+        "Differential_Game_Logic",
         "Syntax",
-        "USubst"
+        "Denotational_Semantics",
+        "Ids",
+        "Identifiers",
+        "Lib"
     ]
 }

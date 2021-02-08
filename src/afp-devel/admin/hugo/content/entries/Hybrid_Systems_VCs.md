@@ -29,12 +29,12 @@
         "KAT_and_DRA"
     ],
     "theories": [
-        "HS_ODEs",
-        "HS_Preliminaries",
-        "HS_VC_Examples",
         "HS_VC_KA_ndfun",
+        "HS_VC_Spartan",
+        "HS_VC_Examples",
         "HS_VC_KA_rel",
-        "HS_VC_Spartan"
+        "HS_Preliminaries",
+        "HS_ODEs"
     ],
     "relatedEntries": [
         "Algebraic_VCs"

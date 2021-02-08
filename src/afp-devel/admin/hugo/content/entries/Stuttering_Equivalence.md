@@ -60,13 +60,13 @@
         "LTL"
     ],
     "theories": [
-        "PLTL",
+        "StutterEquivalence",
         "Samplers",
-        "StutterEquivalence"
+        "PLTL"
     ],
     "relatedEntries": [
         "LTL_to_GBA",
-        "LTL_Master_Theorem",
+        "LTL_to_DRA",
         "LTL_Normal_Form"
     ]
 }

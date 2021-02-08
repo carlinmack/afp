@@ -32,18 +32,18 @@
         }
     ],
     "theories": [
-        "Data_Bool",
-        "Data_Function",
-        "Data_Integer",
-        "Data_List",
         "Data_Maybe",
-        "Data_Tuple",
-        "Definedness",
         "HOLCF_Main",
         "HOLCF_Prelude",
+        "Type_Classes",
         "List_Comprehension",
+        "Data_Integer",
+        "Data_Tuple",
         "Numeral_Cpo",
+        "Data_List",
+        "Data_Bool",
+        "Data_Function",
         "Num_Class",
-        "Type_Classes"
+        "Definedness"
     ]
 }

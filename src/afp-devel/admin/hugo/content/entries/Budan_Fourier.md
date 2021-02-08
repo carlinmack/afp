@@ -25,9 +25,9 @@
         "Sturm_Tarski"
     ],
     "theories": [
-        "BF_Misc",
         "Budan_Fourier",
+        "Sturm_Multiple_Roots",
         "Descartes_Roots_Test",
-        "Sturm_Multiple_Roots"
+        "BF_Misc"
     ]
 }

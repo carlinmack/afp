@@ -76,8 +76,8 @@
         }
     ],
     "theories": [
-        "CArrays",
         "FileRefinement",
-        "ResizableArrays"
+        "ResizableArrays",
+        "CArrays"
     ]
 }

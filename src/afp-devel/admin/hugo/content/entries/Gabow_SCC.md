@@ -43,15 +43,15 @@
         "CAVA_Automata"
     ],
     "theories": [
-        "All_Of_Gabow_SCC",
-        "Find_Path",
-        "Find_Path_Impl",
-        "Gabow_GBG",
-        "Gabow_GBG_Code",
-        "Gabow_SCC",
-        "Gabow_SCC_Code",
         "Gabow_Skeleton",
-        "Gabow_Skeleton_Code"
+        "Gabow_SCC_Code",
+        "Gabow_GBG",
+        "Find_Path_Impl",
+        "Gabow_Skeleton_Code",
+        "Find_Path",
+        "All_Of_Gabow_SCC",
+        "Gabow_SCC",
+        "Gabow_GBG_Code"
     ],
     "relatedEntries": [
         "DFS_Framework"

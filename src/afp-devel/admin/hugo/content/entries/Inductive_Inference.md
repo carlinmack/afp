@@ -15,15 +15,15 @@
     "licence": "BSD",
     "theories": [
         "CONS_LIM",
-        "CP_FIN_NUM",
         "Inductive_Inference_Basics",
-        "Lemma_R",
-        "LIM_BC",
-        "Partial_Recursive",
         "R1_BC",
-        "Standard_Results",
-        "TOTAL_CONS",
+        "Universal",
         "Union",
-        "Universal"
+        "Lemma_R",
+        "Standard_Results",
+        "Partial_Recursive",
+        "LIM_BC",
+        "CP_FIN_NUM",
+        "TOTAL_CONS"
     ]
 }

@@ -18,8 +18,8 @@
         }
     ],
     "theories": [
-        "Group_Theory",
+        "Set_Theory",
         "Ring_Theory",
-        "Set_Theory"
+        "Group_Theory"
     ]
 }

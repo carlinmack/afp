@@ -25,16 +25,16 @@
         "Complex_Geometry"
     ],
     "theories": [
-        "Hyperbolic_Functions",
-        "Poincare",
-        "Poincare_Between",
         "Poincare_Circles",
+        "Poincare_Between",
+        "Tarski",
         "Poincare_Distance",
-        "Poincare_Lines",
-        "Poincare_Lines_Axis_Intersections",
-        "Poincare_Lines_Ideal_Points",
-        "Poincare_Perpendicular",
         "Poincare_Tarski",
-        "Tarski"
+        "Poincare",
+        "Poincare_Lines_Ideal_Points",
+        "Poincare_Lines_Axis_Intersections",
+        "Poincare_Perpendicular",
+        "Hyperbolic_Functions",
+        "Poincare_Lines"
     ]
 }

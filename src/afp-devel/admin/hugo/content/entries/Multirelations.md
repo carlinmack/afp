@@ -37,12 +37,12 @@
         "Kleene_Algebra"
     ],
     "theories": [
-        "C_Algebras",
-        "Multirelations"
+        "Multirelations",
+        "C_Algebras"
     ],
     "relatedEntries": [
-        "KAD",
         "KAT_and_DRA",
-        "Relation_Algebra"
+        "Relation_Algebra",
+        "KAD"
     ]
 }

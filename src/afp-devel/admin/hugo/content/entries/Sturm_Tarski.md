@@ -39,7 +39,7 @@
         }
     ],
     "theories": [
-        "PolyMisc",
-        "Sturm_Tarski"
+        "Sturm_Tarski",
+        "PolyMisc"
     ]
 }

@@ -31,7 +31,7 @@
     "theories": [
         "Dict_Construction",
         "Test_Dict_Construction",
-        "Test_Lazy_Case",
-        "Test_Side_Conditions"
+        "Test_Side_Conditions",
+        "Test_Lazy_Case"
     ]
 }

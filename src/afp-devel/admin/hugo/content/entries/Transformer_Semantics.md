@@ -26,8 +26,8 @@
         "Order_Lattice_Props"
     ],
     "theories": [
-        "Isotone_Transformers",
         "Kleisli_Quantale",
+        "Isotone_Transformers",
         "Kleisli_Quantaloid",
         "Kleisli_Transformers",
         "Powerset_Monad",

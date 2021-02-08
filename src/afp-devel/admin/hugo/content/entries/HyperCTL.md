@@ -42,11 +42,11 @@
         }
     ],
     "theories": [
-        "Deep",
-        "Finite_Noninterference",
-        "HyperCTL",
-        "Noninterference",
         "Prelim",
-        "Shallow"
+        "HyperCTL",
+        "Deep",
+        "Shallow",
+        "Noninterference",
+        "Finite_Noninterference"
     ]
 }

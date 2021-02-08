@@ -28,10 +28,10 @@
         "Sepref_IICF"
     ],
     "theories": [
-        "Challenge1",
-        "Challenge1_short",
         "Challenge2",
+        "Challenge1_short",
         "Challenge3",
+        "Challenge1",
         "Snippets"
     ],
     "relatedEntries": [

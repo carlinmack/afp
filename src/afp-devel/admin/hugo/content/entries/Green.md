@@ -27,12 +27,12 @@
     ],
     "theories": [
         "CircExample",
-        "Derivs",
-        "DiamExample",
-        "General_Utils",
+        "SymmetricR2Shapes",
         "Green",
+        "DiamExample",
+        "Derivs",
+        "General_Utils",
         "Integrals",
-        "Paths",
-        "SymmetricR2Shapes"
+        "Paths"
     ]
 }

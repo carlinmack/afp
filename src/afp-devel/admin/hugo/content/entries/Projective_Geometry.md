@@ -24,16 +24,16 @@
         }
     ],
     "theories": [
+        "Pascal_Property",
+        "Pappus_Property",
+        "Projective_Space_Axioms",
         "Desargues_2D",
-        "Desargues_3D",
+        "Projective_Plane_Axioms",
+        "Matroid_Rank_Properties",
         "Desargues_Property",
         "Higher_Projective_Space_Axioms",
-        "Higher_Projective_Space_Rank_Axioms",
-        "Matroid_Rank_Properties",
         "Pappus_Desargues",
-        "Pappus_Property",
-        "Pascal_Property",
-        "Projective_Plane_Axioms",
-        "Projective_Space_Axioms"
+        "Higher_Projective_Space_Rank_Axioms",
+        "Desargues_3D"
     ]
 }

@@ -24,21 +24,21 @@
         }
     ],
     "theories": [
+        "Ndet",
+        "Introduction",
+        "Hide",
+        "Process",
         "Assertions",
+        "Stop",
         "Bot",
+        "Mndet",
+        "Seq",
+        "Det",
+        "Mprefix",
         "Conclusion",
+        "Skip",
         "CopyBuffer",
         "CSP",
-        "Det",
-        "Hide",
-        "Introduction",
-        "Mndet",
-        "Mprefix",
-        "Ndet",
-        "Process",
-        "Seq",
-        "Skip",
-        "Stop",
         "Sync"
     ]
 }

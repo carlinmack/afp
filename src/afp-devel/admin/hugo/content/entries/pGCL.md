@@ -39,22 +39,22 @@
         }
     ],
     "theories": [
-        "Algebra",
-        "Automation",
         "Continuity",
-        "Determinism",
+        "Automation",
         "Embedding",
+        "Determinism",
+        "Transformers",
+        "Loops",
+        "LoopInduction",
+        "Sublinearity",
         "Expectations",
         "Healthiness",
         "Induction",
-        "LoopInduction",
-        "Loops",
-        "Misc",
-        "pGCL",
-        "StructuredReasoning",
-        "Sublinearity",
         "Termination",
-        "Transformers",
-        "WellDefined"
+        "WellDefined",
+        "Misc",
+        "Algebra",
+        "StructuredReasoning",
+        "pGCL"
     ]
 }

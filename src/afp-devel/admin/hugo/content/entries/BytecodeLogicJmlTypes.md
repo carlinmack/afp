@@ -67,12 +67,12 @@
         }
     ],
     "theories": [
-        "AssocLists",
-        "Cachera",
-        "Language",
         "Logic",
         "MultiStep",
+        "Sound",
         "Reachability",
-        "Sound"
+        "Language",
+        "AssocLists",
+        "Cachera"
     ]
 }

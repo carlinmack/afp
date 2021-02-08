@@ -24,8 +24,8 @@
         "Polynomials"
     ],
     "theories": [
-        "Symmetric_Polynomials",
+        "Vieta",
         "Symmetric_Polynomials_Code",
-        "Vieta"
+        "Symmetric_Polynomials"
     ]
 }

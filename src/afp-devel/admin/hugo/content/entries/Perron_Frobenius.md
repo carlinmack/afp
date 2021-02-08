@@ -45,19 +45,19 @@
         "Sturm_Sequences"
     ],
     "theories": [
-        "Bij_Nat",
-        "Cancel_Card_Constraint",
-        "Check_Matrix_Growth",
+        "Perron_Frobenius_Irreducible",
         "HMA_Connect",
+        "Roots_Unity",
+        "Spectral_Radius_Theory",
         "Hom_Gauss_Jordan",
         "Perron_Frobenius",
         "Perron_Frobenius_Aux",
-        "Perron_Frobenius_General",
-        "Perron_Frobenius_Irreducible",
-        "Roots_Unity",
+        "Cancel_Card_Constraint",
+        "Spectral_Radius_Theory_2",
+        "Check_Matrix_Growth",
         "Spectral_Radius_Largest_Jordan_Block",
-        "Spectral_Radius_Theory",
-        "Spectral_Radius_Theory_2"
+        "Bij_Nat",
+        "Perron_Frobenius_General"
     ],
     "relatedEntries": [
         "Jordan_Normal_Form",

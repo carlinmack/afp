@@ -41,10 +41,10 @@
         }
     ],
     "theories": [
-        "BD_Security",
-        "Bounded_Deducibility_Security",
         "Compositional_Reasoning",
-        "IO_Automaton",
-        "Trivia"
+        "Bounded_Deducibility_Security",
+        "Trivia",
+        "BD_Security",
+        "IO_Automaton"
     ]
 }

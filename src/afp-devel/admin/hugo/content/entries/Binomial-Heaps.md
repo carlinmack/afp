@@ -62,8 +62,8 @@
         }
     ],
     "theories": [
-        "BinomialHeap",
         "SkewBinomialHeap",
+        "BinomialHeap",
         "Test"
     ]
 }

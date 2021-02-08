@@ -26,9 +26,9 @@
     ],
     "theories": [
         "Linear_Programming",
+        "More_Jordan_Normal_Forms",
         "LP_Preliminaries",
-        "Matrix_LinPoly",
-        "More_Jordan_Normal_Forms"
+        "Matrix_LinPoly"
     ],
     "relatedEntries": [
         "Farkas"

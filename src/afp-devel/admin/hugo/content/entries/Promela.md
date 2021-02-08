@@ -43,14 +43,14 @@
         "LTL"
     ],
     "theories": [
-        "All_Of_Promela",
-        "Promela",
+        "PromelaStatistics",
         "PromelaAST",
-        "PromelaDatastructures",
-        "PromelaInvariants",
-        "PromelaLTL",
         "PromelaLTLConv",
-        "PromelaStatistics"
+        "PromelaInvariants",
+        "PromelaDatastructures",
+        "All_Of_Promela",
+        "PromelaLTL",
+        "Promela"
     ],
     "relatedEntries": [
         "LTL_to_GBA"

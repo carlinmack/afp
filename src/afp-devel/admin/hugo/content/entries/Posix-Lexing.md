@@ -39,7 +39,7 @@
         "Simplifying"
     ],
     "relatedEntries": [
-        "Myhill-Nerode",
-        "Regex_Equivalence"
+        "Regex_Equivalence",
+        "Myhill-Nerode"
     ]
 }

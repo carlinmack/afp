@@ -93,7 +93,7 @@
     ],
     "relatedEntries": [
         "Collections",
-        "Containers",
-        "ROBDD"
+        "ROBDD",
+        "Separation_Logic_Imperative_HOL"
     ]
 }

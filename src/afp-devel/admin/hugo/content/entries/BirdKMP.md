@@ -14,7 +14,7 @@
     "licence": "BSD",
     "theories": [
         "HOLCF_ROOT",
-        "KMP",
-        "Theory_Of_Lists"
+        "Theory_Of_Lists",
+        "KMP"
     ]
 }

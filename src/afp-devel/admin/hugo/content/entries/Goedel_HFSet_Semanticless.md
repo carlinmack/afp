@@ -20,18 +20,18 @@
         "Nominal2"
     ],
     "theories": [
-        "Coding",
-        "Coding_Predicates",
         "Functions",
-        "Goedel_I",
-        "II_Prelims",
+        "Coding",
         "Instance",
-        "Pf_Predicates",
-        "Predicates",
         "Pseudo_Coding",
-        "Quote",
+        "Pf_Predicates",
+        "II_Prelims",
+        "Goedel_I",
         "Sigma",
-        "SyntaxN"
+        "Coding_Predicates",
+        "Quote",
+        "SyntaxN",
+        "Predicates"
     ],
     "relatedEntries": [
         "Goedel_HFSet_Semantic",

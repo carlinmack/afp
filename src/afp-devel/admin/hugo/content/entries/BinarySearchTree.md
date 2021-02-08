@@ -81,8 +81,8 @@
         }
     ],
     "theories": [
-        "BinaryTree",
+        "BinaryTree_TacticStyle",
         "BinaryTree_Map",
-        "BinaryTree_TacticStyle"
+        "BinaryTree"
     ]
 }

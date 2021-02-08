@@ -43,10 +43,10 @@
         "Coinductive"
     ],
     "theories": [
-        "Stream_Fusion",
-        "Stream_Fusion_Examples",
         "Stream_Fusion_List",
-        "Stream_Fusion_LList"
+        "Stream_Fusion_Examples",
+        "Stream_Fusion_LList",
+        "Stream_Fusion"
     ],
     "relatedEntries": [
         "Stream-Fusion"

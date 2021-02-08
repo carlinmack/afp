@@ -89,10 +89,10 @@
     ],
     "theories": [
         "Generalize",
-        "Instance",
         "Maybe",
+        "Instance",
+        "W",
         "MiniML",
-        "Type",
-        "W"
+        "Type"
     ]
 }

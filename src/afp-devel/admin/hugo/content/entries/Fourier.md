@@ -21,11 +21,11 @@
         "Lp"
     ],
     "theories": [
-        "Confine",
-        "Fourier",
         "Fourier_Aux2",
-        "Lspace",
+        "Square_Integrable",
         "Periodic",
-        "Square_Integrable"
+        "Lspace",
+        "Fourier",
+        "Confine"
     ]
 }

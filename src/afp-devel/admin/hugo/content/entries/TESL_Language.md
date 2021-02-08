@@ -23,17 +23,17 @@
         }
     ],
     "theories": [
-        "Config_Morphisms",
-        "Corecursive_Prop",
-        "Denotational",
+        "TESL",
         "Hygge_Theory",
+        "Stuttering",
         "Introduction",
         "Operational",
         "Run",
-        "Stuttering",
+        "Config_Morphisms",
+        "Denotational",
         "StutteringDefs",
         "StutteringLemmas",
-        "SymbolicPrimitive",
-        "TESL"
+        "Corecursive_Prop",
+        "SymbolicPrimitive"
     ]
 }

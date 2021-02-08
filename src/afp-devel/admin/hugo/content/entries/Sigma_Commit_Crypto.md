@@ -22,19 +22,19 @@
         "CryptHOL"
     ],
     "theories": [
-        "Chaum_Pedersen_Sigma_Commit",
-        "Commitment_Schemes",
-        "Cyclic_Group_Ext",
-        "Discrete_Log",
-        "Number_Theory_Aux",
-        "Okamoto_Sigma_Commit",
+        "Schnorr_Sigma_Commit",
         "Pedersen",
         "Rivest",
-        "Schnorr_Sigma_Commit",
+        "Chaum_Pedersen_Sigma_Commit",
+        "Commitment_Schemes",
+        "Xor",
+        "Cyclic_Group_Ext",
         "Sigma_AND",
-        "Sigma_OR",
-        "Sigma_Protocols",
         "Uniform_Sampling",
-        "Xor"
+        "Discrete_Log",
+        "Sigma_Protocols",
+        "Okamoto_Sigma_Commit",
+        "Number_Theory_Aux",
+        "Sigma_OR"
     ]
 }

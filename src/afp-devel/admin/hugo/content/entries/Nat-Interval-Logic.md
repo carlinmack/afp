@@ -58,7 +58,7 @@
     ],
     "theories": [
         "IL_Interval",
-        "IL_IntervalOperators",
-        "IL_TemporalOperators"
+        "IL_TemporalOperators",
+        "IL_IntervalOperators"
     ]
 }

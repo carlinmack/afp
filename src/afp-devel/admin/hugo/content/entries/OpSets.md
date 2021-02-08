@@ -28,10 +28,10 @@
         }
     ],
     "theories": [
+        "RGA",
         "Insert_Spec",
         "Interleaving",
-        "List_Spec",
         "OpSet",
-        "RGA"
+        "List_Spec"
     ]
 }

@@ -31,19 +31,19 @@
         "Show"
     ],
     "theories": [
-        "Big_Step_Clocked",
-        "Big_Step_Determ",
-        "Big_Step_Fun_Equiv",
         "Big_Step_Total",
         "Big_Step_Unclocked",
-        "Big_Step_Unclocked_Single",
-        "CakeML_Code",
+        "Evaluate_Clock",
+        "Big_Step_Determ",
         "CakeML_Compiler",
         "CakeML_Quickcheck",
-        "Evaluate_Clock",
+        "Matching",
+        "Big_Step_Fun_Equiv",
         "Evaluate_Single",
         "Evaluate_Termination",
-        "Matching",
-        "Semantic_Extras"
+        "CakeML_Code",
+        "Big_Step_Clocked",
+        "Semantic_Extras",
+        "Big_Step_Unclocked_Single"
     ]
 }

@@ -30,13 +30,13 @@
     "theories": [
         "Dirichlet_Characters",
         "Dirichlet_L_Functions",
-        "Dirichlet_Theorem",
         "Group_Adjoin",
-        "Multiplicative_Characters"
+        "Multiplicative_Characters",
+        "Dirichlet_Theorem"
     ],
     "relatedEntries": [
-        "Dirichlet_Series",
         "Gauss_Sums",
-        "Prime_Distribution_Elementary"
+        "Prime_Distribution_Elementary",
+        "Prime_Number_Theorem"
     ]
 }

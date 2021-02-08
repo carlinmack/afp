@@ -20,11 +20,11 @@
         "Polynomial_Factorization"
     ],
     "theories": [
-        "KBO",
-        "Lexicographic_Extension",
         "Order_Pair",
         "Subterm_and_Context",
-        "Term_Aux"
+        "Lexicographic_Extension",
+        "Term_Aux",
+        "KBO"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"

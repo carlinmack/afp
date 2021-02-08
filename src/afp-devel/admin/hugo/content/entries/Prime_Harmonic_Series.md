@@ -34,7 +34,7 @@
     ],
     "theories": [
         "Prime_Harmonic",
-        "Prime_Harmonic_Misc",
-        "Squarefree_Nat"
+        "Squarefree_Nat",
+        "Prime_Harmonic_Misc"
     ]
 }

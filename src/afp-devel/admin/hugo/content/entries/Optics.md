@@ -14,7 +14,7 @@
     ],
     "abstract": "\nLenses provide an abstract interface for manipulating data types\nthrough spatially-separated views. They are defined abstractly in\nterms of two functions, <em>get</em>, the return a value\nfrom the source type, and <em>put</em> that updates the\nvalue. We mechanise the underlying theory of lenses, in terms of an\nalgebraic hierarchy of lenses, including well-behaved and very\nwell-behaved lenses, each lens class being characterised by a set of\nlens laws. We also mechanise a lens algebra in Isabelle that enables\ntheir composition and comparison, so as to allow construction of\ncomplex lenses. This is accompanied by a large library of algebraic\nlaws. Moreover we also show how the lens classes can be applied by\ninstantiating them with a number of Isabelle data types.",
     "extra": {
-        "Change history": "[2020-03-02]\nAdded partial bijective and symmetric lenses.\nImproved alphabet command generating additional lenses and results.\nSeveral additional lens relations, including observational equivalence.\nAdditional theorems throughout.\nAdaptations for Isabelle 2020.\n(revision 44e2e5c)"
+        "Change history": "[2020-03-02]\nAdded partial bijective and symmetric lenses.\nImproved alphabet command generating additional lenses and results.\nSeveral additional lens relations, including observational equivalence.\nAdditional theorems throughout.\nAdaptations for Isabelle 2020.\n(revision 44e2e5c)\n[2021-01-27]\nAddition of new theorems throughout, particularly for prisms.\nNew \"chantype\" command allows the definition of an algebraic datatype with generated prisms.\nNew \"dataspace\" command allows the definition of a local-based state space, including lenses and prisms.\nAddition of various examples for the above.\n(revision 89cf045a)"
     },
     "licence": "BSD",
     "olderReleases": [
@@ -32,18 +32,25 @@
         }
     ],
     "theories": [
-        "Interp",
-        "Lenses",
+        "Channel_Type",
         "Lens_Algebra",
-        "Lens_Instances",
-        "Lens_Laws",
-        "Lens_Order",
-        "Lens_Record_Example",
-        "Lens_State",
+        "Interp",
+        "Dataspace",
         "Lens_Symmetric",
-        "Optics",
+        "Lens_Instances",
+        "Channel_Type_Example",
         "Prisms",
-        "Scenes",
-        "Two"
+        "Lenses",
+        "Lens_Laws",
+        "Lens_State",
+        "Optics",
+        "Lens_Record_Example",
+        "Dataspaces",
+        "Dataspace_Example",
+        "Prisms_Examples",
+        "Lens_Statespace_Example",
+        "Two",
+        "Lens_Order",
+        "Scenes"
     ]
 }

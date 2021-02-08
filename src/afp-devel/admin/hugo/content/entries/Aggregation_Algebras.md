@@ -24,9 +24,9 @@
         "Stone_Kleene_Relation_Algebras"
     ],
     "theories": [
+        "Semigroups_Big",
         "Aggregation_Algebras",
-        "Linear_Aggregation_Algebras",
         "Matrix_Aggregation_Algebras",
-        "Semigroups_Big"
+        "Linear_Aggregation_Algebras"
     ]
 }

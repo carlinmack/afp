@@ -19,21 +19,21 @@
         "List-Index"
     ],
     "theories": [
-        "AST_SAS_Plus_Equivalence",
+        "Set2_Join_RBT",
+        "STRIPS_Representation",
         "CNF_Semantics_Supplement",
+        "STRIPS_Semantics",
         "CNF_Supplement",
         "List_Supplement",
-        "Map_Supplement",
-        "SAS_Plus_Representation",
-        "SAS_Plus_Semantics",
-        "SAS_Plus_STRIPS",
-        "SAT_Plan_Base",
-        "SAT_Plan_Extensions",
-        "SAT_Solve_SAS_Plus",
-        "Set2_Join_RBT",
         "Solve_SASP",
         "State_Variable_Representation",
-        "STRIPS_Representation",
-        "STRIPS_Semantics"
+        "SAS_Plus_Representation",
+        "Map_Supplement",
+        "SAT_Solve_SAS_Plus",
+        "SAT_Plan_Base",
+        "SAT_Plan_Extensions",
+        "AST_SAS_Plus_Equivalence",
+        "SAS_Plus_STRIPS",
+        "SAS_Plus_Semantics"
     ]
 }

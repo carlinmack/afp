@@ -36,13 +36,13 @@
         "Discrete_Summation"
     ],
     "theories": [
-        "Card_Partitions",
+        "Set_Partition",
         "Injectivity_Solver",
-        "Set_Partition"
+        "Card_Partitions"
     ],
     "relatedEntries": [
         "Bell_Numbers_Spivey",
         "Card_Equiv_Relations",
-        "Card_Number_Partitions"
+        "Twelvefold_Way"
     ]
 }

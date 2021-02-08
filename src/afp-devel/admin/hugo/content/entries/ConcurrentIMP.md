@@ -36,12 +36,12 @@
         }
     ],
     "theories": [
-        "CIMP",
-        "CIMP_lang",
+        "LTL",
         "CIMP_pred",
-        "CIMP_vcg",
         "CIMP_vcg_rules",
+        "CIMP_lang",
+        "CIMP",
         "Infinite_Sequences",
-        "LTL"
+        "CIMP_vcg"
     ]
 }

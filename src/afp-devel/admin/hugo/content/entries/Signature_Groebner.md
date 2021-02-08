@@ -25,8 +25,8 @@
         "Groebner_Bases"
     ],
     "theories": [
-        "More_MPoly",
         "Prelims",
+        "More_MPoly",
         "Signature_Examples",
         "Signature_Groebner"
     ],

@@ -34,8 +34,8 @@
     ],
     "theories": [
         "Filters",
-        "Lattice_Basics",
         "P_Algebras",
-        "Stone_Construction"
+        "Stone_Construction",
+        "Lattice_Basics"
     ]
 }

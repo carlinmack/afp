@@ -30,9 +30,9 @@
         }
     ],
     "theories": [
-        "Interpreter",
         "Just_Do_It_Examples",
         "Monad_Overloading",
+        "Interpreter",
         "Monomorphic_Monad"
     ]
 }

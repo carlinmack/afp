@@ -31,12 +31,12 @@
         "Landau_Symbols"
     ],
     "theories": [
-        "Euler_MacLaurin",
-        "Euler_MacLaurin_Landau"
+        "Euler_MacLaurin_Landau",
+        "Euler_MacLaurin"
     ],
     "relatedEntries": [
         "Stirling_Formula",
         "Lambert_W",
-        "Error_Function"
+        "Zeta_Function"
     ]
 }

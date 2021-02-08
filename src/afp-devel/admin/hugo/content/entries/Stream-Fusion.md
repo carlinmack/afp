@@ -66,8 +66,8 @@
         }
     ],
     "theories": [
-        "LazyList",
         "Stream",
+        "LazyList",
         "StreamFusion"
     ],
     "relatedEntries": [

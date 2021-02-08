@@ -22,9 +22,9 @@
         "Monad_Normalisation"
     ],
     "theories": [
-        "Geometric_PMF",
-        "Misc",
         "Pi_pmf",
-        "Skip_List"
+        "Geometric_PMF",
+        "Skip_List",
+        "Misc"
     ]
 }

@@ -26,9 +26,9 @@
         "Stirling_Formula"
     ],
     "theories": [
+        "Prime_Counting_Functions",
         "Mertens_Theorems",
         "Newman_Ingham_Tauberian",
-        "Prime_Counting_Functions",
         "Prime_Number_Theorem",
         "Prime_Number_Theorem_Library"
     ],

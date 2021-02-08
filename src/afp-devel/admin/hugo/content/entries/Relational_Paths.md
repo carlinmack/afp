@@ -19,8 +19,8 @@
     ],
     "theories": [
         "More_Relation_Algebra",
-        "Paths",
         "Path_Algorithms",
-        "Rooted_Paths"
+        "Rooted_Paths",
+        "Paths"
     ]
 }

@@ -32,7 +32,7 @@
         "Abstract_Completeness"
     ],
     "theories": [
-        "Finite_Proof_Soundness",
-        "Infinite_Proof_Soundness"
+        "Infinite_Proof_Soundness",
+        "Finite_Proof_Soundness"
     ]
 }

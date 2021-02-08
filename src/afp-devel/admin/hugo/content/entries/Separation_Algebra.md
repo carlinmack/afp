@@ -54,12 +54,12 @@
         }
     ],
     "theories": [
-        "Map_Extra",
-        "Separation_Algebra",
         "Separation_Algebra_Alt",
-        "Sep_Eq",
+        "Separation_Algebra",
+        "Sep_Tactics",
+        "Map_Extra",
         "Sep_Heap_Instance",
-        "Sep_Tactics"
+        "Sep_Eq"
     ],
     "relatedEntries": [
         "Separata"

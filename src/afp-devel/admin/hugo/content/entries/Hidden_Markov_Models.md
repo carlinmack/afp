@@ -29,10 +29,10 @@
         "Monad_Memo_DP"
     ],
     "theories": [
-        "Auxiliary",
-        "Hidden_Markov_Model",
         "HMM_Example",
-        "HMM_Implementation"
+        "HMM_Implementation",
+        "Hidden_Markov_Model",
+        "Auxiliary"
     ],
     "relatedEntries": [
         "Optimal_BST"

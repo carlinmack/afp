@@ -42,11 +42,11 @@
         "Sturm_Sequences"
     ],
     "theories": [
-        "Atan_CF_Bounds",
-        "Bounds_Lemmas",
-        "Exp_Bounds",
-        "Log_CF_Bounds",
+        "Sqrt_Bounds",
         "Sin_Cos_Bounds",
-        "Sqrt_Bounds"
+        "Exp_Bounds",
+        "Bounds_Lemmas",
+        "Log_CF_Bounds",
+        "Atan_CF_Bounds"
     ]
 }

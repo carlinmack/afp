@@ -48,23 +48,23 @@
         }
     ],
     "theories": [
-        "Binary_Tree_Monad",
         "Coerce",
-        "Error_Monad",
-        "Error_Transformer",
-        "Functor",
-        "Lazy_List_Monad",
-        "Lift_Monad",
-        "Maybe_Monad",
-        "Monad",
-        "Monad_Plus",
         "Monad_Transformer",
-        "Monad_Zero",
-        "Monad_Zero_Plus",
         "Resumption_Transformer",
+        "Maybe_Monad",
+        "Monad_Plus",
+        "Binary_Tree_Monad",
         "State_Transformer",
-        "TypeApp",
         "Writer_Monad",
-        "Writer_Transformer"
+        "Error_Transformer",
+        "Lazy_List_Monad",
+        "TypeApp",
+        "Monad_Zero_Plus",
+        "Lift_Monad",
+        "Error_Monad",
+        "Writer_Transformer",
+        "Monad_Zero",
+        "Functor",
+        "Monad"
     ]
 }

@@ -35,17 +35,17 @@
         "Sqrt_Babylonian"
     ],
     "theories": [
-        "Divmod_Int",
-        "Improved_Code_Equations",
-        "Is_Rat_To_Rat",
-        "Lagrange_Interpolation",
         "Missing_Polynomial",
-        "Missing_Unsorted",
-        "Neville_Aitken_Interpolation",
-        "Newton_Interpolation",
+        "Improved_Code_Equations",
+        "Ring_Hom_Poly",
+        "Divmod_Int",
+        "Lagrange_Interpolation",
         "Polynomial_Interpolation",
+        "Is_Rat_To_Rat",
+        "Newton_Interpolation",
+        "Missing_Unsorted",
         "Ring_Hom",
-        "Ring_Hom_Poly"
+        "Neville_Aitken_Interpolation"
     ],
     "relatedEntries": [
         "Polynomial_Factorization"

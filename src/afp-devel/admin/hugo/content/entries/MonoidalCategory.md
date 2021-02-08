@@ -33,9 +33,9 @@
         "Category3"
     ],
     "theories": [
+        "MonoidalFunctor",
         "CartesianMonoidalCategory",
-        "FreeMonoidalCategory",
         "MonoidalCategory",
-        "MonoidalFunctor"
+        "FreeMonoidalCategory"
     ]
 }

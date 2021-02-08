@@ -34,8 +34,8 @@
     ],
     "theories": [
         "Additions_to_Main",
-        "Card_Number_Partitions",
-        "Number_Partition"
+        "Number_Partition",
+        "Card_Number_Partitions"
     ],
     "relatedEntries": [
         "Card_Partitions"

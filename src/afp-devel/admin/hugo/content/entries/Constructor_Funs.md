@@ -27,7 +27,7 @@
         }
     ],
     "theories": [
-        "Constructor_Funs",
-        "Test_Constructor_Funs"
+        "Test_Constructor_Funs",
+        "Constructor_Funs"
     ]
 }

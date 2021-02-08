@@ -39,11 +39,11 @@
         }
     ],
     "theories": [
-        "Definition",
         "First_Example",
-        "Future_Work",
-        "General_Remarks",
+        "Definition",
         "Related_Work",
-        "Second_Example"
+        "Future_Work",
+        "Second_Example",
+        "General_Remarks"
     ]
 }

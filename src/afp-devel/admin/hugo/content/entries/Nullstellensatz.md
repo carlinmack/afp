@@ -22,11 +22,11 @@
         "Groebner_Bases"
     ],
     "theories": [
-        "Algebraically_Closed_Fields",
-        "Lex_Order_PP",
         "Nullstellensatz",
-        "Nullstellensatz_Field",
-        "Univariate_PM"
+        "Algebraically_Closed_Fields",
+        "Univariate_PM",
+        "Lex_Order_PP",
+        "Nullstellensatz_Field"
     ],
     "relatedEntries": [
         "Signature_Groebner"

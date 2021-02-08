@@ -18,8 +18,8 @@
         "Relational_Disjoint_Set_Forests"
     ],
     "theories": [
-        "Boruvka",
         "Kruskal",
+        "Boruvka",
         "Prim"
     ]
 }

@@ -46,12 +46,12 @@
         }
     ],
     "theories": [
-        "UML_Contracts",
-        "UML_Library",
-        "UML_Logic",
-        "UML_Main",
         "UML_PropertyProfiles",
         "UML_State",
+        "UML_Logic",
+        "UML_Main",
+        "UML_Library",
+        "UML_Contracts",
         "UML_Tools",
         "UML_Types"
     ]

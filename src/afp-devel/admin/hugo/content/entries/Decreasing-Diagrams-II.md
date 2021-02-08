@@ -38,8 +38,8 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
-        "Decreasing_Diagrams_II",
-        "Decreasing_Diagrams_II_Aux"
+        "Decreasing_Diagrams_II_Aux",
+        "Decreasing_Diagrams_II"
     ],
     "relatedEntries": [
         "Decreasing-Diagrams",

@@ -41,22 +41,22 @@
         "Native_Word"
     ],
     "theories": [
-        "Abstract_Impl",
-        "Array_List",
-        "BDD_Code",
-        "BDD_Examples",
-        "BDT",
         "Bool_Func",
-        "Conc_Impl",
+        "Array_List",
         "Level_Collapse",
-        "Middle_Impl",
+        "Abstract_Impl",
+        "BDD_Examples",
+        "Conc_Impl",
         "Option_Helpers",
+        "BDD_Code",
         "Pointer_Map",
-        "Pointer_Map_Impl"
+        "Middle_Impl",
+        "Pointer_Map_Impl",
+        "BDT"
     ],
     "relatedEntries": [
-        "JinjaThreads",
         "Separation_Logic_Imperative_HOL",
+        "JinjaThreads",
         "Containers"
     ]
 }

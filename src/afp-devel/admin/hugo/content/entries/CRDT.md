@@ -32,12 +32,12 @@
         }
     ],
     "theories": [
-        "Convergence",
         "Counter",
-        "Network",
-        "Ordered_List",
-        "ORSet",
         "RGA",
-        "Util"
+        "Network",
+        "Util",
+        "ORSet",
+        "Convergence",
+        "Ordered_List"
     ]
 }

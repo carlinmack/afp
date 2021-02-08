@@ -48,11 +48,11 @@
         }
     ],
     "theories": [
-        "Basis",
         "Continuations",
+        "Basis",
         "Logical_Relations",
+        "SmallStep",
         "OpSem",
-        "PCF",
-        "SmallStep"
+        "PCF"
     ]
 }

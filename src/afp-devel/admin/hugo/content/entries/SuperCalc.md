@@ -30,10 +30,10 @@
         }
     ],
     "theories": [
+        "well_founded_continued",
         "equational_clausal_logic",
-        "multisets_continued",
-        "superposition",
         "terms",
-        "well_founded_continued"
+        "superposition",
+        "multisets_continued"
     ]
 }

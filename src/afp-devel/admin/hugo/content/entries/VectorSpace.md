@@ -42,11 +42,11 @@
         }
     ],
     "theories": [
+        "MonoidSums",
+        "VectorSpace",
+        "SumSpaces",
         "FunctionLemmas",
         "LinearCombinations",
-        "MonoidSums",
-        "RingModuleFacts",
-        "SumSpaces",
-        "VectorSpace"
+        "RingModuleFacts"
     ]
 }

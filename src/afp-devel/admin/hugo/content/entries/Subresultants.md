@@ -33,13 +33,13 @@
         "Polynomial_Factorization"
     ],
     "theories": [
+        "Dichotomous_Lazard",
         "Binary_Exponentiation",
         "Coeff_Int",
-        "Dichotomous_Lazard",
-        "More_Homomorphisms",
-        "Resultant_Prelim",
         "Subresultant",
-        "Subresultant_Gcd"
+        "Resultant_Prelim",
+        "Subresultant_Gcd",
+        "More_Homomorphisms"
     ],
     "relatedEntries": [
         "Perron_Frobenius"

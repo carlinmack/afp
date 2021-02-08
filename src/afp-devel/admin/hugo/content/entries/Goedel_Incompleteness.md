@@ -18,23 +18,23 @@
         "Syntax_Independent_Logic"
     ],
     "theories": [
-        "Abstract_Encoding",
-        "Abstract_First_Goedel",
-        "Abstract_First_Goedel_Rosser",
-        "Abstract_Jeroslow_Encoding",
-        "Abstract_Representability",
-        "Abstract_Second_Goedel",
-        "All_Abstract",
-        "Deduction2",
         "Derivability_Conditions",
-        "Diagonalization",
-        "Goedel_Formula",
-        "Jeroslow_Original",
+        "Tarski",
+        "Deduction2",
+        "Abstract_First_Goedel_Rosser",
+        "Abstract_Representability",
+        "Rosser_Formula",
         "Jeroslow_Simplified",
+        "Abstract_Second_Goedel",
+        "Standard_Model_More",
+        "Abstract_First_Goedel",
+        "Jeroslow_Original",
+        "Abstract_Jeroslow_Encoding",
         "Loeb",
         "Loeb_Formula",
-        "Rosser_Formula",
-        "Standard_Model_More",
-        "Tarski"
+        "All_Abstract",
+        "Diagonalization",
+        "Abstract_Encoding",
+        "Goedel_Formula"
     ]
 }

@@ -40,11 +40,11 @@
     ],
     "theories": [
         "CompositionSeries",
-        "GroupIsoClasses",
         "JordanHolder",
-        "MaximalNormalSubgroups",
-        "SimpleGroups",
+        "GroupIsoClasses",
         "SndIsomorphismGrp",
+        "SimpleGroups",
+        "MaximalNormalSubgroups",
         "SubgroupsAndNormalSubgroups"
     ]
 }

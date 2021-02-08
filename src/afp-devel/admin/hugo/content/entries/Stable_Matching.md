@@ -30,12 +30,12 @@
         }
     ],
     "theories": [
-        "Basis",
         "Bossiness",
-        "Choice_Functions",
+        "Basis",
         "Contracts",
-        "COP",
+        "Strategic",
+        "Choice_Functions",
         "Sotomayor",
-        "Strategic"
+        "COP"
     ]
 }

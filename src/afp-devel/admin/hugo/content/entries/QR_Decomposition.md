@@ -48,21 +48,21 @@
         "Sqrt_Babylonian"
     ],
     "theories": [
+        "QR_Efficient",
         "Examples_QR_Abstract_Float",
-        "Examples_QR_Abstract_Symbolic",
-        "Examples_QR_IArrays_Float",
-        "Examples_QR_IArrays_Symbolic",
-        "Generalizations2",
-        "Gram_Schmidt",
-        "Gram_Schmidt_IArrays",
-        "IArray_Addenda_QR",
-        "Least_Squares_Approximation",
         "Matrix_To_IArray_QR",
-        "Miscellaneous_QR",
+        "Gram_Schmidt_IArrays",
+        "Generalizations2",
+        "Examples_QR_IArrays_Float",
+        "IArray_Addenda_QR",
         "Projections",
         "QR_Decomposition",
-        "QR_Decomposition_IArrays",
-        "QR_Efficient"
+        "Least_Squares_Approximation",
+        "Miscellaneous_QR",
+        "Examples_QR_IArrays_Symbolic",
+        "Gram_Schmidt",
+        "Examples_QR_Abstract_Symbolic",
+        "QR_Decomposition_IArrays"
     ],
     "relatedEntries": [
         "Echelon_Form",

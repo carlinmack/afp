@@ -43,16 +43,16 @@
         }
     ],
     "theories": [
-        "Analysis",
-        "ElementaryPolicies",
-        "Monads",
-        "Normalisation",
-        "NormalisationTestSpecification",
-        "ParallelComposition",
-        "SeqComposition",
         "Service",
         "ServiceExample",
         "UPF",
-        "UPFCore"
+        "Monads",
+        "NormalisationTestSpecification",
+        "SeqComposition",
+        "Analysis",
+        "UPFCore",
+        "ParallelComposition",
+        "ElementaryPolicies",
+        "Normalisation"
     ]
 }

@@ -27,10 +27,10 @@
         "Stone_Relation_Algebras"
     ],
     "theories": [
-        "Iterings",
-        "Kleene_Algebras",
         "Kleene_Relation_Algebras",
         "Kleene_Relation_Subalgebras",
+        "Iterings",
+        "Kleene_Algebras",
         "Matrix_Kleene_Algebras"
     ]
 }

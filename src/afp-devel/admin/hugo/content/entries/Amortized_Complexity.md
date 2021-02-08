@@ -51,20 +51,20 @@
     ],
     "theories": [
         "Amortized_Examples",
-        "Amortized_Framework",
-        "Amortized_Framework0",
-        "Lemmas_log",
         "Pairing_Heap_List1_Analysis",
-        "Pairing_Heap_List1_Analysis2",
-        "Pairing_Heap_List2_Analysis",
+        "Splay_Heap_Analysis",
+        "Skew_Heap_Analysis",
+        "Lemmas_log",
+        "Priority_Queue_ops_merge",
+        "Splay_Tree_Analysis_Base",
         "Pairing_Heap_Tree_Analysis",
         "Pairing_Heap_Tree_Analysis2",
+        "Splay_Tree_Analysis_Optimal",
+        "Pairing_Heap_List1_Analysis2",
         "Priority_Queue_ops",
-        "Priority_Queue_ops_merge",
-        "Skew_Heap_Analysis",
-        "Splay_Heap_Analysis",
+        "Amortized_Framework0",
+        "Pairing_Heap_List2_Analysis",
         "Splay_Tree_Analysis",
-        "Splay_Tree_Analysis_Base",
-        "Splay_Tree_Analysis_Optimal"
+        "Amortized_Framework"
     ]
 }

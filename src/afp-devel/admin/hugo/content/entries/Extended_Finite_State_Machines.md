@@ -17,18 +17,18 @@
     "abstract": "\nIn this AFP entry, we provide a formalisation of extended finite state\nmachines (EFSMs) where models are represented as finite sets of\ntransitions between states. EFSMs execute traces to produce observable\noutputs. We also define various simulation and equality metrics for\nEFSMs in terms of traces and prove their strengths in relation to each\nother. Another key contribution is a framework of function definitions\nsuch that LTL properties can be phrased over EFSMs. Finally, we\nprovide a simple example case study in the form of a drinks machine.",
     "licence": "BSD",
     "theories": [
-        "AExp",
         "AExp_Lexorder",
-        "EFSM",
-        "EFSM_LTL",
-        "FSet_Utils",
+        "VName",
         "GExp",
-        "GExp_Lexorder",
-        "Transition",
-        "Transition_Lexorder",
-        "Trilean",
         "Value",
+        "Trilean",
+        "GExp_Lexorder",
+        "FSet_Utils",
         "Value_Lexorder",
-        "VName"
+        "Transition_Lexorder",
+        "EFSM",
+        "AExp",
+        "Transition",
+        "EFSM_LTL"
     ]
 }

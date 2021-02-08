@@ -30,17 +30,17 @@
     ],
     "theories": [
         "Disjoint_Sets",
-        "Find_First",
-        "Fresh_Class",
-        "Fresh_Monad",
         "Lambda_Free_Compat",
-        "Name",
-        "Nterm",
+        "Unification_Compat",
         "Pats",
-        "Term",
+        "Find_First",
         "Term_Class",
+        "Term",
         "Term_to_Nterm",
         "Term_Utils",
-        "Unification_Compat"
+        "Name",
+        "Fresh_Monad",
+        "Fresh_Class",
+        "Nterm"
     ]
 }

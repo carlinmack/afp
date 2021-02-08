@@ -85,7 +85,7 @@
         "Lazy-Lists-II"
     ],
     "theories": [
-        "LList_Topology",
-        "Topology"
+        "Topology",
+        "LList_Topology"
     ]
 }

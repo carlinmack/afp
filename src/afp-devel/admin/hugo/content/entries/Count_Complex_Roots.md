@@ -29,9 +29,9 @@
         "Winding_Number_Eval"
     ],
     "theories": [
-        "Count_Complex_Roots",
-        "Count_Complex_Roots_Examples",
         "Extended_Sturm",
-        "More_Polynomials"
+        "Count_Complex_Roots",
+        "More_Polynomials",
+        "Count_Complex_Roots_Examples"
     ]
 }

@@ -23,7 +23,7 @@
         "Robinson_Arithmetic"
     ],
     "relatedEntries": [
-        "Goedel_HFSet_Semanticless",
-        "Incompleteness"
+        "Incompleteness",
+        "Goedel_HFSet_Semanticless"
     ]
 }

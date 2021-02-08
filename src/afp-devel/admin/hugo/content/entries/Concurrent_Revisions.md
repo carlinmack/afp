@@ -21,12 +21,12 @@
         }
     ],
     "theories": [
-        "Data",
         "Determinacy",
+        "Renaming",
+        "Data",
         "Executions",
         "Occurrences",
-        "OperationalSemantics",
-        "Renaming",
-        "Substitution"
+        "Substitution",
+        "OperationalSemantics"
     ]
 }

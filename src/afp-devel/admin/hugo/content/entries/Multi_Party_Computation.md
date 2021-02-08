@@ -25,20 +25,20 @@
         "Game_Based_Crypto"
     ],
     "theories": [
-        "Cyclic_Group_Ext",
-        "DH_Ext",
-        "ETP",
-        "ETP_OT",
-        "ETP_RSA_OT",
-        "GMW",
-        "Malicious_Defs",
-        "Malicious_OT",
-        "Noar_Pinkas_OT",
-        "Number_Theory_Aux",
-        "OT14",
-        "OT_Functionalities",
         "Secure_Multiplication",
+        "Noar_Pinkas_OT",
+        "Cyclic_Group_Ext",
+        "Malicious_Defs",
+        "OT_Functionalities",
+        "Uniform_Sampling",
         "Semi_Honest_Def",
-        "Uniform_Sampling"
+        "Malicious_OT",
+        "ETP_OT",
+        "OT14",
+        "DH_Ext",
+        "ETP_RSA_OT",
+        "ETP",
+        "Number_Theory_Aux",
+        "GMW"
     ]
 }

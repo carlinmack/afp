@@ -41,10 +41,10 @@
     ],
     "theories": [
         "Code_Equations",
-        "Disjunctive_Normal_Form",
-        "Equivalence_Relations",
         "LTL",
-        "Rewriting"
+        "Rewriting",
+        "Disjunctive_Normal_Form",
+        "Equivalence_Relations"
     ],
     "relatedEntries": [
         "LTL_to_DRA"

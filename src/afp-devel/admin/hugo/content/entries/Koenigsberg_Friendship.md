@@ -49,7 +49,7 @@
     ],
     "theories": [
         "FriendshipTheory",
-        "KoenigsbergBridge",
-        "MoreGraph"
+        "MoreGraph",
+        "KoenigsbergBridge"
     ]
 }

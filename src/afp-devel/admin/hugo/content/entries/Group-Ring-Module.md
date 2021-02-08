@@ -86,14 +86,14 @@
         }
     ],
     "theories": [
+        "Algebra3",
+        "Algebra5",
+        "Algebra7",
+        "Algebra6",
+        "Algebra8",
         "Algebra1",
         "Algebra2",
-        "Algebra3",
-        "Algebra4",
-        "Algebra5",
-        "Algebra6",
-        "Algebra7",
-        "Algebra8",
-        "Algebra9"
+        "Algebra9",
+        "Algebra4"
     ]
 }

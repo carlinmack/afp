@@ -33,10 +33,10 @@
         "CRDT"
     ],
     "theories": [
-        "IMAP-def",
+        "IMAP-proof",
         "IMAP-proof-commute",
         "IMAP-proof-helpers",
-        "IMAP-proof-independent",
-        "IMAP-proof"
+        "IMAP-def",
+        "IMAP-proof-independent"
     ]
 }

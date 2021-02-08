@@ -29,20 +29,20 @@
         "Euler_MacLaurin"
     ],
     "theories": [
-        "Arithmetic_Summatory",
-        "Arithmetic_Summatory_Asymptotics",
-        "Dirichlet_Efficient_Code",
-        "Dirichlet_Misc",
-        "Dirichlet_Product",
-        "Dirichlet_Series",
-        "Dirichlet_Series_Analysis",
-        "Divisor_Count",
-        "Euler_Products",
         "Liouville_Lambda",
-        "Moebius_Mu",
+        "Dirichlet_Product",
+        "Dirichlet_Efficient_Code",
+        "Divisor_Count",
         "More_Totient",
+        "Arithmetic_Summatory_Asymptotics",
+        "Dirichlet_Misc",
+        "Partial_Summation",
+        "Moebius_Mu",
+        "Dirichlet_Series",
+        "Arithmetic_Summatory",
+        "Euler_Products",
         "Multiplicative_Function",
-        "Partial_Summation"
+        "Dirichlet_Series_Analysis"
     ],
     "relatedEntries": [
         "Zeta_Function",

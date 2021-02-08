@@ -42,11 +42,11 @@
         "Show"
     ],
     "theories": [
+        "Parser_Monad",
+        "Error_Syntax",
         "Check_Monad",
         "Error_Monad",
-        "Error_Syntax",
         "Misc",
-        "Parser_Monad",
         "Strict_Sum"
     ],
     "relatedEntries": [

@@ -14,11 +14,11 @@
     "licence": "BSD",
     "theories": [
         "Cantor_NF",
-        "Kirby",
+        "ZFC_Typeclasses",
         "Ordinal_Exp",
-        "ZFC_Cardinals",
         "ZFC_in_HOL",
+        "ZFC_Cardinals",
         "ZFC_Library",
-        "ZFC_Typeclasses"
+        "Kirby"
     ]
 }

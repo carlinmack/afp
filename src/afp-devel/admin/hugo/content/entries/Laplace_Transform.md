@@ -18,11 +18,11 @@
         }
     ],
     "theories": [
+        "Laplace_Transform_Library",
+        "Uniqueness",
+        "Lerch_Lemma",
         "Existence",
         "Laplace_Transform",
-        "Laplace_Transform_Library",
-        "Lerch_Lemma",
-        "Piecewise_Continuous",
-        "Uniqueness"
+        "Piecewise_Continuous"
     ]
 }

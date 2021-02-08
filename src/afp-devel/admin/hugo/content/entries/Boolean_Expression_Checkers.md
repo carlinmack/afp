@@ -44,7 +44,7 @@
     ],
     "theories": [
         "Boolean_Expression_Checkers",
-        "Boolean_Expression_Checkers_AList_Mapping",
-        "Boolean_Expression_Example"
+        "Boolean_Expression_Example",
+        "Boolean_Expression_Checkers_AList_Mapping"
     ]
 }

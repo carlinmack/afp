@@ -55,9 +55,9 @@
         "Native_Word"
     ],
     "theories": [
+        "Derive_Examples",
         "Derive",
         "Derive_Aux",
-        "Derive_Examples",
         "Hash_Generator",
         "Order_Generator"
     ],

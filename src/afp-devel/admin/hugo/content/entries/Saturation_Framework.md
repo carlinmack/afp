@@ -23,15 +23,15 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
+        "Intersection_Calculus",
+        "Lifting_to_Non_Ground_Calculi",
         "Calculus",
         "Calculus_Variations",
-        "Given_Clause_Architectures",
-        "Intersection_Calculus",
         "Labeled_Lifting_to_Non_Ground_Calculi",
-        "Lifting_to_Non_Ground_Calculi"
+        "Given_Clause_Architectures"
     ],
     "relatedEntries": [
-        "Saturation_Framework_Extensions",
-        "Functional_Ordered_Resolution_Prover"
+        "Functional_Ordered_Resolution_Prover",
+        "Saturation_Framework_Extensions"
     ]
 }

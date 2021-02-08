@@ -27,7 +27,7 @@
     ],
     "theories": [
         "Common",
-        "Sequent",
-        "Tableau"
+        "Tableau",
+        "Sequent"
     ]
 }

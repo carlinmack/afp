@@ -43,7 +43,7 @@
     ],
     "theories": [
         "ClassicalNoninterference",
-        "CSPNoninterference",
-        "GeneralizedNoninterference"
+        "GeneralizedNoninterference",
+        "CSPNoninterference"
     ]
 }

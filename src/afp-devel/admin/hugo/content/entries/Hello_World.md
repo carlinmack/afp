@@ -20,8 +20,8 @@
     ],
     "theories": [
         "HelloWorld",
-        "HelloWorld_Proof",
+        "RunningCodeFromIsabelle",
         "IO",
-        "RunningCodeFromIsabelle"
+        "HelloWorld_Proof"
     ]
 }

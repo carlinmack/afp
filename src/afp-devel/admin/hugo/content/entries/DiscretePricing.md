@@ -28,14 +28,14 @@
         }
     ],
     "theories": [
-        "CRR_Model",
+        "Generated_Subalgebra",
+        "Filtration",
         "Disc_Cond_Expect",
         "Fair_Price",
-        "Filtration",
-        "Generated_Subalgebra",
-        "Geometric_Random_Walk",
         "Infinite_Coin_Toss_Space",
+        "Geometric_Random_Walk",
         "Martingale",
-        "Option_Price_Examples"
+        "Option_Price_Examples",
+        "CRR_Model"
     ]
 }

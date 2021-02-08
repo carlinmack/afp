@@ -63,7 +63,7 @@
         }
     ],
     "theories": [
-        "DPT_SAT_Solver",
-        "DPT_SAT_Tests"
+        "DPT_SAT_Tests",
+        "DPT_SAT_Solver"
     ]
 }

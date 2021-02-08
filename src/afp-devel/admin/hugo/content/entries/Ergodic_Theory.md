@@ -31,17 +31,17 @@
         }
     ],
     "theories": [
-        "Asymptotic_Density",
+        "Gouezel_Karlsson",
         "Ergodicity",
         "Fekete",
-        "Gouezel_Karlsson",
         "Invariants",
-        "Kingman",
+        "Asymptotic_Density",
         "Kohlberg_Neyman_Karlsson",
+        "Recurrence",
         "Measure_Preserving_Transformations",
         "Normalizing_Sequences",
-        "Recurrence",
         "SG_Library_Complement",
-        "Transfer_Operator"
+        "Transfer_Operator",
+        "Kingman"
     ]
 }

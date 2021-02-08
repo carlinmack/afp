@@ -34,7 +34,7 @@
         }
     ],
     "theories": [
-        "Liouville_Numbers",
-        "Liouville_Numbers_Misc"
+        "Liouville_Numbers_Misc",
+        "Liouville_Numbers"
     ]
 }

@@ -33,7 +33,7 @@
         }
     ],
     "theories": [
-        "Angles",
-        "Triangle"
+        "Triangle",
+        "Angles"
     ]
 }

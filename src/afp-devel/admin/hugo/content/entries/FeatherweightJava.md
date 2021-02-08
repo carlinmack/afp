@@ -76,10 +76,10 @@
         }
     ],
     "theories": [
-        "Execute",
-        "Featherweight_Java",
         "FJAux",
         "FJDefs",
-        "FJSound"
+        "Featherweight_Java",
+        "FJSound",
+        "Execute"
     ]
 }

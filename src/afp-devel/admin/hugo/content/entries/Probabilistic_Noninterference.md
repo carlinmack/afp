@@ -44,12 +44,12 @@
         "Markov_Models"
     ],
     "theories": [
-        "Compositionality",
-        "Concrete",
-        "Interface",
-        "Language_Semantics",
         "Resumption_Based",
+        "Concrete",
+        "Trace_Based",
+        "Language_Semantics",
+        "Compositionality",
         "Syntactic_Criteria",
-        "Trace_Based"
+        "Interface"
     ]
 }

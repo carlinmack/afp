@@ -25,10 +25,10 @@
     "theories": [
         "Challenge1A",
         "Challenge1B",
+        "Parallel_Multiset_Fold",
         "Challenge2A",
         "Challenge2B",
-        "Challenge3",
-        "Parallel_Multiset_Fold"
+        "Challenge3"
     ],
     "relatedEntries": [
         "VerifyThis2018"

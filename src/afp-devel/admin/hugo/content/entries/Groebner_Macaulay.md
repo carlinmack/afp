@@ -21,16 +21,16 @@
         "Groebner_Bases"
     ],
     "theories": [
-        "Binomial_Int",
-        "Cone_Decomposition",
-        "Degree_Bound_Utils",
-        "Degree_Section",
         "Dube_Bound",
-        "Dube_Prelims",
-        "Groebner_Macaulay",
-        "Groebner_Macaulay_Examples",
-        "Hilbert_Function",
         "Monomial_Module",
-        "Poly_Fun"
+        "Groebner_Macaulay",
+        "Dube_Prelims",
+        "Degree_Section",
+        "Binomial_Int",
+        "Degree_Bound_Utils",
+        "Cone_Decomposition",
+        "Groebner_Macaulay_Examples",
+        "Poly_Fun",
+        "Hilbert_Function"
     ]
 }

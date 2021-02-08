@@ -68,9 +68,9 @@
         "Abstract-Rewriting"
     ],
     "theories": [
-        "Matrix_Legacy",
+        "Utility",
         "Ordered_Semiring",
-        "Utility"
+        "Matrix_Legacy"
     ],
     "relatedEntries": [
         "Polynomials"

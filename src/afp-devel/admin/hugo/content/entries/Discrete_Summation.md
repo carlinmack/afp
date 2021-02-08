@@ -44,7 +44,7 @@
     "theories": [
         "Discrete_Summation",
         "Examples",
-        "Factorials",
-        "Summation_Conversion"
+        "Summation_Conversion",
+        "Factorials"
     ]
 }

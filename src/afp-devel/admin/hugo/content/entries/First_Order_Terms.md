@@ -33,17 +33,17 @@
         "Abstract-Rewriting"
     ],
     "theories": [
-        "Abstract_Matching",
-        "Abstract_Unification",
         "Fun_More",
-        "Matching",
-        "Option_Monad",
-        "Seq_More",
-        "Subsumption",
-        "Term",
-        "Term_Pair_Multiset",
         "Transitive_Closure_More",
+        "Term_Pair_Multiset",
+        "Unifiers",
         "Unification",
-        "Unifiers"
+        "Term",
+        "Option_Monad",
+        "Matching",
+        "Abstract_Matching",
+        "Seq_More",
+        "Abstract_Unification",
+        "Subsumption"
     ]
 }

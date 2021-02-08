@@ -67,19 +67,19 @@
         }
     ],
     "theories": [
-        "Accumulator",
-        "Backtracking",
         "Continuations",
-        "CounterExample",
-        "FixedPointTheorems",
-        "Last",
-        "LList",
-        "Maybe",
-        "Nats",
         "Nub",
+        "FixedPointTheorems",
+        "Nats",
+        "Maybe",
+        "Accumulator",
         "Streams",
+        "Last",
         "UnboxedNats",
+        "CounterExample",
+        "Backtracking",
         "WorkerWrapper",
+        "LList",
         "WorkerWrapperNew"
     ]
 }

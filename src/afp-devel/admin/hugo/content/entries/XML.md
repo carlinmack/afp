@@ -43,8 +43,8 @@
         "Show"
     ],
     "theories": [
-        "Xml",
-        "Xmlt"
+        "Xmlt",
+        "Xml"
     ],
     "relatedEntries": [
         "Certification_Monads",

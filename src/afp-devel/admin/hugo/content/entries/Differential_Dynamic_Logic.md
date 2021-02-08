@@ -31,21 +31,21 @@
         "Ordinary_Differential_Equations"
     ],
     "theories": [
-        "Axioms",
-        "Bound_Effect",
-        "Coincidence",
-        "Denotational_Semantics",
+        "Uniform_Renaming",
         "Differential_Axioms",
-        "Differential_Dynamic_Logic",
+        "Axioms",
         "Frechet_Correctness",
-        "Ids",
-        "Lib",
-        "Pretty_Printer",
-        "Proof_Checker",
+        "USubst",
+        "Coincidence",
+        "Bound_Effect",
         "Static_Semantics",
         "Syntax",
-        "Uniform_Renaming",
-        "USubst",
-        "USubst_Lemma"
+        "Proof_Checker",
+        "Pretty_Printer",
+        "Denotational_Semantics",
+        "Differential_Dynamic_Logic",
+        "Ids",
+        "USubst_Lemma",
+        "Lib"
     ]
 }

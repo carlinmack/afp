@@ -80,10 +80,10 @@
         "Collections_Examples"
     ],
     "theories": [
-        "AbsAlgo",
-        "Ta",
         "Ta_impl",
+        "Tree",
+        "Ta",
         "Ta_impl_codegen",
-        "Tree"
+        "AbsAlgo"
     ]
 }

@@ -85,7 +85,7 @@
         }
     ],
     "theories": [
-        "AVL",
-        "AVL2"
+        "AVL2",
+        "AVL"
     ]
 }
