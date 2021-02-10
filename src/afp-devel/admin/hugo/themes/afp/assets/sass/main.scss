@@ -115,7 +115,6 @@ aside {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: max-content;
         height: 100vh;
     }
 
@@ -165,6 +164,7 @@ aside {
     width: 40%;
     height: auto;
     padding: 10%;
+    max-width: 160px;
 }
 
 li {
