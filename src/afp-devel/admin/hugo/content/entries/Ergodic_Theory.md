@@ -38,10 +38,15 @@
         "Asymptotic_Density",
         "Kohlberg_Neyman_Karlsson",
         "Recurrence",
+        "Trivial_Measure",
         "Measure_Preserving_Transformations",
         "Normalizing_Sequences",
         "SG_Library_Complement",
         "Transfer_Operator",
-        "Kingman"
+        "Kingman",
+        "Shift_Operator"
+    ],
+    "contributors": [
+        "Manuel Eberl"
     ]
 }
