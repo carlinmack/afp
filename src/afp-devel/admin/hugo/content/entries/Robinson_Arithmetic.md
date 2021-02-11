@@ -19,11 +19,11 @@
         "Nominal2"
     ],
     "theories": [
-        "Instance",
-        "Robinson_Arithmetic"
+        "Robinson_Arithmetic",
+        "Instance"
     ],
     "relatedEntries": [
-        "Incompleteness",
-        "Goedel_HFSet_Semanticless"
+        "Goedel_HFSet_Semanticless",
+        "Incompleteness"
     ]
 }

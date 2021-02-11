@@ -46,24 +46,24 @@
         "Automatic_Refinement"
     ],
     "theories": [
+        "TopoS_Impl",
+        "TopoS_Vertices",
+        "attic",
+        "TopoS_withOffendingFlows",
+        "TopoS_Library",
+        "TopoS_Stateful_Policy",
+        "SINVAR_Examples",
+        "TopoS_Composition_Theory_impl",
+        "TopoS_generateCode",
         "Network_Security_Policy_Verification",
         "TopoS_Helper",
-        "TopoS_ENF",
-        "TopoS_withOffendingFlows",
-        "TopoS_Stateful_Policy",
-        "TopoS_Composition_Theory",
-        "Example_BLP",
-        "TopoS_Impl",
         "TopoS_Interface",
-        "vertex_example_simps",
         "TopoS_Interface_impl",
-        "attic",
-        "TopoS_Stateful_Policy_impl",
+        "vertex_example_simps",
+        "Example_BLP",
+        "TopoS_ENF",
         "TopoS_Stateful_Policy_Algorithm",
-        "TopoS_Vertices",
-        "TopoS_Composition_Theory_impl",
-        "SINVAR_Examples",
-        "TopoS_Library",
-        "TopoS_generateCode"
+        "TopoS_Composition_Theory",
+        "TopoS_Stateful_Policy_impl"
     ]
 }

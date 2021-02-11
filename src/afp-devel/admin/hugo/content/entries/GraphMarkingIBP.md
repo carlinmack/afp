@@ -72,8 +72,8 @@
     "theories": [
         "StackMark",
         "Graph",
-        "LinkMark",
         "SetMark",
+        "LinkMark",
         "DSWMark"
     ]
 }

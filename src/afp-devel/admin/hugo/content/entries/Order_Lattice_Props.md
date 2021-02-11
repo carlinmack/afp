@@ -27,11 +27,11 @@
         "Order_Lattice_Props_Loc",
         "Order_Duality",
         "Order_Lattice_Props_Wenzel",
-        "Representations",
-        "Order_Lattice_Props",
         "Sup_Lattice",
+        "Representations",
         "Fixpoint_Fusion",
-        "Galois_Connections",
-        "Closure_Operators"
+        "Closure_Operators",
+        "Order_Lattice_Props",
+        "Galois_Connections"
     ]
 }

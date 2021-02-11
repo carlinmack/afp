@@ -32,17 +32,17 @@
         }
     ],
     "theories": [
-        "Bexp",
-        "Conf",
-        "Graph",
         "RB",
+        "Graph",
+        "Bexp",
         "SubExt",
+        "Aexp",
         "LTS",
-        "SymExec",
-        "SubRel",
-        "Store",
+        "Conf",
         "ArcExt",
+        "Store",
+        "SubRel",
         "Labels",
-        "Aexp"
+        "SymExec"
     ]
 }

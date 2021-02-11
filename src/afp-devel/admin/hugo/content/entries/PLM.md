@@ -28,18 +28,18 @@
     ],
     "theories": [
         "Thesis",
-        "TAO_9_PLM",
-        "TAO_3_Quantifiable",
-        "TAO_1_Embedding",
         "TAO_6_Identifiable",
-        "TAO_7_Axioms",
-        "TAO_10_PossibleWorlds",
+        "TAO_1_Embedding",
         "TAO_8_Definitions",
-        "TAO_5_MetaSolver",
-        "TAO_2_Semantics",
-        "TAO_99_SanityTests",
-        "TAO_99_Paradox",
         "TAO_4_BasicDefinitions",
-        "TAO_98_ArtificialTheorems"
+        "TAO_99_Paradox",
+        "TAO_10_PossibleWorlds",
+        "TAO_5_MetaSolver",
+        "TAO_3_Quantifiable",
+        "TAO_2_Semantics",
+        "TAO_7_Axioms",
+        "TAO_98_ArtificialTheorems",
+        "TAO_99_SanityTests",
+        "TAO_9_PLM"
     ]
 }

@@ -27,7 +27,7 @@
         }
     ],
     "theories": [
-        "Lazy_Case",
-        "Test_Lazy_Case"
+        "Test_Lazy_Case",
+        "Lazy_Case"
     ]
 }

@@ -37,12 +37,12 @@
         }
     ],
     "theories": [
+        "Language",
+        "Compositionality",
+        "Preliminaries",
         "LocallySoundModeUse",
         "Security",
-        "Language",
-        "TypeSystem",
-        "Compositionality",
-        "Preliminaries"
+        "TypeSystem"
     ],
     "relatedEntries": [
         "Dependent_SIFUM_Refinement"

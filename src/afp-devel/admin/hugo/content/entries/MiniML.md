@@ -88,11 +88,11 @@
         }
     ],
     "theories": [
+        "W",
         "Generalize",
         "Maybe",
-        "Instance",
-        "W",
+        "Type",
         "MiniML",
-        "Type"
+        "Instance"
     ]
 }

@@ -41,20 +41,20 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
-        "Observing_Quorums",
-        "Voting",
-        "Two_Steps",
-        "Infra",
+        "MRU_Vote",
         "Same_Vote",
         "Voting_Opt",
-        "MRU_Vote_Opt",
-        "Refinement",
+        "Observing_Quorums",
+        "Consensus_Types",
         "Observing_Quorums_Opt",
         "HO_Transition_System",
-        "MRU_Vote",
-        "Consensus_Types",
+        "Refinement",
+        "Infra",
+        "Quorums",
+        "Voting",
         "Consensus_Misc",
-        "Quorums"
+        "Two_Steps",
+        "MRU_Vote_Opt"
     ],
     "relatedEntries": [
         "Heard_Of"

@@ -18,7 +18,7 @@
         "Shadow_DOM"
     ],
     "theories": [
-        "Shadow_DOM_Components",
-        "Core_DOM_Components"
+        "Core_DOM_Components",
+        "Shadow_DOM_Components"
     ]
 }

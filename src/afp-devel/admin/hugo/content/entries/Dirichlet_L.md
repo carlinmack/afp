@@ -28,15 +28,15 @@
         "Bertrands_Postulate"
     ],
     "theories": [
+        "Dirichlet_Theorem",
         "Dirichlet_Characters",
-        "Dirichlet_L_Functions",
-        "Group_Adjoin",
         "Multiplicative_Characters",
-        "Dirichlet_Theorem"
+        "Dirichlet_L_Functions",
+        "Group_Adjoin"
     ],
     "relatedEntries": [
+        "Prime_Number_Theorem",
         "Gauss_Sums",
-        "Prime_Distribution_Elementary",
-        "Prime_Number_Theorem"
+        "Zeta_Function"
     ]
 }

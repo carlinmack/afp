@@ -34,10 +34,10 @@
         "Simple_Firewall"
     ],
     "theories": [
-        "IpRoute_Parser",
-        "Routing_Table",
         "Linux_Router",
+        "Routing_Table",
+        "Linorder_Helper",
         "ReversePathFiltering",
-        "Linorder_Helper"
+        "IpRoute_Parser"
     ]
 }

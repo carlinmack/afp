@@ -42,18 +42,18 @@
         }
     ],
     "theories": [
-        "RelationOperators",
-        "Partitions",
-        "UniformTieBreaking",
         "SetUtils",
-        "MiscTools",
+        "CombinatorialAuction",
+        "StrictCombinatorialAuction",
+        "CombinatorialAuctionCodeExtraction",
+        "FirstPrice",
         "RelationProperties",
         "CombinatorialAuctionExamples",
-        "FirstPrice",
-        "Universes",
         "Argmax",
-        "StrictCombinatorialAuction",
-        "CombinatorialAuction",
-        "CombinatorialAuctionCodeExtraction"
+        "MiscTools",
+        "RelationOperators",
+        "Universes",
+        "UniformTieBreaking",
+        "Partitions"
     ]
 }

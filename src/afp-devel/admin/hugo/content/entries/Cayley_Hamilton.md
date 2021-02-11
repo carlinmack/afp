@@ -38,7 +38,7 @@
         }
     ],
     "theories": [
-        "Cayley_Hamilton",
-        "Square_Matrix"
+        "Square_Matrix",
+        "Cayley_Hamilton"
     ]
 }

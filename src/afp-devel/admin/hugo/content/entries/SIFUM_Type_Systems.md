@@ -45,12 +45,12 @@
         }
     ],
     "theories": [
+        "Language",
+        "Compositionality",
+        "Preliminaries",
         "LocallySoundModeUse",
         "Security",
-        "Language",
-        "TypeSystem",
-        "Compositionality",
-        "Preliminaries"
+        "TypeSystem"
     ],
     "relatedEntries": [
         "WHATandWHERE_Security",

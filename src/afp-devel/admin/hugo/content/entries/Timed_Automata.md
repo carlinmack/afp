@@ -30,19 +30,19 @@
         }
     ],
     "theories": [
-        "DBM_Zone_Semantics",
-        "DBM_Basics",
-        "DBM_Operations",
-        "Paths_Cycles",
-        "Floyd_Warshall",
-        "DBM_Normalization",
-        "Regions_Beta",
-        "Closure",
-        "DBM",
-        "Approx_Beta",
         "Timed_Automata",
+        "DBM_Operations",
+        "DBM_Basics",
+        "DBM_Normalization",
         "Normalized_Zone_Semantics",
+        "Misc",
+        "Closure",
+        "Regions_Beta",
+        "DBM",
+        "Floyd_Warshall",
         "Regions",
-        "Misc"
+        "DBM_Zone_Semantics",
+        "Approx_Beta",
+        "Paths_Cycles"
     ]
 }

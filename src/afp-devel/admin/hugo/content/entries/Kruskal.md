@@ -31,17 +31,17 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "MinWeightBasis",
-        "Graph_Definition_Aux",
+        "UGraph",
+        "Kruskal",
+        "Kruskal_Impl",
+        "Graph_Definition_Impl",
+        "Kruskal_Refine",
+        "SeprefUF",
         "Kruskal_Misc",
         "UGraph_Impl",
-        "Kruskal",
-        "SeprefUF",
-        "Graph_Definition",
-        "Kruskal_Refine",
-        "Kruskal_Impl",
-        "UGraph",
-        "Graph_Definition_Impl"
+        "MinWeightBasis",
+        "Graph_Definition_Aux",
+        "Graph_Definition"
     ],
     "relatedEntries": [
         "JinjaThreads",

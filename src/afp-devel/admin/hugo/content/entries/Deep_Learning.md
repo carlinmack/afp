@@ -37,28 +37,28 @@
         "VectorSpace"
     ],
     "theories": [
-        "Tensor_Plus",
-        "Tensor_Subtensor",
-        "DL_Missing_Finite_Set",
-        "Lebesgue_Functional",
-        "DL_Deep_Model_Poly",
-        "Tensor",
-        "DL_Concrete_Matrices",
-        "DL_Network",
         "DL_Flatten_Matrix",
+        "DL_Missing_Finite_Set",
         "Tensor_Matricization",
-        "Tensor_Scalar_Mult",
-        "Tensor_Rank",
+        "DL_Shallow_Model",
         "DL_Fundamental_Theorem_Network_Capacity",
-        "Tensor_Unit_Vec",
-        "Lebesgue_Zero_Set",
-        "Tensor_Product",
-        "DL_Rank_CP_Rank",
         "DL_Deep_Model",
-        "DL_Shallow_Model"
+        "Tensor_Product",
+        "Tensor_Rank",
+        "DL_Rank_CP_Rank",
+        "Tensor_Scalar_Mult",
+        "Tensor_Plus",
+        "Lebesgue_Zero_Set",
+        "Tensor_Subtensor",
+        "Lebesgue_Functional",
+        "Tensor_Unit_Vec",
+        "DL_Concrete_Matrices",
+        "DL_Deep_Model_Poly",
+        "DL_Network",
+        "Tensor"
     ],
     "relatedEntries": [
-        "Groebner_Bases",
-        "Isabelle_Marries_Dirac"
+        "Isabelle_Marries_Dirac",
+        "Groebner_Bases"
     ]
 }

@@ -33,17 +33,17 @@
         "List-Index"
     ],
     "theories": [
-        "Randomised_Social_Choice",
-        "Social_Decision_Schemes",
-        "Utility_Functions",
-        "Lotteries",
         "SD_Efficiency",
-        "Random_Serial_Dictatorship",
-        "Stochastic_Dominance",
-        "Random_Dictatorship",
+        "Randomised_Social_Choice",
         "SDS_Lowering",
         "Order_Predicates",
+        "Random_Dictatorship",
         "Preference_Profiles",
-        "Elections"
+        "Social_Decision_Schemes",
+        "Lotteries",
+        "Random_Serial_Dictatorship",
+        "Stochastic_Dominance",
+        "Elections",
+        "Utility_Functions"
     ]
 }

@@ -57,9 +57,9 @@
         "LatticeProperties"
     ],
     "theories": [
-        "Statements",
         "Mono_Bool_Tran_Algebra",
-        "Assertion_Algebra",
-        "Mono_Bool_Tran"
+        "Mono_Bool_Tran",
+        "Statements",
+        "Assertion_Algebra"
     ]
 }

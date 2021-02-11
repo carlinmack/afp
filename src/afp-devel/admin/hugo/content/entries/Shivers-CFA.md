@@ -61,19 +61,19 @@
         }
     ],
     "theories": [
-        "Computability",
-        "AbsCFComp",
-        "HOLCFUtils",
-        "AbsCFCorrect",
-        "MapSets",
-        "CPSUtils",
-        "Eval",
-        "AbsCF",
-        "ExCFSV",
-        "FixTransform",
-        "CPSScheme",
-        "ExCF",
         "SetMap",
-        "Utils"
+        "FixTransform",
+        "HOLCFUtils",
+        "MapSets",
+        "ExCF",
+        "Computability",
+        "AbsCFCorrect",
+        "CPSUtils",
+        "ExCFSV",
+        "AbsCFComp",
+        "CPSScheme",
+        "AbsCF",
+        "Utils",
+        "Eval"
     ]
 }

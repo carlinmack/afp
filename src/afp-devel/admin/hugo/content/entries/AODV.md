@@ -43,18 +43,18 @@
         "AWN"
     ],
     "theories": [
-        "Quality_Increases",
+        "Loop_Freedom",
+        "OAodv",
+        "Fresher",
+        "Aodv_Data",
         "Aodv",
         "Aodv_Predicates",
-        "Global_Invariants",
         "All",
-        "Aodv_Data",
-        "Fresher",
-        "Seq_Invariants",
+        "Aodv_Message",
         "Aodv_Basic",
-        "Loop_Freedom",
+        "Seq_Invariants",
         "Aodv_Loop_Freedom",
-        "OAodv",
-        "Aodv_Message"
+        "Quality_Increases",
+        "Global_Invariants"
     ]
 }

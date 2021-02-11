@@ -24,8 +24,8 @@
         "Lambda_Free_RPOs"
     ],
     "theories": [
-        "Chop",
         "Lambda_Free_EPO",
+        "Chop",
         "Embeddings"
     ],
     "relatedEntries": [

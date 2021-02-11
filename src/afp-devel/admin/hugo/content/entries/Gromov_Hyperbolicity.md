@@ -24,17 +24,17 @@
         "Ergodic_Theory"
     ],
     "theories": [
-        "Library_Complements",
-        "Eexp_Eln",
-        "Metric_Completion",
-        "Gromov_Boundary",
-        "Hausdorff_Distance",
-        "Isometries",
-        "Morse_Gromov_Theorem",
-        "Isometries_Classification",
-        "Gromov_Hyperbolicity",
-        "Bonk_Schramm_Extension",
         "Busemann_Function",
-        "Boundary_Extension"
+        "Gromov_Boundary",
+        "Isometries_Classification",
+        "Boundary_Extension",
+        "Metric_Completion",
+        "Eexp_Eln",
+        "Hausdorff_Distance",
+        "Library_Complements",
+        "Bonk_Schramm_Extension",
+        "Gromov_Hyperbolicity",
+        "Isometries",
+        "Morse_Gromov_Theorem"
     ]
 }

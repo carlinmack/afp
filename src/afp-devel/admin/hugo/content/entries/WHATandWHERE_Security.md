@@ -46,14 +46,14 @@
         "Strong_Security"
     ],
     "theories": [
-        "Parallel_Composition",
-        "MWLs",
-        "Up_To_Technique",
-        "Language_Composition",
-        "Type_System",
-        "WHATWHERE_Security",
         "WHATWHERE_Secure_Skip_Assign",
-        "Type_System_example"
+        "Type_System_example",
+        "Type_System",
+        "MWLs",
+        "WHATWHERE_Security",
+        "Up_To_Technique",
+        "Parallel_Composition",
+        "Language_Composition"
     ],
     "relatedEntries": [
         "Strong_Security",

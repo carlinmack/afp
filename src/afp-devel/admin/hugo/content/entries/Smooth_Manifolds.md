@@ -24,17 +24,17 @@
         }
     ],
     "theories": [
+        "Partition_Of_Unity",
+        "Product_Manifold",
+        "Topological_Manifold",
+        "Tangent_Space",
         "Chart",
-        "Bump_Function",
         "Analysis_More",
         "Sphere",
         "Smooth",
-        "Partition_Of_Unity",
         "Differentiable_Manifold",
-        "Product_Manifold",
-        "Tangent_Space",
-        "Topological_Manifold",
         "Projective_Space",
-        "Cotangent_Space"
+        "Cotangent_Space",
+        "Bump_Function"
     ]
 }

@@ -56,24 +56,24 @@
         }
     ],
     "theories": [
-        "Finite_Suprema",
-        "Kleene_Algebra",
         "Dioid_Models",
-        "Omega_Algebra",
-        "Formal_Power_Series",
-        "DRA",
-        "Inf_Matrix",
-        "Dioid",
         "Matrix",
-        "PHL_DRA",
         "Omega_Algebra_Models",
-        "Kleene_Algebra_Models",
+        "DRA",
+        "Signatures",
+        "Formal_Power_Series",
         "PHL_KA",
+        "Dioid",
         "Conway",
-        "Signatures"
+        "Finite_Suprema",
+        "Omega_Algebra",
+        "Inf_Matrix",
+        "Kleene_Algebra_Models",
+        "Kleene_Algebra",
+        "PHL_DRA"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
-        "KAD"
+        "KAD",
+        "KAT_and_DRA"
     ]
 }

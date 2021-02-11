@@ -19,7 +19,7 @@
     ],
     "theories": [
         "Set_Theory",
-        "Ring_Theory",
-        "Group_Theory"
+        "Group_Theory",
+        "Ring_Theory"
     ]
 }

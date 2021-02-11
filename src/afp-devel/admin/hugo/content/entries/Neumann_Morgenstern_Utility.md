@@ -29,9 +29,9 @@
         "First_Welfare_Theorem"
     ],
     "theories": [
-        "PMF_Composition",
-        "Lotteries",
         "Expected_Utility",
+        "Lotteries",
+        "PMF_Composition",
         "Neumann_Morgenstern_Utility_Theorem"
     ]
 }

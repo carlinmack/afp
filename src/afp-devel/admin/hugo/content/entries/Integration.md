@@ -84,10 +84,10 @@
     ],
     "theories": [
         "Measure",
-        "Integral",
         "Sigma_Algebra",
-        "Failure",
+        "Integral",
+        "RealRandVar",
         "MonConv",
-        "RealRandVar"
+        "Failure"
     ]
 }

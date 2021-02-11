@@ -37,12 +37,12 @@
         }
     ],
     "theories": [
-        "disjoint_relations",
-        "axioms",
-        "examples",
         "allen",
+        "nest",
         "xor_cal",
+        "examples",
         "jointly_exhaustive",
-        "nest"
+        "disjoint_relations",
+        "axioms"
     ]
 }

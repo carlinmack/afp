@@ -37,9 +37,9 @@
         "Applicative_Lifting"
     ],
     "theories": [
-        "Cotree",
-        "Bird_Tree",
+        "Cotree_Algebra",
         "Stern_Brocot_Tree",
-        "Cotree_Algebra"
+        "Bird_Tree",
+        "Cotree"
     ]
 }

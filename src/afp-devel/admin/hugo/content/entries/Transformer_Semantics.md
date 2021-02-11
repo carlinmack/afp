@@ -26,12 +26,12 @@
         "Order_Lattice_Props"
     ],
     "theories": [
-        "Kleisli_Quantale",
-        "Isotone_Transformers",
         "Kleisli_Quantaloid",
         "Kleisli_Transformers",
-        "Powerset_Monad",
-        "Sup_Inf_Preserving_Transformers"
+        "Sup_Inf_Preserving_Transformers",
+        "Isotone_Transformers",
+        "Kleisli_Quantale",
+        "Powerset_Monad"
     ],
     "relatedEntries": [
         "Quantales"

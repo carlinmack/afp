@@ -33,8 +33,8 @@
         }
     ],
     "theories": [
-        "Prime_Harmonic",
         "Squarefree_Nat",
-        "Prime_Harmonic_Misc"
+        "Prime_Harmonic_Misc",
+        "Prime_Harmonic"
     ]
 }

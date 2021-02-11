@@ -26,17 +26,17 @@
         }
     ],
     "theories": [
-        "Abacus_Mopup",
-        "Recs",
-        "Turing_Hoare",
-        "UTM",
-        "UF",
-        "Abacus",
+        "Rec_Def",
         "Recursive",
-        "Turing",
+        "Turing_Hoare",
+        "Abacus",
         "Abacus_Defs",
         "Abacus_Hoare",
-        "Rec_Def",
-        "Uncomputable"
+        "UTM",
+        "UF",
+        "Turing",
+        "Recs",
+        "Uncomputable",
+        "Abacus_Mopup"
     ]
 }

@@ -35,11 +35,11 @@
         }
     ],
     "theories": [
-        "Vardi",
-        "Probabilistic_Hierarchy",
         "Nonempty_Bounded_Set",
+        "Finitely_Bounded_Set_Counterexample",
         "Vardi_Counterexample",
         "Bool_Bounded_Set",
-        "Finitely_Bounded_Set_Counterexample"
+        "Probabilistic_Hierarchy",
+        "Vardi"
     ]
 }

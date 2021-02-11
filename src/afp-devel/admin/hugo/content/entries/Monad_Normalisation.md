@@ -31,7 +31,7 @@
         }
     ],
     "theories": [
-        "Monad_Normalisation_Test",
-        "Monad_Normalisation"
+        "Monad_Normalisation",
+        "Monad_Normalisation_Test"
     ]
 }

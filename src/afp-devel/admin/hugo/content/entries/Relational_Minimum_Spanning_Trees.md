@@ -19,7 +19,7 @@
     ],
     "theories": [
         "Kruskal",
-        "Boruvka",
-        "Prim"
+        "Prim",
+        "Boruvka"
     ]
 }

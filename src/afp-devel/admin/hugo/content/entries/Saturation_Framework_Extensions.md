@@ -20,11 +20,11 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
-        "Clausal_Calculus",
-        "FO_Ordered_Resolution_Prover_Revisited",
         "Soundness",
+        "FO_Ordered_Resolution_Prover_Revisited",
         "Standard_Redundancy_Criterion",
-        "Given_Clause_Architectures_Revisited"
+        "Given_Clause_Architectures_Revisited",
+        "Clausal_Calculus"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover",

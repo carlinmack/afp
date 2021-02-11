@@ -41,11 +41,11 @@
         "FinFun"
     ],
     "theories": [
-        "Nominal2_Base",
+        "Eqvt",
         "Nominal2",
+        "Nominal2_Base",
         "Atoms",
-        "Nominal2_Abs",
         "Nominal2_FCB",
-        "Eqvt"
+        "Nominal2_Abs"
     ]
 }

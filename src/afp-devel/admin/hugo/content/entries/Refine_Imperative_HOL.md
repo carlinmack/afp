@@ -39,23 +39,23 @@
         "Dijkstra_Shortest_Path"
     ],
     "theories": [
-        "Sepref_Chapter_Setup",
-        "Sepref_Monadify",
-        "Sepref_ICF_Bindings",
-        "Sepref_Combinator_Setup",
-        "Sepref_Basic",
-        "Sepref_Tool",
-        "Sepref_Frame",
-        "Sepref_Constraints",
-        "Sepref_Improper",
         "Sepref_Id_Op",
-        "Sepref_Foreach",
-        "Sepref_Definition",
         "Sepref_Chapter_Tool",
         "Sepref_Intf_Util",
-        "Sepref_Translate",
+        "Sepref_Frame",
+        "Sepref_Constraints",
+        "Sepref_Chapter_Setup",
+        "Sepref_Definition",
+        "Sepref_Rules",
+        "Sepref_Tool",
         "Sepref_HOL_Bindings",
-        "Sepref",
-        "Sepref_Rules"
+        "Sepref_Foreach",
+        "Sepref_ICF_Bindings",
+        "Sepref_Basic",
+        "Sepref_Translate",
+        "Sepref_Combinator_Setup",
+        "Sepref_Improper",
+        "Sepref_Monadify",
+        "Sepref"
     ]
 }

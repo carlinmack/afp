@@ -62,7 +62,7 @@
         }
     ],
     "theories": [
-        "FingerTree",
-        "Test"
+        "Test",
+        "FingerTree"
     ]
 }

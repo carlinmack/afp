@@ -21,10 +21,10 @@
         }
     ],
     "theories": [
-        "Topology_C2KA",
-        "CKA",
-        "Stimuli",
         "Communication_C2KA",
-        "C2KA"
+        "Topology_C2KA",
+        "Stimuli",
+        "C2KA",
+        "CKA"
     ]
 }

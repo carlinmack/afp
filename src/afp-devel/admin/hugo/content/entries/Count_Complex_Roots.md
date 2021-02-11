@@ -31,7 +31,7 @@
     "theories": [
         "Extended_Sturm",
         "Count_Complex_Roots",
-        "More_Polynomials",
-        "Count_Complex_Roots_Examples"
+        "Count_Complex_Roots_Examples",
+        "More_Polynomials"
     ]
 }

@@ -24,9 +24,9 @@
         }
     ],
     "theories": [
-        "Efficient_Discrete_Sqrt",
         "Pell",
         "Pell_Algorithm_Test",
-        "Pell_Algorithm"
+        "Pell_Algorithm",
+        "Efficient_Discrete_Sqrt"
     ]
 }

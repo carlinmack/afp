@@ -38,19 +38,19 @@
         "Graph_Theory"
     ],
     "theories": [
-        "Attractor",
-        "AttractorInductive",
-        "Graph_TheoryCompatibility",
-        "UniformStrategy",
-        "AttractorStrategy",
         "MoreCoinductiveList",
         "ParityGame",
-        "PositionalDeterminacy",
         "Strategy",
-        "WellOrderedStrategy",
         "AttractingStrategy",
+        "WinningRegion",
+        "Attractor",
         "WinningStrategy",
-        "WinningRegion"
+        "UniformStrategy",
+        "PositionalDeterminacy",
+        "Graph_TheoryCompatibility",
+        "AttractorInductive",
+        "WellOrderedStrategy",
+        "AttractorStrategy"
     ],
     "relatedEntries": [
         "ShortestPath"

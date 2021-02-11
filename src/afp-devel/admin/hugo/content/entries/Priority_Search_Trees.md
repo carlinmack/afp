@@ -19,8 +19,8 @@
         }
     ],
     "theories": [
-        "PST_General",
         "Prio_Map_Specs",
+        "PST_General",
         "PST_RBT"
     ]
 }

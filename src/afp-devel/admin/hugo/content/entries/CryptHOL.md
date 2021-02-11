@@ -37,22 +37,22 @@
         "Monomorphic_Monad"
     ],
     "theories": [
-        "GPV_Bisim",
-        "Negligible",
-        "Partial_Function_Set",
-        "Environment_Functor",
         "GPV_Applicative",
+        "Cyclic_Group",
+        "Negligible",
+        "List_Bits",
         "GPV_Expectation",
-        "Generat",
         "Misc_CryptHOL",
+        "Set_Applicative",
         "Resumption",
         "SPMF_Applicative",
+        "Environment_Functor",
+        "Partial_Function_Set",
+        "Generative_Probabilistic_Value",
+        "Computational_Model",
         "Cyclic_Group_SPMF",
         "CryptHOL",
-        "List_Bits",
-        "Computational_Model",
-        "Cyclic_Group",
-        "Generative_Probabilistic_Value",
-        "Set_Applicative"
+        "Generat",
+        "GPV_Bisim"
     ]
 }

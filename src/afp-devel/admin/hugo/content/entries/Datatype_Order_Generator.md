@@ -55,11 +55,11 @@
         "Native_Word"
     ],
     "theories": [
-        "Derive_Examples",
         "Derive",
+        "Order_Generator",
         "Derive_Aux",
         "Hash_Generator",
-        "Order_Generator"
+        "Derive_Examples"
     ],
     "relatedEntries": [
         "Deriving"

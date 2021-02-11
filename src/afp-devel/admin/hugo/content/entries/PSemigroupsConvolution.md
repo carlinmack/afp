@@ -31,11 +31,11 @@
         }
     ],
     "theories": [
-        "Partial_Semigroup_Lifting",
         "Partial_Semigroups",
         "Partial_Semigroup_Models",
-        "Unary_Modalities",
+        "Quantales",
         "Binary_Modalities",
-        "Quantales"
+        "Partial_Semigroup_Lifting",
+        "Unary_Modalities"
     ]
 }

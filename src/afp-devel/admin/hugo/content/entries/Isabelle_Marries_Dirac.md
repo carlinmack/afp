@@ -22,18 +22,18 @@
         "VectorSpace"
     ],
     "theories": [
-        "Tensor",
-        "Binary_Nat",
-        "Deutsch",
-        "No_Cloning",
+        "Basics",
         "Complex_Vectors",
-        "Measurement",
+        "Entanglement",
         "Quantum",
         "Quantum_Prisoners_Dilemma",
-        "Basics",
-        "Entanglement",
-        "Deutsch_Jozsa",
+        "No_Cloning",
         "Quantum_Teleportation",
+        "Binary_Nat",
+        "Deutsch_Jozsa",
+        "Deutsch",
+        "Measurement",
+        "Tensor",
         "More_Tensor"
     ],
     "relatedEntries": [

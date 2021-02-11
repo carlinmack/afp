@@ -21,8 +21,8 @@
     ],
     "theories": [
         "Fixed_Points",
+        "Kleene_Fixed_Point",
         "Complete_Relations",
-        "Binary_Relations",
-        "Kleene_Fixed_Point"
+        "Binary_Relations"
     ]
 }

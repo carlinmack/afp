@@ -43,17 +43,17 @@
         }
     ],
     "theories": [
-        "Expr",
-        "Domain_example",
-        "Parallel_Composition",
-        "Up_To_Technique",
-        "Language_Composition",
-        "Strong_Security",
-        "MWLf",
-        "Strongly_Secure_Skip_Assign",
+        "Type_System_example",
         "Type_System",
         "Types",
-        "Type_System_example"
+        "Strong_Security",
+        "Domain_example",
+        "Strongly_Secure_Skip_Assign",
+        "Expr",
+        "Up_To_Technique",
+        "MWLf",
+        "Parallel_Composition",
+        "Language_Composition"
     ],
     "relatedEntries": [
         "WHATandWHERE_Security",

@@ -23,20 +23,20 @@
         "LLL_Basis_Reduction"
     ],
     "theories": [
-        "Convex_Hull",
-        "Basis_Extension",
-        "Normal_Vector",
         "Integral_Bounded_Vectors",
-        "Missing_Matrix",
         "Dim_Span",
         "Sum_Vec_Set",
-        "Missing_VS_Connect",
-        "Fundamental_Theorem_Linear_Inequalities",
-        "Farkas_Minkowsky_Weyl",
-        "Cone",
         "Decomposition_Theorem",
-        "Integer_Hull",
+        "Normal_Vector",
+        "Convex_Hull",
+        "Farkas_Minkowsky_Weyl",
+        "Basis_Extension",
+        "Missing_VS_Connect",
         "Farkas_Lemma",
-        "Mixed_Integer_Solutions"
+        "Cone",
+        "Fundamental_Theorem_Linear_Inequalities",
+        "Mixed_Integer_Solutions",
+        "Integer_Hull",
+        "Missing_Matrix"
     ]
 }

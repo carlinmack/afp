@@ -34,15 +34,15 @@
         "Iptables_Semantics"
     ],
     "theories": [
-        "OpenFlow_Serialize",
         "OpenFlow_Matches",
-        "OpenFlow_Action",
+        "Sort_Descending",
+        "OpenFlow_Serialize",
+        "OpenFlow_Documentation",
+        "OpenFlow_Helpers",
         "Featherweight_OpenFlow_Comparison",
-        "LinuxRouter_OpenFlow_Translation",
         "Semantics_OpenFlow",
         "List_Group",
-        "OpenFlow_Helpers",
-        "Sort_Descending",
-        "OpenFlow_Documentation"
+        "OpenFlow_Action",
+        "LinuxRouter_OpenFlow_Translation"
     ]
 }

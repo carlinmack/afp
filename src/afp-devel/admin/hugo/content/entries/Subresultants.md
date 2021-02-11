@@ -35,11 +35,11 @@
     "theories": [
         "Dichotomous_Lazard",
         "Binary_Exponentiation",
-        "Coeff_Int",
-        "Subresultant",
-        "Resultant_Prelim",
         "Subresultant_Gcd",
-        "More_Homomorphisms"
+        "Coeff_Int",
+        "More_Homomorphisms",
+        "Resultant_Prelim",
+        "Subresultant"
     ],
     "relatedEntries": [
         "Perron_Frobenius"

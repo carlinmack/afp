@@ -33,10 +33,10 @@
         "Comparison_Sort_Lower_Bound"
     ],
     "theories": [
-        "Random_Treap",
-        "Treap_Sort_and_BSTs",
         "Treap",
+        "Random_Treap",
         "Probability_Misc",
-        "Random_List_Permutation"
+        "Random_List_Permutation",
+        "Treap_Sort_and_BSTs"
     ]
 }

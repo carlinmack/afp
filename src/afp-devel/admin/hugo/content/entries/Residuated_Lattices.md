@@ -43,11 +43,11 @@
         "Relation_Algebra"
     ],
     "theories": [
-        "Action_Algebra_Models",
-        "Involutive_Residuated",
-        "Residuated_Relation_Algebra",
         "Residuated_Lattices",
+        "Residuated_Boolean_Algebras",
         "Action_Algebra",
-        "Residuated_Boolean_Algebras"
+        "Involutive_Residuated",
+        "Action_Algebra_Models",
+        "Residuated_Relation_Algebra"
     ]
 }

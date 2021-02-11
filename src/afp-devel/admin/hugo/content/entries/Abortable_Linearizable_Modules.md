@@ -54,12 +54,12 @@
         }
     ],
     "theories": [
-        "SLin",
-        "Idempotence",
-        "RDR",
-        "IOA",
         "Simulations",
+        "Consensus",
         "Sequences",
-        "Consensus"
+        "RDR",
+        "Idempotence",
+        "SLin",
+        "IOA"
     ]
 }

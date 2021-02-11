@@ -34,13 +34,13 @@
         "Flow_Networks"
     ],
     "theories": [
+        "EdmondsKarp_Termination_Abstract",
+        "EdmondsKarp_Impl",
         "FordFulkerson_Algo",
         "Edka_Checked_Impl",
-        "Edka_Benchmark_Export",
-        "EdmondsKarp_Impl",
         "EdmondsKarp_Algo",
         "Augmenting_Path_BFS",
-        "EdmondsKarp_Termination_Abstract"
+        "Edka_Benchmark_Export"
     ],
     "relatedEntries": [
         "Prpu_Maxflow"

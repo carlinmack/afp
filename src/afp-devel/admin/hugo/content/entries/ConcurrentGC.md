@@ -41,22 +41,22 @@
         "ConcurrentIMP"
     ],
     "theories": [
-        "Global_Invariants_Lemmas",
-        "Tactics",
-        "Proofs",
-        "Local_Invariants_Lemmas",
-        "Phases",
-        "Global_Noninterference",
-        "MarkObject",
-        "Global_Invariants",
-        "StrongTricolour",
-        "Valid_Refs",
-        "TSO",
-        "Model",
-        "Noninterference",
-        "Initial_Conditions",
         "Local_Invariants",
-        "Proofs_Basis",
-        "Worklists"
+        "Valid_Refs",
+        "Proofs",
+        "Worklists",
+        "Phases",
+        "StrongTricolour",
+        "Global_Invariants_Lemmas",
+        "Global_Noninterference",
+        "TSO",
+        "Initial_Conditions",
+        "Noninterference",
+        "Model",
+        "Local_Invariants_Lemmas",
+        "MarkObject",
+        "Tactics",
+        "Global_Invariants",
+        "Proofs_Basis"
     ]
 }

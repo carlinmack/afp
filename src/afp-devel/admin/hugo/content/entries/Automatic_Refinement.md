@@ -42,7 +42,7 @@
         }
     ],
     "theories": [
-        "Automatic_Refinement",
-        "Autoref_Bindings_HOL"
+        "Autoref_Bindings_HOL",
+        "Automatic_Refinement"
     ]
 }

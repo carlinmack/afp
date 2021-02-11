@@ -60,10 +60,10 @@
         "Nat-Interval-Logic"
     ],
     "theories": [
-        "AF_Stream",
+        "ListSlice",
+        "IL_AF_Stream",
         "AF_Stream_Exec",
         "IL_AF_Stream_Exec",
-        "ListSlice",
-        "IL_AF_Stream"
+        "AF_Stream"
     ]
 }

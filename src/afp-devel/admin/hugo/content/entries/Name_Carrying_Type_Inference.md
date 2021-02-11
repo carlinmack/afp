@@ -28,9 +28,9 @@
         }
     ],
     "theories": [
-        "SimplyTyped",
-        "Permutation",
         "Fresh",
-        "PreSimplyTyped"
+        "PreSimplyTyped",
+        "Permutation",
+        "SimplyTyped"
     ]
 }

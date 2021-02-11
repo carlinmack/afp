@@ -30,7 +30,7 @@
         "Ergodic_Theory"
     ],
     "theories": [
-        "Lp",
-        "Functional_Spaces"
+        "Functional_Spaces",
+        "Lp"
     ]
 }

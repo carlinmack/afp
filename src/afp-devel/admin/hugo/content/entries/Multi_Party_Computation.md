@@ -26,19 +26,19 @@
     ],
     "theories": [
         "Secure_Multiplication",
-        "Noar_Pinkas_OT",
-        "Cyclic_Group_Ext",
         "Malicious_Defs",
         "OT_Functionalities",
-        "Uniform_Sampling",
         "Semi_Honest_Def",
-        "Malicious_OT",
-        "ETP_OT",
-        "OT14",
-        "DH_Ext",
-        "ETP_RSA_OT",
         "ETP",
         "Number_Theory_Aux",
-        "GMW"
+        "OT14",
+        "ETP_OT",
+        "GMW",
+        "Malicious_OT",
+        "Cyclic_Group_Ext",
+        "DH_Ext",
+        "Noar_Pinkas_OT",
+        "Uniform_Sampling",
+        "ETP_RSA_OT"
     ]
 }

@@ -32,13 +32,13 @@
     ],
     "theories": [
         "Reduction",
-        "Progress",
-        "ContextFacts",
-        "Syntax",
         "Peirce",
+        "Types",
         "DeBruijn",
+        "ContextFacts",
         "Substitution",
+        "Syntax",
         "TypePreservation",
-        "Types"
+        "Progress"
     ]
 }

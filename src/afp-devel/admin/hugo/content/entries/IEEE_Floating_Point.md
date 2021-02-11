@@ -56,11 +56,11 @@
         "Word_Lib"
     ],
     "theories": [
-        "IEEE_Properties",
         "FP64",
-        "IEEE",
+        "IEEE_Properties",
+        "Double",
         "Conversion_IEEE_Float",
-        "Double"
+        "IEEE"
     ],
     "relatedEntries": [
         "Native_Word"

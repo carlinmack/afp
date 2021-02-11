@@ -56,8 +56,8 @@
     ],
     "theories": [
         "Reduction",
-        "HOModel",
-        "Majorities"
+        "Majorities",
+        "HOModel"
     ],
     "relatedEntries": [
         "Consensus_Refined"

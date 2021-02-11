@@ -57,16 +57,16 @@
         "Native_Word"
     ],
     "theories": [
+        "Sep_Examples",
         "Automation",
+        "Sep_Main",
         "Assertions",
         "Run",
-        "Sep_Examples",
-        "Sep_Main",
         "Hoare_Triple"
     ],
     "relatedEntries": [
-        "ROBDD",
         "JinjaThreads",
+        "ROBDD",
         "Containers"
     ]
 }

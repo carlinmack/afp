@@ -42,20 +42,20 @@
         "KBPs"
     ],
     "theories": [
-        "LTL_FGXU",
-        "Rabin",
-        "LTL_Rabin_Unfold_Opt",
         "DTS",
-        "Mojmir",
         "Logical_Characterization",
-        "af",
-        "Semi_Mojmir",
+        "Mojmir",
+        "LTL_Rabin_Unfold_Opt",
         "Mojmir_Rabin",
-        "LTL_Rabin"
+        "LTL_Rabin",
+        "af",
+        "LTL_FGXU",
+        "Semi_Mojmir",
+        "Rabin"
     ],
     "relatedEntries": [
         "LTL_Master_Theorem",
-        "LTL",
+        "LTL_to_GBA",
         "LTL_Normal_Form"
     ]
 }

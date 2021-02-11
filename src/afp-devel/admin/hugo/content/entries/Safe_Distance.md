@@ -20,8 +20,8 @@
         "Sturm_Sequences"
     ],
     "theories": [
+        "Evaluation",
         "Safe_Distance_Reaction",
-        "Safe_Distance",
-        "Evaluation"
+        "Safe_Distance"
     ]
 }

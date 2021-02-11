@@ -41,12 +41,12 @@
         "Kleene_Algebra"
     ],
     "theories": [
-        "Range_Semiring",
-        "Antidomain_Semiring",
         "Modal_Kleene_Algebra_Applications",
+        "Antidomain_Semiring",
         "Modal_Kleene_Algebra_Models",
-        "Modal_Kleene_Algebra",
-        "Domain_Semiring"
+        "Range_Semiring",
+        "Domain_Semiring",
+        "Modal_Kleene_Algebra"
     ],
     "relatedEntries": [
         "KAT_and_DRA",

@@ -73,16 +73,16 @@
         }
     ],
     "theories": [
-        "MainResult",
-        "Interleave",
-        "ConstraintSystems",
-        "ThreadTracking",
         "Normalization",
-        "ConsInterleave",
-        "LTS",
-        "AcquisitionHistory",
         "Misc",
+        "AcquisitionHistory",
+        "ConsInterleave",
+        "ThreadTracking",
+        "LTS",
+        "MainResult",
         "Semantics",
-        "Flowgraph"
+        "Flowgraph",
+        "ConstraintSystems",
+        "Interleave"
     ]
 }

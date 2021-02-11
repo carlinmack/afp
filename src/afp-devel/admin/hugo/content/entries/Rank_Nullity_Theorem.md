@@ -53,10 +53,10 @@
         }
     ],
     "theories": [
-        "Dim_Formula",
+        "Mod_Type",
         "Fundamental_Subspaces",
         "Miscellaneous",
-        "Mod_Type",
-        "Dual_Order"
+        "Dual_Order",
+        "Dim_Formula"
     ]
 }

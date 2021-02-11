@@ -27,9 +27,9 @@
         "Jordan_Normal_Form"
     ],
     "theories": [
-        "Simplex_for_Reals",
+        "Farkas",
         "Matrix_Farkas",
-        "Farkas"
+        "Simplex_for_Reals"
     ],
     "relatedEntries": [
         "Linear_Programming"

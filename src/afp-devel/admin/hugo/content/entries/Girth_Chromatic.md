@@ -52,7 +52,7 @@
     ],
     "theories": [
         "Girth_Chromatic",
-        "Girth_Chromatic_Misc",
-        "Ugraphs"
+        "Ugraphs",
+        "Girth_Chromatic_Misc"
     ]
 }

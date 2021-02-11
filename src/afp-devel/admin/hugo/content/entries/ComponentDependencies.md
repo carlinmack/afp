@@ -39,8 +39,8 @@
         }
     ],
     "theories": [
-        "DataDependencies",
         "DataDependenciesCaseStudy",
-        "DataDependenciesConcreteValues"
+        "DataDependenciesConcreteValues",
+        "DataDependencies"
     ]
 }

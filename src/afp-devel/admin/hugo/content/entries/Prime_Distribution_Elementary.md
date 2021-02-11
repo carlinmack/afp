@@ -26,21 +26,21 @@
     ],
     "theories": [
         "Partial_Zeta_Bounds",
-        "Selberg_Asymptotic_Formula",
-        "Summatory_Divisor_Sigma_Bounds",
-        "Lcm_Nat_Upto",
         "More_Dirichlet_Misc",
-        "Primes_Omega",
-        "Prime_Distribution_Elementary_Library",
-        "Shapiro_Tauberian",
-        "PNT_Consequences",
         "Primorial",
-        "Elementary_Prime_Bounds",
-        "Moebius_Mu_Sum"
+        "Prime_Distribution_Elementary_Library",
+        "Primes_Omega",
+        "PNT_Consequences",
+        "Shapiro_Tauberian",
+        "Selberg_Asymptotic_Formula",
+        "Moebius_Mu_Sum",
+        "Lcm_Nat_Upto",
+        "Summatory_Divisor_Sigma_Bounds",
+        "Elementary_Prime_Bounds"
     ],
     "relatedEntries": [
         "Dirichlet_L",
-        "Zeta_3_Irrational",
-        "Prime_Number_Theorem"
+        "Prime_Number_Theorem",
+        "Zeta_3_Irrational"
     ]
 }

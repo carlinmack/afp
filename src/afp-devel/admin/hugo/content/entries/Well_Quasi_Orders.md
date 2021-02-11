@@ -55,22 +55,22 @@
         "Open_Induction"
     ],
     "theories": [
-        "Kruskal",
-        "Minimal_Elements",
-        "Almost_Full",
-        "Kruskal_Examples",
-        "Wqo_Instances",
-        "Least_Enum",
-        "Minimal_Bad_Sequences",
-        "Well_Quasi_Orders",
         "Infinite_Sequences",
-        "Higman_OI",
-        "Wqo_Multiset",
+        "Kruskal",
+        "Least_Enum",
+        "Well_Quasi_Orders",
+        "Kruskal_Examples",
+        "Multiset_Extension",
+        "Wqo_Instances",
+        "Almost_Full",
         "Almost_Full_Relations",
-        "Multiset_Extension"
+        "Minimal_Bad_Sequences",
+        "Wqo_Multiset",
+        "Higman_OI",
+        "Minimal_Elements"
     ],
     "relatedEntries": [
-        "Myhill-Nerode",
-        "Decreasing-Diagrams-II"
+        "Decreasing-Diagrams-II",
+        "Myhill-Nerode"
     ]
 }

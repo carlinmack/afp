@@ -38,8 +38,8 @@
     ],
     "theories": [
         "DFS_Chapter_Framework",
-        "DFS_Framework",
-        "Param_DFS"
+        "Param_DFS",
+        "DFS_Framework"
     ],
     "relatedEntries": [
         "Gabow_SCC"

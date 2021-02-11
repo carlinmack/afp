@@ -18,13 +18,13 @@
         }
     ],
     "theories": [
-        "Well_founded",
-        "Inf",
-        "Fixpoint",
         "Language",
-        "Simulation",
-        "Behaviour",
         "Compiler",
-        "Semantics"
+        "Simulation",
+        "Well_founded",
+        "Fixpoint",
+        "Inf",
+        "Semantics",
+        "Behaviour"
     ]
 }

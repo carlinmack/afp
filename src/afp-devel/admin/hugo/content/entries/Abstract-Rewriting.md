@@ -68,10 +68,10 @@
         "Regular-Sets"
     ],
     "theories": [
-        "SN_Order_Carrier",
-        "Seq",
         "Relative_Rewriting",
         "SN_Orders",
+        "SN_Order_Carrier",
+        "Seq",
         "Abstract_Rewriting"
     ]
 }

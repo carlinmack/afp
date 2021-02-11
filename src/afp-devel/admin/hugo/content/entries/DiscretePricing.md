@@ -28,14 +28,14 @@
         }
     ],
     "theories": [
-        "Generated_Subalgebra",
         "Filtration",
+        "Infinite_Coin_Toss_Space",
+        "CRR_Model",
+        "Martingale",
+        "Generated_Subalgebra",
+        "Option_Price_Examples",
         "Disc_Cond_Expect",
         "Fair_Price",
-        "Infinite_Coin_Toss_Space",
-        "Geometric_Random_Walk",
-        "Martingale",
-        "Option_Price_Examples",
-        "CRR_Model"
+        "Geometric_Random_Walk"
     ]
 }

@@ -64,11 +64,11 @@
         }
     ],
     "theories": [
-        "SRCTransforms",
         "SequentInvertibility",
-        "ModalSequents",
-        "NominalSequents",
         "SingleSuccedent",
-        "MultiSequents"
+        "ModalSequents",
+        "MultiSequents",
+        "NominalSequents",
+        "SRCTransforms"
     ]
 }

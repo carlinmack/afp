@@ -31,9 +31,9 @@
     ],
     "theories": [
         "Stochastic_Matrix",
-        "Eigenspace",
         "Stochastic_Vector_PMF",
         "Stochastic_Matrix_Perron_Frobenius",
+        "Eigenspace",
         "Stochastic_Matrix_Markov_Models"
     ]
 }

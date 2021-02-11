@@ -39,11 +39,11 @@
         "Secondary_Sylow"
     ],
     "theories": [
+        "GroupIsoClasses",
+        "SimpleGroups",
+        "SndIsomorphismGrp",
         "CompositionSeries",
         "JordanHolder",
-        "GroupIsoClasses",
-        "SndIsomorphismGrp",
-        "SimpleGroups",
         "MaximalNormalSubgroups",
         "SubgroupsAndNormalSubgroups"
     ]

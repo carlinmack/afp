@@ -35,9 +35,9 @@
         }
     ],
     "theories": [
-        "Utility_Functions",
+        "Argmax",
         "Syntax",
         "Preferences",
-        "Argmax"
+        "Utility_Functions"
     ]
 }

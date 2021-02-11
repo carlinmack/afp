@@ -26,15 +26,15 @@
         "Stirling_Formula"
     ],
     "theories": [
-        "Prime_Counting_Functions",
+        "Prime_Number_Theorem",
         "Mertens_Theorems",
         "Newman_Ingham_Tauberian",
-        "Prime_Number_Theorem",
-        "Prime_Number_Theorem_Library"
+        "Prime_Number_Theorem_Library",
+        "Prime_Counting_Functions"
     ],
     "relatedEntries": [
         "Dirichlet_L",
-        "Prime_Distribution_Elementary",
-        "Ptolemys_Theorem"
+        "Ptolemys_Theorem",
+        "Prime_Distribution_Elementary"
     ]
 }

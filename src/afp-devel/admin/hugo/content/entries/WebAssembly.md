@@ -30,18 +30,18 @@
         "Native_Word"
     ],
     "theories": [
-        "Wasm",
-        "Wasm_Axioms",
-        "Wasm_Properties_Aux",
-        "Wasm_Type_Abs",
-        "Wasm_Properties",
-        "Wasm_Ast",
-        "Wasm_Base_Defs",
-        "Wasm_Checker_Types",
-        "Wasm_Checker",
-        "Wasm_Interpreter_Properties",
         "Wasm_Soundness",
+        "Wasm_Interpreter_Properties",
+        "Wasm_Properties",
+        "Wasm_Properties_Aux",
+        "Wasm_Base_Defs",
+        "Wasm_Axioms",
+        "Wasm_Interpreter",
+        "Wasm_Type_Abs",
         "Wasm_Checker_Properties",
-        "Wasm_Interpreter"
+        "Wasm_Checker",
+        "Wasm_Checker_Types",
+        "Wasm_Ast",
+        "Wasm"
     ]
 }

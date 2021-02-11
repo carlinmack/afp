@@ -25,12 +25,12 @@
         }
     ],
     "theories": [
-        "GFP",
-        "Lift",
+        "N2M",
+        "LFP",
         "Compose",
         "Kill",
-        "LFP",
-        "N2M",
-        "Permute"
+        "GFP",
+        "Permute",
+        "Lift"
     ]
 }

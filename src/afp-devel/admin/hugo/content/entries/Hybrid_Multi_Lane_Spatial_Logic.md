@@ -24,15 +24,15 @@
         }
     ],
     "theories": [
-        "Sensors",
-        "Length",
-        "Traffic",
-        "NatInt",
         "RealInt",
+        "Traffic",
+        "HMLSL",
         "Cars",
-        "Move",
         "Restriction",
+        "Sensors",
         "Views",
-        "HMLSL"
+        "Move",
+        "Length",
+        "NatInt"
     ]
 }

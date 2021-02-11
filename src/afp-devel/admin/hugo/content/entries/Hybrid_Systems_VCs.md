@@ -30,11 +30,11 @@
     ],
     "theories": [
         "HS_VC_KA_ndfun",
+        "HS_ODEs",
         "HS_VC_Spartan",
-        "HS_VC_Examples",
         "HS_VC_KA_rel",
         "HS_Preliminaries",
-        "HS_ODEs"
+        "HS_VC_Examples"
     ],
     "relatedEntries": [
         "Algebraic_VCs"

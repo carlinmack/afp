@@ -54,8 +54,8 @@
         }
     ],
     "theories": [
-        "Binomial_Queue",
+        "PQ",
         "PQ_Implementation",
-        "PQ"
+        "Binomial_Queue"
     ]
 }

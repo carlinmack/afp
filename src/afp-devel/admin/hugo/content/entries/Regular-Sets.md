@@ -69,16 +69,16 @@
         }
     ],
     "theories": [
-        "Regular_Set",
-        "Equivalence_Checking2",
-        "pEquivalence_Checking",
-        "Regular_Exp",
-        "Regexp_Method",
+        "Regexp_Constructions",
         "Regular_Exp2",
+        "Regexp_Method",
+        "Equivalence_Checking2",
         "Relation_Interpretation",
-        "Derivatives",
-        "Equivalence_Checking",
+        "Regular_Exp",
         "NDerivative",
-        "Regexp_Constructions"
+        "pEquivalence_Checking",
+        "Regular_Set",
+        "Equivalence_Checking",
+        "Derivatives"
     ]
 }

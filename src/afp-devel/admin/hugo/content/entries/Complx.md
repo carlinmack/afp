@@ -43,12 +43,12 @@
         "Word_Lib"
     ],
     "theories": [
-        "SeqCatch_decomp",
+        "Language",
         "OG_Soundness",
         "OG_Annotations",
-        "SmallStep",
-        "Language",
+        "SeqCatch_decomp",
         "OG_Syntax",
+        "SmallStep",
         "OG_Hoare",
         "OG_Tactics"
     ],

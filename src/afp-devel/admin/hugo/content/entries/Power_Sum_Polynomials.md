@@ -17,8 +17,8 @@
         "Polynomial_Factorization"
     ],
     "theories": [
+        "Power_Sum_Polynomials_Library",
         "Power_Sum_Puzzle",
-        "Power_Sum_Polynomials",
-        "Power_Sum_Polynomials_Library"
+        "Power_Sum_Polynomials"
     ]
 }

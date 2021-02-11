@@ -45,19 +45,19 @@
         "Algebraic_Numbers"
     ],
     "theories": [
-        "Cost",
-        "LLL_Impl",
-        "LLL_Certification",
         "Gram_Schmidt_Int",
+        "Cost",
         "LLL_Number_Bounds",
-        "Int_Rat_Operations",
-        "LLL",
-        "Missing_Lemmas",
         "LLL_Complexity",
         "FPLLL_Solver",
-        "Gram_Schmidt_2",
+        "LLL_Impl",
         "List_Representation",
-        "More_IArray",
-        "Norms"
+        "Missing_Lemmas",
+        "LLL",
+        "Gram_Schmidt_2",
+        "Int_Rat_Operations",
+        "Norms",
+        "LLL_Certification",
+        "More_IArray"
     ]
 }

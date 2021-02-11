@@ -25,20 +25,20 @@
         }
     ],
     "theories": [
-        "Binding_Syntax",
         "QuasiTerms_Environments_Substitution",
-        "QuasiTerms_Swap_Fresh",
-        "Well_Sorted_Terms",
         "Iteration",
-        "QuasiTerms_PickFresh_Alpha",
-        "Recursion",
-        "Equiv_Relation2",
         "Variable",
-        "Terms",
-        "Pick",
-        "Semantic_Domains",
         "Univ",
+        "Recursion",
+        "QuasiTerms_PickFresh_Alpha",
+        "Binding_Syntax",
         "Preliminaries",
-        "Transition_QuasiTerms_Terms"
+        "Transition_QuasiTerms_Terms",
+        "Pick",
+        "QuasiTerms_Swap_Fresh",
+        "Semantic_Domains",
+        "Well_Sorted_Terms",
+        "Terms",
+        "Equiv_Relation2"
     ]
 }

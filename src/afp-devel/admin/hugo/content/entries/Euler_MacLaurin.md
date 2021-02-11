@@ -37,6 +37,6 @@
     "relatedEntries": [
         "Stirling_Formula",
         "Lambert_W",
-        "Zeta_Function"
+        "Error_Function"
     ]
 }

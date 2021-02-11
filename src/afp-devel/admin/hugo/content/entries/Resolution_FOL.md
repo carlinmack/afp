@@ -36,12 +36,12 @@
         "First_Order_Terms"
     ],
     "theories": [
-        "TermsAndLiterals",
-        "Tree",
-        "Examples",
         "Completeness",
-        "Completeness_Instance",
         "Unification_Theorem",
+        "Completeness_Instance",
+        "Examples",
+        "Tree",
+        "TermsAndLiterals",
         "Resolution"
     ],
     "relatedEntries": [

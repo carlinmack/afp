@@ -20,11 +20,11 @@
         "Extended_Finite_State_Machines"
     ],
     "theories": [
-        "efsm2sal",
+        "SelectionStrategies",
         "Inference",
-        "Code_Generation",
-        "EFSM_Dot",
+        "efsm2sal",
         "Subsumption",
-        "SelectionStrategies"
+        "EFSM_Dot",
+        "Code_Generation"
     ]
 }

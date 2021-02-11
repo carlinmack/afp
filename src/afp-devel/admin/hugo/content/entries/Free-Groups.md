@@ -64,11 +64,11 @@
     ],
     "theories": [
         "Isomorphisms",
-        "Cancelation",
         "C2",
-        "PingPongLemma",
         "UnitGroup",
+        "Generators",
         "FreeGroups",
-        "Generators"
+        "PingPongLemma",
+        "Cancelation"
     ]
 }

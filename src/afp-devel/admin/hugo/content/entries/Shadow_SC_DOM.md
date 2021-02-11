@@ -18,7 +18,7 @@
         "Core_SC_DOM"
     ],
     "theories": [
-        "Shadow_DOM",
-        "Shadow_DOM_Tests"
+        "Shadow_DOM_Tests",
+        "Shadow_DOM"
     ]
 }

@@ -42,14 +42,14 @@
         }
     ],
     "theories": [
-        "PDF_Semantics",
         "PDF_Compiler",
+        "PDF_Semantics",
+        "PDF_Density_Contexts",
+        "Density_Predicates",
+        "PDF_Values",
+        "PDF_Target_Semantics",
         "PDF_Target_Density_Contexts",
         "PDF_Compiler_Pred",
-        "Density_Predicates",
-        "PDF_Transformations",
-        "PDF_Density_Contexts",
-        "PDF_Target_Semantics",
-        "PDF_Values"
+        "PDF_Transformations"
     ]
 }

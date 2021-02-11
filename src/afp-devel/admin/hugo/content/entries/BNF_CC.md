@@ -28,13 +28,13 @@
     ],
     "theories": [
         "DDS",
-        "Fixpoints",
-        "Composition",
-        "Operation_Examples",
-        "Subtypes",
-        "Quotient_Preservation",
-        "Preliminaries",
         "Axiomatised_BNF_CC",
-        "Concrete_Examples"
+        "Operation_Examples",
+        "Fixpoints",
+        "Preliminaries",
+        "Concrete_Examples",
+        "Quotient_Preservation",
+        "Composition",
+        "Subtypes"
     ]
 }

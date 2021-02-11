@@ -44,15 +44,15 @@
     ],
     "theories": [
         "Service",
-        "ServiceExample",
-        "UPF",
-        "Monads",
-        "NormalisationTestSpecification",
         "SeqComposition",
+        "ServiceExample",
+        "ElementaryPolicies",
         "Analysis",
         "UPFCore",
+        "UPF",
+        "NormalisationTestSpecification",
         "ParallelComposition",
-        "ElementaryPolicies",
-        "Normalisation"
+        "Normalisation",
+        "Monads"
     ]
 }

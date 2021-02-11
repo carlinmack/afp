@@ -37,21 +37,21 @@
     ],
     "theories": [
         "Documentation",
-        "Iptables_Semantics",
-        "Ruleset_Update",
-        "Matching_Embeddings",
-        "No_Spoof_Embeddings",
         "Example_Semantics",
-        "Alternative_Semantics",
-        "Semantics_Stateful",
-        "Semantics_Embeddings",
         "Access_Matrix_Embeddings",
-        "Matching",
         "Call_Return_Unfolding",
+        "No_Spoof_Embeddings",
+        "Semantics_Embeddings",
+        "Semantics_Goto",
+        "Matching_Embeddings",
         "Firewall_Common",
-        "Code_haskell",
+        "Ruleset_Update",
         "Datatype_Selectors",
+        "Alternative_Semantics",
+        "Matching",
+        "Iptables_Semantics",
         "Semantics",
-        "Semantics_Goto"
+        "Semantics_Stateful",
+        "Code_haskell"
     ]
 }

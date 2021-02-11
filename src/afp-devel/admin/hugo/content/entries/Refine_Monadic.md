@@ -57,20 +57,20 @@
         "Automatic_Refinement"
     ],
     "theories": [
-        "Refine_Det",
-        "Refine_Leof",
-        "Refine_Monadic",
-        "Refine_Automation",
-        "Refine_Chapter",
-        "Refine_Basic",
-        "Refine_Pfun",
+        "Refine_Heuristics",
         "Refine_Mono_Prover",
-        "Autoref_Monadic",
+        "Refine_Pfun",
+        "Refine_Monadic",
         "Refine_Foreach",
+        "Refine_More_Comb",
+        "Refine_Chapter",
+        "Autoref_Monadic",
+        "Refine_Det",
         "Refine_While",
         "Refine_Misc",
+        "Refine_Leof",
         "Refine_Transfer",
-        "Refine_Heuristics",
-        "Refine_More_Comb"
+        "Refine_Basic",
+        "Refine_Automation"
     ]
 }

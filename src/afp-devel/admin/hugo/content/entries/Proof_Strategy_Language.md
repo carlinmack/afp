@@ -27,8 +27,8 @@
         }
     ],
     "theories": [
+        "PSL",
         "Try_Hard",
-        "Example",
-        "PSL"
+        "Example"
     ]
 }

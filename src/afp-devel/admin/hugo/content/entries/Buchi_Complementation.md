@@ -27,13 +27,13 @@
         "Transition_Systems_and_Automata"
     ],
     "theories": [
-        "Complementation_Build",
-        "Complementation_Implement",
         "Alternate",
         "Graph",
-        "Complementation_Final",
         "Ranking",
+        "Formula",
         "Complementation",
-        "Formula"
+        "Complementation_Final",
+        "Complementation_Implement",
+        "Complementation_Build"
     ]
 }

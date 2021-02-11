@@ -30,12 +30,12 @@
         }
     ],
     "theories": [
-        "Minimize_Wrt",
-        "List_Vector",
-        "Algorithm",
-        "Linear_Diophantine_Equations",
         "Simple_Algorithm",
         "Sorted_Wrt",
-        "Solver_Code"
+        "Solver_Code",
+        "Algorithm",
+        "List_Vector",
+        "Minimize_Wrt",
+        "Linear_Diophantine_Equations"
     ]
 }

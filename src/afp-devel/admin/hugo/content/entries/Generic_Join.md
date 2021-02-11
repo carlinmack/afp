@@ -22,8 +22,8 @@
         "MFOTL_Monitor"
     ],
     "theories": [
-        "Generic_Join_Correctness",
         "Generic_Join",
-        "Examples_Join"
+        "Examples_Join",
+        "Generic_Join_Correctness"
     ]
 }

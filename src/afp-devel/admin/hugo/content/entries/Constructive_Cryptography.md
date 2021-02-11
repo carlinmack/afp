@@ -30,12 +30,12 @@
         "CryptHOL"
     ],
     "theories": [
-        "Converter_Rewrite",
-        "Resource",
         "Converter",
+        "Converter_Rewrite",
         "Random_System",
         "Distinguisher",
         "Wiring",
-        "Constructive_Cryptography"
+        "Constructive_Cryptography",
+        "Resource"
     ]
 }

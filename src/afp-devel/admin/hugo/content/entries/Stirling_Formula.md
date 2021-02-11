@@ -31,12 +31,12 @@
         "Landau_Symbols"
     ],
     "theories": [
-        "Gamma_Asymptotics",
-        "Stirling_Formula"
+        "Stirling_Formula",
+        "Gamma_Asymptotics"
     ],
     "relatedEntries": [
         "Euler_MacLaurin",
-        "Zeta_Function",
+        "Lambert_W",
         "Error_Function"
     ]
 }

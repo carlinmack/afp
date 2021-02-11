@@ -56,14 +56,14 @@
     ],
     "theories": [
         "Rules",
-        "PreFormulas",
         "Inc",
-        "Intensional",
-        "State",
-        "Buffer",
+        "Sequence",
         "Liveness",
         "Even",
-        "Sequence",
-        "Semantics"
+        "PreFormulas",
+        "Intensional",
+        "Semantics",
+        "State",
+        "Buffer"
     ]
 }

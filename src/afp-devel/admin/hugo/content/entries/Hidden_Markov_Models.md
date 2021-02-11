@@ -29,9 +29,9 @@
         "Monad_Memo_DP"
     ],
     "theories": [
+        "Hidden_Markov_Model",
         "HMM_Example",
         "HMM_Implementation",
-        "Hidden_Markov_Model",
         "Auxiliary"
     ],
     "relatedEntries": [

@@ -25,7 +25,7 @@
         }
     ],
     "theories": [
-        "Weight_Balanced_Trees",
-        "Weight_Balanced_Trees_log"
+        "Weight_Balanced_Trees_log",
+        "Weight_Balanced_Trees"
     ]
 }

@@ -41,22 +41,22 @@
         "Native_Word"
     ],
     "theories": [
-        "Bool_Func",
-        "Array_List",
-        "Level_Collapse",
-        "Abstract_Impl",
-        "BDD_Examples",
-        "Conc_Impl",
         "Option_Helpers",
         "BDD_Code",
-        "Pointer_Map",
+        "BDD_Examples",
+        "BDT",
+        "Bool_Func",
+        "Level_Collapse",
+        "Array_List",
         "Middle_Impl",
         "Pointer_Map_Impl",
-        "BDT"
+        "Abstract_Impl",
+        "Conc_Impl",
+        "Pointer_Map"
     ],
     "relatedEntries": [
-        "Separation_Logic_Imperative_HOL",
         "JinjaThreads",
+        "Separation_Logic_Imperative_HOL",
         "Containers"
     ]
 }

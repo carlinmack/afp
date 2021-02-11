@@ -19,9 +19,9 @@
         }
     ],
     "theories": [
+        "IO",
         "HelloWorld",
         "RunningCodeFromIsabelle",
-        "IO",
         "HelloWorld_Proof"
     ]
 }

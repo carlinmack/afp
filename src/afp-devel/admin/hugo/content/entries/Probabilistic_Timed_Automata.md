@@ -31,7 +31,7 @@
         "Timed_Automata"
     ],
     "theories": [
-        "PTA_Reachability",
-        "PTA"
+        "PTA",
+        "PTA_Reachability"
     ]
 }

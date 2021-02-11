@@ -31,9 +31,9 @@
         "Winding_Number_Eval"
     ],
     "theories": [
-        "Zeta_Library",
         "Hadjicostas_Chapman",
         "Zeta_Function",
+        "Zeta_Library",
         "Zeta_Laurent_Expansion"
     ],
     "relatedEntries": [

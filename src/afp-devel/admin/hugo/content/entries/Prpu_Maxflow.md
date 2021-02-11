@@ -36,13 +36,13 @@
     ],
     "theories": [
         "Graph_Topological_Ordering",
-        "Relabel_To_Front",
-        "Generic_Push_Relabel",
-        "Prpu_Common_Inst",
-        "Relabel_To_Front_Impl",
-        "Generated_Code_Test",
         "Prpu_Common_Impl",
         "Fifo_Push_Relabel",
+        "Relabel_To_Front",
+        "Generated_Code_Test",
+        "Prpu_Common_Inst",
+        "Generic_Push_Relabel",
+        "Relabel_To_Front_Impl",
         "Fifo_Push_Relabel_Impl"
     ],
     "relatedEntries": [

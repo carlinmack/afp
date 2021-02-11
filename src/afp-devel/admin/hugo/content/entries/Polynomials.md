@@ -80,30 +80,30 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
-        "OAlist_Poly_Mapping",
-        "Poly_Mapping_Finite_Map",
-        "MPoly_Type_Class_OAlist",
-        "OAlist",
         "Power_Products",
-        "MPoly_Type",
-        "More_Modules",
-        "PP_Type",
-        "Quasi_PM_Power_Products",
         "MPoly_Type_Class_FMap",
-        "Polynomials",
-        "Show_Polynomials",
-        "Term_Order",
-        "MPoly_PM",
-        "MPoly_Type_Univariate",
+        "OAlist",
+        "Quasi_PM_Power_Products",
         "NZM",
-        "More_MPoly_Type",
         "MPoly_Type_Class_Ordered",
+        "MPoly_Type",
+        "PP_Type",
+        "MPoly_Type_Class_OAlist",
+        "Term_Order",
         "MPoly_Type_Class",
-        "Utils"
+        "MPoly_Type_Univariate",
+        "Poly_Mapping_Finite_Map",
+        "More_MPoly_Type",
+        "More_Modules",
+        "MPoly_PM",
+        "Utils",
+        "Polynomials",
+        "OAlist_Poly_Mapping",
+        "Show_Polynomials"
     ],
     "relatedEntries": [
         "Matrix",
-        "Myhill-Nerode",
-        "Decreasing-Diagrams-II"
+        "Decreasing-Diagrams-II",
+        "Myhill-Nerode"
     ]
 }

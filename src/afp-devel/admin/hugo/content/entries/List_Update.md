@@ -41,24 +41,24 @@
         "Regular-Sets"
     ],
     "theories": [
-        "OPT2",
-        "BIT",
+        "Bit_Strings",
         "MTF2_Effects",
-        "Prob_Theory",
-        "Partial_Cost_Model",
+        "Inversion",
+        "Phase_Partitioning",
+        "TS",
+        "BIT",
         "BIT_2comp_on2",
+        "RExp_Var",
         "Competitive_Analysis",
+        "Swaps",
+        "OPT2",
+        "On_Off",
+        "Comb",
+        "Prob_Theory",
         "Move_to_Front",
         "List_Factoring",
-        "Comb",
-        "Bit_Strings",
-        "Phase_Partitioning",
-        "On_Off",
         "BIT_pairwise",
-        "Swaps",
-        "Inversion",
-        "TS",
-        "RExp_Var"
+        "Partial_Cost_Model"
     ],
     "relatedEntries": [
         "Quick_Sort_Cost"

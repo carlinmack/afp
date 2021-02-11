@@ -26,15 +26,15 @@
         }
     ],
     "theories": [
-        "LoweOntologicalArgument_5b",
-        "LoweOntologicalArgument_2",
-        "LoweOntologicalArgument_1",
-        "LoweOntologicalArgument_6",
-        "QML",
-        "LoweOntologicalArgument_7",
-        "Relations",
         "LoweOntologicalArgument_5",
+        "LoweOntologicalArgument_1",
+        "Relations",
+        "LoweOntologicalArgument_5b",
+        "LoweOntologicalArgument_6",
+        "LoweOntologicalArgument_3",
+        "QML",
+        "LoweOntologicalArgument_2",
         "LoweOntologicalArgument_4",
-        "LoweOntologicalArgument_3"
+        "LoweOntologicalArgument_7"
     ]
 }

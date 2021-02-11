@@ -24,21 +24,21 @@
         "MonoidalCategory"
     ],
     "theories": [
-        "Coherence",
-        "InternalEquivalence",
-        "CanonicalIsos",
-        "Tabulation",
-        "InternalAdjunction",
-        "EquivalenceOfBicategories",
         "Strictness",
-        "SpanBicategory",
-        "Prebicategory",
-        "Pseudofunctor",
-        "PseudonaturalTransformation",
-        "IsomorphismClass",
-        "Subbicategory",
-        "Modification",
         "BicategoryOfSpans",
-        "Bicategory"
+        "CanonicalIsos",
+        "Prebicategory",
+        "Bicategory",
+        "EquivalenceOfBicategories",
+        "Modification",
+        "Pseudofunctor",
+        "Tabulation",
+        "IsomorphismClass",
+        "InternalEquivalence",
+        "PseudonaturalTransformation",
+        "SpanBicategory",
+        "Coherence",
+        "InternalAdjunction",
+        "Subbicategory"
     ]
 }

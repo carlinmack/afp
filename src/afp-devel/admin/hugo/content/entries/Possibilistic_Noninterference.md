@@ -50,14 +50,14 @@
         }
     ],
     "theories": [
-        "During_Execution",
-        "Concrete",
-        "MyTactics",
         "After_Execution",
-        "Language_Semantics",
+        "Concrete",
         "Compositionality",
         "Syntactic_Criteria",
+        "Language_Semantics",
+        "Interface",
         "Bisim",
-        "Interface"
+        "MyTactics",
+        "During_Execution"
     ]
 }

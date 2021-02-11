@@ -45,8 +45,8 @@
         "Regular-Sets"
     ],
     "theories": [
+        "Context_Free_Grammar",
         "Coinductive_Language",
-        "Coinductive_Regular_Set",
-        "Context_Free_Grammar"
+        "Coinductive_Regular_Set"
     ]
 }

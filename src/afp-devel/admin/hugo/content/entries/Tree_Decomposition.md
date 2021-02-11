@@ -33,11 +33,11 @@
         }
     ],
     "theories": [
-        "TreewidthCompleteGraph",
         "Graph",
-        "ExampleInstantiations",
-        "Tree",
+        "TreewidthTree",
         "TreeDecomposition",
-        "TreewidthTree"
+        "TreewidthCompleteGraph",
+        "ExampleInstantiations",
+        "Tree"
     ]
 }

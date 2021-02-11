@@ -24,14 +24,14 @@
     ],
     "theories": [
         "Intersection_Calculus",
-        "Lifting_to_Non_Ground_Calculi",
-        "Calculus",
         "Calculus_Variations",
         "Labeled_Lifting_to_Non_Ground_Calculi",
-        "Given_Clause_Architectures"
+        "Lifting_to_Non_Ground_Calculi",
+        "Given_Clause_Architectures",
+        "Calculus"
     ],
     "relatedEntries": [
-        "Functional_Ordered_Resolution_Prover",
-        "Saturation_Framework_Extensions"
+        "Saturation_Framework_Extensions",
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

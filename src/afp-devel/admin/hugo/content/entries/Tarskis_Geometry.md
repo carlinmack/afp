@@ -51,13 +51,13 @@
         }
     ],
     "theories": [
-        "Projective",
-        "Linear_Algebra2",
         "Tarski",
         "Miscellany",
-        "Hyperbolic_Tarski",
-        "Euclid_Tarski",
         "Action",
-        "Metric"
+        "Linear_Algebra2",
+        "Hyperbolic_Tarski",
+        "Metric",
+        "Projective",
+        "Euclid_Tarski"
     ]
 }

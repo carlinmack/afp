@@ -36,10 +36,10 @@
         "Pre_BZ"
     ],
     "theories": [
-        "While_SPMF",
+        "Fast_Dice_Roll",
         "Geometric",
+        "While_SPMF",
         "Resampling",
-        "Bernoulli",
-        "Fast_Dice_Roll"
+        "Bernoulli"
     ]
 }

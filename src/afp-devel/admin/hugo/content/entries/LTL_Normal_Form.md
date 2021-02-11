@@ -18,13 +18,13 @@
         "LTL_Master_Theorem"
     ],
     "theories": [
-        "Normal_Form_Complexity",
         "Normal_Form",
-        "Normal_Form_Code_Export"
+        "Normal_Form_Code_Export",
+        "Normal_Form_Complexity"
     ],
     "relatedEntries": [
+        "LTL_to_GBA",
         "LTL_to_DRA",
-        "Stuttering_Equivalence",
-        "LTL_to_GBA"
+        "LTL_Master_Theorem"
     ]
 }

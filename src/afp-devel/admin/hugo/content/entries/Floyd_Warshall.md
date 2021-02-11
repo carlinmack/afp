@@ -31,8 +31,8 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "Recursion_Combinators",
+        "FW_Code",
         "Floyd_Warshall",
-        "FW_Code"
+        "Recursion_Combinators"
     ]
 }

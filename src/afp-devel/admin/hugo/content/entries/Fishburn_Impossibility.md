@@ -33,8 +33,8 @@
         "Randomised_Social_Choice"
     ],
     "theories": [
-        "Fishburn_Impossibility",
-        "Social_Choice_Functions"
+        "Social_Choice_Functions",
+        "Fishburn_Impossibility"
     ],
     "relatedEntries": [
         "SDS_Impossibility"

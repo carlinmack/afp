@@ -14,8 +14,8 @@
     "licence": "BSD",
     "theories": [
         "Infrastructure",
-        "GDPRhealthcare",
         "AT",
+        "GDPRhealthcare",
         "MC"
     ]
 }

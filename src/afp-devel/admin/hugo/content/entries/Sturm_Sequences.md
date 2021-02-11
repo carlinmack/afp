@@ -40,7 +40,7 @@
     ],
     "theories": [
         "Sturm",
-        "Sturm_Method",
-        "Sturm_Theorem"
+        "Sturm_Theorem",
+        "Sturm_Method"
     ]
 }

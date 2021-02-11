@@ -78,8 +78,8 @@
         "Group-Ring-Module"
     ],
     "theories": [
-        "Valuation3",
+        "Valuation1",
         "Valuation2",
-        "Valuation1"
+        "Valuation3"
     ]
 }

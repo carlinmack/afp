@@ -25,10 +25,10 @@
         "Linear_Inequalities"
     ],
     "theories": [
+        "Matrix_LinPoly",
         "Linear_Programming",
-        "More_Jordan_Normal_Forms",
         "LP_Preliminaries",
-        "Matrix_LinPoly"
+        "More_Jordan_Normal_Forms"
     ],
     "relatedEntries": [
         "Farkas"

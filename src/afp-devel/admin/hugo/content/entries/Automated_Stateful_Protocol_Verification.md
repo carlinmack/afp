@@ -24,14 +24,14 @@
         "Stateful_Protocol_Composition_and_Typing"
     ],
     "theories": [
-        "PSPSP",
-        "Transactions",
-        "Term_Implication",
         "Eisbach_Protocol_Verification",
-        "Examples",
         "Term_Variants",
-        "Term_Abstraction",
+        "PSPSP",
         "Stateful_Protocol_Model",
-        "Stateful_Protocol_Verification"
+        "Transactions",
+        "Examples",
+        "Stateful_Protocol_Verification",
+        "Term_Implication",
+        "Term_Abstraction"
     ]
 }

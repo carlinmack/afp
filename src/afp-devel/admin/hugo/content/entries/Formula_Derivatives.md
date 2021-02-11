@@ -39,16 +39,16 @@
         "Deriving"
     ],
     "theories": [
-        "WS1S_Formula",
-        "Automaton",
-        "While_Default",
-        "WS1S_Nameful",
-        "Abstract_Formula",
-        "WS1S_Alt_Formula",
-        "WS1S_Presburger_Equivalence",
+        "Presburger_Formula",
         "FSet_More",
+        "WS1S_Formula",
+        "WS1S_Alt_Formula",
+        "Abstract_Formula",
+        "Automaton",
         "WS1S_Prelim",
-        "Presburger_Formula"
+        "WS1S_Nameful",
+        "While_Default",
+        "WS1S_Presburger_Equivalence"
     ],
     "relatedEntries": [
         "MSO_Regex_Equivalence",

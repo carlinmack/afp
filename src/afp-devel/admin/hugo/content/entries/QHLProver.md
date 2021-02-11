@@ -33,12 +33,12 @@
         "Deep_Learning"
     ],
     "theories": [
-        "Quantum_Hoare",
-        "Grover",
-        "Gates",
-        "Quantum_Program",
         "Complex_Matrix",
+        "Gates",
         "Matrix_Limit",
-        "Partial_State"
+        "Grover",
+        "Quantum_Hoare",
+        "Partial_State",
+        "Quantum_Program"
     ]
 }

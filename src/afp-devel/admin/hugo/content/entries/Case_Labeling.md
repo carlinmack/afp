@@ -40,7 +40,7 @@
         }
     ],
     "theories": [
-        "Case_Labeling",
-        "Case_Labeling_Examples"
+        "Case_Labeling_Examples",
+        "Case_Labeling"
     ]
 }

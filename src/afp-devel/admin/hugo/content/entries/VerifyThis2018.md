@@ -28,11 +28,11 @@
         "Sepref_IICF"
     ],
     "theories": [
-        "Challenge2",
-        "Challenge1_short",
         "Challenge3",
         "Challenge1",
-        "Snippets"
+        "Snippets",
+        "Challenge1_short",
+        "Challenge2"
     ],
     "relatedEntries": [
         "VerifyThis2019"

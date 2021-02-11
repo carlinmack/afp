@@ -22,13 +22,13 @@
         }
     ],
     "theories": [
-        "ReduceStoreBuffer",
-        "Variants",
         "PIMP",
-        "Text",
-        "ReduceStoreBufferSimulation",
         "SyntaxTweaks",
+        "ReduceStoreBufferSimulation",
         "Preliminaries",
-        "Abbrevs"
+        "ReduceStoreBuffer",
+        "Abbrevs",
+        "Text",
+        "Variants"
     ]
 }

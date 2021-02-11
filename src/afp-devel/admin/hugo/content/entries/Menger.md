@@ -27,13 +27,13 @@
         }
     ],
     "theories": [
-        "Helpers",
-        "DisjointPaths",
         "Graph",
         "Y_eq_new_last",
-        "Separations",
+        "DisjointPaths",
+        "Menger",
         "MengerInduction",
-        "Y_neq_new_last",
-        "Menger"
+        "Helpers",
+        "Separations",
+        "Y_neq_new_last"
     ]
 }

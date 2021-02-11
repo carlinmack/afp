@@ -72,16 +72,16 @@
         }
     ],
     "theories": [
-        "Coinductive_Nat",
-        "Quotient_TLList",
-        "Coinductive",
-        "Coinductive_List",
-        "Coinductive_Stream",
-        "Quotient_Coinductive_List",
         "Lazy_TLList",
-        "Coinductive_List_Prefix",
+        "Coinductive_List",
+        "Coinductive",
+        "Coinductive_Stream",
+        "Lazy_LList",
         "TLList",
-        "TLList_CCPO",
-        "Lazy_LList"
+        "Quotient_Coinductive_List",
+        "Quotient_TLList",
+        "Coinductive_Nat",
+        "Coinductive_List_Prefix",
+        "TLList_CCPO"
     ]
 }

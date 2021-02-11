@@ -65,13 +65,13 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
-        "Closures2",
-        "Myhill_2",
-        "Myhill_1",
-        "Non_Regular_Languages",
         "Folds",
+        "Myhill",
+        "Non_Regular_Languages",
+        "Myhill_1",
+        "Closures2",
         "Closures",
-        "Myhill"
+        "Myhill_2"
     ],
     "relatedEntries": [
         "Finite_Automata_HF",

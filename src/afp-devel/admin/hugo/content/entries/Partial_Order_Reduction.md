@@ -26,13 +26,13 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
-        "Traces",
-        "Transition_System_Interpreted_Traces",
         "Transition_System_Traces",
-        "Transition_System_Extensions",
-        "Ample_Abstract",
         "Ample_Correctness",
+        "Transition_System_Extensions",
+        "Formula",
+        "Transition_System_Interpreted_Traces",
         "Ample_Analysis",
-        "Formula"
+        "Ample_Abstract",
+        "Traces"
     ]
 }

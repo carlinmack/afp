@@ -37,8 +37,8 @@
         "List_Interleaving"
     ],
     "theories": [
-        "DeterministicProcesses",
-        "IpurgeUnwinding"
+        "IpurgeUnwinding",
+        "DeterministicProcesses"
     ],
     "relatedEntries": [
         "Noninterference_Generic_Unwinding"

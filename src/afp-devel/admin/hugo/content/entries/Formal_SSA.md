@@ -41,24 +41,24 @@
         "CAVA_Automata"
     ],
     "theories": [
-        "RBT_Mapping_Exts",
-        "Serial_Rel",
         "Construct_SSA_notriv_code",
-        "Generic_Extract",
-        "Construct_SSA_code",
-        "SSA_CFG",
-        "SSA_Semantics",
-        "Generic_Interpretation",
+        "Serial_Rel",
         "While_Combinator_Exts",
-        "Construct_SSA",
-        "Mapping_Exts",
-        "SSA_CFG_code",
-        "WhileGraphSSA",
-        "Graph_path",
         "Disjoin_Transform",
+        "SSA_CFG",
         "Construct_SSA_notriv",
-        "Minimality",
+        "SSA_CFG_code",
+        "Construct_SSA_code",
         "FormalSSA_Misc",
-        "SSA_Transfer_Rules"
+        "SSA_Transfer_Rules",
+        "Construct_SSA",
+        "WhileGraphSSA",
+        "Generic_Interpretation",
+        "Minimality",
+        "RBT_Mapping_Exts",
+        "Mapping_Exts",
+        "Graph_path",
+        "SSA_Semantics",
+        "Generic_Extract"
     ]
 }

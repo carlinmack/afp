@@ -43,10 +43,10 @@
         "Girth_Chromatic"
     ],
     "theories": [
-        "Ugraph_Lemmas",
-        "Prob_Lemmas",
         "Ugraph_Properties",
-        "Subgraph_Threshold",
-        "Ugraph_Misc"
+        "Ugraph_Misc",
+        "Prob_Lemmas",
+        "Ugraph_Lemmas",
+        "Subgraph_Threshold"
     ]
 }

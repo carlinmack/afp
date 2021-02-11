@@ -87,19 +87,19 @@
         "Regular-Sets"
     ],
     "theories": [
-        "NA",
-        "RegExp2NAe",
-        "MaxChop",
-        "AutoRegExp",
-        "MaxPrefix",
-        "AutoMaxChop",
-        "DA",
-        "Automata",
-        "Execute",
         "NAe",
-        "Functional_Automata",
-        "RegSet_of_nat_DA",
         "RegExp2NA",
+        "RegExp2NAe",
+        "AutoMaxChop",
+        "Automata",
+        "NA",
+        "MaxChop",
+        "RegSet_of_nat_DA",
+        "DA",
+        "Execute",
+        "MaxPrefix",
+        "AutoRegExp",
+        "Functional_Automata",
         "AutoProj"
     ]
 }

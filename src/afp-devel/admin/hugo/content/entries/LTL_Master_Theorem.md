@@ -28,13 +28,13 @@
         "Deriving"
     ],
     "theories": [
-        "Code_Export",
+        "Omega_Words_Fun_Stream",
         "Quotient_Type",
-        "Omega_Words_Fun_Stream"
+        "Code_Export"
     ],
     "relatedEntries": [
         "LTL_to_DRA",
-        "LTL_Normal_Form",
-        "Stuttering_Equivalence"
+        "LTL_to_GBA",
+        "LTL_Normal_Form"
     ]
 }

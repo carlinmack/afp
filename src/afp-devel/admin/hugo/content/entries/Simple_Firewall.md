@@ -36,12 +36,12 @@
         "IP_Addresses"
     ],
     "theories": [
-        "Firewall_Common_Decision_State",
         "Simple_Packet",
         "Shadowed",
+        "SimpleFw_Semantics",
         "Generic_SimpleFw",
         "SimpleFw_Syntax",
-        "SimpleFw_Semantics",
+        "Firewall_Common_Decision_State",
         "Service_Matrix",
         "SimpleFw_toString"
     ]

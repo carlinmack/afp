@@ -26,8 +26,8 @@
         "FOL-Fitting"
     ],
     "theories": [
-        "Common",
         "Tableau",
-        "Sequent"
+        "Sequent",
+        "Common"
     ]
 }

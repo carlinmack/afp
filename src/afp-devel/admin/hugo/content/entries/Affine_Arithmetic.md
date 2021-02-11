@@ -44,31 +44,31 @@
         "Show"
     ],
     "theories": [
-        "Ex_Inter",
-        "Affine_Arithmetic",
-        "Affine_Arithmetic_Auxiliarities",
-        "Optimize_Integer",
-        "Ex_Affine_Approximation",
-        "Float_Real",
-        "Counterclockwise",
-        "Optimize_Float",
-        "Straight_Line_Program",
-        "Counterclockwise_2D_Arbitrary",
-        "Executable_Euclidean_Space",
-        "Counterclockwise_2D_Strict",
-        "Polygon",
         "Floatarith_Expression",
-        "Counterclockwise_Vector",
+        "Affine_Arithmetic_Auxiliarities",
+        "Counterclockwise_2D_Strict",
+        "Float_Real",
+        "Optimize_Float",
+        "Affine_Approximation",
         "Print",
-        "Affine_Code",
-        "Affine_Form",
-        "Ex_Ineqs",
+        "Executable_Euclidean_Space",
+        "Polygon",
+        "Counterclockwise_2D_Arbitrary",
+        "Ex_Inter",
         "Intersection",
-        "Affine_Approximation"
+        "Counterclockwise_Vector",
+        "Affine_Code",
+        "Counterclockwise",
+        "Affine_Form",
+        "Affine_Arithmetic",
+        "Ex_Ineqs",
+        "Straight_Line_Program",
+        "Ex_Affine_Approximation",
+        "Optimize_Integer"
     ],
     "relatedEntries": [
         "Real_Impl",
-        "Formula_Derivatives",
-        "MSO_Regex_Equivalence"
+        "MSO_Regex_Equivalence",
+        "Formula_Derivatives"
     ]
 }

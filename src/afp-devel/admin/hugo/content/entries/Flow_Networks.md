@@ -38,14 +38,14 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "Network_Impl",
-        "Ford_Fulkerson",
-        "Graph",
-        "Graph_Impl",
         "Network",
+        "Graph",
+        "Network_Impl",
         "Augmenting_Path",
-        "Augmenting_Flow",
+        "Ford_Fulkerson",
         "NetCheck",
+        "Graph_Impl",
+        "Augmenting_Flow",
         "Residual_Graph"
     ],
     "relatedEntries": [

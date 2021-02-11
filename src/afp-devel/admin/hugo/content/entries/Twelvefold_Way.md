@@ -33,28 +33,28 @@
         "Card_Partitions"
     ],
     "theories": [
-        "Card_Bijections_Direct",
-        "Twelvefold_Way_Entry10",
-        "Card_Bijections",
-        "Equiv_Relations_on_Functions",
-        "Twelvefold_Way_Entry9",
-        "Twelvefold_Way_Entry5",
-        "Twelvefold_Way_Entry8",
-        "Twelvefold_Way_Entry2",
-        "Twelvefold_Way_Entry12",
-        "Twelvefold_Way_Entry1",
         "Twelvefold_Way_Entry3",
-        "Twelvefold_Way_Entry6",
-        "Twelvefold_Way_Entry7",
-        "Twelvefold_Way",
+        "Equiv_Relations_on_Functions",
+        "Twelvefold_Way_Entry2",
+        "Twelvefold_Way_Entry8",
+        "Twelvefold_Way_Entry5",
+        "Twelvefold_Way_Entry1",
+        "Twelvefold_Way_Entry9",
+        "Card_Bijections",
         "Preliminaries",
-        "Twelvefold_Way_Entry4",
+        "Twelvefold_Way_Entry7",
         "Twelvefold_Way_Core",
+        "Twelvefold_Way_Entry10",
+        "Card_Bijections_Direct",
+        "Twelvefold_Way",
+        "Twelvefold_Way_Entry4",
+        "Twelvefold_Way_Entry6",
+        "Twelvefold_Way_Entry12",
         "Twelvefold_Way_Entry11"
     ],
     "relatedEntries": [
-        "Bell_Numbers_Spivey",
         "Card_Equiv_Relations",
+        "Bell_Numbers_Spivey",
         "Card_Partitions"
     ]
 }

@@ -45,8 +45,8 @@
         }
     ],
     "theories": [
-        "CaseStudy1",
         "Method",
-        "CaseStudy2"
+        "CaseStudy2",
+        "CaseStudy1"
     ]
 }

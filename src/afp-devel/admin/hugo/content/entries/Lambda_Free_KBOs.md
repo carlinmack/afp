@@ -37,16 +37,16 @@
     ],
     "theories": [
         "Lambda_Free_KBO_App",
-        "Lambda_Free_KBO_Util",
+        "Lambda_Free_TKBO_Coefs",
         "Lambda_Free_KBO_Std",
         "Lambda_Free_KBO_Basic",
-        "Lambda_Free_TKBO_Coefs",
+        "Lambda_Encoding_KBO",
         "Lambda_Free_KBOs",
-        "Lambda_Encoding_KBO"
+        "Lambda_Free_KBO_Util"
     ],
     "relatedEntries": [
         "Lambda_Free_RPOs",
         "Lambda_Free_EPO",
-        "Functional_Ordered_Resolution_Prover"
+        "PAC_Checker"
     ]
 }

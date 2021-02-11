@@ -39,26 +39,26 @@
         "Sqrt_Babylonian"
     ],
     "theories": [
-        "Dvd_Int_Poly",
         "Kronecker_Factorization",
-        "Rational_Root_Test",
         "Prime_Factorization",
-        "Gauss_Lemma",
-        "Missing_List",
-        "Missing_Polynomial_Factorial",
-        "Explicit_Roots",
-        "Missing_Multiset",
-        "Fundamental_Theorem_Algebra_Factorized",
         "Square_Free_Factorization",
-        "Rational_Factorization",
-        "Gcd_Rat_Poly",
+        "Missing_Multiset",
         "Precomputation",
+        "Polynomial_Divisibility",
+        "Gauss_Lemma",
+        "Dvd_Int_Poly",
         "Order_Polynomial",
-        "Polynomial_Divisibility"
+        "Missing_Polynomial_Factorial",
+        "Missing_List",
+        "Rational_Factorization",
+        "Fundamental_Theorem_Algebra_Factorized",
+        "Gcd_Rat_Poly",
+        "Rational_Root_Test",
+        "Explicit_Roots"
     ],
     "relatedEntries": [
         "Polynomial_Interpolation",
-        "Real_Impl",
-        "Certification_Monads"
+        "Certification_Monads",
+        "Real_Impl"
     ]
 }

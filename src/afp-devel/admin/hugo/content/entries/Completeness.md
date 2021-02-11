@@ -85,12 +85,12 @@
         }
     ],
     "theories": [
-        "Sequents",
-        "Tree",
-        "Soundness",
         "Base",
+        "Sequents",
         "Completeness",
+        "Soundness",
+        "Formula",
         "PermutationLemmas",
-        "Formula"
+        "Tree"
     ]
 }

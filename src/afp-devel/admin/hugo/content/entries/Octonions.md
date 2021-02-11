@@ -22,7 +22,7 @@
         }
     ],
     "theories": [
-        "Cross_Product_7",
-        "Octonions"
+        "Octonions",
+        "Cross_Product_7"
     ]
 }

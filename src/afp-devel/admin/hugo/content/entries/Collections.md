@@ -86,10 +86,10 @@
         "Trie"
     ],
     "theories": [
-        "Collections_Entrypoints_Chapter",
         "Refine_Dflt",
-        "Refine_Dflt_Only_ICF",
-        "Refine_Dflt_ICF"
+        "Refine_Dflt_ICF",
+        "Collections_Entrypoints_Chapter",
+        "Refine_Dflt_Only_ICF"
     ],
     "relatedEntries": [
         "JinjaThreads",

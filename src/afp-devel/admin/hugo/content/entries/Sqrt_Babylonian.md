@@ -54,9 +54,9 @@
         "Cauchy"
     ],
     "theories": [
-        "Log_Impl",
-        "NthRoot_Impl",
+        "Sqrt_Babylonian_Auxiliary",
         "Sqrt_Babylonian",
-        "Sqrt_Babylonian_Auxiliary"
+        "NthRoot_Impl",
+        "Log_Impl"
     ]
 }

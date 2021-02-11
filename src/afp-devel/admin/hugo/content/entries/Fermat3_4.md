@@ -70,8 +70,8 @@
         }
     ],
     "theories": [
-        "Fermat4",
+        "Fermat3",
         "Quad_Form",
-        "Fermat3"
+        "Fermat4"
     ]
 }

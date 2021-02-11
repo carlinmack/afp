@@ -29,16 +29,16 @@
         }
     ],
     "theories": [
+        "Sequential",
+        "Rely_Quotient",
+        "Iteration",
+        "Parallel",
+        "Conjunction",
+        "Infimum_Nat",
+        "Galois_Connections",
+        "Refinement_Lattice",
         "CRA",
         "Conjunctive_Sequential",
-        "Iteration",
-        "Sequential",
-        "Galois_Connections",
-        "Conjunctive_Iteration",
-        "Rely_Quotient",
-        "Parallel",
-        "Refinement_Lattice",
-        "Conjunction",
-        "Infimum_Nat"
+        "Conjunctive_Iteration"
     ]
 }

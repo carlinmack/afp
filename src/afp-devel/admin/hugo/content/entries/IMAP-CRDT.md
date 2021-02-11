@@ -34,9 +34,9 @@
     ],
     "theories": [
         "IMAP-proof",
+        "IMAP-def",
         "IMAP-proof-commute",
         "IMAP-proof-helpers",
-        "IMAP-def",
         "IMAP-proof-independent"
     ]
 }

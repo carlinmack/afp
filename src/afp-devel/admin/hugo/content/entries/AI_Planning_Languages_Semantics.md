@@ -21,11 +21,11 @@
     ],
     "theories": [
         "SASP_Semantics",
-        "Option_Monad_Add",
-        "PDDL_STRIPS_Semantics",
-        "Lifschitz_Consistency",
-        "Error_Monad_Add",
         "SASP_Checker",
+        "Error_Monad_Add",
+        "Lifschitz_Consistency",
+        "PDDL_STRIPS_Semantics",
+        "Option_Monad_Add",
         "PDDL_STRIPS_Checker"
     ],
     "relatedEntries": [

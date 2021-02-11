@@ -46,10 +46,10 @@
     "theories": [
         "Resumption_Based",
         "Concrete",
-        "Trace_Based",
-        "Language_Semantics",
         "Compositionality",
         "Syntactic_Criteria",
-        "Interface"
+        "Language_Semantics",
+        "Interface",
+        "Trace_Based"
     ]
 }

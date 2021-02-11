@@ -42,11 +42,11 @@
         }
     ],
     "theories": [
-        "Secrecy_types",
         "CompLocalSecrets",
-        "ListExtras",
-        "Secrecy",
+        "KnowledgeKeysSecrets",
+        "Secrecy_types",
         "inout",
-        "KnowledgeKeysSecrets"
+        "ListExtras",
+        "Secrecy"
     ]
 }

@@ -47,10 +47,10 @@
         "Deriving"
     ],
     "theories": [
-        "Real_Unique_Impl",
-        "Real_Impl",
         "Real_Impl_Auxiliary",
-        "Prime_Product"
+        "Real_Impl",
+        "Prime_Product",
+        "Real_Unique_Impl"
     ],
     "relatedEntries": [
         "Affine_Arithmetic",

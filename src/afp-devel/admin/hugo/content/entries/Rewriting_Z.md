@@ -44,7 +44,7 @@
         "Z"
     ],
     "relatedEntries": [
-        "Decreasing-Diagrams",
-        "Decreasing-Diagrams-II"
+        "Decreasing-Diagrams-II",
+        "Decreasing-Diagrams"
     ]
 }
