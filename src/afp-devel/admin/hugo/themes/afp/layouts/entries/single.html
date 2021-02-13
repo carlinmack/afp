@@ -17,7 +17,18 @@
   <p>{{- $value -}}</p>
   {{- end -}}
   {{- end -}}
+
   {{- $Scratch := newScratch -}}
+
+  {{- with .Params.theories -}}
+  <h3>Theories</h3>
+  <ul>
+    {{- range . -}}
+    <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
+  
   {{- with .Params.dependencies -}}
     {{- range . -}}
     {{- $dependency := printf "[%s](%s%s)" . ("/entries/" | relLangURL) (. | urlize) -}}
@@ -38,6 +49,15 @@
     </p>
   {{- end -}}
 
+  {{- with .Params.topics -}}
+  <h3>Topics</h3>
+  <ul>
+    {{- range . -}}
+    <li>{{- printf "[%s](/topics/%s)" . (urlize .) | $.Page.RenderString -}}</li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
+
   {{- with .Params.relatedEntries -}}
   {{- range . -}}
   {{- $relatedEntry := printf "[%s](%s%s)" . ("/entries/" | relLangURL) (. | urlize) -}}
@@ -47,15 +67,6 @@
   <p>
     {{- delimit ($Scratch.Get "relatedEntries") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
   </p>
-  {{- end -}}
-
-  {{- with .Params.theories -}}
-  <h3>Theories</h3>
-  <ul>
-    {{- range . -}}
-    <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
-    {{- end -}}
-  </ul>
   {{- end -}}
 </main>
 
