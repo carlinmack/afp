@@ -1,5 +1,5 @@
 {{- define "main" -}}
-  <p>
+<p>
   The Archive of Formal Proofs is a collection of proof libraries, examples, and larger scientific
   developments,
   mechanically checked in the theorem prover <a href="http://isabelle.in.tum.de/">Isabelle</a>. It
@@ -8,32 +8,33 @@
   ISSN:
   2150-914x. Submissions are refereed and we encourage companion AFP submissions to conference and journal
   publications. To cite an entry, please use the <a href="/help/#citing-entries">preferred citation style</a>.
-  </p>
+  <br><br>A <a href="http://devel.isa-afp.org">development version</a> of the archive is available as well.
+</p>
 
-  <form action="{{ " search" | absURL }}">
-    <div class='form-container'>
-      <input id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
-        type="button">Search</button>
-      <div id="searchInputautocomplete-list" style="display: none">
-        <div></div>
-      </div>
+<form action="{{ " search" | absURL }}">
+  <div class='form-container'>
+    <input id="searchInput" type="search" size="31" maxlength="255" value=""><button id="searchButton"
+      type="button">Search</button>
+    <div id="searchInputautocomplete-list" style="display: none">
+      <div></div>
     </div>
-  </form>
+  </div>
+</form>
 
-  {{- range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
-    <div>
-      <h2 class="year">{{- .Key -}}</h2>
-      {{- range .Pages }}
-        <article class="entry">
-          <div class="item-text">
-            <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
-            by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}</p>
-          </div>
-          <span class="date">
-            {{ .Date.Format "02 Jan" }}
-          </span>
-        </article>
-      {{- end -}}
+{{- range (where site.RegularPages "Type" "in" site.Params.mainSections).GroupByDate "2006" -}}
+<div>
+  <h2 class="year">{{- .Key -}}</h2>
+  {{- range .Pages }}
+  <article class="entry">
+    <div class="item-text">
+      <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
+        by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}</p>
     </div>
+    <span class="date">
+      {{ .Date.Format "02 Jan" }}
+    </span>
+  </article>
   {{- end -}}
+</div>
+{{- end -}}
 {{- end -}}
