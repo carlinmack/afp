@@ -87,17 +87,18 @@
     <h2>Cite</h2>
     <a class="close" href="#">&times;</a>
     <div>
-      <pre>@article{{- "{" -}}{{- $entryName -}}-AFP,
-        author  = {{ "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
-        title   = {{ "{" -}}{{- htmlUnescape .Params.title -}}},
-        journal = {Archive of Formal Proofs},
-        month   = {{ dateFormat "January" .Params.date -}},
-        year    = {{ dateFormat "2006" .Params.date -}},
-        note    = {\url{http://isa-afp.org/entries/{{- $entryName -}}.html},
-                  Formal proof development},
-        ISSN    = {2150-914x},
-      }</pre>
-      <button>Copy</button> <button>Download</button>
+      <p style="display:none;" id="bibtexFileName">{{- $entryName -}}-AFP</p>
+      <pre id="copyText">@article{{- "{" -}}{{- $entryName -}}-AFP,
+  author  = {{ "{" -}}{{- delimit .Params.authors ", " | replaceRE "(, )([^,]+$)" " and $2" -}}},
+  title   = {{ "{" -}}{{- htmlUnescape .Params.title -}}},
+  journal = {Archive of Formal Proofs},
+  month   = {{ dateFormat "January" .Params.date -}},
+  year    = {{ dateFormat "2006" .Params.date -}},
+  note    = {\url{http://isa-afp.org/entries/{{- $entryName -}}.html},
+            Formal proof development},
+  ISSN    = {2150-914x},
+}</pre>
+      <button id="copyBibtex">Copy</button> <a id="downloadBibtex">Download</a>
     </div>
   </div>
 </div>

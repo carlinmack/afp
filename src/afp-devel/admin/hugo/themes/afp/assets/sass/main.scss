@@ -1,7 +1,7 @@
 //colors
 $theme: #2e2d4e;
 $theme-hover: #444373;
-$focus: #acabcf;
+$theme-focus: #acabcf;
 $link:#0645ad;
 $link-hover: #0000ee;
 $link-visited: #42047c;
@@ -147,7 +147,7 @@ aside {
         }
 
         &:focus {
-            outline: 1px $focus solid;
+            outline: 1px $theme-focus solid;
             outline-offset: 3.5px;
         }
     }
@@ -404,12 +404,6 @@ h4 {
         margin-top: 0;
     }
 
-    a[download] {
-        display: block;
-        width: 154px;
-        margin: 2.5rem auto 0;
-    }
-
     .close {
         position: absolute;
         width: 20px;
@@ -425,6 +419,14 @@ h4 {
         &:hover {
             color: $darkest-grey;
         }
+    }
+}
+
+#downloadPopUp {
+    a[download] {
+        display: block;
+        width: 154px;
+        margin: 2.5rem auto 0;
     }
 }
 
@@ -498,7 +500,7 @@ code {
 
 a[download] {
     display: inline-block;
-    line-height: 0;
+    color: $black;
     height: 22px;
     padding: 4px 7px;
     @extend %button;
@@ -511,6 +513,14 @@ a[download] {
     &:hover,
     &:active {
         background-color: $light-grey;
+        color: $black;
+    }
+    &:after {
+        content: url("/images/download.svg");
+        position: relative;
+        top: 0.12em;
+        left: 5px;
+        padding-right: 5px;
     }
 }
 
@@ -531,13 +541,6 @@ a[download] {
     }
 }
 
-a[download]::after {
-    content: url("/images/download.svg");
-    position: relative;
-    top: 0.12em;
-    left: 5px;
-    padding-right: 5px;
-}
 
 .form-container {
     width: 290px;
