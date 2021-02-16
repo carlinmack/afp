@@ -9,7 +9,12 @@
         "topic": "topics",
         "dependency": "dependencies" 
     },
-    "params": { 
+    "params": {
+        "description": "A collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover Isabelle.",
+        "images": [
+            "/images/afp.png"
+        ],
+        "title": "Archive of Formal Proofs",
         "mainSections": ["entries"]
     },
     "markup": {
