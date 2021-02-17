@@ -42,6 +42,13 @@ $border-bottom: 2px $darker-grey solid;
     font-family: $sans-serif;
 }
 
+%button-image {
+    position: relative;
+    top: 0.12em;
+    left: 5px;
+    padding-right: 5px;
+}
+
 @font-face {
     font-family: $OpenSans;
     font-style: normal;
@@ -517,10 +524,7 @@ a[download] {
     }
     &:after {
         content: url("/images/download.svg");
-        position: relative;
-        top: 0.12em;
-        left: 5px;
-        padding-right: 5px;
+        @extend %button-image
     }
 }
 
@@ -540,7 +544,6 @@ a[download] {
         font-family: $monospace;
     }
 }
-
 
 .form-container {
     width: 290px;
@@ -587,6 +590,13 @@ button {
     &:focus {
         outline: none;
         box-shadow: 0 0 0 2px #c5c4ddbb;
+    }
+}
+
+button[copy] {
+    &:after {
+        content: url("/images/copy.svg");
+        @extend %button-image
     }
 }
 
