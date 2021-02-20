@@ -1,0 +1,3 @@
+[submodule "src/afp-devel/web"]
+	path = src/afp-devel/web
+	url = git@github.com:carlinmack/carlinmack.github.io.git
