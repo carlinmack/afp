@@ -34,11 +34,12 @@
         "Word_8",
         "Word_16",
         "Word_Syntax",
+        "Word_Names",
         "More_Word_Operations",
         "Word_32",
-        "Word_64",
         "Many_More",
         "Word_Lib_Sumo",
+        "Word_64",
         "Guide",
         "Examples"
     ],

@@ -1,6 +1,7 @@
 {
     "theories": [
         "Approx_VC_Hoare",
+        "Approx_SC_Hoare",
         "Approx_MIS_Hoare",
         "Approx_LB_Hoare",
         "Approx_BP_Hoare"
