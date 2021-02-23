@@ -281,7 +281,9 @@ header {
     }
 
     .chart {
+        min-width: 400px;
         width: 100%;
+        min-height: 400px;
         max-height: 50vh;
         background: $white;
         margin: 20px auto 40px;
