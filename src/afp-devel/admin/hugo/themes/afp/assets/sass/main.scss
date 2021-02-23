@@ -280,6 +280,20 @@ header {
         overflow-y: auto;
     }
 
+    .chart {
+        width: 100%;
+        max-height: 50vh;
+        background: $white;
+        margin: 20px auto 40px;
+        border: 1px solid $black;
+        position: relative;
+    }
+
+    .statsnumber {
+        text-align: right;
+        padding-right: 1rem;
+    }
+
     ul {
         list-style-type: none;
     }
@@ -471,14 +485,6 @@ pre {
 code {
     padding: 1px 2px 2px;
     @extend %code;
-}
-
-.chart {
-    height: 400px;
-    width: 400px;
-    background: $white;
-    margin: 20px auto 40px;
-    border: 1px solid $black;
 }
 
 .nobr {
