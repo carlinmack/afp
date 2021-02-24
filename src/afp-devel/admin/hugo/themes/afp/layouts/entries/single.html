@@ -14,7 +14,7 @@
   {{- range $key, $value := . -}}
   <h3>{{- humanize $key -}}</h3>
 
-  <p>{{- $value -}}</p>
+  <p>{{- $value | safeHTML-}}</p>
   {{- end -}}
   {{- end -}}
 

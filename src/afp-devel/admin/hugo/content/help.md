@@ -6,7 +6,7 @@ menu:
         weight: 4
 ---
 
-[Help with Isabelle](http://isabelle.in.tum.de/)
+This section focuses on the Archive of Formal Proofs. For help with Isabelle, see the [Isabelle Wiki](https://isabelle.in.tum.de/community/Main_Page) and [Documentation](https://isabelle.in.tum.de/documentation.html)
 
 ## Referring to AFP Entries in Isabelle
 
