@@ -20,8 +20,7 @@
   {{- template "_internal/twitter_cards.html" . -}}
   {{ $options := (dict "targetPath" "css/front.css") }}
   {{ $style := resources.Get "sass/main.scss" | toCSS $options | minify }}
-  {{ $cssFP := $style | resources.Fingerprint }}
-  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" integrity="{{ $cssFP.Data.Integrity }}">
+  <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
   {{- if (eq .Section "theories") -}}
   <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isabelle.css">
   {{ end }}
