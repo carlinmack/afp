@@ -3,7 +3,7 @@
 <main>
   <h3>Abstract</h3>
 
-  <p class="abstract mathjax_process">{{- trim .Params.abstract "\n" | safeHTML -}}</p>
+  <div class="abstract mathjax_process">{{- trim .Params.abstract "\n" | safeHTML -}}</div>
   {{- if (eq .Params.licence "BSD") -}}
   <a href="http://isa-afp.org/LICENSE">BSD License</a>
   {{- else -}}
