@@ -17,12 +17,12 @@ menu:
 *   Only named lemmas should carry attributes such as `[simp]`.
 *   We prefer structured Isar proofs over apply style, but do not mandate them.
 *   If there are proof steps that take significant time, i.e. longer than roughly 1 min, please add a short comment to that step, so maintainers will know what to expect.
-*   The entry must contain a ROOT file with one session that has the name of the entry. We strongly encourage precisely one session per entry, but exceptions can be made. All sessions must be in group (AFP), and all theory files of the submission must be contained in at least one session. See also the example [ROOT](https://foss.heptapod.net/isa-afp/afp-2020/-/blob/branch/default/thys/Example-Submission/ROOT) file in the [Example submission](entries/Example-Submission.html).
+*   The entry must contain a ROOT file with one session that has the name of the entry. We strongly encourage precisely one session per entry, but exceptions can be made. All sessions must be in group (AFP), and all theory files of the submission must be contained in at least one session. See also the example [ROOT](https://foss.heptapod.net/isa-afp/afp-2020/-/blob/branch/default/thys/Example-Submission/ROOT) file in the [Example submission](/entries/Example-Submission.html).
 *   The entry should cite all sources that the theories are based on, for example textbooks or research articles containing informal versions of the proofs.
 
 Your submission must contain an abstract to be displayed on the web site – usually this will be the same as the abstract of your proof document in the root.tex file. You can use LaTeX formulae in this web site abstract, either inline formulae in the form $a+b$ or \\(a+b\\) or display formulae in the form $$a + b$$ or \\\[a + b\\\]. Other occurrences of these characters must be escaped (e.g. \\$ or \\\\(). Note that LaTeX in the title of an entry is _not_ allowed. Most basic LaTeX functionality should be supported. For details on what parts of LaTeX are supported, see the [MathJax documentation.](https://docs.mathjax.org/en/v2.7-latest/tex.html)
 
-It is possible and encouraged to build on other archive entries in your submission. There is a standardised way to [refer to other AFP entries](using.html) in your theories.
+It is possible and encouraged to build on other archive entries in your submission. There is a standardised way to [refer to other AFP entries](/help) in your theories.
 
 ## Submission Form
 
@@ -43,7 +43,7 @@ This conflicts with the purpose of archiving and preserving entries as they have
 The AFP deals with this by synchronizing such updates with Isabelle releases:
 
 *   The entries released and visible on the main site are always working with the most recent stable Isabelle version and do not change.
-*   In the background, the archive maintainers evolve all entries to be up to date with the current Isabelle development version. Authors can contribute changes to this version which is available as a [Heptapod mercurial repository](https://foss.heptapod.net/isa-afp/afp-devel/) or as tar.gz package on the [download page](download.html).
+*   In the background, the archive maintainers evolve all entries to be up to date with the current Isabelle development version. Authors can contribute changes to this version which is available as a [Heptapod mercurial repository](https://foss.heptapod.net/isa-afp/afp-devel/) or as tar.gz package on the [download page](/download).
 *   When a new Isabelle version is released, the above mentioned development version of AFP is frozen and turns into the main version displayed on the front page. Older versions (including the original submission) of all entries are archived and remain accessible.
 
 Significant changes of an entry should be recorded in the metadata of the entry using the keyword "extra-history". The resulting web page should look [something like this](https://www.isa-afp.org/entries/JinjaThreads.html).
@@ -60,4 +60,4 @@ The above means that if you are an author and would like to provide a new, bette
 
 To achieve this, you should base your changes on the [mercurial development version](https:/foss.heptapod.net/isa-afp/afp-devel/) of your AFP entry and test it against the current [Isabelle development version](http://isabelle.in.tum.de/devel/).
 
-If you would like to get write access to your entry in the mercurial repository or if you need assistance, please contact the [editors](about.html#editors).
+If you would like to get write access to your entry in the mercurial repository or if you need assistance, please contact the [editors](/about#editors).
