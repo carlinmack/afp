@@ -26,7 +26,7 @@
   {{ end }}
   <link rel="icon" href="{{- .Site.BaseURL -}}images/favicon.ico" type="image/icon">
 
-  {{- if (eq .Section "entries") -}}
+  {{- if or (eq .Section "entries") (eq .File.TranslationBaseName "search") -}}
     {{/*
       The following is the MathJax configuration.
       This means that formulae can be enclosed in either $ … $ or \( … \)
