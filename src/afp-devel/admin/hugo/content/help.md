@@ -10,13 +10,23 @@ This section focuses on the Archive of Formal Proofs. For help with Isabelle, se
 
 ## Referring to AFP Entries in Isabelle
 
-#### Linux and Mac
-
 Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others _without_ having to include the AFP articles you depend on, here is how to do it.
 
-If you are using Isabelle2020, and have downloaded your AFP directory to `/home/myself/afp`, you should run the following command to make the AFP session ROOTS available to Isabelle:
+#### Linux and Mac
+
+If you are using Isabelle2020, and have downloaded your AFP directory to `/home/myself/afp`, you can run the following command to make the AFP session ROOTS available to Isabelle:
 
     echo "/home/myself/afp/thys" >> ~/.isabelle/Isabelle2020/ROOTS
+
+This adds the path /home/myself/afp/thys/ to the ROOTS file, which Isabelle will scan by default. You can also manually edit and/or create that ROOTS file. There are many other ways to achieve the same outcome, this is just one option.
+
+#### Windows
+
+The idea is the same just the path is slightly different. If the AFP is in `C:\afp`, you should be able to run the following in a Cygwin terminal.
+
+    echo "/cygdrive/c/afp/thys" >> ~/.isabelle/Isabelle2021/ROOTS
+
+----
 
 You can now refer to article `ABC` from the AFP in some theory of yours via
 
@@ -24,9 +34,6 @@ You can now refer to article `ABC` from the AFP in some theory of yours via
 
 This allows you to distribute your material separately from any AFP theories. Users of your distribution also need to install the AFP in the above manner.
 
-#### Windows
-
-The instructions should be the same under cygwin on Windows.
 
 ## Citing Entries
 
