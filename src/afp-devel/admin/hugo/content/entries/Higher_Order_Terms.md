@@ -39,7 +39,6 @@
         "Fresh_Class",
         "Term_Class",
         "Term_Utils",
-        "Disjoint_Sets",
         "Pats",
         "Term"
     ]
