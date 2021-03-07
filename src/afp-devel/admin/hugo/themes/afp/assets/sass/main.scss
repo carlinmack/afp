@@ -264,7 +264,6 @@ header {
 
     .popup {
         background: $white;
-        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
         box-shadow: 0 0 8px 0 $black_15, 0 4px 10px 0 $black_15;
         padding: 2.5rem;
         display: block;
@@ -275,7 +274,6 @@ header {
         position: fixed;
         left: 50%;
         top: 50%;
-        //Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
         transform: translate(-50%, -50%);
         overflow-y: auto;
     }
@@ -301,7 +299,6 @@ header {
     }
 
     li {
-        //Instead of the line below you could use @include word-break($value)
         word-break: break-all;
     }
 
@@ -611,7 +608,6 @@ a[download] {
 
     &:focus {
         outline: none;
-        //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
         box-shadow: 0 0 0 2px #c5c4ddbb;
     }
 

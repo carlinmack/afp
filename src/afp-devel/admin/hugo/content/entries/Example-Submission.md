@@ -1,5 +1,0 @@
-{
-    "theories": [
-        "Submission"
-    ]
-}

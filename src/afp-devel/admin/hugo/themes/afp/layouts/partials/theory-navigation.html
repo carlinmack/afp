@@ -11,8 +11,20 @@
     </ul>
     <hr>
     <ul>
-      {{- range .Params.theories }}
-      <a href="#{{- . -}}"><li>{{- . -}}</li></a>
+      {{- range $map := .Params.theories }}
+      {{- range $key, $value := $map -}}
+      <li><a href="#{{- $key -}}">{{- $key -}}</a>
+        {{ with $value}}
+        <ul>
+        {{- range $lemma := . }}
+        <a href="#{{- printf "%s-%s" $key $lemma -}}">
+          <li>{{- $lemma -}}</li>
+        </a>
+        {{- end }}
+        </ul>
+        {{ end }}
+      </li>
+      {{- end }}
       {{- end }}
     </ul>
   </div>
