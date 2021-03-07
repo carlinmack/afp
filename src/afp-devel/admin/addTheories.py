@@ -21,15 +21,11 @@ def addTheories():
             theories = [file[:-4] for file in files if file.endswith(".thy")]
 
             if theories:
-                data = {"theories": theories}
-                writeFile(entriesDir + entry + ".md", data)
-
                 data = {
-                    "theories": theories,
                     "url": "entries" + "/" + entry.lower() + "/" + "theories",
                     "title": "Session " + entry,
                 }
-                writeFile(theoriesDir + entry + ".md", data, overwrite=False)
+                writeFile(theoriesDir + entry + ".md", data)
 
 
 if __name__ == "__main__":
