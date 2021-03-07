@@ -3,7 +3,7 @@
 section \<open>Direct Decompositions and Hilbert Functions\<close>
 
 theory Hilbert_Function
-  imports Dube_Prelims Degree_Section "HOL-Library.List_Permutation"
+  imports Dube_Prelims Degree_Section "HOL-Library.Permutation"
 begin
 
 subsection \<open>Direct Decompositions\<close>

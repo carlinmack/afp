@@ -1,7 +1,7 @@
 chapter AFP
 
 session JinjaDCI (AFP) = "HOL-Library" +
-  options [timeout = 2400]
+  options [timeout = 2400, document = pdf]
   sessions
     "List-Index"
     "Jinja"

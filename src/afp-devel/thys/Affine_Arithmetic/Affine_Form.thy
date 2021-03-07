@@ -2,7 +2,7 @@ section \<open>Affine Form\<close>
 theory Affine_Form
 imports
   "HOL-Analysis.Multivariate_Analysis"
-  "HOL-Library.List_Permutation"
+  "HOL-Library.Permutation"
   Affine_Arithmetic_Auxiliarities
   Executable_Euclidean_Space
 begin

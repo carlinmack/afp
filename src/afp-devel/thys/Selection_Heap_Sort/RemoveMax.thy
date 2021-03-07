@@ -249,12 +249,14 @@ unfolding ssort_def
 using sorted_ssort'[of "of_list i" "[]"] of_list_inv
 by auto
 
-lemma permutation_ssort: "mset (ssort l) = mset l"
-  unfolding ssort_def
-  using mset_ssort'[of "of_list l" "[]"]
-  using multiset_of_list of_list_inv
-  by simp
-
+lemma permutation_ssort: "ssort l <~~> l"
+proof (subst mset_eq_perm[symmetric])
+  show "mset (ssort l) = mset l"
+    unfolding ssort_def
+    using mset_ssort'[of "of_list l" "[]"]
+    using multiset_of_list of_list_inv
+    by simp
+qed
 end
 
 text\<open>Using assumptions given in the definitions of the locales {\em

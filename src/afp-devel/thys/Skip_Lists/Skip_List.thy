@@ -6,6 +6,7 @@
 section \<open>Randomized Skip Lists\<close>
 theory Skip_List
   imports Geometric_PMF
+          Pi_pmf
           Misc
           "Monad_Normalisation.Monad_Normalisation"
 begin

@@ -5,7 +5,7 @@ imports
   Datatype_Order_Generator.Order_Generator
   Name
   Term_Utils
-  "HOL-Library.Disjoint_FSets"
+  Disjoint_Sets
 begin
 
 hide_type (open) "term"
