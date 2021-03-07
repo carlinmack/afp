@@ -21,7 +21,7 @@
         }
     ],
     "theories": [
-        "Matroid",
-        "Indep_System"
+        "Indep_System",
+        "Matroid"
     ]
 }

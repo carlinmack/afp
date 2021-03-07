@@ -36,21 +36,21 @@
         "Automatic_Refinement"
     ],
     "theories": [
-        "Lib_List_toString",
-        "Hs_Compat",
-        "CIDR_Split",
+        "NumberWang_IPv4",
         "NumberWang_IPv6",
-        "IP_Address_toString",
-        "Lib_Word_toString",
+        "WordInterval",
+        "Hs_Compat",
         "IP_Address",
         "IPv4",
-        "WordInterval",
         "IPv6",
+        "Prefix_Match",
+        "CIDR_Split",
+        "WordInterval_Sorted",
         "IP_Address_Parser",
         "Lib_Numbers_toString",
-        "Prefix_Match_toString",
-        "NumberWang_IPv4",
-        "WordInterval_Sorted",
-        "Prefix_Match"
+        "Lib_Word_toString",
+        "Lib_List_toString",
+        "IP_Address_toString",
+        "Prefix_Match_toString"
     ]
 }

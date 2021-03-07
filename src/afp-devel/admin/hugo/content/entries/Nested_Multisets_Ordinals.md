@@ -33,17 +33,18 @@
         "List-Index"
     ],
     "theories": [
-        "Hereditary_Multiset",
-        "Unary_PCF",
-        "Signed_Multiset",
         "Multiset_More",
-        "Syntactic_Ordinal",
-        "Signed_Hereditary_Multiset",
-        "Signed_Syntactic_Ordinal",
+        "Signed_Multiset",
+        "files/zmultiset_simprocs.ML",
         "Nested_Multiset",
-        "Goodstein_Sequence",
-        "Hydra_Battle",
+        "Hereditary_Multiset",
+        "Signed_Hereditary_Multiset",
+        "Syntactic_Ordinal",
+        "Signed_Syntactic_Ordinal",
         "Syntactic_Ordinal_Bridge",
-        "McCarthy_91"
+        "McCarthy_91",
+        "Hydra_Battle",
+        "Goodstein_Sequence",
+        "Unary_PCF"
     ]
 }

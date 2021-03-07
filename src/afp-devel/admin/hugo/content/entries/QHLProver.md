@@ -34,11 +34,12 @@
     ],
     "theories": [
         "Complex_Matrix",
-        "Gates",
+        "files/mat_alg.ML",
         "Matrix_Limit",
-        "Grover",
-        "Quantum_Hoare",
+        "Quantum_Program",
         "Partial_State",
-        "Quantum_Program"
+        "Gates",
+        "Quantum_Hoare",
+        "Grover"
     ]
 }

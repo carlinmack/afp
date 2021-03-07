@@ -20,13 +20,13 @@
         "Propositional_Proof_Systems"
     ],
     "theories": [
+        "Error_Monad_Add",
+        "Option_Monad_Add",
         "SASP_Semantics",
         "SASP_Checker",
-        "Error_Monad_Add",
-        "Lifschitz_Consistency",
         "PDDL_STRIPS_Semantics",
-        "Option_Monad_Add",
-        "PDDL_STRIPS_Checker"
+        "PDDL_STRIPS_Checker",
+        "Lifschitz_Consistency"
     ],
     "relatedEntries": [
         "XML"

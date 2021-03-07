@@ -18,17 +18,20 @@
     "licence": "BSD",
     "theories": [
         "Trilean",
-        "FSet_Utils",
-        "Value_Lexorder",
-        "Transition_Lexorder",
-        "AExp_Lexorder",
-        "VName",
-        "GExp_Lexorder",
-        "EFSM_LTL",
-        "AExp",
-        "EFSM",
         "Value",
+        "VName",
+        "Value_Lexorder",
+        "AExp",
+        "AExp_Lexorder",
+        "GExp",
+        "GExp_Lexorder",
+        "FSet_Utils",
         "Transition",
-        "GExp"
+        "Transition_Lexorder",
+        "EFSM",
+        "EFSM_LTL",
+        "Drinks_Machine",
+        "Drinks_Machine_2",
+        "Drinks_Machine_LTL"
     ]
 }

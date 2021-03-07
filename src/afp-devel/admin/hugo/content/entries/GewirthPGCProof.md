@@ -26,8 +26,8 @@
         }
     ],
     "theories": [
-        "GewirthArgument",
+        "CJDDLplus",
         "ExtendedDDL",
-        "CJDDLplus"
+        "GewirthArgument"
     ]
 }

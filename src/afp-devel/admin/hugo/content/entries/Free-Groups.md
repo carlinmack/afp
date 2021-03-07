@@ -63,12 +63,12 @@
         "Applicative_Lifting"
     ],
     "theories": [
-        "Isomorphisms",
-        "C2",
-        "UnitGroup",
+        "Cancelation",
         "Generators",
         "FreeGroups",
-        "PingPongLemma",
-        "Cancelation"
+        "UnitGroup",
+        "C2",
+        "Isomorphisms",
+        "PingPongLemma"
     ]
 }

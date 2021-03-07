@@ -25,12 +25,12 @@
     ],
     "theories": [
         "Gauss_Sums_Auxiliary",
-        "Complex_Roots_Of_Unity",
-        "Polya_Vinogradov",
-        "Ramanujan_Sums",
         "Periodic_Arithmetic",
+        "Complex_Roots_Of_Unity",
+        "Finite_Fourier_Series",
+        "Ramanujan_Sums",
         "Gauss_Sums",
-        "Finite_Fourier_Series"
+        "Polya_Vinogradov"
     ],
     "relatedEntries": [
         "Dirichlet_L",

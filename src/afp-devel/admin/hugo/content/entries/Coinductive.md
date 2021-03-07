@@ -72,16 +72,24 @@
         }
     ],
     "theories": [
-        "Lazy_TLList",
+        "Coinductive_Nat",
         "Coinductive_List",
-        "Coinductive",
+        "Coinductive_List_Prefix",
         "Coinductive_Stream",
-        "Lazy_LList",
         "TLList",
         "Quotient_Coinductive_List",
         "Quotient_TLList",
-        "Coinductive_Nat",
-        "Coinductive_List_Prefix",
-        "TLList_CCPO"
+        "Coinductive",
+        "Lazy_LList",
+        "Lazy_TLList",
+        "CCPO_Topology",
+        "LList_CCPO_Topology",
+        "TLList_CCPO",
+        "TLList_CCPO_Examples",
+        "Koenigslemma",
+        "LMirror",
+        "Hamming_Stream",
+        "Resumption",
+        "Coinductive_Examples"
     ]
 }

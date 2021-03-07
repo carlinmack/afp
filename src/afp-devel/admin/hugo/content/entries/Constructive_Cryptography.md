@@ -30,12 +30,17 @@
         "CryptHOL"
     ],
     "theories": [
+        "Resource",
         "Converter",
         "Converter_Rewrite",
         "Random_System",
         "Distinguisher",
         "Wiring",
         "Constructive_Cryptography",
-        "Resource"
+        "System_Construction",
+        "One_Time_Pad",
+        "Message_Authentication_Code",
+        "Secure_Channel",
+        "Examples"
     ]
 }

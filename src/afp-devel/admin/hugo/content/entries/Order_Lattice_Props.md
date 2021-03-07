@@ -24,14 +24,14 @@
         }
     ],
     "theories": [
-        "Order_Lattice_Props_Loc",
-        "Order_Duality",
-        "Order_Lattice_Props_Wenzel",
         "Sup_Lattice",
+        "Order_Duality",
+        "Order_Lattice_Props",
         "Representations",
+        "Galois_Connections",
         "Fixpoint_Fusion",
         "Closure_Operators",
-        "Order_Lattice_Props",
-        "Galois_Connections"
+        "Order_Lattice_Props_Loc",
+        "Order_Lattice_Props_Wenzel"
     ]
 }

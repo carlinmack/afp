@@ -32,20 +32,20 @@
         "Nested_Multisets_Ordinals"
     ],
     "theories": [
-        "Lazy_List_Chain",
-        "Ground_Resolution_Model",
-        "FO_Ordered_Resolution",
-        "Standard_Redundancy",
-        "Clausal_Logic",
-        "Proving_Process",
-        "Herbrand_Interpretation",
+        "Map2",
         "Lazy_List_Liminf",
-        "Unordered_Ground_Resolution",
-        "Inference_System",
+        "Lazy_List_Chain",
+        "Clausal_Logic",
+        "Herbrand_Interpretation",
         "Abstract_Substitution",
-        "FO_Ordered_Resolution_Prover",
+        "Inference_System",
+        "Ground_Resolution_Model",
+        "Unordered_Ground_Resolution",
         "Ordered_Ground_Resolution",
-        "Map2"
+        "Proving_Process",
+        "Standard_Redundancy",
+        "FO_Ordered_Resolution",
+        "FO_Ordered_Resolution_Prover"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"

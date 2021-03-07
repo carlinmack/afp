@@ -35,11 +35,11 @@
     ],
     "theories": [
         "Factor_Bound_2",
-        "Factorization_Algorithm_16_22",
-        "Modern_Computer_Algebra_Problem",
-        "LLL_Factorization_Impl",
         "Missing_Dvd_Int_Poly",
+        "LLL_Factorization_Impl",
         "LLL_Factorization",
-        "Sub_Sums"
+        "Sub_Sums",
+        "Factorization_Algorithm_16_22",
+        "Modern_Computer_Algebra_Problem"
     ]
 }

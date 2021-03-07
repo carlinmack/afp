@@ -19,6 +19,7 @@
     ],
     "theories": [
         "Core_DOM_Components",
-        "Shadow_DOM_Components"
+        "Shadow_DOM_Components",
+        "fancy_tabs"
     ]
 }

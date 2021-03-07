@@ -43,10 +43,10 @@
     ],
     "theories": [
         "Bounds_Lemmas",
-        "Log_CF_Bounds",
+        "Atan_CF_Bounds",
         "Exp_Bounds",
-        "Sqrt_Bounds",
+        "Log_CF_Bounds",
         "Sin_Cos_Bounds",
-        "Atan_CF_Bounds"
+        "Sqrt_Bounds"
     ]
 }

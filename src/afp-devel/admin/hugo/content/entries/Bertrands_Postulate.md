@@ -34,6 +34,7 @@
         "Pratt_Certificate"
     ],
     "theories": [
-        "Bertrand"
+        "Bertrand",
+        "files/bertrand.ML"
     ]
 }

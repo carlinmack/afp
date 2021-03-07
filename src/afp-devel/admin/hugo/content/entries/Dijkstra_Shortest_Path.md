@@ -61,17 +61,17 @@
         "Collections"
     ],
     "theories": [
+        "Introduction",
+        "Dijkstra_Misc",
         "Graph",
+        "Weight",
+        "Dijkstra",
         "GraphSpec",
+        "GraphGA",
+        "GraphByMap",
         "HashGraphImpl",
         "Dijkstra_Impl",
         "Dijkstra_Impl_Adet",
-        "Dijkstra_Misc",
-        "Dijkstra",
-        "Test",
-        "Weight",
-        "GraphGA",
-        "GraphByMap",
-        "Introduction"
+        "Test"
     ]
 }

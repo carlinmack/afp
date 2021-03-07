@@ -40,11 +40,12 @@
         "Boolean_Expression_Checkers"
     ],
     "theories": [
-        "Code_Equations",
-        "Disjunctive_Normal_Form",
+        "LTL",
         "Rewriting",
         "Equivalence_Relations",
-        "LTL"
+        "Disjunctive_Normal_Form",
+        "Code_Equations",
+        "Example"
     ],
     "relatedEntries": [
         "LTL_to_DRA"

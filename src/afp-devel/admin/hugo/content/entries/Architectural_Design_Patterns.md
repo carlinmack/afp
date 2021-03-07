@@ -30,11 +30,11 @@
         "DynamicArchitectures"
     ],
     "theories": [
-        "Blockchain",
         "Singleton",
         "Publisher_Subscriber",
         "Blackboard",
+        "Auxiliary",
         "RF_LTL",
-        "Auxiliary"
+        "Blockchain"
     ]
 }

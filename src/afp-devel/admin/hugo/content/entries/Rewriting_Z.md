@@ -39,9 +39,9 @@
         "Abstract-Rewriting"
     ],
     "theories": [
+        "Z",
         "Lambda_Z",
-        "CL_Z",
-        "Z"
+        "CL_Z"
     ],
     "relatedEntries": [
         "Decreasing-Diagrams-II",

@@ -30,11 +30,11 @@
         "Stone_Algebras"
     ],
     "theories": [
-        "Linear_Order_Matrices",
         "Fixpoints",
-        "Relation_Algebras",
-        "Matrix_Relation_Algebras",
         "Semirings",
-        "Relation_Subalgebras"
+        "Relation_Algebras",
+        "Relation_Subalgebras",
+        "Matrix_Relation_Algebras",
+        "Linear_Order_Matrices"
     ]
 }

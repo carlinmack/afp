@@ -40,6 +40,7 @@
     ],
     "theories": [
         "Partial_Function_MR",
+        "files/partial_function_mr.ML",
         "Partial_Function_MR_Examples"
     ]
 }

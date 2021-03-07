@@ -35,15 +35,15 @@
         "Flow_Networks"
     ],
     "theories": [
-        "Graph_Topological_Ordering",
-        "Prpu_Common_Impl",
-        "Fifo_Push_Relabel",
-        "Relabel_To_Front",
-        "Generated_Code_Test",
-        "Prpu_Common_Inst",
         "Generic_Push_Relabel",
+        "Prpu_Common_Inst",
+        "Fifo_Push_Relabel",
+        "Graph_Topological_Ordering",
+        "Relabel_To_Front",
+        "Prpu_Common_Impl",
+        "Fifo_Push_Relabel_Impl",
         "Relabel_To_Front_Impl",
-        "Fifo_Push_Relabel_Impl"
+        "Generated_Code_Test"
     ],
     "relatedEntries": [
         "EdmondsKarp_Maxflow"

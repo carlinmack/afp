@@ -48,8 +48,8 @@
         "Dijkstra_Shortest_Path"
     ],
     "theories": [
-        "FriendshipTheory",
         "MoreGraph",
-        "KoenigsbergBridge"
+        "KoenigsbergBridge",
+        "FriendshipTheory"
     ]
 }

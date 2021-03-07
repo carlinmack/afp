@@ -66,6 +66,12 @@
         "Applicative_Lifting"
     ],
     "theories": [
+        "ListPre",
+        "FMap",
+        "Sigma",
+        "ParRed",
+        "Environments",
+        "TypedSigma",
         "Locally_Nameless_Sigma"
     ]
 }

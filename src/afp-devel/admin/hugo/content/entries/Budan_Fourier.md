@@ -26,8 +26,8 @@
     ],
     "theories": [
         "BF_Misc",
-        "Descartes_Roots_Test",
+        "Budan_Fourier",
         "Sturm_Multiple_Roots",
-        "Budan_Fourier"
+        "Descartes_Roots_Test"
     ]
 }

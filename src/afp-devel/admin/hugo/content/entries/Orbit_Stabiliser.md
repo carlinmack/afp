@@ -27,8 +27,8 @@
         }
     ],
     "theories": [
-        "Tetrahedron",
         "Left_Coset",
-        "Orbit_Stabiliser"
+        "Orbit_Stabiliser",
+        "Tetrahedron"
     ]
 }

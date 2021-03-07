@@ -33,10 +33,10 @@
         }
     ],
     "theories": [
-        "Landau_Simprocs",
-        "Landau_More",
+        "Group_Sort",
         "Landau_Real_Products",
-        "Landau_Library",
-        "Group_Sort"
+        "Landau_Simprocs",
+        "files/landau_simprocs.ML",
+        "Landau_More"
     ]
 }

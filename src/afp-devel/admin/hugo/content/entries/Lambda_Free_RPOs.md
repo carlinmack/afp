@@ -32,16 +32,15 @@
         "Nested_Multisets_Ordinals"
     ],
     "theories": [
-        "Lambda_Free_RPOs",
-        "Lambda_Free_Term",
-        "Lambda_Free_RPO_Optim",
         "Lambda_Free_Util",
+        "Lambda_Free_Term",
+        "Infinite_Chain",
         "Extension_Orders",
         "Lambda_Free_RPO_App",
         "Lambda_Free_RPO_Std",
+        "Lambda_Free_RPO_Optim",
         "Lambda_Encoding",
-        "Lambda_Encoding_RPO",
-        "Infinite_Chain"
+        "Lambda_Free_RPOs"
     ],
     "relatedEntries": [
         "Lambda_Free_KBOs"

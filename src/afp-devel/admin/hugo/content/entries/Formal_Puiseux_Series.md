@@ -16,9 +16,9 @@
         "Polynomial_Interpolation"
     ],
     "theories": [
-        "FPS_Hensel",
-        "Puiseux_Laurent_Library",
         "Puiseux_Polynomial_Library",
+        "Puiseux_Laurent_Library",
+        "FPS_Hensel",
         "Formal_Puiseux_Series"
     ]
 }

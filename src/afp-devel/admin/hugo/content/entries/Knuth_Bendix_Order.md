@@ -23,8 +23,8 @@
         "Order_Pair",
         "Lexicographic_Extension",
         "Subterm_and_Context",
-        "KBO",
-        "Term_Aux"
+        "Term_Aux",
+        "KBO"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"

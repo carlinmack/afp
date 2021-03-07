@@ -42,12 +42,12 @@
         "Show"
     ],
     "theories": [
-        "Misc",
+        "Error_Syntax",
+        "Error_Monad",
+        "Check_Monad",
         "Strict_Sum",
         "Parser_Monad",
-        "Error_Syntax",
-        "Check_Monad",
-        "Error_Monad"
+        "Misc"
     ],
     "relatedEntries": [
         "XML",

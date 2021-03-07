@@ -26,11 +26,11 @@
         "Stirling_Formula"
     ],
     "theories": [
-        "Prime_Number_Theorem",
-        "Mertens_Theorems",
-        "Newman_Ingham_Tauberian",
         "Prime_Number_Theorem_Library",
-        "Prime_Counting_Functions"
+        "Newman_Ingham_Tauberian",
+        "Prime_Counting_Functions",
+        "Prime_Number_Theorem",
+        "Mertens_Theorems"
     ],
     "relatedEntries": [
         "Dirichlet_L",

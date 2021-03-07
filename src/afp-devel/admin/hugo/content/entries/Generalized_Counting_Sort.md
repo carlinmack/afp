@@ -19,9 +19,9 @@
         }
     ],
     "theories": [
-        "Stability",
-        "Conservation",
         "Algorithm",
-        "Sorting"
+        "Conservation",
+        "Sorting",
+        "Stability"
     ]
 }

@@ -55,10 +55,13 @@
         "Native_Word"
     ],
     "theories": [
-        "Derive",
-        "Order_Generator",
         "Derive_Aux",
+        "files/derive_aux.ML",
+        "Order_Generator",
+        "files/order_generator.ML",
         "Hash_Generator",
+        "files/hash_generator.ML",
+        "Derive",
         "Derive_Examples"
     ],
     "relatedEntries": [

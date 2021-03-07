@@ -57,8 +57,8 @@
         "List-Infinite"
     ],
     "theories": [
-        "IL_IntervalOperators",
         "IL_Interval",
+        "IL_IntervalOperators",
         "IL_TemporalOperators"
     ]
 }

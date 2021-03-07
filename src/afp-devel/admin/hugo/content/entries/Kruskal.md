@@ -31,17 +31,17 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "UGraph",
-        "Kruskal",
-        "Kruskal_Impl",
-        "Graph_Definition_Impl",
-        "Kruskal_Refine",
-        "SeprefUF",
         "Kruskal_Misc",
-        "UGraph_Impl",
+        "SeprefUF",
         "MinWeightBasis",
+        "Kruskal",
+        "Kruskal_Refine",
+        "Kruskal_Impl",
+        "UGraph",
+        "UGraph_Impl",
+        "Graph_Definition",
         "Graph_Definition_Aux",
-        "Graph_Definition"
+        "Graph_Definition_Impl"
     ],
     "relatedEntries": [
         "Flow_Networks",

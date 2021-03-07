@@ -34,10 +34,10 @@
     ],
     "theories": [
         "Graph",
-        "TreewidthTree",
+        "Tree",
         "TreeDecomposition",
+        "TreewidthTree",
         "TreewidthCompleteGraph",
-        "ExampleInstantiations",
-        "Tree"
+        "ExampleInstantiations"
     ]
 }

@@ -20,11 +20,24 @@
         "Extended_Finite_State_Machines"
     ],
     "theories": [
-        "SelectionStrategies",
-        "Inference",
-        "efsm2sal",
         "Subsumption",
+        "Drinks_Subsumption",
+        "Inference",
+        "SelectionStrategies",
+        "Store_Reuse",
+        "Store_Reuse_Subsumption",
+        "Increment_Reset",
+        "Same_Register",
+        "Least_Upper_Bound",
+        "Distinguishing_Guards",
+        "Weak_Subsumption",
+        "Group_By",
+        "PTA_Generalisation",
         "EFSM_Dot",
+        "efsm2sal",
+        "Code_Target_List",
+        "Code_Target_Set",
+        "Code_Target_FSet",
         "Code_Generation"
     ]
 }

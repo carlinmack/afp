@@ -60,11 +60,11 @@
         }
     ],
     "theories": [
+        "WellFoundedTransitive",
+        "Complete_Lattice_Prop",
         "Conj_Disj",
         "Lattice_Prop",
-        "Complete_Lattice_Prop",
-        "Lattice_Ordered_Group",
         "Modular_Distrib_Lattice",
-        "WellFoundedTransitive"
+        "Lattice_Ordered_Group"
     ]
 }

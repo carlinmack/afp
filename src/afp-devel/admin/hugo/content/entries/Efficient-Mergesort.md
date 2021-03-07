@@ -57,8 +57,8 @@
         }
     ],
     "theories": [
-        "Natural_Mergesort",
+        "Efficient_Sort",
         "Mergesort_Complexity",
-        "Efficient_Sort"
+        "Natural_Mergesort"
     ]
 }

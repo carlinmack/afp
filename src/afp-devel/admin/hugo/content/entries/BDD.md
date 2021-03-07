@@ -74,14 +74,14 @@
         "Simpl"
     ],
     "theories": [
-        "ShareReduceRepListProof",
-        "General",
-        "LevellistProof",
-        "EvalProof",
-        "RepointProof",
-        "NormalizeTotalProof",
         "BinDag",
+        "General",
         "ProcedureSpecs",
-        "ShareRepProof"
+        "EvalProof",
+        "LevellistProof",
+        "ShareRepProof",
+        "ShareReduceRepListProof",
+        "RepointProof",
+        "NormalizeTotalProof"
     ]
 }

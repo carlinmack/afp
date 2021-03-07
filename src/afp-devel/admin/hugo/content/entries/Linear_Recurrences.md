@@ -28,16 +28,16 @@
         "Polynomial_Factorization"
     ],
     "theories": [
+        "RatFPS",
         "Pochhammer_Polynomials",
-        "Rational_FPS_Asymptotics",
-        "Linear_Inhomogenous_Recurrences",
-        "Factorizations",
-        "Partial_Fraction_Decomposition",
-        "Linear_Homogenous_Recurrences",
-        "Rational_FPS_Solver",
         "Linear_Recurrences_Misc",
+        "Partial_Fraction_Decomposition",
+        "Factorizations",
+        "Rational_FPS_Solver",
         "Linear_Recurrences_Common",
+        "Linear_Homogenous_Recurrences",
         "Eulerian_Polynomials",
-        "RatFPS"
+        "Linear_Inhomogenous_Recurrences",
+        "Rational_FPS_Asymptotics"
     ]
 }

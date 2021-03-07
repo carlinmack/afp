@@ -26,13 +26,13 @@
         }
     ],
     "theories": [
+        "General_Utils",
+        "Derivs",
         "Integrals",
+        "Paths",
+        "Green",
         "SymmetricR2Shapes",
         "CircExample",
-        "Derivs",
-        "Green",
-        "Paths",
-        "General_Utils",
         "DiamExample"
     ]
 }

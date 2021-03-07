@@ -22,10 +22,10 @@
         "Groebner_Bases"
     ],
     "theories": [
+        "Algebraically_Closed_Fields",
+        "Lex_Order_PP",
         "Univariate_PM",
         "Nullstellensatz",
-        "Lex_Order_PP",
-        "Algebraically_Closed_Fields",
         "Nullstellensatz_Field"
     ],
     "relatedEntries": [

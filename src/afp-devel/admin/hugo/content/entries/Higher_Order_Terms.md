@@ -29,17 +29,18 @@
         "Lambda_Free_RPOs"
     ],
     "theories": [
+        "Term_Utils",
         "Find_First",
-        "Nterm",
-        "Fresh_Monad",
         "Name",
-        "Term_to_Nterm",
-        "Unification_Compat",
-        "Lambda_Free_Compat",
+        "Fresh_Monad",
         "Fresh_Class",
         "Term_Class",
         "Term_Utils",
+        "Term",
         "Pats",
-        "Term"
+        "Nterm",
+        "Term_to_Nterm",
+        "Unification_Compat",
+        "Lambda_Free_Compat"
     ]
 }

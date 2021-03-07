@@ -39,7 +39,13 @@
         "Dependent_SIFUM_Type_Systems"
     ],
     "theories": [
-        "CompositionalRefinement"
+        "CompositionalRefinement",
+        "Eg1",
+        "Eg1RefinementTrivial",
+        "Eg2",
+        "Eg1Eg2",
+        "Eg1Eg2RefinementSimple",
+        "EgHighBranchRevC"
     ],
     "relatedEntries": [
         "Dependent_SIFUM_Type_Systems"

@@ -56,18 +56,18 @@
     ],
     "theories": [
         "Infinite_Sequences",
-        "Kruskal",
+        "Minimal_Elements",
         "Least_Enum",
-        "Well_Quasi_Orders",
-        "Kruskal_Examples",
-        "Multiset_Extension",
-        "Wqo_Instances",
         "Almost_Full",
-        "Almost_Full_Relations",
         "Minimal_Bad_Sequences",
-        "Wqo_Multiset",
         "Higman_OI",
-        "Minimal_Elements"
+        "Almost_Full_Relations",
+        "Well_Quasi_Orders",
+        "Kruskal",
+        "Kruskal_Examples",
+        "Wqo_Instances",
+        "Multiset_Extension",
+        "Wqo_Multiset"
     ],
     "relatedEntries": [
         "Decreasing-Diagrams-II",

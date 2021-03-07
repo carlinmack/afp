@@ -28,11 +28,11 @@
         "Bertrands_Postulate"
     ],
     "theories": [
-        "Dirichlet_Theorem",
-        "Dirichlet_Characters",
+        "Group_Adjoin",
         "Multiplicative_Characters",
+        "Dirichlet_Characters",
         "Dirichlet_L_Functions",
-        "Group_Adjoin"
+        "Dirichlet_Theorem"
     ],
     "relatedEntries": [
         "Prime_Number_Theorem",

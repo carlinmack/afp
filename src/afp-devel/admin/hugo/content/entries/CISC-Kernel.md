@@ -46,5 +46,22 @@
         {
             "2013-2": "2014-07-18"
         }
+    ],
+    "theories": [
+        "Option_Binders",
+        "List_Theorems",
+        "K",
+        "SK",
+        "ISK",
+        "CISK",
+        "Step_configuration",
+        "Step_policies",
+        "Step",
+        "Step_invariants",
+        "Step_vpeq",
+        "Step_vpeq_locally_respects",
+        "Step_vpeq_weakly_step_consistent",
+        "Separation_kernel_model",
+        "Link_separation_kernel_model_to_CISK"
     ]
 }

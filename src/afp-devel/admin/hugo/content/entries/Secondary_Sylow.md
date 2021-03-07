@@ -39,8 +39,8 @@
         }
     ],
     "theories": [
+        "GroupAction",
         "SubgroupConjugation",
-        "SndSylow",
-        "GroupAction"
+        "SndSylow"
     ]
 }

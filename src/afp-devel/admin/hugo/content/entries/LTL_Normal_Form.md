@@ -19,8 +19,8 @@
     ],
     "theories": [
         "Normal_Form",
-        "Normal_Form_Code_Export",
-        "Normal_Form_Complexity"
+        "Normal_Form_Complexity",
+        "Normal_Form_Code_Export"
     ],
     "relatedEntries": [
         "LTL_to_GBA",

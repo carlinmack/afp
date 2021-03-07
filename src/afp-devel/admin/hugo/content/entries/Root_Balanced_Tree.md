@@ -30,8 +30,8 @@
         "Amortized_Complexity"
     ],
     "theories": [
-        "Root_Balanced_Tree_Tab",
+        "Time_Monad",
         "Root_Balanced_Tree",
-        "Time_Monad"
+        "Root_Balanced_Tree_Tab"
     ]
 }

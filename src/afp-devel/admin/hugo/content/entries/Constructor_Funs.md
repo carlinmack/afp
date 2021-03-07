@@ -27,7 +27,8 @@
         }
     ],
     "theories": [
-        "Test_Constructor_Funs",
-        "Constructor_Funs"
+        "Constructor_Funs",
+        "files/constructor_funs.ML",
+        "Test_Constructor_Funs"
     ]
 }

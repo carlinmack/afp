@@ -25,20 +25,20 @@
         "Datatype_Order_Generator"
     ],
     "theories": [
-        "Consistency",
-        "CreateAlgorithms",
-        "BasicAlgorithms",
-        "DistributedExecution",
-        "IntegrateInsertCommute",
         "ErrorMonad",
         "Data",
-        "Example",
+        "BasicAlgorithms",
+        "CreateAlgorithms",
+        "IntegrateAlgorithm",
+        "DistributedExecution",
+        "SortKeys",
+        "Psi",
+        "Sorting",
+        "Consistency",
+        "CreateConsistent",
+        "IntegrateInsertCommute",
         "StrongConvergence",
         "SEC",
-        "Sorting",
-        "Psi",
-        "SortKeys",
-        "CreateConsistent",
-        "IntegrateAlgorithm"
+        "Example"
     ]
 }

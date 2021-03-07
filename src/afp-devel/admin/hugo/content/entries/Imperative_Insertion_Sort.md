@@ -36,7 +36,7 @@
         }
     ],
     "theories": [
-        "Imperative_Insertion_Sort",
-        "Imperative_Loops"
+        "Imperative_Loops",
+        "Imperative_Insertion_Sort"
     ]
 }

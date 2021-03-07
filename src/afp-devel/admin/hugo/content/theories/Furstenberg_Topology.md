@@ -1,6 +1,52 @@
 {
     "theories": [
-        "Furstenberg_Topology"
+        {
+            "Furstenberg_Topology": [
+                "arith_prog_0_right",
+                "arith_prog_Suc_0_right",
+                "in_arith_progI",
+                "arith_prog_disjoint",
+                "arith_prog_dvd_mono",
+                "bij_betw_arith_prog",
+                "arith_prog_altdef",
+                "infinite_arith_prog",
+                "open_fbint_imp_infinite",
+                "not_open_finite_fbint",
+                "open_arith_prog_fb",
+                "closed_arith_prog_fb",
+                "open_fbint_altdef",
+                "t2_space_t3_spaceI",
+                "N_summable",
+                "N_sums",
+                "N_nonneg",
+                "N_uminus",
+                "N_minus_commute",
+                "N_zero",
+                "not_dvd_imp_N_ge",
+                "N_lt_imp_dvd",
+                "N_pos",
+                "N_zero_iff",
+                "N_triangle_ineq",
+                "N_1",
+                "N_dvd_mono",
+                "N_le_N_1",
+                "N_prime",
+                "N_2",
+                "N_less_N_1",
+                "nonprime_imp_N_lt",
+                "prime_iff_N_eq",
+                "N_fact_le",
+                "N_prime_mono",
+                "N_prime_ge",
+                "N_prime_elem_ge",
+                "dist_self",
+                "dist_sym",
+                "dist_pos",
+                "dist_eq_0_iff",
+                "dist_triangle_ineq",
+                "tendsto_fbint_fact"
+            ]
+        }
     ],
     "url": "entries/furstenberg_topology/theories",
     "title": "Session Furstenberg_Topology"

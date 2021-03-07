@@ -1,7 +1,64 @@
 {
     "theories": [
-        "Linorder_Relations",
-        "Comparison_Sort_Lower_Bound"
+        {
+            "Linorder_Relations": [
+                "distinct_count_atmost_1'",
+                "distinct_mset_mono",
+                "mset_eq_imp_distinct_iff",
+                "total_on_subset",
+                "sorted_wrt_Nil",
+                "sorted_wrt_Cons",
+                "sorted_wrt_singleton",
+                "sorted_wrt_many",
+                "sorted_wrt_imp_le_last",
+                "sorted_wrt_append",
+                "sorted_wrt_snoc",
+                "sorted_wrt_conv_nth",
+                "linorder_on_cases",
+                "sorted_wrt_linorder_imp_index_le",
+                "sorted_wrt_linorder_index_le_imp",
+                "sorted_wrt_linorder_index_le_iff",
+                "sorted_wrt_linorder_index_less_iff",
+                "sorted_wrt_distinct_linorder_nth",
+                "linorder_linorder_of_list",
+                "sorted_wrt_linorder_of_list",
+                "set_insert_wrt",
+                "mset_insert_wrt",
+                "length_insert_wrt",
+                "set_insort_wrt",
+                "mset_insort_wrt",
+                "length_insort_wrt",
+                "sorted_wrt_insert_wrt",
+                "sorted_wrt_insort",
+                "distinct_insort_wrt",
+                "sorted_wrt_linorder_unique",
+                "mset_remdups",
+                "sorted_wrt_list_set",
+                "linorder_sorted_wrt_exists",
+                "linorder_sorted_wrt_list_of_set",
+                "sorted_wrt_list_of_set_eqI",
+                "linorder_rank_le",
+                "linorder_rank_less",
+                "linorder_rank_union",
+                "linorder_rank_empty",
+                "linorder_rank_singleton",
+                "linorder_rank_insert",
+                "linorder_rank_mono",
+                "linorder_rank_strict_mono",
+                "linorder_rank_le_iff",
+                "linorder_rank_eq_iff",
+                "linorder_rank_set_sorted_wrt",
+                "bij_betw_linorder_rank"
+            ]
+        },
+        {
+            "Comparison_Sort_Lower_Bound": [
+                "count_wc_queries_empty",
+                "count_wc_queries_aux",
+                "card_range_eval_sorter",
+                "ln_fact_bigo"
+            ]
+        }
     ],
     "url": "entries/comparison_sort_lower_bound/theories",
     "title": "Session Comparison_Sort_Lower_Bound"

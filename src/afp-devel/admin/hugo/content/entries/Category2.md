@@ -63,12 +63,12 @@
         }
     ],
     "theories": [
-        "Functors",
         "Category",
-        "SetCat",
-        "NatTrans",
+        "Universe",
         "MonadicEquationalTheory",
-        "Yoneda",
-        "Universe"
+        "Functors",
+        "NatTrans",
+        "SetCat",
+        "Yoneda"
     ]
 }

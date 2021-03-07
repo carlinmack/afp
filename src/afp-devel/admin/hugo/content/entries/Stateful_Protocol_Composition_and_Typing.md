@@ -22,20 +22,22 @@
         "First_Order_Terms"
     ],
     "theories": [
-        "Parallel_Compositionality",
-        "Typing_Result",
-        "Stateful_Typing",
-        "Stateful_Compositionality",
-        "Lazy_Intruder",
-        "Labeled_Stateful_Strands",
-        "More_Unification",
-        "Strands_and_Constraints",
-        "Examples",
-        "Typed_Model",
         "Miscellaneous",
-        "Stateful_Strands",
+        "Messages",
+        "More_Unification",
         "Intruder_Deduction",
+        "Strands_and_Constraints",
+        "Lazy_Intruder",
+        "Typed_Model",
+        "Typing_Result",
+        "Stateful_Strands",
+        "Stateful_Typing",
         "Labeled_Strands",
-        "Messages"
+        "Parallel_Compositionality",
+        "Labeled_Stateful_Strands",
+        "Stateful_Compositionality",
+        "Example_Keyserver",
+        "Example_TLS",
+        "Examples"
     ]
 }

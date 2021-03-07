@@ -25,13 +25,13 @@
         "Kleene_Algebra"
     ],
     "theories": [
-        "Quantale_Left_Sided",
-        "Quantale_Star",
         "Dioid_Models_New",
-        "Quantale_Models",
-        "Quantale_Modules",
         "Quantales",
-        "Quantic_Nuclei_Conuclei"
+        "Quantale_Star",
+        "Quantale_Modules",
+        "Quantale_Models",
+        "Quantic_Nuclei_Conuclei",
+        "Quantale_Left_Sided"
     ],
     "relatedEntries": [
         "Transformer_Semantics"

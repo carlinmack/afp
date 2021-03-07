@@ -45,9 +45,9 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
-        "All_Of_LTL_to_GBA",
         "LTL_to_GBA",
-        "LTL_to_GBA_impl"
+        "LTL_to_GBA_impl",
+        "All_Of_LTL_to_GBA"
     ],
     "relatedEntries": [
         "Stuttering_Equivalence",

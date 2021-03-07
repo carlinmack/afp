@@ -32,6 +32,8 @@
     ],
     "theories": [
         "Monad_Normalisation",
+        "files/monad_rules.ML",
+        "files/monad_normalisation.ML",
         "Monad_Normalisation_Test"
     ]
 }

@@ -32,8 +32,8 @@
         "Landau_Symbols"
     ],
     "theories": [
-        "Comparison_Sort_Lower_Bound",
-        "Linorder_Relations"
+        "Linorder_Relations",
+        "Comparison_Sort_Lower_Bound"
     ],
     "relatedEntries": [
         "Quick_Sort_Cost"

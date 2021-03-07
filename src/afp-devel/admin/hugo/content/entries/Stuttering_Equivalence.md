@@ -61,8 +61,8 @@
     ],
     "theories": [
         "Samplers",
-        "PLTL",
-        "StutterEquivalence"
+        "StutterEquivalence",
+        "PLTL"
     ],
     "relatedEntries": [
         "LTL_to_GBA",

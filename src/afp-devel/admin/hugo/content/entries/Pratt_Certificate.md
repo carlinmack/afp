@@ -51,6 +51,7 @@
     ],
     "theories": [
         "Pratt_Certificate",
+        "files/pratt.ML",
         "Pratt_Certificate_Code"
     ]
 }

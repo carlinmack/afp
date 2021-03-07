@@ -38,12 +38,12 @@
         }
     ],
     "theories": [
-        "FLPSystem",
-        "FLPExistingSystem",
+        "Multiset",
         "AsynchronousSystem",
-        "FLPTheorem",
-        "Execution",
         "ListUtilities",
-        "Multiset"
+        "Execution",
+        "FLPSystem",
+        "FLPTheorem",
+        "FLPExistingSystem"
     ]
 }

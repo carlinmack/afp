@@ -1,8 +1,74 @@
 {
     "theories": [
-        "Generic_Join",
-        "Generic_Join_Correctness",
-        "Examples_Join"
+        {
+            "Generic_Join": [
+                "getIJProperties",
+                "arg_max_list_element",
+                "max_getIJ_coreProperties"
+            ]
+        },
+        {
+            "Generic_Join_Correctness": [
+                "wf_tuple_empty",
+                "table_empty",
+                "isSame_equi_dev",
+                "wf_getIJ",
+                "wf_projectTable",
+                "set_filterQuery",
+                "wf_filterQuery",
+                "wf_set_subset",
+                "wf_projectQuery",
+                "wf_firstRecursiveCall",
+                "wf_atable_subset",
+                "same_set_semiJoin",
+                "wf_semiJoin",
+                "newQuery_equiv_def",
+                "included_project",
+                "non_empty_newQuery",
+                "wf_newQuery",
+                "subset_Q_neg",
+                "wf_secondRecursiveCalls",
+                "simple_merge_option",
+                "wf_merge",
+                "wf_inter",
+                "table_subset",
+                "wf_base_case",
+                "filter_Q_J_neg_same",
+                "vars_genericJoin",
+                "base_genericJoin",
+                "wf_genericJoin",
+                "base_correctness",
+                "simple_list_index_equality",
+                "simple_restrict_none",
+                "simple_restrict_some",
+                "merge_restrict",
+                "restrict_idle_include",
+                "merge_index",
+                "restrict_index_in",
+                "restrict_index_out",
+                "merge_length",
+                "real_restrict_merge",
+                "simple_set_image_id",
+                "nested_include_restrict",
+                "restrict_nested",
+                "newQuery_equi_dev",
+                "projectTable_idle",
+                "restrict_partition_merge",
+                "restrict_merge",
+                "partial_correctness",
+                "simple_set_inter",
+                "union_restrict",
+                "partial_correctness_direct",
+                "obvious_forall",
+                "correctness",
+                "wf_set_finite",
+                "vars_wrapperGenericJoin",
+                "wrapper_correctness"
+            ]
+        },
+        {
+            "Examples_Join": []
+        }
     ],
     "url": "entries/generic_join/theories",
     "title": "Session Generic_Join"

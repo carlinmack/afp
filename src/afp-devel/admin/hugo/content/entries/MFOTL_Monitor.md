@@ -28,15 +28,15 @@
         "Containers"
     ],
     "theories": [
-        "Monitor_Code",
         "Trace",
-        "MFOTL",
-        "Abstract_Monitor",
         "Table",
-        "Examples",
+        "Abstract_Monitor",
         "Interval",
+        "MFOTL",
+        "Monitor",
         "Slicing",
-        "Monitor"
+        "Monitor_Code",
+        "Examples"
     ],
     "relatedEntries": [
         "MFODL_Monitor_Optimized"

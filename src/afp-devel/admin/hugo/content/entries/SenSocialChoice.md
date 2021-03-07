@@ -69,11 +69,11 @@
         }
     ],
     "theories": [
-        "Sen",
-        "May",
-        "Arrow",
         "FSext",
         "RPRs",
-        "SCFs"
+        "SCFs",
+        "Arrow",
+        "Sen",
+        "May"
     ]
 }

@@ -72,10 +72,10 @@
         }
     ],
     "theories": [
-        "POPLmarkRecordCtxt",
-        "Execute",
-        "POPLmark",
         "Basis",
-        "POPLmarkRecord"
+        "POPLmark",
+        "POPLmarkRecord",
+        "POPLmarkRecordCtxt",
+        "Execute"
     ]
 }

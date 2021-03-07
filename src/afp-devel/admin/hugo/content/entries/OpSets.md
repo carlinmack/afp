@@ -29,9 +29,9 @@
     ],
     "theories": [
         "OpSet",
+        "Insert_Spec",
         "List_Spec",
         "Interleaving",
-        "Insert_Spec",
         "RGA"
     ]
 }

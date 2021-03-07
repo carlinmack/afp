@@ -69,11 +69,11 @@
         }
     ],
     "theories": [
-        "Equivalence",
-        "Trace",
-        "NewCard",
-        "Basis",
         "Notation",
-        "State"
+        "Basis",
+        "State",
+        "NewCard",
+        "Trace",
+        "Equivalence"
     ]
 }

@@ -39,8 +39,8 @@
         "Echelon_Form"
     ],
     "theories": [
-        "Hermite_IArrays",
-        "Hermite"
+        "Hermite",
+        "Hermite_IArrays"
     ],
     "relatedEntries": [
         "Echelon_Form"

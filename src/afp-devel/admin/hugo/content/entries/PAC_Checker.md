@@ -19,24 +19,24 @@
         "Nested_Multisets_Ordinals"
     ],
     "theories": [
-        "PAC_Assoc_Map_Rel",
-        "More_Loops",
-        "PAC_Checker",
-        "PAC_Checker_MLton",
         "PAC_More_Poly",
-        "PAC_Version",
-        "PAC_Checker_Init",
-        "PAC_Checker_Relation",
-        "PAC_Polynomials_Term",
-        "Finite_Map_Multiset",
         "Duplicate_Free_Multiset",
+        "Finite_Map_Multiset",
         "WB_Sort",
-        "PAC_Polynomials",
-        "PAC_Checker_Synthesis",
-        "PAC_Checker_Specification",
+        "More_Loops",
         "PAC_Specification",
+        "PAC_Map_Rel",
+        "PAC_Checker_Specification",
+        "PAC_Polynomials",
+        "PAC_Polynomials_Term",
         "PAC_Polynomials_Operations",
-        "PAC_Map_Rel"
+        "PAC_Checker",
+        "PAC_Checker_Relation",
+        "PAC_Assoc_Map_Rel",
+        "PAC_Checker_Init",
+        "PAC_Version",
+        "PAC_Checker_Synthesis",
+        "PAC_Checker_MLton"
     ],
     "relatedEntries": [
         "Lambda_Free_KBOs"

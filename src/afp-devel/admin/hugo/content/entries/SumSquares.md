@@ -70,7 +70,7 @@
         }
     ],
     "theories": [
-        "FourSquares",
-        "TwoSquares"
+        "TwoSquares",
+        "FourSquares"
     ]
 }

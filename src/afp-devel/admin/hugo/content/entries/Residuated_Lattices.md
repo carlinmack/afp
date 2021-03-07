@@ -45,8 +45,8 @@
     "theories": [
         "Residuated_Lattices",
         "Residuated_Boolean_Algebras",
-        "Action_Algebra",
         "Involutive_Residuated",
+        "Action_Algebra",
         "Action_Algebra_Models",
         "Residuated_Relation_Algebra"
     ]

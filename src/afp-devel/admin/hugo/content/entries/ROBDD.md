@@ -41,18 +41,18 @@
         "Native_Word"
     ],
     "theories": [
-        "Option_Helpers",
-        "BDD_Code",
-        "BDD_Examples",
-        "BDT",
         "Bool_Func",
-        "Level_Collapse",
-        "Array_List",
-        "Middle_Impl",
-        "Pointer_Map_Impl",
+        "BDT",
+        "Option_Helpers",
         "Abstract_Impl",
+        "Pointer_Map",
+        "Middle_Impl",
+        "Array_List",
+        "Pointer_Map_Impl",
         "Conc_Impl",
-        "Pointer_Map"
+        "Level_Collapse",
+        "BDD_Examples",
+        "BDD_Code"
     ],
     "relatedEntries": [
         "JinjaThreads",

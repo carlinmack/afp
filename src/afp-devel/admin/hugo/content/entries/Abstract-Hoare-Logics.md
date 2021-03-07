@@ -67,5 +67,19 @@
         {
             "2007": "2007-11-27"
         }
+    ],
+    "theories": [
+        "Lang",
+        "Hoare",
+        "Termi",
+        "HoareTotal",
+        "PLang",
+        "PHoare",
+        "PTermi",
+        "PHoareTotal",
+        "PsLang",
+        "PsHoare",
+        "PsTermi",
+        "PsHoareTotal"
     ]
 }

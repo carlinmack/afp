@@ -21,12 +21,12 @@
     ],
     "theories": [
         "Analysis_Misc",
-        "Poincare_Bendixson",
-        "Invariance",
-        "Examples",
         "ODE_Misc",
+        "Invariance",
         "Limit_Set",
+        "Periodic_Orbit",
+        "Poincare_Bendixson",
         "Affine_Arithmetic_Misc",
-        "Periodic_Orbit"
+        "Examples"
     ]
 }

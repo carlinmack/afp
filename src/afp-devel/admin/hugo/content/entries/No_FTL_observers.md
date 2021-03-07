@@ -31,9 +31,9 @@
         }
     ],
     "theories": [
-        "SpecRel",
-        "Axioms",
         "SpaceTime",
-        "SomeFunc"
+        "SomeFunc",
+        "Axioms",
+        "SpecRel"
     ]
 }

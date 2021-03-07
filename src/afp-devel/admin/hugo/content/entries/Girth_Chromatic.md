@@ -51,8 +51,8 @@
         }
     ],
     "theories": [
-        "Girth_Chromatic",
+        "Girth_Chromatic_Misc",
         "Ugraphs",
-        "Girth_Chromatic_Misc"
+        "Girth_Chromatic"
     ]
 }

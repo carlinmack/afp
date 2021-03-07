@@ -23,18 +23,18 @@
     ],
     "theories": [
         "Basics",
-        "Complex_Vectors",
-        "Entanglement",
-        "Quantum",
-        "Quantum_Prisoners_Dilemma",
-        "No_Cloning",
-        "Quantum_Teleportation",
         "Binary_Nat",
-        "Deutsch_Jozsa",
-        "Deutsch",
-        "Measurement",
+        "Quantum",
+        "Complex_Vectors",
         "Tensor",
-        "More_Tensor"
+        "More_Tensor",
+        "Measurement",
+        "Entanglement",
+        "Quantum_Teleportation",
+        "Deutsch",
+        "Deutsch_Jozsa",
+        "No_Cloning",
+        "Quantum_Prisoners_Dilemma"
     ],
     "relatedEntries": [
         "Deep_Learning"

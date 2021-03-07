@@ -39,9 +39,9 @@
         }
     ],
     "theories": [
-        "Splay_Heap",
+        "Splay_Tree",
         "Splay_Map",
-        "Splay_Tree"
+        "Splay_Heap"
     ],
     "relatedEntries": [
         "Skew_Heap"

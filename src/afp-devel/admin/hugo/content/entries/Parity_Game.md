@@ -42,15 +42,15 @@
         "ParityGame",
         "Strategy",
         "AttractingStrategy",
-        "WinningRegion",
         "Attractor",
         "WinningStrategy",
-        "UniformStrategy",
-        "PositionalDeterminacy",
-        "Graph_TheoryCompatibility",
-        "AttractorInductive",
         "WellOrderedStrategy",
-        "AttractorStrategy"
+        "WinningRegion",
+        "UniformStrategy",
+        "AttractorStrategy",
+        "PositionalDeterminacy",
+        "AttractorInductive",
+        "Graph_TheoryCompatibility"
     ],
     "relatedEntries": [
         "ShortestPath"

@@ -56,21 +56,21 @@
         }
     ],
     "theories": [
+        "Signatures",
+        "Dioid",
         "Dioid_Models",
         "Matrix",
+        "Conway",
+        "Kleene_Algebra",
+        "Kleene_Algebra_Models",
+        "Omega_Algebra",
         "Omega_Algebra_Models",
         "DRA",
-        "Signatures",
-        "Formal_Power_Series",
         "PHL_KA",
-        "Dioid",
-        "Conway",
+        "PHL_DRA",
         "Finite_Suprema",
-        "Omega_Algebra",
-        "Inf_Matrix",
-        "Kleene_Algebra_Models",
-        "Kleene_Algebra",
-        "PHL_DRA"
+        "Formal_Power_Series",
+        "Inf_Matrix"
     ],
     "relatedEntries": [
         "KAD",

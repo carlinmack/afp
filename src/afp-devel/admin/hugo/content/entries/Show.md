@@ -47,11 +47,12 @@
         "Deriving"
     ],
     "theories": [
-        "Show_Complex",
-        "Show_Poly",
         "Show",
-        "Show_Real_Impl",
+        "files/show_generator.ML",
         "Show_Instances",
-        "Show_Real"
+        "Show_Poly",
+        "Show_Real",
+        "Show_Complex",
+        "Show_Real_Impl"
     ]
 }

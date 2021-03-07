@@ -69,12 +69,13 @@
         }
     ],
     "theories": [
-        "PRecFinSet",
-        "PRecFun2",
+        "CPair",
         "PRecFun",
+        "files/Utils.ML",
         "PRecList",
-        "RecEnSet",
+        "PRecFun2",
+        "PRecFinSet",
         "PRecUnGr",
-        "CPair"
+        "RecEnSet"
     ]
 }

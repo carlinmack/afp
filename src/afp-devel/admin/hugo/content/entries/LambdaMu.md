@@ -31,14 +31,14 @@
         }
     ],
     "theories": [
-        "Reduction",
-        "Peirce",
+        "Syntax",
         "Types",
         "DeBruijn",
-        "ContextFacts",
         "Substitution",
-        "Syntax",
+        "Reduction",
+        "ContextFacts",
         "TypePreservation",
-        "Progress"
+        "Progress",
+        "Peirce"
     ]
 }

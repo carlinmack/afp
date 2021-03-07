@@ -1,7 +1,64 @@
 {
     "theories": [
-        "Euler_MacLaurin",
-        "Euler_MacLaurin_Landau"
+        {
+            "Euler_MacLaurin": [
+                "pbernpoly_of_int",
+                "continuous_on_bernpoly'",
+                "sum_atLeastAtMost_int_last",
+                "sum_atLeastAtMost_int_head",
+                "not_in_nonpos_Reals_imp_add_nonzero",
+                "negligible_atLeastAtMostI",
+                "integrable_on_negligible",
+                "Union_atLeastAtMost_real_of_int",
+                "EM_remainder_eqI",
+                "integrable_EM_remainder'_int",
+                "integrable_EM_remainder'",
+                "EM_remainder'_bounded_linear",
+                "EM_remainder_converges_of_real",
+                "EM_remainder_converges_of_real_iff",
+                "EM_remainder_of_real",
+                "EM_remainder'_cong",
+                "EM_remainder_converges_cong",
+                "EM_remainder_cong",
+                "EM_remainder_converges_cnj",
+                "EM_remainder_converges_cnj_iff",
+                "EM_remainder_cnj",
+                "EM_remainder'_combine",
+                "uniformly_convergent_EM_remainder'",
+                "uniform_limit_EM_remainder",
+                "tendsto_EM_remainder",
+                "EM_remainder_0",
+                "holomorphic_EM_remainder'",
+                "diff_sum_integral_has_integral_int",
+                "diff_sum_integral_has_integral_int'",
+                "EM_remainder'_Suc_0",
+                "EM_remainder'_integral_conv_Suc",
+                "EM_remainder'_conv_Suc",
+                "euler_maclaurin_strong_int_aux",
+                "EM_remainder_limit",
+                "sum_atLeastAtMost_of_int_nat_transfer",
+                "euler_maclaurin_nat_int_transfer",
+                "norm_EM_remainder'_le",
+                "harm_expansion",
+                "of_nat_ge_1_iff",
+                "harm_remainder_bound",
+                "sum_inverse_squares_expansion",
+                "sum_inverse_squares_remainder_bound"
+            ]
+        },
+        {
+            "Euler_MacLaurin_Landau": [
+                "harm_remainder_bigo",
+                "harm_expansion_bigo",
+                "harm_expansion_bigo_simple1",
+                "harm_expansion_bigo_simple2",
+                "harm_expansion_bigo_simple'",
+                "sum_inverse_squares_remainder_bigo",
+                "sum_inverse_squares_expansion_bigo",
+                "sum_inverse_squares_expansion_bigo_simple",
+                "sum_inverse_squares_expansion_bigo_simple'"
+            ]
+        }
     ],
     "url": "entries/euler_maclaurin/theories",
     "title": "Session Euler_MacLaurin"

@@ -30,10 +30,13 @@
         "Alternate",
         "Graph",
         "Ranking",
-        "Formula",
         "Complementation",
-        "Complementation_Final",
         "Complementation_Implement",
-        "Complementation_Build"
+        "Formula",
+        "Complementation_Final",
+        "Complementation_Build",
+        "files/code/Autool.mlb",
+        "files/code/Prelude.sml",
+        "files/code/Autool.sml"
     ]
 }

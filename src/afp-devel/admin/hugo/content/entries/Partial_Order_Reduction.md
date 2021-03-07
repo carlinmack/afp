@@ -26,13 +26,26 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
-        "Transition_System_Traces",
-        "Ample_Correctness",
+        "List_Prefixes",
+        "List_Extensions",
+        "Word_Prefixes",
+        "Set_Extensions",
+        "Basic_Extensions",
+        "Relation_Extensions",
         "Transition_System_Extensions",
-        "Formula",
+        "Traces",
+        "Transition_System_Traces",
+        "Functions",
+        "ENat_Extensions",
+        "CCPO_Extensions",
+        "ESet_Extensions",
+        "Coinductive_List_Extensions",
+        "LList_Prefixes",
+        "Stuttering",
         "Transition_System_Interpreted_Traces",
-        "Ample_Analysis",
         "Ample_Abstract",
-        "Traces"
+        "Formula",
+        "Ample_Correctness",
+        "Ample_Analysis"
     ]
 }

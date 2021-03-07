@@ -18,15 +18,15 @@
         }
     ],
     "theories": [
-        "USubst",
-        "Ids",
-        "Axioms",
-        "Coincidence",
-        "Static_Semantics",
+        "Lib",
         "Identifiers",
         "Syntax",
         "Denotational_Semantics",
-        "Lib",
+        "Static_Semantics",
+        "Coincidence",
+        "USubst",
+        "Ids",
+        "Axioms",
         "Differential_Game_Logic"
     ]
 }

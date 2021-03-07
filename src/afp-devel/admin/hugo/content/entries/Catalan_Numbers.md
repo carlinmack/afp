@@ -30,7 +30,7 @@
         "Landau_Symbols"
     ],
     "theories": [
-        "Catalan_Numbers",
-        "Catalan_Auxiliary_Integral"
+        "Catalan_Auxiliary_Integral",
+        "Catalan_Numbers"
     ]
 }

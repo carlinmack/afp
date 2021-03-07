@@ -45,22 +45,22 @@
         }
     ],
     "theories": [
-        "Pair_Digraph",
-        "Euler",
-        "Digraph",
-        "Graph_Theory",
-        "Funpow",
-        "Kuratowski",
-        "Digraph_Component",
-        "Digraph_Component_Vwalk",
-        "Shortest_Path",
-        "Arc_Walk",
-        "Subdivision",
-        "Weighted_Graph",
-        "Vertex_Walk",
-        "Digraph_Isomorphism",
         "Rtrancl_On",
         "Stuff",
-        "Bidirected_Digraph"
+        "Digraph",
+        "Bidirected_Digraph",
+        "Arc_Walk",
+        "Pair_Digraph",
+        "Digraph_Component",
+        "Vertex_Walk",
+        "Digraph_Component_Vwalk",
+        "Digraph_Isomorphism",
+        "Funpow",
+        "Subdivision",
+        "Euler",
+        "Kuratowski",
+        "Weighted_Graph",
+        "Shortest_Path",
+        "Graph_Theory"
     ]
 }

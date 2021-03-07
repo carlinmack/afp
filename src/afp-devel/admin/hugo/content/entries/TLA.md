@@ -55,15 +55,15 @@
         }
     ],
     "theories": [
-        "Rules",
-        "Inc",
         "Sequence",
-        "Liveness",
-        "Even",
-        "PreFormulas",
         "Intensional",
         "Semantics",
+        "PreFormulas",
+        "Rules",
+        "Liveness",
         "State",
+        "Even",
+        "Inc",
         "Buffer"
     ]
 }

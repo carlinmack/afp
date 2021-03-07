@@ -49,21 +49,21 @@
         }
     ],
     "theories": [
-        "G",
+        "Preliminaries",
+        "TermsAndClauses",
         "Sig",
         "M",
-        "Preliminaries",
         "CM",
-        "Mcalc2C",
-        "Mcalc",
-        "Mcalc2",
-        "E",
-        "CU",
-        "T",
-        "T_G_Prelim",
         "Mono",
-        "TermsAndClauses",
+        "Mcalc",
+        "T_G_Prelim",
+        "Mcalc2",
+        "Mcalc2C",
+        "G",
+        "T",
         "U",
+        "CU",
+        "E",
         "Encodings"
     ]
 }

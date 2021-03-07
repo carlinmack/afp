@@ -44,13 +44,16 @@
     ],
     "theories": [
         "Language",
-        "OG_Soundness",
-        "OG_Annotations",
-        "SeqCatch_decomp",
-        "OG_Syntax",
         "SmallStep",
+        "OG_Annotations",
         "OG_Hoare",
-        "OG_Tactics"
+        "SeqCatch_decomp",
+        "OG_Soundness",
+        "Cache_Tactics",
+        "OG_Tactics",
+        "OG_Syntax",
+        "Examples",
+        "SumArr"
     ],
     "relatedEntries": [
         "Simpl"

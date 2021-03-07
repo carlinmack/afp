@@ -77,9 +77,9 @@
     ],
     "theories": [
         "FJDefs",
-        "Execute",
         "FJAux",
         "FJSound",
+        "Execute",
         "Featherweight_Java"
     ]
 }

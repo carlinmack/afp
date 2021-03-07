@@ -28,9 +28,9 @@
     ],
     "theories": [
         "Iterings",
-        "Matrix_Kleene_Algebras",
-        "Kleene_Relation_Subalgebras",
+        "Kleene_Algebras",
         "Kleene_Relation_Algebras",
-        "Kleene_Algebras"
+        "Kleene_Relation_Subalgebras",
+        "Matrix_Kleene_Algebras"
     ]
 }

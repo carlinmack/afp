@@ -34,15 +34,15 @@
         "Generic_Join"
     ],
     "theories": [
-        "Monitor_Code",
-        "Optimized_Join",
-        "Formula",
         "Code_Double",
-        "Regex",
         "Event_Data",
+        "Regex",
+        "Formula",
+        "Optimized_Join",
         "Monitor",
+        "Optimized_MTL",
         "Monitor_Impl",
-        "Optimized_MTL"
+        "Monitor_Code"
     ],
     "relatedEntries": [
         "MFOTL_Monitor"

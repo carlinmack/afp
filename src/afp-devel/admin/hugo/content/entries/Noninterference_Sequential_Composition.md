@@ -34,9 +34,9 @@
         "Noninterference_Ipurge_Unwinding"
     ],
     "theories": [
-        "Counterexamples",
         "Propaedeutics",
-        "SequentialComposition"
+        "SequentialComposition",
+        "Counterexamples"
     ],
     "relatedEntries": [
         "Noninterference_Concurrent_Composition"

@@ -1,8 +1,73 @@
 {
     "theories": [
-        "Core_DOM_Components",
-        "Shadow_DOM_Components",
-        "fancy_tabs"
+        {
+            "Core_DOM_Components": [
+                "get_dom_component_ptr_in_heap",
+                "get_component_ok",
+                "get_dom_component_ptr",
+                "get_component_parent_inside",
+                "get_component_subset",
+                "get_component_to_tree_order_subset",
+                "get_component_to_tree_order",
+                "get_component_root_node_same",
+                "get_dom_component_no_overlap",
+                "get_component_separates_tree_order",
+                "get_component_separates_tree_order_general",
+                "get_dom_component_get_child_nodes",
+                "get_child_nodes_get_component",
+                "get_child_nodes_strongly_dom_component_safe",
+                "get_parent_is_strongly_dom_component_safe_step",
+                "get_parent_is_strongly_dom_component_safe",
+                "get_root_node_is_strongly_dom_component_safe_step",
+                "get_root_node_is_strongly_dom_component_safe",
+                "get_element_by_id_is_strongly_dom_component_safe_step",
+                "get_element_by_id_is_strongly_dom_component_safe",
+                "get_elements_by_class_name_result_in_tree_order",
+                "get_elements_by_class_name_is_strongly_dom_component_safe_step",
+                "get_elements_by_class_name_pure",
+                "get_elements_by_class_name_is_strongly_dom_component_safe",
+                "get_elements_by_tag_name_result_in_tree_order",
+                "get_elements_by_tag_name_is_strongly_dom_component_safe_step",
+                "get_elements_by_tag_name_is_strongly_dom_component_safe",
+                "remove_child_not_strongly_dom_component_safe",
+                "adopt_node_not_strongly_dom_component_safe",
+                "create_element_not_strongly_component_safe",
+                "create_element_is_weakly_dom_component_safe_step",
+                "create_element_is_weakly_dom_component_safe",
+                "create_character_data_not_strongly_component_safe",
+                "create_character_data_is_weakly_dom_component_safe_step",
+                "create_character_data_is_weakly_dom_component_safe",
+                "create_document_not_strongly_component_safe",
+                "create_document_is_weakly_component_safe_step",
+                "create_document_is_weakly_component_safe",
+                "insert_before_not_strongly_dom_component_safe",
+                "append_child_not_strongly_dom_component_safe",
+                "get_owner_document_not_strongly_dom_component_safe"
+            ]
+        },
+        {
+            "Shadow_DOM_Components": [
+                "attach_shadow_root_not_strongly_component_safe",
+                "attach_shadow_root_is_weakly_dom_component_safe",
+                "get_shadow_root_not_weakly_component_safe",
+                "get_shadow_root_is_component_unsafe",
+                "get_host_not_weakly_component_safe",
+                "get_host_is_component_unsafe",
+                "get_root_node_si_is_component_unsafe",
+                "assigned_nodes_not_weakly_component_safe",
+                "get_composed_root_node_not_weakly_component_safe",
+                "assigned_slot_not_weakly_component_safe",
+                "find_slot_is_component_unsafe",
+                "assigned_slot_pure",
+                "assigned_slot_is_strongly_dom_component_safe",
+                "assigned_nodes_is_component_unsafe",
+                "flatten_dom_assigned_nodes_become_children",
+                "get_owner_document_is_component_unsafe"
+            ]
+        },
+        {
+            "fancy_tabs": []
+        }
     ],
     "url": "entries/dom_components/theories",
     "title": "Session DOM_Components"

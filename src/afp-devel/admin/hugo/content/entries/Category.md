@@ -84,11 +84,11 @@
         }
     ],
     "theories": [
-        "Functors",
-        "SetCat",
-        "NatTrans",
         "Cat",
-        "Yoneda",
-        "HomFunctors"
+        "SetCat",
+        "Functors",
+        "HomFunctors",
+        "NatTrans",
+        "Yoneda"
     ]
 }

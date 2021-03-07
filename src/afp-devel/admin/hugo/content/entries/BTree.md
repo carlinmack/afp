@@ -16,16 +16,16 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "Basic_Assn",
+        "BTree",
+        "BTree_Height",
+        "BTree_Set",
+        "BTree_Split",
         "Array_SBlit",
         "Partially_Filled_Array",
-        "BTree_Set",
-        "BTree_ImpSet",
+        "Basic_Assn",
         "BTree_Imp",
+        "BTree_ImpSet",
         "Imperative_Loops",
-        "BTree_ImpSplit",
-        "BTree_Height",
-        "BTree",
-        "BTree_Split"
+        "BTree_ImpSplit"
     ]
 }

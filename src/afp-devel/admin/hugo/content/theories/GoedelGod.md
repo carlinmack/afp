@@ -1,6 +1,10 @@
 {
     "theories": [
-        "GoedelGod"
+        {
+            "GoedelGod": [
+                "MC"
+            ]
+        }
     ],
     "url": "entries/goedelgod/theories",
     "title": "Session GoedelGod"

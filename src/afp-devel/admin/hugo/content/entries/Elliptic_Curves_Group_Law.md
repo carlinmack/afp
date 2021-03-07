@@ -27,8 +27,8 @@
         }
     ],
     "theories": [
-        "Elliptic_Locale",
         "Elliptic_Axclass",
+        "Elliptic_Locale",
         "Elliptic_Test"
     ]
 }

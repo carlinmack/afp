@@ -39,14 +39,15 @@
         "Landau_Symbols"
     ],
     "theories": [
+        "Akra_Bazzi_Library",
         "Akra_Bazzi_Asymptotics",
-        "Master_Theorem_Examples",
-        "Master_Theorem",
-        "Akra_Bazzi_Approximation",
-        "Eval_Numeral",
         "Akra_Bazzi_Real",
-        "Akra_Bazzi_Method",
         "Akra_Bazzi",
-        "Akra_Bazzi_Library"
+        "Master_Theorem",
+        "Eval_Numeral",
+        "Akra_Bazzi_Method",
+        "files/akra_bazzi.ML",
+        "Akra_Bazzi_Approximation",
+        "Master_Theorem_Examples"
     ]
 }

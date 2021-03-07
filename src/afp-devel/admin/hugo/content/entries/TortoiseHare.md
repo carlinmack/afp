@@ -30,8 +30,8 @@
         }
     ],
     "theories": [
-        "Brent",
+        "Basis",
         "TortoiseHare",
-        "Basis"
+        "Brent"
     ]
 }

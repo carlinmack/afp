@@ -39,11 +39,11 @@
         }
     ],
     "theories": [
-        "HeapImperative",
-        "Heap",
-        "HeapFunctional",
+        "Sort",
         "RemoveMax",
         "SelectionSort_Functional",
-        "Sort"
+        "Heap",
+        "HeapFunctional",
+        "HeapImperative"
     ]
 }

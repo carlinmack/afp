@@ -23,12 +23,12 @@
         "Well_Quasi_Orders"
     ],
     "theories": [
+        "Calculus",
         "Intersection_Calculus",
         "Calculus_Variations",
-        "Labeled_Lifting_to_Non_Ground_Calculi",
         "Lifting_to_Non_Ground_Calculi",
-        "Given_Clause_Architectures",
-        "Calculus"
+        "Labeled_Lifting_to_Non_Ground_Calculi",
+        "Given_Clause_Architectures"
     ],
     "relatedEntries": [
         "Saturation_Framework_Extensions",

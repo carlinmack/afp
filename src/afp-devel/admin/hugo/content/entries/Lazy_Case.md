@@ -27,7 +27,8 @@
         }
     ],
     "theories": [
-        "Test_Lazy_Case",
-        "Lazy_Case"
+        "Lazy_Case",
+        "files/lazy_case.ML",
+        "Test_Lazy_Case"
     ]
 }

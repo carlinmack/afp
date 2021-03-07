@@ -21,7 +21,7 @@
     "theories": [
         "IO",
         "HelloWorld",
-        "RunningCodeFromIsabelle",
-        "HelloWorld_Proof"
+        "HelloWorld_Proof",
+        "RunningCodeFromIsabelle"
     ]
 }

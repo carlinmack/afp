@@ -40,7 +40,7 @@
         }
     ],
     "theories": [
-        "Tries",
-        "Trie"
+        "Trie",
+        "Tries"
     ]
 }

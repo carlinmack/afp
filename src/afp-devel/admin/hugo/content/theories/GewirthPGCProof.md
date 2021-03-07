@@ -1,8 +1,70 @@
 {
     "theories": [
-        "CJDDLplus",
-        "ExtendedDDL",
-        "GewirthArgument"
+        {
+            "CJDDLplus": [
+                "sem_5b1",
+                "sem_5b2",
+                "sem_5ab",
+                "sem_5bd1",
+                "sem_5bd2",
+                "sem_5bd3",
+                "sem_5bd4",
+                "sem_5bcd",
+                "NecDDLa",
+                "NecDDLp",
+                "C_2",
+                "C_3",
+                "C_4",
+                "C_5",
+                "C_6",
+                "C_7",
+                "C_8",
+                "CJ_3",
+                "CJ_4",
+                "CJ_5",
+                "CJ_5_minus",
+                "CJ_6",
+                "CJ_7",
+                "CJ_8",
+                "CJ_9a",
+                "CJ_9p",
+                "CJ_9_var_a",
+                "CJ_9_var_b",
+                "CJ_10",
+                "CJ_11a",
+                "CJ_11a_var",
+                "CJ_11p",
+                "CJ_11p_var",
+                "CJ_12a",
+                "CJ_12p",
+                "CJ_13a",
+                "CJ_13p",
+                "CJ_O_O",
+                "CJ_Oi_Oa",
+                "CJ_14a",
+                "CJ_14p",
+                "CJ_15a",
+                "CJ_15p"
+            ]
+        },
+        {
+            "ExtendedDDL": [
+                "NecLDa",
+                "NecLDp",
+                "NecLD"
+            ]
+        },
+        {
+            "GewirthArgument": [
+                "recognizeOtherPPA",
+                "InterferenceWithFWB",
+                "PGC_weak2",
+                "AgentY_X_PPA",
+                "AgentY_Y_FWB",
+                "AgentY_X_FWB",
+                "AgentY_NonInterference_X_FWB"
+            ]
+        }
     ],
     "url": "entries/gewirthpgcproof/theories",
     "title": "Session GewirthPGCProof"

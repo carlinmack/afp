@@ -68,8 +68,8 @@
         "Abstract-Rewriting"
     ],
     "theories": [
-        "Ordered_Semiring",
         "Utility",
+        "Ordered_Semiring",
         "Matrix_Legacy"
     ],
     "relatedEntries": [

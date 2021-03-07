@@ -40,13 +40,13 @@
         "Separation_Logic_Imperative_HOL"
     ],
     "theories": [
-        "UpDown_Scheme",
         "Grid_Point",
-        "Triangular_Function",
-        "Imperative",
-        "Up",
-        "Up_Down",
         "Grid",
-        "Down"
+        "Triangular_Function",
+        "UpDown_Scheme",
+        "Up",
+        "Down",
+        "Up_Down",
+        "Imperative"
     ]
 }

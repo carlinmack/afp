@@ -36,12 +36,16 @@
         }
     ],
     "theories": [
-        "Infinite_Sequences",
-        "CIMP",
         "CIMP_pred",
-        "CIMP_vcg",
+        "Infinite_Sequences",
+        "LTL",
         "CIMP_lang",
+        "CIMP_vcg",
         "CIMP_vcg_rules",
-        "LTL"
+        "CIMP",
+        "files/cimp.ML",
+        "CIMP_locales",
+        "CIMP_one_place_buffer",
+        "CIMP_unbounded_buffer"
     ]
 }

@@ -25,7 +25,7 @@
     ],
     "theories": [
         "Vieta",
-        "Symmetric_Polynomials_Code",
-        "Symmetric_Polynomials"
+        "Symmetric_Polynomials",
+        "Symmetric_Polynomials_Code"
     ]
 }

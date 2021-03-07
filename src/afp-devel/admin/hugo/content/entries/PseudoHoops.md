@@ -59,13 +59,13 @@
         "LatticeProperties"
     ],
     "theories": [
-        "RightComplementedMonoid",
-        "LeftComplementedMonoid",
         "Operations",
-        "Examples",
+        "LeftComplementedMonoid",
+        "RightComplementedMonoid",
+        "PseudoHoops",
+        "PseudoHoopFilters",
         "PseudoWaisbergAlgebra",
         "SpecialPseudoHoops",
-        "PseudoHoopFilters",
-        "PseudoHoops"
+        "Examples"
     ]
 }

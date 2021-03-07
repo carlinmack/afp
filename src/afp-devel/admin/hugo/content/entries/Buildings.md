@@ -31,11 +31,11 @@
         }
     ],
     "theories": [
+        "Prelim",
         "Algebra",
         "Simplicial",
-        "Prelim",
-        "Building",
+        "Chamber",
         "Coxeter",
-        "Chamber"
+        "Building"
     ]
 }

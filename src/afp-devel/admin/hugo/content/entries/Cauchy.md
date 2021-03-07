@@ -72,7 +72,7 @@
         }
     ],
     "theories": [
-        "CauchySchwarz",
-        "CauchysMeanTheorem"
+        "CauchysMeanTheorem",
+        "CauchySchwarz"
     ]
 }

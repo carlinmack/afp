@@ -28,7 +28,7 @@
         "Recursion-Theory-I"
     ],
     "theories": [
-        "Minsky",
-        "Recursive_Inseparability"
+        "Recursive_Inseparability",
+        "Minsky"
     ]
 }

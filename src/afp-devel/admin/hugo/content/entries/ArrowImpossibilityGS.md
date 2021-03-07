@@ -67,5 +67,10 @@
         {
             "2009": "2009-04-29"
         }
+    ],
+    "theories": [
+        "Arrow_Utility",
+        "Arrow_Order",
+        "GS"
     ]
 }

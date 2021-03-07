@@ -45,11 +45,11 @@
         "Kleene_Algebra"
     ],
     "theories": [
-        "Regular_Algebras",
-        "Pratts_Counterexamples",
         "Dioid_Power_Sum",
-        "Regular_Algebra_Variants",
-        "Regular_Algebra_Models"
+        "Regular_Algebras",
+        "Regular_Algebra_Models",
+        "Pratts_Counterexamples",
+        "Regular_Algebra_Variants"
     ],
     "relatedEntries": [
         "KAD",

@@ -1,19 +1,177 @@
 {
     "theories": [
-        "Option_Binders",
-        "List_Theorems",
-        "K",
-        "SK",
-        "ISK",
-        "CISK",
-        "Step_configuration",
-        "Step_policies",
-        "Step",
-        "Step_invariants",
-        "Step_vpeq",
-        "Step_vpeq_locally_respects",
-        "Step_vpeq_weakly_step_consistent",
-        "Separation_kernel_model",
-        "Link_separation_kernel_model_to_CISK"
+        {
+            "Option_Binders": [
+                "rewrite_B2_to_cases",
+                "rewrite_B_None",
+                "rewrite_B_m_True",
+                "rewrite_B2_cases"
+            ]
+        },
+        {
+            "List_Theorems": [
+                "drop_one",
+                "length_ge_one",
+                "take_but_one",
+                "Suc_m_minus_n",
+                "lastn_one_less",
+                "list_sub_implies_member",
+                "subset_smaller_list",
+                "second_elt_is_hd_tl",
+                "length_ge_2_implies_tl_not_empty",
+                "length_lt_2_implies_tl_empty",
+                "first_second_is_sub_seq",
+                "hd_drop_is_nth",
+                "def_of_hd",
+                "def_of_tl",
+                "drop_yields_results_implies_nbound",
+                "consecutive_is_sub_seq",
+                "sub_seq_in_prefixes",
+                "set_tl_is_subset",
+                "x_is_hd_snd_tl",
+                "tl_x_not_x",
+                "tl_hd_x_not_tl_x"
+            ]
+        },
+        {
+            "K": []
+        },
+        {
+            "SK": [
+                "vpeq_s_nt",
+                "vpeq_ns_t",
+                "vpeq_ns_nt_ifp_u",
+                "vpeq_ns_nt_not_ifp_u",
+                "unwinding_implies_view_partitioned_ind",
+                "unwinding_implies_view_partitioned",
+                "vpeq_involved_domains",
+                "ipurge_l_removes_gateway_communications",
+                "iunwinding_implies_view_partitioned1",
+                "current_independent_of_domain_actions"
+            ]
+        },
+        {
+            "ISK": [
+                "next_execution_is_realistic_partial",
+                "run_total_equals_run",
+                "realistic_purge",
+                "remove_gateway_comm_subset",
+                "realistic_ipurge_l",
+                "realistic_ipurge_r"
+            ]
+        },
+        {
+            "CISK": [
+                "next_action_consistent",
+                "next_execs_consistent",
+                "next_state_consistent",
+                "current_next_state",
+                "locally_respects_next_state",
+                "CISK_control_spec",
+                "next_action_after_cswitch",
+                "next_action_after_next_state",
+                "next_action_after_step",
+                "next_state_precondition",
+                "next_state_invariant",
+                "next_action_from_execs",
+                "next_execs_subset"
+            ]
+        },
+        {
+            "Step_configuration": []
+        },
+        {
+            "Step_policies": [
+                "correct",
+                "example_how_to_use_properties_in_proofs"
+            ]
+        },
+        {
+            "Step": []
+        },
+        {
+            "Step_invariants": [
+                "set_object_value_invariant",
+                "set_thread_value_invariant",
+                "atomic_ipc_preserves_invariants",
+                "atomic_ev_wait_one_preserves_invariants",
+                "atomic_ev_wait_all_preserves_invariants",
+                "atomic_ev_signal_preserves_invariants"
+            ]
+        },
+        {
+            "Step_vpeq": [
+                "vpeq_rel",
+                "set_object_value_ign"
+            ]
+        },
+        {
+            "Step_vpeq_locally_respects": [
+                "ipc_respects_policy",
+                "ev_signal_respects_policy",
+                "ev_wait_all_respects_policy",
+                "ev_wait_one_respects_policy"
+            ]
+        },
+        {
+            "Step_vpeq_weakly_step_consistent": [
+                "ipc_precondition_weakly_step_consistent",
+                "ev_signal_precondition_weakly_step_consistent",
+                "set_object_value_consistent",
+                "ipc_weakly_step_consistent",
+                "ev_wait_one_weakly_step_consistent",
+                "ev_wait_all_weakly_step_consistent",
+                "ev_signal_weakly_step_consistent",
+                "extend_subj_subj_consistent"
+            ]
+        },
+        {
+            "Separation_kernel_model": [
+                "initial_invariant",
+                "rstate_invariant",
+                "rstate_down_up",
+                "rstate_up_down",
+                "inst_vpeq_rel",
+                "inst_ifp_refl",
+                "inst_step_atomicity",
+                "inst_weakly_step_consistent",
+                "inst_local_respect",
+                "inst_output_consistency",
+                "inst_cswitch_independent_of_state",
+                "inst_cswitch_consistency",
+                "prec_first_IPC_action",
+                "prec_first_EV_WAIT_action",
+                "prec_first_EV_SIGNAL_action",
+                "prec_after_IPC_step",
+                "prec_after_EV_WAIT_step",
+                "prec_after_EV_SIGNAL_step",
+                "on_set_object_value",
+                "prec_IPC_dom_independent",
+                "prec_ev_signal_dom_independent",
+                "prec_ev_wait_one_dom_independent",
+                "prec_ev_wait_all_dom_independent",
+                "prec_dom_independent",
+                "ipc_precondition_after_cswitch",
+                "precondition_after_cswitch",
+                "aborting_switch_independent",
+                "waiting_switch_independent",
+                "aborting_after_IPC_step",
+                "waiting_after_IPC_step",
+                "raborting_consistent",
+                "aborting_dom_independent",
+                "ipc_precondition_of_partner_consistent",
+                "ev_signal_precondition_of_partner_consistent",
+                "waiting_consistent",
+                "ipc_precondition_ensures_ifp",
+                "ev_signal_precondition_ensures_ifp",
+                "involved_ifp",
+                "spec_of_waiting_ev",
+                "spec_of_waiting_ev_w",
+                "spec_of_waiting"
+            ]
+        },
+        {
+            "Link_separation_kernel_model_to_CISK": []
+        }
     ]
 }

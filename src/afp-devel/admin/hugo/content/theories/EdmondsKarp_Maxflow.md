@@ -1,12 +1,109 @@
 {
     "theories": [
-        "FordFulkerson_Algo",
-        "EdmondsKarp_Termination_Abstract",
-        "EdmondsKarp_Algo",
-        "Augmenting_Path_BFS",
-        "EdmondsKarp_Impl",
-        "Edka_Checked_Impl",
-        "Edka_Benchmark_Export"
+        {
+            "FordFulkerson_Algo": [
+                "zero_flow"
+            ]
+        },
+        {
+            "EdmondsKarp_Termination_Abstract": [
+                "mlex_fst_decrI",
+                "isShortestPath_flip_edge",
+                "isShortestPath_flip_edges",
+                "spEdges_ss_E",
+                "finite_spEdges",
+                "finite_uE",
+                "E_ss_uE",
+                "card_spEdges_le",
+                "card_spEdges_less",
+                "measure_decr",
+                "augment_cf_empty",
+                "augment_cf_ss_V",
+                "augment_saturate",
+                "augment_cf_split",
+                "augmenting_edge_no_swap",
+                "aug_flows_finite",
+                "aug_flows_finite'",
+                "augment_alt",
+                "augmenting_path_contains_resCap"
+            ]
+        },
+        {
+            "EdmondsKarp_Algo": [
+                "find_shortest_augmenting_refine",
+                "edka_partial_refine",
+                "edka_wf_rel_wf",
+                "ekMeasure_upper_bound",
+                "edka_complexity_refine"
+            ]
+        },
+        {
+            "Augmenting_Path_BFS": [
+                "Vd_disj",
+                "src_Vd0",
+                "in_Vd_conv",
+                "Vd_succ",
+                "FIN_E",
+                "FIN_succ",
+                "invar_init",
+                "map_le_mp",
+                "outer_loop_rel_wf",
+                "extract_rpath_correct",
+                "bfs_correct",
+                "inner_loop_refine",
+                "inner_loop2_refine",
+                "inner_loop2_correct",
+                "pre_bfs2_refine",
+                "bfs2_refine",
+                "bfs2_refine_succ",
+                "pat_op_dfs"
+            ]
+        },
+        {
+            "EdmondsKarp_Impl": [
+                "cfi_rel_alt",
+                "residualGraph_zero_flow",
+                "flow_of_c",
+                "augment_cf_refine",
+                "edka2_refine",
+                "augment_edge_impl_refine",
+                "augment_cf_impl_simps",
+                "augment_cf_impl_aux",
+                "edka3_refine",
+                "bfs_refines_shortest_augmenting_spec",
+                "edka4_refine",
+                "monadic_filter_rev_aux_rule",
+                "monadic_filter_rev_rule",
+                "edka5_refine",
+                "this_loc",
+                "E_ss",
+                "mtx_nonzero_iff",
+                "mtx_nonzeroN",
+                "is_am_precise",
+                "ps_get_op_refine",
+                "is_pred_succ_no_node",
+                "amtx_cnv",
+                "is_rflow_precise",
+                "succ_imp_refine",
+                "resCap_impl_refine",
+                "augment_impl_refine",
+                "edka_imp_tabulate_refine",
+                "edka_imp_run_refine"
+            ]
+        },
+        {
+            "Edka_Checked_Impl": [
+                "insert_stat_outer_c",
+                "insert_stat_inner_c",
+                "network_is_impl",
+                "val_by_adj_map",
+                "compute_flow_val_imp_correct_aux",
+                "compute_flow_val_imp_correct"
+            ]
+        },
+        {
+            "Edka_Benchmark_Export": []
+        }
     ],
     "url": "entries/edmondskarp_maxflow/theories",
     "title": "Session EdmondsKarp_Maxflow"

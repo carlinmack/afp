@@ -25,18 +25,18 @@
         "Prime_Number_Theorem"
     ],
     "theories": [
-        "Partial_Zeta_Bounds",
-        "More_Dirichlet_Misc",
-        "Primorial",
         "Prime_Distribution_Elementary_Library",
+        "More_Dirichlet_Misc",
         "Primes_Omega",
-        "PNT_Consequences",
-        "Shapiro_Tauberian",
-        "Selberg_Asymptotic_Formula",
-        "Moebius_Mu_Sum",
+        "Primorial",
         "Lcm_Nat_Upto",
+        "Shapiro_Tauberian",
+        "Partial_Zeta_Bounds",
+        "Moebius_Mu_Sum",
+        "Elementary_Prime_Bounds",
         "Summatory_Divisor_Sigma_Bounds",
-        "Elementary_Prime_Bounds"
+        "Selberg_Asymptotic_Formula",
+        "PNT_Consequences"
     ],
     "relatedEntries": [
         "Dirichlet_L",

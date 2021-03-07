@@ -1,6 +1,52 @@
 {
     "theories": [
-        "ListInterleaving"
+        {
+            "ListInterleaving": [
+                "interleaves_length",
+                "interleaves_nil",
+                "interleaves_swap",
+                "interleaves_equal_fst",
+                "interleaves_equal_snd",
+                "interleaves_all_nil",
+                "interleaves_nil_all",
+                "interleaves_equal_all_nil",
+                "interleaves_equal_nil_all",
+                "interleaves_filter",
+                "interleaves_map",
+                "interleaves_prefix_fst_1",
+                "interleaves_prefix_fst_2",
+                "interleaves_prefix_fst",
+                "interleaves_prefix_snd",
+                "Interleaves_interleaves",
+                "Interleaves_length",
+                "Interleaves_nil",
+                "Interleaves_swap",
+                "Interleaves_equal_fst",
+                "Interleaves_equal_snd",
+                "Interleaves_equal_all_nil",
+                "Interleaves_equal_nil_all",
+                "Interleaves_filter",
+                "Interleaves_map",
+                "Interleaves_prefix_fst_1",
+                "Interleaves_prefix_fst_2",
+                "Interleaves_prefix_fst",
+                "Interleaves_prefix_snd",
+                "Interleaves_all_nil_1",
+                "Interleaves_all_nil_2",
+                "Interleaves_all_nil",
+                "Interleaves_nil_all",
+                "Interleaves_suffix_one_aux",
+                "Interleaves_suffix_one_fst_2",
+                "Interleaves_suffix_fst_1",
+                "Interleaves_suffix_one_fst_1",
+                "Interleaves_suffix_one_fst",
+                "Interleaves_suffix_one_snd",
+                "Interleaves_suffix_aux",
+                "Interleaves_suffix_fst_2",
+                "Interleaves_suffix_fst",
+                "Interleaves_suffix_snd"
+            ]
+        }
     ],
     "url": "entries/list_interleaving/theories",
     "title": "Session List_Interleaving"

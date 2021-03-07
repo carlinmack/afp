@@ -26,11 +26,11 @@
         "Nominal2"
     ],
     "theories": [
-        "FMap_Lemmas",
-        "Results",
         "Nominal2_Lemmas",
+        "FMap_Lemmas",
         "Syntax",
+        "Semantics",
         "Agreement",
-        "Semantics"
+        "Results"
     ]
 }

@@ -21,17 +21,17 @@
         }
     ],
     "theories": [
-        "OCL_Basic_Types",
-        "Transitive_Closure_Ext",
-        "Object_Model",
-        "OCL_Examples",
-        "Finite_Map_Ext",
-        "OCL_Typing",
         "Errorable",
-        "OCL_Object_Model",
-        "OCL_Types",
+        "Transitive_Closure_Ext",
+        "Finite_Map_Ext",
         "Tuple",
+        "Object_Model",
+        "OCL_Basic_Types",
+        "OCL_Types",
         "OCL_Syntax",
-        "OCL_Normalization"
+        "OCL_Object_Model",
+        "OCL_Typing",
+        "OCL_Normalization",
+        "OCL_Examples"
     ]
 }

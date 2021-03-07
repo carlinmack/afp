@@ -31,20 +31,20 @@
         }
     ],
     "theories": [
-        "Measure_Preserving_Transformations",
-        "Invariants",
-        "Normalizing_Sequences",
-        "Fekete",
-        "Ergodicity",
-        "Kohlberg_Neyman_Karlsson",
-        "ME_Library_Complement",
-        "Kingman",
-        "Transfer_Operator",
         "SG_Library_Complement",
+        "ME_Library_Complement",
+        "Fekete",
         "Asymptotic_Density",
+        "Measure_Preserving_Transformations",
         "Recurrence",
+        "Invariants",
+        "Ergodicity",
         "Shift_Operator",
-        "Gouezel_Karlsson"
+        "Kingman",
+        "Gouezel_Karlsson",
+        "Kohlberg_Neyman_Karlsson",
+        "Transfer_Operator",
+        "Normalizing_Sequences"
     ],
     "contributors": [
         "Manuel Eberl"

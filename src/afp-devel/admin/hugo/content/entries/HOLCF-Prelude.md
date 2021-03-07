@@ -32,18 +32,22 @@
         }
     ],
     "theories": [
-        "Num_Class",
-        "List_Comprehension",
-        "Data_Tuple",
+        "HOLCF_Main",
+        "Type_Classes",
+        "Numeral_Cpo",
         "Data_Function",
         "Data_Bool",
-        "Type_Classes",
-        "Data_List",
+        "Data_Tuple",
         "Data_Integer",
+        "Data_List",
         "Data_Maybe",
         "Definedness",
-        "Numeral_Cpo",
+        "List_Comprehension",
+        "Num_Class",
         "HOLCF_Prelude",
-        "HOLCF_Main"
+        "Fibs",
+        "Sieve_Primes",
+        "GHC_Rewrite_Rules",
+        "HLint"
     ]
 }

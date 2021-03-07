@@ -70,9 +70,9 @@
         "DataRefinementIBP"
     ],
     "theories": [
-        "StackMark",
         "Graph",
         "SetMark",
+        "StackMark",
         "LinkMark",
         "DSWMark"
     ]

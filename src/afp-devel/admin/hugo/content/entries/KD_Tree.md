@@ -28,9 +28,9 @@
         "Median_Of_Medians_Selection"
     ],
     "theories": [
+        "KD_Tree",
         "Build",
         "Range_Search",
-        "KD_Tree",
         "Nearest_Neighbors"
     ]
 }

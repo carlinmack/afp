@@ -38,15 +38,18 @@
         "Refine_Imperative_HOL"
     ],
     "theories": [
-        "Network",
+        "Fofu_Abs_Base",
+        "Fofu_Impl_Base",
+        "Refine_Add_Fofu",
         "Graph",
-        "Network_Impl",
+        "Network",
+        "Residual_Graph",
+        "Augmenting_Flow",
         "Augmenting_Path",
         "Ford_Fulkerson",
-        "NetCheck",
         "Graph_Impl",
-        "Augmenting_Flow",
-        "Residual_Graph"
+        "Network_Impl",
+        "NetCheck"
     ],
     "relatedEntries": [
         "Kruskal"

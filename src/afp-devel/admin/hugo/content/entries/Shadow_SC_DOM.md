@@ -18,7 +18,16 @@
         "Core_SC_DOM"
     ],
     "theories": [
-        "Shadow_DOM_Tests",
-        "Shadow_DOM"
+        "ShadowRootClass",
+        "ShadowRootMonad",
+        "Shadow_DOM",
+        "Shadow_DOM_BaseTest",
+        "slots",
+        "slots_fallback",
+        "Shadow_DOM_Document_adoptNode",
+        "Shadow_DOM_Document_getElementById",
+        "Shadow_DOM_Node_insertBefore",
+        "Shadow_DOM_Node_removeChild",
+        "Shadow_DOM_Tests"
     ]
 }

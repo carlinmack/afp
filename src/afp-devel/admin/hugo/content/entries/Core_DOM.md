@@ -20,5 +20,39 @@
         {
             "2018": "2019-01-07"
         }
+    ],
+    "theories": [
+        "Hiding_Type_Variables",
+        "Ref",
+        "Core_DOM_Basic_Datatypes",
+        "BaseClass",
+        "Heap_Error_Monad",
+        "BaseMonad",
+        "ObjectPointer",
+        "ObjectClass",
+        "ObjectMonad",
+        "NodePointer",
+        "NodeClass",
+        "NodeMonad",
+        "ElementPointer",
+        "CharacterDataPointer",
+        "DocumentPointer",
+        "ShadowRootPointer",
+        "ElementClass",
+        "ElementMonad",
+        "CharacterDataClass",
+        "CharacterDataMonad",
+        "DocumentClass",
+        "DocumentMonad",
+        "Core_DOM_Functions",
+        "Core_DOM_Heap_WF",
+        "Core_DOM",
+        "Testing_Utils",
+        "Core_DOM_BaseTest",
+        "Document_adoptNode",
+        "Document_getElementById",
+        "Node_insertBefore",
+        "Node_removeChild",
+        "Core_DOM_Tests"
     ]
 }

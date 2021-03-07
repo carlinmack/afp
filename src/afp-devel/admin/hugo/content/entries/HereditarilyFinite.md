@@ -47,9 +47,9 @@
     "theories": [
         "HF",
         "Ordinal",
-        "Finitary",
         "Rank",
         "Finite_Automata",
+        "Finitary",
         "OrdArith"
     ],
     "relatedEntries": [

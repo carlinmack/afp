@@ -36,16 +36,16 @@
     ],
     "theories": [
         "Is_Rat_To_Rat",
-        "Newton_Interpolation",
-        "Neville_Aitken_Interpolation",
-        "Ring_Hom",
-        "Polynomial_Interpolation",
-        "Improved_Code_Equations",
-        "Missing_Polynomial",
         "Divmod_Int",
-        "Ring_Hom_Poly",
+        "Improved_Code_Equations",
+        "Ring_Hom",
         "Missing_Unsorted",
-        "Lagrange_Interpolation"
+        "Missing_Polynomial",
+        "Ring_Hom_Poly",
+        "Newton_Interpolation",
+        "Lagrange_Interpolation",
+        "Neville_Aitken_Interpolation",
+        "Polynomial_Interpolation"
     ],
     "relatedEntries": [
         "Polynomial_Factorization"

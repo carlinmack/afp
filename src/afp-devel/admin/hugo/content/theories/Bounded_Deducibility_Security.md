@@ -1,10 +1,91 @@
 {
     "theories": [
-        "Trivia",
-        "IO_Automaton",
-        "BD_Security",
-        "Compositional_Reasoning",
-        "Bounded_Deducibility_Security"
+        {
+            "Trivia": [
+                "measure_induct2",
+                "two_singl_Rcons"
+            ]
+        },
+        {
+            "IO_Automaton": [
+                "reach_PairI",
+                "holdsIstate_invar",
+                "validTrans",
+                "Nil_not_valid",
+                "Nil_not_valid2",
+                "valid_Rcons",
+                "valid_hd_Rcons",
+                "valid2_hd_Rcons",
+                "valid2_last_Cons",
+                "valid2_Cons",
+                "valid_valid2",
+                "validFrom_Nil",
+                "validFrom_valid",
+                "validFrom_validTrans",
+                "valid_reach_src_tgt",
+                "valid_init_reach",
+                "Trans_fst_sndI",
+                "reach_init_valid",
+                "reach_validFrom"
+            ]
+        },
+        {
+            "BD_Security": [
+                "V_simps",
+                "O_simps",
+                "reachNT_PairI",
+                "reachNT_reach",
+                "reachNT_stateO_aux",
+                "reachNT_state_cases",
+                "invarNT_disj",
+                "invarNT_conj",
+                "holdsIstate_invarNT",
+                "V_iff_non_φ",
+                "V_imp_φ",
+                "V_imp_Nil",
+                "V_iff_Nil",
+                "length_consume",
+                "ex_consume_φ",
+                "ex_consume_NO",
+                "iactionI",
+                "matchI",
+                "ignoreI",
+                "reactionI",
+                "exit_coind",
+                "noVal_disj",
+                "noVal_conj",
+                "noφ_noVal",
+                "exitI",
+                "exitI2",
+                "noVal2_disj",
+                "noVal2_conj",
+                "noVal_noVal2",
+                "exitI_noVal2",
+                "exitI2_noVal2",
+                "exit_validFrom",
+                "unwindI",
+                "unwind_trace"
+            ]
+        },
+        {
+            "Compositional_Reasoning": [
+                "disjAll_simps",
+                "iaction_mono",
+                "match_mono",
+                "ignore_mono",
+                "reaction_mono",
+                "unwind_toI",
+                "unwind_dec",
+                "init_dec",
+                "unwind_contI",
+                "unwind_exitI",
+                "set_allConsec",
+                "allConsec_set"
+            ]
+        },
+        {
+            "Bounded_Deducibility_Security": []
+        }
     ],
     "url": "entries/bounded_deducibility_security/theories",
     "title": "Session Bounded_Deducibility_Security"

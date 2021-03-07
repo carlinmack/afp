@@ -22,18 +22,18 @@
         "Priority_Search_Trees"
     ],
     "theories": [
-        "Undirected_Graph_Specs",
-        "Directed_Graph_Specs",
-        "Directed_Graph_Impl",
-        "Directed_Graph",
-        "Prim_Abstract",
-        "Dijkstra_Impl",
-        "Prim_Impl",
-        "Chapter_Dijkstra",
-        "Dijkstra_Abstract",
+        "Common",
         "Chapter_Prim",
         "Undirected_Graph",
-        "Common",
-        "Undirected_Graph_Impl"
+        "Undirected_Graph_Specs",
+        "Prim_Abstract",
+        "Undirected_Graph_Impl",
+        "Prim_Impl",
+        "Chapter_Dijkstra",
+        "Directed_Graph",
+        "Directed_Graph_Specs",
+        "Dijkstra_Abstract",
+        "Directed_Graph_Impl",
+        "Dijkstra_Impl"
     ]
 }

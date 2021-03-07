@@ -22,15 +22,15 @@
     ],
     "theories": [
         "Degree_Section",
+        "Degree_Bound_Utils",
         "Groebner_Macaulay",
-        "Hilbert_Function",
+        "Binomial_Int",
         "Poly_Fun",
         "Monomial_Module",
-        "Groebner_Macaulay_Examples",
-        "Degree_Bound_Utils",
         "Dube_Prelims",
-        "Binomial_Int",
+        "Hilbert_Function",
         "Cone_Decomposition",
-        "Dube_Bound"
+        "Dube_Bound",
+        "Groebner_Macaulay_Examples"
     ]
 }

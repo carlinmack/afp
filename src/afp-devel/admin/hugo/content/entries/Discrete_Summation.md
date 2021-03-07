@@ -42,9 +42,9 @@
         }
     ],
     "theories": [
+        "Factorials",
         "Discrete_Summation",
         "Summation_Conversion",
-        "Factorials",
         "Examples"
     ]
 }

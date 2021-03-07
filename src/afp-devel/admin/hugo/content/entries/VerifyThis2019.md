@@ -23,12 +23,14 @@
         "Sepref_IICF"
     ],
     "theories": [
-        "Parallel_Multiset_Fold",
-        "Challenge3",
-        "Challenge2B",
-        "Challenge2A",
+        "Exc_Nres_Monad",
+        "VTcomp",
+        "Challenge1A",
         "Challenge1B",
-        "Challenge1A"
+        "Challenge2A",
+        "Challenge2B",
+        "Parallel_Multiset_Fold",
+        "Challenge3"
     ],
     "relatedEntries": [
         "VerifyThis2018"

@@ -29,12 +29,12 @@
         "Budan_Fourier"
     ],
     "theories": [
-        "Winding_Number_Eval_Examples",
-        "Cauchy_Index_Theorem",
-        "Missing_Algebraic",
         "Missing_Topology",
-        "Winding_Number_Eval",
+        "Missing_Algebraic",
         "Missing_Transcendental",
-        "Missing_Analysis"
+        "Missing_Analysis",
+        "Cauchy_Index_Theorem",
+        "Winding_Number_Eval",
+        "Winding_Number_Eval_Examples"
     ]
 }

@@ -1,16 +1,15 @@
 """
-Designed to be run once on new release of Isabelle. Takes around 24 minutes/42 minutes.
+Designed to be run once on new release of Isabelle. Takes around 80 minutes?
 """
 import argparse
-
 import os
 import re
-from os.path import isdir
+import warnings
 
 import requests
 from bs4 import BeautifulSoup
+from bs4.element import NavigableString
 from tqdm import tqdm
-import warnings
 
 from writeFile import writeFile
 
@@ -19,10 +18,11 @@ def getTheories(all=False, entry=""):
     hugoDir = "hugo/"
     theoriesHtmlDir = hugoDir + "static/theories/"
     theoriesJsonDir = hugoDir + "content/theories/"
+    entriesJsonDir = hugoDir + "content/entries/"
     rootDir = "../thys"
 
     if entry:
-        processURL(entry, theoriesHtmlDir, theoriesJsonDir)
+        processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir)
         return
 
     numEntries = len(os.listdir(rootDir))
@@ -36,31 +36,38 @@ def getTheories(all=False, entry=""):
         updateProgressBar(entry, t)
 
         entryPath = os.path.join(rootDir, entry)
-        if entry != "Example-Submission" and os.path.isdir(entryPath):
+        # Don't correctly handle the example submission yet
+        # The second two are broken due to excessively nested html (hundreds of elements)
+        brokenEntries = ["Example-Submission", "MonoidalCategory", "Bicategory"]
+        if entry not in brokenEntries and os.path.isdir(entryPath):
             if all or not os.path.isfile(theoriesHtmlDir + entry + ".html"):
-                processURL(entry, theoriesHtmlDir, theoriesJsonDir)
+                processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir)
 
 
-def processURL(entry, theoriesHtmlDir, theoriesJsonDir):
+def processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir):
     names, links = theoryLinks(entry)
 
     if links != 0:
-        theories = ""
+        theoriesHtml = ""
+        theoriesJson = []
 
         for i, link in enumerate(links):
-            theories += getTheory(link, names[i])
+            html, lemmas = getTheory(link, names[i])
+            theoriesHtml += html
+            theoriesJson.append({names[i]: lemmas})
 
         with open(theoriesHtmlDir + entry + ".html", "w") as w:
-            w.write(theories)
+            w.write(theoriesHtml)
 
-        writeFile(theoriesJsonDir + entry + ".md", {"theories": names})
+        writeFile(theoriesJsonDir + entry + ".md", {"theories": theoriesJson})
+        writeFile(entriesJsonDir + entry + ".md", {"theories": names})
 
 
 def theoryLinks(entry):
-    def getTheoryLinks(url, divClass):
+    def getTheoryLinks(url):
         content = requests.get(url).content
         soup = BeautifulSoup(content, features="lxml")
-        theories = soup.find("div", {"class": divClass}).findAll("a")
+        theories = soup.find("div", {"class": "contents"}).findAll("a")
 
         return theories
 
@@ -69,16 +76,17 @@ def theoryLinks(entry):
         links = [url + a["href"] for a in theories]
         return names, links
 
-
     url = "https://devel.isa-afp.org/browser_info/current/AFP/%s/" % entry
     try:
-        theories = getTheoryLinks(url, "contents")
+        theories = getTheoryLinks(url)
         names, links = getOutput(theories, url)
 
     except AttributeError:
+        # sometimes large entries will be skipped in the devel version
+        # so their theories will be unavailable
         url = "https://www.isa-afp.org/browser_info/current/AFP/%s/" % entry
         try:
-            theories = getTheoryLinks(url, "theories")
+            theories = getTheoryLinks(url)
             names, links = getOutput(theories, url)
 
         except AttributeError:
@@ -94,7 +102,18 @@ def getTheory(url, name):
     contents = soup.body
     contents.name = "div"
     contents["id"] = name
-    return str(contents)
+
+    lemmaElements = contents.find_all(class_="keyword1", string="lemma")
+    lemmas = []
+    for lemmaElement in lemmaElements:
+        lemmaName = lemmaElement.next_sibling
+        if isinstance(lemmaName, NavigableString):
+            lemmaName = lemmaName.strip()
+            if lemmaName:
+                lemmaElement["id"] = name + "-" + lemmaName
+                lemmas.append(lemmaName)
+
+    return str(contents), lemmas
 
 
 def updateProgressBar(desc, t):

@@ -35,7 +35,7 @@
         "Partial_Semigroup_Models",
         "Quantales",
         "Binary_Modalities",
-        "Partial_Semigroup_Lifting",
-        "Unary_Modalities"
+        "Unary_Modalities",
+        "Partial_Semigroup_Lifting"
     ]
 }

@@ -29,9 +29,9 @@
         }
     ],
     "theories": [
+        "Bernoulli",
         "Periodic_Bernpoly",
-        "Bernoulli_Zeta",
         "Bernoulli_FPS",
-        "Bernoulli"
+        "Bernoulli_Zeta"
     ]
 }

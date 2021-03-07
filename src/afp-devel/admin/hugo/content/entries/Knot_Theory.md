@@ -36,17 +36,17 @@
         "Matrix_Tensor"
     ],
     "theories": [
+        "Preliminaries",
         "Tangles",
         "Tangle_Algebra",
-        "Linkrel_Kauffman",
         "Tangle_Relation",
-        "Preliminaries",
+        "Tangle_Moves",
         "Link_Algebra",
-        "Knot_Theory",
         "Example",
-        "Computations",
-        "Kauffman_Invariance",
         "Kauffman_Matrix",
-        "Tangle_Moves"
+        "Computations",
+        "Linkrel_Kauffman",
+        "Kauffman_Invariance",
+        "Knot_Theory"
     ]
 }

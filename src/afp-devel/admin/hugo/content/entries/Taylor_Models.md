@@ -31,12 +31,12 @@
         "Affine_Arithmetic"
     ],
     "theories": [
-        "Horner_Eval",
-        "Taylor_Models_Misc",
-        "Polynomial_Expression_Additional",
-        "Float_Topology",
-        "Taylor_Models",
         "Polynomial_Expression",
+        "Float_Topology",
+        "Horner_Eval",
+        "Polynomial_Expression_Additional",
+        "Taylor_Models_Misc",
+        "Taylor_Models",
         "Experiments"
     ]
 }

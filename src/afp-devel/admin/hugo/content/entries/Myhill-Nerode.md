@@ -66,12 +66,12 @@
     ],
     "theories": [
         "Folds",
-        "Myhill",
-        "Non_Regular_Languages",
         "Myhill_1",
-        "Closures2",
+        "Myhill_2",
+        "Myhill",
         "Closures",
-        "Myhill_2"
+        "Closures2",
+        "Non_Regular_Languages"
     ],
     "relatedEntries": [
         "Finite_Automata_HF",

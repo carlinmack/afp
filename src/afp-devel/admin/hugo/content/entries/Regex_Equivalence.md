@@ -49,16 +49,16 @@
         "Spec_Check"
     ],
     "theories": [
-        "Benchmark",
-        "Before2",
-        "Derivatives_Finite",
-        "Regex_Equivalence",
-        "Position_Autos",
         "Automaton",
+        "Derivatives_Finite",
         "Deriv_PDeriv",
         "Deriv_Autos",
+        "Position_Autos",
         "After2",
-        "Examples"
+        "Before2",
+        "Regex_Equivalence",
+        "Examples",
+        "Benchmark"
     ],
     "relatedEntries": [
         "Myhill-Nerode",

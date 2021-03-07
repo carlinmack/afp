@@ -67,10 +67,10 @@
         "LatticeProperties"
     ],
     "theories": [
-        "Diagram",
-        "DataRefinement",
         "Preliminaries",
         "Statements",
-        "Hoare"
+        "Hoare",
+        "Diagram",
+        "DataRefinement"
     ]
 }

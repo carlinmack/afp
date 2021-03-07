@@ -33,17 +33,23 @@
         "List-Index"
     ],
     "theories": [
-        "SD_Efficiency",
-        "Randomised_Social_Choice",
-        "SDS_Lowering",
         "Order_Predicates",
-        "Random_Dictatorship",
         "Preference_Profiles",
-        "Social_Decision_Schemes",
-        "Lotteries",
-        "Random_Serial_Dictatorship",
-        "Stochastic_Dominance",
         "Elections",
-        "Utility_Functions"
+        "Lotteries",
+        "Utility_Functions",
+        "Stochastic_Dominance",
+        "SD_Efficiency",
+        "Social_Decision_Schemes",
+        "SDS_Lowering",
+        "Random_Dictatorship",
+        "Random_Serial_Dictatorship",
+        "Randomised_Social_Choice",
+        "Preference_Profile_Cmd",
+        "files/preference_profiles.ML",
+        "QSOpt_Exact",
+        "SDS_Automation",
+        "files/randomised_social_choice.ML",
+        "files/sds_automation.ML"
     ]
 }

@@ -65,8 +65,8 @@
         }
     ],
     "theories": [
-        "Exec",
         "DFS",
-        "Presburger_Automata"
+        "Presburger_Automata",
+        "Exec"
     ]
 }

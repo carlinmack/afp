@@ -27,8 +27,8 @@
     "theories": [
         "Prelims",
         "More_MPoly",
-        "Signature_Examples",
-        "Signature_Groebner"
+        "Signature_Groebner",
+        "Signature_Examples"
     ],
     "relatedEntries": [
         "Nullstellensatz"

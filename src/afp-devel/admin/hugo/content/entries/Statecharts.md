@@ -58,17 +58,17 @@
         }
     ],
     "theories": [
-        "HAKripke",
-        "CarAudioSystem",
-        "Kripke",
-        "DataSpace",
-        "HA",
-        "HAOps",
-        "Expr",
-        "Data",
         "Contrib",
+        "DataSpace",
+        "Data",
         "Update",
+        "Expr",
+        "SA",
+        "HA",
         "HASem",
-        "SA"
+        "Kripke",
+        "HAKripke",
+        "HAOps",
+        "CarAudioSystem"
     ]
 }

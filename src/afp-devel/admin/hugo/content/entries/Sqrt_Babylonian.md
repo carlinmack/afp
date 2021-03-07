@@ -55,8 +55,8 @@
     ],
     "theories": [
         "Sqrt_Babylonian_Auxiliary",
-        "Sqrt_Babylonian",
+        "Log_Impl",
         "NthRoot_Impl",
-        "Log_Impl"
+        "Sqrt_Babylonian"
     ]
 }

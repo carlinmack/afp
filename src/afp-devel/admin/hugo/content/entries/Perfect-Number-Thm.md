@@ -64,7 +64,7 @@
     ],
     "theories": [
         "PerfectBasics",
-        "Perfect",
-        "Sigma"
+        "Sigma",
+        "Perfect"
     ]
 }

@@ -24,20 +24,20 @@
         }
     ],
     "theories": [
-        "Invariants",
-        "Dependency",
-        "SetUtils",
-        "RelUtils",
         "FactoredSystemLib",
-        "FSSublist",
-        "AcycSspace",
-        "FmapUtils",
-        "Acyclicity",
         "ListUtils",
-        "ActionSeqProcess",
-        "SystemAbstraction",
-        "TopologicalProps",
+        "FSSublist",
         "HoArithUtils",
-        "FactoredSystem"
+        "FmapUtils",
+        "FactoredSystem",
+        "ActionSeqProcess",
+        "RelUtils",
+        "Dependency",
+        "Invariants",
+        "SetUtils",
+        "TopologicalProps",
+        "SystemAbstraction",
+        "Acyclicity",
+        "AcycSspace"
     ]
 }

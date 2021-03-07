@@ -72,15 +72,15 @@
         }
     ],
     "theories": [
-        "Ordinal",
-        "OrdinalOmega",
-        "OrdinalInverse",
-        "OrdinalCont",
-        "OrdinalInduct",
-        "OrdinalArith",
-        "OrdinalRec",
         "OrdinalDef",
+        "OrdinalInduct",
+        "OrdinalCont",
+        "OrdinalRec",
+        "OrdinalArith",
+        "OrdinalInverse",
+        "OrdinalFix",
+        "OrdinalOmega",
         "OrdinalVeblen",
-        "OrdinalFix"
+        "Ordinal"
     ]
 }

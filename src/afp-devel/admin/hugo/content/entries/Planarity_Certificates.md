@@ -37,6 +37,31 @@
         "Graph_Theory"
     ],
     "theories": [
+        "Lib",
+        "OptionMonad",
+        "NonDetMonad",
+        "NonDetMonadLemmas",
+        "OptionMonadND",
+        "WP",
+        "files/WP-method.ML",
+        "OptionMonadWP",
+        "Graph_Genus",
+        "List_Aux",
+        "Executable_Permutations",
+        "Digraph_Map_Impl",
+        "Planar_Complete",
+        "Reachablen",
+        "Permutations_2",
+        "Planar_Subdivision",
+        "Planar_Subgraph",
+        "Kuratowski_Combinatorial",
+        "Simpl_Anno",
+        "Check_Non_Planarity_Impl",
+        "Check_Non_Planarity_Verification",
+        "AutoCorres_Misc",
+        "Setup_AutoCorres",
+        "files/AFP/Case_Labeling/util.ML",
+        "Check_Planarity_Verification",
         "Planarity_Certificates"
     ]
 }

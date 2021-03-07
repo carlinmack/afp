@@ -68,8 +68,8 @@
         }
     ],
     "theories": [
-        "Execute",
         "Semantics",
-        "secTypes"
+        "secTypes",
+        "Execute"
     ]
 }

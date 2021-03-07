@@ -57,16 +57,16 @@
         }
     ],
     "theories": [
-        "CSP_Processes",
-        "Relations",
-        "Var_list",
-        "Circus_Actions",
-        "Circus_Syntax",
-        "Denotational_Semantics",
-        "Refinement_Example",
         "Var",
+        "Relations",
         "Designs",
         "Reactive_Processes",
-        "Refinement"
+        "CSP_Processes",
+        "Circus_Actions",
+        "Var_list",
+        "Denotational_Semantics",
+        "Circus_Syntax",
+        "Refinement",
+        "Refinement_Example"
     ]
 }

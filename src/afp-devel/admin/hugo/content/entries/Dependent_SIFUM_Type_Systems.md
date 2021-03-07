@@ -37,12 +37,16 @@
         }
     ],
     "theories": [
-        "Language",
-        "Compositionality",
         "Preliminaries",
-        "LocallySoundModeUse",
         "Security",
-        "TypeSystem"
+        "Compositionality",
+        "Language",
+        "TypeSystem",
+        "LocallySoundModeUse",
+        "Example",
+        "TypeSystemTactics",
+        "Example_TypeSystem",
+        "Example_Swap_Add"
     ],
     "relatedEntries": [
         "Dependent_SIFUM_Refinement"

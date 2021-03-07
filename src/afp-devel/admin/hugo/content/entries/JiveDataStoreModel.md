@@ -72,5 +72,19 @@
         {
             "2005": "2005-10-14"
         }
+    ],
+    "theories": [
+        "TypeIds",
+        "JavaType",
+        "DirectSubtypes",
+        "Subtype",
+        "Attributes",
+        "AttributesIndep",
+        "Value",
+        "Location",
+        "Store",
+        "StoreProperties",
+        "JML",
+        "UnivSpec"
     ]
 }

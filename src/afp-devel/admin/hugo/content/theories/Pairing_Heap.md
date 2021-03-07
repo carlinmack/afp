@@ -1,8 +1,69 @@
 {
     "theories": [
-        "Pairing_Heap_Tree",
-        "Pairing_Heap_List1",
-        "Pairing_Heap_List2"
+        {
+            "Pairing_Heap_Tree": [
+                "link_struct",
+                "pass",
+                "pass",
+                "is_root_merge",
+                "is_root_insert",
+                "is_root_del_min",
+                "pheap_merge",
+                "pheap_insert",
+                "pheap_link",
+                "pheap_pass1",
+                "pheap_pass2",
+                "pheap_del_min",
+                "get_min_in",
+                "get_min_min",
+                "mset_link",
+                "mset_pass",
+                "mset_pass",
+                "mset_merge",
+                "mset_del_min"
+            ]
+        },
+        {
+            "Pairing_Heap_List1": [
+                "pass12_merge_pairs",
+                "pheap_merge",
+                "pheap_merge_pairs",
+                "pheap_insert",
+                "pheap_del_min",
+                "mset_heap_empty_iff",
+                "get_min_in",
+                "get_min_min",
+                "get_min",
+                "mset_merge",
+                "mset_insert",
+                "mset_merge_pairs",
+                "mset_del_min"
+            ]
+        },
+        {
+            "Pairing_Heap_List2": [
+                "merge_None",
+                "pass12_merge_pairs",
+                "php_link",
+                "invar_merge",
+                "invar_insert",
+                "invar_pass1",
+                "invar_pass2",
+                "invar_Some",
+                "invar_del_min",
+                "set_mset_mset_hp",
+                "mset_hp_empty",
+                "mset_heap_Some",
+                "mset_heap_empty",
+                "get_min_in",
+                "get_min_min",
+                "mset_link",
+                "mset_merge",
+                "mset_insert",
+                "mset_merge_pairs",
+                "mset_del_min"
+            ]
+        }
     ],
     "url": "entries/pairing_heap/theories",
     "title": "Session Pairing_Heap"

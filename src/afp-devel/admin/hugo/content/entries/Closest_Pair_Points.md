@@ -27,8 +27,8 @@
         "Root_Balanced_Tree"
     ],
     "theories": [
-        "Closest_Pair",
         "Common",
+        "Closest_Pair",
         "Closest_Pair_Alternative"
     ]
 }

@@ -1,7 +1,58 @@
 {
     "theories": [
-        "Trie",
-        "Tries"
+        {
+            "Trie": [
+                "trie_induct",
+                "update_trie_induct",
+                "update_trie_Nil",
+                "update_trie_Cons",
+                "invar_empty",
+                "is_empty_conv",
+                "lookup_empty",
+                "lookup_empty'",
+                "lookup_update",
+                "lookup_update'",
+                "lookup_eq_Some_iff",
+                "lookup_eq_None_iff",
+                "update_not_empty",
+                "invar_trie_update",
+                "is_empty_lookup_empty",
+                "lookup_update_with_trie",
+                "delete_eq_empty_lookup_other_fail",
+                "lookup_delete",
+                "lookup_delete'",
+                "invar_trie_delete",
+                "nonempty_update_with_aux",
+                "nonempty_update_with_trie",
+                "invar_update_with_trie",
+                "dom_lookup",
+                "finite_dom_lookup",
+                "dom_lookup_empty_conv",
+                "ran_lookup_Trie",
+                "all_trie_eq_ran"
+            ]
+        },
+        {
+            "Tries": [
+                "lookup_Nil",
+                "lookup_Cons",
+                "lookup_empty",
+                "invar_insert_tries",
+                "invar_inserts_tries",
+                "invar_of_list",
+                "set_lookup_insert_tries",
+                "in_set_lookup_inserts_tries",
+                "in_set_lookup_of_list",
+                "in_set_lookup_inserts_triesD",
+                "in_set_lookup_of_listD",
+                "set_tries_eq_ran",
+                "set_tries_empty",
+                "set_tries_insert",
+                "set_insert_tries",
+                "set_tries_of_list",
+                "in_set_lookup_set_triesD"
+            ]
+        }
     ],
     "url": "entries/trie/theories",
     "title": "Session Trie"

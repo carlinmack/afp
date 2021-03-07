@@ -31,9 +31,9 @@
     ],
     "theories": [
         "multisets_continued",
-        "equational_clausal_logic",
-        "superposition",
         "well_founded_continued",
-        "terms"
+        "terms",
+        "equational_clausal_logic",
+        "superposition"
     ]
 }

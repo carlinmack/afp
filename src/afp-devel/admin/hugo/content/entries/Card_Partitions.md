@@ -36,8 +36,8 @@
         "Discrete_Summation"
     ],
     "theories": [
-        "Injectivity_Solver",
         "Set_Partition",
+        "Injectivity_Solver",
         "Card_Partitions"
     ],
     "relatedEntries": [

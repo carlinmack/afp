@@ -36,13 +36,13 @@
         "First_Order_Terms"
     ],
     "theories": [
-        "Completeness",
-        "Unification_Theorem",
-        "Completeness_Instance",
-        "Examples",
-        "Tree",
         "TermsAndLiterals",
-        "Resolution"
+        "Tree",
+        "Resolution",
+        "Completeness",
+        "Examples",
+        "Unification_Theorem",
+        "Completeness_Instance"
     ],
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover"

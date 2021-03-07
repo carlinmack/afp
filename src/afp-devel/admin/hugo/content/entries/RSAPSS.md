@@ -76,17 +76,17 @@
         }
     ],
     "theories": [
-        "WordOperations",
-        "Mod",
-        "EMSAPSS",
-        "Crypt",
-        "Cryptinverts",
-        "SHA1",
-        "RSAPSS",
         "Word",
-        "Productdivides",
-        "Wordarith",
+        "WordOperations",
         "SHA1Padding",
-        "Pdifference"
+        "SHA1",
+        "Wordarith",
+        "EMSAPSS",
+        "Mod",
+        "Crypt",
+        "Pdifference",
+        "Productdivides",
+        "Cryptinverts",
+        "RSAPSS"
     ]
 }

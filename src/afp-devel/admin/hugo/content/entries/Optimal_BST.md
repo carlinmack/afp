@@ -29,13 +29,13 @@
         "Monad_Memo_DP"
     ],
     "theories": [
-        "Optimal_BST",
-        "Optimal_BST_Memo",
-        "Optimal_BST_Code",
         "Weighted_Path_Length",
+        "Optimal_BST",
         "Quadrilateral_Inequality",
+        "Optimal_BST2",
         "Optimal_BST_Examples",
-        "Optimal_BST2"
+        "Optimal_BST_Code",
+        "Optimal_BST_Memo"
     ],
     "relatedEntries": [
         "Hidden_Markov_Models"

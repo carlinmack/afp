@@ -61,13 +61,22 @@
     ],
     "theories": [
         "Markov_Models_Auxiliary",
-        "MDP_Reachability_Problem",
+        "Discrete_Time_Markov_Chain",
         "Trace_Space_Equals_Markov_Processes",
         "Classifying_Markov_Chain_States",
-        "Discrete_Time_Markov_Chain",
-        "Markov_Models",
-        "Continuous_Time_Markov_Chain",
+        "Markov_Decision_Process",
+        "MDP_Reachability_Problem",
         "Discrete_Time_Markov_Process",
-        "Markov_Decision_Process"
+        "Continuous_Time_Markov_Chain",
+        "Markov_Models",
+        "Example_A",
+        "Example_B",
+        "PCTL",
+        "PGCL",
+        "Crowds_Protocol",
+        "Zeroconf_Analysis",
+        "Gossip_Broadcast",
+        "MDP_RP_Certification",
+        "MDP_RP"
     ]
 }

@@ -48,8 +48,8 @@
     ],
     "theories": [
         "Real_Impl_Auxiliary",
-        "Real_Impl",
         "Prime_Product",
+        "Real_Impl",
         "Real_Unique_Impl"
     ],
     "relatedEntries": [

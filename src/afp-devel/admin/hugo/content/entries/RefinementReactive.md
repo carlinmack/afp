@@ -37,7 +37,7 @@
     ],
     "theories": [
         "Temporal",
-        "Reactive",
-        "Refinement"
+        "Refinement",
+        "Reactive"
     ]
 }

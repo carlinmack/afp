@@ -58,7 +58,22 @@
         "Affine_Arithmetic"
     ],
     "theories": [
-        "ODE_Analysis",
-        "ODE_Auxiliarities"
+        "ODE_Auxiliarities",
+        "MVT_Ex",
+        "Vector_Derivative_On",
+        "Interval_Integral_HK",
+        "Gronwall",
+        "Initial_Value_Problem",
+        "Picard_Lindeloef_Qualitative",
+        "Bounded_Linear_Operator",
+        "Multivariate_Taylor",
+        "Flow",
+        "Upper_Lower_Solution",
+        "Poincare_Map",
+        "Reachability_Analysis",
+        "Flow_Congs",
+        "Cones",
+        "Linear_ODE",
+        "ODE_Analysis"
     ]
 }

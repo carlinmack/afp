@@ -22,17 +22,17 @@
         }
     ],
     "theories": [
-        "Jacobi_Symbol",
         "Legendre_Symbol",
+        "Algebraic_Auxiliaries",
+        "Jacobi_Symbol",
         "Residues_Nat",
+        "QuadRes",
+        "Euler_Witness",
+        "Carmichael_Numbers",
+        "Fermat_Witness",
         "Generalized_Primality_Test",
         "Fermat_Test",
-        "Solovay_Strassen_Test",
-        "Euler_Witness",
-        "Algebraic_Auxiliaries",
-        "QuadRes",
         "Miller_Rabin_Test",
-        "Carmichael_Numbers",
-        "Fermat_Witness"
+        "Solovay_Strassen_Test"
     ]
 }

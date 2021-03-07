@@ -43,17 +43,17 @@
     ],
     "theories": [
         "SetUtils",
-        "CombinatorialAuction",
-        "StrictCombinatorialAuction",
-        "CombinatorialAuctionCodeExtraction",
-        "FirstPrice",
+        "Partitions",
+        "RelationOperators",
         "RelationProperties",
-        "CombinatorialAuctionExamples",
         "Argmax",
         "MiscTools",
-        "RelationOperators",
+        "StrictCombinatorialAuction",
         "Universes",
         "UniformTieBreaking",
-        "Partitions"
+        "CombinatorialAuction",
+        "CombinatorialAuctionCodeExtraction",
+        "FirstPrice",
+        "CombinatorialAuctionExamples"
     ]
 }

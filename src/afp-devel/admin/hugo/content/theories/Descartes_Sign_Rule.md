@@ -1,6 +1,51 @@
 {
     "theories": [
-        "Descartes_Sign_Rule"
+        {
+            "Descartes_Sign_Rule": [
+                "op_plus_0",
+                "filter_dropWhile",
+                "pos_root_exI",
+                "reduce_root_pCons",
+                "reduce_root_nonzero",
+                "length_psums",
+                "psums_Cons",
+                "last_psums",
+                "psums_0_Cons",
+                "map_uminus_psums",
+                "psums_replicate_0_append",
+                "psums_nth",
+                "sign_changes_Nil",
+                "sign_changes_singleton",
+                "sign_changes_cong",
+                "sign_changes_Cons_ge",
+                "sign_changes_Cons_Cons_different",
+                "sign_changes_Cons_Cons_same",
+                "sign_changes_0_Cons",
+                "sign_changes_two",
+                "sign_changes_induct",
+                "sign_changes_filter",
+                "sign_changes_Cons_Cons_0",
+                "sign_changes_uminus",
+                "sign_changes_replicate",
+                "sign_changes_decompose",
+                "even_sign_changes_iff",
+                "arthan_wlog",
+                "arthan_aux1",
+                "arthan",
+                "finite_roots_with",
+                "count_roots_with_times_root",
+                "sign_changes_coeff_sign_changes",
+                "coeff_sign_changes_reduce_root",
+                "coeff_sign_changes_smult",
+                "odd_coeff_sign_changes_imp_pos_roots_aux",
+                "odd_coeff_sign_changes_imp_pos_roots",
+                "coeff_poly_times_one_minus_x",
+                "Poly_times_one_minus_x_eq_psums",
+                "sign_changes_poly_times_one_minus_x",
+                "sign_changes_poly_times_root_minus_x",
+                "descartes_sign_rule_aux"
+            ]
+        }
     ],
     "url": "entries/descartes_sign_rule/theories",
     "title": "Session Descartes_Sign_Rule"

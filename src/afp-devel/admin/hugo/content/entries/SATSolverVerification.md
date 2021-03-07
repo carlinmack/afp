@@ -69,20 +69,20 @@
         }
     ],
     "theories": [
-        "Trail",
-        "Initialization",
-        "SolveLoop",
-        "CNF",
-        "SatSolverVerification",
-        "AssertLiteral",
-        "Decide",
-        "KrsticGoel",
         "MoreList",
-        "ConflictAnalysis",
-        "NieuwenhuisOliverasTinelli",
+        "CNF",
+        "Trail",
+        "SatSolverVerification",
         "BasicDPLL",
+        "NieuwenhuisOliverasTinelli",
+        "KrsticGoel",
+        "SatSolverCode",
+        "AssertLiteral",
         "UnitPropagate",
-        "FunctionalImplementation",
-        "SatSolverCode"
+        "Initialization",
+        "ConflictAnalysis",
+        "Decide",
+        "SolveLoop",
+        "FunctionalImplementation"
     ]
 }

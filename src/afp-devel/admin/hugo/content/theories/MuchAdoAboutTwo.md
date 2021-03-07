@@ -1,6 +1,50 @@
 {
     "theories": [
-        "MuchAdoAboutTwo"
+        {
+            "MuchAdoAboutTwo": [
+                "non_empty_n2l",
+                "n2l_l2n_id",
+                "n2l_l2n_map_id",
+                "Lemma_1",
+                "upt_map_Suc",
+                "divide_and_conquer_induct",
+                "all_set_inter_empty_distinct",
+                "partitions_sorted",
+                "L1",
+                "L2",
+                "L3",
+                "L4",
+                "L5",
+                "L6",
+                "L7",
+                "foldl1_append",
+                "foldl1_induct'",
+                "L8",
+                "Lemma_2",
+                "foldl1_map",
+                "Lemma_3",
+                "f1_assoc",
+                "f2_assoc",
+                "Figure_2",
+                "Figure_3",
+                "L9",
+                "L10",
+                "Figure_4",
+                "Figure_5",
+                "Figure_6",
+                "Figure_7",
+                "js_is_a_permutation",
+                "Figure_7_trans",
+                "js_partition_order",
+                "js_equals_upt_k",
+                "Lemma_4",
+                "Lemma_5",
+                "non_empty_candidate_results",
+                "Proposition_1",
+                "Prop_2_step_L7",
+                "Proposition_2"
+            ]
+        }
     ],
     "url": "entries/muchadoabouttwo/theories",
     "title": "Session MuchAdoAboutTwo"

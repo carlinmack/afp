@@ -55,9 +55,21 @@
         "Stuttering_Equivalence"
     ],
     "theories": [
+        "HOModel",
         "Reduction",
         "Majorities",
-        "HOModel"
+        "OneThirdRuleDefs",
+        "OneThirdRuleProof",
+        "UvDefs",
+        "UvProof",
+        "LastVotingDefs",
+        "LastVotingProof",
+        "UteDefs",
+        "UteProof",
+        "AteDefs",
+        "AteProof",
+        "EigbyzDefs",
+        "EigbyzProof"
     ],
     "relatedEntries": [
         "Consensus_Refined"

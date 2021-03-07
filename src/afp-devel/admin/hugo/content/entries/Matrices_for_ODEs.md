@@ -17,10 +17,10 @@
         "Hybrid_Systems_VCs"
     ],
     "theories": [
-        "SQ_MTX",
         "MTX_Preliminaries",
-        "MTX_Examples",
+        "MTX_Norms",
+        "SQ_MTX",
         "MTX_Flows",
-        "MTX_Norms"
+        "MTX_Examples"
     ]
 }

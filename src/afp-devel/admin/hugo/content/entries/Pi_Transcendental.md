@@ -25,7 +25,7 @@
         "Symmetric_Polynomials"
     ],
     "theories": [
-        "Pi_Transcendental",
-        "Pi_Transcendental_Polynomial_Library"
+        "Pi_Transcendental_Polynomial_Library",
+        "Pi_Transcendental"
     ]
 }

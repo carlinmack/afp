@@ -35,9 +35,9 @@
     ],
     "theories": [
         "Weighted_FO_Ordered_Resolution_Prover",
-        "Executable_Subsumption",
-        "IsaFoR_Term",
         "Deterministic_FO_Ordered_Resolution_Prover",
+        "IsaFoR_Term",
+        "Executable_Subsumption",
         "Executable_FO_Ordered_Resolution_Prover"
     ],
     "relatedEntries": [

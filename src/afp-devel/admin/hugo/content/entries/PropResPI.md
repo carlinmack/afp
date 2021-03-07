@@ -30,7 +30,7 @@
         }
     ],
     "theories": [
-        "Prime_Implicates",
-        "Propositional_Resolution"
+        "Propositional_Resolution",
+        "Prime_Implicates"
     ]
 }
