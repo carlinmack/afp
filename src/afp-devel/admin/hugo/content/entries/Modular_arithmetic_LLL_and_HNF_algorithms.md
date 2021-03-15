@@ -2,8 +2,8 @@
     "title": "Two algorithms based on modular arithmetic: lattice basis reduction and Hermite normal form computation",
     "authors": [
         "Ralph Bottesch",
-        "Jose Divason",
-        "Rene Thiemann"
+        "Jose Divasón",
+        "René Thiemann"
     ],
     "topics": [
         "Computer science/Algorithms/Mathematical"
