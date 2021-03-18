@@ -38,7 +38,7 @@
     ],
     "relatedEntries": [
         "Dirichlet_Series",
-        "Dirichlet_L",
-        "Gauss_Sums"
+        "Gauss_Sums",
+        "Dirichlet_L"
     ]
 }

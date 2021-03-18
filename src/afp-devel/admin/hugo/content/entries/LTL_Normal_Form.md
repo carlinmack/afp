@@ -24,7 +24,7 @@
     ],
     "relatedEntries": [
         "LTL_to_GBA",
-        "LTL_to_DRA",
-        "LTL_Master_Theorem"
+        "Stuttering_Equivalence",
+        "LTL_to_DRA"
     ]
 }

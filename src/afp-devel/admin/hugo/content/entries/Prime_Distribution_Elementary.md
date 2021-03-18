@@ -39,8 +39,8 @@
         "PNT_Consequences"
     ],
     "relatedEntries": [
-        "Dirichlet_L",
         "Prime_Number_Theorem",
+        "Dirichlet_L",
         "Zeta_3_Irrational"
     ]
 }
