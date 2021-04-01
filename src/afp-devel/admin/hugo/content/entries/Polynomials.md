@@ -103,7 +103,7 @@
     ],
     "relatedEntries": [
         "Matrix",
-        "Myhill-Nerode",
-        "Decreasing-Diagrams-II"
+        "Decreasing-Diagrams-II",
+        "Myhill-Nerode"
     ]
 }

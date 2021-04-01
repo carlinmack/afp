@@ -36,7 +36,7 @@
     ],
     "relatedEntries": [
         "Euler_MacLaurin",
-        "Lambert_W",
-        "Error_Function"
+        "Error_Function",
+        "Zeta_Function"
     ]
 }

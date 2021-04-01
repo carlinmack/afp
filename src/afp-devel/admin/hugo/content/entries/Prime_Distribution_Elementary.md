@@ -40,7 +40,7 @@
     ],
     "relatedEntries": [
         "Prime_Number_Theorem",
-        "Dirichlet_L",
-        "Zeta_3_Irrational"
+        "Zeta_3_Irrational",
+        "Dirichlet_L"
     ]
 }

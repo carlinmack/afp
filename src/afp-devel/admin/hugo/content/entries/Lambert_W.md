@@ -22,7 +22,7 @@
     ],
     "relatedEntries": [
         "Euler_MacLaurin",
-        "Stirling_Formula",
-        "Zeta_Function"
+        "Zeta_Function",
+        "Stirling_Formula"
     ]
 }

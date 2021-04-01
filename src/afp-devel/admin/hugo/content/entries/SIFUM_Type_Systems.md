@@ -53,7 +53,7 @@
         "LocallySoundModeUse"
     ],
     "relatedEntries": [
-        "Strong_Security",
-        "WHATandWHERE_Security"
+        "WHATandWHERE_Security",
+        "Strong_Security"
     ]
 }

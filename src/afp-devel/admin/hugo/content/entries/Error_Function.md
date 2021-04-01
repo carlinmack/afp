@@ -31,7 +31,7 @@
         "Error_Function_Asymptotics"
     ],
     "relatedEntries": [
-        "Stirling_Formula",
-        "Euler_MacLaurin"
+        "Euler_MacLaurin",
+        "Stirling_Formula"
     ]
 }

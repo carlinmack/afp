@@ -33,7 +33,7 @@
         "Polya_Vinogradov"
     ],
     "relatedEntries": [
-        "Zeta_Function",
-        "Dirichlet_L"
+        "Dirichlet_L",
+        "Zeta_Function"
     ]
 }

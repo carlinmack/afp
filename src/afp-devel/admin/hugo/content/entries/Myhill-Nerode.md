@@ -76,6 +76,6 @@
     "relatedEntries": [
         "Finite_Automata_HF",
         "Decreasing-Diagrams-II",
-        "Regex_Equivalence"
+        "Posix-Lexing"
     ]
 }
