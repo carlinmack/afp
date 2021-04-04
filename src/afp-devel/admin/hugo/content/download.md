@@ -8,7 +8,7 @@ menu:
 
 ### **Current stable version** (for current Isabelle release):
 
-Download all sessions are available to download: [afp-current.tar.gz (~70 MB)](https://www.isa-afp.org/release/afp-current.tar.gz)
+Download all sessions: [afp-current.tar.gz (~70 MB)](https://www.isa-afp.org/release/afp-current.tar.gz)
 
 ### Older stable versions:
 
@@ -20,7 +20,7 @@ At [Heptapod](https://foss.heptapod.net/isa-afp/afp-devel/) (development version
 
 ### Metadata Download
 
-The metadata of all entries is available as an array of JSON objects: [metadata.json (~1 MB)](release/metadata.json).
+The metadata of all entries is available as an array of JSON objects: [metadata.json (~1 MB)](/release/metadata.json).
 
 ### How to refer to AFP entries:
 
