@@ -7,14 +7,14 @@
     {{ $currentPage := . -}}
     <ul>
       {{- range .Site.Menus.main }}
-      <a href="{{- .URL -}}"><li {{ if $currentPage.IsMenuCurrent "main" . }}class="active" {{ end }}>{{- .Name -}}
-      </li></a>
+      <li {{ if $currentPage.IsMenuCurrent "main" . }}class="active" {{ end }}><a href="{{- .URL -}}">{{- .Name -}}
+      </a></li>
       {{- end }}
     </ul>
   </div>
   <ul>
     {{- range .Site.Menus.bottom }}
-    <a href="{{- .URL -}}"><li {{ if $currentPage.IsMenuCurrent "bottom" . }}class="active" {{ end }}>{{- .Name -}}</li></a>
+    <li {{ if $currentPage.IsMenuCurrent "bottom" . }}class="active" {{ end }}><a href="{{- .URL -}}">{{- .Name -}}</a></li>
     {{- end }}
   </ul>
 </div>
