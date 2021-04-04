@@ -1,12 +1,15 @@
+import time
+
 from tqdm import tqdm
 
 from addDependencies import addDependencies
 from addOlderReleases import addOlderReleases
 from addRelatedEntries import addRelatedEntries
 from addStatistics import addStatistics
+from exportJsonMetadata import exportJsonMetadata
 from generateKeywords import generateKeywords
 from iniToJson import iniToJson
-import time
+
 
 def updateProgressBar(desc, t):
     t.update()
@@ -37,6 +40,10 @@ if __name__ == "__main__":
 
     updateProgressBar("Generate keywords", t)
     generateKeywords()
+    tick = outputTime(tick)
+
+    updateProgressBar("Export metadata.json", t)
+    exportJsonMetadata()
     tick = outputTime(tick)
 
     updateProgressBar("Export statistics", t)
