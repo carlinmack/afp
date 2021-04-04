@@ -51,7 +51,6 @@
     ],
     "relatedEntries": [
         "Stuttering_Equivalence",
-        "LTL_Master_Theorem",
-        "LTL_Normal_Form"
+        "Promela"
     ]
 }

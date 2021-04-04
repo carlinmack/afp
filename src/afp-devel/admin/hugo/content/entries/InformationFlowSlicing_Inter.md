@@ -37,7 +37,6 @@
         "LiftingInter"
     ],
     "relatedEntries": [
-        "InformationFlowSlicing",
-        "HRB-Slicing"
+        "InformationFlowSlicing"
     ]
 }

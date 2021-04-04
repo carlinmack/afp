@@ -21,8 +21,6 @@
         "Lambert_W_MacLaurin_Series"
     ],
     "relatedEntries": [
-        "Euler_MacLaurin",
-        "Stirling_Formula",
-        "Zeta_Function"
+        "Euler_MacLaurin"
     ]
 }

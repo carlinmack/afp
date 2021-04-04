@@ -34,8 +34,8 @@
         "Instance"
     ],
     "relatedEntries": [
-        "Goedel_HFSet_Semantic",
         "Incompleteness",
+        "Goedel_HFSet_Semantic",
         "Robinson_Arithmetic"
     ]
 }

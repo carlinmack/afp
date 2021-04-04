@@ -35,8 +35,6 @@
         "Gamma_Asymptotics"
     ],
     "relatedEntries": [
-        "Euler_MacLaurin",
-        "Error_Function",
-        "Lambert_W"
+        "Euler_MacLaurin"
     ]
 }

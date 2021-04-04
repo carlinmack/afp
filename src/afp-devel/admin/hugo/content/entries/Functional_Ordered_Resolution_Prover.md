@@ -41,8 +41,8 @@
         "Executable_FO_Ordered_Resolution_Prover"
     ],
     "relatedEntries": [
-        "Ordered_Resolution_Prover",
         "Saturation_Framework_Extensions",
+        "Ordered_Resolution_Prover",
         "Saturation_Framework"
     ]
 }

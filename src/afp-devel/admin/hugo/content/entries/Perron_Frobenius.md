@@ -61,8 +61,8 @@
         "Check_Matrix_Growth"
     ],
     "relatedEntries": [
-        "Jordan_Normal_Form",
         "Subresultants",
+        "Jordan_Normal_Form",
         "Algebraic_Numbers"
     ]
 }

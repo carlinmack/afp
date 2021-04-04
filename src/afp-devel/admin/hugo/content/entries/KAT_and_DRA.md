@@ -47,7 +47,7 @@
     ],
     "relatedEntries": [
         "KAD",
-        "Algebraic_VCs",
+        "Multirelations",
         "Relation_Algebra"
     ],
     "theories": [

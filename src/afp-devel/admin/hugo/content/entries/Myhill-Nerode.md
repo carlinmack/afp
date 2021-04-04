@@ -74,8 +74,8 @@
         "Non_Regular_Languages"
     ],
     "relatedEntries": [
-        "Finite_Automata_HF",
         "Decreasing-Diagrams-II",
-        "Posix-Lexing"
+        "Finite_Automata_HF",
+        "Polynomials"
     ]
 }

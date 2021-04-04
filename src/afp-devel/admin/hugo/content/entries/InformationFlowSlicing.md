@@ -71,7 +71,6 @@
         "NonInterferenceWhile"
     ],
     "relatedEntries": [
-        "InformationFlowSlicing_Inter",
-        "HRB-Slicing"
+        "InformationFlowSlicing_Inter"
     ]
 }

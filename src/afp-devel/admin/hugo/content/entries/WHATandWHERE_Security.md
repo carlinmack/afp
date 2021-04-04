@@ -56,7 +56,6 @@
         "Type_System_example"
     ],
     "relatedEntries": [
-        "Strong_Security",
-        "SIFUM_Type_Systems"
+        "Strong_Security"
     ]
 }

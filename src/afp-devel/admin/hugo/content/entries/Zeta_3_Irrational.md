@@ -26,7 +26,6 @@
         "Zeta_3_Irrational"
     ],
     "relatedEntries": [
-        "Irrational_Series_Erdos_Straus",
-        "Prime_Distribution_Elementary"
+        "Irrational_Series_Erdos_Straus"
     ]
 }

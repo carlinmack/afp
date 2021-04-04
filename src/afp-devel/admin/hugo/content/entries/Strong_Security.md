@@ -56,7 +56,6 @@
         "Type_System_example"
     ],
     "relatedEntries": [
-        "WHATandWHERE_Security",
-        "SIFUM_Type_Systems"
+        "WHATandWHERE_Security"
     ]
 }
