@@ -2,18 +2,20 @@ from tqdm import tqdm
 
 from addDependencies import addDependencies
 from addOlderReleases import addOlderReleases
+from addRelatedEntries import addRelatedEntries
 from addStatistics import addStatistics
+from generateKeywords import generateKeywords
 from iniToJson import iniToJson
-from relatedEntries import addRelatedEntries
-from addTheories import addTheories
+
 
 def updateProgressBar(desc, t):
     t.update()
     t.set_description(desc)
 
+
 if __name__ == "__main__":
-    t = tqdm(total=6, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s')
-    
+    t = tqdm(total=6, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s")
+
     updateProgressBar("Export metadata to JSON", t)
     iniToJson()
 
@@ -22,16 +24,15 @@ if __name__ == "__main__":
 
     updateProgressBar("Add dependencies", t)
     addDependencies()
-    
-    updateProgressBar("Add theories", t)
-    addTheories()
-    
+
     updateProgressBar("Add related entries", t)
     addRelatedEntries()
 
-    if False:
-        updateProgressBar("Export statistics", t)
-        # for this to work add `return data` at line 212 in templates.py
-        addStatistics()
+    updateProgressBar("Generate keywords", t)
+    generateKeywords()
+
+    updateProgressBar("Export statistics", t)
+    # for this to work add `return data` at line 212 in templates.py
+    addStatistics()
 
     t.close()

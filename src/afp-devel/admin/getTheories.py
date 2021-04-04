@@ -59,7 +59,13 @@ def processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir):
         with open(theoriesHtmlDir + entry + ".html", "w") as w:
             w.write(theoriesHtml)
 
-        writeFile(theoriesJsonDir + entry + ".md", {"theories": theoriesJson})
+        theoryData = {
+            "url": "entries" + "/" + entry.lower() + "/" + "theories",
+            "title": "Session " + entry,
+            "theories": theoriesJson,
+        }
+
+        writeFile(theoriesJsonDir + entry + ".md", theoryData)
         writeFile(entriesJsonDir + entry + ".md", {"theories": names})
 
 

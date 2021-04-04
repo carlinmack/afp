@@ -8,6 +8,7 @@ from writeFile import writeFile
 def iniToJson():
     hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
+    theoriesDir = hugoDir + "content/theories/"
     dataDir = hugoDir + "data/"
 
     if not os.path.exists(entriesDir):
@@ -33,13 +34,9 @@ def iniToJson():
 
                 data[key] = jsonContributors
             elif key == "topic":
-                data["topics"] = list(
-                    map(lambda x: x.strip(), val.split(","))
-                )
+                data["topics"] = list(map(lambda x: x.strip(), val.split(",")))
             elif key == "notify":
-                data[key] = list(
-                    map(lambda x: x.strip(), val.split(","))
-                )
+                data[key] = list(map(lambda x: x.strip(), val.split(",")))
             elif re.match("extra-", key):
                 sepValue = val.split(":")
                 extraKey = sepValue[0].strip()
@@ -55,7 +52,7 @@ def iniToJson():
                     data["extra"] = {extraKey: extraVal}
             else:
                 data[key] = val
-        
+
         if "license" not in data:
             data["licence"] = "BSD"
 
@@ -73,6 +70,8 @@ def processName(val, authorsDictionary):
     for author in authors:
         metadata = re.findall("<(.*?)>", author)
         authorName = re.sub("<(.*?)>", "", author).strip()
+        authorName = standardiseInitials(authorName)
+        authorName = deduplicate(authorName)
 
         for datum in metadata:
             if re.match("mailto:", datum):
@@ -89,6 +88,32 @@ def processName(val, authorsDictionary):
 
         jsonAuthors.append(authorName)
     return jsonAuthors
+
+
+def standardiseInitials(name):
+    if re.match(".* [A-Z] .*", name):
+        name = re.sub(r"( [A-Z]) ", r"\1. ", name)
+
+    if re.match(".*( [A-Z].)([A-Z]. ).*", name):
+        name = re.sub(r"( [A-Z].)([A-Z]. )", r"\1 \2", name)
+
+    return name
+
+
+def deduplicate(name):
+    if name == "Florian Kammueller":
+        return "Florian Kammüller"
+    if name == "Jasmin Blanchette":
+        return "Jasmin Christian Blanchette"
+    if name == "Jose Manuel Rodriguez Caballero":
+        return "José Manuel Rodríguez Caballero"
+    if name == "Maximilian Haslbeck":
+        return "Maximilian P. L. Haslbeck"
+    if name == "Ognjen Maric":
+        return "Ognjen Marić"
+    if name == "Sebastiaan Joosten":
+        return "Sebastiaan J. C. Joosten"
+    return name
 
 
 if __name__ == "__main__":

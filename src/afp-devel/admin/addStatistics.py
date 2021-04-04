@@ -46,7 +46,7 @@ def addStatistics():
         "all_articles": all_articles,
     }
 
-    writeFile(dataDir + "statistics.json", data) 
+    writeFile(dataDir + "statistics.json", data)
 
 
 if __name__ == "__main__":

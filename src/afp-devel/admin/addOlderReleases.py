@@ -3,6 +3,7 @@ from datetime import date
 
 from writeFile import writeFile
 
+
 def addOlderReleases():
     releaseNames = []
     releaseDates = []
@@ -44,11 +45,15 @@ def addOlderReleases():
             numReleases = len(releaseDates)
             for i in range(numReleases):
                 if i + 1 < numReleases:
-                    if (entryReleaseDate >= releaseDates[i] and
-                        entryReleaseDate < releaseDates[i + 1]):
+                    # finding which release it corresponds to
+                    if (
+                        entryReleaseDate >= releaseDates[i]
+                        and entryReleaseDate < releaseDates[i + 1]
+                    ):
                         entryReleases.append({releaseNames[i]: entryDateString})
                         break
                 else:
+                    # use the most recent release
                     entryReleases.append({releaseNames[-1]: entryDateString})
 
 
