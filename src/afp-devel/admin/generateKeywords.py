@@ -2,10 +2,12 @@
 import json
 import os
 import re
+import sys
 from itertools import groupby
 
 import unidecode
 
+sys.path.append("rake")
 from rake.rake import Rake
 
 
