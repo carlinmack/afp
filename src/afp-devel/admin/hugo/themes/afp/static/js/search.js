@@ -281,9 +281,12 @@ function populateResults(results, searchQuery, indices, all = false) {
     ${year ? `<p>${year}</p>` : ""}
   </div>
   <div class="abstract mathjax_process">${abstract}</div>
-    ${usedBy ? `<span>Used by <a href="/dependencies/${link}">${usedBy}</a> |</span>` : ""} ${
-            topicString ? `<span>${topicString}</span>` : ""
-        }
+    ${ usedBy
+        ? `<div>Used by <a href="/dependencies/${link}">${usedBy}</a> | ${
+                topicString ? `${topicString} ` : ""
+            }</div>`
+        : ""
+    } ${topicString ? `<div>${topicString}</div>` : ""}
 </div>`;
 
         resultsTable.insertAdjacentHTML("beforeend", output);

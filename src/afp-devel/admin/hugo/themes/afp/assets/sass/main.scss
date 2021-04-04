@@ -520,6 +520,10 @@ code {
             padding-bottom: 1.5rem;
         }
 
+        div+div {
+            margin-top: 1rem;
+        }
+
         .title,
         .subtitle {
             display: flex;
@@ -587,6 +591,11 @@ a[download] {
         text-align: right;
         width: 15%;
         font-family: $monospace;
+    }
+
+    h5 {
+        font-size: initial;
+        display: initial;
     }
 }
 
