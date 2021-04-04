@@ -1,7 +1,7 @@
 {{- define "main" -}}
 {{- $site := . -}}
 <main>
-  {{ $file := printf "static/theories/%s.html" $site.File.TranslationBaseName}}
+  {{ $file := printf "data/theories/%s.html" $site.File.TranslationBaseName}}
   {{ if fileExists $file -}}
     {{ readFile $file | safeHTML }}
   {{ else }}
