@@ -18,8 +18,6 @@ def generateKeywords():
 
     rake_object = Rake(stoppath, min_char_length=3, max_words_length=2)
 
-    # text = sample_file.read()
-
     replacements = [
         ("\s+", " "),
         ("<.*?>", ""),
