@@ -28,5 +28,8 @@
         "Aggregation_Algebras",
         "Matrix_Aggregation_Algebras",
         "Linear_Aggregation_Algebras"
+    ],
+    "relatedEntries": [
+        "Relational_Minimum_Spanning_Trees"
     ]
 }

@@ -2,7 +2,7 @@
     "title": "Consensus Refined",
     "date": "2015-03-18",
     "authors": [
-        "Ognjen Maric",
+        "Ognjen Marić",
         "Christoph Sprenger"
     ],
     "topics": [

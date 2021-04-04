@@ -3,8 +3,8 @@
     "authors": [
         "Ralph Bottesch",
         "Jose Divasón",
-        "Maximilian Haslbeck",
-        "Sebastiaan Joosten",
+        "Maximilian P. L. Haslbeck",
+        "Sebastiaan J. C. Joosten",
         "René Thiemann",
         "Akihisa Yamada"
     ],

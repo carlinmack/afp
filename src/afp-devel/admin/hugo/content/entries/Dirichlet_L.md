@@ -35,8 +35,8 @@
         "Dirichlet_Theorem"
     ],
     "relatedEntries": [
-        "Prime_Distribution_Elementary",
         "Dirichlet_Series",
-        "Prime_Number_Theorem"
+        "Gauss_Sums",
+        "Prime_Distribution_Elementary"
     ]
 }

@@ -51,7 +51,7 @@
     ],
     "relatedEntries": [
         "Stuttering_Equivalence",
-        "LTL_to_DRA",
+        "LTL_Master_Theorem",
         "LTL_Normal_Form"
     ]
 }

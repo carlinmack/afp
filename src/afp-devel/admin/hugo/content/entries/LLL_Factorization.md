@@ -2,7 +2,7 @@
     "title": "A verified factorization algorithm for integer polynomials with polynomial complexity",
     "authors": [
         "Jose Divasón",
-        "Sebastiaan Joosten",
+        "Sebastiaan J. C. Joosten",
         "René Thiemann",
         "Akihisa Yamada"
     ],

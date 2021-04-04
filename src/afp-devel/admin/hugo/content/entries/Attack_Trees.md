@@ -1,7 +1,7 @@
 {
     "title": "Attack Trees in Isabelle for GDPR compliance of IoT healthcare systems",
     "authors": [
-        "Florian Kammueller"
+        "Florian Kammüller"
     ],
     "topics": [
         "Computer science/Security"

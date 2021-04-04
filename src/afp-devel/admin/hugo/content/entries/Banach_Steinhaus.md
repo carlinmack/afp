@@ -2,7 +2,7 @@
     "title": "Banach-Steinhaus Theorem",
     "authors": [
         "Dominique Unruh",
-        "Jose Manuel Rodriguez Caballero"
+        "José Manuel Rodríguez Caballero"
     ],
     "topics": [
         "Mathematics/Analysis"

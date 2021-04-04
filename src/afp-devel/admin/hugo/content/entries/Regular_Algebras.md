@@ -52,8 +52,8 @@
         "Regular_Algebra_Variants"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
         "KAD",
+        "KAT_and_DRA",
         "Relation_Algebra"
     ]
 }

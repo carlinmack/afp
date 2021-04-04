@@ -29,5 +29,8 @@
         "Shadow_DOM_Node_insertBefore",
         "Shadow_DOM_Node_removeChild",
         "Shadow_DOM_Tests"
+    ],
+    "relatedEntries": [
+        "Shadow_DOM"
     ]
 }

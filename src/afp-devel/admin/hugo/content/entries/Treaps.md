@@ -1,7 +1,7 @@
 {
     "title": "Treaps",
     "authors": [
-        "Maximilian Haslbeck",
+        "Maximilian P. L. Haslbeck",
         "Manuel Eberl",
         "Tobias Nipkow"
     ],

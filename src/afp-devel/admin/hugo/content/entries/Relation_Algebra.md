@@ -59,8 +59,8 @@
         "Relation_Algebra_Models"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
         "KAD",
+        "KAT_and_DRA",
         "Multirelations"
     ]
 }

@@ -1,7 +1,7 @@
 {
     "title": "Fourier Series",
     "authors": [
-        "Lawrence C Paulson"
+        "Lawrence C. Paulson"
     ],
     "topics": [
         "Mathematics/Analysis"

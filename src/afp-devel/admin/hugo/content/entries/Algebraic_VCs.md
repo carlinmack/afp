@@ -59,7 +59,7 @@
         "Domain_Quantale"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
-        "Hybrid_Systems_VCs"
+        "Hybrid_Systems_VCs",
+        "KAT_and_DRA"
     ]
 }

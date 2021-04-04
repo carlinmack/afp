@@ -21,5 +21,8 @@
         "Kruskal",
         "Prim",
         "Boruvka"
+    ],
+    "relatedEntries": [
+        "Aggregation_Algebras"
     ]
 }

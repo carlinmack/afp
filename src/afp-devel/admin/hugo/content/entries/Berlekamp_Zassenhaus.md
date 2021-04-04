@@ -2,7 +2,7 @@
     "title": "The Factorization Algorithm of Berlekamp and Zassenhaus",
     "authors": [
         "Jose Divasón",
-        "Sebastiaan Joosten",
+        "Sebastiaan J. C. Joosten",
         "René Thiemann",
         "Akihisa Yamada"
     ],

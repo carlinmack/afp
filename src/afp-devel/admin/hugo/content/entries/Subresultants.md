@@ -1,7 +1,7 @@
 {
     "title": "Subresultants",
     "authors": [
-        "Sebastiaan Joosten",
+        "Sebastiaan J. C. Joosten",
         "René Thiemann",
         "Akihisa Yamada"
     ],

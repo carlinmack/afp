@@ -33,8 +33,8 @@
         "Mertens_Theorems"
     ],
     "relatedEntries": [
+        "Dirichlet_L",
         "Prime_Distribution_Elementary",
-        "Ptolemys_Theorem",
-        "Dirichlet_L"
+        "Ptolemys_Theorem"
     ]
 }

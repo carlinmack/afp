@@ -37,6 +37,6 @@
     "relatedEntries": [
         "Euler_MacLaurin",
         "Error_Function",
-        "Zeta_Function"
+        "Lambert_W"
     ]
 }

@@ -1,7 +1,7 @@
 {
     "title": "Extensions to the Comprehensive Framework for Saturation Theorem Proving",
     "authors": [
-        "Jasmin Blanchette",
+        "Jasmin Christian Blanchette",
         "Sophie Tourret"
     ],
     "topics": [

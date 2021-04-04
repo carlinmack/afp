@@ -47,6 +47,6 @@
     "relatedEntries": [
         "Lambda_Free_RPOs",
         "Lambda_Free_EPO",
-        "Functional_Ordered_Resolution_Prover"
+        "PAC_Checker"
     ]
 }

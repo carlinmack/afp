@@ -1,14 +1,11 @@
 {
     "José Manuel Rodríguez Caballero": {
-        "website": "https://josephcmac.github.io/"
+        "website": "https://josephcmac.github.io/",
+        "mailto": "jose.manuel.rodriguez.caballero@ut.ee"
     },
     "Dominique Unruh": {
         "website": "http://kodu.ut.ee/~unruh/",
         "mailto": "unruh@ut.ee"
-    },
-    "Jose Manuel Rodriguez Caballero": {
-        "website": "https://josephcmac.github.io/",
-        "mailto": "jose.manuel.rodriguez.caballero@ut.ee"
     },
     "Filip Marić": {
         "website": "http://poincare.matf.bg.ac.rs/~filip/",
@@ -20,8 +17,9 @@
     "Pierre Boutry": {
         "mailto": "boutry@unistra.fr"
     },
-    "Lawrence C Paulson": {
-        "website": "https://www.cl.cam.ac.uk/~lp15/"
+    "Lawrence C. Paulson": {
+        "website": "https://www.cl.cam.ac.uk/~lp15/",
+        "mailto": "lp15@cam.ac.uk"
     },
     "Jonas Rädle": {
         "mailto": "jonas.raedle@tum.de"
@@ -79,7 +77,7 @@
         "mailto": "dbutler@turing.ac.uk",
         "website": "https://www.turing.ac.uk/people/doctoral-students/david-butler"
     },
-    "Sebastiaan Joosten": {
+    "Sebastiaan J. C. Joosten": {
         "mailto": "sebastiaan.joosten@uibk.ac.at",
         "website": "http://sjcjoosten.nl/"
     },
@@ -142,7 +140,7 @@
     "Tony Hosking": {
         "website": "https://www.cs.purdue.edu/homes/hosking/"
     },
-    "Maximilian P.L. Haslbeck": {
+    "Maximilian P. L. Haslbeck": {
         "website": "http://in.tum.de/~haslbema/"
     },
     "Achim D. Brucker": {
@@ -237,18 +235,14 @@
     "Ralph Romanos": {
         "mailto": "ralph.romanos@student.ecp.fr"
     },
-    "Lawrence C. Paulson": {
-        "website": "https://www.cl.cam.ac.uk/~lp15/",
-        "mailto": "lp15@cam.ac.uk"
-    },
     "Cornelius Diekmann": {
         "website": "http://net.in.tum.de/~diekmann"
     },
-    "Maximilian Haslbeck": {
-        "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
-    },
     "T. J. M. Makarios": {
         "mailto": "tjm1983@gmail.com"
+    },
+    "Roland Coghetto": {
+        "mailto": "roland_coghetto@hotmail.com"
     },
     "Rok Strniša": {
         "website": "http://rok.strnisa.com/lj/"
@@ -269,9 +263,6 @@
     "Dmitriy Traytel": {
         "website": "https://traytel.bitbucket.io"
     },
-    "Sebastiaan J. C. Joosten": {
-        "website": "http://sjcjoosten.nl/"
-    },
     "Maksym Bortin": {
         "mailto": "Maksym.Bortin@nicta.com.au"
     },
@@ -282,7 +273,8 @@
         "mailto": "helke@cs.tu-berlin.de"
     },
     "Florian Kammüller": {
-        "mailto": "flokam@cs.tu-berlin.de"
+        "mailto": "flokam@cs.tu-berlin.de",
+        "website": "http://www.cs.mdx.ac.uk/people/florian-kammueller/"
     },
     "Stephan Merz": {
         "website": "http://www.loria.fr/~merz"
@@ -347,7 +339,7 @@
         "mailto": "prathamesh@imsc.res.in"
     },
     "Jasmin Christian Blanchette": {
-        "website": "http://www21.in.tum.de/~blanchet",
+        "website": "https://www.cs.vu.nl/~jbe248/",
         "mailto": "j.c.blanchette@vu.nl"
     },
     "Brian Huffman": {
@@ -375,9 +367,6 @@
     },
     "Henry Sudhof": {
         "mailto": "hsudhof@cs.tu-berlin.de"
-    },
-    "Florian Kammueller": {
-        "website": "http://www.cs.mdx.ac.uk/people/florian-kammueller/"
     },
     "Maria Spichkova": {
         "mailto": "maria.spichkova@rmit.edu.au"
@@ -745,9 +734,6 @@
     "Max W. Haslbeck": {
         "website": "http://cl-informatik.uibk.ac.at/users/mhaslbeck/"
     },
-    "Maximilian P. L. Haslbeck": {
-        "website": "http://www.in.tum.de/~haslbema"
-    },
     "Felix Brandt": {
         "website": "http://dss.in.tum.de/staff/brandt.html"
     },
@@ -848,9 +834,6 @@
     "Sophie Tourret": {
         "website": "https://www.mpi-inf.mpg.de/departments/automation-of-logic/people/sophie-tourret"
     },
-    "Jasmin Blanchette": {
-        "website": "https://www.cs.vu.nl/~jbe248/"
-    },
     "Martin Raszyk": {
         "mailto": "martin.raszyk@inf.ethz.ch"
     },
@@ -905,9 +888,6 @@
     "Javier Díaz": {
         "mailto": "javier.diaz.manzi@gmail.com"
     },
-    "Roland Coghetto": {
-        "mailto": "roland_coghetto@hotmail.com"
-    },
     "Alejandro Gómez-Londoño": {
         "mailto": "alejandro.gomez@chalmers.se"
     },
@@ -919,8 +899,5 @@
     },
     "Niels Mündler": {
         "mailto": "n.muendler@tum.de"
-    },
-    "Rene Thiemann": {
-        "website": "http://cl-informatik.uibk.ac.at/users/thiemann/"
     }
 }

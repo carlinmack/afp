@@ -21,5 +21,8 @@
         "Core_DOM_Components",
         "Shadow_DOM_Components",
         "fancy_tabs"
+    ],
+    "relatedEntries": [
+        "SC_DOM_Components"
     ]
 }

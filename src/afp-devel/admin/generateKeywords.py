@@ -38,7 +38,7 @@ def generateKeywords():
         text = unidecode.unidecode(text)
 
         textKeywords = rake_object.run(text)
-        textKeywords = [x[0] for x in textKeywords[:10]]
+        textKeywords = [x[0] for x in textKeywords[:8]]
         keywords += textKeywords
 
     keywords = [i for i, c in groupby(sorted(keywords)) if len(list(c)) > 1]

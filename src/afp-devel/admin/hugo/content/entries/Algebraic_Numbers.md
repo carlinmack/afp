@@ -6,7 +6,7 @@
     "authors": [
         "René Thiemann",
         "Akihisa Yamada",
-        "Sebastiaan Joosten"
+        "Sebastiaan J. C. Joosten"
     ],
     "contributors": [
         "Manuel Eberl"

@@ -1,7 +1,7 @@
 {
     "title": "Analysis of List Update Algorithms",
     "authors": [
-        "Maximilian P.L. Haslbeck",
+        "Maximilian P. L. Haslbeck",
         "Tobias Nipkow"
     ],
     "date": "2016-02-17",

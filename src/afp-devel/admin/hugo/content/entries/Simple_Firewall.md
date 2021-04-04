@@ -3,7 +3,7 @@
     "authors": [
         "Cornelius Diekmann",
         "Julius Michaelis",
-        "Maximilian Haslbeck"
+        "Maximilian P. L. Haslbeck"
     ],
     "notify": [
         "diekmann@net.in.tum.de",

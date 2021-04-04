@@ -61,7 +61,7 @@ def iniToJson():
         else:
             noIndex = False
 
-    writeFile(dataDir + "authors.json", authorsDictionary)
+    writeFile(dataDir + "authors.json", authorsDictionary, overwrite=True)
 
 
 def processName(val, authorsDictionary):

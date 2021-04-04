@@ -2,7 +2,7 @@
     "title": "Algorithms for Reduced Ordered Binary Decision Diagrams",
     "authors": [
         "Julius Michaelis",
-        "Maximilian Haslbeck",
+        "Maximilian P. L. Haslbeck",
         "Peter Lammich",
         "Lars Hupel"
     ],
@@ -55,8 +55,8 @@
         "BDD_Code"
     ],
     "relatedEntries": [
-        "Separation_Logic_Imperative_HOL",
         "JinjaThreads",
+        "Separation_Logic_Imperative_HOL",
         "Containers"
     ]
 }

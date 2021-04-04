@@ -1,7 +1,7 @@
 {
     "title": "Kruskal's Algorithm for Minimum Spanning Forest",
     "authors": [
-        "Maximilian P.L. Haslbeck",
+        "Maximilian P. L. Haslbeck",
         "Peter Lammich",
         "Julian Biendarra"
     ],

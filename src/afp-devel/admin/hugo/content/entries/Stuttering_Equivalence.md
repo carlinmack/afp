@@ -66,7 +66,7 @@
     ],
     "relatedEntries": [
         "LTL_to_GBA",
-        "LTL_to_DRA",
+        "LTL_Master_Theorem",
         "LTL_Normal_Form"
     ]
 }
