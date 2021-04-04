@@ -376,7 +376,7 @@ function populateFindFactsResults(searchTerm, data) {
     var resultsElement = document.getElementById("find-facts-results");
     if (Object.keys(data).length !== 0 && resultsElement) {
         let urlPrefix =
-            'https://search.isabelle.in.tum.de/#search/default_Isabelle2020_AFP2020?q={"term":"';
+            'https://search.isabelle.in.tum.de/#search/default_Isabelle2021_AFP2021?q={"term":"';
         urlPrefix += searchTerm + '","facets":{"Kind":["';
         const urlSuffix = '"]}}';
 
