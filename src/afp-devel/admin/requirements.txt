@@ -1,7 +1,13 @@
+# requirements from relying on upstream code
 jinja2
 pytz
-tqdm
 termcolor
+
+# new requirements 
+tqdm
 unidecode
 bs4
 requests
+
+# requirements from the RAKE code
+six

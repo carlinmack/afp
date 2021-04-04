@@ -28,11 +28,11 @@ if __name__ == "__main__":
     updateProgressBar("Add dependencies", t)
     addDependencies()
 
-    updateProgressBar("Add related entries", t)
-    addRelatedEntries()
-
     updateProgressBar("Generate keywords", t)
     generateKeywords()
+
+    updateProgressBar("Add related entries", t)
+    addRelatedEntries()
 
     updateProgressBar("Export metadata.json", t)
     exportJsonMetadata()
