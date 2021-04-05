@@ -48,16 +48,15 @@ function loadSearch(entries, authors, topics, keywords) {
     indices["suggest"].add(keywords);
 
     var memoQueryFindFacts = memoizer(queryFindFacts);
+    const input = document.getElementById("searchInput");
 
-    var searchQuery = input.value;
-    if (searchQuery) {
-        executeSearch(indices, searchQuery);
+    var searchTerm = input.value;
+    if (searchTerm) {
+        executeSearch(indices, searchTerm);
         memoQueryFindFacts(searchTerm).then((results) =>
             populateFindFactsResults(searchTerm, results)
         );
     }
-
-    const input = document.getElementById("searchInput");
 
     input.addEventListener("keyup", function (event) {
         switch (event.key) {

@@ -10,7 +10,7 @@ sys.path.append("sitegen-lib")
 import afpstats
 import metadata
 import templates
-from config import options, release_pattern
+from config import options
 from sitegen import associate_releases, parse, read_versions
 
 

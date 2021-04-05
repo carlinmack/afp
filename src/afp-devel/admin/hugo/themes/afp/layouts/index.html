@@ -27,8 +27,8 @@
   {{- range .Pages }}
   <article class="entry">
     <div class="item-text">
-      <p><h5><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a></h5> <br>
-        by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}</p>
+      <h5><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a></h5> <br>
+        by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}
     </div>
     <span class="date">
       {{ .Date.Format "02 Jan" }}

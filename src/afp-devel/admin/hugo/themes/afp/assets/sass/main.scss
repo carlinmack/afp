@@ -49,13 +49,9 @@ $border-bottom: 2px $darker-grey solid;
     padding-right: 5px;
 }
 
-%font {
+@font-face {
     font-family: $OpenSans;
     font-display: swap;
-}
-
-@font-face {
-    @extend %font;
     font-style: normal;
     font-weight: 300;
     src: local(""), url("/font/open-sans-v18-latin-300.woff2") format("woff2"),
@@ -63,7 +59,8 @@ $border-bottom: 2px $darker-grey solid;
 }
 
 @font-face {
-    @extend %font;
+    font-family: $OpenSans;
+    font-display: swap;
     font-style: normal;
     font-weight: 400;
     src: local(""), url("/font/open-sans-v18-latin-regular.woff2") format("woff2"),
@@ -71,7 +68,8 @@ $border-bottom: 2px $darker-grey solid;
 }
 
 @font-face {
-    @extend %font;
+    font-family: $OpenSans;
+    font-display: swap;
     font-style: italic;
     font-weight: 400;
     src: local(""), url("/font/open-sans-v18-latin-italic.woff2") format("woff2"),
@@ -79,7 +77,8 @@ $border-bottom: 2px $darker-grey solid;
 }
 
 @font-face {
-    @extend %font;
+    font-family: $OpenSans;
+    font-display: swap;
     font-style: normal;
     font-weight: 700;
     src: local(""), url("/font/open-sans-v18-latin-700.woff2") format("woff2"),
@@ -87,7 +86,8 @@ $border-bottom: 2px $darker-grey solid;
 }
 
 @font-face {
-    @extend %font;
+    font-family: $OpenSans;
+    font-display: swap;
     font-style: italic;
     font-weight: 700;
     src: local(""), url("/font/open-sans-v18-latin-700italic.woff2") format("woff2"),
@@ -585,6 +585,7 @@ a[download] {
 .entry {
     display: flex;
     align-items: center;
+    margin-top: 1.35rem;
 
     a[download] {
         position: absolute;
