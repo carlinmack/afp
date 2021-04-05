@@ -284,5 +284,7 @@
                 "precondition_not_vacuous"
             ]
         }
-    ]
+    ],
+    "url": "entries/adaptive_state_counting/theories",
+    "title": "Session Adaptive_State_Counting"
 }

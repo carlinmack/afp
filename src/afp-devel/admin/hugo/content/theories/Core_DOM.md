@@ -915,5 +915,7 @@
         {
             "Core_DOM_Tests": []
         }
-    ]
+    ],
+    "url": "entries/core_dom/theories",
+    "title": "Session Core_DOM"
 }

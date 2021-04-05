@@ -675,5 +675,7 @@
         {
             "Sep_Examples": []
         }
-    ]
+    ],
+    "url": "entries/auto2_imperative_hol/theories",
+    "title": "Session Auto2_Imperative_HOL"
 }

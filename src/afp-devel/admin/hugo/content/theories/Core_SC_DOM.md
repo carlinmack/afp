@@ -897,5 +897,7 @@
         {
             "Core_DOM_Tests": []
         }
-    ]
+    ],
+    "url": "entries/core_sc_dom/theories",
+    "title": "Session Core_SC_DOM"
 }

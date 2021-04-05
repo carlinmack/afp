@@ -304,5 +304,7 @@
                 "prime_power_mult"
             ]
         }
-    ]
+    ],
+    "url": "entries/auto2_hol/theories",
+    "title": "Session Auto2_HOL"
 }

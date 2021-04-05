@@ -16,7 +16,7 @@ from writeFile import writeFile
 
 def getTheories(all=False, entry=""):
     hugoDir = "hugo/"
-    theoriesHtmlDir = hugoDir + "static/theories/"
+    theoriesHtmlDir = hugoDir + "assets/theories/"
     theoriesJsonDir = hugoDir + "content/theories/"
     entriesJsonDir = hugoDir + "content/entries/"
     rootDir = "../thys"

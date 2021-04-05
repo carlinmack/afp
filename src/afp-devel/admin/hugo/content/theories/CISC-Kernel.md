@@ -173,5 +173,7 @@
         {
             "Link_separation_kernel_model_to_CISK": []
         }
-    ]
+    ],
+    "url": "entries/cisc-kernel/theories",
+    "title": "Session CISC-Kernel"
 }

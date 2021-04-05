@@ -795,5 +795,7 @@
                 "intersect_nodes_finite"
             ]
         }
-    ]
+    ],
+    "url": "entries/transition_systems_and_automata/theories",
+    "title": "Session Transition_Systems_and_Automata"
 }

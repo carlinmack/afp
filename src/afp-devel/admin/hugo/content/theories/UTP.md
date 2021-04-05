@@ -1258,5 +1258,7 @@
                 "HT_assign_closed'"
             ]
         }
-    ]
+    ],
+    "url": "entries/utp/theories",
+    "title": "Session UTP"
 }

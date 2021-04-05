@@ -235,5 +235,7 @@
                 "non_exec_assign_globalD'"
             ]
         }
-    ]
+    ],
+    "url": "entries/clean/theories",
+    "title": "Session Clean"
 }

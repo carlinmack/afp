@@ -435,5 +435,7 @@
         {
             "Sparc_Code_Gen": []
         }
-    ]
+    ],
+    "url": "entries/sparcv8/theories",
+    "title": "Session SPARCv8"
 }

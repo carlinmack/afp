@@ -197,5 +197,7 @@
         {
             "UnivSpec": []
         }
-    ]
+    ],
+    "url": "entries/jivedatastoremodel/theories",
+    "title": "Session JiveDataStoreModel"
 }

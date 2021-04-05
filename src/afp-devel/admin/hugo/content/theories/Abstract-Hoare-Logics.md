@@ -153,5 +153,7 @@
                 "MGT_CALL1"
             ]
         }
-    ]
+    ],
+    "url": "entries/abstract-hoare-logics/theories",
+    "title": "Session Abstract-Hoare-Logics"
 }

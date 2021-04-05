@@ -206,5 +206,7 @@
         {
             "CompositionalityResults": []
         }
-    ]
+    ],
+    "url": "entries/modular_assembly_kit_security/theories",
+    "title": "Session Modular_Assembly_Kit_Security"
 }

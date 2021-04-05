@@ -1220,5 +1220,7 @@
                 "m3_implements_m2"
             ]
         }
-    ]
+    ],
+    "url": "entries/security_protocol_refinement/theories",
+    "title": "Session Security_Protocol_Refinement"
 }

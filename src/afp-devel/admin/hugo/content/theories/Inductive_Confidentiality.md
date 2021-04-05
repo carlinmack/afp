@@ -518,5 +518,7 @@
                 "parts_knowledge_equiv_eq_NS"
             ]
         }
-    ]
+    ],
+    "url": "entries/inductive_confidentiality/theories",
+    "title": "Session Inductive_Confidentiality"
 }

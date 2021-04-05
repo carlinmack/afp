@@ -51,5 +51,7 @@
                 "dict_swf"
             ]
         }
-    ]
+    ],
+    "url": "entries/arrowimpossibilitygs/theories",
+    "title": "Session ArrowImpossibilityGS"
 }

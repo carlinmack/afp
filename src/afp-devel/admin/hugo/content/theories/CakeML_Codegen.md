@@ -598,5 +598,7 @@
         {
             "Test_Datatypes": []
         }
-    ]
+    ],
+    "url": "entries/cakeml_codegen/theories",
+    "title": "Session CakeML_Codegen"
 }

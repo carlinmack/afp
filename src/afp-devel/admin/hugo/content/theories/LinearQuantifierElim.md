@@ -256,5 +256,7 @@
                 "cyclic_dnfD"
             ]
         }
-    ]
+    ],
+    "url": "entries/linearquantifierelim/theories",
+    "title": "Session LinearQuantifierElim"
 }

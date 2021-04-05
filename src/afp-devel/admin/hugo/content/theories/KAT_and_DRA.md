@@ -315,5 +315,7 @@
                 "test_iteration_annir"
             ]
         }
-    ]
+    ],
+    "url": "entries/kat_and_dra/theories",
+    "title": "Session KAT_and_DRA"
 }
