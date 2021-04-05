@@ -8,7 +8,7 @@ from itertools import groupby
 import unidecode
 
 sys.path.append("rake")
-from rake.rake import Rake
+from rake import Rake
 
 
 def generateKeywords():
