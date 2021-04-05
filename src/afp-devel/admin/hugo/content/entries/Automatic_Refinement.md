@@ -76,5 +76,8 @@
         "Autoref_Tool",
         "Autoref_Bindings_HOL",
         "Automatic_Refinement"
+    ],
+    "relatedEntries": [
+        "Collections"
     ]
 }

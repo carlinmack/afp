@@ -39,5 +39,8 @@
         "RGA",
         "Counter",
         "ORSet"
+    ],
+    "relatedEntries": [
+        "IMAP-CRDT"
     ]
 }

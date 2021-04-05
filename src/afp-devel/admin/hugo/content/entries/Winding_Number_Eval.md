@@ -36,5 +36,8 @@
         "Cauchy_Index_Theorem",
         "Winding_Number_Eval",
         "Winding_Number_Eval_Examples"
+    ],
+    "relatedEntries": [
+        "Count_Complex_Roots"
     ]
 }

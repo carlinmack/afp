@@ -51,5 +51,10 @@
         "MoreGraph",
         "KoenigsbergBridge",
         "FriendshipTheory"
+    ],
+    "relatedEntries": [
+        "Graph_Theory",
+        "Menger",
+        "Kruskal"
     ]
 }

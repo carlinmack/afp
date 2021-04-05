@@ -35,5 +35,8 @@
         "Stochastic_Matrix_Markov_Models",
         "Eigenspace",
         "Stochastic_Matrix_Perron_Frobenius"
+    ],
+    "relatedEntries": [
+        "Smith_Normal_Form"
     ]
 }

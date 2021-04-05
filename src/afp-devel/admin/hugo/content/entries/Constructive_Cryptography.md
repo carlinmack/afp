@@ -42,5 +42,8 @@
         "Message_Authentication_Code",
         "Secure_Channel",
         "Examples"
+    ],
+    "relatedEntries": [
+        "CryptHOL"
     ]
 }

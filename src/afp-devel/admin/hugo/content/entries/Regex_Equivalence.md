@@ -61,6 +61,7 @@
         "Benchmark"
     ],
     "relatedEntries": [
+        "Coinductive_Languages",
         "Myhill-Nerode",
         "Posix-Lexing"
     ]

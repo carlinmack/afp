@@ -41,5 +41,8 @@
         "Cotree_Algebra",
         "Stern_Brocot_Tree",
         "Bird_Tree"
+    ],
+    "relatedEntries": [
+        "Applicative_Lifting"
     ]
 }

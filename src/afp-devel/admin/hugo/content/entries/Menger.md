@@ -35,5 +35,9 @@
         "Y_eq_new_last",
         "Y_neq_new_last",
         "Menger"
+    ],
+    "relatedEntries": [
+        "Koenigsberg_Friendship",
+        "Kruskal"
     ]
 }

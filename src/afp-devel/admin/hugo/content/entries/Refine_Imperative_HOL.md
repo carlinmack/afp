@@ -110,5 +110,9 @@
         "Heapmap_Bench",
         "Dijkstra_Benchmark",
         "NDFS_Benchmark"
+    ],
+    "relatedEntries": [
+        "Dijkstra_Shortest_Path",
+        "EdmondsKarp_Maxflow"
     ]
 }

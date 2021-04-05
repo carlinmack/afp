@@ -73,5 +73,8 @@
     ],
     "theories": [
         "Huffman"
+    ],
+    "relatedEntries": [
+        "No_FTL_observers"
     ]
 }

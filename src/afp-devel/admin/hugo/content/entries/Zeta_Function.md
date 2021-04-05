@@ -37,8 +37,8 @@
         "Hadjicostas_Chapman"
     ],
     "relatedEntries": [
-        "Dirichlet_Series",
         "Dirichlet_L",
+        "Dirichlet_Series",
         "Gauss_Sums"
     ]
 }

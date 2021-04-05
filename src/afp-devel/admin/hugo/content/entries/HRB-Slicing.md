@@ -100,8 +100,6 @@
         "HRBSlicing"
     ],
     "relatedEntries": [
-        "Slicing",
-        "InformationFlowSlicing",
-        "InformationFlowSlicing_Inter"
+        "Slicing"
     ]
 }

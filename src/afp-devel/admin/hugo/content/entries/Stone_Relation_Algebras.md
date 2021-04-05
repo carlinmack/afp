@@ -36,5 +36,9 @@
         "Relation_Subalgebras",
         "Matrix_Relation_Algebras",
         "Linear_Order_Matrices"
+    ],
+    "relatedEntries": [
+        "Relation_Algebra",
+        "Stone_Kleene_Relation_Algebras"
     ]
 }

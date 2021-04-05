@@ -70,5 +70,8 @@
         "ListInf",
         "ListInf_Prefix",
         "ListInfinite"
+    ],
+    "relatedEntries": [
+        "Stream_Fusion_Code"
     ]
 }

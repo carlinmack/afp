@@ -38,5 +38,8 @@
         "IMAP-proof-helpers",
         "IMAP-proof-independent",
         "IMAP-proof"
+    ],
+    "relatedEntries": [
+        "CRDT"
     ]
 }

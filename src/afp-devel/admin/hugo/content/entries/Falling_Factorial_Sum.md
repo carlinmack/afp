@@ -31,5 +31,8 @@
         "Falling_Factorial_Sum_Combinatorics",
         "Falling_Factorial_Sum_Induction",
         "Falling_Factorial_Sum_Vandermonde"
+    ],
+    "relatedEntries": [
+        "Bell_Numbers_Spivey"
     ]
 }

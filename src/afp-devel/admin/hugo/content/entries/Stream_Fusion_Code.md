@@ -50,6 +50,8 @@
         "Stream_Fusion_Examples"
     ],
     "relatedEntries": [
-        "Stream-Fusion"
+        "Stream-Fusion",
+        "Coinductive",
+        "Call_Arity"
     ]
 }

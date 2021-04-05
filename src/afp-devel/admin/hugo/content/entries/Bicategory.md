@@ -40,5 +40,10 @@
         "Coherence",
         "InternalAdjunction",
         "Subbicategory"
+    ],
+    "relatedEntries": [
+        "Category2",
+        "Category3",
+        "MonoidalCategory"
     ]
 }

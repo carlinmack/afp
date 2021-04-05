@@ -62,5 +62,10 @@
         "Weighted_Graph",
         "Shortest_Path",
         "Graph_Theory"
+    ],
+    "relatedEntries": [
+        "ShortestPath",
+        "Gabow_SCC",
+        "Koenigsberg_Friendship"
     ]
 }

@@ -39,8 +39,8 @@
         "PNT_Consequences"
     ],
     "relatedEntries": [
-        "Dirichlet_L",
+        "Dirichlet_Series",
         "Prime_Number_Theorem",
-        "Zeta_3_Irrational"
+        "Gauss_Sums"
     ]
 }

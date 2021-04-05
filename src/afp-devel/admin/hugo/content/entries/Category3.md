@@ -60,5 +60,9 @@
         "CategoryWithFiniteLimits",
         "CartesianClosedCategory",
         "HFSetCat"
+    ],
+    "relatedEntries": [
+        "Bicategory",
+        "Category2"
     ]
 }

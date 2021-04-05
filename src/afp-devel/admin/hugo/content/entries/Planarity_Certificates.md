@@ -63,5 +63,8 @@
         "files/AFP/Case_Labeling/util.ML",
         "Check_Planarity_Verification",
         "Planarity_Certificates"
+    ],
+    "relatedEntries": [
+        "Graph_Theory"
     ]
 }

@@ -71,5 +71,8 @@
     ],
     "theories": [
         "Cardinal_Order_Relation_discontinued"
+    ],
+    "relatedEntries": [
+        "ZFC_in_HOL"
     ]
 }

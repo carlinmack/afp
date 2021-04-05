@@ -73,5 +73,8 @@
         "Dijkstra_Impl",
         "Dijkstra_Impl_Adet",
         "Test"
+    ],
+    "relatedEntries": [
+        "Refine_Imperative_HOL"
     ]
 }

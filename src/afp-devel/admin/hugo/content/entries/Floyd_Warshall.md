@@ -34,5 +34,9 @@
         "Floyd_Warshall",
         "Recursion_Combinators",
         "FW_Code"
+    ],
+    "relatedEntries": [
+        "Timed_Automata",
+        "Roy_Floyd_Warshall"
     ]
 }

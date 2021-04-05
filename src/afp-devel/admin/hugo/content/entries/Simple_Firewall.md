@@ -53,5 +53,8 @@
         "Primitives_toString",
         "Service_Matrix",
         "SimpleFw_toString"
+    ],
+    "relatedEntries": [
+        "Iptables_Semantics"
     ]
 }

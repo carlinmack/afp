@@ -34,5 +34,8 @@
         "QDelta",
         "Simplex",
         "Simplex_Incremental"
+    ],
+    "relatedEntries": [
+        "Farkas"
     ]
 }

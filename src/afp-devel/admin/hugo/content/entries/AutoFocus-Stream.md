@@ -65,5 +65,8 @@
         "AF_Stream_Exec",
         "IL_AF_Stream",
         "IL_AF_Stream_Exec"
+    ],
+    "relatedEntries": [
+        "Stream_Fusion_Code"
     ]
 }

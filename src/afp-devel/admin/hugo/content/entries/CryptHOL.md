@@ -54,5 +54,9 @@
         "Cyclic_Group",
         "Cyclic_Group_SPMF",
         "CryptHOL"
+    ],
+    "relatedEntries": [
+        "Constructive_Cryptography",
+        "Constructive_Cryptography_CM"
     ]
 }

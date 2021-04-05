@@ -33,5 +33,8 @@
         "More_Polynomials",
         "Count_Complex_Roots",
         "Count_Complex_Roots_Examples"
+    ],
+    "relatedEntries": [
+        "Winding_Number_Eval"
     ]
 }

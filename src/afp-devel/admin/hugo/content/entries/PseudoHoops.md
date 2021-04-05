@@ -67,5 +67,8 @@
         "PseudoWaisbergAlgebra",
         "SpecialPseudoHoops",
         "Examples"
+    ],
+    "relatedEntries": [
+        "Stone_Algebras"
     ]
 }

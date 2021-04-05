@@ -30,5 +30,9 @@
     ],
     "theories": [
         "KMP"
+    ],
+    "relatedEntries": [
+        "BirdKMP",
+        "PAC_Checker"
     ]
 }

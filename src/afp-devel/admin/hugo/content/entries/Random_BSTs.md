@@ -32,5 +32,8 @@
     ],
     "theories": [
         "Random_BSTs"
+    ],
+    "relatedEntries": [
+        "Skip_Lists"
     ]
 }

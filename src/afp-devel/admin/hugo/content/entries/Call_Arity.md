@@ -106,5 +106,9 @@
         "TTreeImplCardinalitySafe",
         "CallArityEnd2EndSafe",
         "ArityAnalysisCorrDenotational"
+    ],
+    "relatedEntries": [
+        "Launchbury",
+        "Stream_Fusion_Code"
     ]
 }

@@ -59,5 +59,8 @@
         "Action",
         "Projective",
         "Hyperbolic_Tarski"
+    ],
+    "relatedEntries": [
+        "Poincare_Disc"
     ]
 }

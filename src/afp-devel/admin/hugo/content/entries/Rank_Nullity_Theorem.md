@@ -58,5 +58,8 @@
         "Miscellaneous",
         "Fundamental_Subspaces",
         "Dim_Formula"
+    ],
+    "relatedEntries": [
+        "VectorSpace"
     ]
 }

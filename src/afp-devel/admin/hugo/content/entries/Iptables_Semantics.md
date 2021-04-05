@@ -96,5 +96,8 @@
         "Code_haskell",
         "Access_Matrix_Embeddings",
         "Documentation"
+    ],
+    "relatedEntries": [
+        "Simple_Firewall"
     ]
 }

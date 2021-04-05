@@ -36,5 +36,8 @@
         "Poincare_Perpendicular",
         "Poincare",
         "Poincare_Tarski"
+    ],
+    "relatedEntries": [
+        "Tarskis_Geometry"
     ]
 }

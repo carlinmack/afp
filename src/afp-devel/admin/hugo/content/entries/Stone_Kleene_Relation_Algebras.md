@@ -32,5 +32,8 @@
         "Kleene_Relation_Algebras",
         "Kleene_Relation_Subalgebras",
         "Matrix_Kleene_Algebras"
+    ],
+    "relatedEntries": [
+        "Stone_Relation_Algebras"
     ]
 }

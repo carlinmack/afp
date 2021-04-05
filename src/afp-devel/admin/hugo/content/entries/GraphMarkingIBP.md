@@ -75,5 +75,8 @@
         "StackMark",
         "LinkMark",
         "DSWMark"
+    ],
+    "relatedEntries": [
+        "DataRefinementIBP"
     ]
 }

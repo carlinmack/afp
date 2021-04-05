@@ -70,5 +70,9 @@
         "NatTrans",
         "SetCat",
         "Yoneda"
+    ],
+    "relatedEntries": [
+        "Bicategory",
+        "Category3"
     ]
 }

@@ -34,6 +34,7 @@
         "Quantale_Left_Sided"
     ],
     "relatedEntries": [
-        "Transformer_Semantics"
+        "Transformer_Semantics",
+        "Multirelations"
     ]
 }

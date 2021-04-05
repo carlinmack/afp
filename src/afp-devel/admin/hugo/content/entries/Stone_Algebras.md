@@ -37,5 +37,8 @@
         "P_Algebras",
         "Filters",
         "Stone_Construction"
+    ],
+    "relatedEntries": [
+        "PseudoHoops"
     ]
 }

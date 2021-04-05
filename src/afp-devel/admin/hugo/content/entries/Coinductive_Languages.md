@@ -48,5 +48,8 @@
         "Coinductive_Language",
         "Coinductive_Regular_Set",
         "Context_Free_Grammar"
+    ],
+    "relatedEntries": [
+        "Regex_Equivalence"
     ]
 }

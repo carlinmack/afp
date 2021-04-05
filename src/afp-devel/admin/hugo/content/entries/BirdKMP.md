@@ -16,5 +16,8 @@
         "HOLCF_ROOT",
         "Theory_Of_Lists",
         "KMP"
+    ],
+    "relatedEntries": [
+        "Knuth_Morris_Pratt"
     ]
 }

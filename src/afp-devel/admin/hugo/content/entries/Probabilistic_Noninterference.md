@@ -51,5 +51,8 @@
         "Compositionality",
         "Syntactic_Criteria",
         "Concrete"
+    ],
+    "relatedEntries": [
+        "Possibilistic_Noninterference"
     ]
 }

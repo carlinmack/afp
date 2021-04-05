@@ -33,7 +33,8 @@
         "Polya_Vinogradov"
     ],
     "relatedEntries": [
-        "Dirichlet_L",
-        "Zeta_Function"
+        "Dirichlet_Series",
+        "Prime_Distribution_Elementary",
+        "Dirichlet_L"
     ]
 }

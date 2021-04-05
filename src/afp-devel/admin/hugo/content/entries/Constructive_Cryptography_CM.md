@@ -19,5 +19,8 @@
         "Constructive_Cryptography",
         "Game_Based_Crypto",
         "Sigma_Commit_Crypto"
+    ],
+    "relatedEntries": [
+        "CryptHOL"
     ]
 }

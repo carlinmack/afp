@@ -101,5 +101,8 @@
         "Denotational-Related",
         "Adequacy",
         "EverythingAdequacy"
+    ],
+    "relatedEntries": [
+        "Call_Arity"
     ]
 }

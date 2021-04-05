@@ -37,5 +37,8 @@
         "CartesianMonoidalCategory",
         "FreeMonoidalCategory",
         "MonoidalFunctor"
+    ],
+    "relatedEntries": [
+        "Bicategory"
     ]
 }

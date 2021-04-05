@@ -91,5 +91,8 @@
         "Hamming_Stream",
         "Resumption",
         "Coinductive_Examples"
+    ],
+    "relatedEntries": [
+        "Stream_Fusion_Code"
     ]
 }

@@ -46,5 +46,8 @@
         "Discrete_Summation",
         "Summation_Conversion",
         "Examples"
+    ],
+    "relatedEntries": [
+        "Card_Partitions"
     ]
 }

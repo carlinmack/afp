@@ -22,5 +22,8 @@
         "Paths",
         "Rooted_Paths",
         "Path_Algorithms"
+    ],
+    "relatedEntries": [
+        "Relation_Algebra"
     ]
 }

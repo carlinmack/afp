@@ -41,5 +41,8 @@
         "Sub_Sums",
         "Factorization_Algorithm_16_22",
         "Modern_Computer_Algebra_Problem"
+    ],
+    "relatedEntries": [
+        "LLL_Basis_Reduction"
     ]
 }

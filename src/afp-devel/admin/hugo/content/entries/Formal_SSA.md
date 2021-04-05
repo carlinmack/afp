@@ -60,5 +60,8 @@
         "Generic_Extract",
         "Disjoin_Transform",
         "WhileGraphSSA"
+    ],
+    "relatedEntries": [
+        "InformationFlowSlicing"
     ]
 }

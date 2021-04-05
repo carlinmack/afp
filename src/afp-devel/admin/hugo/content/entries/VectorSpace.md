@@ -48,5 +48,8 @@
         "LinearCombinations",
         "SumSpaces",
         "VectorSpace"
+    ],
+    "relatedEntries": [
+        "Rank_Nullity_Theorem"
     ]
 }

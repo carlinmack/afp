@@ -59,5 +59,8 @@
         "Syntactic_Criteria",
         "After_Execution",
         "Concrete"
+    ],
+    "relatedEntries": [
+        "Probabilistic_Noninterference"
     ]
 }

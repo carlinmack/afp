@@ -20,5 +20,9 @@
         "Ordinal_Exp",
         "Cantor_NF",
         "ZFC_Typeclasses"
+    ],
+    "relatedEntries": [
+        "HereditarilyFinite",
+        "Ordinals_and_Cardinals"
     ]
 }

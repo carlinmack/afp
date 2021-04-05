@@ -66,5 +66,8 @@
         "Pairing_Heap_List1_Analysis",
         "Pairing_Heap_List1_Analysis2",
         "Pairing_Heap_List2_Analysis"
+    ],
+    "relatedEntries": [
+        "Splay_Tree"
     ]
 }

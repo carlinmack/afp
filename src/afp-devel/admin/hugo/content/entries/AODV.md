@@ -116,5 +116,8 @@
         "E_Loop_Freedom",
         "E_Aodv_Loop_Freedom",
         "All"
+    ],
+    "relatedEntries": [
+        "AWN"
     ]
 }

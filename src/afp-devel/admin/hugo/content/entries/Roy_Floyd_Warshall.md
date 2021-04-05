@@ -43,5 +43,8 @@
     ],
     "theories": [
         "Roy_Floyd_Warshall"
+    ],
+    "relatedEntries": [
+        "Floyd_Warshall"
     ]
 }

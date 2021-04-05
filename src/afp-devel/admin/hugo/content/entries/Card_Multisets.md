@@ -31,5 +31,8 @@
     ],
     "theories": [
         "Card_Multisets"
+    ],
+    "relatedEntries": [
+        "Card_Equiv_Relations"
     ]
 }

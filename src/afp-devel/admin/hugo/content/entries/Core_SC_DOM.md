@@ -47,5 +47,8 @@
         "Node_insertBefore",
         "Node_removeChild",
         "Core_DOM_Tests"
+    ],
+    "relatedEntries": [
+        "SC_DOM_Components"
     ]
 }

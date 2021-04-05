@@ -28,5 +28,8 @@
     ],
     "theories": [
         "Transcendence_Series"
+    ],
+    "relatedEntries": [
+        "Irrational_Series_Erdos_Straus"
     ]
 }

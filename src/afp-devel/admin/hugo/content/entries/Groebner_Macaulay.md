@@ -32,5 +32,8 @@
         "Cone_Decomposition",
         "Dube_Bound",
         "Groebner_Macaulay_Examples"
+    ],
+    "relatedEntries": [
+        "Signature_Groebner"
     ]
 }

@@ -65,5 +65,8 @@
         "Idiomatic_Terms",
         "Abstract_AF",
         "Applicative_Test"
+    ],
+    "relatedEntries": [
+        "Stern_Brocot"
     ]
 }

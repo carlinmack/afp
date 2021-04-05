@@ -81,5 +81,8 @@
         "PsHoare",
         "PsTermi",
         "PsHoareTotal"
+    ],
+    "relatedEntries": [
+        "Simpl"
     ]
 }

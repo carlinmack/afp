@@ -36,5 +36,8 @@
         "Loeb",
         "Tarski",
         "All_Abstract"
+    ],
+    "relatedEntries": [
+        "Robinson_Arithmetic"
     ]
 }

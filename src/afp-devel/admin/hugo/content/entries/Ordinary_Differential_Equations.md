@@ -75,5 +75,8 @@
         "Cones",
         "Linear_ODE",
         "ODE_Analysis"
+    ],
+    "relatedEntries": [
+        "Affine_Arithmetic"
     ]
 }

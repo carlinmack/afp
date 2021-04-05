@@ -26,5 +26,8 @@
         "Misc",
         "Geometric_PMF",
         "Skip_List"
+    ],
+    "relatedEntries": [
+        "Random_BSTs"
     ]
 }

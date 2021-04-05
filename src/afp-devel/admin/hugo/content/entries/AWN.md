@@ -66,5 +66,8 @@
         "AWN_Main",
         "Toy",
         "AWN_Term_Graph"
+    ],
+    "relatedEntries": [
+        "AODV"
     ]
 }

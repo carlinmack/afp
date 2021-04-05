@@ -59,5 +59,8 @@
         "LLL_Number_Bounds",
         "LLL_Certification",
         "FPLLL_Solver"
+    ],
+    "relatedEntries": [
+        "LLL_Factorization"
     ]
 }

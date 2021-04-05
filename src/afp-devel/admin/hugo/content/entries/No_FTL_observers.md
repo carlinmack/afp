@@ -35,5 +35,8 @@
         "SomeFunc",
         "Axioms",
         "SpecRel"
+    ],
+    "relatedEntries": [
+        "Huffman"
     ]
 }

@@ -72,5 +72,8 @@
         "Hoare",
         "Diagram",
         "DataRefinement"
+    ],
+    "relatedEntries": [
+        "GraphMarkingIBP"
     ]
 }
