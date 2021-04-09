@@ -62,7 +62,7 @@ def addRelatedEntries():
     for keyword, values in relatedEntries.items():
         finalRelatedEntries[keyword] = topThree(values)
 
-    # relatedEntriesData = {"nodes": [], "edges": []}
+    # relatedEntriesData = []
 
     # source = set()
     # target = set()
@@ -78,7 +78,7 @@ def addRelatedEntries():
 
             # dataAppend(relatedEntriesData, entry, related)
 
-    # writeFile("relatedEntries.json", relatedEntriesData)
+    # writeFile("relatedEntries.gv", relatedEntriesData)
 
 
 def populateRelated(dataSet, relatedEntries, modifier=1):
@@ -100,12 +100,8 @@ def topThree(dictionary):
 
 
 # def dataAppend(data, entry, relatedEntries):
-#     data["nodes"].append({"data": {"id": "id" + entry, "name": entry}})
-
 #     for related in relatedEntries:
-#         data["edges"].append(
-#             {"data": {"source": "id" + entry, "target": "id" + related}}
-#         )
+#         data.append( entry + "->" + related)
 
 
 if __name__ == "__main__":

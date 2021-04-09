@@ -2,7 +2,7 @@
   {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
   <div class='form-container'>
-    <input id="searchInput" type="search" size="31" maxlength="255" value=""><button
+    <input id="searchInput" type="search" size="31" maxlength="255" value="" aria-label="Search the AFP"><button
       id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg" alt="Search" /></button>
     <div id="searchInputautocomplete-list" style="display: none">
       <div></div>

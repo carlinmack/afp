@@ -9,21 +9,27 @@
   {{- else -}}
   <title>{{- .Params.title }} - {{ $siteTitle -}}</title>
   {{- end -}}
-  {{- with .OutputFormats.Get "rss" -}}
 
+  {{- if (eq .Section "entries") -}}
+  <meta name="description" content="{{ .Params.abstract | plainify | truncate "155" "..." }}">
+  {{- else -}}
   <meta name="description" content="A collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover Isabelle.">
+  {{- end -}}
 
+  {{- with .OutputFormats.Get "rss" -}}
   {{- printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML -}}
   {{- end -}}
 
   {{- template "_internal/opengraph.html" . -}}
   {{- template "_internal/twitter_cards.html" . -}}
+
   {{ $options := (dict "targetPath" "css/front.css") }}
   {{ $style := resources.Get "sass/main.scss" | toCSS $options | minify }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}">
   {{- if (eq .Section "theories") -}}
   <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isabelle.css">
   {{ end }}
+
   <link rel="icon" href="{{- .Site.BaseURL -}}images/favicon.ico" type="image/icon">
 
   {{- if or (eq .Section "entries") (eq .File.TranslationBaseName "search") -}}
@@ -44,10 +50,13 @@
     </script>
     <script id="MathJax-script" async src="{{- .Site.BaseURL -}}js/mathjax/es5/tex-mml-chtml.js"></script>
   {{ end }}
+
   {{- if eq .Section "entries" -}}
   <script src="{{- .Site.BaseURL -}}js/entries.js"></script>
   {{- end -}}
+  
   <script src="{{- .Site.BaseURL -}}js/flexsearch.min.js"></script>
+  
   {{- if (eq .File.TranslationBaseName "search") -}}
     <script src="{{- .Site.BaseURL -}}js/search.js"></script>
   {{- else -}}
