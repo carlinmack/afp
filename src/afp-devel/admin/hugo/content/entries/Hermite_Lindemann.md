@@ -16,5 +16,15 @@
         "Pi_Transcendental",
         "Algebraic_Numbers",
         "Power_Sum_Polynomials"
+    ],
+    "theories": [
+        "Algebraic_Integer_Divisibility",
+        "More_Polynomial_HLW",
+        "Min_Int_Poly",
+        "Complex_Lexorder",
+        "More_Multivariate_Polynomial_HLW",
+        "More_Algebraic_Numbers_HLW",
+        "Misc_HLW",
+        "Hermite_Lindemann"
     ]
 }

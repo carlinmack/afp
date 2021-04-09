@@ -16,5 +16,10 @@
     "dependencies": [
         "Isabelle_Marries_Dirac",
         "QHLProver"
+    ],
+    "theories": [
+        "Linear_Algebra_Complements",
+        "Projective_Measurements",
+        "CHSH_Inequality"
     ]
 }

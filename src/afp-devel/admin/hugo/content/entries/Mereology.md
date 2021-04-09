@@ -11,5 +11,16 @@
         "benblumson@gmail.com"
     ],
     "abstract": "\nWe use Isabelle/HOL to verify elementary theorems and alternative\naxiomatizations of classical extensional mereology.",
-    "licence": "BSD"
+    "licence": "BSD",
+    "theories": [
+        "PM",
+        "M",
+        "MM",
+        "EM",
+        "CM",
+        "CEM",
+        "GM",
+        "GMM",
+        "GEM"
+    ]
 }

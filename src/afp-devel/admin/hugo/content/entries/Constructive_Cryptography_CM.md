@@ -22,5 +22,20 @@
     ],
     "relatedEntries": [
         "CryptHOL"
+    ],
+    "theories": [
+        "More_CC",
+        "Observe_Failure",
+        "Fold_Spmf",
+        "Fused_Resource",
+        "State_Isomorphism",
+        "Construction_Utility",
+        "Concrete_Security",
+        "Asymptotic_Security",
+        "Key",
+        "Channel",
+        "One_Time_Pad",
+        "Diffie_Hellman_CC",
+        "DH_OTP"
     ]
 }

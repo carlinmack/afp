@@ -5424,6 +5424,21 @@
             "Constructive_Cryptography",
             "Game_Based_Crypto",
             "Sigma_Commit_Crypto"
+        ],
+        "theories": [
+            "More_CC",
+            "Observe_Failure",
+            "Fold_Spmf",
+            "Fused_Resource",
+            "State_Isomorphism",
+            "Construction_Utility",
+            "Concrete_Security",
+            "Asymptotic_Security",
+            "Key",
+            "Channel",
+            "One_Time_Pad",
+            "Diffie_Hellman_CC",
+            "DH_OTP"
         ]
     },
     {
@@ -11401,6 +11416,16 @@
             "Pi_Transcendental",
             "Algebraic_Numbers",
             "Power_Sum_Polynomials"
+        ],
+        "theories": [
+            "Algebraic_Integer_Divisibility",
+            "More_Polynomial_HLW",
+            "Min_Int_Poly",
+            "Complex_Lexorder",
+            "More_Multivariate_Polynomial_HLW",
+            "More_Algebraic_Numbers_HLW",
+            "Misc_HLW",
+            "Hermite_Lindemann"
         ]
     },
     {
@@ -12138,7 +12163,11 @@
         ],
         "date": "2021-04-01",
         "abstract": "\nWe provide a characterisation of how information is propagated by\nprogram executions based on the tracking data and control dependencies\nwithin executions themselves.  The characterisation might be used for\nderiving approximative safety properties to be targeted by static\nanalyses or checked at runtime.  We utilise a simple yet versatile\ncontrol flow graph model as a program representation.  As our model is\nnot assumed to be finite it can be instantiated for a broad class of\nprograms.  The targeted security property is indistinguishable\nsecurity where executions produce sequences of observations and only\nnon-terminating executions are allowed to drop a tail of those.  A\nvery crude approximation of our characterisation is slicing based on\nprogram dependence graphs, which we use as a minimal example and\nderive a corresponding soundness result.  For further details and\napplications refer to the authors upcoming dissertation.",
-        "licence": "BSD"
+        "licence": "BSD",
+        "theories": [
+            "IFC",
+            "PDG"
+        ]
     },
     {
         "session": "IMAP-CRDT",
@@ -17104,7 +17133,18 @@
         ],
         "date": "2021-03-01",
         "abstract": "\nWe use Isabelle/HOL to verify elementary theorems and alternative\naxiomatizations of classical extensional mereology.",
-        "licence": "BSD"
+        "licence": "BSD",
+        "theories": [
+            "PM",
+            "M",
+            "MM",
+            "EM",
+            "CM",
+            "CEM",
+            "GM",
+            "GMM",
+            "GEM"
+        ]
     },
     {
         "session": "Mersenne_Primes",
@@ -17550,6 +17590,18 @@
             "Show",
             "Jordan_Normal_Form",
             "Hermite"
+        ],
+        "theories": [
+            "Matrix_Change_Row",
+            "Signed_Modulo",
+            "Storjohann_Mod_Operation",
+            "Storjohann",
+            "Storjohann_Impl",
+            "Uniqueness_Hermite",
+            "Uniqueness_Hermite_JNF",
+            "HNF_Mod_Det_Algorithm",
+            "HNF_Mod_Det_Soundness",
+            "LLL_Certification_via_HNF"
         ]
     },
     {
@@ -21618,6 +21670,11 @@
         "dependencies": [
             "Isabelle_Marries_Dirac",
             "QHLProver"
+        ],
+        "theories": [
+            "Linear_Algebra_Complements",
+            "Projective_Measurements",
+            "CHSH_Inequality"
         ]
     },
     {

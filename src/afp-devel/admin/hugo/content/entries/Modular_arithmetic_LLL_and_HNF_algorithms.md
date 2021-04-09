@@ -20,5 +20,17 @@
         "Show",
         "Jordan_Normal_Form",
         "Hermite"
+    ],
+    "theories": [
+        "Matrix_Change_Row",
+        "Signed_Modulo",
+        "Storjohann_Mod_Operation",
+        "Storjohann",
+        "Storjohann_Impl",
+        "Uniqueness_Hermite",
+        "Uniqueness_Hermite_JNF",
+        "HNF_Mod_Det_Algorithm",
+        "HNF_Mod_Det_Soundness",
+        "LLL_Certification_via_HNF"
     ]
 }
