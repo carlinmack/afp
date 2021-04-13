@@ -41,8 +41,8 @@
         "Multirelations"
     ],
     "relatedEntries": [
-        "KAD",
         "KAT_and_DRA",
-        "Relation_Algebra"
+        "Relation_Algebra",
+        "KAD"
     ]
 }

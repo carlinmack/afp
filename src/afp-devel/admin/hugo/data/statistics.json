@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 165653,
-    "num_loc": 2904339,
+    "num_lemmas": 165926,
+    "num_loc": 2910910,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        591
+        592
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2904300
+        2910900
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        5
+        6
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        375
+        376
     ],
     "loc_articles": [
         839,
@@ -672,6 +672,7 @@
         4959,
         17062,
         8475,
+        6571,
         4133
     ],
     "all_articles": [
@@ -1265,6 +1266,7 @@
         "Projective_Measurements",
         "Modular_arithmetic_LLL_and_HNF_algorithms",
         "Constructive_Cryptography_CM",
+        "Grothendieck_Schemes",
         "IFC_Tracking"
     ]
 }
