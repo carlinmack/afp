@@ -7,7 +7,7 @@ from addOlderReleases import addOlderReleases
 from addRelatedEntries import addRelatedEntries
 from addStatistics import addStatistics
 from exportJsonMetadata import exportJsonMetadata
-from generateKeywords import generateKeywords
+# from generateKeywords import generateKeywords
 from iniToJson import iniToJson
 
 
@@ -17,7 +17,7 @@ def updateProgressBar(desc, t):
 
 
 if __name__ == "__main__":
-    t = tqdm(total=7, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s")
+    t = tqdm(total=6, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s")
     tick = time.time()
     updateProgressBar("Export metadata to JSON", t)
     iniToJson()
@@ -28,8 +28,8 @@ if __name__ == "__main__":
     updateProgressBar("Add dependencies", t)
     addDependencies()
 
-    updateProgressBar("Generate keywords", t)
-    generateKeywords()
+    # updateProgressBar("Generate keywords", t)
+    # generateKeywords()
 
     updateProgressBar("Add related entries", t)
     addRelatedEntries()
