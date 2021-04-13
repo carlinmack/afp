@@ -6,8 +6,11 @@
 \usepackage[svgnames,table]{xcolor}
 \usepackage{multirow}
 
+\usepackage{subcaption}
+
 \setlength {\marginparwidth }{2cm}
-\usepackage{todonotes}
+% \usepackage{todonotes}
+\usepackage[disable]{todonotes}
 
 \newcommand{\jtodo}[2][]{\todo[color=yellow!70,#1]{\footnotesize JF: #2}}
 \newcommand{\ijtodo}[2][]{\todo[inline,color=yellow!70,#1]{\footnotesize JF: #2}}
@@ -20,6 +23,9 @@
 \usepackage{changebar}
 %\pagenumbering{arabic}
 \newcommand{\toupdate}[1]{} % to hide toupdate notes
+
+\usepackage{listings}
+\usepackage{color}
 
 \begin{document}
 \begin{preliminary}
@@ -35,12 +41,12 @@
 
 % it's an advertisement
 
-\abstract{\cbstart
-Formal proofs allow us to prove that a theorem is true over a domain. They can be built from axioms or built on top of other theorems. Computers can mechanically verify these proofs if they are written in a language such as Isar, which is the language of the proof assistant Isabelle. As proofs can be built on top of other theorems, it is useful to have a central repository which collects theorems that are free to use. Since 2004, this service has been provided for Isabelle by the Archive of Formal Proofs (AFP). The AFP is functional, however it is demanding to maintain and difficult to browse as it has not been significantly updated since its inception.\cbend\ijtodo{I don't think we have any evidence regarding how hard it is to maintain nor do you tackle (or evaluate) this aspect directly. So, I would remove this bit.}
+\abstract{
+Formal proofs allow us to prove that a theorem is true over a domain. They can be built from axioms or built on top of other theorems. Computers can mechanically verify these proofs if they are written in a language such as Isar, which is the language of the proof assistant Isabelle. As proofs can be built on top of other theorems, it is useful to have a central repository which collects theorems that are free to use. Since 2004, this service has been provided for Isabelle by the Archive of Formal Proofs (AFP). The AFP is functional, however it is lacking in key areas such as navigation and search, as it has not been significantly updated since its inception. % \ todo{make this a little better} % \ ijtodo{I don't think we have any evidence regarding how hard it is to maintain nor do you tackle (or evaluate) this aspect directly. So, I would remove this bit.}
 
-This project evaluates the current AFP with long term users to understand what features matter to them and the problems they have. Using this information, the site is redesigned using paper prototypes before being implemented using CSS and HTML\@. The functionality of the site is also extended with the addition of reactive search, related items, author pages and improved code navigation. Finally, the redesigned AFP is evaluated with users to discover whether it meets their needs. We find that all participants agree that the redesign is an improvement.
+We first reimplement the site generation using Hugo, before evaluating the current AFP with long term users. This helps us to understand what features matter to them and the problems that they have. Using this information, the site is redesigned using paper prototypes before being implemented with SCSS and Hugo templates. The functionality of the site is also extended with the addition of reactive search, related items, author pages and improved code navigation. Finally, the redesigned AFP is evaluated with users to discover whether it meets their needs. We find that all participants agree that the redesign is an improvement.
 
-The result of this project is a website that is more useful to users and easier to maintain\jtodo{See above.}, a formal evaluation of the current AFP and a machine-readable release of the AFP metadata. 
+The result of this project is a website that is more useful to users, while being easy to maintain, and a published formal evaluation of the current AFP. 
 }
 
 \maketitle
@@ -60,21 +66,22 @@ I would also like to thank my friends for supporting me throughout my time at un
     % Clarify the focus of your study
     % Point out the value of your research
     % Specify your specific research aims and objectives
-\cbstart
-Isabelle \cite{isabelle_isar} is an interactive proof assistant which allows users to write and prove formal proofs. As proofs can build on top of other proofs, the value of a theorem prover lies in the size of its library. Isabelle has a standard library\footnote{\url{https://isabelle.in.tum.de/library/}} as well collecting user submitted proofs in the Archive of Formal Proofs (AFP).
+
+Isabelle \cite{isabelle_isar} is an interactive proof assistant which allows users to write and prove formal proofs. As proofs can build on top of other proofs, the value of a theorem prover lies in the size of its library. Isabelle has a standard library\footnote{\url{https://isabelle.in.tum.de/library/}} as well as collecting user submitted proofs in the Archive of Formal Proofs (AFP).
 
 % The AFP is an online repository for formal proofs carried out in the interactive theorem prover Isabelle \cite{isabelle_isar}. 
 
-The entries of the AFP are reviewed in the same way as a journal and there are annual releases which correspond with new versions of Isabelle. To date over 350 authors have contributed over 560 entries\toupdate{https://www.isa-afp.org/statistics.html} \cite{afp_statistics}.
+The entries of the AFP are reviewed similarly to a journal and there are annual releases of the AFP (which correspond with new versions of Isabelle). To date over 375 authors have contributed over 590 entries \cite{afp_statistics}.
 
 \paragraph*{Motivation}
 
-Unfortunately, the AFP has not been significantly updated since it first appeared online in 2004. As such there are many areas such as search, navigation and code browsing which need attention\jtodo{Maybe say ``which we believed might require attention" as you are stating this as a fact instead here.}. Additionally, the design is very typical of early 2000s with a table based layout that is not responsive. Finally, it uses a custom site generator which means that it is hard for outside contributors to update the site.
+Unfortunately, the AFP has not been significantly updated since it first appeared online in 2004. As such there are many areas such as search, navigation and code browsing which we believed might require attention. Additionally, it has a non-responsive table-based layout which is typical of early 2000s web design. Finally, it uses a custom site generator which means that it is hard for outside contributors to improve the site.
 
 \paragraph*{Objective}
 
-The goal of this project was to redesign the AFP guided by the priorities of the users. It should at least be feature complete with the current AFP, plus new features which serve the users.\jtodo{Surely complete with respect to browsing, downloading etc. but not submission. You should clarify this.} The user interface should be updated so that it uses common design conventions.
+The goal of this project was to redesign and improve the AFP, guided by the priorities of the users. It should have feature parity with the current AFP, besides from submission, which is outside the scope of this project, plus new features which aid the users. The redesign should follow modern design conventions.
 
+% \ todo[inline]{Jev: ``be feature complete with the current AFP" sounds strange to me. I think you mean ``have feature parity"?}
 % To improve the AFP many areas will be considered and solutions carefully chosen. Some aspects of the existing archive will be replaced, but it is hoped to create a familiar interface which is more useful.
 
 % Evaluation will be performed on both the current and new implementations of the AFP to understand the needs of the audience and to validate the changes that are made.
@@ -85,38 +92,37 @@ This project covers the following contributions:
 
 \begin{itemize}
     \item \emph{Evaluation:} The current AFP was assessed with a structured survey by both pre-study and study groups. The latter survey was formally written up and published as a pre-print \cite{mackenzie2021evaluation}. Additionally, the redesigned AFP was evaluated by a study group to understand if it meets their needs.
-    \item \emph{Site Generation:} The site generation was recreated in Hugo by converting the sites data and creating templates to display it. As the site generation is self-contained, a continuous integration script was created to update the site daily.
-    \item \emph{Redesign:} The site was redesigned using paper prototypes, before being implemented.
-    \item \emph{Search:} A new client-side search functionality was created which is responsive and has autocomplete suggestions. Finally the search was integrated with an external service which provides results in the code.
-    \item \emph{Script Browsing:} The script browsing experience was improved by allowing users to view all scripts for a theory on one page. Navigation was further improved with the addition of links to the lemmas.
+    \item \emph{Site Generation:} To provide a foundation for the redesign, the site generation was recreated in Hugo by converting the site's data and creating templates to match the current website. On top of this, a continuous integration script was created to update the site daily.
+    \item \emph{Redesign:} The site was redesigned using paper prototypes, before being implemented with Hugo templates and SCSS.
+    \item \emph{Search:} A new client-side search functionality was created which is responsive and has autocomplete suggestions. The search was then integrated with an external service, FindFacts, which provides additional results from the code of the AFP.
+    \item \emph{Script Browsing:} The script browsing experience was improved by allowing users to view all scripts for an entry on one page. Navigation was further improved with the addition of links to the lemmas.
     \item \emph{Machine Readable Format:} The metadata of the entries was released so that it is accessible for future researchers.
 \end{itemize}
-\cbend
+
 \paragraph*{Organisation}
 
 Chapter \ref{background} introduces the background of the current AFP and it is evaluated in Chapter~\ref{evaluation-current}. Following this, the redesign of the AFP is described in Chapter~\ref{design}. Next, the implementation of the AFP is described in Chapter~\ref{implementation} and it is subsequently evaluated in Chapter~\ref{redesign-evaluation}. Finally, Chapter~\ref{conclusion} concludes this project by summarising the results and providing an outline of future work.
 
 \chapter{Background} \label{background}
 
-\cbstart
-This chapter contextualises my work by giving an overview of formal mathematics and proof assistants. The corresponding archives for each proof assistant mentioned is elaborated on. Finally I describe the AFP, detailing its features and how the site generation works, before giving an overview of the existing literature on it.  
-\cbend\jtodo{So you'll be using the first person then?}
+This chapter contextualises my work by giving an overview of formal mathematics and proof assistants. The corresponding archives for each proof assistant mentioned is elaborated on. Finally the AFP is described, detailing its features and its site generation, as well as an overview of the existing literature.  
+
 \section{Formalization of Mathematics}
 
 Humans have been reasoning about formal sciences, including mathematics, for thousands of years \cite{chemla_history_2012}. This is the process of creating logical systems in which axioms can be acted upon by rules. In this way, theorems can be guaranteed to be true based upon the logic of the system, rather than relying on evidence from the world. As these systems are based upon applying rules, it is possible for computers to validate these theories by applying the same rules systematically.
 
 \subsection{QED Manifesto}
 
-The QED Manifesto \cite{Bundy1994TheQM} sketched out a project that aimed to formalise all of mathematics. This would mean that one could create new theorems which are rigorously true, without having to understand the minutia of what they are building upon. The resulting archive would be an open access and rigorously true set of all mathematical lemmas and techniques. \cbstart Unfortunately, the project only lasted for 3 years \cite{Wiedijk2007TheQM}, but the goals that it laid out live on in the AFP and other proof archives.\cbend \todo[color=gray!20]{Is this an okay way to tie the AFP in?}\jtodo{Yes, that's fine.}
+The QED Manifesto \cite{Bundy1994TheQM} sketched out a project that aimed to formalise all of mathematics. This would mean that one could create new theorems which are rigorously true, without having to understand the minutia of what they are building upon. The resulting archive would be an open access and rigorously true set of all mathematical lemmas and techniques.  Unfortunately, the project only lasted for 3 years \cite{Wiedijk2007TheQM}, but the goals that it laid out live on in the AFP and other proof archives. % \ todo[color=gray!20]{Is this an okay way to tie the AFP in?}\ jtodo{Yes, that's fine.}
 
 % \ todo[inline]{Jev: I'm not convinced that why the QED manifesto fell apart is relevant to your project. However, most of the goals of the QED manifesto also underpin the AFP, and thus your AFP revamp. I'm sorry if I was misleading before.}
 % \ todo[inline]{Ckm: I'm assuming you are implying I should add another paragraph about how my AFP revamp is relevant?}
 
 \section{Formal Proof Assistants}
-\cbstart
-Over the past 50 years, many formal proof assistants have been created in different mathematical systems and styles \cite{geuvers_proof_2009}. This section provides an overview of four major assistants that have large or rapidly growing proof libraries. \jtodo{It's probably the library size that matters. Mizar does not seem to have a large community these days and Lean is still relatively small compared to Isabelle and Coq.} 
+
+Over the past 50 years, many formal proof assistants have been created in different mathematical systems and styles \cite{geuvers_proof_2009}. This section provides an overview of four major assistants that have large or rapidly growing proof libraries. % \ jtodo{It's probably the library size that matters. Mizar does not seem to have a large community these days and Lean is still relatively small compared to Isabelle and Coq.} 
 % In 1999, Abad and Abad introduced ``The Hundred Greatest Theorems'' \cite{abad_hundred_1999}\ jtodo{Fix the bibliography so that it's complete. This applies to all entries.}, which ranked the theorems in the list based on the following criterion: ``the place the theorem holds in the literature, the quality of the proof, and the unexpectedness of the result.'' As the proofs are iconic, it is natural for the archives to catalogue them. Table~\ref{assisstantComparison} presents the coverage of four assistants which have large communities.
-% \cbend\ jtodo[inline]{I don't see the direct relevance of this list to what you're doing.}
+% \ jtodo[inline]{I don't see the direct relevance of this list to what you're doing.}
 % Over the past 50 years, many formal proof assistants have been created in different mathematical systems and styles. Each of the following assistants has a large community and Table~\ref{assisstantComparison} presents the coverage of each on Abad's list: ``The Hundred Greatest Theorems'' \cite{abad_hundred_1999}. The ranking of the theorems is based on the following criterion: ``the place the theorem holds in the literature, the quality of the proof, and the unexpectedness of the result.''
 
 % \ todo[inline]{Jev: Great framing device! I think it needs to flow into the next sections better though, maybe put the explanation of Abad's list first, then link it to the proof assistants.}
@@ -141,27 +147,27 @@ Over the past 50 years, many formal proof assistants have been created in differ
 % \footnote{\url{http://mizar.org/system/}}
 The Mizar System \cite{MizarOverview} was one of the first proof assistants and was created in 1973. Proofs are written in a single script file in the Mizar language which is based on set theory. Proofs are mainly developed in MizarMode, an authoring environment for Emacs.
 
-Mizar proofs are collected in the Mizar Mathematical Library (MML)\footnote{\url{http://mizar.org/library/}} which was the largest formal maths library, as of 2009. It currently features 2,357 articles by 263 authors\toupdate{http://mmlquery.mizar.org}. Submissions are reviewed by three experts in a double-blind process. The MML is served as downloadable archive and a quarterly journal, \textit{Formalized Mathematics}. Searching of the library is provided by MML Query\footnote{\url{http://mmlquery.mizar.org}}, but it is in beta and currently seems to be broken. Each entry of the MML displays the author, summary and the full script file.
+Mizar proofs are collected in the Mizar Mathematical Library (MML)\footnote{\url{http://mizar.org/library/}} which was the largest formal maths library, as of 2009. It currently features 1,357 articles by 263 authors. Submissions are reviewed by three experts in a double-blind process. The MML is served as a downloadable archive and a quarterly journal, \textit{Formalized Mathematics}. Searching of the library is provided by MML Query\footnote{\url{http://mmlquery.mizar.org}}, but it is in beta and currently seems to be broken. Each entry of the MML displays the author, summary, and the script file.
 % \ jtodo[inline]{I would expect a bit more about the MML since this is Mizar's counterpart to the AFP\@. Same applies to the other ``archives'' e.g. what are their pros and cons?}
 \subsection{Isabelle}
 %\footnote{\url{https://isabelle.in.tum.de}}
-Isabelle \cite{isabelle_system} is a theorem prover that was first released in 1986. It is written in Standard ML \cite{standardML} and users write their proofs in the structured proof language Isar \cite{isabelle_isar}, which is inspired by Mizar. Development of proofs is primarily executed through Isabelle/jEdit\footnote{\url{https://isabelle.in.tum.de/dist/doc/jedit.pdf}}, however an extension is also available for VS Code. In comparison to most proof assistants, Isabelle is generic and allows for many different object logics such as Zermelo–Fraenkel (ZF) set theory or Higher Order Logic (HOL), the most popular. 
+Isabelle \cite{isabelle_system} is a theorem prover that was first released in 1986. It is written in Standard ML \cite{standardML} and users write their proofs in the structured proof language Isar \cite{isabelle_isar}, which is inspired by Mizar. Development of proofs is primarily executed through Isabelle/jEdit \cite{wenzel2012isabelle}, and an extension is also available for VS Code. In comparison to most proof assistants, Isabelle is generic and allows for many different object logics such as Zermelo–Fraenkel (ZF) set theory or Higher Order Logic (HOL), the most popular. 
 
-Entries are collected in the Archive of Formal Proofs\footnote{\url{https://isa-afp.org}} and so far over 360 authors have contributed 560 entries\toupdate{https://isa-afp.org/statistics.html}. Submission to the AFP is dependent on review from one of the editors of the project. A thorough description of the Archive can be found in Section~\ref{afp-background}
+Entries are collected in the Archive of Formal Proofs\footnote{\url{https://isa-afp.org}} and so far over 375 authors have contributed 590 entries. Submission to the AFP is dependent on review from one of the editors of the project. A thorough description of the Archive can be found in Section~\ref{afp-background}
 
 \subsection{Coq}
 
-Coq is written in OCaml and was released in 1989. Users write proofs in the Gallina language which is based on the Calculus of Inductive Constructions \cite{DBLP:conf/tapsoft/Huet87}, a type theory. Creation of Coq proofs are performed through the CoqIDE which is a GTK based editor. 
+Coq is written in OCaml and was released in 1989. Users write proofs in the Gallina language, which is based on the Calculus of Inductive Constructions \cite{DBLP:conf/tapsoft/Huet87}, a type theory. Creation of Coq proofs are performed through the CoqIDE which is a GTK based editor. 
 
-Submission to the Coq Package Index\footnote{\url{https://coq.inria.fr/opam/www/}} (CPI) is performed through GitHub pull requests and each package is reviewed by a developer of Coq before accepting. So far 308 people have contributed to 326 packages\toupdate{I think I did this by hand? https://coq.inria.fr/opam/www/}. The CPI has a responsive search interface which can be filtered with categories and keywords. Each entry of Coq is an independent GitHub repository owned by the ``coq-community'' organisation.
+Submission to the Coq Package Index\footnote{\url{https://coq.inria.fr/opam/www/}} (CPI) is performed through GitHub pull requests and each package is reviewed by a developer of Coq before accepting. So far 308 people have contributed to 326 packages. The CPI has a responsive search interface which can be filtered with categories and keywords. Each entry of Coq is an independent GitHub repository owned by the ``coq-community'' organisation.
 
 \subsection{Lean}
 
-A new research project from Microsoft, Lean\footnote{\url{https://leanprover.github.io}} is a theorem prover that was created in 2013 and is based on the Calculus of Constructions \cite{coquand1988calculus}, a predecessor to the calculus used by Coq. It is written in C++ and proofs are written in the Lean language which can be compiled to JavaScript. Extensions to aid creating proofs are available for Emacs and VS Code. 
+A new research project from Microsoft, Lean\footnote{\url{https://leanprover.github.io}} is a theorem prover that was created in 2013 and is based on the Calculus of Constructions \cite{coquand1988calculus}, a predecessor to the calculus used by Coq. It is written in C++ and the Lean language, which can be compiled to JavaScript, is used to write proofs. Extensions to aid creating proofs are available for Emacs and VS Code. 
 
-To date 116 people have contributed to the proof library\toupdate{https://leanprover-community.github.io/mathlib_stats.html}, mathlib \cite{mathlib_Community_2020}. Contributing to mathlib is also managed through GitHub pull requests and each proof must be approved by a reviewer. Each entry is visible on the website as well as the GitHub repository which holds the entire mathlib. Search is provided by a Google SiteSearch, with the results rendered inline on the page.
+To date 157 people have contributed to the proof library, mathlib \cite{mathlib_Community_2020}. Contributing to mathlib is also managed through GitHub pull requests and each proof must be approved by a reviewer. Each entry is visible on the website as well as the GitHub repository which holds the entire mathlib. Search is provided by a Google SiteSearch, with the results rendered inline on the page.
 
-\cbend
+
 % \section{Archives}
 % \ jtodo[inline]{So, is this section just a generic one about online archiving? I'm not sure we need an actual section about this. It can be mentioned in passing but really it would be better to turn this into a section about the archiving/publication mechanisms for each of the systems you mentioned in the previous section.} 
 % Online archives allow for original, user submitted content to be preserved and viewed by anyone. The following is a summary of the most popular archives in different fields, each with their own behaviour and communities.
@@ -204,24 +210,21 @@ The Archive of Formal Proofs (AFP) is the online repository for Isabelle proofs.
 
 \subsection{Features} \label{afpFeatures}
 
-The home page of the AFP, depicted in Figure~\ref{afpHomePage}, lists all the entries with their authors in reverse chronological order. Each entry has its own page listing the abstract, license, entries it depends on, etc. Additionally, there are links to a PDF of the lemmas in mathematical notation, a PDF of the Isar code, and the HTML directory where the code of the theories can be browsed. Finally, there is a link to download the entry, and download links for all previous releases of an entry.
-
-\cbstart
-The scripts of an entry can be browsed, and these pages display the script with syntax highlighting applied. There is no linking to other pages or back to the entry. No outline of the lemmas is available, so navigation is performed by either manual scrolling or using the browser's find feature. \cbend
+The home page of the AFP, depicted in Figure~\ref{afpHomePage}, lists all the entries with their authors in reverse chronological order. Each entry has its own page (as in Figure~\ref{fig:entry-current}) listing the abstract, license, entries it depends on, etc. Additionally, there are links to PDFs of the lemmas and code, links to download the entry and its previous releases, as well as a link to the HTML directory where the proof scripts can be browsed. These pages display the scripts with syntax highlighting applied (Figure~\ref{afpScriptBrowsing}). There are no links on this page to other pages or back to its entry. No outline of the lemmas is available, so navigation is performed by either manual scrolling or using the browser's ``Find'' feature. 
 % \ jtodo[inline]{Avoid using adjective such as ``lacklustre'', which sounds rather general and subjective. It's probably better to say ``basic'' or something like this at this stage. Also, this would be the kind of assertion that you want to support via the evaluation of the AFP, so it would be appropriate to have a forward reference here.}
 
-Searching for entries is provided by a Google SiteSearch, which is a Google search with ``site:isa-afp.org'' appended. This experience is functional but relies on Google's indexing of content which may be outdated or incomplete. 
+Searching for entries, Figure~\ref{fig:entry-search}, is provided by a Google SiteSearch, which is a Google search with ``site:isa-afp.org'' appended. This experience is functional but relies on Google's indexing of content which may be outdated or incomplete. 
 
-An index of topics is available which lists the entries in a hierarchy by topic. The topic of each entry can have up to three levels, for example ``\textit{Computer science/Algorithms/ Distributed}''. Entries can be listed under multiple topics and so will appear multiple times. Unfortunately the topic of an entry is not listed on its entry page. This means that if a user wanted to see other entries under the same topic as the one they are looking at, they would need to remember its name and find it on the index page.
+An index of topics is available which lists the entries in a hierarchy by topic. The topic of each entry can have up to three levels, for example ``\textit{Computer science/Algorithms/ Distributed}''. Entries can be listed under multiple topics and so will appear multiple times. Unfortunately, the topic of an entry is not listed on its page. This means that if a user wanted to see other entries under the same topic as the one they are looking at, they would need to remember its name and find it on the index page.
 
 Submission to the Archive is simple. Information about the entry is documented in a form, and the entry is attached as a .zip or .tar.gz archive. If review by an editor is successful, the entry is added to the Archive. However, from the maintainer's perspective, the addition of an entry is a manual 11 step process. 
 
-Finally, all entries are expected to be maintained so that they work with the latest version of Isabelle. As such, someone is nominated as a contact for maintenance for each accepted submission. Their duty is to check out the entire AFP repository and update their entries to ensure it works with the latest version of Isabelle. 
+% Finally, all entries are expected to be maintained so that they work with the latest version of Isabelle. As such, someone is nominated as a contact for maintenance for each accepted submission. Their duty is to check out the entire AFP repository and update their entries to ensure it works with the latest version of Isabelle. 
 
 \subsection{Design}
-\cbstart
-When the AFP was created, the only non-JavaScript way to create complex, structured layouts was to use tables. These layouts feature complex nested HTML to define the structure of the page. For example, A very basic 2 row and 2 column table would have the following mark up:
-\cbend
+
+When the AFP was created, the only non-JavaScript way to create complex, structured layouts was to use tables. These layouts feature intricate nested HTML to define the structure of the page. For example, A very basic 2 row and 2 column table would have the following mark up:
+
 
 {\footnotesize
 \begin{verbatim}
@@ -239,71 +242,82 @@ When the AFP was created, the only non-JavaScript way to create complex, structu
 </table>
 \end{verbatim}
 }
-\cbstart
-Care must be taken when changing the layout of the table to ensure that the number of columns are consistent across the rows. This means that it is not possible to make these tables responsive to the available screen width. Fortunately, more responsive and cleaner layouts are now achievable with CSS grid \cit{}, which is demonstrated in Section~\ref{sec:table-layout}.
 
-The structure of the site itself can also prevent users from engaging with the content fully. It is not possible to see all the proofs by a user, other proofs in this topic or the most frequently accessed proofs. Additionally, by directing users to search with Google instead of a native solution, users cannot be sure that the results are complete---if search results are missed duplicate work could be unnecessarily performed.
+Care must be taken when changing the layout of the table to ensure that the number of columns are consistent across the rows. This means that it is not possible to make these tables responsive to the available screen width. Fortunately, more responsive and cleaner layouts are now achievable with CSS grid \cite{w3c_css_2020}.
+
+The structure of the site itself can also prevent users from engaging with the content fully. It is not possible to see all the proofs by an author, other proofs in this topic or the most frequently accessed proofs. Additionally, by directing users to search with Google instead of a native solution, users cannot be sure that the results are complete---if search results are missed duplicate work could be unnecessarily performed.
 
 These issues are likely due to the prioritisation of development time going towards Isabelle, and so AFP development is kept to maintenance work. Additionally, as the site is generated with custom Python scripts, it is difficult for people outside the development team to contribute.
 
 It is important that the features of the AFP are improved so that users can be more productive and engage better with the contents of the Archive. Additionally, if the user experience and interface  were to be improved, it is hoped that engagement with the Archive would increase, and so, encourage more proofs to be contributed.
 
 % \ todo[inline]{Jev: Yes, but better dissemination of content in the AFP is important in and of itself too. Along the same lines better search would reduce the number of near-duplicate entries.}
-\cbend
+
 \subsection{Directory Structure} \label{directory-structure}
 
 The Archive of Formal Proof follows the Unix directory structure and consists of the following:
 
 \begin{itemize}
   \item \texttt{admin}\quad Site generation scripts and continuous integration configs.
-  \item \texttt{doc}\quad Documentation.
+  \item \texttt{doc}\quad Documentation for managing the AFP\@.
   \item \texttt{etc}\quad Various data files.
-  \item \texttt{metadata}\quad Jinja2 templates and data files for topics, release dates and all entries.
+  \item \texttt{metadata}\quad Jinja templates and data files for entries, topics, and release dates.
   \item \texttt{thys}\quad Directories containing the session for every entry of the AFP.
-  \item \texttt{tools}\quad Various tools for checking and building the AFP (non-site generation).
-  \item \texttt{web}\quad The public AFP website.
+  \item \texttt{tools}\quad Various tools for checking and building the AFP (non-site-generation).
+  \item \texttt{web}\quad The generated static AFP website.
 \end{itemize}
 
-Site generation is performed by \verb|admin/sitegen-lib/sitegen.py| which is a handwritten Python static site generator. It builds various Python objects for each page, which is then rendered with Jinja2 templates. 
+Site generation is performed by \verb|admin/sitegen-lib/sitegen.py| which is a handwritten Python static site generator. It builds various Python objects for each page, which is then rendered with Jinja\footnote{\url{https://jinja.palletsprojects.com/}} templates. 
 
 \subsection{Entry Information}
 
-The information about each entry can be found in \verb|metadata/metadata|. This is an INI file which has a simple format with only two elements, \verb|[sections]| and \verb|key = value| pairs. Each entry of the AFP stores its information (apart from previous releases) in this 10,000-line file, which is used to generate the site\toupdate{https://foss.heptapod.net/isa-afp/afp-devel/-/blob/branch/default/metadata/metadata}.
-\ijtodo{You should probably give (part) of an entry as a concrete example. You still have some space available in this chapter.}
+The information about each entry can be found in \verb|metadata/metadata|. This is an INI file which has a simple format with only two elements, \verb|[sections]| and \verb|key = value| pairs. Each entry of the AFP stores its information (apart from previous releases) in this 10,500-line file, which is used to generate the site. Figure~\ref{metadata} shows an example section of this file.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/metadata.png}
+    \caption{Example section of the metadata file}
+    \label{metadata}
+\end{figure}
+
 
 \section{Previous Work Involving the AFP}
 % \ jtodo[inline]{You should start with the more general related work -- formalization of mathematics, description of ITPs and their libraries/repos/archives, etc.\ and then go to this more specifically related stuff. This then will make the transition to your work in the next chapter easier and more natural.}
 
-This is the second undergraduate project from the University of Edinburgh which aims to improve the AFP\@. Goodwin \cite{Goodwin2020} outlined the development life cycle and re-implementation of the Archive with modern frameworks. The project completely overhauled the functionality and created a single page application with a database, log in and search. \cbstart The final system is impressive and allows for entries to be submitted and changed in the browser. This system was not used as the foundation for this project as we did not want to use the client-server model because it would increase the maintenance load of the AFP\@. \cbend % \ jtodo{I would tone the bit about Goodwin's work down.}
+This is the second undergraduate project from the University of Edinburgh which aims to improve the AFP\@. Goodwin \cite{Goodwin2020} outlined the development life cycle and re-implementation of the Archive with modern frameworks. The project completely overhauled the functionality and created a single page application with a database, log in and search.  The final system is impressive and allows for entries to be submitted and changed in the browser. This system was not used as the foundation for this project as we did not want to use the client-server model they introduced because it would increase the maintenance load of the AFP\@.  % \ jtodo{I would tone the bit about Goodwin's work down.}
 
-Elsewhere, Huch and Krauss \cite{HuchKrauss} have tried to improve the search facilities of the AFP (see Section~\ref{afpFeatures}). They recognised that searching for lemmas among all entries was  impractical and aimed to provide this functionality. Consequently, they created an external website which allows users to query a search index of all code in the AFP\@. Queries can have complex filters and additional facets which reduces the search space of the query. As such, users can find specific lemmas of interest from the 2.5 million lines of Isar code which comprises the AFP\toupdate{https://www.isa-afp.org/statistics.html}.
+Elsewhere, Huch and Krauss \cite{HuchKrauss} have tried to improve the search facilities of the AFP (see Section~\ref{afpFeatures}). They recognised that searching for lemmas among all entries was  impractical and aimed to provide this functionality. Consequently, they created an external website which allows users to query a search index of all code in the AFP\@. Queries can have complex filters and additional facets which reduces the search space of the query. As such, users can find specific lemmas of interest from the 2.9 million lines of Isar code which comprises the AFP.
+
+
+Blanchette et al. \cite{DBLP:conf/mkm/BlanchetteHMN15} analysed the metrics of the AFP in response to questions about many areas such as entry reuse, composition of proofs and the impact of contributors. They gave a thorough overview of the AFP through mining its data and answer the aforementioned questions. For example, they discover 58\% of the text of the AFP is taken up by proofs, 19\% by lemma statements and 8\% by definitions. 
+
 
 % \ todo[inline]{Ckm: Write a paragraph about this https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6044251/}
 % \ jtodo[]{This would not belong to this section (now).}
 
 \chapter{Evaluation of the Current Archive} \label{evaluation-current}
 
-\cbstart
+
 The evaluation of the current AFP serves two purposes. First, it informs us of its users' needs so that the redesign increases the sites utility. Second, it gives us a baseline to evaluate any redesign against, so that we can tell if improvements were made. This chapter covers both, the former in Section~\ref{sec:user-survey} and the latter in Section~\ref{automated_current}.
 
 \section{User Survey} \label{sec:user-survey}
- \cbstart
-There are many ways to elicit user feedback on an interface \cite{hanington2012universal}, however in this case we wanted to understand the aggregate experience rather than the individual. This was because we wanted to create a design which was useful for most Isabelle users. As we had a relatively large pool of users that could be participants, questionnaires were chosen as the method of evaluation.
-\cbend
+ 
+There are many ways to elicit user feedback on an interface \cite{hanington2012universal}, however as we wanted to create a design which is useful for most users, the aggregate experience was of greater interest to us than the individual. Due to this, and the relatively large pool of users that could be participants, questionnaires were chosen as the method of evaluation.
+
 \subsection{Pre-study} \label{sec:pre-study}
 
 The survey was designed and validated on a smaller group from the \emph{Artificial Intelligence Modelling Lab} in the School of Informatics. This group was chosen as the members are familiar with Isabelle across a variety of use cases and workflows. A full write up of this pre-study can be found in Appendix~\ref{prestudy}. In summary, six people responded to the survey and they were not satisfied with the current AFP\@. Their largest problem was with searching for entries and theorems.
 
 \subsection{Study}
 
-\cbend This \textit{Isabelle Mailing List} was chosen as its members were likely to be users of the AFP, thereby increasing the likelihood of achieving a comprehensive evaluation of the website. The survey was advertised on the mailing list as \emph{Survey on the AFP} with an estimated time of 10--20 minutes\footnote{\url{https://lists.cam.ac.uk/pipermail/cl-isabelle-users/2020-November/msg00036.html}}. The time estimate was calculated based upon the average completion time of the pre-study. No compensation was advertised, and the main benefit of the study was to \emph{help guide my research in evaluating the AFP}. The survey was open from 10 to 30 November 2020.
+ This \textit{Isabelle Mailing List} was chosen as its members were likely to be users of the AFP, thereby increasing the likelihood of achieving a comprehensive evaluation of the website. The survey was advertised on the mailing list as \emph{Survey on the AFP} with an estimated time of 10--20 minutes\footnote{\url{https://lists.cam.ac.uk/pipermail/cl-isabelle-users/2020-November/msg00036.html}}. The time estimate was calculated based upon the average completion time of the pre-study. No compensation was advertised, and the main benefit of the study was to \emph{help guide my research in evaluating the AFP}. The survey was open from 10 to 30 November 2020.
 
 This study was published as a pre-print on ArXiv \cite{mackenzie2021evaluation}.
 
 \subsubsection{Design}
-\cbstart
-The first section in the survey was ``Demographics'' so that the rest of the survey could be skipped if they were not eligible. The next two sections were ``SUS'' and ``Pain Point'' as these questions help us understand the users general thoughts and the most pressing issue that comes to mind. These were placed early in the survey so that respondents were not prompted about any specific area before answering. However, after reviewing the answers of the pre-study, several adjustments were made to address limitations of the initial design and to account for the main audience. This meant introducing the ``Submission'' questions which had to be asked immediately after the ``Demographics'' questions, due to limitations in the distribution platform, Microsoft Forms. Following this were several topics which had no constraint in ordering as they were independent to each other. The ``Ranking'' question was placed at the end of the survey as we wanted users to reflect on the areas which they had just considered. The final iteration of the survey was organised as follows:
-\cbend
+
+The first section in the survey was ``Demographics'' so that the rest of the survey could be skipped if they were not eligible. The next two sections were ``SUS'' and ``Pain Point'' as these questions help us understand the user's general thoughts and the most pressing issue that comes to mind. These were placed early in the survey so that respondents were not prompted about any specific area before answering. However, after reviewing the answers of the pre-study, several adjustments were made to address limitations of the initial design and to account for the main audience. This meant introducing the ``Submission'' questions which had to be asked immediately after the ``Demographics'' questions, due to limitations in the distribution platform, Microsoft Forms. Following this were several topics which had no constraint in ordering as they were independent to each other. The ``Ranking'' question was placed at the end of the survey as we wanted users to reflect on the areas which they had just considered. The final iteration of the survey was organised as follows:
+
 % \ todo[inline]{Jev: Little more introduction to this, why were these areas important?}
 
 \begin{enumerate}
@@ -314,42 +328,42 @@ The first section in the survey was ``Demographics'' so that the rest of the sur
   \item \textbf{Navigation:} 4 questions related to the ease of finding pages and page visit frequency.
   \item \textbf{Design:} 2 questions on the user interface and user experience.
   \item \textbf{Browsing session scripts:} 2 questions about the browsing experience and 1 short answer question about missing features.
-  \item \textbf{Ranking priorities:} 1 question asking users to rank several areas in order of importance \cbstart to guide development priorities. \cbend
+  \item \textbf{Ranking priorities:} 1 question asking users to rank several areas in order of importance  to guide development priorities. 
 \end{enumerate}
 
 % \ todo[inline]{Jev: Is the ranking question an established tactic to elicit specific information? If so, who recommends it and why are you applying it. If not, why rank and not ask for the importance of each individually?}
 % \ todo[inline]{Ckm: This is a good question :) I mainly did it to pick which areas I would devote my time to. In reflection, maybe asking for importance of each would've been good.}
 
 \subsubsection{Results} \label{mailingListResults}
-\cbstart
+
 The survey was completed by 29 members of the mailing list who skewed towards long term and active users of the AFP\@. They were satisfied with the AFP in general, however they had specific criticisms about navigation, search, and theory browsing. Most respondents were neutral or negative towards a redesign of the user interface and user experience. Full results are available in Appendix~\ref{appendix-afp-eval}.
-\cbend
+
 
 \subsubsection{Analysis}
 
-It is likely that people who are subscribed to the Isabelle mailing list and willing to answer the survey are active AFP users. This was reflected in the demographics and the familiarity of the audience should be kept in mind when interpreting the results.\smallskip
+It is likely that people who are subscribed to the Isabelle mailing list and willing to answer the survey are active AFP users. This was reflected in the demographics and the familiarity of the audience should be kept in mind when interpreting the results.
 
-The survey was taken by 30 participants and 29 of them answered all the parts. From Fleuriot et al.\ \cite{fleuriot2016social}, there were around 600 contributing users on the mailing list in the seven-year period of 2008 to 2015. We cannot tell whether the mailing list has grown or shrunk in the years since, but the number of responses seems adequate for the order of magnitude of the mailing list.\smallskip
+The survey was taken by 30 participants and 29 of them answered all the parts. From Fleuriot et al.\ \cite{fleuriot2016social}, there were around 600 contributing users on the mailing list in the seven-year period of 2008 to 2015. We cannot tell whether the mailing list has grown or shrunk in the years since, but the number of responses seems adequate for the order of magnitude of the mailing list.
 
-As the participants were mostly contributors to the AFP, their opinions are highly valued. The SUS score of 72 implies that they are generally satisfied with the AFP, which is a testament to the design decisions that have lasted almost 20 years. The pre-study score was much lower, 46, which seems to imply that non-contributors of entries to the AFP might be less satisfied. However a further study with a larger group would be needed to confirm this.\smallskip
+As the participants were mostly contributors to the AFP, their opinions are highly valued. The SUS score of 72 implies that they are generally satisfied with the AFP, which is a testament to the design decisions that have lasted almost 20 years. The pre-study score was much lower, 46, which seems to imply that non-contributors of entries to the AFP might be less satisfied. However a further study with a larger group would be needed to confirm this.
 
 % Feedback associated with poor search functionality.
-Three respondents described difficulty in finding existing functionalities and seven requested improvements to script search capabilities. Additionally, most participants struggle to find specific content in the AFP\@. As it was the second highest priority for users, the AFP would be more useful if the search capabilities were improved.\smallskip
+Three respondents described difficulty in finding existing functionalities and seven requested improvements to script search capabilities. Additionally, most participants struggle to find specific content in the AFP\@. As it was the second highest priority for users, the AFP would be more useful if the search capabilities were improved.
 
-The most important thing for participants was navigation and the results of the survey imply that it does not currently meet their needs. The sidebar is the main navigation area and it is not ordered by frequency of use (Figure~\ref{fig:navigating-to-pages}), audience (contributor \emph{vs} non-contributor) or content (i.e., ``Home'' and ``Index'' are the only pages which list entries and they are separate). Participants also report mis-clicking, which could suggest link labelling is not clear or links are too small. It is also hard to find many different types of content as shown in Figure~\ref{fig:navigating-to-specific-content}. Navigation is closely related to search, however, and many of these issues could be solved in other ways. \smallskip
+The most important thing for participants was navigation and the results of the survey imply that it does not currently meet their needs. The sidebar is the main navigation area and it is not ordered by frequency of use (Figure~\ref{fig:navigating-to-pages}), audience (contributor \emph{vs} non-contributor) or content (i.e., ``Home'' and ``Index'' are the only pages which list entries and they are separate). Participants also report mis-clicking, which could suggest link labelling is not clear or links are too small. It is also hard to find many different types of content as shown in Figure~\ref{fig:navigating-to-specific-content}. Navigation is closely related to search, however, and many of these issues could be solved in other ways.
 
 % Feedback associated with the theory browser.
 Finally, navigation improvements to script browsing were requested frequently---over half the respondents requested in-place links to entity definitions, i.e., to directly navigate to specific content. Similarly having an outline of the theory file, as SideKick provides in Isabelle/jEdit, was highly requested.
 
-Whilst a significant minority of responses hold that redesign is unnecessary, there were many specific criticisms with the current design as well as a general sentiment that several core features (specifically navigation, search, and theory browsing) could be improved. \smallskip
+Whilst a significant minority of responses hold that a redesign is unnecessary, there were many specific criticisms with the current design as well as a general sentiment that several core features (specifically navigation, search, and theory browsing) could be improved. 
 
 \section{Automated Audits} \label{automated_current}
 
-Many structural website issues can be detected automatically by validators and auditors \cite{ivory2013automated}. They cannot detect all issues, nor large structural problems, however they are a good bellwether for detecting if best practices are followed. For the following audits, I will test each on the home page and an entry page\todo[color=gray!20]{I forgot to test lighthouse on entry pages but I will}, as these are the most frequently accessed pages. The entry used was \emph{Separata} as it uses MathJax in its abstract.
+Many structural website issues can be detected automatically by validators and auditors \cite{ivory2013automated}. They cannot detect all issues, nor large structural problems, however they are a good bellwether for detecting if best practices are followed. For the following audits, each will be tested on the home page and an entry page, as these are the most frequently accessed pages. The entry used was \emph{Separata} as MathJax is used in its abstract.
 
 \subsection{W3C Validation}
 
-The W3C Validator \cite{w3c_validator} is very basic and only checks whether the HTML syntax is correct. It is maintained by the World Wide Web Consortium which is responsible for the HTML standard, among many others.
+The W3C Validator \cite{w3c_validator} is very basic and only checks whether the HTML syntax is correct. It is maintained by the World Wide Web Consortium, which is responsible for the HTML standard among many others.
 
 \subsubsection{HTML Results}
 
@@ -360,13 +374,13 @@ The errors found by the validator can be seen in Table~\ref{W3C-current}
 \rowcolors{5}{}{gray!10}
 \begin{tabularx}{0.5\textwidth}{rrl}
 Home & Entry &                                                                   \\
-3    & 4     & Uses of obsolete \verb|font| element                               \\
-6    & 10    & Obsolete attributes on the \verb|td| element                      \\
-20   & 3     & Obsolete attributes on the \verb|table| element                   \\
-1    & 1     & Use of obsolete \verb|align| attribute on the \verb|div| element  \\
-1    & 1     & Use of obsolete \verb|border| attribute on the \verb|img| element \\
-1    & 1     & Lack of \verb|alt| attribute on the \verb|img| element            \\
-1    & 0     & Extra unopened \verb|h1| tag                                      \\ \hline
+3    & 4     & Uses of obsolete \texttt{font} element                               \\
+6    & 10    & Obsolete attributes on the \texttt{td} element                      \\
+20   & 3     & Obsolete attributes on the \texttt{table} element                   \\
+1    & 1     & Use of obsolete \texttt{align} attribute on the \texttt{div} element  \\
+1    & 1     & Use of obsolete \texttt{border} attribute on the \texttt{img} element \\
+1    & 1     & Lack of \texttt{alt} attribute on the \texttt{img} element            \\
+1    & 0     & Extra unopened \texttt{h1} tag                                      \\ \hline
 33   & 20    & Total                                                              
 \end{tabularx}
 \caption{Issues with the AFP found by the W3C validator}
@@ -390,7 +404,7 @@ All issues can be fixed by inferring the intent of the CSS and correcting it.
 
 \subsection{Google Lighthouse}
 
-Lighthouse \cite{lighthouse} is a tool created by Google to help web developers assess their web pages. It can be run from the Chrome developer tools or the command line, and generates a report for each URL that is provided. The report lists the result of five categories of automated tests, giving an overall score for how the website performed. In addition to this, it suggests several manual checks which should be performed to cover aspects which cannot be automatically tested for. It should be noted that a perfect lighthouse score does not indicate that the website is fully accessible.\footnote{\url{https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/}} 
+Lighthouse \cite{lighthouse} is a tool created by Google to help web developers assess their web pages. It can be run from the Chrome developer tools, or the command line, and generates a report for each URL that is provided. The report lists the result of five categories of automated tests, giving an overall score for how the website performed. In addition to this, it suggests several manual checks which should be performed to cover aspects which cannot be automatically tested for. It should be noted that a perfect lighthouse score does not indicate that the website is fully accessible.\footnote{\url{https://www.matuzo.at/blog/building-the-most-inaccessible-site-possible-with-a-perfect-lighthouse-score/}} 
 The Lighthouse report for the AFP is as follows:
 
 \begin{table}[h]
@@ -410,56 +424,92 @@ Progressive Web App (PWA) & --          & --         & --           & --
 
 The high ``Performance'' score is coherent, as the page is very minimal with few external libraries and no tracking or ads. The score is not 100 due to the large DOM size, i.e., the page is very long and some nodes are deeply nested. The high ``Best Practices'' score is surprising but, upon reviewing, we found that the checks are mainly for correct HTML and for responsible JavaScript use, which the AFP conforms to.
 
-The lower scores for Accessibility and SEO are less surprising due many new guidelines being standardised for these in the years after the site's creation. 
+The lower scores for Accessibility and SEO are less surprising due to many new guidelines being standardised for these in the years after the site's creation. 
 
 The mobile scores are similar to the desktop scores despite there being no consideration for mobile devices.
 
-\cbstart
 PWAs are websites which are designed to function like apps on mobile phones. There is no score for this as the AFP cannot be installed, however this should not be seen as a negative as this technology does not have wide adoption.
 
 In all, the issues are relatively minor and are fixed as noted in Section~\ref{sec:lighthouse-redesign}, or not relevant in the case of PWA.
-\cbend
+
+
+
+\section{Conclusion}
+
+From user and automated evaluation, we can see that there are flaws with the current AFP. These issues range from relatively minor invalid CSS issues, to lacking adequate search facilities which are crucial for user productivity and not duplicating work done previously. In the next chapter, we redesign the AFP to match modern design conventions before fixing these issues in the following implementation chapter.
+
+
 
 \chapter{Design} \label{design}
 
-\cbstart
-While the survey results favoured not redesigning the AFP, we chose to redesign it as we felt the project would be incomplete otherwise. \todo[color=gray!20]{James asked me to justify the redesign, and I wrote this but I'm not too happy with it. It is the goal of the project?}% 
-\cbend
-\ijtodo{This is not the right way to frame things I would say. The redesign is not just because of the survey but also because of the problems with W3C validation, use of tables, etc. Do not reduce the ``redesign" to just a need for an updated look-and-feel.}
 
-% \todo[inline]{Jev: Give a justification for making a new interface too.} I'm not too happy with this, but not sure how else to justify the redesign — we didn't ask the pre-study if it should be redesigned
+As shown in Section~\ref{automated_current} there are a number of structural flaws with the website, and based upon our subjective evaluation of the interface as being outdated, we chose to redesign the AFP. The survey results in Section~\ref{mailingListResults} inform us that a complete redesign would not be welcome by the users and therefore creating a new, but familiar, interface would be more successful. Therefore we chose to create an interface which is faithful to the current design while using modern design conventions.
+% \ todo{still need to adjust a little}
 
-When redesigning an interface, it is important to decide whether to re-imagine the design and start from scratch, or to maintain the same design philosophy. The survey results in Section~\ref{mailingListResults} inform us that a complete redesign would not be welcome by the users and therefore creating a new, but familiar, interface would be more successful.
+% \ todo[inline]{Jev: Give a justification for making a new interface too.} I'm not too happy with this, but not sure how else to justify the redesign — we didn't ask the pre-study if it should be redesigned
+
+%\ todo[color=gray!20]{James asked me to justify the redesign, and I wrote this but I'm not too happy with it. It is the goal of the project?}% 
+
+% \ ijtodo{This is not the right way to frame things I would say. The redesign is not just because of the survey but also because of the problems with W3C validation, use of tables, etc. Do not reduce the ``redesign" to just a need for an updated look-and-feel.}
+
+% When redesigning an interface, it is important to decide whether to re-imagine the design and start from scratch, or to maintain the same design philosophy. The survey results in Section~\ref{mailingListResults} inform us that a complete redesign would not be welcome by the users and therefore creating a new, but familiar, interface would be more successful.
 
 \section{Paper Prototypes} \label{paperPrototypes}
 
 Paper prototyping was chosen to test designs as it allows for quick iterations and easy modification. First, the original design was recreated in paper, and then the placement and form of each component was considered in turn.
 
 \subsection{Theme Colour}
+% \ ijtodo{This is asking the reader to visualise a lot of things. You should refer to the screenshot you gave before. If this is not good enough then a new screenshot is needed, preferably here but if there's no space then in the appendix. A picture is worth a thousand words!}
 
-The AFP uses a dark navy blue as its main theme colour and it is mainly present as the background of the page title. While iterating, the placement and size of this was considered.
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/themeColour/two.png}
+    \caption{}
+    \label{theme-1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/themeColour/three.png}
+    \caption{}
+    \label{theme-2}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/themeColour/four.png}
+    \caption{}
+    \label{theme-3}
+\end{subfigure}
+\caption[short]{Mock-ups showing the three options for theme colour placement}
+\end{figure}
 
-At first, the banner was extended to the top of the page as the current white gutter does not add to the design. Extending the banner across to the left side of the page was then considered, however it would visually separate the logo from the sidebar. This would leave the sidebar floating in space as it is currently. Hypothetically the sidebar could also have the theme colour background, however this would make the theme colour overwhelming.
 
-Thus the chosen placement for the theme colour was the background of the sidebar. This has several advantageous as the dark colour ensures that your eyes stay on the content of the page rather than the side bar. Also, it links the sidebar to the logo ensuring that there is a strong connection between these items. One consideration is that the logo will need to have white text instead, but this will be easy to create.
+The AFP uses a dark navy blue as its main theme colour which is present as the background of the page title (Figure~\ref{afpHomePage}). While iterating, the placement and size of this was considered.
 
+
+At first, the banner was extended across to the left side of the page (Figure~\ref{theme-1}), however it would visually separate the logo from the sidebar. This would leave the sidebar floating in space as it is currently. Hypothetically the sidebar could also have the theme colour background (Figure~\ref{theme-2}), however this would make the theme colour overwhelming.
+
+Thus the chosen placement for the theme colour was the background of the sidebar (Figure~\ref{theme-3}).  This has several advantages as the dark colour ensures that your eyes stay on the content of the page rather than the side bar. Also, it links the sidebar to the logo ensuring that there is a strong connection between these items. One consideration is that the logo will need to have white text instead, but this was easy to create.  
 % \ todo[inline]{Jev: *was easy to create*, make sure you get credit for actually doing it too. You also made it into vector graphic and did you change the italicisation on the ''AFP'' too? There's more to say about this!}
 % \ todo[inline]{Ckm: I wish I made it into a proper SVG :( I was hoping to get the SVG logo from the FindFacts project. Instead I used the highest quality version I could and then recreated the text with the closest fonts I could find.}
+% \ todo[inline]{Jev: *was easy to create*}
 
-\subsection{Menu}
+\subsection{Menu} \label{sec:menu}
 
-The Archive of Formal Proofs has always featured side navigation. As shown in Section~\ref{mailingListResults}, when users were surveyed they were less responsive to changes to the user experience. Due to this, and to prevent users having to relearn the interface, it seems unwise to change to a different menu style. 
+The Archive of Formal Proofs has always featured side navigation. As users disagreed with changing the user experience (Section~\ref{mailingListResults}), and to prevent users having to relearn the interface, we chose to preserve it. 
 
-As the side bar is being kept, greater focus was placed on the order and placement of the menu items. The current menu items and the attributes are shown in Table~\ref{originalMenuOrder} and it is clear that there is little logic in the order of these items, as none of the attributes are grouped together. To resolve this, items relevant to contributors were separated from the main group. Then the remaining items were grouped by their content, and then ordered by their usage frequency. Finally, the search page was imagined as a direct input and separated from the menu. The final menu groupings are shown in Table~\ref{newMenuOrder}.
+As the side bar is being kept, greater focus was placed on the order and placement of the menu items. The current menu items and their attributes are shown in Table~\ref{originalMenuOrder} and it is clear that there is little logic in the order of these items, as none of the attributes are grouped together. To resolve this, items relevant to contributors were separated from the main group. Then the remaining items were grouped by their content, and then arranged in descending order by their usage frequency,  as people read menus from top to bottom \cite{DBLP:conf/chi/ByrneADM99}. Finally, the search page was imagined as a direct input and separated from the menu. The final menu groupings are shown in Table~\ref{newMenuOrder}.
 
-\todo[inline]{Jev: Citations for this? I'm no expert on UX but I know there's best practise on where to place the most popular elements in sidebars.}
-\todo[inline,color=gray!20]{I struggled to find anything on placement of content in sidebars. I feel like it's kinda obvious similar things should be near each other? would appreciate help}
-\todo[inline]{Jev: Right, so the only justifications I can find are derived from the "Serial Position Effect", as interpreted out of context by designers/bloggers. The only academic source I found "Eye Tracking the Visual Search of Click-Down Menus", suggests users primarily search top-to-bottom.}
+% \ todo[inline]{Jev: Citations for this? I'm no expert on UX but I know there's best practise on where to place the most popular elements in sidebars.}
+% \ todo[inline,color=gray!20]{I struggled to find anything on placement of content in sidebars. I feel like it's kinda obvious similar things should be near each other? would appreciate help}
+% \ todo[inline]{Jev: Right, so the only justifications I can find are derived from the "Serial Position Effect", as interpreted out of context by designers/bloggers. The only academic source I found "Eye Tracking the Visual Search of Click-Down Menus", suggests users primarily search top-to-bottom.}
 
-In the survey many people reported mis-clicking when navigating, so the labelling of the menu items was considered. The ``Index'' page is the index of the topics of the entries, and the label ``Topics'' was chosen to reflect this. ``Submitting'' and ``Updating Entries'' are both items relating to ``Contribution'' so these were combined into one page. This centralises this information and preserves the number of clicks to reach either of these pages. Finally, ``Using Entries'' is descriptive, however some long form survey feedback expressed that there is a lack of help and documentation. This was renamed to ``Help'' and the content of the page will cover many topics and link to external Isabelle resources.
+The labelling of the menu items was then considered. The ``Index'' page is the index of the topics of the entries, and the label ``Topics'' was chosen to reflect this. ``Submitting'' and ``Updating Entries'' are both items relating to ``Contribution'' so these were combined into one page. This centralises the information and preserves the number of clicks to reach either of these pages. Finally, ``Using Entries'' is descriptive, however some long form survey feedback expressed that there is a lack of help and documentation. This was renamed to ``Help'' and the content of the page would now cover many topics and link to external Isabelle resources.
 
 \begin{table}[h]
 \centering
+\footnotesize
 \begin{tabular}{|l|l|l|l|}
 \hline
  & \textbf{Content} & \textbf{Audience} & \textbf{Use Frequency} \\ \hline
@@ -479,6 +529,7 @@ Download               & Links            & Everyone          & Sometimes       
 
 \begin{table}[h]
 \centering
+\footnotesize
 \begin{tabular}{llll}
 \hline
 \multicolumn{1}{|l|}{} & \multicolumn{1}{l|}{\textbf{Content}} & \multicolumn{1}{l|}{\textbf{Audience}} & \multicolumn{1}{l|}{\textbf{Use Frequency}} \\ \hline
@@ -500,50 +551,48 @@ Download               & Links            & Everyone          & Sometimes       
 
 \subsection{Home page}
 
-Turning my attention to the home page, I felt it was important to preserve most of current elements as it is functional. For example, there is no pagination and all entries are listed on this page, which allows for the use of the browsers Find in Page functionality. 
+Most elements of the home page were preserved as it is functional. For example, the lack of pagination allows for the use of the browsers ``Find'' functionality. 
 
-Most improvements to this page were in simplifying the elements and reducing the visual clutter. For example, removing the table borders and the borders around the entries opens the design up and makes it easier to scan. To ensure that entries were still distinguishable without borders, white space was added. The date was simplified from a \verb|2001-02-03| format to a \verb|03 Feb| format so that the year is not duplicated for every entry. Finally, the ``Author: '' label was replaced with ``by '' as this is more natural. The result of this can be found in Figure~\ref{paper-home}
+Most improvements to this page were in simplifying the elements and reducing the visual clutter. For example, removing the table borders and the border around each entry opens the design up, and makes it easier to scan. To ensure that entries were still distinguishable without borders, white space was added. The date was simplified from a \verb|2001-02-03| format to a \verb|03 Feb| format so that the year is not duplicated for every entry. Finally, the ``Author: '' label was replaced with ``by '' as this is more natural. The result of this can be found in Figure~\ref{paper-home}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/paperPrototypes/home-9.jpg}
+    \includegraphics[width=0.8\textwidth]{figures/paperPrototypes/home-9.jpg}
     \caption{Final paper prototype of the home page}
     \label{paper-home}
 \end{figure}
 
 \subsection{Entry page}
 
-In contrast with the home page, the entry page needs a lot more attention. The current interface is a very simple key-value table and all content has the same basic styling. Emphasis is given to the page title, but it is duplicated in the table directly beneath it. There are also associated links on this page however they are placed in a table with a single column. The result is that a user cannot infer the content of the page from the structure, and instead must read to find the information that is needed.
+In contrast with the home page, more changes needed to be made to the entry page. The current interface is a very simple key-value table and all content has the same basic styling. Emphasis is given to the page title, but it is duplicated in the table directly beneath it. There are also associated links on this page however they are placed in a table with a single column. The result is that a user cannot infer the content of the page from the structure, and instead must read to find the information that is needed.
 
-The first changes were unpacking the table information and placing it where users would expect to find them. For example, the title is written in large bold text at the top of the page with the authors just underneath. The abstract becomes the main body text and the license is written just below. The table of links is transformed into a bullet point list, while cite and download are highlighted with large buttons, signalling they are actions. The final design can be seen in Figure~\ref{paper-entry}.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/paperPrototypes/entry-14.jpg}
-    \caption{Final paper prototype of the entry page}
-    \label{paper-entry}
-\end{figure}
+The first changes were unpacking the table information and placing it where users would expect to find them. For example, the title is written in large bold text at the top of the page with the authors just underneath. The abstract becomes the main body text, and the license is written just below. The table of links is transformed into a bullet point list, while cite and download are highlighted with large buttons, signalling they are actions. The final design can be seen in Figure~\ref{paper-entry}.
 
 \section{Interactive Prototype}
-\cbstart
+
 After the paper prototypes were satisfactory, we wanted to receive feedback on the designs before implementation. Rather than sending a PDF and describing how to use the interface, it was decided that an interactive prototype would be created which would be easier to share and demonstrate.
-\cbend
+
 % \ todo[inline]{Jev: I'd rework this, a PDF doesn't have to be literally unworkable for an interactive prototype to be better path. What do designers say about this choice?}
 
-While there are many competing online prototyping tools such as Balsamiq, Figma was chosen as it was most familiar and the main priority was speed of creation. If more extensive use of prototypes was planned other available tools would have been evaluated.
+% While there are many competing online prototyping tools such as Balsamiq\footnote{\url{https://balsamiq.com}}, Figma\footnote{\url{https://www.figma.com}} was chosen as it was most familiar and the main priority was speed of creation. If more extensive use of prototypes was planned other available tools would have been evaluated.
 
-The feedback I received mainly highlighted that I had not included theory browsing in my prototype, which is a large area of focus for the new design.
+
+Figma\footnote{\url{https://www.figma.com}} was used to create the prototype, as the main priority was speed of creation and it was already familiar. The interactive prototype was evaluated internally with my supervisors as the functionality of the new design was largely the same. A second iteration was performed to fix the issues raised in their feedback.
+
+
+% The feedback I received mainly highlighted that I had not included theory browsing in my prototype, which is a large area of focus for the new design.\ jtodo{This is too vague. Who and how many evaluated this, etc.? You want to avoid this aspect feeling ``under-cooked" and thus weak compared to other evaluations done as part of this work.}
 
 \section{Design Philosophy}
 
-In order to create a familiar but new interface, we must consider the qualities of current interface that can be preserved. In the case of current website it makes heavy use of tables. Table~\ref{table-properties} shows how the qualities of a table are persisted into the redesign.
+In order to create a familiar but new interface, we must consider the qualities of the current one which can be preserved---such as the tables. Table~\ref{table-properties} shows how the qualities of a table are persisted into the redesign.
 
 \begin{table}[h]
 \centering
+\small
 \rowcolors{5}{}{gray!10}
 \begin{tabularx}{0.5\textwidth}{ll}
 \textit{Qualities of a table}                                                       & \textit{How they are preserved in the redesign}                                                                                               \\ \hline
-Horizontal lines                                                                    & \begin{tabular}[c]{@{}l@{}}Horizontal lines underline \\ \verb|<h1>| headings to emphasise them. \\ Em dashes ``—'' are used instead of \\ bullet points \end{tabular} \\ 
+Horizontal lines                                                                    & \begin{tabular}[c]{@{}l@{}}Horizontal lines underline \\ \texttt{<h1>} headings to emphasise them. \\ Em dashes ``—'' are used instead of \\ bullet points \end{tabular} \\ 
 Vertical lines                                                                      & \begin{tabular}[c]{@{}l@{}}The sidebar creates a vertical line \\ which separates it from the content\end{tabular}                         \\ 
 Corners and intersections                                                           & \begin{tabular}[c]{@{}l@{}}Buttons and borders have sharp right \\ angle corners\end{tabular}                                                 \\ 
 \begin{tabular}[c]{@{}l@{}}Alignment of content \\ in rows and columns\end{tabular} & \begin{tabular}[c]{@{}l@{}}All content is aligned on an underlying \\ grid\end{tabular}                                                       \\ 
@@ -554,29 +603,27 @@ Corners and intersections                                                       
 
 \chapter{Implementation} \label{implementation}
 
-\cbstart
-
 The redesigned AFP features a new site generator, user interface, search interface, script browsing interface and new ways to navigate. This chapter describes how the redesigned AFP was created in detail, justifying design decisions that were made.
 
 \section{Site Generation} \label{implemenation-ssg}
 
-\cbstart
-As Goodwin \cite{Goodwin2020} demonstrated, the client-server model can successfully distribute the AFP\@. This architecture, however, would conflict with the goals of this project because the introduction of a database and a web server would increase the maintenance load. Consequently it was decided that the site generation for the redesign should continue to be static.
-\cbend
 
-Before the AFP could be redesigned, site generation must be understood so that changes can be made. The publicly available codebase was briefly examined to see how extensible and maintainable the current solution was. \cbend It was clear that the code, while well structured, was not capable of competing with existing static site generators (SSGs). Additionally, the AFP's custom-based site generator is a likely source of overhead when it comes to contributing to the project, as people would need to understand it before they can contribute. This is especially exacerbated by the current generator having many moving parts as it integrates with Scala and Isabelle for dependency generation---however this was found to be unnecessary and the functionality was re-implemented without Isabelle in Section~\ref{python-scripts}. Thus, it was felt that migrating to a standard SSG would allow people to bring their existing knowledge to the project more readily.
+As Goodwin \cite{Goodwin2020} demonstrated, the client-server model can successfully distribute the AFP\@. This architecture, however, would conflict with the goals of this project because the introduction of a database and a web server would increase the maintenance load. Consequently it was decided that the site generation for the redesign should continue to be static.
+
+
+Before the AFP could be redesigned, site generation must be understood so that changes can be made. The publicly available codebase was briefly examined to see how extensible and maintainable the current solution was.  It was clear that the code, while well structured, was not capable of competing with existing static site generators (SSGs). Additionally, the AFP's custom-based site generator is a likely source of overhead when it comes to contributing to the project, as people would need to understand it before they can contribute. This is especially exacerbated by the current generator integrating with Scala and Isabelle for dependency generation---however this was found to be unnecessary, and the functionality was re-implemented without Isabelle in Section~\ref{python-scripts}. Thus, it was felt that migrating to a standard SSG would allow people to bring their existing knowledge to the project more readily.
 
 % \ todo[inline]{Jev: Is it worth saying explicitly that the custom generator does nothing custom? I assume it doesn't since you've coped without it.}
 % \ todo[inline]{Ckm: The only thing that I didn't recreate was the statistics generation. I mention this in passing but maybe should make it more clear}
 
-As of 2020, there are many competing static site generators which can be broken up into two main categories. On the one hand, a popular paradigm resides in JavaScript based site generators, such as Next.js\footnote{\url{https://nextjs.org}}, Gatsby\footnote{\url{https://www.gatsbyjs.com}}, and React Static\footnote{\url{https://react-static.js.org/}}. These are powerful and are commonly combined with APIs, to allow for logins and payment, in what is known as the JAMstack \cite{jamstack}. On the other hand, there are SSGs in other languages with more traditional support for templating, like Hugo (Go) and Jekyll (Ruby). These generators take markdown content files and insert the content into templates. Jekyll is championed for being easy to learn, whereas Hugo takes longer to learn but is more powerful. Additionally, Hugo excels in its speed due to being written and templated in Go which is statically typed and compiled. For these reasons Hugo was chosen as the SSG to re-implement the AFP in.
+As of 2021, there are many competing static site generators which can be broken up into two main categories. On the one hand, a popular paradigm resides in JavaScript based site generators, such as Next.js\footnote{\url{https://nextjs.org}} and Gatsby\footnote{\url{https://www.gatsbyjs.com}}. These are powerful and are commonly combined with APIs, to allow for logins and payment, in what is known as the JAMstack \cite{jamstack}. On the other hand, there are SSGs in other languages with more traditional support for templating, like Hugo (Go)\footnote{\url{https://gohugo.io}} and Jekyll (Ruby)\footnote{\url{https://jekyllrb.com}}. These generators take Markdown \cite{gruber_markdown_2004} content files and insert the content into templates. Jekyll is championed for being easy to learn, whereas Hugo takes longer to learn but is more powerful \cite{macrae_hugo_2018}. Additionally, Hugo excels in its speed due to being written and templated in Go, which is statically typed and compiled. For these reasons Hugo was chosen as the SSG to re-implement the AFP in.
 
-\cbstart
-The first step of the project was to re-implement the site generation in Hugo, in preparation for the redesign. An initial prototype with very few entries was first created as a proof of concept to figure out the best structure for this site. Many of the Jinja2 templates were partially reused as they have a similar syntax to Hugo templates. Subsequently, Python scripts were created to generate the content files for each entry. 
-\cbend
+
+The first step of the project was to re-implement the site generation in Hugo, in preparation for the redesign. An initial prototype with very few entries was first created as a proof of concept to figure out the best structure for the site. Many of the Jinja templates were partially reused as they have a similar syntax to Hugo templates. Subsequently, Python scripts were created to generate the content files for each entry. 
+
 \subsection{Overview}
 
-The original site generation is described in Section~\ref{directory-structure}, and the new site generation follows this structure:
+The original site generation is described in Section~\ref{directory-structure}, and the following structure is used to generate the new AFP:
 
 \begin{enumerate}
     \item Update the \texttt{thys/} directory and \texttt{metadata/metadata} file---these are the only files from the upstream repository that are needed to update the Hugo site.
@@ -585,132 +632,110 @@ The original site generation is described in Section~\ref{directory-structure}, 
 \end{enumerate}
 
 \subsection{Python Scripts} \label{python-scripts}
-\cbstart
-Python was used to convert the original sites data into files suitable for Hugo generation. Most of the scripts iterate over the list of entries in the \texttt{thys/} directory, and so, they could be refactored into one script so that this iteration is not repeated multiple times. This design was not chosen however, as we wanted to keep the scripts modular so that they were self contained and did not have side effects. As such, each script can be run by itself if required. Below we describe the scripts that were needed for this task. 
-\cbend
-\paragraph*{exportMetadata.py}
 
-The purpose of this script is to run the rest of the scripts in the correct order and provide feedback in the form of a progress bar.
+Python was used to convert the original sites data into files suitable for Hugo generation. Most of the scripts iterate over the list of entries in the \texttt{thys/} directory, and so, they could be refactored into one script so that this iteration is not repeated multiple times. This design was not chosen however, as we wanted to keep the scripts modular so that they were self-contained and did not have side effects. As such, each script can be run by itself if required. Brief details for each are given below:
 
-\paragraph*{iniToJson.py}
 
-This script primarily converts the metadata stored in an INI file into individual JSON files. The shortname, title, date and abstract are preserved as is, but the other attributes are transformed into more appropriate formats like arrays and objects. Author emails are extracted from the entry data and are collated into an \texttt{authors.json} file. Finally, author names are consolidated to a standard format, as some authors have accidentally used many formats of their name in submissions.
 
-\paragraph*{addOlderReleases.py}
 
-Each release of Isabelle corresponds with a new release of the AFP with the state of the sessions frozen. The previous releases of a theory are listed on the entry page for if they are needed by the user. This script traverses the \verb|metadata/release-dates| and \verb|metadata/releases| files and adds all the releases (except the most recent) of each entry to its JSON file.
+\textbf{exportMetadata.py} The purpose of this script is to run the rest of the scripts in the correct order and provide feedback in the form of a progress bar.
 
-\paragraph*{addDependencies.py}
+\textbf{iniToJson.py} This script primarily converts the metadata stored in an INI file into individual JSON files. The shortname, title, date and abstract are preserved as is, but the other attributes are transformed into more appropriate formats like arrays and objects. Author emails are extracted from the entry data and are collated into an \texttt{authors.json} file. 
 
-The dependencies of an AFP entry are listed in the ROOT file. The structure of the ROOT file is regular \cite{isabelle_system}, and therefore the dependencies can be extracted using a regular expression. This script uses such a regular expression to extract all the dependencies and then adds them in an array to the JSON file of the entry.
+\textbf{addOlderReleases.py} This script traverses the \texttt{metadata/release-dates} and \texttt{meta} \texttt{data/releases} files and adds all the releases (except the most recent) of each entry to its JSON file.
 
-\paragraph*{addRelatedEntries.py}
+\textbf{addDependencies.py} The dependencies of an AFP entry are listed in the ROOT file, and as it is regular \cite{isabelle_system}, this script uses a regular expression to extract the dependencies and adds them to the JSON file of the entry.
 
-Related entries are generated and added to the entries to improve site navigation. This script combines three metrics to create a score for how related a pair of entries are. This is illustrated in detail in Section~\ref{sec:related-entries}
+\textbf{addRelatedEntries.py} This script generates related entries, using three metrics as described in Section~\ref{sec:related-entries}, and adds these to the entries to improve site navigation.
 
-\paragraph*{addStatistics.py}
+\textbf{generateKeywords.py} This script generates the list of keywords for the search autocomplete. Each entry's abstract is sanitised and then the keywords are extracted with the RAKE algorithm. This script is described in detail in Section~\ref{autocomplete}
 
-Most of the statistics for the site, like number of authors and most used entries, are generated by Hugo. However, some statistics like number of lines in the AFP are generated by the scripts from the current AFP\@. This is because the implementation of these is non-trivial and not worth re-implementing. Sadly, this is the longest running script of all due to lots of duplicate computation that is discarded.
+\textbf{exportJsonMetadata.py} \texttt{metadata.json} is a JSON release of the AFP's metadata which is generated by this script and is described in Section~\ref{sec:machine-readable-format}.
 
-\paragraph*{generateKeywords.py}
+\textbf{addStatistics.py} Most of the statistics for the site, like number of authors and most used entries, are generated by Hugo. However, some statistics like number of lines in the AFP are generated by the scripts from the current AFP\@. This is because the implementation of these is non-trivial and was not a priority in the time available. Unlike the previously mentioned scripts which take 5--10 seconds to execute, this takes 60 seconds due to duplicate computation that is discarded.
 
-This script generates the list of keywords for the search autocomplete. Each entry's abstract is sanitised and then the keywords are extracted with the RAKE algorithm. This script is described in detail in Section~\ref{autocomplete}
+Finally, getTheories.py is instead run rarely due to high network load on the upstream site.
 
-\paragraph*{exportJsonMetadata.py}
+\textbf{getTheories.py} This script downloads and transforms the HTML documents for the theory browsing, which is detailed in Section~\ref{SideKick}. 
 
-\texttt{metadata.json} is a release of the metadata of the AFP which is generated by this script which is described in Section~\ref{sec:machine-readable-format}.
+% \textbf{exportMetadata.py} executes the rest of the scripts in the correct order and provides feedback in the form of a progress bar. 2) The metadata from the INI file is converted into individual JSON files by \textbf{iniToJson.py}. The shortname, title, date and abstract are preserved as is, but the other attributes are transformed into more appropriate formats like arrays and objects. Author emails are extracted from the entry data and are collated into an \texttt{authors.json} file. 3) \textbf{addOlderReleases.py} traverses the \verb|metadata/release-dates| and \verb|metadata/releases| files and adds all the releases (except the most recent) of each entry to its JSON file. 4) The dependencies of an AFP entry are listed in the ROOT file, and as it is regular \cite{isabelle_system}, \textbf{addDependencies.py} uses a regular expression to extract the dependencies and adds them to the JSON file of the entry. 5) \textbf{addRelatedEntries.py} generates related entries, as described in Section~\ref{sec:related-entries}, and adds these to the entries to improve site navigation. 5) \textbf{generateKeywords.py} is described in Section~\ref{autocomplete} and generates the list of keywords using the RAKE algorithm. \textbf{exportJsonMetadata.py} creates the JSON release of the AFP's metadata, described in Section~\ref{sec:machine-readable-format}.
 
-\bigskip
-Finally, getTheories.py is instead run rarely due to the high network load of this script on the upstream site.
+% Unlike the previously mentioned scripts which take 5--10 seconds to execute, \textbf{addStatistics.py} takes around 60 seconds to generate the statistics due to relying on the upstream site generator. This is because the re-implementation of the statistics generation was not a priority in the time available.
 
-\paragraph*{getTheories.py}
+% Finally, \textbf{getTheories.py} downloads and transforms the HTML documents for the theory browsing, which is detailed in Section~\ref{SideKick}. It is run rarely due to the high network load of this script on the upstream site.
 
-This script downloads and transforms the HTML documents for the theory browsing, which is detailed in Section~\ref{SideKick}. 
 
 \subsection{Directory Structure}
 
-The new Hugo site generator has the following structure. In contrast to the previous site generator, content and layouts are stored in different directories, increasing cohesion. 
+The new Hugo site generator has the following structure: % In contrast to the previous site generator, content and layouts are stored in different directories, increasing cohesion. 
 
 \begin{itemize}
     \item \texttt{archetypes/default.md}\quad A file which describes the structure for pages created with \verb|hugo new entry|. This is optional and pages can be created manually.
     \item \texttt{assets/theories/}\quad HTML files for each entry which contain the concatenated theories.
-    \item \texttt{content/}\quad Markdown files for the non-entry pages (home, about, search, etc).
+    \item \texttt{content/}\quad Markdown files for the non-entry pages (home, about, search, etc.).
     \begin{itemize}
         \item \texttt{entries/}\quad Markdown files for each entry in the AFP, described in Section~\ref{entry-information}.
         \item \texttt{theories/}\quad Markdown files which list the lemmas of each theory for generating the menu, described in Section~\ref{SideKick}.
     \end{itemize}
     \item \texttt{data/}\quad JSON files which contain data about the authors, topics, and statistics.
-    \item \texttt{static/}\quad Files which are not modified by Hugo.
+    \item \texttt{static/metadata.json}\quad The JSON release of the Archive's metadata.
+    \item \texttt{themes/afp/}\quad Where the site's theme is stored. Hugo allows for multiple themes, but we only use one for the redesign.
     \begin{itemize}
-        \item \texttt{metadata.json}\quad The release of the metadata of the archive in JSON format.
-    \end{itemize}
-    \item \texttt{themes/afp/}\quad Where the site's theme is stored, Hugo allows for multiple themes but we only use one for the redesign.
-    \begin{itemize}
-        \item \texttt{assets/sass/main.css}\quad The SASS for the website which is compiled to CSS upon build.
+        \item \texttt{assets/sass/main.scss}\quad The SASS for the website which is compiled to CSS upon build.
         \item \texttt{layouts/}\quad HTML templates for each section and page type.
         \item \texttt{static/}\quad JavaScript, fonts and images for the website.
-        \toupdate{}
     \end{itemize}
     \item \texttt{config.json}\quad The Hugo config contains the site metadata add describes how the site should be built.
 \end{itemize}
 
 \subsection{Entry Information} \label{entry-information}
 
-Hugo has support for structured data to be associated with a markdown file in the form of \emph{frontmatter}. This structured data is a dictionary of key-value pairs and can be one of three formats: yaml, toml, or json. When the site is generated, this metadata can be referenced by key and rendered on the page. This is a natural choice for representing the entries of the AFP as it is already stored in a key-value format. This means that while entries are stored in markdown files, they only contain a JSON blob which contains the information for the entry. For example, this entry from \verb|metadata/metadata|: 
+Hugo has support for structured data to be associated with a Markdown file in the form of \emph{frontmatter}. This structured data is a dictionary of key-value pairs and can be one of three formats: YAML, TOML, or JSON. When the site is generated, this metadata can be referenced by key and rendered on the page. This is a natural choice for representing the entries of the AFP as it is already stored in a key-value format. This means that while entries are stored in Markdown files, they only contain a JSON blob which contains the information for the entry. For example, this entry from \verb|metadata/metadata| on the left is stored in the file \verb|content/AVL-Trees.md|: 
 
+\begin{minipage}[t]{0.47\textwidth}
 {\footnotesize
 \begin{verbatim}
 [AVL-Trees]
 title = AVL Trees
-author = Tobias Nipkow <http://www21.in.tum.de/\~nipkow>, Cornelia Pusch <>
+author = Tobias Nipkow <http://www...
 date = 2004-03-19
 topic = Computer science/Data structures
-abstract = Two formalizations of AVL trees with room for extensions. The first 
-formalization is monolithic and shorter, the second one in two stages, longer 
-and a bit simpler. The final implementation is the same. If you are interested 
-in developing this further, please contact <tt>gerwin.klein@nicta.com.au</tt>.
+abstract = Two formalizations of AVL t...
 extra-history =
     Change history:
-    [2011-04-11]: Ondrej Kuncar added delete function
+    [2011-04-11]: Ondrej Kuncar added ...
 notify = kleing@cse.unsw.edu.au
 \end{verbatim}
 }
-
-is stored in the file \verb|content/AVL-Trees.md|:
-
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
 {\footnotesize
 \begin{verbatim}
-{
-    "title": "AVL Trees",
-    "authors": [
-        "Tobias Nipkow",
-        "Cornelia Pusch"
-    ],
-    "date": "2004-03-19",
-    "topics": [
-        "Computer science/Data structures"
-    ],
-    "abstract": "Two formalizations of AVL trees with room for extensions. 
-    The first formalization is monolithic and shorter, the second one in two 
-    stages, longer and a bit simpler. The final implementation is the same. 
-    If you are interested in developing this further, please contact 
-    <tt>gerwin.klein@nicta.com.au</tt>.",
-    "extra": {
-        "Change history": "[2011-04-11] Ondrej Kuncar added delete function"
-    },
-    "notify": [
-        "kleing@cse.unsw.edu.au"
-    ],
-}
+{"title": "AVL Trees",
+"authors": [ 
+    "Tobias Nipkow",
+    "Cornelia Pusch"
+],
+"date": "2004-03-19",
+"topics": [
+    "Computer science/Data structures"
+],
+"abstract": "Two formalizations of A...",
+"extra": {
+    "Change history": "[2011-04-11] ..."
+},
+"notify": [
+    "kleing@cse.unsw.edu.au"
+],}
 \end{verbatim}
 }
+\end{minipage}
 
 There are many advantages to this. Each entry is self-contained and can store all the information related to that entry. We can extract author information to its own JSON file reducing duplication and inconsistencies. The three formats available are more powerful than the INI format that is currently used. This means we can store arrays instead of strings which need to be parsed into lists. Of the three formats, JSON was chosen as it is the only one of these which has a module in the Python Standard Library.
 
-\cbstart
 \subsection{URL Structure}
 
-It is good practise to write URLs in such a way so that they never change \cite{burners1998cool}. Information that can change such as authorship, file name extension and status should not be included in the URL \cite{burners1998cool}. Most URLs in the current AFP violate the file name extension rule, and other URLs are structured in unintuitive ways. An overview of the current and redesigned AFP's URLs is shown in Table~\ref{afp-url-path}
+It is good practice to write URLs in such a way so that they never change \cite{berners1998cool}. For instance, information that can change such as authorship, file name extension and status should not be included in the URL. Most URLs in the current AFP violate the file name extension rule, and other URLs are structured in unintuitive ways. An overview of the current and redesigned AFP's URLs is shown in Table~\ref{afp-url-path}
 
 \begin{table}[h]
 \centering
@@ -729,75 +754,112 @@ New Theory Path          & /entries/avl-trees/theories/\#AVL             \\ \hli
 \label{afp-url-path}
 \end{table}
 
-All the URLs in the new AFP have lowercased, hyphenated URLs without file extensions as this is the default behaviour of Hugo\footnote{\url{https://gohugo.io/content-management/urls/\#pretty-urls}}. File extensions are avoided by serving all pages at \texttt{page/index.html} rather than \texttt{page.html}.
+All the URLs in the new AFP have lowercase, hyphenated URLs without file extensions as this is the default behaviour of Hugo\footnote{\url{https://gohugo.io/content-management/urls/\#pretty-urls}}. File extensions are avoided by serving all pages at \texttt{page/index.html} rather than \texttt{page.html}.
 
 In comparison to the current AFP, the theory pages can be found at an obvious sub-directory of the entry page. This was relatively complex to set up and a discussion was made in the Hugo forum to figure out how this could be done\footnote{\url{https://discourse.gohugo.io/t/complex-use-of-taxonomy-or-subpage-generation/30692}}. In the end, the URL for each theory page is set manually in the frontmatter by \texttt{getTheories.py}.
 
-\cbend
+
 \section{Search}
 
-The current search facility of the AFP relies on a Google SiteSearch, which is a Google search for the phrase with ``site:www.isa-afp.org'' appended. \cbstart This is useful, however could be incomplete or outdated depending on Google's indexing. Due to this, I decided to create a new native search facility for the AFP\@.
 
-The current search provided by Google is an example of a server-side search. This is where the user sends a request to the server, the server searches the index, and returns the result. This is the most common search paradigm as it enables searching large indices. In contrast with client-side search, the server sends the index to the client and searches are performed locally. The benefits of this are faster results due to the lack of network requests, and this has become popular method as smartphones and computers have become more powerful. As the number of entries in the AFP is relatively small, we can provide a search on the client that is responsive and fast.
-\cbend
-\subsection{Comparison of Search Frameworks}
-\cbstart
-Originally Fuse.js was chosen as it was a search framework that I was previously aware of, and there is an implementation for Hugo provided\footnote{\url{https://gohugo.io/tools/search/}}. However, it was soon realised that it lacked common features such as stemming and tokenisation. Additionally, Fuse continues to provide search results even if there is an exact match\footnote{\url{https://github.com/krisk/Fuse/issues/515}}. Due to this, a more suitable client-side JavaScript search framework was sought, but no clear all-rounder was found. Due to this, Table~\ref{search-frameworks} was created to compare the different libraries---filling in ``1'' where there is mention of the attribute in the documentation. I did not account for speed as it is not crucial in this application where the search index is small. \cbend
 
-\begin{table}[h]
-\centering
+The current search facility of the AFP relies on a Google SiteSearch, which, as mentioned previously, is a Google search for the phrase with ``site:www.isa-afp.org'' appended. This is an example of a server-side search as the user sends a request to the server, the server searches the index, and returns the result. This is the most common search paradigm as it enables searching large indices. This search is useful, however could be incomplete or outdated depending on Google's indexing. Due to this, a new native search facility for the AFP was created.
 
-\resizebox{\textwidth}{!}{
-\begin{tabular}{|l|ccccccc|}
-\hline
-                  & FlexSearch.js & Js Search & lunr & Elasticlunr.js & MiniSearch & Wade & Fuse \\
-Exact Search      & 1             & 1         & 1    & 1              & 1          & 1    & 0.5  \\
-Tokenization      & 1             & 1         & 1    & 1              &            & 1    & 0    \\
-Autocomplete      & 1             &           &      &                & 1          &      & 0    \\
-Stopword Handling & 1             & 1         & 1    & 1              &            & 1    & 0    \\
-Stemming          & 1             & 1         & 1    & 1              & 0          &      & 0    \\
-And/Or/Not        & 1             &           & 1    & 1              &            &      & 1    \\
-Prefix Search     &               & 1         &      &                & 1          & 1    & 1    \\
-Fuzzy Search      & 0             &           & 1    & 1              & 0          &      & 1    \\ 
-Match Location    &               &           &      &                &            &      & 1    \\ \hline
-Total               & 7             & 5         & 6    & 6              & 3          & 4    & 4.5  \\ \hline
-\end{tabular}
+In contrast, a client-side search will instead have the server send the index to the client and searches are performed locally. The benefits of this are faster results due to the lack of network requests, and this has become a popular method as smartphones and computers have become more powerful. As the number of entries in the AFP is relatively small, we chose to implement a search on the client that is responsive and fast.
+
+\subsection{FlexSearch.js}
+
+FlexSearch.js\footnote{\url{https://github.com/nextapps-de/flexsearch}} was the chosen search framework as it provided features such as tokenization, stemming, and autocomplete. 
+
+On page load, several JSON files containing the search index are fetched and then loaded into their own individual FlexSearch instance, as shown below. This allows for custom parameters to be set per index, as well as faster search as they can be searched in parallel.
+
+\begin{minipage}[t]{0.47\textwidth}
+{\footnotesize
+\begin{verbatim}
+var entryIndex = new FlexSearch({
+    encode: "advanced",
+    tokenize: "forward",
+    doc: {
+        id: "id",
+        field: ["title", "abstract"],
+    },
+});
+\end{verbatim}
 }
-\caption{Comparison of Search Frameworks\\
-1 indicates feature is present, 0.5 indicates the feature does not work as expected, 0 indicates feature is not present and blank indicates there was no evidence for or against.}
-\label{search-frameworks}
-\end{table}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
+{\footnotesize
+\begin{verbatim}
+var topicIndex = new FlexSearch({
+    encode: "icase",
+    tokenize: "forward",
+    doc: {
+        id: "id",
+        field: "name",
+    },
+});
+\end{verbatim}
+}
+\end{minipage}
 
-Subsequently, I chose FlexSearch.js\footnote{\url{https://github.com/nextapps-de/flexsearch}} to be the search framework I used as it had the highest score. I am happy with this choice as there are several design decisions which aid my project. In particular, it encourages users to split their indexes into the smallest units and search them in parallel, which suits my use case.
+
+
+% \subsection{Comparison of Search Frameworks}
+
+% Originally Fuse.js was chosen as it is a search framework that I was previously aware of, and there is an implementation for Hugo provided\footnote{\url{https://gohugo.io/tools/search/}}. However, it was soon realised that it lacked common features such as stemming and tokenisation \cit{}\ jtodo{At least, a reference to stemming is needed.}. Additionally, Fuse continues to provide search results even if there is an exact match\footnote{\url{https://github.com/krisk/Fuse/issues/515}}. Due to this, a more suitable client-side JavaScript search framework was sought, but no clear all-rounder was found. Due to this, Table~\ref{search-frameworks} was created to compare the different libraries---filling in ``1'' where there is mention of the attribute in the documentation. I did not account for speed as it is not crucial in this application where the search index is small. 
+
+% \begin{table}[h]
+% \centering
+
+% \resizebox{\textwidth}{!}{
+% \begin{tabular}{|l|ccccccc|}
+% \hline
+%                   & FlexSearch.js & Js Search & lunr & Elasticlunr.js & MiniSearch & Wade & Fuse \\
+% Exact Search      & 1             & 1         & 1    & 1              & 1          & 1    & 0.5  \\
+% Tokenization      & 1             & 1         & 1    & 1              &            & 1    & 0    \\
+% Autocomplete      & 1             &           &      &                & 1          &      & 0    \\
+% Stopword Handling & 1             & 1         & 1    & 1              &            & 1    & 0    \\
+% Stemming          & 1             & 1         & 1    & 1              & 0          &      & 0    \\
+% And/Or/Not        & 1             &           & 1    & 1              &            &      & 1    \\
+% Prefix Search     &               & 1         &      &                & 1          & 1    & 1    \\
+% Fuzzy Search      & 0             &           & 1    & 1              & 0          &      & 1    \\ 
+% Match Location    &               &           &      &                &            &      & 1    \\ \hline
+% Total               & 7             & 5         & 6    & 6              & 3          & 4    & 4.5  \\ \hline
+% \end{tabular}
+% }
+% \caption{Comparison of Search Frameworks: 1 indicates feature is present, 0.5 indicates the feature does not work as expected, 0 indicates feature is not present and blank indicates there was no evidence for or against.}
+% \label{search-frameworks}
+% \end{table}
+
+%Subsequently, I chose FlexSearch.js\footnote{\url{https://github.com/nextapps-de/flexsearch}} to be the search framework as it had the highest score. I am happy with this choice as there are several design decisions which aid my project. In particular, it encourages users to split their indexes into the smallest units and search them in parallel, which suits my use case.\ ijtodo{This section reads like a personal journey and does not fit well with how things have generally been presented. Also, you should not say things such as ``I am happy with X". This is subjective and, if you were to say something somewhat like this, maybe ``satisfied" would be more appropriate provided it is supported objectively and concretely).}
 
 \paragraph*{Highlighting Results}
 
-Pre-attentiveness is the quality of being able to very rapidly and accurately detect visual stimulus that ``pops out'' of the page \cite{healey2012attention}. By changing the background colour of the search term in the results, we can use this effect to make it easier to scan and check for relevant search results. This is implemented using mark.js\footnote{\url{https://markjs.io}} which is an 18kb library which highlights matching text in a container.
+Pre-attentiveness is the quality of being able to very rapidly and accurately detect visual stimulus that ``pops out'' of the page \cite{healey2012attention}. By changing the background colour of the search term in the results, we can use this effect to make it easier to scan and check for relevant results (Figure~\ref{fig:search-redesign}). This is implemented using mark.js\footnote{\url{https://markjs.io}} which is an 18kb library which highlights matching text in a container.%\ jtodo{So where does the reader see this concretely? A reference to your figure is needed.}
 
 \subsection{FindFacts Integration}
-\cbstart
+
 Huch and Krauss created the FindFacts service \cite{HuchKrauss} which allows for searching definitions, lemmas, and constants across all 2.5 million lines of Isabelle code which form the AFP. Logical operators can be used, as well as filters on the expected type, to narrow the search. 
 % This service is implemented with Apache Solr \cite{apache_solr} which is a document based database
 % \ ijtodo{Have you given a quick overview of how FindFacts works somewhere else? If not, this is needed (here) so that the reader can understand your decision better.}
 
-This is very useful however it is not advertised anywhere on the current AFP. Rather than just linking to it, it would be beneficial if this service was available on the AFP itself. However as the current FindFacts implementation is satisfactory, it would be better to integrate it into the search results as another index---showing the number of results and linking to them in the AFP interface. 
+This is very useful although it is not advertised anywhere on the current AFP. Rather than just linking to it, it would be beneficial if this service were available on the AFP itself. However as the current FindFacts implementation is satisfactory, we chose to integrate it into the search results as another index---showing the number of results and linking to them in the AFP interface. 
 % \ ijtodo{Surely, it's more than this. Good software engineering practice generally means you shouldn't be re-implementing this feature but look to see how to use/integrate it with what you're doing. You should probably make that point too. It's a better argument and also it shows how you solved a hurdle in a technically nice way.}
 
-A prototype was made to do this, however the FindFacts server responded with an error due to its \emph{Cross Origin Request Security} policy. Consequently, a request was made to the developers to  adjust this policy to allow queries from other websites. This request was successful, and we subsequently implemented the search as shown in Figure~\ref{fig:search-redesign}.
-\cbend
+A prototype was made to do this, but the FindFacts server initially responded with an error due to its \emph{Cross Origin Request Security} policy. Consequently, a request was made to the developers to  adjust this policy to allow queries from other websites. This request was successful, and we subsequently implemented the search as shown in Figure~\ref{fig:search-redesign}.
+
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/redesign/search.png}
+    \includegraphics[width=\textwidth]{figures/redesign/search-zoomed.png}
     \caption{Search page of the redesigned AFP}
     \label{fig:search-redesign}
 \end{figure}
 
-Debouncing is applied to the search to prevent overloading the server with requests. This means that the script waits for the user to stop typing for 300 milliseconds before sending the request. The trade-off is that the search appears slower \cbstart due to the delay, \cbend however this is not an inconvenience compared to accidentally overloading the server.
+Debouncing is applied to the search to prevent overloading the server with queries. This means that the script waits for the user to stop typing for 300 milliseconds before sending it. The trade-off is that the search appears slower  due to the delay,  however this is not an inconvenience compared to accidentally overloading the server.
 
-\cbstart
-To further reduce server load, requests are cached client-side by memoising the query. This means that every request that is made is checked against the local cache before making a request to the server. If it is not found, then the request is made, and the returned result is added to the cache so that the server will not be queried for that term again.
-\cbend
+To further reduce server load, requests are cached client-side by memoising the query. This means that every query is checked against the local cache before making a request to the server. If it is not found, then the request is made, and the returned result is added to the cache so that the same request is not made again in the future.
+
 
 \subsection{Autocomplete Suggestions} \label{autocomplete}
 
@@ -805,21 +867,19 @@ To further reduce server load, requests are cached client-side by memoising the 
 
 FlexSearch.js does provide autocomplete functionality however it does not work as expected. It generates matches in the index up to a limit\footnote{\url{https://github.com/nextapps-de/flexsearch\#suggestions}} but does not guarantee that these words will be keywords across many documents. Therefore, a novel solution had to be created to generate a list of keywords to offer as suggestions. 
 
-After researching in the keyword extraction space, I discovered Rapid Automatic Keyword Extraction \cite{RAKE}. In comparison to other methods, which discard stop words, RAKE instead splits the text on the stop words, as keywords often do not contain stop words themselves. The algorithm then rates the words on how often they co-occur and favours keywords that appear in longer phrases.
+Rapid Automatic Keyword Extraction (RAKE) \cite{RAKE} was used to extract keywords. In comparison to other methods, which discard stop words, RAKE instead splits the text on the stop words, as keywords often do not contain stop words themselves. The algorithm then rates the words on how often they co-occur and favours keywords that appear in longer phrases.
 
-\cbstart
-For each entry in the AFP, the abstract is sanitised and then RAKE is used to get a list of keywords. The parameters used with RAKE were a 3 letter minimum character length and a 2 word maximum for keywords. These were chosen as 1--2 letter keywords are faster to type than to read from a suggestion, and keywords with more than 2 words will match few documents. The top 8 keywords from the abstract are added to a list of keywords---8 was chosen as it preserved infrequent words like ``Godel'' but rejected keywords like ``accompanying paper''. After this we have a list of 3,741 keywords from all abstracts. We then filter this list and remove all keywords that only appear once as we do not want to suggest a term with only one result. This reduces the list to 460 keywords. Finally, we remove plural keywords where we also have the singular version, as the singular will return the plural. The final list has 435 keywords.
-\cbend
+For each entry in the AFP, the abstract is sanitised and then RAKE is used to get a list of keywords. The parameters used with RAKE were a 3-letter minimum character length and a 2-word maximum for keywords. These were chosen as 1--2 letter keywords are faster to type than to read from a suggestion, and keywords with more than 2 words will match few documents. The top 8 keywords from the abstract are added to a list of keywords---8 was chosen as it preserved infrequent words like ``Godel'' but rejected keywords like ``accompanying paper''. After this we have a list of 3,741 keywords from all abstracts. We then filter this list and remove all keywords that only appear once, as we do not want to suggest a term with only one result. This reduces the list to 460 keywords. Finally, we remove plural keywords where we also have the singular version, as the singular will return the plural. The final list has 435 keywords.
 
-The list of generated keywords was added as a search index to FlexSearch. The results from this searching this are then added to a \verb|<div>| which appears below the search box and supports keyboard interaction.
+The list of generated keywords was added as a search index to FlexSearch. The results from searching this are then added to a \verb|<div>| which appears below the search box and supports keyboard interaction.
 
 \subsection{Search on Other Pages}
 
-The paper prototypes had a search bar on every page of the AFP to make searching easier. As such, a trimmed down version of the search script was created. This script would only give autocomplete suggestions and redirect users to the search results when they pressed enter. Thus, I have two search scripts \verb|search.js| and \verb|header-search.js|, the former being loaded only on the search page, and the latter being loaded on every other page.
+The paper prototypes included a search bar on every page of the AFP to make searching easier (Section~\ref{sec:menu}). As such, a trimmed down version of the search script was created. This script would only give autocomplete suggestions and redirect users to the search results when they pressed enter. Thus, there are two search scripts \verb|search.js| and \verb|header-search.js|, the former being loaded only on the search page, and the latter being loaded on every other page.
 
 \section{Navigation}
 
-The current ways to navigate the archive are as follows:
+The current ways to navigate the Archive are as follows:
 
 \begin{itemize}
     \item List of entries on the homepage.
@@ -829,40 +889,35 @@ The current ways to navigate the archive are as follows:
     \item Entries will link to entries they depend on or entries which depend on them.
 \end{itemize}
 
-\cbstart
+
 The redesign preserves all of these, however adds several new ways to navigate via Hugo taxonomies and related entries.
 
 \subsection{Taxonomies}
 
-In Hugo, taxonomies generate pages which are indexed on a value for a key in the frontmatter. In other words, for a list of entries as such:
+In Hugo, taxonomies generate pages which are indexed on a value for a key in the frontmatter. In other words, for a list of entries as on the left, we can set authors to be a taxonomy and additionally generate pages which list the entries like on the right:
 
+\begin{minipage}[t]{0.47\textwidth}
 {\footnotesize
 \begin{verbatim}
 entries/
   entry-1.html
-    authors
-      author-1
-      author-2
+    authors: author-1, author-2
   entry-2.html
-    authors
-      author-1
+    authors: author-1
 \end{verbatim}
 }
-
-We can set authors to be a taxonomy and additionally generate pages which list the entries like so:
-
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\textwidth}
 {\footnotesize
 \begin{verbatim}
 authors/
   author-1.html
-    entries
-      entry-1
-      entry-2
+    entries: entry-1, entry-2
   author-2.html
-    entries
-      entry-1
+    entries: entry-1
 \end{verbatim}
 }
+\end{minipage}
 
 The redesigned AFP adds three taxonomies: authors, topics, and dependencies. Each one of these lists all the entries that have the same author, topic, or dependency. Links to these pages can be found on the entry pages, as well as the home page in the case of authors. Author pages also link to the author's website if they have provided it.
 
@@ -870,7 +925,7 @@ The root of the taxonomy (i.e., \texttt{/authors/index.html}) lists all items in
 
 \subsection{Related Entries} \label{sec:related-entries}
 
-As well as the taxonomies, the redesigned AFP can be navigated via related entries. We see entries as related if they share dependencies, topics or keywords.
+As well as the taxonomies, the redesigned AFP can be navigated via related entries. We see entries as related if they share dependencies, topics, or keywords.
 
 To generate the related entries, each entry of the AFP is iterated over to create three dictionaries as follows: 
 
@@ -893,165 +948,167 @@ topicModifier = 0.5
 }
 
 Next a dictionary is created with the structure shown below. For each of the categories, the list of entries associated with each key is iterated over twice and, if the entries are not the same, the modifier of that category is added to the relatedness score between the two entries in the dictionary. As the loop iterates twice over the value set, the resulting dictionary is bijective---i.e., the \texttt{scoreValue}s below will be the equal.
-\cbend
+
 {\footnotesize
 \begin{verbatim}
 relatedEntries = {
-    "entry-1" : {
-        "entry-2": scoreValue,
-        ...
-    },
-    "entry-2" : {
-        "entry-1": scoreValue,
-        ...
-    },
+    "entry-1" : {"entry-2": scoreValue, ...},
+    "entry-2" : {"entry-1": scoreValue, ...},
     ...
 }
 \end{verbatim}
 }
-\cbstart
+
 Once this dictionary is created, all the relations which have score less than or equal 2.5 are dropped. This means that for entries to be considered related, they must at least have 2 shared dependencies; a dependency, keyword, and topic; etc.
 
-Finally, the top three highest scoring relations for each entry are chosen to be its related entries and these are written to each entry file. The result of this is 194 relations between entries and a selection of these are visualised as a graph in Figure~\ref{fig:related}
+Finally, the top three highest scoring relations for each entry are chosen to be its related entries and these are written to each entry file. The result of this is 194 relations between entries, and a selection of these are visualised as a graph in Figure~\ref{fig:related}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/related.png}
-    \caption{A selection of related entry clusters.}
+    \includegraphics[width=0.8\textwidth]{figures/related/selection.png}
+    \caption{A selection of four related entry clusters. They are all visible in Appendix~\ref{relatedEntryGraphs}}
     \label{fig:related}
 \end{figure}
 
-\cbend
 \section{Script Browsing} \label{script-browsing}
 
-The current script browsing experience, shown in Figure~\ref{afpScriptBrowsing}, is very basic and consists of a directory page and pages for each script. If a user is to find something specific in the files, they must open each one individually and use the browsers find feature.
+The current script browsing experience, shown in Figure~\ref{afpScriptBrowsing}, is basic and consists of a directory page and pages for each script. If a user is to find something specific in the files, they must open each one individually and use the browsers ``Find'' feature.
 
-To ease this problem, I created a script which concatenates the theory files together so that they can be displayed on one page. It would be nice if this could be done locally, however the HTML pages are not stored in any public repository and are generated with Isabelle. As I did not want to introduce a  dependency on Isabelle, I instead chose to download each theory page for each entry from the live website when the theories are updated.
+The new script browsing experience instead concatenates the theory files together so that they can be displayed on one page. The code which does this downloads each theory page for each entry from the live website, as the HTML pages are not stored in a public repository.
 
 \subsection{SideKick} \label{SideKick}
 
-One of the most highly requested features of the AFP is the addition of ``SideKick''. This is a plugin for Isabelle/JEdit which surfaces the outline of the script file which is currently open. Users can then use this summary of the theory file to navigate around the file rather than scrolling.
-\cbstart
-As browsers can scroll to IDs, there are a couple ways to achieve this, in order of complexity:
 
-\todo[color=gray!20]{I feel like my justifications are weak in this list}
 
-\begin{enumerate}
-    \item \emph{Attach IDs of a certain format}
-    \begin{enumerate}
-        \item Change the way that HTML pages are generated by Isabelle to include IDs.\quad This would be the ideal solution as it could be contributed upstream. Unfortunately, the Isabelle page generator is written in Scala and ML which uses unfamiliar paradigms and therefore contribution was more difficult than expected.
-        \item Use the raw theory file, applying my own syntax highlighting and adding IDs.\quad This could be possible as syntax highlighting using a framework like Prism.js\footnote{\url{https://prismjs.com}} is less complex than parsing the language. This was advised against and thus was not chosen.
-        \item Use the generated HTML files and insert the IDs.\quad This was the chosen solution and is described in the following paragraph.
-    \end{enumerate}
-    \item \emph{to elements which are of importance.}
-    \begin{enumerate}
-        \item Extract the SideKick outline from the plugin.\quad An attempt was made, and an email was sent to the mailing list\footnote{\url{https://lists.cam.ac.uk/pipermail/cl-isabelle-users/2020-November/msg00056.html}}. In the end, outputting the SideKick for an entry was not ruled out as impossible, however this could not be ascertained. Additionally, we did not want to introduce a dependency on Scala.
-        \item Extract the SideKick outline from the file itself.\quad Theoretically, it would be possible to reimplement a \texttt{sideKick.py} which would extract the outline for a given Isabelle file, however this would be extremely complex due to the implementation of an Isabelle parser.
-        \item Use the structure of a proof to extract the most important elements.\quad It was imagined that an Isabelle proof may have a general structure that could be taken advantage of. Unfortunately there is no requirement for a script to contain any sections, proofs, etc.
-        \item Extract one common unit that is generally useful\quad In the end this was the chosen implementation. Lemmas were chosen as the common building block that would be most useful to list. 
-    \end{enumerate}
-\end{enumerate}
+One of the most highly requested features of the AFP is the addition of ``SideKick''. This is a plugin for Isabelle/JEdit which surfaces the outline of the currently open script file for navigation, visible in Figure~\ref{fig:sidekick}.
 
-% If I was able to implement the most complex version of the task, the changes could be contributed to the upstream repository, improving the generation for everyone. I hope that this report demonstrates the need for a proper solution to this problem.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/old/sidekick.png}
+    \caption{The SideKick available in Isabelle/JEdit}
+    \label{fig:sidekick}
+\end{figure}
+
+To recreate this functionality, a script was created which attaches unique IDs to the lemma elements of the theory. 
 
 For every entry, the script downloads the ``Browse theories'' page to get a list of theories. The theories are then downloaded, transformed, and concatenated together. The first transformation is to keep the \verb|<body>| and change it to be a \verb|<div>|, as there can only be one body tag in a document. The next transformation is to select all lemmas in the document and add unique IDs to them. The resulting HTML and lemma names are returned to be added to the theory's front matter.
 
 Consequently, Hugo generates the menu with theories and lemmas from the theory front matter, and users can scroll to them by clicking the links. This is visible in Figure~\ref{fig:theory-redesign}.
 
+
+% \ jtodo{This section looks much better!}
+% \ todo[color=gray!20]{I feel like my justifications are weak in this list}
+% \ ijtodo{I think that this section is probably too detailed. It may be better to focus on what you chose and explain what a ``Sidekick"-like functionality looks like more concretely. The other options can briefly be mentioned. As things stand, there's a lot of alternatives discussed but the actual functionality is barely covered.}
+
+% \begin{enumerate}
+%     \item \emph{Attach IDs of a certain format}
+%     \begin{enumerate}
+%         \item Change the way that HTML pages are generated by Isabelle to include IDs.\quad This would be the ideal solution as it could be contributed upstream. Unfortunately, the Isabelle page generator is written in Scala and ML which uses unfamiliar paradigms and therefore contribution was more difficult than expected.
+%         \item Use the raw theory file, applying my own syntax highlighting and adding IDs.\quad This could be possible as syntax highlighting using a framework like Prism.js\footnote{\url{https://prismjs.com}} is less complex than parsing the language. This was advised against and thus was not chosen.
+%         \item Use the generated HTML files and insert the IDs.\quad This was the chosen solution and is described in the following paragraph.
+%     \end{enumerate}
+%     \item \emph{to elements which are of importance.}
+%     \begin{enumerate}
+%         \item Extract the SideKick outline from the plugin. An attempt was made, and an email was sent to the mailing list\footnote{\url{https://lists.cam.ac.uk/pipermail/cl-isabelle-users/2020-November/msg00056.html}}. In the end, outputting the SideKick for an entry was not ruled out as impossible, however this could not be ascertained. Additionally, we did not want to introduce a dependency on Scala. \ jtodo{Given that the reader knowns next to nothing about the plugin, this is not very enlightening.}
+%         \item Extract the SideKick outline from the file itself.\quad Theoretically, it would be possible to reimplement\ jtodo{Why reimplement and not just implement?} a \texttt{sideKick.py} which would extract the outline for a given Isabelle file, however this would be extremely complex due to the implementation of an Isabelle parser.
+%         \item Use the structure of a proof to extract the most important elements.\quad It was imagined that an Isabelle proof may have a general structure that could be taken advantage of. Unfortunately there is no requirement for a script to contain any sections, proofs, etc.
+%         \item Extract one common unit that is generally useful\quad In the end this was the chosen implementation. Lemmas were chosen as the common building block that would be most useful to list. 
+%     \end{enumerate}
+% \end{enumerate}
+
+% If I was able to implement the most complex version of the task, the changes could be contributed to the upstream repository, improving the generation for everyone. I hope that this report demonstrates the need for a proper solution to this problem.
+
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{figures/redesign/theories.png}
+    \includegraphics[width=0.8\textwidth]{figures/redesign/theories-zoomed.png}
     \caption{Example theory page showing the new SideKick style navigation}
     \label{fig:theory-redesign}
 \end{figure}
 
-\cbend
 \section{Styling}
-\cbstart
+
 This section discusses the approach taken when implementing the design created in Chapter~\ref{design}. First, structural issues with the CSS were resolved, then the HTML tables were swapped out for CSS grid. At this point, the website was redesigned one component at a time, before final design tweaks were made to improve cohesion. 
 
-\cbend
 \subsection{Validation}
 
-\todo[color=gray!20]{remove Is}
+As mentioned in Section~\ref{W3CCSS}, there were many errors in the CSS syntax itself, hence the first priority was to correct these. When this was being fixed, it was realised that a lot of the styling was overly verbose and unnecessary---i.e., explicitly setting values to their default. These were removed or simplified, but it required full concentration to ensure that the rules were preserved correctly. 
 
-As mentioned in Section~\ref{W3CCSS}, there were many errors in the CSS syntax itself, hence the first priority was to correct these. I attempted this manually and was successful, however I realised that a lot of the styling was overly verbose and unnecessary---i.e., explicitly setting values to their default. I ended up removing or simplifying these, but it required full concentration to ensure I was preserving the rules correctly. 
-
-I then realised that there were CSS processors which could standardise and minify the CSS for me. After some research, I used the cssnano module of the PostCSS tool. This was very successful, producing valid CSS as well as simplifying rules and standardising formatting.
+It was at this point that it was realised this could be automated with a CSS preprocessor, which could standardise and minify the CSS \cite{DBLP:conf/slate/Queiros17}. After some research, the cssnano module of the PostCSS\footnote{\url{https://postcss.org/}} tool was used to produce valid CSS which was simplified and standardised.
 
 \subsection{Avoiding Tables for Layout} \label{sec:table-layout}
 
 The current AFP is composed of nested tables. There is a table which holds the sidebar and the content, and they are themselves composed of tables. This was a very common design pattern\footnote{\url{https://en.wikipedia.org/wiki/Holy\_grail\_(web\_design)}} before CSS3 introduced flexbox (2014) and grid (2018).
 
-CSS grid allows us to define tables as follows:
+% CSS grid allows us to define tables as follows:
 
-{\footnotesize
-\begin{verbatim}
-<div class="grid-container">
-  <div class="One">One</div>
-  <div class="Two">Two</div>
-  <div class="Three">Three</div>
-  <div class="Four">Four</div>
-</div>
-\end{verbatim}
-}
+% {\footnotesize
+% \begin{verbatim}
+% <div class="grid-container">
+%   <div class="One">One</div>
+%   <div class="Two">Two</div>
+%   <div class="Three">Three</div>
+%   <div class="Four">Four</div>
+% </div>
+% \end{verbatim}
+% }
 
-The layout is instead defined with CSS like so:
+% The layout is instead defined with CSS like so:
 
-{\footnotesize
-\begin{verbatim}
-.grid-container {
-  display: grid;
-  grid: 1fr 1fr / 1fr 1fr;
-  grid-template-areas:
-    "One Two"
-    "Three Four";
-}
+% {\footnotesize
+% \begin{verbatim}
+% .grid-container {
+%   display: grid;
+%   grid: 1fr 1fr / 1fr 1fr;
+%   grid-template-areas:
+%     "One Two"
+%     "Three Four";
+% }
 
-.One { grid-area: One; }
-.Two { grid-area: Two; }
-.Three { grid-area: Three; }
-.Four { grid-area: Four; }
-\end{verbatim}
-}
+% .One { grid-area: One; }
+% .Two { grid-area: Two; }
+% .Three { grid-area: Three; }
+% .Four { grid-area: Four; }
+% \end{verbatim}
+% }
 
-Which means the layout can now be made responsive by defining a media query for narrow screens:
+% Which means the layout can now be made responsive by defining a media query for narrow screens:
 
-{\footnotesize
-\begin{verbatim}
-@media (max-width: 700px) {
-    .grid-container {
-      grid: 1fr / 1fr;
-      grid-template-areas:
-        "One"
-        "Two
-        "Three" 
-        "Four";
-    }
-}
-\end{verbatim}
-}
+% {\footnotesize
+% \begin{verbatim}
+% @media (max-width: 700px) {
+%     .grid-container {
+%       grid: 1fr / 1fr;
+%       grid-template-areas:
+%         "One"
+%         "Two
+%         "Three" 
+%         "Four";
+%     }
+% }
+% \end{verbatim}
+% }
 
-This will result in a single column table on pages narrower than 700px.
+% This will result in a single column table on pages narrower than 700px.
 
-Thus, as grid allows for greater flexibility than tables, I chose to convert the current table-based design to use grid. This was easy and provided many benefits, like simplifying the HTML markup and making maintenance easier.
+Thus, as grid allows for greater flexibility than tables, the current table-based design was converted to use grid instead. This was easy and provided many benefits, like simplifying the HTML markup and making maintenance easier.
 
 Both this and the previous section would be recommended, simple improvements to the AFP even if a redesign were rejected by the maintainers.
 
 \subsection{Redesign}
 
-After finalising the paper prototypes from Section~\ref{paperPrototypes}, I implemented each component of the website in turn, just as I had when iterating the paper prototypes. The HTML was simplified to match the semantics of the layout, as this results in more accessible pages by default \cit{}. The CSS was altered to style the components to match the prototype. An early example of the home page can be seen in Figure~\ref{home-early} and the final version can be seen in Figure~\ref{home-final}.
+After finalising the paper prototypes from Section~\ref{paperPrototypes}, each component of the website was implemented in turn, in the same way as the paper prototypes had been iterated. The HTML was simplified to match the semantics of the layout, as this results in more accessible pages by default \cite{mdn_contributors_html_2021}. The CSS was altered to style the components to match the prototype. An early example of the home page can be seen in Figure~\ref{home-early} and the final version can be seen in Figure~\ref{home-final}.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/redesign/early-home.png}
+    \includegraphics[width=0.9\textwidth]{figures/redesign/early-home-zoomed.png}
     \caption{First iteration of the home page redesign}
     \label{home-early}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{figures/redesign/home.png}
+    \includegraphics[width=0.9\textwidth]{figures/redesign/home-zoomed.png}
     \caption{Final iteration of the home page redesign}
     \label{home-final}
 \end{figure}
@@ -1060,36 +1117,33 @@ After finalising the paper prototypes from Section~\ref{paperPrototypes}, I impl
 
 When testing the AFP across browsers and systems, it was realised that the font choice was platform dependent. The AFP only specifies a \verb|sans-serif| font, so the default sans-serif for that browser/operating system is used. Cross-platform inconsistencies can lead to hard to diagnose problems and degraded design depending on the fonts available. Therefore, it is best to define one font so that the experience is the same everywhere. 
 
-\cbstart
-The font was chosen to be kept similar to the current neutral style that operating systems' default  fonts have. Fonts that were heavily associated with a brand were discarded, such as Roboto by Google or Fira Sans by Mozilla. In the end, Open Sans was chosen as it is neutral and easy to read font. \cbend
+The font was chosen to be kept similar to the current neutral style that operating systems' default  fonts have. Fonts that were heavily associated with a brand were discarded, such as Roboto by Google or Fira Sans by Mozilla. In the end, Open Sans was chosen as it is a neutral and easy to read font which is commonly used as a default on the web \cite{stevens_open_2012}. %\ jtodo{You're stating this as a fact. It needs to be supported by a citation or other reference to some study or other.} 
 
 \subsection{Fine-tuning Cohesion}
 
-After the redesign, I wanted to standardise the look of buttons and headings so that the user interface was cohesive. For example, buttons with images and text should look similar, but buttons which created popups should look distinct.
+After the redesign, there were some outstanding inconsistencies in the look of buttons and headings. For example, download links, buttons with images and buttons with text should have looked similar but did not.
 
-I manually created test pages with these elements and styled them. However, I found the CSS hard to work with as these elements shared styles, but it was tedious to compose them while preserving a coherent source order in the CSS file.
+Test pages were created with these elements so they could be styled more cohesively. However, the CSS became  hard to work with as these elements shared styles, but it was tedious to compose them while preserving a coherent source order in the CSS.
 
 \subsubsection{SASS}
 
-SASS is a preprocessor language for CSS which enables developers to write succinct and powerful CSS\@. There are two syntaxes available, SASS and SCSS, the former removing the need for parentheses and semi-colons. The extra utility provided by the language is that it allows for nested CSS rules, which keeps all the styling of each element, and its children, in one place.
+SASS\footnote{\url{https://sass-lang.com}} is a preprocessor language for CSS which enables developers to write succinct and powerful CSS \cite{mazinanian2016empirical}. There are two syntaxes available, SASS and SCSS, the former removing the need for parentheses and semi-colons and the latter being most like CSS, which is why it was chosen. The extra utility provided by the language is that it allows for nested CSS rules, which keeps all the styling of each element, and its children, in one place.
 
-\todo[color=gray!20]{remove Is}
+% From a previous employer I had some experience with SASS, but I had not used it in a personal project. I was wary about spending a lot of time learning it and converting my CSS, but felt it may benefit me in the long term. After speaking to some acquaintances, I was reassured that it would help me and that there were tools available to convert CSS to SCSS\@.
 
-From a previous employer I had some experience with SASS, but I had not used it in a personal project. I was wary about spending a lot of time learning it and converting my CSS, but felt it may benefit me in the long term. After speaking to some acquaintances, I was reassured that it would help me and that there were tools available to convert CSS to SCSS\@.
-
-There are many converters available, but I chose css2scss\footnote{\url{https://sebastianpontow.de/css2compass/}} as it allowed for customisation of the output, especially creating variables for colours and formatting them. The result was a SCSS file which compiled to the same CSS but was easier to reason about. For example:
+To ease the transition from CSS, css2scss\footnote{\url{https://sebastianpontow.de/css2compass/}} was used to convert it into SCSS. It was chosen as it allowed for customisation of the output, especially creating variables for colours and formatting them. The result was a SCSS file which compiled to the same CSS but was easier to reason about. For example:
 
 \begin{itemize}
     \item It reduced the number of colours by combining similar colours under one intuitive name.
     \item It becomes obvious that some properties only need to be set in one place, like \verb|text-decoration|
-    \item Source order is preserved, but rules are grouped by the first selector---i.e., \verb|header h1| is grouped with the \verb|header| rules rather than \verb|h1|. The opposite was intuitive to me in CSS as I wanted to see all the rules that applied to \verb|h1|s, however in practise this is harder to reason about as the styling is more relevant depending on where the element appears.
+    \item Source order is preserved, but rules are grouped by the first selector---i.e., \verb|header h1| is grouped with the \verb|header| rules rather than the \verb|h1| rules. % The opposite was intuitive to me in CSS as I wanted to see all the rules that applied to \verb|h1|s, however in practise this is harder to reason about as the styling is more relevant depending on where the element appears.
 \end{itemize}
 
 \section{Hosting}
 
-Originally, an early version of the website was hosted on a sub-domain of my own website\footnote{\url{https://beta.carlinmack.com}} as this sub-domain was configured, not being used and I needed a quick way to demonstrate my progress. However, as more and more content was added, the size of the website became harder to upload to my server. Additionally, I did not want to incur any fees associated with hosting large amounts of content. 
+Originally, an early version of the website was hosted on a sub-domain of my own website\footnote{\url{https://beta.carlinmack.com}} as this sub-domain was configured, not being used and a way to demonstrate my progress was needed. However, as more and more content was added, worries arose about the cost of hosting and it became harder to upload to my server.
 
-GitHub pages give free hosting for any public repository which has it enabled, so it was a natural choice for my project as it was already hosted on GitHub. Originally I created a repository, \textit{afp-alpha}, but unfortunately the URL of the index page would then be \verb|https://carlinmack.github.io/afp-alpha/index.html|. This would mean that I could not use absolute links unless they were prefixed with \verb|/afp-alpha/|. The site root can be set to a path in Hugo, however I did not want to add more complexity that would have to be undone if the site was hosted on its own domain. Fortunately, GitHub allows for users to have a repository that serves pages from the root rather than a path.
+GitHub pages give free hosting for any public repository which has it enabled, so it was a natural choice for my project as it was already hosted on GitHub. Originally a repository was created, \textit{afp-alpha}, but unfortunately the URL of the index page would then be \verb|https://carlinmack.github.io/afp-alpha/index.html|. This would mean that absolute links could not be used unless they were prefixed with \verb|/afp-alpha/|. The site root can be set to a path in Hugo, however we did not want to add more complexity that would have to be undone if the site was hosted on its own domain. Fortunately, GitHub allows for users to have a repository that serves pages from the root rather than a path. Thus the website of the new redesign is simply \texttt{\url{https://carlinmack.github.io/}}.
 
 \subsection{Autogeneration}
 
@@ -1110,110 +1164,107 @@ To keep the site up to date, an automated workflow was created to monitor the up
     \item Clean up files.
 \end{enumerate}
 
-When the upstream repository has been updated, the workflow takes around 3.5 minutes, and the largest proportion of this time (1.5 minutes) is the unavoidable wait for download the \texttt{thys/} directory. If the new site generation were merged into the upstream repository these files would already be available, and thus large time savings could be made. Exporting the metadata takes roughly 7 seconds and building the site takes 25 seconds. \cbstart The performance of the AFP is compared to the the original in Section~\ref{sec:performance}. \cbend
+When the upstream repository has been updated, the workflow takes around 3.5 minutes, and the largest proportion of this time (1.5 minutes) is the unavoidable wait to download the \texttt{thys/} directory. If the new site generation were merged into the upstream repository these files would already be available, and thus large time savings could be made. Exporting the metadata takes roughly 7 seconds and building the site takes 50 seconds. The performance of the AFP is compared to the original in Section~\ref{sec:performance}. 
 
 \section{The AFP in Machine Readable Format} \label{sec:machine-readable-format}
 
-The content of the AFP can be downloaded wholesale from the website, however the metadata is only available in the HTML pages. To fix this discrepancy, a JSON release of the metadata was created. This is an array of JSON objects with the authors' emails removed \cbstart for privacy and the related entries removed as they are not found in the original data. \cbend A static version of the metadata, which corresponds to Isabelle2021, was released on Zenodo. Additionally, the most recent version of the dataset can be downloaded from the downloads page. Consequently, the metadata can be used more readily for research or other use cases.
+The content of the AFP can be downloaded wholesale from the website, however the metadata is only available in the HTML pages. To fix this discrepancy, a JSON release of the metadata was created. This is an array of JSON objects with the authors' emails removed  for privacy and the related entries removed as they are not found in the original data.  A static version of the metadata, which corresponds to Isabelle2021, will soon be released on Zenodo. Additionally, the most recent version of the dataset can be downloaded from the downloads page. Consequently, the data can be used more readily for research or other use cases.
 
 \section{Conclusion}
-\ijtodo{Needs a conclusion section.}
-\todo[color=gray!20]{I'm not sure what would go here}
+
+% \ ijtodo{Just a quick recap of what you presented in this chapter. Most chapters should have a conclusion. It can also say what's coming next chapter to glue things together.}
+
+This chapter presented the implementation of the redesign and new features such as search, navigation and code browsing. In the next chapter we evaluate this implementation to ascertain whether it is an improvement over the current AFP, and if it meets the needs of the users.
+
+% The result of this is an AFP which is clearer to read, easier to browse, better structured, and fast to generate, all while being easy to maintain.
+
+% \ todo[inline]{Jev: We did this then tested to see if we did it? Maybe rephrase slightly so the last two sentences don't contradict each other.}
+% \ ijtodo{You can't state this here: ``The result of this is an AFP which clearer to read, easier to browse, better structured"! This can only be asserted if it is an outcome of the evaluation (rather than your more-than-likely subjective take on things!). The ``fast to generate bit is okay" as it's something you have data about.}
 
 \chapter{Evaluation of the New Archive} \label{redesign-evaluation}
-\cbstart
-The success of this project is gauged upon whether it meets the original goal set out: To create a redesign that is easier for users to use and easier to maintain. This chapter evaluates the usability with users, structural issues with automated audits, performance compared to the current archive and, finally, suitability and maintainability. 
-\cbend
+
+The success of this project is gauged upon whether it meets the original goal set out: To create a website that is easier to use, guided by the priorities of the users. This chapter evaluates the usability with users, structural issues with automated audits, performance compared to the current Archive and, finally, an overview of what needs to be maintained. 
+
 \section{User Evaluation}
 
-The success of the redesign can only be evaluated by users of the AFP, and so was planned to receive feedback from real users. It would be natural to circulate the original survey from Chapter~\ref{evaluation-current}, focusing on the redesign, however the results would not be comparable as users are not familiar with the redesign. Secondly, many of the questions rely on longstanding qualms with the design, and these would not be evident in the short time allowed for the study.
 
-I considered whether the two designs could be directly compared in a study, however it would not be informative as the users would be biased towards any new design as they expressed strong dissatisfaction in the pre-study (Section~\ref{sec:pre-study}).
+The success of the redesign can only be evaluated by users of the AFP. Due to the short time available we could not distribute the  original survey from Chapter~\ref{evaluation-current} with a new focus on the redesign. Instead, we chose to perform a lab study with a small number of people from the \textit{Artificial Intelligence Modelling Lab}. 
 
-Subsequently, a mixed approach was chosen to get a variety of information. The first part of the study was a think-aloud as it allowed users to get acquainted with the AFP and allowed me to see how users naturally used the new design. The second part was a multiple-choice section so I could get some quantitative feedback. Finally, open ended questions were asked to prompt a discussion of the new design.
+\subsection{Design}
 
-A script (Appendix~\ref{eval-script}), questionnaire, participant information sheet and consent form were created and reviewed by my supervisor. A quick pre-study was performed with a flat mate to ensure that the study would go smoothly. They were unfamiliar with the AFP and the redesign, however they were able to easily complete all the tasks. This is not generalisable, however it is a good indicator of clear design. Their feedback at the end of the survey was also useful, as they assumed that the current version of the AFP was not being updated due to the old design.
+A mixed approach was used to get a variety of information. The first part of the study was a think-aloud as it allowed the participants to get acquainted with the AFP and allowed me to see how users naturally used the new design. It contained 6 tasks which each asked the participant to use a different facet of the AFP. For example, the first task was ``Visit the ``Ordinal Partitions'' entry and copy its BibTeX citation.''. This entry was chosen as it was not published recently and we wanted to see if they would use the browsers ``Find'' functionality or if they would use the search. The second part of the survey was a 7-question multiple-choice to gain quantitative feedback about whether the design is successful. Finally, open ended questions were asked to prompt a discussion of the new design, regarding whether it is an improvement and if there is anything missing.
+
+% It would be natural to circulate the original survey from Chapter~\ref{evaluation-current}, focusing on the redesign, however the results would not be comparable as users are not familiar with the redesign.\ jtodo{I don't understand what this means. What does familiar mean here?} Secondly, many of the questions rely on longstanding qualms with the design, and these would not be evident\ jtodo{I don't follow this.} in the short time allowed for the study.
+
+% I considered whether the two designs could be directly compared in a study, however it would not be informative as the users would be biased towards any new design as they expressed strong dissatisfaction in the pre-study (Section~\ref{sec:pre-study}).
+
+A script (Appendix~\ref{eval-script}), questionnaire, participant information sheet and consent form were prepared and reviewed by my supervisor. A quick pre-study was performed with a fellow undergraduate student to ensure that the study would go smoothly. Although they were unfamiliar with the AFP and the redesign, they were able to easily complete all the tasks. This is not generalisable, however it is a good indicator of clear design. % Their feedback at the end of the survey was also useful, as they assumed that the current version of the AFP was not being updated due to the old-looking design.
+
+% \ todo[inline]{Jev: I'm failing to see the significance of the last sentence. Also, 2 ``however"s within a sentence of each other.}
 
 \subsection{Results} \label{redesign-eval-results}
+ % \ jtodo{I don't think you can present the results without discussing the tasks briefly and why they were chosen. You should give at least one in the main text (and say that the others are not presented due to lack of space)}
+Five people were individually asked to take part, four responded and were subsequently interviewed. The interviews were performed on 17--18 March 2021 and lasted 21, 12, 28 and 26 minutes in order.
 
-Five people were individually asked to take part and four responded and were subsequently interviewed. The interviews were performed on 17--18 March 2021 and lasted 21, 12, 28 and 26 minutes in order.
-
-No participant struggled with the think-aloud tasks and they almost always completed the tasks in the way they were designed to be completed---i.e., by using the search feature instead of ``Find in Page''; by using the download button in the search results rather than on the entries page. All participants were comfortable using the top search box. There were a few things of note during the think-aloud:
+No participant struggled with the think-aloud tasks and they almost always completed the tasks in the way they were designed to be completed---i.e., by using the search feature instead of the browsers ``Find'' feature; by using the download button in the search results rather than on the entries page. All participants were comfortable using the top search box. There were a few things of note during the think-aloud:
 
 \begin{itemize}
     \item One participant was pleasantly surprised that the search was responsive.
     \item One participant tried using the prefix ``author:'' to search for the author, which is assumed to be learned behaviour from similar sites.
-    \item Three participants did not notice the search results in the sidebar on the right at first. I think this may be due to this area being used for advertising in other search engines. It would be interesting to compare whether users are more likely to notice these results if they were on the left in the future. \todo[color=gray!20]{is this too speculative?}
-    \item One participant was confused that all the theories were on the same page, and wanted to be able to pop the theories out into their own page. This is because they are used to using the keyboard navigation keys, like ``Home'', to navigate the theory files.
+    \item Three of four participants did not notice the FindFacts search results in the sidebar on the right at first. % I think this may be due to this area being used for advertising in other search engines. It would be interesting to compare whether users are more likely to notice these results if they were on the left in the future. \ todo[color=gray!20]{is this too speculative?}
+    \item One participant was confused that all the theories were on the same page, and wanted to be able to pop the theories out into their own page. This is because they are used to using the keyboard navigation keys, like ``Home'', to navigate in the theory files.
 \end{itemize}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/interview-1.png}
+    \includegraphics[width=0.9\textwidth]{figures/interview-1.png}
     \caption{Short survey results}
     \label{interview-results}
 \end{figure}
 
-The short survey was answered during the call and participants stopped sharing their screen before filling it in. As shown in Figure~\ref{interview-results}, the participants agree or strongly agree with all the questions asked. 
+The short survey was answered during the call and participants stopped sharing their screen before filling it in. As shown in Figure~\ref{interview-results}, the participants agree or strongly agree with all the questions asked. Of note, all participants agree that it is easy to adapt to the new interface and it is quick to learn to use it.
 
 Finally, the participants answered the long answer questions. The first question was:
 
 \begin{center}
-    Is this an improvement over the current AFP? How so or how not?
+    \emph{Is this an improvement over the current AFP? How so or how not?}
 \end{center}
 
-All participants thought the redesign was an improvement and that 
+All participants thought the redesign was an improvement.
 
-\paragraph*{Participant 1}
+\textbf{Participant 1}\quad They particularly highlighted the prominence of the search in the redesign and that it was good to not rely on Google. They felt the redesign was more ``streamlined'' and that the cite and download buttons ``pop out''.
 
-They particularly highlighted the prominence of the search in the redesign and that it was good to not rely on Google. They felt the redesign was more ``streamlined'' and that the cite and download buttons ``pop out''.
+\textbf{Participant 2}\quad They enjoyed the search bar on the landing page and that it is interactive. Additionally, they appreciated the ability to click through to theories.
 
-\paragraph*{Participant 2}
+\textbf{Participant 3}\quad They felt that the redesign was a ``massive improvement'' and ``fantastic''. They commented that there is ``no background pollution'', the interface is ``friendlier'' and ``a bit more professional''. 
 
-They enjoyed the search bar on the landing page and how it is interactive. Additionally, they appreciated the ability to click through to theories.
-
-\paragraph*{Participant 3}
-
-They felt that the redesign was a ``massive improvement'' and ``fantastic''. They commented that there is ``no background pollution'', the interface is ``friendlier'' and a ``a bit more professional''. 
-
-\paragraph*{Participant 4}
-
-They felt it was ``undoubtedly'' an improvement and expressed that searching is a ``pain'' in the current AFP\@.
-\bigskip
+\textbf{Participant 4}\quad They felt it was ``undoubtedly'' an improvement and expressed that searching is a ``pain'' in the current AFP\@.
 
 \begin{center}
-    Does this redesign meet your needs? Is there anything lacking or missing? 
+    \emph{Does this redesign meet your needs? Is there anything lacking or missing?}
 \end{center}
 
 All participants thought their needs were met overall. There were several features related to search which would be appreciated in future work.
 
-\paragraph*{Participant 1}
+\textbf{Participant 1}\quad Their main need was to find entries on a specific topic, and felt that Google may provide better results for things which were not exact text matches, but still related.
 
-Their needs were to find entries on a specific topic and felt that Google may provide better results for things which were not exact text matches but still related.
+\textbf{Participant 2}\quad Overall their needs are met, as they mainly use the search to do literature reviews. They like the new author pages, but would like to search within theory files.
 
-\paragraph*{Participant 2}
+\textbf{Participant 3}\quad They felt that their needs were met as they mostly just use the search and it is ``good''. They would like for entries to also match on the author name, rather than just showing the authors in the sidebar.
 
-Overall their needs are met, as they mainly use the search to do literature reviews. They like the new author pages, but would like to search within theory files.
-
-\paragraph*{Participant 3}
-
-They felt that their needs were met as they mostly just use the search and it is ``good''. They would like to see the authors entries in the entries section as well.
-
-\paragraph*{Participant 4}
-
-Their main need is search and this is mostly met, however they recognised that searching for lemmas  is beyond the scope of this project.
+\textbf{Participant 4}\quad Their main need is search and this is mostly met, however they recognised that searching for lemmas  is beyond the scope of this project.
 
 \section{Automated Audits}
-\cbstart
+
 To ensure that there is no degradation of the website, the same automated audits from Section~\ref{automated_current} were performed on the redesign.
 
-\subsection{W3C Validation}
+\paragraph*{W3C Validation}
 
 Both the home and entry pages have valid HTML and CSS\@.
 
-\subsection{Google Lighthouse} \label{sec:lighthouse-redesign}
+\paragraph*{Google Lighthouse} \label{sec:lighthouse-redesign}
 
-The Lighthouse results for the redesigned AFP are shown in Table~\ref{tab:lighthouse-redesign}. 
+The Lighthouse results for the redesigned AFP are shown in Table~\ref{tab:lighthouse-redesign} and there is no degradation in the scores compared to the current AFP\@. . 
 
 \begin{table}[h]
 \centering
@@ -1221,27 +1272,25 @@ The Lighthouse results for the redesigned AFP are shown in Table~\ref{tab:lighth
 \begin{tabularx}{0.5\textwidth}{lcccc}
                           & \multicolumn{2}{c}{Home} & \multicolumn{2}{c}{Entry} \\
                           & Desktop     & Mobile     & Desktop      & Mobile     \\
-Performance               & 82          & 73         & 100          & 93         \\
-Accessibility             & 98          & 98         & 88           & 88         \\
+Performance               & 82          & 73         & 100          & 98         \\
+Accessibility             & 98          & 98         & 99           & 99         \\
 Best Practices            & 100         & 100        & 100          & 100        \\
-SEO                       & 100         & 100        & 90           & 90         \\
+SEO                       & 100         & 100        & 100           & 98         \\
 Progressive Web App (PWA) & --          & --         & --           & --        
 \end{tabularx}
 \caption{Google Lighthouse metrics for the redesigned AFP, out of 100}
 \label{tab:lighthouse-redesign}
 \end{table}
 
-There is no degradation in the scores compared to the current AFP\@. 
-
 The accessibility score is just off perfect due to having many heading elements with the same level. This is because all the entry titles have \verb|h5| elements for the title, as this is recommended by the W3C.
 
-The performance score stays low due to the large size of the home page, listing every entry in the AFP\@. This is beneficial in the current AFP as the search function is lacking. However, as the redesigned AFP features a search prominently on the front page, it may be possible to introduce pagination in the future.
+The performance score stays low due to the large size of the home page, listing every entry in the AFP\@. As the search function is lacking in the current website, the exhaustive listing is beneficial so that the browsers ``Find'' function can be used. However, as the redesign features the search input prominently on the front page, it may be possible to introduce pagination in the future.
 
 The redesigned AFP is still not a PWA, so this score is still blank.
 
 \section{Performance} \label{sec:performance}
 
-The performance of the current and redesigned AFP can be seen in Table~\ref{tab:performance}. The metrics show that generation with Hugo is much faster. It is a better comparison of performance when theory files are not generated, as the current generator does not do this. Significant time is added by generating these theory pages as 143 of them are greater than 2MB. 
+The performance of the current and redesigned AFP can be seen in Table~\ref{tab:performance}. It is a better comparison of performance when the theory pages are not generated, as the current generator does not output them. Significant time is added by generating these pages as 143 of them are greater than 2MB. The metrics show that generation with Hugo is at least 4 times faster.
 
 % It takes 11 seconds to delete these files, so we can estimate that half the time must be IO operations.  
 
@@ -1250,7 +1299,7 @@ The performance of the current and redesigned AFP can be seen in Table~\ref{tab:
 \rowcolors{5}{}{gray!10}
 \begin{tabularx}{\textwidth}{lccccc}
                              & Time (sec) & \# Pages & Pages/sec & Size (MB) & MB/sec \\
-Current AFP                  & 48--79          & 602      & 8--13             & 4.1      & 0.05--0.09     \\
+Current AFP                  & 48--79          & 602      & 8--13             & 4      & 0.05--0.09     \\
 Redesigned AFP               & 44--53          & 2,506    & 47--57            & 951       & 17.9--26.1     \\
 \emph{without theories} & 20--22          & 1,913     & 80--96            & 26        & 1.2--1.3      
 \end{tabularx}
@@ -1258,14 +1307,13 @@ Redesigned AFP               & 44--53          & 2,506    & 47--57            & 
 \label{tab:performance}
 \end{table}
 
-The file size of the pages of the AFP are also generally smaller. The current homepage is 191KB versus 168KB for the redesign. This is due to the move away from table based layouts and Hugo generating minified HTML files.
+The file size of the pages of the AFP are also generally smaller. The current homepage is 191KB versus 168KB for the redesign. This is due to the move away from table-based layouts and Hugo generating minified HTML files.
 
-\cbend
+\section{Maintenance}
 
-\section{Suitability for Production}
-\cbstart
-It is hoped that the redesign will one day replace the current AFP\@ as users suggest that it is an improvement (Section~\ref{redesign-eval-results}). The work that must be completed before release is outlined below.
-\cbend
+If the redesign replaces the current design, it is important that someone will be able to fix the site if it breaks. In this section, we outline the amount of work the redesign requires to be maintained.
+
+\newpage
 
 \subsection{Software}
 
@@ -1273,29 +1321,58 @@ The redesigned AFP depends on the following programming languages and libraries.
 
 \begin{itemize}
     \item Hugo $\geq$ 0.81
-    \item Python $\geq$ 3.3
-    \begin{itemize}
-        \item requests
-        \item tqdm
-        \item bs4
-        \item unidecode
-    \end{itemize}
-    \item JavaScript
-    \begin{itemize}
-        \item mark.js
-        \item FlexSearch.js
-    \end{itemize}
+    \item Python $\geq$ 3.3: requests, tqdm, bs4, unidecode
+    \item JavaScript: mark.js, FlexSearch.js
 \end{itemize}
 
 All these requirements are easy to satisfy as none require compilation or version management. 
+
+\subsection{Hugo}
+
+In comparison to the previous site generator, Hugo brings several benefits to maintainability. First, the template syntax is very similar to Jinja which is used in the current AFP\@. Second, people can bring their outside knowledge to help improve the site, as it is a common tool which uses familiar paradigms. Finally, the generator itself is unlikely to break, as maintenance is handled by the Hugo developers. 
+
+One caveat with Hugo is that there is a history of updates with substantial breaking changes. For example, the 0.60.0 update changed the default behaviour of Markdown pages to omit included HTML instead of rendering it\footnote{\url{https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032/11}}. They made this change to close a potential security liability, and you could disable the new behaviour by adding a line in the config file. Unfortunately, this caused ire in the community as the new behaviour was not made clear enough. This means that maintainers should be aware when upgrading Hugo and read the changelog if any warnings or errors appear on the first build. 
+
+% \subsubsection{Python}
+
+% Although my processing code is handwritten and would therefore add to the maintenance overhead, it is written in the same language as the current site generator. This implies that it should be easier to fix anything which breaks, as it is a familiar language to the maintainers. 
+
+
+\section{Conclusion}
+
+From our evaluation with users and automated audits, we can see that the redesign of the AFP has been successful. All participants agree that the redesign is an improvement and there is no regression in the scores of any automated audit. The performance of site generation has also been improved and the maintenance load is not greater than the current AFP. In the next chapter we conclude the project, summarising and evaluating our contributions and outlining the scope of future work.
+
+
+
+\chapter{Conclusion} \label{conclusion}
+% \ ijtodo{Is this chapter complete? You will need to reflect a bit more on what was achieved. This should include some critical assessment (or recap if mentioned elsewhere) of the work, including lessons that were learnt etc.}
+% so what?
+
+    % Research objectives – a summary of your findings and the resulting conclusions
+    % Recommendations
+    % Contributions to knowledge
+
+In this report a new design of the AFP has been created in response to user feedback. This involved re-implementing the site generation, paper prototyping and redesigning the website. In addition, several features were added such as improved code navigation and responsive search. These features increase the utility of the website for users. Furthermore, the site auto-updates with each change to the AFP and thus can replace the existing website.
+
+As Hugo is used to generate the site, the maintenance of the generator is off-loaded to the Hugo community. This site generator is performant and builds the 2,500 pages of the site in 50 seconds---which is 4--12x faster than the current generator (Section~\ref{sec:performance}). Upon evaluation, it was found that this new design met the needs of the users and was a major improvement upon the current website. As such, this project met the goal set out.
+
+This project helped me to improve as a software developer, especially regarding management of workload, delivering on time and in communicating the outcome of my work. Since this project was started from scratch, it required knowledge in many areas and helped me to develop my skills and learn new ones. In particular, Hugo is now something which I am proficient in and I feel comfortable using the most advanced features which it has to offer.
+
+Finally, this project was presented at the \emph{Honours Project Day} and the poster that was created for it can be found in Appendix~\ref{poster}.
+
+\section{Suitability for Production}
+
+While it is hoped that the redesign will one day replace the current AFP (as users suggest that it is an improvement, Section~\ref{redesign-eval-results}) there are several areas which need attention before it can be released.
 
 \subsection{Site Generation}
 
 Due to backwards compatibility, the site is generated from the previous structure of the AFP as detailed in Section~\ref{python-scripts}. This is so that the site can be updated as needed, however it means that there are several pre-processing steps which are unnecessary. If the new site were to replace the current AFP, users would still have to edit the previous metadata files to update their entries---negating the value of having separate JSON files.
 
-Additionally, some pre-processing steps use modified versions of the Python build scripts to get the statistics for the entries. It would be beneficial to refactor these scripts to only perform the necessary work. \todo[color=gray!20]{Talk about duplication}
+Before deployment, we would need to check that the browsers of the target audience are still supported. If this is a problem, build scripts can be used to replace the new features with backwards compatible and prefixed versions for older browsers.
 
-As the new site is feature complete, it is fit to replace the current site. One caveat is that I would need to ensure that it still supports the browsers of the target audience, however if this is a problem, there are build scripts which will replace new features with backwards compatible and prefixed versions for older browsers.
+\subsection{Continuous Integration}
+
+The site is currently generated with a build script that checks out the various repositories and generates the new site. This script is brittle, due to the specificity of generating the site, but is functional for demonstration purposes. In a production scenario, the generation should be integrated with the upstream repository. This would allow it to be less vulnerable to errors, as checks could be added to ensure that site generation is not broken by any commit. 
 
 \subsection{Documentation}
 
@@ -1303,44 +1380,11 @@ Currently there is not enough documentation to hand off maintenance confidently.
 
 \subsection{Testing}
 
-Unfortunately, there is currently minimal testing of the software. Good steps in this direction would be to use typed versions of the programming languages so that automatic verification can be applied.
-
-\subsection{Maintenance}
-\cbstart
-If the redesign replaces the current design, it is important that someone will be able to fix the site if it breaks. Additionally, One of the stated goals of the project was to reduce the maintenance load. As described below, this was achieved, but changes would need to be made before deployment in production. 
-\cbend
-
-\subsubsection{Hugo}
-
-In comparison to the previous site generator, Hugo brings several benefits to maintainability. First, the template syntax is very similar to Jinja2 which is used in the current AFP\@. Second, people can bring their outside knowledge to help improve the site as it is a common tool which uses familiar paradigms. Finally, the generator itself is unlikely to break, as maintenance is handled by the Hugo developers. 
-
-One caveat with Hugo, is that there is a history of updates with substantial breaking changes. For example, the 0.60.0 update changed the default behaviour of Markdown pages to omit included HTML instead of rendering it\footnote{\url{https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032/11}}. They made this change to close a potential security liability, and you could disable the new behaviour by adding one line in the config file. Unfortunately, this caused ire in the community as it was non-obvious that this was the new behaviour. \cbstart This means that maintainers should be aware when upgrading Hugo, and read the changelog if any warnings or errors appear on the first build. \cbend
-
-\subsubsection{Python}
-
-Although my processing code is handwritten and would therefore add to the maintenance overhead, it is written in the same language as the current site generator. This implies that it should be easier to fix anything which breaks, as it is a familiar language to the maintainers. 
-
-\subsubsection{Continuous Integration}
-
-The site is currently generated with a build script that checks out the various repositories and generates the new site. This script is brittle due to the specificity of generating the site properly, but is functional for demonstration purposes. \cbstart In a production scenario, the generation should be integrated with the upstream repository. This would allow it to be less vulnerable to errors, as checks could be added to ensure that site generation is not broken by any commit. \cbend
-
-% \ todo[inline]{Jev: You're presenting this as if it would be reasonable for the maintainers to leave it as two disconnected tightly coupled components. It's not a problem for you to say it works this way for development/demonstration purposes and that to be properly deployed it should be merged upstream.}
-
-\chapter{Conclusion} \label{conclusion}
-
-% so what?
-
-    % Research objectives – a summary of your findings and the resulting conclusions
-    % Recommendations
-    % Contributions to knowledge
-
-In this report I have introduced a new design of the AFP in response to user feedback. This involved re-implementing the site generation, paper prototyping and redesigning the website. In addition, several features were added such as improved code navigation and responsive search. These features increase the utility of the website for users. Furthermore, the site auto-updates with each change to the AFP and thus can replace the existing website.
-
-As Hugo is used to generate the site, the maintenance of the generator is off-loaded to the Hugo community. This site generator is performant and builds the 2,500 pages of the site in 25 seconds---which is 4--12x faster than the current generation. Upon evaluation, it was found that this new design met the needs of the users and was a major improvement upon the current website. As such, this project met the goal set out.
+Unfortunately, there is currently minimal testing of the software. If the Python scripts are continued to be used, it would be good to introduce unit testing to ensure they are working correctly. In terms of JavaScript, it would be beneficial to convert it to TypeScript so that automatic verification can surface errors that would otherwise go unnoticed.
 
 \section{Future Work}
 
-The redesigned AFP is feature complete with the current AFP, however there are notable extensions that would elevate this project. In order of increasing complexity we have:
+The redesigned AFP has feature parity with the current AFP, however there are notable extensions that would elevate this project. In order of increasing complexity we have:
 
 \paragraph*{Design Improvements}
 
@@ -1348,23 +1392,22 @@ As the current AFP only has a desktop design, mobile was not accounted for in th
 
 Similarly, the current AFP has one colour mode and so there is only one colour scheme in the redesign. It would be preferable to many people to add a dark mode to the site, including script browsing pages.
 
-\cbstart
-The page which lists the topics should be redesigned to increase the clarity of the information by decreasing the density of the information and make the hierarchy clearer.
-\cbend
+The page which lists the topics should be redesigned to be clearer by decreasing the density of the information and making the hierarchy clearer.
+
 \paragraph*{Web Feeds}
 
-RSS and Atom feeds allow users to subscribe to updates for a  page on the web. Regarding the AFP, these could allow an academic to subscribe to a feed of new entries under a topic or an author could subscribe to a feed to be notified when someone uses their theorem. 
-\cbstart
+RSS and Atom feeds allow users to subscribe to updates for a  page on the web. Regarding the AFP, these could allow an academic to subscribe to a feed of new entries under a topic, or an author could subscribe to a feed to be notified when someone uses their theorem. 
+
 \paragraph*{Accessibility}
 
 Accessibility is necessary for any professional website \cite{henry_accessibility_2021} and it was considered during implementation. For example, semantic HTML was chosen so that the website is more accessible by default, and background colours were chosen to have enough contrast. Unfortunately, an accessibility audit was not completed on the website so there are most likely outstanding accessibility issues.
 
 \paragraph*{Functional Improvements}
 
-The code browsing feature currently lists all theories and lemmas in the side bar, however it becomes less useful as the number of lemmas increases. It would be much more useful if the lemmas were initially collapsed under the theories and they could be toggled when needed.
+The code browsing feature currently lists all theories and lemmas in the side bar, however it becomes less useful as the number of lemmas increases. Instead, it would be helpful if the lemmas were initially collapsed under the theories and could be toggled when needed.
 
-The search experience could be made more useful by providing search results which do not match the input exactly. For example, adding things to the search will currently always decrease the number of returned results. This is useful for highly specific searches, but less useful for finding relevant content. Surfacing the FindFacts results in a more obvious or useful way would also be appreciated as the participants in the evaluation did not seem to be aware of its function.
-\cbend
+The search experience could be made more useful by providing search results which do not match the input exactly. For example, adding to the search will currently always decrease the number of returned results. This is beneficial for highly specific searches, but less so for finding related content. Surfacing the FindFacts results in a more obvious or useful way would also be appreciated, as the participants in the evaluation did not seem to be aware of its function.
+
 \paragraph*{Improving Entry Maintenance}
 
 One of the benefits of using JSON as the entry format, is that it opens the door to editing metadata through a form in the browser. This should not be too difficult, however users would need to sign in and authenticate themselves before they receive editing permissions for current entries. This necessitates a web server to receive requests, and access control to define different categories of users. This extension would therefore be a substantial undertaking.
@@ -1392,7 +1435,7 @@ At time of submission, the current AFP shown below can be viewed at \url{https:/
     \centering
     \includegraphics[width=\textwidth]{figures/old/entry.png}
     \caption{Example entry page from the current AFP}
-
+    \label{fig:entry-current}
 \end{figure}
 
 \begin{figure}[h]
@@ -1406,7 +1449,7 @@ At time of submission, the current AFP shown below can be viewed at \url{https:/
     \centering
     \includegraphics[width=\textwidth]{figures/old/search.png}
     \caption{Current search page of the AFP}
-
+    \label{fig:entry-search}
 \end{figure}
 
 \begin{figure}[h]
@@ -1470,13 +1513,13 @@ Next respondents answered the first of two long answer questions:
 \begin{quote}
     What is your biggest pain point with the Archive? This could be with browsing entries, browsing code within entries, or any other feature of the AFP\@.
 \end{quote}
-Five of six responded to this question with problems searching for entries or theorems. They described difficulty of not being sure of what to search for, or not being sure that they have found all the relevant entries. The remaining participant mainly had difficulty with the documentation for using entries and feel like some of the steps could be automated in some way. Interestingly, one user finds the AFP so painful to use that they download the entire archive and manually search for things in jEdit as it provides more functionality.
+Five of six responded to this question with problems searching for entries or theorems. They described difficulty of not being sure of what to search for, or not being sure that they have found all the relevant entries. The remaining participant mainly had difficulty with the documentation for using entries and feel like some of the steps could be automated in some way. Interestingly, one user finds the AFP so painful to use that they download the entire Archive and manually search for things in jEdit as it provides more functionality.
 
 Responses were split over whether it was easy to find specific entries in the AFP\@. On the other hand, everyone agreed that it was not easy to find entries on a topic or entries related to a topic.
 
 The most accessed pages in order were: Search, Index (list of entries and topics), Citing Entries, Home, Using Entries and Download. The other five pages were never or rarely accessed. 
 
-All the other links were accessed at least sometimes, except for the Older Releases. Surprisingly, the only link which everyone accessed at least sometimes was the Proof Document page which is a PDF of the Isabelle code. This is interesting as I assumed that people would prefer to access the syntax highlighted HTML version of the Isabelle content. It may be so frequently accessed as this is the only listing of all the code of an entry on one page.
+All the other links were accessed at least sometimes, except for the Older Releases. Surprisingly, the only link which everyone accessed at least sometimes was the Proof Document page which is a PDF of the Isabelle code. This is interesting as it was assumed that people would prefer to access the syntax highlighted HTML version of the Isabelle content. It may be so frequently accessed as this is the only listing of all the code of an entry on one page.
 
 In general, people did not mis-click when navigating, which suggests that the text is clear for links that people access.
 
@@ -1510,7 +1553,6 @@ Therefore, the most important priority is searching the archive.
     \caption{\textbf{Demographics.}
     The demographics of the respondents is skewed towards very active and long-term users.}
     \label{fig:demographics}
-    \medskip
 \end{figure}
 
 %(A majority of the participants visit the AFP at least once a month, have been using the site for over a year and have submitted an article.)
@@ -1520,7 +1562,6 @@ Therefore, the most important priority is searching the archive.
     \includegraphics[width=\textwidth]{figures/answers/5-annotated.png}
     \caption{\textbf{Submission.} The vast majority of people who have submitted find the process clear and straightforward.}
     \label{fig:submission-1}
-    \medskip
 \end{figure}
 
 %\clearpage
@@ -1579,7 +1620,6 @@ Getting the ROOT file right.\\
     \includegraphics[width=\textwidth]{figures/answers/7-annotated.png}
     \caption{\textbf{SUS Questions.} The SUS score for the AFP is 72, which is above the average SUS score of 68 and suggests that the participants are satisfied by the AFP\@.}
     \label{fig:sus}
-    \medskip
 \end{figure}
 
 \begin{table}[h!]
@@ -1641,7 +1681,6 @@ Searching if a theory already does something I need.\\
     \caption{\textbf{Navigating to Specific Content.}
     Most content is easy to navigate to, except for specific content in entries. Notably, there is no category in which everyone is neutral or agrees implying that navigation can be improved in all areas.}
     \label{fig:navigating-to-specific-content}
-    \medskip
 \end{figure}
 
 % Most people agreed that it was easy to find specific entries in the AFP and to find entries by an author. Responses were split over whether it was easy to find entries on a topic or related entries to a specific entry, and most people agreed that it was not easy to find specific content, like lemmas and definitions, in entries.
@@ -1653,7 +1692,6 @@ Searching if a theory already does something I need.\\
     \caption{\textbf{Navigating to Pages.}
     There are very different access requirements for pages of the AFP even though all but two of the eleven pages feature in the sidebar.}
     \label{fig:navigating-to-pages}
-    \medskip
 \end{figure}
 
 % The most accessed pages in order were: Home, Index (list of entries and topics), Download (link to download the archive), Search, Citing Entries, Using Entries and Statistics. Submission Guidelines and the Submission form were joint next and then finally About and Updating entries. The pretest had different answers to this question, with the only commonality being Index being in second place.
@@ -1664,7 +1702,6 @@ Searching if a theory already does something I need.\\
     \includegraphics[width=\textwidth]{figures/answers/11-annotated.png}
     \caption{\textbf{Navigating to Pages Related to the Entry.}
     Each entry of the AFP has several links to pages related to it. ``Browse Theories'' and ``Download'' are the most accessed while ``Older Releases'' is rarely accessed.}
-    \medskip
 \end{figure}
 
 
@@ -1676,7 +1713,6 @@ Searching if a theory already does something I need.\\
     \caption{\textbf{Clarity of Link Text.}
     Over half the participants mis-click rarely or sometimes.}
     \label{fig:clarity-of-link-text}
-    \medskip
 \end{figure}
 
 \begin{figure}[h]
@@ -1684,7 +1720,6 @@ Searching if a theory already does something I need.\\
     \includegraphics[width=\textwidth]{figures/answers/13-annotated.png}
     \caption{\textbf{Design and User Experience.}
     Most users are satisfied with the UI and UX but are neutral towards a redesign of either.}
-    \medskip
 \end{figure}
 
 % Most people were satisfied with the look and layout of the AFP, and neutral to the redesign of the UX. People were more split over whether the UI should be redesigned, but 41\% disagreed.
@@ -1695,7 +1730,6 @@ Searching if a theory already does something I need.\\
     \caption{\textbf{Browsing Theories.}
     Almost all participants browse theories and are mostly satisfied with the experience. However, they are largely unsatisfied with finding contents within theories.}
     \label{fig:theory-scripts-1}
-    \medskip
 \end{figure}
 
 \begin{table}[h!]
@@ -1771,7 +1805,6 @@ Add some features from jEdit: highlighting of inner syntax, go to definition hyp
     \caption{\textbf{Ranking Priorities.}
     The ordering of priorities is consistent across the participants. Look and feel is a low priority which is congruous with the neutrality towards a redesign.}
     \label{fig:ranking-priorities}
-    \medskip
 \end{figure}
 
 \clearpage
@@ -1803,7 +1836,7 @@ Add some features from jEdit: highlighting of inner syntax, go to definition hyp
     \centering
     \includegraphics[width=\textwidth]{figures/paperPrototypes/entry-14.jpg}
     \caption{Final paper prototype of an AFP entry page}
-
+    \label{paper-entry}
 \end{figure}
 
 \begin{figure}[h]
@@ -1818,6 +1851,25 @@ Add some features from jEdit: highlighting of inner syntax, go to definition hyp
     \includegraphics[width=\textwidth]{figures/paperPrototypes/theory-8.jpg}
     \caption{Final paper prototype of an AFP theory page}
 
+\end{figure}
+
+\chapter{Related Entry Graphs} \label{relatedEntryGraphs}
+
+Graphs which visualise the related entries of the redesigned AFP. A line from A to B implies A is related to B. Each node will only have up to three outgoing edges, but there is no limit on incoming edges. There is no ordering of the clusters.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/related/page3.png}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/related/page1.png}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figures/related/page2.png}
 \end{figure}
 
 \chapter{Screenshots of the Redesigned AFP}
@@ -1865,7 +1917,7 @@ At time of submission, the redesigned AFP shown below can be viewed at \url{http
     \caption{Contribution page of the redesigned AFP}
 \end{figure}
 
-\chapter{Poster}
+\chapter{Poster} \label{poster}
 
 \begin{figure}[h]
     \centering
@@ -1881,7 +1933,7 @@ Before we start, I just want to confirm that you’ve read the participation she
 
 In this observation, I am interested in what you think about, as you perform the tasks you’re asked to do. To do this, I am going to ask you to talk aloud as you work on the task. What I mean by “talk aloud” is that I want you to tell me everything you are thinking from the first time you see the statement of the task till you finish the task. I would like you to talk aloud constantly from the time I give you the task till you have completed it. I do not want you to try and plan out what you say or try to explain to me what you are saying. Just act as if you were alone, speaking to yourself. It is most important that you keep talking and I will prompt you if you are silent for a long period of time. Do you understand what I want you to do? 
 
-Good. We’ll start with a simple practice problem first. I will demonstrate by thinking aloud while I solve a simple problem: “How many pillows are there in my parents' house?” [Demonstrate thinking aloud.] Please verbalize like this as you are doing the tasks. I will not be able to answer any questions, however, please ask them anyway and I will answer them after the session. Is this clear? 
+Good. We’ll start with a simple practice problem first. I will demonstrate by thinking aloud while I solve a simple problem: “How many pillows are there in my parents' house?” [Demonstrate thinking aloud.] Please verbalise like this as you are doing the tasks. I will not be able to answer any questions, however, please ask them anyway and I will answer them after the session. Is this clear? 
 
 First, I would like you to open a browser and go to the link which I will send in the chat. [When they confirm have done so] Thank you, could you now share your screen? 
 
@@ -1890,7 +1942,7 @@ https://carlinmack.github.io
 I have prepared six tasks for you to do which I’ll send over Teams. For each one please read it aloud, complete it to the best of your ability and to say ''done'' when you feel that you have completed the task. Lastly take your time, remember that I’m testing the interface, not you! 
 
 \begin{enumerate}
-    \item Visit the “Ordinal Partitions” entry and copy its bibtex citation. 
+    \item Visit the “Ordinal Partitions” entry and copy its BibTeX citation. 
     \item Download the “AVL Trees” entry 
     \item Search the AFP for “lemma” then “graph theory”. 
     \item Find how many submissions “Bohua Zhan” has authored. 

@@ -113,6 +113,8 @@ def deduplicate(name):
         return "Ognjen Marić"
     if name == "Sebastiaan Joosten":
         return "Sebastiaan J. C. Joosten"
+    if name == "Lawrence Paulson":
+        return "Lawrence C. Paulson"
     return name
 
 
