@@ -5,11 +5,10 @@
 {{- define "main" }}
 <form action="{{ "search" | absURL }}">
   <div class='form-container'>
-    <input id="searchInput" type="search" size="31" maxlength="255" value=""  aria-label="Search the AFP"><button id="searchButton"
+    <input id="searchInput" type="search" size="31" maxlength="255" value=""  aria-label="Search the AFP" list="autocomplete"><button id="searchButton"
       type="button">Search</button>
-    <div id="searchInputautocomplete-list" style="display: none">
-      <div></div>
-    </div>
+    <datalist id="autocomplete">
+    </datalist>
   </div>
 </form> 
 
