@@ -1,0 +1,2 @@
+* replaced search autocomplete with a datalist
+* changed download links on download page to be buttons
