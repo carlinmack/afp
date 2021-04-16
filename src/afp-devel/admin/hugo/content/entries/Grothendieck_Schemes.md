@@ -18,5 +18,12 @@
     "licence": "BSD",
     "dependencies": [
         "Jacobson_Basic_Algebra"
+    ],
+    "theories": [
+        "Set_Extras",
+        "Group_Extras",
+        "Topological_Space",
+        "Comm_Ring",
+        "Scheme"
     ]
 }

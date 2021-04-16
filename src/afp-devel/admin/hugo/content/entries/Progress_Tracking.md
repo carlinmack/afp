@@ -18,5 +18,14 @@
     "licence": "BSD",
     "dependencies": [
         "Nested_Multisets_Ordinals"
+    ],
+    "theories": [
+        "Auxiliary",
+        "Exchange_Abadi",
+        "Exchange",
+        "Antichain",
+        "Graph",
+        "Propagate",
+        "Combined"
     ]
 }
