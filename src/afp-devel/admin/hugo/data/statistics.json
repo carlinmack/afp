@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 165926,
-    "num_loc": 2910910,
+    "num_lemmas": 166388,
+    "num_loc": 2918124,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        592
+        593
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2910900
+        2918100
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        6
+        8
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        376
+        378
     ],
     "loc_articles": [
         839,
@@ -673,7 +673,8 @@
         17062,
         8475,
         6571,
-        4133
+        4133,
+        7214
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1267,6 +1268,7 @@
         "Modular_arithmetic_LLL_and_HNF_algorithms",
         "Constructive_Cryptography_CM",
         "Grothendieck_Schemes",
-        "IFC_Tracking"
+        "IFC_Tracking",
+        "Progress_Tracking"
     ]
 }

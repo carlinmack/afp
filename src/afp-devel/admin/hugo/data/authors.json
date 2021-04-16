@@ -261,7 +261,7 @@
         "website": "http://www.in.tum.de/~krauss"
     },
     "Dmitriy Traytel": {
-        "website": "https://traytel.bitbucket.io"
+        "website": "https://traytel.bitbucket.io/"
     },
     "Maksym Bortin": {
         "mailto": "Maksym.Bortin@nicta.com.au"
@@ -897,5 +897,8 @@
     },
     "Niels Mündler": {
         "mailto": "n.muendler@tum.de"
+    },
+    "Andrea Lattuada": {
+        "website": "https://andrea.lattuada.me"
     }
 }
