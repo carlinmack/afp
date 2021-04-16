@@ -1,6 +1,7 @@
 //colors
 $theme: #2e2d4e;
-$theme-hover: #444373;
+$theme-hover: hsl(241, 26%, 36%);
+$theme-lightest: hsl(261, 56%, 86%);
 $theme-focus: #acabcf;
 $link:#0645ad;
 $link-hover: #0000ee;
@@ -721,4 +722,35 @@ button[copy] {
 iframe {
     width: 100%;
     height: 90vh;
+}
+
+#banner {
+    display: block;
+    background-color: $theme-lightest;
+    height: 3rem;
+    width: 80vw;
+    position: fixed;
+    bottom: 0;
+    left: 20vw;
+    text-align: center;
+
+    p {
+        line-height: 1rem;
+        margin: 1rem auto;
+    }
+
+    button {
+        height: 1.5rem;
+        width: 1.5rem;
+        position: absolute;
+        right: 2rem;
+        bottom: 0.75rem;
+        padding: 0.35rem;
+    }
+
+    svg {
+        height: 0.75rem;
+        width: 0.75rem;
+        fill: $black;
+    }
 }
