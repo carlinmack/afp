@@ -1,7 +1,7 @@
 //colors
-$theme: #2e2d4e;
+$theme: hsl(242, 27%, 24%);
 $theme-hover: hsl(241, 26%, 36%);
-$theme-lightest: hsl(261, 56%, 86%);
+$theme-lightest: hsl(261, 36%, 86%);
 $theme-focus: #acabcf;
 $link:#0645ad;
 $link-hover: #0000ee;
@@ -733,10 +733,10 @@ iframe {
     bottom: 0;
     left: 20vw;
     text-align: center;
+    z-index: 1;
 
     p {
         line-height: 1rem;
-        margin: 1rem auto;
     }
 
     button {
@@ -745,7 +745,7 @@ iframe {
         position: absolute;
         right: 2rem;
         bottom: 0.75rem;
-        padding: 0.35rem;
+        padding: 0.3rem;
     }
 
     svg {

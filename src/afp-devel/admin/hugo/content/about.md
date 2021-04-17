@@ -6,13 +6,23 @@ menu:
         weight: 6
 ---
 
-This website is a reimagining of the [Archive of Formal Proofs](https://www.isa-afp.org/), a collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover [Isabelle](http://isabelle.in.tum.de/). It is organized in the way of a scientific journal. [Submissions](/contribution) are refereed.
+This website is a reimagining of the [Archive of Formal Proofs](https://www.isa-afp.org/), a collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover [Isabelle](http://isabelle.in.tum.de/).  The entries are updated daily to match the [upstream repository](https://foss.heptapod.net/isa-afp/afp-2021). 
 
-The Archive repository will be released freely by July 2021 to provide easy free access to archive entries. The entries are updated daily to match the [upstream repository](https://foss.heptapod.net/isa-afp/afp-2021). Older versions of archive entries will remain available.
+The repository for this website will be released freely by July 2021.
+
+## Development
+
+This is a project from the School of Informatics at the University of Edinburgh by:
+
+* Carlin MacKenzie, MInf Informatics
+* James Vaughan, PhD Student, [AIAI](http://web.inf.ed.ac.uk/aiai/)
+* Jacques Fleuriot, Director of Institute, [AIAI](http://web.inf.ed.ac.uk/aiai/)
+
+----------------------------------------------------------------------------------------
 
 ## Editors
 
-The editors of the Archive are:
+The editors of the Archive of Formal Proofs are:
 
 *   [Manuel Eberl](http://www.in.tum.de/~eberlm/), [Technische Universität München](http://www.tum.de/)
 *   [Gerwin Klein](http://www.cse.unsw.edu.au/~kleing/), [Data61](http://www.data61.csiro.au)
@@ -37,11 +47,3 @@ We encourage authors of publications that contain Isabelle developments to make 
 All entries in the Archive of Formal Proofs are licensed under a [BSD-style License](LICENSE) or the [GNU LGPL](http://www.gnu.org/copyleft/lesser.html). This means they are free to download, free to use, free to change, and free to redistribute with minimal restrictions.
 
 The authors retain their full copyright on their original work, including their right to make the development available under another, additional license in the future.
-
-## Development
-
-This is a project from the University of Edinburgh by:
-
-* Carlin MacKenzie, MInf Informatics
-* James Vaughan, PhD Student, [AIAI](http://web.inf.ed.ac.uk/aiai/)
-* Jacques Fleuriot, Director of Institute, [AIAI](http://web.inf.ed.ac.uk/aiai/)
