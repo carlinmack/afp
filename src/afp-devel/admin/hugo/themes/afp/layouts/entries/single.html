@@ -1,5 +1,6 @@
 {{- define "main" -}}
 {{- $site := . -}}
+{{- $entryName := .File.TranslationBaseName -}}
 <main>
   <h3>Abstract</h3>
 
@@ -20,33 +21,35 @@
 
   {{- $Scratch := newScratch -}}
 
-  {{- with .Params.theories -}}
   <h3>Theories</h3>
   <ul>
-    {{- range . -}}
-    <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
+  {{ $file := printf "assets/theories/%s.html" $entryName}}
+  {{ if fileExists $file -}}
+    {{- with .Params.theories -}}
+      {{- range . -}}
+        <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
+      {{- end -}}
     {{- end -}}
-  </ul>
+  {{ else }}
+    <li>{{- printf "[Browse theories](https://www.isa-afp.org/browser_info/current/AFP/%s/index.html)" $entryName | $.Page.RenderString -}}</li>
   {{- end -}}
+  </ul>
   
   {{- with .Params.dependencies -}}
-    {{- range . -}}
-    {{- $dependency := printf "[%s](%s%s)" . ("/entries/" | relLangURL) (. | urlize) -}}
-    {{- $Scratch.Add "dependencies" (slice $dependency) -}}
-    {{- end -}}
-    <h3>Depends On</h3>
-    <p>{{- delimit ($Scratch.Get "dependencies") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
-    </p>
+    <h3>Depends On</h3><ul>
+      {{- range . -}}
+      <li>{{- printf "[%s](/entries/%s)" . (urlize .) | $.Page.RenderString -}}</li>
+      {{- end -}}
+    </ul>
   {{- end -}}
-  {{- $entryName := .File.TranslationBaseName -}}
+
   {{- with (index .Site.Taxonomies.dependencies (urlize $entryName)) -}}
-    {{- range $key := .Pages.ByDate -}}
-    {{- $dependent := printf "[%s](%s)" .File.TranslationBaseName .RelPermalink -}}
-    {{- $Scratch.Add "dependents" (slice ($dependent)) -}}
-    {{- end -}}
     <h3>Used by</h3>
-    <p>{{- delimit ($Scratch.Get "dependents") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
-    </p>
+    <ul>
+      {{- range . -}}
+      <li>{{- printf "[%s](%s)" .File.TranslationBaseName .RelPermalink | $.Page.RenderString -}}</li>
+      {{- end -}}
+    </ul>
   {{- end -}}
 
   {{- with .Params.topics -}}
@@ -59,14 +62,12 @@
   {{- end -}}
 
   {{- with .Params.relatedEntries -}}
-  {{- range . -}}
-  {{- $relatedEntry := printf "[%s](%s%s)" . ("/entries/" | relLangURL) (. | urlize) -}}
-  {{- $Scratch.Add "relatedEntries" (slice $relatedEntry) -}}
-  {{- end -}}
   <h3>Related Entries</h3>
-  <p>
-    {{- delimit ($Scratch.Get "relatedEntries") ", " | replaceRE "(, )([^,]+$)" " and $2" | $.Page.RenderString -}}
-  </p>
+  <ul>
+    {{- range . -}}
+    <li>{{- printf "[%s](/entries/%s)" . (urlize .) | $.Page.RenderString -}}</li>
+    {{- end -}}
+  </ul>
   {{- end -}}
 </main>
 

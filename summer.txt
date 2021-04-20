@@ -2,3 +2,5 @@
 * changed download links on download page to be buttons
 * change the about section to be more relevant to the redesign
 * add banner
+* Show "Browse theories" link if theory asset page not found
+* Standardise the entry attributes to be a bullet pointed list rather than a written list
