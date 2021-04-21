@@ -496,6 +496,12 @@ code {
     @extend %code;
 }
 
+blockquote {
+    border: 2px solid $lighter-grey;
+    padding: 1rem 2rem;
+    margin: auto 0;
+}
+
 .nobr {
     white-space: nowrap;
 }
