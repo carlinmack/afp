@@ -251,12 +251,14 @@ header {
         form {
             margin: 2rem auto 0;
             width: 50%;
+            min-width: 290px;
             padding: 1rem 0;
         }
 
         #searchButton {
             height: 2.5rem;
             width: 25%;
+            min-width: 70px;
             background: $theme;
             color: $white;
             border: 1px $theme solid;
@@ -758,5 +760,10 @@ iframe {
         height: 0.75rem;
         width: 0.75rem;
         fill: $black;
+    }
+
+    @media (max-width: 1000px) {
+        left: 200px;
+        width: calc(100vw - 200px);
     }
 }
