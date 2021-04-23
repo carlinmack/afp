@@ -522,10 +522,13 @@ blockquote {
         grid-area: search;
     }
 
-    #search-results {
+    #search-main {
         grid-area: entries;
         padding-right: 2rem;
         box-sizing: border-box;
+    }
+
+    #search-results {
 
         >div {
             position: relative;
@@ -562,7 +565,7 @@ blockquote {
         }
     }
 
-    #sidebar {
+    #search-sidebar {
         grid-area: sidebar;
     }
 }
