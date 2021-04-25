@@ -797,7 +797,13 @@
         "mailto": "lor.gheri@gmail.com"
     },
     "André Platzer": {
-        "website": "http://www.cs.cmu.edu/~aplatzer/"
+        "website": "https://www.cs.cmu.edu/~aplatzer/"
+    },
+    "Katherine Cordwell": {
+        "website": "https://www.cs.cmu.edu/~kcordwel/"
+    },
+    "Yong Kiam Tan": {
+        "website": "https://www.cs.cmu.edu/~yongkiat/"
     },
     "Jérémy Dubut": {
         "website": "http://group-mmm.org/~dubut/"
@@ -813,9 +819,6 @@
     },
     "Robert Sachtleben": {
         "mailto": "rob_sac@uni-bremen.de"
-    },
-    "Yong Kiam Tan": {
-        "website": "https://www.cs.cmu.edu/~yongkiat/"
     },
     "Bernhard Möller": {
         "website": "https://www.informatik.uni-augsburg.de/en/chairs/dbis/pmi/staff/moeller/"
