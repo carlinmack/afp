@@ -194,6 +194,7 @@ Functional_Ordered_Resolution_Prover
 Furstenberg_Topology
 GPU_Kernel_PL
 Gabow_SCC
+GaleStewart_Games
 Game_Based_Crypto
 Gauss-Jordan-Elim-Fun
 Gauss_Jordan
@@ -343,6 +344,7 @@ Median_Of_Medians_Selection
 Menger
 Mereology
 Mersenne_Primes
+Metalogic_ProofChecker
 MiniML
 Minimal_SSA
 Minkowskis_Theorem

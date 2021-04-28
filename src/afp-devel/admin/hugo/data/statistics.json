@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 166803,
-    "num_loc": 2928460,
+    "num_lemmas": 167739,
+    "num_loc": 2939033,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        594
+        596
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2928500
+        2939000
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        9
+        10
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        379
+        380
     ],
     "loc_articles": [
         839,
@@ -675,7 +675,9 @@
         6575,
         4133,
         7214,
-        10332
+        1309,
+        10332,
+        9264
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1271,6 +1273,8 @@
         "Grothendieck_Schemes",
         "IFC_Tracking",
         "Progress_Tracking",
-        "BenOr_Kozen_Reif"
+        "GaleStewart_Games",
+        "BenOr_Kozen_Reif",
+        "Metalogic_ProofChecker"
     ]
 }

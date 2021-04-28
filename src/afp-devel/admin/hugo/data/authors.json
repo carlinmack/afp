@@ -79,7 +79,7 @@
     },
     "Sebastiaan J. C. Joosten": {
         "mailto": "sebastiaan.joosten@uibk.ac.at",
-        "website": "http://sjcjoosten.nl/"
+        "website": "https://sjcjoosten.nl"
     },
     "René Thiemann": {
         "mailto": "rene.thiemann@uibk.ac.at",
@@ -903,5 +903,8 @@
     },
     "Andrea Lattuada": {
         "website": "https://andrea.lattuada.me"
+    },
+    "Simon Roßkopf": {
+        "website": "http://www21.in.tum.de/~rosskops"
     }
 }
