@@ -19,5 +19,15 @@
     "dependencies": [
         "Algebraic_Numbers",
         "Sturm_Tarski"
+    ],
+    "theories": [
+        "More_Matrix",
+        "BKR_Algorithm",
+        "Matrix_Equation_Construction",
+        "BKR_Proofs",
+        "BKR_Decision",
+        "Renegar_Algorithm",
+        "Renegar_Proofs",
+        "Renegar_Decision"
     ]
 }

@@ -1,0 +1,124 @@
+{
+    "url": "entries/galestewart_games/theories",
+    "title": "Session GaleStewart_Games",
+    "theories": [
+        {
+            "MoreCoinductiveList2": [
+                "ltake_infinity",
+                "coinductive_eq_iff_lnth_eq",
+                "coinductive_eq_I",
+                "enat_times_less",
+                "llist_eq_lcons"
+            ]
+        },
+        {
+            "MoreENat": [
+                "eSuc_n_not_le_n",
+                "mult_two_impl1",
+                "mult_two_impl2",
+                "mult_two_impl3",
+                "mult_two_impl4",
+                "times_two_div_two",
+                "enat_sum_le",
+                "enat_Suc_nonzero"
+            ]
+        },
+        {
+            "MorePrefix": [
+                "head_prefixes",
+                "non_head_prefixes",
+                "last_prefixes",
+                "take_1_prefixes",
+                "map_last_prefixes",
+                "ltake_zero",
+                "ltakes_one_iterates",
+                "ltakes_suc_iterates",
+                "prefixes_nth_take",
+                "tl_prefixes_idx",
+                "list_of_lappend_llist_of",
+                "nth_prefixes",
+                "take_Suc_prefix",
+                "nth_prefixes_is_prefix",
+                "nth_prefixes_is_prefix_tl",
+                "prefix_same_length_eq",
+                "prefix_takeI",
+                "lprefix_llength_lprefix",
+                "lprefix_ltakeI",
+                "length_augment_list",
+                "augment_list_nonempty",
+                "augment_list_Suc_prefix",
+                "augment_list_prefix",
+                "augment_list_nonsense",
+                "prefix_augment"
+            ]
+        },
+        {
+            "AlternatingLists": [
+                "lalternate_ltake",
+                "lalternate_llist_of",
+                "lalternate_finite_helper",
+                "alternate_list_of",
+                "alternate_length",
+                "lalternate_llength",
+                "lalternate_finite",
+                "nth_alternate",
+                "lnth_lalternate",
+                "lnth_lalternate2"
+            ]
+        },
+        {
+            "GaleStewartGames": [
+                "position_maxlength_cannotbe_augmented",
+                "plays_are_positions_conv",
+                "finite_plays_are_positions",
+                "induced_play_infinite",
+                "plays_from_strategy_lengths",
+                "length_plays_from_strategy",
+                "length_ltl_plays_from_strategy",
+                "plays_from_strategy_chain_Suc",
+                "plays_from_strategy_chain",
+                "plays_from_strategy_remains_const",
+                "infplays_augment_one",
+                "infplays_augment_many",
+                "infplays_augment_one_joint",
+                "infplays_eq",
+                "induced_play_infinite_le",
+                "induced_play_is_lprefix",
+                "length_induced_play",
+                "induced_play_lprefix_non_positions",
+                "infplays_augment_many_lprefix",
+                "at_most_one_player_winning",
+                "any_moves_remain_winning_Even",
+                "any_moves_remain_winning_Odd",
+                "non_winning_moves_remains_non_winning_Even",
+                "non_winning_moves_remains_non_winning_Odd",
+                "winning_moves_remain_winning_Even",
+                "winning_moves_remain_winning_Odd",
+                "winning_position_can_remain_winning_Even",
+                "winning_position_can_remain_winning_Odd",
+                "winning_position_will_remain_winning_Even",
+                "winning_position_will_remain_winning_Odd",
+                "induced_play_eq"
+            ]
+        },
+        {
+            "GaleStewartDefensiveStrategies": [
+                "defensive_move_exists_for_Even",
+                "defensive_move_exists_for_Odd",
+                "position_augment",
+                "defensive_strategy_Odd",
+                "defensive_strategy_Even",
+                "never_winning_is_losing_even",
+                "every_position_is_determined"
+            ]
+        },
+        {
+            "GaleStewartDeterminedGames": [
+                "never_winning_is_losing_even",
+                "every_position_is_determined",
+                "empty_position",
+                "every_position_has_winning_strategy"
+            ]
+        }
+    ]
+}

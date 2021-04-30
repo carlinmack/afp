@@ -15,5 +15,27 @@
     "licence": "BSD",
     "dependencies": [
         "List-Index"
+    ],
+    "theories": [
+        "Core",
+        "Preliminaries",
+        "Term",
+        "Sorts",
+        "SortConstants",
+        "Theory",
+        "Term_Subst",
+        "Name",
+        "BetaNorm",
+        "BetaNormProof",
+        "EtaNorm",
+        "EtaNormProof",
+        "Logic",
+        "EqualityProof",
+        "ProofTerm",
+        "SortsExe",
+        "Instances",
+        "TheoryExe",
+        "CheckerExe",
+        "CodeGen"
     ]
 }

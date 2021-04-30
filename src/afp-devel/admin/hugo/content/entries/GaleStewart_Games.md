@@ -14,5 +14,14 @@
     "licence": "BSD",
     "dependencies": [
         "Parity_Game"
+    ],
+    "theories": [
+        "MoreCoinductiveList2",
+        "MoreENat",
+        "MorePrefix",
+        "AlternatingLists",
+        "GaleStewartGames",
+        "GaleStewartDefensiveStrategies",
+        "GaleStewartDeterminedGames"
     ]
 }
