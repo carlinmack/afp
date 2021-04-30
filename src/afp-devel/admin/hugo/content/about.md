@@ -8,7 +8,7 @@ menu:
 
 > This website is a reimagining of the [Archive of Formal Proofs](https://www.isa-afp.org/), a collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover [Isabelle](http://isabelle.in.tum.de/).  The entries are updated daily to match the [upstream repository](https://foss.heptapod.net/isa-afp/afp-2021). 
 >
-> The repository for this website will be released freely in July 2021.
+> The repository for this website will be released freely in the summer of 2021.
 > ## Development
 > This is a project from the School of Informatics at the University of Edinburgh by:
 >* Carlin MacKenzie, MInf Informatics
