@@ -12,7 +12,7 @@
   </aside>
 
   <div
-    class='content {{- if (eq .Section "entries") }} entries{{- end -}} {{ if (eq .Section "theories") }}theories{{- end -}} {{ if (eq .File.TranslationBaseName "search") }}searchPage{{- end -}}'>
+    class='content {{ if (eq .Section "entries") }} entries{{- end -}} {{ if (eq .Section "theories") }}theories{{- end -}} {{ if (eq .File.TranslationBaseName "search") }}searchPage{{- end -}}'>
     {{- partial "header.html" . -}}
     <div id="banner" data-id="0">
       <p>This is an unofficial reimagining of the <a href="https://isa-afp.org" target="_blank"
