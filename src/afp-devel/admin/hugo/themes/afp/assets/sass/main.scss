@@ -177,7 +177,6 @@ aside {
     }
 }
 
-
 .logo {
     width: 40%;
     height: auto;
@@ -509,6 +508,10 @@ blockquote {
     margin: auto 0;
 }
 
+tr:nth-child(even) {
+    background-color: $lightest-grey;
+}
+
 .nobr {
     white-space: nowrap;
 }
@@ -573,7 +576,6 @@ blockquote {
         grid-area: sidebar;
     }
 }
-
 
 a[download] {
     display: inline-block;

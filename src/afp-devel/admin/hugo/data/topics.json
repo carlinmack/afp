@@ -1,5 +1,6 @@
 {
     "Computer science": {
+        "Artificial intelligence": {},
         "Automata and formal languages": {},
         "Algorithms": {
             "Graph": {},
@@ -9,7 +10,8 @@
             "Geometry": {},
             "Approximation": {},
             "Mathematical": {},
-            "Optimization": {}
+            "Optimization": {},
+            "Quantum computing": {}
         },
         "Concurrency": {
             "Process calculi": {}
@@ -65,7 +67,9 @@
         "Graph theory": {},
         "Combinatorics": {},
         "Category theory": {},
-        "Physics": {},
+        "Physics": {
+            "Quantum information": {}
+        },
         "Misc": {}
     },
     "Tools": {}

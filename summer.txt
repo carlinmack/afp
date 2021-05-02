@@ -5,6 +5,8 @@
 * Fixes to improve UI on narrow displays
     * Banner, home search box, side menu
 * Fix the browse theories dependencies links to go to AFP/Isabelle library as appropriate
+* Fix topics page duplicate entries bug
+* Improve topics page by adding a table
 
 Entries
     * Show "Browse theories" link if theory asset page not found
