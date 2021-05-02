@@ -3,7 +3,7 @@
 <h1>Theory BalancedTraces</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> BalancedTraces
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> traces <span class="main">=</span> 
@@ -207,7 +207,7 @@
 <h1>Theory SestoftConf</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> SestoftConf
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="../Launchbury/Substitution.html">Launchbury.Substitution</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="../../launchbury/theories/#Substitution">Launchbury.Substitution</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">datatype</span></span> stack_elem <span class="main">=</span> Alts <span class="quoted">exp</span> <span class="quoted">exp</span> <span class="main">|</span> Arg <span class="quoted">var</span> <span class="main">|</span> Upd <span class="quoted">var</span> <span class="main">|</span> Dummy <span class="quoted">var</span>
@@ -496,7 +496,7 @@
 <h1>Theory Sestoft</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Sestoft 
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="SestoftConf.html">SestoftConf</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#SestoftConf">SestoftConf</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">inductive</span></span> <span class="entity">step</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"conf <span class="main">⇒</span> conf <span class="main">⇒</span> bool"</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">infix</span></span> <span class="quoted">"<span class="keyword1">⇒</span>"</span> 50<span class="main">)</span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -679,7 +679,7 @@
 <h1>Theory SestoftCorrect</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> SestoftCorrect
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="BalancedTraces.html">BalancedTraces</a> <a href="../Launchbury/Launchbury.html">Launchbury.Launchbury</a> <a href="Sestoft.html">Sestoft</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#BalancedTraces">BalancedTraces</a> <a href="../../launchbury/theories/#Launchbury">Launchbury.Launchbury</a> <a href="#Sestoft">Sestoft</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -1125,7 +1125,7 @@ end
 <h1>Theory AEnv</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> AEnv
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Arity.html">Arity</a> <a href="../Launchbury/Vars.html">Launchbury.Vars</a> <a href="../Launchbury/Env.html">Launchbury.Env</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Arity">Arity</a> <a href="../../launchbury/theories/#Vars">Launchbury.Vars</a> <a href="../../launchbury/theories/#Env">Launchbury.Env</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* TODO: This could mostly be a Env-Nominal module *)</span>
@@ -1140,7 +1140,7 @@ end
 <h1>Theory Arity-Nominal</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"Arity-Nominal"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Arity.html">Arity</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Arity">Arity</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Arity-Nominal-join_eqvt"><span class="command">lemma</span></span> join_eqvt<span class="main">[</span><span class="operator">eqvt</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">π</span> <span class="main">∙</span> <span class="main">(</span><span class="free">x</span> <span class="main">⊔</span> <span class="main">(</span><span class="free">y</span> <span class="main">::</span> <span class="tfree">'a</span> <span class="main">::</span> <span class="main">{</span>Finite_Join_cpo<span class="main">,</span> cont_pt<span class="main">}</span><span class="main">)</span><span class="main">)</span> <span class="main">=</span> <span class="main">(</span><span class="free">π</span> <span class="main">∙</span> <span class="free">x</span><span class="main">)</span> <span class="main">⊔</span> <span class="main">(</span><span class="free">π</span> <span class="main">∙</span> <span class="free">y</span><span class="main">)</span>"</span></span>
@@ -1167,7 +1167,7 @@ end
 <h1>Theory ArityAnalysisSig</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisSig
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="AEnv.html">AEnv</a> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>  <a href="../Launchbury/Substitution.html">Launchbury.Substitution</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="#AEnv">AEnv</a> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>  <a href="../../launchbury/theories/#Substitution">Launchbury.Substitution</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> ArityAnalysis <span class="main">=</span>
@@ -1207,7 +1207,7 @@ end
 <h1>Theory ArityAnalysisAbinds</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisAbinds
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSig">ArityAnalysisSig</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysis
@@ -1390,7 +1390,7 @@ qed
 <h1>Theory ArityAnalysisSpec</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisSpec
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisAbinds.html">ArityAnalysisAbinds</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisAbinds">ArityAnalysisAbinds</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> SubstArityAnalysis <span class="main">=</span> EdomArityAnalysis <span class="main">+</span> 
@@ -1492,7 +1492,7 @@ qed
 <h1>Theory TrivialArityAnal</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TrivialArityAnal
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">Trivial_Aexp</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"exp <span class="main">⇒</span> Arity <span class="main">→</span> AEnv"</span></span>
@@ -1677,7 +1677,7 @@ next
 <h1>Theory CardinalityAnalysisSig</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CardinalityAnalysisSig
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Arity.html">Arity</a> <a href="AEnv.html">AEnv</a> <span class="quoted">"<a href="Cardinality-Domain.html">Cardinality-Domain</a>"</span> <a href="SestoftConf.html">SestoftConf</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Arity">Arity</a> <a href="#AEnv">AEnv</a> <span class="quoted">"<a href="Cardinality-Domain.html">Cardinality-Domain</a>"</span> <a href="#SestoftConf">SestoftConf</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CardinalityPrognosis <span class="main">=</span> 
@@ -1692,7 +1692,7 @@ next
 <h1>Theory ConstOn</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ConstOn
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">const_on</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"<span class="main">(</span><span class="tfree">'a</span> <span class="main">⇒</span> <span class="tfree">'b</span><span class="main">)</span> <span class="main">⇒</span> <span class="tfree">'a</span> set <span class="main">⇒</span> <span class="tfree">'b</span> <span class="main">⇒</span> bool"</span></span>
@@ -1725,7 +1725,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory CardinalityAnalysisSpec</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CardinalityAnalysisSpec
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a> <a href="CardinalityAnalysisSig.html">CardinalityAnalysisSig</a> <a href="ConstOn.html">ConstOn</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a> <a href="#CardinalityAnalysisSig">CardinalityAnalysisSig</a> <a href="#ConstOn">ConstOn</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CardinalityPrognosisEdom <span class="main">=</span> CardinalityPrognosis <span class="main">+</span>
@@ -1781,7 +1781,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityAnalysisStack</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisStack
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="SestoftConf.html">SestoftConf</a> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#SestoftConf">SestoftConf</a> <a href="#ArityAnalysisSig">ArityAnalysisSig</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysis
@@ -1808,7 +1808,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory NoCardinalityAnalysis</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> NoCardinalityAnalysis
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CardinalityAnalysisSpec.html">CardinalityAnalysisSpec</a> <a href="ArityAnalysisStack.html">ArityAnalysisStack</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CardinalityAnalysisSpec">CardinalityAnalysisSpec</a> <a href="#ArityAnalysisStack">ArityAnalysisStack</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> NoCardinalityAnalysis <span class="main">=</span> ArityAnalysisLetSafe <span class="main">+</span>
@@ -1988,7 +1988,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory TransformTools</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TransformTools
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="../Launchbury/Substitution.html">Launchbury.Substitution</a> <a href="../Launchbury/Env.html">Launchbury.Env</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="../../launchbury/theories/#Substitution">Launchbury.Substitution</a> <a href="../../launchbury/theories/#Env">Launchbury.Env</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">default_sort</span></span> <span class="quoted">type</span>
@@ -2117,7 +2117,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory AbstractTransform</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> AbstractTransform
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="TransformTools.html">TransformTools</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="#TransformTools">TransformTools</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> AbstractAnalProp <span class="main">=</span>
@@ -2366,7 +2366,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory EtaExpansion</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> EtaExpansion
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="../Launchbury/Substitution.html">Launchbury.Substitution</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="../../launchbury/theories/#Substitution">Launchbury.Substitution</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">fresh_var</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"exp <span class="main">⇒</span> var"</span></span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -2446,7 +2446,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory EtaExpansionSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> EtaExpansionSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="EtaExpansion.html">EtaExpansion</a> <a href="Sestoft.html">Sestoft</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#EtaExpansion">EtaExpansion</a> <a href="#Sestoft">Sestoft</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">theorem</span></span> eta_expansion_safe<span class="main">:</span>
@@ -2498,7 +2498,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityStack</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityStack
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Arity.html">Arity</a> <a href="SestoftConf.html">SestoftConf</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Arity">Arity</a> <a href="#SestoftConf">SestoftConf</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">fun</span></span> <span class="entity">Astack</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"stack <span class="main">⇒</span> Arity"</span></span>
@@ -2528,7 +2528,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityEtaExpansion</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityEtaExpansion
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="EtaExpansion.html">EtaExpansion</a> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <a href="TransformTools.html">TransformTools</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#EtaExpansion">EtaExpansion</a> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <a href="#TransformTools">TransformTools</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">lift_definition</span></span> Aeta_expand <span class="main">::</span> <span class="quoted"><span class="quoted">"Arity <span class="main">⇒</span> exp <span class="main">⇒</span> exp"</span></span> <span class="keyword2"><span class="keyword">is</span></span> <span class="quoted"><span class="quoted">"eta_expand"</span></span><span class="keyword1"><span class="command">.</span></span>
@@ -2573,7 +2573,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityEtaExpansionSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityEtaExpansionSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="EtaExpansionSafe.html">EtaExpansionSafe</a> <a href="ArityStack.html">ArityStack</a> <a href="ArityEtaExpansion.html">ArityEtaExpansion</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#EtaExpansionSafe">EtaExpansionSafe</a> <a href="#ArityStack">ArityStack</a> <a href="#ArityEtaExpansion">ArityEtaExpansion</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="ArityEtaExpansionSafe-Aeta_expand_safe"><span class="command">lemma</span></span> Aeta_expand_safe<span class="main">:</span>
@@ -2598,7 +2598,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityTransform</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityTransform
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a> <a href="AbstractTransform.html">AbstractTransform</a> <a href="ArityEtaExpansionSafe.html">ArityEtaExpansionSafe</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSig">ArityAnalysisSig</a> <a href="#AbstractTransform">AbstractTransform</a> <a href="#ArityEtaExpansionSafe">ArityEtaExpansionSafe</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysisHeapEqvt
@@ -2636,7 +2636,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityConsistent</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityConsistent
-<span class="keyword2"><span class="keyword">imports</span></span>  <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a>  <a href="ArityStack.html">ArityStack</a> <a href="ArityAnalysisStack.html">ArityAnalysisStack</a>
+<span class="keyword2"><span class="keyword">imports</span></span>  <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a>  <a href="#ArityStack">ArityStack</a> <a href="#ArityAnalysisStack">ArityAnalysisStack</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysisLetSafe
@@ -2910,7 +2910,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory ArityTransformSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityTransformSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityTransform.html">ArityTransform</a> <a href="ArityConsistent.html">ArityConsistent</a> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a> <a href="ArityEtaExpansionSafe.html">ArityEtaExpansionSafe</a> <a href="AbstractTransform.html">AbstractTransform</a> <a href="ConstOn.html">ConstOn</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityTransform">ArityTransform</a> <a href="#ArityConsistent">ArityConsistent</a> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a> <a href="#ArityEtaExpansionSafe">ArityEtaExpansionSafe</a> <a href="#AbstractTransform">AbstractTransform</a> <a href="#ConstOn">ConstOn</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CardinalityArityTransformation <span class="main">=</span> ArityAnalysisLetSafeNoCard
@@ -3185,7 +3185,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory Set-Cpo</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"Set-Cpo"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOLCF/HOLCF.html">HOLCF</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOLCF/HOLCF.html">HOLCF</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">default_sort</span></span> <span class="quoted">type</span>
@@ -3275,7 +3275,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory Env-Set-Cpo</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"Env-Set-Cpo"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Env.html">Launchbury.Env</a> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Env">Launchbury.Env</a> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Env-Set-Cpo-cont_edom"><span class="command">lemma</span></span> cont_edom<span class="main">[</span><span class="operator">THEN</span> cont_compose<span class="main">,</span> <span class="operator">simp</span><span class="main">,</span> <span class="operator">cont2cont</span><span class="main">]</span><span class="main">:</span>
@@ -3293,7 +3293,7 @@ lemma const_onE[elim]: "const_on f S r ==&gt; x : S ==&gt; r = r' ==&gt; f x = r
 <h1>Theory CoCallGraph</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallGraph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Vars.html">Launchbury.Vars</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Join-Classes.html">Launchbury.HOLCF-Join-Classes</a>"</span> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Vars">Launchbury.Vars</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Join-Classes.html">Launchbury.HOLCF-Join-Classes</a>"</span> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">default_sort</span></span> <span class="quoted">type</span>
@@ -3756,7 +3756,7 @@ lemma ccLinear_ccNeighbors:
 <h1>Theory CoCallAnalysisSig</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallAnalysisSig
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <a href="Arity.html">Arity</a> <a href="CoCallGraph.html">CoCallGraph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <a href="#Arity">Arity</a> <a href="#CoCallGraph">CoCallGraph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CoCallAnalysis <span class="main">=</span>
@@ -3850,7 +3850,7 @@ translations
 <h1>Theory CoCallGraph-Nominal</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"CoCallGraph-Nominal"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallGraph.html">CoCallGraph</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallGraph">CoCallGraph</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">instantiation</span></span> CoCalls <span class="main">::</span> <span class="quoted">pt</span>
@@ -3912,7 +3912,7 @@ translations
 <h1>Theory CoCallAnalysisBinds</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallAnalysisBinds
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallAnalysisSig.html">CoCallAnalysisSig</a> <a href="AEnv.html">AEnv</a>  <span class="quoted">"<a href="AList-Utils-HOLCF.html">AList-Utils-HOLCF</a>"</span> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="CoCallGraph-Nominal.html">CoCallGraph-Nominal</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallAnalysisSig">CoCallAnalysisSig</a> <a href="#AEnv">AEnv</a>  <span class="quoted">"<a href="AList-Utils-HOLCF.html">AList-Utils-HOLCF</a>"</span> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="CoCallGraph-Nominal.html">CoCallGraph-Nominal</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> CoCallAnalysis
@@ -4054,7 +4054,7 @@ translations
 <h1>Theory ArityAnalysisFix</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisFix
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a> <a href="ArityAnalysisAbinds.html">ArityAnalysisAbinds</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSig">ArityAnalysisSig</a> <a href="#ArityAnalysisAbinds">ArityAnalysisAbinds</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysis
@@ -4331,7 +4331,7 @@ translations
 <h1>Theory CoCallFix</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallFix
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallAnalysisSig.html">CoCallAnalysisSig</a> <a href="CoCallAnalysisBinds.html">CoCallAnalysisBinds</a> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>  <a href="ArityAnalysisFix.html">ArityAnalysisFix</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallAnalysisSig">CoCallAnalysisSig</a> <a href="#CoCallAnalysisBinds">CoCallAnalysisBinds</a> <a href="#ArityAnalysisSig">ArityAnalysisSig</a> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>  <a href="#ArityAnalysisFix">ArityAnalysisFix</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -4657,7 +4657,7 @@ translations
 <h1>Theory CoCallAnalysisImpl</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallAnalysisImpl
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>  <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span> <span class="quoted">"<a href="../Launchbury/Env-HOLCF.html">Launchbury.Env-HOLCF</a>"</span> <a href="CoCallFix.html">CoCallFix</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Arity-Nominal.html">Arity-Nominal</a>"</span> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <span class="quoted">"<a href="../Launchbury/Env-Nominal.html">Launchbury.Env-Nominal</a>"</span>  <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span> <span class="quoted">"<a href="../Launchbury/Env-HOLCF.html">Launchbury.Env-HOLCF</a>"</span> <a href="#CoCallFix">CoCallFix</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">fun</span></span> <span class="entity">combined_restrict</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"var set <span class="main">⇒</span> <span class="main">(</span>AEnv <span class="main">×</span> CoCalls<span class="main">)</span> <span class="main">⇒</span> <span class="main">(</span>AEnv <span class="main">×</span> CoCalls<span class="main">)</span>"</span></span>
@@ -4969,7 +4969,7 @@ translations
 <h1>Theory CallArityEnd2End</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CallArityEnd2End
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityTransform.html">ArityTransform</a> <a href="CoCallAnalysisImpl.html">CoCallAnalysisImpl</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityTransform">ArityTransform</a> <a href="#CoCallAnalysisImpl">CoCallAnalysisImpl</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CallArityEnd2End
@@ -5050,7 +5050,7 @@ translations
 <h1>Theory SestoftGC</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> SestoftGC
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Sestoft.html">Sestoft</a> 
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Sestoft">Sestoft</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">inductive</span></span> <span class="entity">gc_step</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"conf <span class="main">⇒</span> conf <span class="main">⇒</span> bool"</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">infix</span></span> <span class="quoted">"<span class="keyword1">⇒<span class="hidden">⇩</span><sub>G</sub></span>"</span> 50<span class="main">)</span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -5495,7 +5495,7 @@ qed
 <h1>Theory CardArityTransformSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CardArityTransformSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityTransform.html">ArityTransform</a> <a href="CardinalityAnalysisSpec.html">CardinalityAnalysisSpec</a> <a href="AbstractTransform.html">AbstractTransform</a> <a href="Sestoft.html">Sestoft</a> <a href="SestoftGC.html">SestoftGC</a> <a href="ArityEtaExpansionSafe.html">ArityEtaExpansionSafe</a> <a href="ArityAnalysisStack.html">ArityAnalysisStack</a>  <a href="ArityConsistent.html">ArityConsistent</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityTransform">ArityTransform</a> <a href="#CardinalityAnalysisSpec">CardinalityAnalysisSpec</a> <a href="#AbstractTransform">AbstractTransform</a> <a href="#Sestoft">Sestoft</a> <a href="#SestoftGC">SestoftGC</a> <a href="#ArityEtaExpansionSafe">ArityEtaExpansionSafe</a> <a href="#ArityAnalysisStack">ArityAnalysisStack</a>  <a href="#ArityConsistent">ArityConsistent</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> CardinalityPrognosisSafe
@@ -5999,7 +5999,7 @@ qed
 <h1>Theory CoCallAritySig</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallAritySig
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSig.html">ArityAnalysisSig</a> <a href="CoCallAnalysisSig.html">CoCallAnalysisSig</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSig">ArityAnalysisSig</a> <a href="#CoCallAnalysisSig">CoCallAnalysisSig</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
                            
 <span class="keyword1"><span class="command">locale</span></span> CoCallArity <span class="main">=</span> CoCallAnalysis <span class="main">+</span> ArityAnalysis
@@ -6011,7 +6011,7 @@ qed
 <h1>Theory CoCallAnalysisSpec</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallAnalysisSpec
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallAritySig.html">CoCallAritySig</a> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallAritySig">CoCallAritySig</a> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -6041,7 +6041,7 @@ qed
 <h1>Theory ArityAnalysisFixProps</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisFixProps
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisFix.html">ArityAnalysisFix</a> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisFix">ArityAnalysisFix</a> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> SubstArityAnalysis
@@ -6063,7 +6063,7 @@ qed
 <h1>Theory CoCallImplSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallImplSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallAnalysisImpl.html">CoCallAnalysisImpl</a> <a href="CoCallAnalysisSpec.html">CoCallAnalysisSpec</a> <a href="ArityAnalysisFixProps.html">ArityAnalysisFixProps</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallAnalysisImpl">CoCallAnalysisImpl</a> <a href="#CoCallAnalysisSpec">CoCallAnalysisSpec</a> <a href="#ArityAnalysisFixProps">ArityAnalysisFixProps</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CoCallImplSafe
@@ -6552,7 +6552,7 @@ qed
 <h1>Theory List-Interleavings</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"List-Interleavings"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">inductive</span></span> <span class="entity">interleave'</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"<span class="tfree">'a</span> list <span class="main">⇒</span> <span class="tfree">'a</span> list <span class="main">⇒</span> <span class="tfree">'a</span> list <span class="main">⇒</span> bool"</span></span> 
@@ -6717,7 +6717,7 @@ qed
 <h1>Theory TTree</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TTree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="ConstOn.html">ConstOn</a> <span class="quoted">"<a href="List-Interleavings.html">List-Interleavings</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#ConstOn">ConstOn</a> <span class="quoted">"<a href="List-Interleavings.html">List-Interleavings</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsubsection</span></span> <span class="quoted"><span class="plain_text">‹Prefix-closed sets of lists›</span></span>
@@ -8096,7 +8096,7 @@ qed
 <h1>Theory TTree-HOLCF</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"TTree-HOLCF"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TTree.html">TTree</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span> <span class="quoted">"<a href="../Launchbury/HOLCF-Join-Classes.html">Launchbury.HOLCF-Join-Classes</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TTree">TTree</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span> <span class="quoted">"<a href="../Launchbury/HOLCF-Join-Classes.html">Launchbury.HOLCF-Join-Classes</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">instantiation</span></span> ttree <span class="main">::</span> <span class="main">(</span><span class="quoted">type</span><span class="main">)</span> <span class="quoted">below</span>
@@ -8378,7 +8378,7 @@ qed
 <h1>Theory AnalBinds</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> AnalBinds
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Terms.html">Launchbury.Terms</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <a href="../Launchbury/Env.html">Launchbury.Env</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Terms">Launchbury.Terms</a> <span class="quoted">"<a href="../Launchbury/HOLCF-Utils.html">Launchbury.HOLCF-Utils</a>"</span> <a href="../../launchbury/theories/#Env">Launchbury.Env</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> ExpAnalysis <span class="main">=</span>
@@ -8433,7 +8433,7 @@ qed
 <h1>Theory TTreeAnalysisSig</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TTreeAnalysisSig
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Arity.html">Arity</a>  <span class="quoted">"<a href="TTree-HOLCF.html">TTree-HOLCF</a>"</span>  <a href="AnalBinds.html">AnalBinds</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Arity">Arity</a>  <span class="quoted">"<a href="TTree-HOLCF.html">TTree-HOLCF</a>"</span>  <a href="#AnalBinds">AnalBinds</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> TTreeAnalysis <span class="main">=</span>
@@ -8450,7 +8450,7 @@ qed
 <h1>Theory CoCallGraph-TTree</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"CoCallGraph-TTree"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallGraph.html">CoCallGraph</a> <span class="quoted">"<a href="TTree-HOLCF.html">TTree-HOLCF</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallGraph">CoCallGraph</a> <span class="quoted">"<a href="TTree-HOLCF.html">TTree-HOLCF</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="CoCallGraph-TTree-interleave_ccFromList"><span class="command">lemma</span></span> interleave_ccFromList<span class="main">:</span>
@@ -9317,7 +9317,7 @@ lemma ccApprox_lub_nxt: "ccApprox t = (⨆ x ∈UNIV. ccApprox (nxt t x) ⊔ (cc
 <h1>Theory CoCallImplTTree</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallImplTTree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TTreeAnalysisSig.html">TTreeAnalysisSig</a> <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span> <a href="CoCallAritySig.html">CoCallAritySig</a> <span class="quoted">"<a href="CoCallGraph-TTree.html">CoCallGraph-TTree</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TTreeAnalysisSig">TTreeAnalysisSig</a> <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span> <a href="#CoCallAritySig">CoCallAritySig</a> <span class="quoted">"<a href="CoCallGraph-TTree.html">CoCallGraph-TTree</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> CoCallArity
@@ -9342,7 +9342,7 @@ lemma ccApprox_lub_nxt: "ccApprox t = (⨆ x ∈UNIV. ccApprox (nxt t x) ⊔ (cc
 <h1>Theory Cardinality-Domain-Lists</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"Cardinality-Domain-Lists"</span>
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Launchbury/Vars.html">Launchbury.Vars</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <a href="../Launchbury/Env.html">Launchbury.Env</a> <span class="quoted">"<a href="Cardinality-Domain.html">Cardinality-Domain</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span> <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../launchbury/theories/#Vars">Launchbury.Vars</a> <span class="quoted">"<a href="../Launchbury/Nominal-HOLCF.html">Launchbury.Nominal-HOLCF</a>"</span> <a href="../../launchbury/theories/#Env">Launchbury.Env</a> <span class="quoted">"<a href="Cardinality-Domain.html">Cardinality-Domain</a>"</span> <span class="quoted">"<a href="Set-Cpo.html">Set-Cpo</a>"</span> <span class="quoted">"<a href="Env-Set-Cpo.html">Env-Set-Cpo</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">fun</span></span> <span class="entity">no_call_in_path</span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -9463,7 +9463,7 @@ lemma ccApprox_lub_nxt: "ccApprox t = (⨆ x ∈UNIV. ccApprox (nxt t x) ⊔ (cc
 <h1>Theory TTreeAnalysisSpec</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TTreeAnalysisSpec
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TTreeAnalysisSig.html">TTreeAnalysisSig</a> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a> <span class="quoted">"<a href="Cardinality-Domain-Lists.html">Cardinality-Domain-Lists</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TTreeAnalysisSig">TTreeAnalysisSig</a> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a> <span class="quoted">"<a href="Cardinality-Domain-Lists.html">Cardinality-Domain-Lists</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> TTreeAnalysisCarrier <span class="main">=</span> TTreeAnalysis <span class="main">+</span> EdomArityAnalysis <span class="main">+</span>
@@ -9493,7 +9493,7 @@ lemma ccApprox_lub_nxt: "ccApprox t = (⨆ x ∈UNIV. ccApprox (nxt t x) ⊔ (cc
 <h1>Theory CoCallImplTTreeSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CoCallImplTTreeSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CoCallImplTTree.html">CoCallImplTTree</a> <a href="CoCallAnalysisSpec.html">CoCallAnalysisSpec</a> <a href="TTreeAnalysisSpec.html">TTreeAnalysisSpec</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CoCallImplTTree">CoCallImplTTree</a> <a href="#CoCallAnalysisSpec">CoCallAnalysisSpec</a> <a href="#TTreeAnalysisSpec">TTreeAnalysisSpec</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="CoCallImplTTreeSafe-valid_lists_many_calls"><span class="command">lemma</span></span> valid_lists_many_calls<span class="main">:</span>
@@ -9969,7 +9969,7 @@ lemma ccApprox_lub_nxt: "ccApprox t = (⨆ x ∈UNIV. ccApprox (nxt t x) ⊔ (cc
 <h1>Theory TTreeImplCardinality</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TTreeImplCardinality
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TTreeAnalysisSig.html">TTreeAnalysisSig</a> <a href="CardinalityAnalysisSig.html">CardinalityAnalysisSig</a> <span class="quoted">"<a href="Cardinality-Domain-Lists.html">Cardinality-Domain-Lists</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TTreeAnalysisSig">TTreeAnalysisSig</a> <a href="#CardinalityAnalysisSig">CardinalityAnalysisSig</a> <span class="quoted">"<a href="Cardinality-Domain-Lists.html">Cardinality-Domain-Lists</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> TTreeAnalysis
@@ -10006,7 +10006,7 @@ lemma carrier_Fstack[simp]: "carrier (Fstack S) = ap S"
 <h1>Theory TTreeImplCardinalitySafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> TTreeImplCardinalitySafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TTreeImplCardinality.html">TTreeImplCardinality</a> <a href="TTreeAnalysisSpec.html">TTreeAnalysisSpec</a> <a href="CardinalityAnalysisSpec.html">CardinalityAnalysisSpec</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TTreeImplCardinality">TTreeImplCardinality</a> <a href="#TTreeAnalysisSpec">TTreeAnalysisSpec</a> <a href="#CardinalityAnalysisSpec">CardinalityAnalysisSpec</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="TTreeImplCardinalitySafe-pathsCard_paths_nxt"><span class="command">lemma</span></span> pathsCard_paths_nxt<span class="main">:</span>  <span class="quoted"><span class="quoted">"pathsCard <span class="main">(</span>paths <span class="main">(</span>nxt <span class="free">f</span> <span class="free">x</span><span class="main">)</span><span class="main">)</span> <span class="main">⊑</span> record_call <span class="free">x</span><span class="main">⋅</span><span class="main">(</span>pathsCard <span class="main">(</span>paths <span class="free">f</span><span class="main">)</span><span class="main">)</span>"</span></span>
@@ -10361,7 +10361,7 @@ lemma carrier_Fstack[simp]: "carrier (Fstack S) = ap S"
 <h1>Theory CallArityEnd2EndSafe</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> CallArityEnd2EndSafe
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="CallArityEnd2End.html">CallArityEnd2End</a> <a href="CardArityTransformSafe.html">CardArityTransformSafe</a> <a href="CoCallImplSafe.html">CoCallImplSafe</a> <a href="CoCallImplTTreeSafe.html">CoCallImplTTreeSafe</a> <a href="TTreeImplCardinalitySafe.html">TTreeImplCardinalitySafe</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#CallArityEnd2End">CallArityEnd2End</a> <a href="#CardArityTransformSafe">CardArityTransformSafe</a> <a href="#CoCallImplSafe">CoCallImplSafe</a> <a href="#CoCallImplTTreeSafe">CoCallImplTTreeSafe</a> <a href="#TTreeImplCardinalitySafe">TTreeImplCardinalitySafe</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> CallArityEnd2EndSafe
@@ -10508,7 +10508,7 @@ lemma carrier_Fstack[simp]: "carrier (Fstack S) = ap S"
 <h1>Theory ArityAnalysisCorrDenotational</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> ArityAnalysisCorrDenotational
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="ArityAnalysisSpec.html">ArityAnalysisSpec</a> <a href="../Launchbury/Denotational.html">Launchbury.Denotational</a> <a href="ArityTransform.html">ArityTransform</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#ArityAnalysisSpec">ArityAnalysisSpec</a> <a href="../../launchbury/theories/#Denotational">Launchbury.Denotational</a> <a href="#ArityTransform">ArityTransform</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ArityAnalysisLetSafe

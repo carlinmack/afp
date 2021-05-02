@@ -24,25 +24,41 @@
             ]
         },
         {
+            "Transfer_Extras": [
+                "rtranclp_complete_run_right_unique",
+                "tranclp_complete_run_right_unique"
+            ]
+        },
+        {
             "Semantics": [
                 "finished_star",
                 "finished_step",
-                "finished_inf",
+                "inf_not_finished",
                 "eval_deterministic",
-                "sem_behaves_deterministic"
+                "step_converges_or_diverges",
+                "right_unique_state_behaves",
+                "left_total_state_behaves",
+                "final_safeI",
+                "step_safe",
+                "steps_safe",
+                "safe_state_behaves_not_wrong"
             ]
         },
         {
             "Language": [
-                "behaves_deterministic"
+                "right_unique_prog_behaves"
             ]
         },
         {
             "Simulation": [
                 "lift_simulation_plus",
                 "lift_simulation_eval",
-                "backward_simulation_inf",
+                "match_inf",
                 "simulation_behaviour",
+                "lift_simulation_eval",
+                "match_inf",
+                "simulation_behaviour",
+                "state_behaves_forward_to_backward",
                 "backward_simulation_composition",
                 "backward_simulation_pow",
                 "lockstep_to_plus_backward_simulation",

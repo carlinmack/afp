@@ -6,7 +6,7 @@
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Prelim
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -154,7 +154,7 @@ the application of an indicated simplification rule, if this is possible.›</sp
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Syntax
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Prelim.html">Prelim</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Prelim">Prelim</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2531,7 +2531,7 @@ Syntax_with_Connectives
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Deduction›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Deduction <span class="keyword2"><span class="keyword">imports</span></span> <a href="Syntax.html">Syntax</a>
+<span class="keyword1"><span class="command">theory</span></span> Deduction <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Syntax">Syntax</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4671,7 +4671,7 @@ Lq_num2<span class="main">:</span>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Natural Deduction›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Natural_Deduction <span class="keyword2"><span class="keyword">imports</span></span> <a href="Deduction.html">Deduction</a>
+<span class="keyword1"><span class="command">theory</span></span> Natural_Deduction <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Deduction">Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -5542,7 +5542,7 @@ Eisbach nrule method:›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pseudo_Term
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Natural_Deduction.html">Natural_Deduction</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Natural_Deduction">Natural_Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -6147,7 +6147,7 @@ particular case of formula-input instantiation).›</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Abstract notion of standard model and truth.›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Standard_Model <span class="keyword2"><span class="keyword">imports</span></span> <a href="Deduction.html">Deduction</a>
+<span class="keyword1"><span class="command">theory</span></span> Standard_Model <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Deduction">Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -6299,7 +6299,7 @@ sound_isTrue<span class="main">:</span> <span class="quoted"><span class="quoted
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Less genereric syntax, more committed towards embedding arithmetics›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Syntax_Arith <span class="keyword2"><span class="keyword">imports</span></span> <a href="Syntax.html">Syntax</a>
+<span class="keyword1"><span class="command">theory</span></span> Syntax_Arith <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Syntax">Syntax</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -7971,7 +7971,7 @@ We prove similar facts as for Lq›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Deduction in a System Embedding the Intuitionistic Robinson Arithmetic›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Deduction_Q <span class="keyword2"><span class="keyword">imports</span></span> <a href="Syntax_Arith.html">Syntax_Arith</a> <a href="Natural_Deduction.html">Natural_Deduction</a>
+<span class="keyword1"><span class="command">theory</span></span> Deduction_Q <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Syntax_Arith">Syntax_Arith</a> <a href="#Natural_Deduction">Natural_Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 

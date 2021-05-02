@@ -4,7 +4,7 @@
 </div>
 <pre class="source"><span class="comment1">(*File: IMP.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> IMP <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> IMP <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The language IMP›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:IMP}In this section we define a simple imperative programming
@@ -213,7 +213,7 @@ $0$ exist.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: VDM.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> VDM <span class="keyword2"><span class="keyword">imports</span></span> <a href="IMP.html">IMP</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> VDM <span class="keyword2"><span class="keyword">imports</span></span> <a href="#IMP">IMP</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Program logic›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:VDM} The program logic is a partial correctness logic
@@ -805,7 +805,7 @@ with respect to the empty context.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: VS.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> VS <span class="keyword2"><span class="keyword">imports</span></span> <a href="VDM.html">VDM</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> VS <span class="keyword2"><span class="keyword">imports</span></span> <a href="#VDM">VDM</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Base-line noninterference›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:BaseLineNI} We now show how to interprete the type
@@ -1548,7 +1548,7 @@ derivable in the program logic.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: ContextVS.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> ContextVS <span class="keyword2"><span class="keyword">imports</span></span> <a href="VS.html">VS</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> ContextVS <span class="keyword2"><span class="keyword">imports</span></span> <a href="#VS">VS</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Contextual closure›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:contextVS}We show that the notion of security is closed w.r.t.~low
@@ -1891,7 +1891,7 @@ the attacking context does not leak any unwanted information.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: Lattice.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Lattice <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> Lattice <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Lattices›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹In preparation of the encoding of the type system of Hunt and
@@ -1922,7 +1922,7 @@ axioms.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: HuntSands.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> HuntSands <span class="keyword2"><span class="keyword">imports</span></span> <a href="VDM.html">VDM</a> <a href="Lattice.html">Lattice</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> HuntSands <span class="keyword2"><span class="keyword">imports</span></span> <a href="#VDM">VDM</a> <a href="#Lattice">Lattice</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Flow-sensitivity a la Hunt and Sands›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:HuntSands}\footnote{As the Isabelle theory representing this section is
@@ -3151,7 +3151,7 @@ logic.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: OBJ.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Base-line non-interference with objects›</span></span>
 
@@ -3378,7 +3378,7 @@ hiding it.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: VDM_OBJ.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> VDM_OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="OBJ.html">OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> VDM_OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="#OBJ">OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Program logic›</span></span> 
 
@@ -3925,7 +3925,7 @@ on $n$.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: PBIJ.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> PBIJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="OBJ.html">OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> PBIJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="#OBJ">OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Partial bijections›</span></span>
 
@@ -4107,7 +4107,7 @@ heap's domain with itself.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: VS_OBJ.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> VS_OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="VDM_OBJ.html">VDM_OBJ</a> <a href="PBIJ.html">PBIJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> VS_OBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="#VDM_OBJ">VDM_OBJ</a> <a href="#PBIJ">PBIJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Non-interference›</span></span>
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:ObjNI}›</span></span>
@@ -6099,7 +6099,7 @@ of programs that are low typeable.›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*File: ContextOBJ.thy*)</span>
 <span class="comment1">(*Authors: Lennart Beringer and Martin Hofmann, LMU Munich 2008*)</span>
-<span class="keyword1"><span class="command">theory</span></span> ContextOBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="VS_OBJ.html">VS_OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> ContextOBJ <span class="keyword2"><span class="keyword">imports</span></span> <a href="#VS_OBJ">VS_OBJ</a> <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Contextual closure›</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹\label{sec:contextObj}We first define contexts with multiple holes.›</span></span>

@@ -109,6 +109,7 @@ def getTheory(url, name):
     contents.name = "div"
     contents["id"] = name
 
+    # make lemmas navigable
     lemmaElements = contents.find_all(class_="keyword1", string="lemma")
     lemmas = []
     for lemmaElement in lemmaElements:
@@ -119,7 +120,41 @@ def getTheory(url, name):
                 lemmaElement["id"] = name + "-" + lemmaName
                 lemmas.append(lemmaName)
 
+    # fix dependency links
+    imports = contents.find(class_="keyword2", string="imports")
+    if imports:
+        for sibling in imports.next_siblings:
+            if sibling.string == "begin":
+                break
+
+            if sibling.name == "a":
+                sibling["href"] = dependancyLink(sibling["href"])
+            elif sibling.name == "span":
+                linkElem = sibling.find("a")
+                if linkElem:
+                    linkElem["href"] = dependancyLink(linkElem["href"])
+
     return str(contents), lemmas
+
+
+def dependancyLink(link):
+    if re.match("../../", str(link)):
+        link = re.sub(
+            "../../",
+            "https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/",
+            link,
+        )
+    elif re.match("../", str(link)):
+        matches = re.search("..\/(\w+)\/(\w+).html", link)
+        if matches:
+            link = "../../%s/theories/#%s" % (
+                matches.group(1).lower(),
+                matches.group(2),
+            )
+    elif re.match(r"\w+\.html", str(link)):
+        link = "#%s" % link[:-5]
+
+    return link
 
 
 def updateProgressBar(desc, t):

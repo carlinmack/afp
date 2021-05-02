@@ -2,7 +2,6 @@
     "theories": [
         {
             "More_Bits_Int": [
-                "last_rev'",
                 "nat_LEAST_True",
                 "int_of_integer_symbolic_aux_code",
                 "int_numeral_bitOR_num",

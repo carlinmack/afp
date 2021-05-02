@@ -40,7 +40,7 @@
         "Arithmetic_Record_Based",
         "Finite_Field_Record_Based",
         "Matrix_Record_Based",
-        "Missing_Multiset2",
+        "More_Missing_Multiset",
         "Unique_Factorization",
         "Unique_Factorization_Poly",
         "Poly_Mod",

@@ -7,7 +7,7 @@
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory defines the data types and notations, and some preliminary results about them.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Data
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Function notations›</span></span>
@@ -169,7 +169,7 @@
   identifiers that occur in the data structures of the concurrent revisions model.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Occurrences
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Data.html">Data</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Data">Data</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="plain_text">Definitions</span>
@@ -519,7 +519,7 @@
   and proving renaming-equivalence.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Renaming
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Occurrences.html">Occurrences</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Occurrences">Occurrences</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="plain_text">Definitions</span>
@@ -814,7 +814,7 @@
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory introduces the substitution operation using a locale, and provides two models.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Substitution
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Renaming.html">Renaming</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Renaming">Renaming</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="plain_text">Definition</span>
@@ -962,7 +962,7 @@
   for establishing their equivalence.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> OperationalSemantics
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Substitution.html">Substitution</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Substitution">Substitution</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> substitution
@@ -1645,7 +1645,7 @@
   required for proving determinacy.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Executions
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="OperationalSemantics.html">OperationalSemantics</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#OperationalSemantics">OperationalSemantics</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> substitution
@@ -2026,7 +2026,7 @@
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This section proves that the concurrent revisions model is determinate modulo renaming-equivalence.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Determinacy
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Executions.html">Executions</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Executions">Executions</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> substitution

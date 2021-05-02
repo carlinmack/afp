@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ Grid Points ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Grid_Point
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Analysis/Multivariate_Analysis.html">HOL-Analysis.Multivariate_Analysis</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Multivariate_Analysis.html">HOL-Analysis.Multivariate_Analysis</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">type_synonym</span></span> grid_point <span class="main">=</span> <span class="quoted"><span class="quoted">"<span class="main">(</span>nat <span class="main">×</span> int<span class="main">)</span> list"</span></span>
@@ -196,7 +196,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ Sparse Grids ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Grid
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Grid_Point.html">Grid_Point</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Grid_Point">Grid_Point</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">"Vectors"</span></span>
@@ -1640,8 +1640,8 @@
 
 <span class="keyword1"><span class="command">theory</span></span> Triangular_Function
 <span class="keyword2"><span class="keyword">imports</span></span>
- <span class="quoted">"<a href="../../HOL/HOL-Analysis/Equivalence_Lebesgue_Henstock_Integration.html">HOL-Analysis.Equivalence_Lebesgue_Henstock_Integration</a>"</span>
- <a href="Grid.html">Grid</a>
+ <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Equivalence_Lebesgue_Henstock_Integration.html">HOL-Analysis.Equivalence_Lebesgue_Henstock_Integration</a>"</span>
+ <a href="#Grid">Grid</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Triangular_Function-continuous_on_max"><span class="command">lemma</span></span> continuous_on_max<span class="main">[</span><span class="operator">continuous_intros</span><span class="main">]</span><span class="main">:</span>
@@ -2066,7 +2066,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ UpDown Scheme ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> UpDown_Scheme
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Grid.html">Grid</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Grid">Grid</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">fun</span></span> <span class="entity">down'</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"nat <span class="main">⇒</span> nat <span class="main">⇒</span> grid_point <span class="main">⇒</span> real <span class="main">⇒</span> real <span class="main">⇒</span> vector <span class="main">⇒</span> vector"</span></span>
@@ -2111,7 +2111,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ Up Part ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Up
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="UpDown_Scheme.html">UpDown_Scheme</a> <a href="Triangular_Function.html">Triangular_Function</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#UpDown_Scheme">UpDown_Scheme</a> <a href="#Triangular_Function">Triangular_Function</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Up-up'_inplace"><span class="command">lemma</span></span> up'_inplace<span class="main">:</span>
@@ -2393,7 +2393,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ Down part ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Down
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Triangular_Function.html">Triangular_Function</a> <a href="UpDown_Scheme.html">UpDown_Scheme</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Triangular_Function">Triangular_Function</a> <a href="#UpDown_Scheme">UpDown_Scheme</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Down-sparsegrid'_parents"><span class="command">lemma</span></span> sparsegrid'_parents<span class="main">:</span>
@@ -2579,7 +2579,7 @@
  * Author: Johannes Hölzl &lt;hoelzl@in.tum.de&gt;
  *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Up_Down
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Up.html">Up</a> <a href="Down.html">Down</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Up">Up</a> <a href="#Down">Down</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Up_Down-updown'"><span class="command">lemma</span></span> updown'<span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="main">⟦</span> <span class="free">d</span> <span class="main">≤</span> <span class="free">dm</span><span class="main">;</span> <span class="free">p</span> <span class="main">∈</span> sparsegrid <span class="free">dm</span> <span class="free">lm</span> <span class="main">⟧</span>
@@ -2959,7 +2959,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹ Imperative Version ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Imperative
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="UpDown_Scheme.html">UpDown_Scheme</a> <a href="../Separation_Logic_Imperative_HOL/Sep_Main.html">Separation_Logic_Imperative_HOL.Sep_Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#UpDown_Scheme">UpDown_Scheme</a> <a href="../../separation_logic_imperative_hol/theories/#Sep_Main">Separation_Logic_Imperative_HOL.Sep_Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">type_synonym</span></span> pointmap <span class="main">=</span> <span class="quoted"><span class="quoted">"grid_point <span class="main">⇒</span> nat"</span></span>

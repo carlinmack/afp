@@ -4,8 +4,8 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Interface 
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Prefix_Order.html">HOL-Library.Prefix_Order</a>"</span>
-  <a href="../Markov_Models/Discrete_Time_Markov_Chain.html">Markov_Models.Discrete_Time_Markov_Chain</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Prefix_Order.html">HOL-Library.Prefix_Order</a>"</span>
+  <a href="../../markov_models/theories/#Discrete_Time_Markov_Chain">Markov_Models.Discrete_Time_Markov_Chain</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -18,7 +18,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Simple While Language with probabilistic choice and parallel execution›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Language_Semantics
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Interface.html">Interface</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Interface">Interface</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -1631,7 +1631,7 @@ ss<span class="main">:</span> <span class="quoted"><span class="quoted">"<span c
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Resumption-Based Noninterference›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Resumption_Based
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Language_Semantics.html">Language_Semantics</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Language_Semantics">Language_Semantics</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* We introduce the resumption based notions: strong probabilistic bisimilarity ≈s and
@@ -3378,7 +3378,7 @@ intro<span class="main">:</span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Trace-Based Noninterference›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Trace_Based
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Resumption_Based.html">Resumption_Based</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Resumption_Based">Resumption_Based</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* This contains the development leading to the paper's Prop. 4. *)</span>
@@ -4358,7 +4358,7 @@ intro<span class="main">:</span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Compositionality of Resumption-Based Noninterference›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Compositionality
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Resumption_Based.html">Resumption_Based</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Resumption_Based">Resumption_Based</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* The results corresponding to the paper's Prop. 2 are marked below with "theorem". *)</span>
@@ -6950,7 +6950,7 @@ P<span class="main">:</span> <span class="quoted"><span class="quoted">"<span cl
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Syntactic Criteria›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Syntactic_Criteria
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Compositionality.html">Compositionality</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Compositionality">Compositionality</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> PL_Indis
@@ -7101,7 +7101,7 @@ P<span class="main">:</span> <span class="quoted"><span class="quoted">"<span cl
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Concrete setting›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Concrete
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Syntactic_Criteria.html">Syntactic_Criteria</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Syntactic_Criteria">Syntactic_Criteria</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* We instatiate the parameters according to Examples 1 and 2 from the paper. *)</span>

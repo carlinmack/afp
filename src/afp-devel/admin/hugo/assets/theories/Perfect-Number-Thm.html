@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Basics needed›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> PerfectBasics
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Computational_Algebra/Primes.html">HOL-Computational_Algebra.Primes</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Algebra/Exponent.html">HOL-Algebra.Exponent</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Computational_Algebra/Primes.html">HOL-Computational_Algebra.Primes</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Exponent.html">HOL-Algebra.Exponent</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="PerfectBasics-exp_is_max_div"><span class="command">lemma</span></span> exp_is_max_div<span class="main">:</span>
@@ -63,7 +63,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Sum of divisors function›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Sigma
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="PerfectBasics.html">PerfectBasics</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#PerfectBasics">PerfectBasics</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">divisors</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"nat <span class="main">⇒</span> nat set"</span></span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -225,7 +225,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Perfect Number Theorem›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Perfect
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Sigma.html">Sigma</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Sigma">Sigma</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span>  <span class="entity">perfect</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"nat <span class="main">=&gt;</span> bool"</span></span> <span class="keyword2"><span class="keyword">where</span></span>

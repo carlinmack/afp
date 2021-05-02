@@ -4,7 +4,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Deduction with Two Provability Relations›</span></span>
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Deduction2 <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Syntax_Independent_Logic/Deduction.html">Syntax_Independent_Logic.Deduction</a>"</span>
+<span class="keyword1"><span class="command">theory</span></span> Deduction2 <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../syntax_independent_logic/theories/#Deduction">Syntax_Independent_Logic.Deduction</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -289,7 +289,7 @@ Deduct2_with_PseudoOrder
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Abstract Encoding›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Abstract_Encoding <span class="keyword2"><span class="keyword">imports</span></span> <a href="Deduction2.html">Deduction2</a>
+<span class="keyword1"><span class="command">theory</span></span> Abstract_Encoding <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Deduction2">Deduction2</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -355,7 +355,7 @@ encPf<span class="main">[</span><span class="operator">simp</span><span class="m
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Representability Assumptions›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Abstract_Representability <span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_Encoding.html">Abstract_Encoding</a>
+<span class="keyword1"><span class="command">theory</span></span> Abstract_Representability <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_Encoding">Abstract_Encoding</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -824,7 +824,7 @@ with both hard and soft substitution.›</span></span>
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Alternative Diagonalization via Self-Substitution›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Diagonalization <span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_Representability.html">Abstract_Representability</a>
+<span class="keyword1"><span class="command">theory</span></span> Diagonalization <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_Representability">Abstract_Representability</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -1041,7 +1041,7 @@ to any logic that
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹The Hilbert-Bernays-Löb (HBL) Derivability Conditions›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Derivability_Conditions <span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_Representability.html">Abstract_Representability</a>
+<span class="keyword1"><span class="command">theory</span></span> Derivability_Conditions <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_Representability">Abstract_Representability</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -1251,7 +1251,7 @@ HBL3<span class="main">:</span> <span class="quoted"><span class="quoted">"<span
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Gödel Formulas›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Goedel_Formula <span class="keyword2"><span class="keyword">imports</span></span> <a href="Diagonalization.html">Diagonalization</a> <a href="Derivability_Conditions.html">Derivability_Conditions</a>
+<span class="keyword1"><span class="command">theory</span></span> Goedel_Formula <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Diagonalization">Diagonalization</a> <a href="#Derivability_Conditions">Derivability_Conditions</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -1400,7 +1400,7 @@ CleanRepr_Proofs
 <span class="comment1">(*&lt;*)</span>
 <span class="comment1">(* Abstract notion of standard model and truth  *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Standard_Model_More
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Derivability_Conditions.html">Derivability_Conditions</a> <span class="quoted">"<a href="../Syntax_Independent_Logic/Standard_Model.html">Syntax_Independent_Logic.Standard_Model</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Derivability_Conditions">Derivability_Conditions</a> <span class="quoted">"<a href="../../syntax_independent_logic/theories/#Standard_Model">Syntax_Independent_Logic.Standard_Model</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -1872,7 +1872,7 @@ classical_P<span class="main">:</span> <span class="quoted"><span class="quoted"
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Abstract Formulations of Gödel's First Incompleteness Theorem›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Abstract_First_Goedel <span class="keyword2"><span class="keyword">imports</span></span> <a href="Goedel_Formula.html">Goedel_Formula</a> <a href="Standard_Model_More.html">Standard_Model_More</a>
+<span class="keyword1"><span class="command">theory</span></span> Abstract_First_Goedel <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Goedel_Formula">Goedel_Formula</a> <a href="#Standard_Model_More">Standard_Model_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2323,7 +2323,7 @@ is undecidable assuming consistency only (not $\omega$-consistency).›</span></
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Rosser_Formula
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Diagonalization.html">Diagonalization</a> <a href="Goedel_Formula.html">Goedel_Formula</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Diagonalization">Diagonalization</a> <a href="#Goedel_Formula">Goedel_Formula</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2508,7 +2508,7 @@ CleanRepr_Proofs
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Abstract_First_Goedel_Rosser
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Rosser_Formula.html">Rosser_Formula</a> <a href="Standard_Model_More.html">Standard_Model_More</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Rosser_Formula">Rosser_Formula</a> <a href="#Standard_Model_More">Standard_Model_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2860,7 +2860,7 @@ M <span class="main">:</span> Minimal_Truth_Soundness_HBL1iff_Compl_Pf_Compl_Neg
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Abstract Formulation of Gödel's Second Incompleteness Theorem›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Abstract_Second_Goedel <span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_First_Goedel.html">Abstract_First_Goedel</a> <a href="Derivability_Conditions.html">Derivability_Conditions</a>
+<span class="keyword1"><span class="command">theory</span></span> Abstract_Second_Goedel <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_First_Goedel">Abstract_First_Goedel</a> <a href="#Derivability_Conditions">Derivability_Conditions</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2974,7 +2974,7 @@ provable or not. The theory is omniscient about what it can prove
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Abstract_Jeroslow_Encoding <span class="keyword2"><span class="keyword">imports</span></span>
-<span class="quoted">"<a href="../Syntax_Independent_Logic/Deduction.html">Syntax_Independent_Logic.Deduction</a>"</span>
+<span class="quoted">"<a href="../../syntax_independent_logic/theories/#Deduction">Syntax_Independent_Logic.Deduction</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3143,8 +3143,8 @@ HBL1<span class="main">:</span> <span class="quoted"><span class="quoted">"<span
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Jeroslow_Original <span class="keyword2"><span class="keyword">imports</span></span>
-<span class="quoted">"<a href="../Syntax_Independent_Logic/Pseudo_Term.html">Syntax_Independent_Logic.Pseudo_Term</a>"</span>
-<a href="Abstract_Jeroslow_Encoding.html">Abstract_Jeroslow_Encoding</a>
+<span class="quoted">"<a href="../../syntax_independent_logic/theories/#Pseudo_Term">Syntax_Independent_Logic.Pseudo_Term</a>"</span>
+<a href="#Abstract_Jeroslow_Encoding">Abstract_Jeroslow_Encoding</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3484,7 +3484,7 @@ SHBL3<span class="main">:</span> <span class="quoted"><span class="quoted">"<spa
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹A Simplification of Jeroslow's Original Argument›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Jeroslow_Simplified <span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_Jeroslow_Encoding.html">Abstract_Jeroslow_Encoding</a>
+<span class="keyword1"><span class="command">theory</span></span> Jeroslow_Simplified <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_Jeroslow_Encoding">Abstract_Jeroslow_Encoding</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3869,7 +3869,7 @@ stronger assumption than our WWHBL2, namely, a binary version of that:›</span>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Löb  Formulas›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Loeb_Formula <span class="keyword2"><span class="keyword">imports</span></span> <a href="Diagonalization.html">Diagonalization</a> <a href="Derivability_Conditions.html">Derivability_Conditions</a>
+<span class="keyword1"><span class="command">theory</span></span> Loeb_Formula <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Diagonalization">Diagonalization</a> <a href="#Derivability_Conditions">Derivability_Conditions</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3937,7 +3937,7 @@ Fvars_φL<span class="main">[</span><span class="operator">simp</span><span clas
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Löb's Theorem›</span></span>
 
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Loeb <span class="keyword2"><span class="keyword">imports</span></span> <a href="Loeb_Formula.html">Loeb_Formula</a> <a href="Derivability_Conditions.html">Derivability_Conditions</a>
+<span class="keyword1"><span class="command">theory</span></span> Loeb <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Loeb_Formula">Loeb_Formula</a> <a href="#Derivability_Conditions">Derivability_Conditions</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4067,7 +4067,7 @@ non-definability and respectively non-expressiveness (in the standard model) of 
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Tarski
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Goedel_Formula.html">Goedel_Formula</a> <a href="Standard_Model_More.html">Standard_Model_More</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Goedel_Formula">Goedel_Formula</a> <a href="#Standard_Model_More">Standard_Model_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4168,13 +4168,13 @@ that "prv" satisfies the rules of intuitionistic logic.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> All_Abstract
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_First_Goedel.html">Abstract_First_Goedel</a>
-  <a href="Abstract_First_Goedel_Rosser.html">Abstract_First_Goedel_Rosser</a>
-  <a href="Abstract_Second_Goedel.html">Abstract_Second_Goedel</a>
-  <a href="Jeroslow_Original.html">Jeroslow_Original</a>
-  <a href="Jeroslow_Simplified.html">Jeroslow_Simplified</a>
-  <a href="Loeb.html">Loeb</a>
-  <a href="Tarski.html">Tarski</a>
+  <a href="#Abstract_First_Goedel">Abstract_First_Goedel</a>
+  <a href="#Abstract_First_Goedel_Rosser">Abstract_First_Goedel_Rosser</a>
+  <a href="#Abstract_Second_Goedel">Abstract_Second_Goedel</a>
+  <a href="#Jeroslow_Original">Jeroslow_Original</a>
+  <a href="#Jeroslow_Simplified">Jeroslow_Simplified</a>
+  <a href="#Loeb">Loeb</a>
+  <a href="#Tarski">Tarski</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword2"><span class="keyword">end</span></span>

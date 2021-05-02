@@ -4,9 +4,9 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Library Additions›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Analysis_More
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Analysis/Equivalence_Lebesgue_Henstock_Integration.html">HOL-Analysis.Equivalence_Lebesgue_Henstock_Integration</a>"</span>
-    <span class="quoted">"<a href="../../HOL/HOL-Library/Function_Algebras.html">HOL-Library.Function_Algebras</a>"</span>
-    <span class="quoted">"<a href="../../HOL/HOL-Types_To_Sets/Linear_Algebra_On.html">HOL-Types_To_Sets.Linear_Algebra_On</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Equivalence_Lebesgue_Henstock_Integration.html">HOL-Analysis.Equivalence_Lebesgue_Henstock_Integration</a>"</span>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Function_Algebras.html">HOL-Library.Function_Algebras</a>"</span>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Types_To_Sets/Linear_Algebra_On.html">HOL-Types_To_Sets.Linear_Algebra_On</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -1404,7 +1404,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Smooth Functions between Normed Vector Spaces›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Smooth
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="Analysis_More.html">Analysis_More</a>
+    <a href="#Analysis_More">Analysis_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹From/To <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>Multivariate_Taylor.thy›</span></span></span></span>›</span></span>
@@ -2748,8 +2748,8 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Bump Functions›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Bump_Function
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Smooth.html">Smooth</a>
-    <span class="quoted">"<a href="../../HOL/HOL-Analysis/Weierstrass_Theorems.html">HOL-Analysis.Weierstrass_Theorems</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Smooth">Smooth</a>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Weierstrass_Theorems.html">HOL-Analysis.Weierstrass_Theorems</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Construction›</span></span>
@@ -3273,7 +3273,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Charts›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Chart
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Analysis_More.html">Analysis_More</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Analysis_More">Analysis_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Definition›</span></span>
@@ -3482,7 +3482,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Topological Manifolds›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Topological_Manifold
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Chart.html">Chart</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Chart">Chart</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Definition of topological manifolds. Existence of locally finite cover.›</span></span>
@@ -3806,8 +3806,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Differentiable/Smooth Manifolds›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Differentiable_Manifold
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="Smooth.html">Smooth</a>
-    <a href="Topological_Manifold.html">Topological_Manifold</a>
+    <a href="#Smooth">Smooth</a>
+    <a href="#Topological_Manifold">Topological_Manifold</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Smooth compatibility›</span></span>
@@ -4976,7 +4976,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Partitions Of Unity›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Partition_Of_Unity
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Bump_Function.html">Bump_Function</a> <a href="Differentiable_Manifold.html">Differentiable_Manifold</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Bump_Function">Bump_Function</a> <a href="#Differentiable_Manifold">Differentiable_Manifold</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -5929,7 +5929,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Tangent Space›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Tangent_Space
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Partition_Of_Unity.html">Partition_Of_Unity</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Partition_Of_Unity">Partition_Of_Unity</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Tangent_Space-linear_imp_linear_on"><span class="command">lemma</span></span> linear_imp_linear_on<span class="main">:</span> <span class="quoted"><span class="quoted">"linear_on <span class="free">A</span> <span class="free">B</span> scaleR scaleR <span class="free">f</span>"</span></span> <span class="keyword2"><span class="keyword">if</span></span> <span class="quoted"><span class="quoted">"linear <span class="free">f</span>"</span></span>
@@ -7355,7 +7355,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Cotangent Space›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Cotangent_Space
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Tangent_Space.html">Tangent_Space</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Tangent_Space">Tangent_Space</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Dual of a vector space›</span></span>
@@ -7991,7 +7991,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Product Manifold›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Product_Manifold
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Differentiable_Manifold.html">Differentiable_Manifold</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Differentiable_Manifold">Differentiable_Manifold</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> c_manifold_prod <span class="main">=</span>
@@ -8058,7 +8058,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Sphere›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Sphere
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Differentiable_Manifold.html">Differentiable_Manifold</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Differentiable_Manifold">Differentiable_Manifold</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">typedef</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">overloaded</span></span><span class="main">)</span> <span class="main">(</span><span class="tfree">'a</span><span class="main">::</span><span class="quoted">real_normed_vector</span><span class="main">)</span> sphere <span class="main">=</span>
@@ -8326,7 +8326,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Projective Space›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Projective_Space
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Differentiable_Manifold.html">Differentiable_Manifold</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Quotient_Set.html">HOL-Library.Quotient_Set</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Differentiable_Manifold">Differentiable_Manifold</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Quotient_Set.html">HOL-Library.Quotient_Set</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Some of the main things to note here: double transfer (-&gt; nonzero -&gt; quotient)›</span></span>

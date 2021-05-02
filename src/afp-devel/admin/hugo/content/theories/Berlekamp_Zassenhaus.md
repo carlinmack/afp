@@ -228,22 +228,13 @@
             ]
         },
         {
-            "Missing_Multiset2": [
-                "id_imp_bij",
-                "rel_mset_Zero_iff",
-                "is_mset_setD",
-                "is_mset_setI",
-                "is_mset_set",
-                "is_mset_set_add",
-                "mset_set_id",
-                "count_image_mset",
-                "is_mset_set_image",
-                "ex_mset_zip_right",
-                "list_all2_reorder_right_invariance",
-                "rel_mset_via_perm",
+            "More_Missing_Multiset": [
                 "rel_mset_free",
                 "rel_mset_split",
-                "rel_mset_OO"
+                "rel_mset_OO",
+                "ex_mset_zip_right",
+                "list_all2_reorder_right_invariance",
+                "rel_mset_via_perm"
             ]
         },
         {

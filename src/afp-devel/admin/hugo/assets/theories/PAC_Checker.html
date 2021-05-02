@@ -8,8 +8,8 @@
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_More_Poly
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Library/Poly_Mapping.html">HOL-Library.Poly_Mapping</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Algebra/Polynomials.html">HOL-Algebra.Polynomials</a>"</span> <span class="quoted">"<a href="../Polynomials/MPoly_Type_Class.html">Polynomials.MPoly_Type_Class</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Library/Countable_Set.html">HOL-Library.Countable_Set</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Poly_Mapping.html">HOL-Library.Poly_Mapping</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Polynomials.html">HOL-Algebra.Polynomials</a>"</span> <span class="quoted">"<a href="../../polynomials/theories/#MPoly_Type_Class">Polynomials.MPoly_Type_Class</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Countable_Set.html">HOL-Library.Countable_Set</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -928,168 +928,6 @@ is more useful if we need to take an element of <span class="antiquoted"><span c
   <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> MPoly_Type.coeff_def lookup_single_eq monom.abs_eq monom.rep_eq<span class="main">)</span>
 
 <span class="keyword2"><span class="keyword">end</span></span></pre>
-</div><div id="Duplicate_Free_Multiset">
-<div class="head">
-<h1>Theory Duplicate_Free_Multiset</h1>
-</div>
-<pre class="source"><span class="comment1">(*
-  File:         Duplicate_Free_Multiset.thy
-  Author:       Mathias Fleury, Daniela Kaufmann, JKU
-  Maintainer:   Mathias Fleury, JKU
-*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Duplicate_Free_Multiset
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Nested_Multisets_Ordinals/Multiset_More.html">Nested_Multisets_Ordinals.Multiset_More</a>
-<span class="keyword2"><span class="keyword">begin</span></span>
-
-
-<span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Duplicate Free Multisets›</span></span>
-
-<span class="comment1">(* TODO Move Multiset_More *)</span>
-<span class="keyword1" id="Duplicate_Free_Multiset-remove_diff_multiset"><span class="command">lemma</span></span> remove_diff_multiset<span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">x13</span> <span class="main">∉#</span> <span class="free">A</span> <span class="main">⟹</span> <span class="free">A</span> <span class="main">-</span> add_mset <span class="free">x13</span> <span class="free">B</span> <span class="main">=</span> <span class="free">A</span> <span class="main">-</span> <span class="free">B</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> diff_intersect_left_idem inter_add_right1<span class="main">)</span>
-
-
-<span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Duplicate free multisets are isomorphic to finite sets, but it can be useful to reason about
-  duplication to speak about intermediate execution steps in the refinements.
-›</span></span>
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_remdups_mset_id"><span class="command">lemma</span></span> distinct_mset_remdups_mset_id<span class="main">:</span> <span class="quoted"><span class="quoted">‹distinct_mset <span class="free">C</span> <span class="main">⟹</span> remdups_mset <span class="free">C</span> <span class="main">=</span> <span class="free">C</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">C</span></span><span class="main">)</span>  <span class="operator">auto</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-notin_add_mset_remdups_mset"><span class="command">lemma</span></span> notin_add_mset_remdups_mset<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹<span class="free">a</span> <span class="main">∉#</span> <span class="free">A</span> <span class="main">⟹</span> add_mset <span class="free">a</span> <span class="main">(</span>remdups_mset <span class="free">A</span><span class="main">)</span> <span class="main">=</span> remdups_mset <span class="main">(</span>add_mset <span class="free">a</span> <span class="free">A</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_image_mset"><span class="command">lemma</span></span> distinct_mset_image_mset<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹distinct_mset <span class="main">(</span>image_mset <span class="free">f</span> <span class="main">(</span>mset <span class="free">xs</span><span class="main">)</span><span class="main">)</span> <span class="main">⟷</span> distinct <span class="main">(</span>map <span class="free">f</span> <span class="free">xs</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">subst</span> mset_map<span class="main"><span class="main">[</span></span><span class="operator">symmetric</span><span class="main"><span class="main">]</span></span><span class="main">)</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">subst</span> distinct_mset_mset_distinct<span class="main">)</span>
-  <span class="keyword1"><span class="command">..</span></span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_mono"><span class="command">lemma</span></span> distinct_mset_mono<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">D'</span> <span class="main">⊆#</span> <span class="free">D</span> <span class="main">⟹</span> distinct_mset <span class="free">D</span> <span class="main">⟹</span> distinct_mset <span class="free">D'</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> distinct_mset_union subset_mset.le_iff_add<span class="main">)</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_mono_strict"><span class="command">lemma</span></span> distinct_mset_mono_strict<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">D'</span> <span class="main">⊂#</span> <span class="free">D</span> <span class="main">⟹</span> distinct_mset <span class="free">D</span> <span class="main">⟹</span> distinct_mset <span class="free">D'</span>›</span></span>
-  <span class="keyword1"><span class="command">using</span></span> distinct_mset_mono <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_set_mset_eq_iff"><span class="command">lemma</span></span> distinct_set_mset_eq_iff<span class="main">:</span>
-  <span class="keyword2"><span class="keyword">assumes</span></span> <span class="quoted"><span class="quoted">‹distinct_mset <span class="free">M</span>›</span></span> <span class="quoted"><span class="quoted">‹distinct_mset <span class="free">N</span>›</span></span>
-  <span class="keyword2"><span class="keyword">shows</span></span> <span class="quoted"><span class="quoted">‹set_mset <span class="free">M</span> <span class="main">=</span> set_mset <span class="free">N</span> <span class="main">⟷</span> <span class="free">M</span> <span class="main">=</span> <span class="free">N</span>›</span></span>
-  <span class="keyword1"><span class="command">using</span></span> assms distinct_mset_set_mset_ident <span class="keyword1"><span class="command">by</span></span> <span class="operator">fastforce</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_union2"><span class="command">lemma</span></span> distinct_mset_union2<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹distinct_mset <span class="main">(</span><span class="free">A</span> <span class="main">+</span> <span class="free">B</span><span class="main">)</span> <span class="main">⟹</span> distinct_mset <span class="free">B</span>›</span></span>
-  <span class="keyword1"><span class="command">using</span></span> distinct_mset_union<span class="main">[</span><span class="operator">of</span> <span class="quoted"><span class="free">B</span></span> <span class="quoted"><span class="free">A</span></span><span class="main">]</span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> <span class="dynamic"><span class="dynamic">ac_simps</span></span><span class="main">)</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_mset_set"><span class="command">lemma</span></span> distinct_mset_mset_set<span class="main">:</span> <span class="quoted"><span class="quoted">‹distinct_mset <span class="main">(</span>mset_set <span class="free">A</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command">unfolding</span></span> distinct_mset_def count_mset_set_if <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> not_in_iff<span class="main">)</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-distinct_mset_inter_remdups_mset"><span class="command">lemma</span></span> distinct_mset_inter_remdups_mset<span class="main">:</span>
-  <span class="keyword2"><span class="keyword">assumes</span></span> dist<span class="main">:</span> <span class="quoted"><span class="quoted">‹distinct_mset <span class="free">A</span>›</span></span>
-  <span class="keyword2"><span class="keyword">shows</span></span> <span class="quoted"><span class="quoted">‹<span class="free">A</span> <span class="main">∩#</span> remdups_mset <span class="free">B</span> <span class="main">=</span> <span class="free">A</span> <span class="main">∩#</span> <span class="free">B</span>›</span></span>
-<span class="keyword1"><span class="command">proof</span></span> <span class="operator">-</span>
-  <span class="keyword1"><span class="command">have</span></span> <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="skolem">A'</span> <span class="main">∩#</span> remove1_mset <span class="skolem">a</span> <span class="main">(</span>remdups_mset <span class="skolem">Aa</span><span class="main">)</span> <span class="main">=</span> <span class="skolem">A'</span> <span class="main">∩#</span> <span class="skolem">Aa</span>›</span></span>
-    <span class="keyword2"><span class="keyword">if</span></span>
-      <span class="quoted"><span class="quoted">‹<span class="skolem">A'</span> <span class="main">∩#</span> remdups_mset <span class="skolem">Aa</span> <span class="main">=</span> <span class="skolem">A'</span> <span class="main">∩#</span> <span class="skolem">Aa</span>›</span></span> <span class="keyword2"><span class="keyword">and</span></span>
-      <span class="quoted"><span class="quoted">‹<span class="skolem">a</span> <span class="main">∉#</span> <span class="skolem">A'</span>›</span></span> <span class="keyword2"><span class="keyword">and</span></span>
-      <span class="quoted"><span class="quoted">‹<span class="skolem">a</span> <span class="main">∈#</span> <span class="skolem">Aa</span>›</span></span>
-    <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">A'</span> <span class="skolem">Aa</span> <span class="main">::</span> <span class="quoted"><span class="quoted">‹<span class="tfree">'a</span> multiset›</span></span> <span class="keyword2"><span class="keyword">and</span></span> <span class="skolem">a</span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> insert_DiffM inter_add_right1 set_mset_remdups_mset that<span class="main">)</span>
-
-  <span class="keyword3"><span class="command">show</span></span> <span class="var"><span class="quoted"><span class="var">?thesis</span></span></span>
-    <span class="keyword1"><span class="command">using</span></span> dist
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">A</span></span><span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-     <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword2"><span class="keyword">for</span></span> a A'
-       <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="quoted">‹<span class="skolem">a</span> <span class="main">∈#</span> <span class="free">B</span>›</span></span><span class="main">)</span>
-         <span class="main">(</span><span class="operator">use</span> multi_member_split<span class="main"><span class="main">[</span></span><span class="operator">of</span> <span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem">a</span></span></span></span></span></span> <span class="quoted"><span class="quoted"><span class="quoted"><span class="quoted">‹<span class="free"><span class="free"><span class="free">B</span></span></span>›</span></span></span></span><span class="main"><span class="main">]</span></span>  multi_member_split<span class="main"><span class="main">[</span></span><span class="operator">of</span> <span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem">a</span></span></span></span></span></span> <span class="quoted"><span class="quoted"><span class="quoted"><span class="quoted">‹<span class="free"><span class="free"><span class="free">A</span></span></span>›</span></span></span></span><span class="main"><span class="main">]</span></span> <span class="keyword2"><span class="keyword"><span class="quasi_keyword">in</span></span></span>
-           <span class="quoted">‹<span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main">:</span> mset_set.insert_remove›</span><span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
-<span class="keyword1"><span class="command">qed</span></span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-finite_mset_set_inter"><span class="command">lemma</span></span> finite_mset_set_inter<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹finite <span class="free">A</span> <span class="main">⟹</span> finite <span class="free">B</span> <span class="main">⟹</span> mset_set <span class="main">(</span><span class="free">A</span> <span class="main">∩</span> <span class="free">B</span><span class="main">)</span> <span class="main">=</span> mset_set <span class="free">A</span> <span class="main">∩#</span> mset_set <span class="free">B</span>›</span></span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">A</span></span> <span class="quasi_keyword">rule</span><span class="main"><span class="main">:</span></span> finite_induct<span class="main">)</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword2"><span class="keyword">for</span></span> a A
-    <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="quoted">‹<span class="skolem">a</span> <span class="main">∈</span> <span class="free">B</span>›</span></span><span class="main"><span class="keyword3">;</span></span> <span class="operator">cases</span> <span class="quoted"><span class="quoted">‹<span class="skolem">a</span> <span class="main">∈#</span> mset_set <span class="free">B</span>›</span></span><span class="main">)</span>
-      <span class="main">(</span><span class="operator">use</span> multi_member_split<span class="main"><span class="main">[</span></span><span class="operator">of</span> <span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem"><span class="quoted"><span class="skolem">a</span></span></span></span></span></span> <span class="quoted"><span class="quoted"><span class="quoted"><span class="quoted">‹mset_set <span class="free"><span class="free"><span class="free">B</span></span></span>›</span></span></span></span><span class="main"><span class="main">]</span></span> <span class="keyword2"><span class="keyword"><span class="quasi_keyword">in</span></span></span>
-        <span class="quoted">‹<span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main">:</span> mset_set.insert_remove›</span><span class="main">)</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-removeAll_notin"><span class="command">lemma</span></span> removeAll_notin<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">a</span> <span class="main">∉#</span> <span class="free">A</span> <span class="main">⟹</span> removeAll_mset <span class="free">a</span> <span class="free">A</span> <span class="main">=</span> <span class="free">A</span>›</span></span>
-  <span class="keyword1"><span class="command">using</span></span> count_inI <span class="keyword1"><span class="command">by</span></span> <span class="operator">force</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-same_mset_distinct_iff"><span class="command">lemma</span></span> same_mset_distinct_iff<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹mset <span class="free">M</span> <span class="main">=</span> mset <span class="free">M'</span> <span class="main">⟹</span> distinct <span class="free">M</span> <span class="main">⟷</span> distinct <span class="free">M'</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> distinct_mset_mset_distinct<span class="main"><span class="main">[</span></span><span class="operator">symmetric</span><span class="main"><span class="main">]</span></span> <span class="quasi_keyword">simp</span> <span class="quasi_keyword">del</span><span class="main"><span class="main">:</span></span> distinct_mset_mset_distinct<span class="main">)</span>
-
-
-<span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹More Lists›</span></span>
-<span class="keyword1" id="Duplicate_Free_Multiset-in_set_conv_iff"><span class="command">lemma</span></span> in_set_conv_iff<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹<span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>take <span class="free">n</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟷</span> <span class="main">(</span><span class="main">∃</span><span class="bound"><span class="bound">i</span></span> <span class="main">&lt;</span> <span class="free">n</span><span class="main">.</span> <span class="bound">i</span> <span class="main">&lt;</span> length <span class="free">xs</span> <span class="main">∧</span> <span class="free">xs</span> <span class="main">!</span> <span class="bound">i</span> <span class="main">=</span> <span class="free">x</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">n</span></span><span class="main">)</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword2"><span class="keyword">for</span></span> n
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="quoted">‹Suc <span class="skolem">n</span> <span class="main">&lt;</span> length <span class="free">xs</span>›</span></span><span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span> <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> take_Suc_conv_app_nth less_Suc_eq <span class="quasi_keyword">dest</span><span class="main"><span class="main">:</span></span> in_set_takeD<span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span>
-      <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="quoted">‹<span class="skolem">n</span> <span class="main">&lt;</span> length <span class="free">xs</span>›</span></span><span class="main">)</span>
-      <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span>
-        <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> in_set_conv_nth<span class="main">)</span>
-        <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">rename_tac</span> i<span class="main"><span class="keyword3">,</span></span> <span class="operator">rule_tac</span> x<span class="main"><span class="main">=</span></span><span class="quoted"><span class="improper"><span class="quoted"><span class="improper">i</span></span></span></span> <span class="keyword2"><span class="keyword"><span class="quasi_keyword">in</span></span></span> exI<span class="main"><span class="keyword3">;</span></span> <span class="operator">auto</span><span class="main"><span class="keyword3">;</span></span> <span class="operator">fail</span><span class="main">)</span><span class="main"><span class="keyword3">+</span></span>
-      <span class="keyword1"><span class="command"><span class="improper"><span class="command">subgoal</span></span></span></span>
-        <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> take_Suc_conv_app_nth <span class="quasi_keyword">dest</span><span class="main"><span class="main">:</span></span> in_set_takeD<span class="main">)</span>
-        <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">rename_tac</span> i<span class="main"><span class="keyword3">,</span></span> <span class="operator">rule_tac</span> x<span class="main"><span class="main">=</span></span><span class="quoted"><span class="improper">i</span></span> <span class="keyword2"><span class="keyword"><span class="quasi_keyword">in</span></span></span> exI<span class="main"><span class="keyword3">;</span></span> <span class="operator">auto</span><span class="main"><span class="keyword3">;</span></span> <span class="operator">fail</span><span class="main">)</span><span class="main"><span class="keyword3">+</span></span>
-      <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-in_set_take_conv_nth"><span class="command">lemma</span></span> in_set_take_conv_nth<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹<span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>take <span class="free">n</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟷</span> <span class="main">(</span><span class="main">∃</span><span class="bound"><span class="bound">m</span></span><span class="main">&lt;</span>min <span class="free">n</span> <span class="main">(</span>length <span class="free">xs</span><span class="main">)</span><span class="main">.</span> <span class="free">xs</span> <span class="main">!</span> <span class="bound">m</span> <span class="main">=</span> <span class="free">x</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> in_set_conv_nth length_take min.commute min.strict_boundedE nth_take<span class="main">)</span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-in_set_remove1D"><span class="command">lemma</span></span> in_set_remove1D<span class="main">:</span>
-  <span class="quoted"><span class="quoted">‹<span class="free">a</span> <span class="main">∈</span> set <span class="main">(</span>remove1 <span class="free">x</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟹</span> <span class="free">a</span> <span class="main">∈</span> set <span class="free">xs</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">meson</span> notin_set_remove1<span class="main">)</span>
-
-
-<span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Generic Multiset›</span></span>
-
-<span class="keyword1" id="Duplicate_Free_Multiset-mset_drop_upto"><span class="command">lemma</span></span> mset_drop_upto<span class="main">:</span> <span class="quoted"><span class="quoted">‹mset <span class="main">(</span>drop <span class="free">a</span> <span class="free">N</span><span class="main">)</span> <span class="main">=</span> <span class="main">{#</span><span class="free">N</span><span class="main">!</span><span class="bound">i</span><span class="main">.</span> <span class="bound">i</span> <span class="main">∈#</span> mset_set <span class="main">{</span><span class="free">a</span><span class="main">..&lt;</span>length <span class="free">N</span><span class="main">}</span><span class="main">#}</span>›</span></span>
-<span class="keyword1"><span class="command">proof</span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">N</span></span> <span class="quasi_keyword">arbitrary</span><span class="main"><span class="main">:</span></span> <span class="quoted"><span class="free">a</span></span><span class="main">)</span>
-  <span class="keyword3"><span class="command">case</span></span> Nil
-  <span class="keyword1"><span class="command">then</span></span> <span class="keyword3"><span class="command">show</span></span> <span class="var"><span class="quoted"><span class="var">?case</span></span></span> <span class="keyword1"><span class="command">by</span></span> <span class="operator">simp</span>
-<span class="keyword1"><span class="command">next</span></span>
-  <span class="keyword3"><span class="command">case</span></span> <span class="main">(</span>Cons <span class="skolem">c</span> <span class="skolem">N</span><span class="main">)</span>
-  <span class="keyword1"><span class="command">have</span></span> upt<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="main">{</span><span class="main">0</span><span class="main">..&lt;</span>Suc <span class="main">(</span>length <span class="skolem">N</span><span class="main">)</span><span class="main">}</span> <span class="main">=</span> insert <span class="main">0</span> <span class="main">{</span><span class="main">1</span><span class="main">..&lt;</span>Suc <span class="main">(</span>length <span class="skolem">N</span><span class="main">)</span><span class="main">}</span>›</span></span>
-    <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command">then</span></span> <span class="keyword1"><span class="command">have</span></span> H<span class="main">:</span> <span class="quoted"><span class="quoted">‹mset_set <span class="main">{</span><span class="main">0</span><span class="main">..&lt;</span>Suc <span class="main">(</span>length <span class="skolem">N</span><span class="main">)</span><span class="main">}</span> <span class="main">=</span> add_mset <span class="main">0</span> <span class="main">(</span>mset_set <span class="main">{</span><span class="main">1</span><span class="main">..&lt;</span>Suc <span class="main">(</span>length <span class="skolem">N</span><span class="main">)</span><span class="main">}</span><span class="main">)</span>›</span></span>
-    <span class="keyword1"><span class="command">unfolding</span></span> upt <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command">have</span></span> mset_case_Suc<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="main">{#</span><span class="keyword1">case</span> <span class="bound">x</span> <span class="keyword1">of</span> <span class="main">0</span> <span class="main">⇒</span> <span class="skolem">c</span> <span class="main">|</span> Suc <span class="bound">x</span> <span class="main">⇒</span> <span class="skolem">N</span> <span class="main">!</span> <span class="bound">x</span> <span class="main">.</span> <span class="bound">x</span> <span class="main">∈#</span> mset_set <span class="main">{</span>Suc <span class="skolem">a</span><span class="main">..&lt;</span>Suc <span class="skolem">b</span><span class="main">}</span><span class="main">#}</span> <span class="main">=</span>
-    <span class="main">{#</span><span class="skolem">N</span> <span class="main">!</span> <span class="main">(</span><span class="bound">x</span><span class="main">-</span><span class="main">1</span><span class="main">)</span> <span class="main">.</span> <span class="bound">x</span> <span class="main">∈#</span> mset_set <span class="main">{</span>Suc <span class="skolem">a</span><span class="main">..&lt;</span>Suc <span class="skolem">b</span><span class="main">}</span><span class="main">#}</span>›</span></span> <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">a</span> <span class="skolem">b</span>
-    <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">rule</span> image_mset_cong<span class="main">)</span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">split</span><span class="main"><span class="main">:</span></span> nat.splits<span class="main">)</span>
-  <span class="keyword1"><span class="command">have</span></span> Suc_Suc<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="main">{</span>Suc <span class="skolem">a</span><span class="main">..&lt;</span>Suc <span class="skolem">b</span><span class="main">}</span> <span class="main">=</span> Suc <span class="main">`</span> <span class="main">{</span><span class="skolem">a</span><span class="main">..&lt;</span><span class="skolem">b</span><span class="main">}</span>›</span></span> <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">a</span> <span class="skolem">b</span>
-    <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command">then</span></span> <span class="keyword1"><span class="command">have</span></span> mset_set_Suc_Suc<span class="main">:</span> <span class="quoted"><span class="quoted">‹mset_set <span class="main">{</span>Suc <span class="skolem">a</span><span class="main">..&lt;</span>Suc <span class="skolem">b</span><span class="main">}</span> <span class="main">=</span> <span class="main">{#</span>Suc <span class="bound">n</span><span class="main">.</span> <span class="bound">n</span> <span class="main">∈#</span> mset_set <span class="main">{</span><span class="skolem">a</span><span class="main">..&lt;</span><span class="skolem">b</span><span class="main">}</span><span class="main">#}</span>›</span></span> <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">a</span> <span class="skolem">b</span>
-    <span class="keyword1"><span class="command">unfolding</span></span> Suc_Suc <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">subst</span> image_mset_mset_set<span class="main"><span class="main">[</span></span><span class="operator">symmetric</span><span class="main"><span class="main">]</span></span><span class="main">)</span> <span class="operator">auto</span>
-  <span class="keyword1"><span class="command">have</span></span> *<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="main">{#</span><span class="skolem">N</span> <span class="main">!</span> <span class="main">(</span><span class="bound">x</span><span class="main">-</span>Suc <span class="main">0</span><span class="main">)</span> <span class="main">.</span> <span class="bound">x</span> <span class="main">∈#</span> mset_set <span class="main">{</span>Suc <span class="skolem">a</span><span class="main">..&lt;</span>Suc <span class="skolem">b</span><span class="main">}</span><span class="main">#}</span> <span class="main">=</span> <span class="main">{#</span><span class="skolem">N</span> <span class="main">!</span> <span class="bound">x</span> <span class="main">.</span> <span class="bound">x</span> <span class="main">∈#</span> mset_set <span class="main">{</span><span class="skolem">a</span><span class="main">..&lt;</span><span class="skolem">b</span><span class="main">}</span><span class="main">#}</span>›</span></span>
-    <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">a</span> <span class="skolem">b</span>
-    <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> mset_set_Suc_Suc<span class="main">)</span>
-  <span class="keyword3"><span class="command">show</span></span> <span class="var"><span class="quoted"><span class="var">?case</span></span></span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="skolem">a</span></span><span class="main">)</span>
-    <span class="keyword1"><span class="command">using</span></span> Cons<span class="main">[</span><span class="operator">of</span> <span class="quoted"><span class="main">0</span></span><span class="main">]</span> Cons <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> nth_Cons drop_Cons H mset_case_Suc *<span class="main">)</span>
-<span class="keyword1"><span class="command">qed</span></span>
-
-
-<span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Other›</span></span>
-
-<span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹I believe this should be added to the simplifier by default...›</span></span>
-<span class="keyword1" id="Duplicate_Free_Multiset-Collect_eq_comp'"><span class="command">lemma</span></span> Collect_eq_comp'<span class="main">:</span> <span class="quoted"><span class="quoted">‹ <span class="main">{</span><span class="main">(</span><span class="bound">x</span><span class="main">,</span> <span class="bound">y</span><span class="main">)</span><span class="main">.</span> <span class="free">P</span> <span class="bound">x</span> <span class="bound">y</span><span class="main">}</span> <span class="keyword1">O</span> <span class="main">{</span><span class="main">(</span><span class="bound">c</span><span class="main">,</span> <span class="bound">a</span><span class="main">)</span><span class="main">.</span> <span class="bound">c</span> <span class="main">=</span> <span class="free">f</span> <span class="bound">a</span><span class="main">}</span> <span class="main">=</span> <span class="main">{</span><span class="main">(</span><span class="bound">x</span><span class="main">,</span> <span class="bound">a</span><span class="main">)</span><span class="main">.</span> <span class="free">P</span> <span class="bound">x</span> <span class="main">(</span><span class="free">f</span> <span class="bound">a</span><span class="main">)</span><span class="main">}</span>›</span></span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
-
-<span class="keyword2"><span class="keyword">end</span></span>
-</pre>
 </div><div id="Finite_Map_Multiset">
 <div class="head">
 <h1>Theory Finite_Map_Multiset</h1>
@@ -1100,7 +938,9 @@ is more useful if we need to take an element of <span class="antiquoted"><span c
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Finite_Map_Multiset
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span> <a href="Duplicate_Free_Multiset.html">Duplicate_Free_Multiset</a>
+<span class="keyword2"><span class="keyword">imports</span></span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
+  <a href="../../nested_multisets_ordinals/theories/#Duplicate_Free_Multiset">Nested_Multisets_Ordinals.Duplicate_Free_Multiset</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">notation</span></span> image_mset <span class="main">(</span><span class="keyword2"><span class="keyword">infixr</span></span> <span class="quoted">"<span class="keyword1">`#</span>"</span> 90<span class="main">)</span>
@@ -1333,11 +1173,13 @@ is more useful if we need to take an element of <span class="antiquoted"><span c
 
 Correctness proof contributed by Maximilian Wuttke *)</span>
 <span class="keyword1"><span class="command">theory</span></span> WB_Sort
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../Refine_Imperative_HOL/IICF.html">Refine_Imperative_HOL.IICF</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span> <a href="Duplicate_Free_Multiset.html">Duplicate_Free_Multiset</a>
+  <span class="keyword2"><span class="keyword">imports</span></span>
+    <a href="../../refine_imperative_hol/theories/#IICF">Refine_Imperative_HOL.IICF</a>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+    <a href="../../nested_multisets_ordinals/theories/#Duplicate_Free_Multiset">Nested_Multisets_Ordinals.Duplicate_Free_Multiset</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This a complete copy-paste of the IsaFoL version because sharing is too hard.›</span></span>
-
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Every element between <span class="antiquoted"><span class="antiquoted"><span class="operator"><span class="operator"><span class="hidden">\&lt;^</span><span class="control">term</span><span class="hidden">&gt;</span></span></span><span class="quoted"><span class="quoted">‹<span class="free"><span class="free">lo</span></span>›</span></span></span></span> and <span class="antiquoted"><span class="antiquoted"><span class="operator"><span class="operator"><span class="hidden">\&lt;^</span><span class="control">term</span><span class="hidden">&gt;</span></span></span><span class="quoted"><span class="quoted">‹<span class="free"><span class="free">hi</span></span>›</span></span></span></span> can be chosen as pivot element.›</span></span>
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">choose_pivot</span> <span class="main">::</span> <span class="quoted"><span class="quoted">‹<span class="main">(</span><span class="tfree">'b</span> <span class="main">⇒</span> <span class="tfree">'b</span> <span class="main">⇒</span> bool<span class="main">)</span> <span class="main">⇒</span> <span class="main">(</span><span class="tfree">'a</span> <span class="main">⇒</span> <span class="tfree">'b</span><span class="main">)</span> <span class="main">⇒</span> <span class="tfree">'a</span> list <span class="main">⇒</span> nat <span class="main">⇒</span> nat <span class="main">⇒</span> nat nres›</span></span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -1428,9 +1270,7 @@ Correctness proof contributed by Maximilian Wuttke *)</span>
 
 
 <span class="keyword1" id="WB_Sort-take_set"><span class="command">lemma</span></span> take_set<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">j</span> <span class="main">≤</span> length <span class="free">xs</span> <span class="main">⟹</span> <span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>take <span class="free">j</span> <span class="free">xs</span><span class="main">)</span> <span class="main">≡</span> <span class="main">(</span><span class="main">∃</span> <span class="bound">k</span><span class="main">.</span> <span class="bound">k</span> <span class="main">&lt;</span> <span class="free">j</span> <span class="main">∧</span> <span class="free">xs</span><span class="main">!</span><span class="bound">k</span> <span class="main">=</span> <span class="free">x</span><span class="main">)</span>›</span></span>
-  <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">xs</span></span><span class="main">)</span>
-   <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="operator">simp</span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">meson</span> in_set_conv_iff less_le_trans<span class="main">)</span>
+  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">rule</span> eq_reflection<span class="main">)</span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> take_set<span class="main">)</span>
 
 <span class="keyword1" id="WB_Sort-drop_set"><span class="command">lemma</span></span> drop_set<span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="free">j</span> <span class="main">≤</span> length <span class="free">xs</span> <span class="main">⟹</span> <span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>drop <span class="free">j</span> <span class="free">xs</span><span class="main">)</span> <span class="main">≡</span> <span class="main">(</span><span class="main">∃</span><span class="bound">k</span><span class="main">.</span> <span class="free">j</span><span class="main">≤</span><span class="bound">k</span><span class="main">∧</span><span class="bound">k</span><span class="main">&lt;</span>length <span class="free">xs</span> <span class="main">∧</span> <span class="free">xs</span><span class="main">!</span><span class="bound">k</span><span class="main">=</span><span class="free">x</span><span class="main">)</span>›</span></span>
   <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">smt</span> Misc.in_set_drop_conv_nth<span class="main">)</span> <span class="comment1">(* lemma found by sledgehammer *)</span>
@@ -3025,9 +2865,9 @@ definition partition_spec :: ‹('b ⇒ 'b ⇒ bool) ⇒ ('a ⇒ 'b) ⇒ 'a list
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> More_Loops
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../Refine_Monadic/Refine_While.html">Refine_Monadic.Refine_While</a>"</span>
-  <span class="quoted">"<a href="../Refine_Monadic/Refine_Foreach.html">Refine_Monadic.Refine_Foreach</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+  <span class="quoted">"<a href="../../refine_monadic/theories/#Refine_While">Refine_Monadic.Refine_While</a>"</span>
+  <span class="quoted">"<a href="../../refine_monadic/theories/#Refine_Foreach">Refine_Monadic.Refine_Foreach</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹More Theorem about Loops›</span></span>
@@ -3092,7 +2932,7 @@ definition partition_spec :: ‹('b ⇒ 'b ⇒ bool) ⇒ ('a ⇒ 'b) ⇒ 'a list
     RETURN <span class="bound">σ</span>
   <span class="main">}</span>"</span></span>
   <span class="keyword1"><span class="command">using</span></span> while_upt_while_direct1<span class="main">[</span><span class="operator">of</span> <span class="quoted"><span class="free">a</span></span> <span class="quoted"><span class="free">b</span></span><span class="main">]</span> while_upt_while_direct2<span class="main">[</span><span class="operator">of</span> <span class="quoted"><span class="free">a</span></span> <span class="quoted"><span class="free">b</span></span><span class="main">]</span>
-  <span class="keyword1"><span class="command">unfolding</span></span> order_class.eq_iff <span class="keyword1"><span class="command">by</span></span> <span class="operator">fast</span>
+  <span class="keyword1"><span class="command">unfolding</span></span> order_eq_iff <span class="keyword1"><span class="command">by</span></span> <span class="operator">fast</span>
 
 <span class="keyword1" id="More_Loops-while_nfoldli"><span class="command">lemma</span></span> while_nfoldli<span class="main">:</span>
   <span class="quoted"><span class="quoted">"<span class="keyword1">do</span> <span class="main">{</span>
@@ -3156,7 +2996,7 @@ definition partition_spec :: ‹('b ⇒ 'b ⇒ bool) ⇒ ('a ⇒ 'b) ⇒ 'a list
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Specification
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_More_Poly.html">PAC_More_Poly</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_More_Poly">PAC_More_Poly</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -3736,7 +3576,7 @@ added to the ideal.›</span></span>
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Map_Rel
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="../Refine_Imperative_HOL/IICF.html">Refine_Imperative_HOL.IICF</a> <a href="Finite_Map_Multiset.html">Finite_Map_Multiset</a>
+    <a href="../../refine_imperative_hol/theories/#IICF">Refine_Imperative_HOL.IICF</a> <a href="#Finite_Map_Multiset">Finite_Map_Multiset</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -4061,9 +3901,9 @@ to use especially here where everything is finite.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker_Specification
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Specification.html">PAC_Specification</a>
-    <a href="../Refine_Imperative_HOL/IICF.html">Refine_Imperative_HOL.IICF</a>
-    <a href="Finite_Map_Multiset.html">Finite_Map_Multiset</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Specification">PAC_Specification</a>
+    <a href="../../refine_imperative_hol/theories/#IICF">Refine_Imperative_HOL.IICF</a>
+    <a href="#Finite_Map_Multiset">Finite_Map_Multiset</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Checker Algorithm›</span></span>
@@ -4914,7 +4754,7 @@ on ideals and the first version of the loop.
 <h1>Theory PAC_Polynomials</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> PAC_Polynomials
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Specification.html">PAC_Specification</a> <a href="Finite_Map_Multiset.html">Finite_Map_Multiset</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Specification">PAC_Specification</a> <a href="#Finite_Map_Multiset">Finite_Map_Multiset</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -5413,8 +5253,8 @@ dive into the definitions of polynomials.›</span></span>
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Polynomials_Term
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Polynomials.html">PAC_Polynomials</a>
-    <a href="../Refine_Imperative_HOL/IICF.html">Refine_Imperative_HOL.IICF</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Polynomials">PAC_Polynomials</a>
+    <a href="../../refine_imperative_hol/theories/#IICF">Refine_Imperative_HOL.IICF</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -5603,7 +5443,7 @@ dive into the definitions of polynomials.›</span></span>
 <h1>Theory PAC_Polynomials_Operations</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> PAC_Polynomials_Operations
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Polynomials_Term.html">PAC_Polynomials_Term</a> <a href="PAC_Checker_Specification.html">PAC_Checker_Specification</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Polynomials_Term">PAC_Polynomials_Term</a> <a href="#PAC_Checker_Specification">PAC_Checker_Specification</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Addition›</span></span>
@@ -6864,6 +6704,33 @@ reason on intermediate representation where this has not yet been sanitized.
 <span class="keyword2"><span class="keyword">end</span></span>
 
 </pre>
+</div><div id="PAC_Misc">
+<div class="head">
+<h1>Theory PAC_Misc</h1>
+</div>
+<pre class="source"><span class="keyword1"><span class="command">theory</span></span> PAC_Misc
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">begin</span></span>
+
+<span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">"I believe this should be added to the simplifier by default..."</span></span>
+<span class="keyword1" id="PAC_Misc-Collect_eq_comp'"><span class="command">lemma</span></span> Collect_eq_comp'<span class="main">:</span>
+  <span class="quoted"><span class="quoted">"<span class="main">{</span><span class="main">(</span><span class="bound">x</span><span class="main">,</span> <span class="bound">y</span><span class="main">)</span><span class="main">.</span> <span class="free">P</span> <span class="bound">x</span> <span class="bound">y</span><span class="main">}</span> <span class="keyword1">O</span> <span class="main">{</span><span class="main">(</span><span class="bound">c</span><span class="main">,</span> <span class="bound">a</span><span class="main">)</span><span class="main">.</span> <span class="bound">c</span> <span class="main">=</span> <span class="free">f</span> <span class="bound">a</span><span class="main">}</span> <span class="main">=</span> <span class="main">{</span><span class="main">(</span><span class="bound">x</span><span class="main">,</span> <span class="bound">a</span><span class="main">)</span><span class="main">.</span> <span class="free">P</span> <span class="bound">x</span> <span class="main">(</span><span class="free">f</span> <span class="bound">a</span><span class="main">)</span><span class="main">}</span>"</span></span>
+  <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
+
+<span class="keyword1" id="PAC_Misc-in_set_conv_iff"><span class="command">lemma</span></span> in_set_conv_iff<span class="main">:</span>
+  <span class="quoted"><span class="quoted">"<span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>take <span class="free">n</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟷</span> <span class="main">(</span><span class="main">∃</span><span class="bound"><span class="bound">i</span></span><span class="main">&lt;</span><span class="free">n</span><span class="main">.</span> <span class="bound">i</span> <span class="main">&lt;</span> length <span class="free">xs</span> <span class="main">∧</span> <span class="free">xs</span> <span class="main">!</span> <span class="bound">i</span> <span class="main">=</span> <span class="free">x</span><span class="main">)</span>"</span></span>
+  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">metis</span> in_set_conv_nth length_take min_less_iff_conj nth_take<span class="main">)</span>
+
+<span class="keyword1" id="PAC_Misc-in_set_take_conv_nth"><span class="command">lemma</span></span> in_set_take_conv_nth<span class="main">:</span>
+  <span class="quoted"><span class="quoted">"<span class="free">x</span> <span class="main">∈</span> set <span class="main">(</span>take <span class="free">n</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟷</span> <span class="main">(</span><span class="main">∃</span><span class="bound"><span class="bound">i</span></span><span class="main">&lt;</span>min <span class="free">n</span> <span class="main">(</span>length <span class="free">xs</span><span class="main">)</span><span class="main">.</span> <span class="free">xs</span> <span class="main">!</span> <span class="bound">i</span> <span class="main">=</span> <span class="free">x</span><span class="main">)</span>"</span></span>
+  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> in_set_conv_iff<span class="main">)</span>
+
+<span class="keyword1" id="PAC_Misc-in_set_remove1D"><span class="command">lemma</span></span> in_set_remove1D<span class="main">:</span>
+  <span class="quoted"><span class="quoted">"<span class="free">a</span> <span class="main">∈</span> set <span class="main">(</span>remove1 <span class="free">x</span> <span class="free">xs</span><span class="main">)</span> <span class="main">⟹</span> <span class="free">a</span> <span class="main">∈</span> set <span class="free">xs</span>"</span></span>
+  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">meson</span> notin_set_remove1<span class="main">)</span>
+
+<span class="keyword2"><span class="keyword">end</span></span>
+</pre>
 </div><div id="PAC_Checker">
 <div class="head">
 <h1>Theory PAC_Checker</h1>
@@ -6874,11 +6741,12 @@ reason on intermediate representation where this has not yet been sanitized.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Polynomials_Operations.html">PAC_Polynomials_Operations</a>
-    <a href="PAC_Checker_Specification.html">PAC_Checker_Specification</a>
-    <a href="PAC_Map_Rel.html">PAC_Map_Rel</a>
-    <a href="../Show/Show.html">Show.Show</a>
-    <a href="../Show/Show_Instances.html">Show.Show_Instances</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Polynomials_Operations">PAC_Polynomials_Operations</a>
+    <a href="#PAC_Checker_Specification">PAC_Checker_Specification</a>
+    <a href="#PAC_Map_Rel">PAC_Map_Rel</a>
+    <a href="../../show/theories/#Show">Show.Show</a>
+    <a href="../../show/theories/#Show_Instances">Show.Show_Instances</a>
+    <a href="#PAC_Misc">PAC_Misc</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Executable Checker›</span></span>
@@ -7681,7 +7549,7 @@ reason on intermediate representation where this has not yet been sanitized.
          sorted_wrt term_order <span class="main">(</span>map fst <span class="main">(</span>remove1 <span class="main">(</span><span class="main">[</span><span class="free">a</span><span class="main">]</span><span class="main">,</span> <span class="main">1</span><span class="main">)</span> <span class="free">r</span><span class="main">)</span><span class="main">)</span>›</span></span>
     <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">r</span></span><span class="main">)</span> <span class="operator">auto</span>
   <span class="keyword1"><span class="command">have</span></span> <span class="main">[</span><span class="operator">intro</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">‹distinct <span class="main">(</span>map fst <span class="free">r</span><span class="main">)</span> <span class="main">⟹</span> distinct <span class="main">(</span>map fst <span class="main">(</span>remove1 <span class="skolem">x</span> <span class="free">r</span><span class="main">)</span><span class="main">)</span>›</span></span> <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">x</span>
-    <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">r</span></span><span class="main">)</span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">dest</span><span class="main"><span class="main">:</span></span> in_set_remove1D<span class="main">)</span>
+    <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">induction</span> <span class="quoted"><span class="free">r</span></span><span class="main">)</span> <span class="main">(</span><span class="operator">auto</span> <span class="quasi_keyword">dest</span><span class="main"><span class="main">:</span></span> notin_set_remove1<span class="main">)</span>
   <span class="keyword1"><span class="command">have</span></span> <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">‹<span class="main">(</span><span class="free">r</span><span class="main">,</span> <span class="skolem">ya</span><span class="main">)</span> <span class="main">∈</span> <span class="main">⟨</span>term_poly_list_rel <span class="keyword1">×<span class="hidden">⇩</span><sub>r</sub></span> int_rel<span class="main">⟩</span>list_rel <span class="main">⟹</span>
          polynomial_of_mset <span class="main">(</span>mset <span class="skolem">ya</span><span class="main">)</span> <span class="main">-</span>  Var <span class="main">(</span><span class="free">φ</span> <span class="free">a</span><span class="main">)</span> <span class="main">=</span>
          polynomial_of_mset <span class="main">(</span>remove1_mset <span class="main">(</span><span class="main">{#</span><span class="free">a</span><span class="main">#}</span><span class="main">,</span> <span class="main">1</span><span class="main">)</span> <span class="main">(</span>mset <span class="skolem">ya</span><span class="main">)</span><span class="main">)</span>›</span></span> <span class="keyword2"><span class="keyword">for</span></span> <span class="skolem">ya</span>
@@ -8261,7 +8129,7 @@ reason on intermediate representation where this has not yet been sanitized.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker_Relation
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Checker.html">PAC_Checker</a> <a href="WB_Sort.html">WB_Sort</a> <span class="quoted">"<a href="../Native_Word/Uint64.html">Native_Word.Uint64</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Checker">PAC_Checker</a> <a href="#WB_Sort">WB_Sort</a> <span class="quoted">"<a href="../../native_word/theories/#Uint64">Native_Word.Uint64</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Various Refinement Relations›</span></span>
@@ -8647,7 +8515,7 @@ reason on intermediate representation where this has not yet been sanitized.
 <h1>Theory PAC_Assoc_Map_Rel</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> PAC_Assoc_Map_Rel
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Map_Rel.html">PAC_Map_Rel</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Map_Rel">PAC_Map_Rel</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Hash Map as association list›</span></span>
@@ -8809,7 +8677,7 @@ reason on intermediate representation where this has not yet been sanitized.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker_Init
-  <span class="keyword2"><span class="keyword">imports</span></span>  <a href="PAC_Checker.html">PAC_Checker</a> <a href="WB_Sort.html">WB_Sort</a> <a href="PAC_Checker_Relation.html">PAC_Checker_Relation</a>
+  <span class="keyword2"><span class="keyword">imports</span></span>  <a href="#PAC_Checker">PAC_Checker</a> <a href="#WB_Sort">WB_Sort</a> <a href="#PAC_Checker_Relation">PAC_Checker_Relation</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Initial Normalisation of Polynomials›</span></span>
@@ -9705,7 +9573,7 @@ reason on intermediate representation where this has not yet been sanitized.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Version
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This code was taken from IsaFoR. However, for the AFP, we use the version name <span class="antiquoted"><span class="antiquoted"><span class="operator"><span class="operator"><span class="hidden">\&lt;^</span><span class="control">text</span><span class="hidden">&gt;</span></span></span><span class="raw_text"><span class="raw_text">‹AFP›</span></span></span></span>,
@@ -9734,8 +9602,8 @@ instead of a mercurial version. ›</span></span>
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker_Synthesis
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Checker.html">PAC_Checker</a> <a href="WB_Sort.html">WB_Sort</a> <a href="PAC_Checker_Relation.html">PAC_Checker_Relation</a>
-    <a href="PAC_Checker_Init.html">PAC_Checker_Init</a> <a href="More_Loops.html">More_Loops</a> <a href="PAC_Version.html">PAC_Version</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Checker">PAC_Checker</a> <a href="#WB_Sort">WB_Sort</a> <a href="#PAC_Checker_Relation">PAC_Checker_Relation</a>
+    <a href="#PAC_Checker_Init">PAC_Checker_Init</a> <a href="#More_Loops">More_Loops</a> <a href="#PAC_Version">PAC_Version</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Code Synthesis of the Complete Checker›</span></span>
@@ -10663,7 +10531,7 @@ is the same''), but it is still unsatisfactory.
   Maintainer:   Mathias Fleury, JKU
 *)</span>
 <span class="keyword1"><span class="command">theory</span></span> PAC_Checker_MLton
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PAC_Checker_Synthesis.html">PAC_Checker_Synthesis</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PAC_Checker_Synthesis">PAC_Checker_Synthesis</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">export_code</span></span> <span class="quoted"><span class="quoted">PAC_checker_l_impl</span></span> <span class="quoted"><span class="quoted">PAC_update_impl</span></span> <span class="quoted"><span class="quoted">PAC_empty_impl</span></span> <span class="quoted"><span class="quoted">the_error</span></span> <span class="quoted"><span class="quoted">is_cfailed</span></span> <span class="quoted"><span class="quoted">is_cfound</span></span>

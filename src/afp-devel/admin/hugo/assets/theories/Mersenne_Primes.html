@@ -5,8 +5,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Auxiliary material›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Lucas_Lehmer_Auxiliary
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Ring.html">HOL-Algebra.Ring</a>"</span>
-  <span class="quoted">"<a href="../Probabilistic_Prime_Tests/Jacobi_Symbol.html">Probabilistic_Prime_Tests.Jacobi_Symbol</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Ring.html">HOL-Algebra.Ring</a>"</span>
+  <span class="quoted">"<a href="../../probabilistic_prime_tests/theories/#Jacobi_Symbol">Probabilistic_Prime_Tests.Jacobi_Symbol</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* TODO: Much of this belongs in the library *)</span>
@@ -379,10 +379,10 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The Lucas--Lehmer test›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Lucas_Lehmer
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Lucas_Lehmer_Auxiliary.html">Lucas_Lehmer_Auxiliary</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Ring.html">HOL-Algebra.Ring</a>"</span>
-  <span class="quoted">"<a href="../Probabilistic_Prime_Tests/Jacobi_Symbol.html">Probabilistic_Prime_Tests.Jacobi_Symbol</a>"</span>
-  <span class="quoted">"<a href="../Pell/Pell.html">Pell.Pell</a>"</span> <span class="comment1">(* only needed for irrationality of sqrt(3) *)</span>
+  <a href="#Lucas_Lehmer_Auxiliary">Lucas_Lehmer_Auxiliary</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Ring.html">HOL-Algebra.Ring</a>"</span>
+  <span class="quoted">"<a href="../../probabilistic_prime_tests/theories/#Jacobi_Symbol">Probabilistic_Prime_Tests.Jacobi_Symbol</a>"</span>
+  <span class="quoted">"<a href="../../pell/theories/#Pell">Pell.Pell</a>"</span> <span class="comment1">(* only needed for irrationality of sqrt(3) *)</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹General properties of Mersenne numbers and Mersenne primes›</span></span>
@@ -1637,9 +1637,9 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Efficient code for testing Mersenne primes›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Lucas_Lehmer_Code
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Lucas_Lehmer.html">Lucas_Lehmer</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Code_Target_Numeral.html">HOL-Library.Code_Target_Numeral</a>"</span>
-  <span class="quoted">"<a href="../Native_Word/Code_Target_Bits_Int.html">Native_Word.Code_Target_Bits_Int</a>"</span>
+  <a href="#Lucas_Lehmer">Lucas_Lehmer</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Code_Target_Numeral.html">HOL-Library.Code_Target_Numeral</a>"</span>
+  <span class="quoted">"<a href="../../native_word/theories/#Code_Target_Bits_Int">Native_Word.Code_Target_Bits_Int</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Efficient computation of remainders modulo a Mersenne number›</span></span>

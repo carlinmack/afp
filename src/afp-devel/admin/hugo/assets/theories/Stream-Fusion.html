@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Lazy Lists›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> LazyList
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOLCF/HOLCF.html">HOLCF</a> <span class="quoted">"<a href="../../HOL/HOLCF-Library/Int_Discrete.html">HOLCF-Library.Int_Discrete</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOLCF/HOLCF.html">HOLCF</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOLCF-Library/Int_Discrete.html">HOLCF-Library.Int_Discrete</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">domain</span></span> <span class="tfree">'a</span> LList <span class="main">=</span> LNil <span class="main">|</span> LCons <span class="main">(</span><span class="keyword2"><span class="keyword">lazy</span></span> <span class="tfree"><span class="quoted"><span class="tfree">'a</span></span></span><span class="main">)</span> <span class="main">(</span><span class="keyword2"><span class="keyword">lazy</span></span> <span class="quoted"><span class="quoted">"<span class="tfree">'a</span> LList"</span></span><span class="main">)</span>
@@ -102,7 +102,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Stream Iterators›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Stream
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="LazyList.html">LazyList</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#LazyList">LazyList</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definitions for streams›</span></span>
@@ -248,7 +248,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Stream Fusion›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> StreamFusion
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Stream.html">Stream</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Stream">Stream</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type constructors for state types›</span></span>

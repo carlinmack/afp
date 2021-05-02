@@ -78,7 +78,7 @@
                 "submonoid_notin",
                 "cring0_spectrum_eq",
                 "closed_subsets_R",
-                "closed_subsets_empty",
+                "closed_subsets_zero",
                 "closed_subsets_ideal_aux",
                 "closed_subsets_ideal_iff",
                 "finsum_empty",
@@ -241,8 +241,7 @@
         },
         {
             "Scheme": [
-                "comp_affine_scheme_is_scheme",
-                "empty_scheme_is_comp_affine_scheme",
+                "empty_scheme_is_affine_scheme",
                 "empty_scheme_is_scheme"
             ]
         }

@@ -137,7 +137,6 @@
                 "img_subset",
                 "funcset_mem1",
                 "func_to_img",
-                "restrict_in_funcset",
                 "funcset_eq",
                 "eq_funcs",
                 "restriction_of_domain",

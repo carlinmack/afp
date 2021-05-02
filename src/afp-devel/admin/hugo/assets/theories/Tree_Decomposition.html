@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Graphs›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Graph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹<span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">typ</span></span> <span class="quoted"><span class="tfree"><span class="quoted"><span class="tfree">'a</span></span></span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span> is the vertex type.›</span></span>
 <span class="keyword1"><span class="command">type_synonym</span></span> <span class="tfree">'a</span> Edge <span class="main">=</span> <span class="quoted"><span class="quoted">"<span class="tfree">'a</span> <span class="main">×</span> <span class="tfree">'a</span>"</span></span>
@@ -236,7 +236,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 
   <span class="keyword1"><span class="command">let</span></span> <span class="var"><span class="quoted"><span class="var">?zs</span></span></span> <span class="main">=</span> <span class="quoted"><span class="quoted">"<span class="free">v</span> <span class="main">#</span> <span class="skolem">xs'</span> <span class="main">@</span> <span class="skolem">x</span> <span class="main">#</span> <span class="main">(</span>rev <span class="skolem">ys'</span><span class="main">)</span>"</span></span>
   <span class="keyword1"><span class="command">have</span></span> <span class="quoted"><span class="quoted">"last <span class="var">?zs</span><span class="main">→</span>hd <span class="var">?zs</span>"</span></span>
-    <span class="keyword1"><span class="command">using</span></span> undirected walk_first_edge walk_first_edge' ys'<span class="main">(</span>1<span class="main">)</span> ys<span class="main">(</span>1<span class="main">)</span> last_rev <span class="keyword1"><span class="command">by</span></span> <span class="operator">fastforce</span>
+    <span class="keyword1"><span class="command">using</span></span> undirected walk_first_edge walk_first_edge' ys'<span class="main">(</span>1<span class="main">)</span> ys<span class="main">(</span>1<span class="main">)</span> <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">fastforce</span> <span class="quasi_keyword">simp</span><span class="main"><span class="main">:</span></span> last_rev<span class="main">)</span>
   <span class="keyword1"><span class="command">moreover</span></span> <span class="keyword1"><span class="command">have</span></span> <span class="quoted"><span class="quoted">"path <span class="var">?zs</span>"</span></span> <span class="keyword1"><span class="command">proof</span></span>
     <span class="keyword1"><span class="command">have</span></span> <span class="quoted"><span class="quoted">"walk <span class="main">(</span><span class="skolem">x</span> <span class="main">#</span> rev <span class="skolem">ys'</span><span class="main">)</span>"</span></span> <span class="keyword1"><span class="command">proof</span></span><span class="main">(</span><span class="operator">cases</span><span class="main">)</span>
       <span class="keyword3"><span class="command">assume</span></span> <span class="quoted"><span class="quoted">"<span class="skolem">ys'</span> <span class="main">=</span> Nil"</span></span> <span class="keyword3"><span class="command">thus</span></span> <span class="var"><span class="quoted"><span class="var">?thesis</span></span></span> <span class="keyword1"><span class="command">using</span></span> <span class="quoted"><span class="quoted">‹last <span class="var">?zs</span><span class="main">→</span>hd <span class="var">?zs</span>›</span></span> edges_are_in_V<span class="main">(</span>1<span class="main">)</span> <span class="keyword1"><span class="command">by</span></span> <span class="operator">auto</span>
@@ -330,7 +330,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Trees›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Tree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Graph.html">Graph</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Graph">Graph</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹A tree is a connected graph without cycles.›</span></span>
 <span class="keyword1"><span class="command">locale</span></span> Tree <span class="main">=</span> Graph <span class="main">+</span>
@@ -664,7 +664,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Tree Decompositions›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> TreeDecomposition
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Tree.html">Tree</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Tree">Tree</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹A tree decomposition of a graph.›</span></span>
 
@@ -939,7 +939,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Treewidth of Trees›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> TreewidthTree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TreeDecomposition.html">TreeDecomposition</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TreeDecomposition">TreeDecomposition</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The treewidth of a tree is 1 if the tree has at least one edge, otherwise it is 0.
 
@@ -1036,7 +1036,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Treewidth of Complete Graphs›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> TreewidthCompleteGraph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TreeDecomposition.html">TreeDecomposition</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TreeDecomposition">TreeDecomposition</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹As an application of the separator theorem <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>bags_separate›</span></span></span></span>, or more precisely its
   corollary <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>bag_no_drop›</span></span></span></span>, we show that a complete graph of size <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">term</span></span> <span class="quoted"><span class="quoted">"<span class="free"><span class="free">n</span></span> <span class="main"><span class="main">::</span></span> nat"</span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span>
@@ -1129,7 +1129,7 @@ Nil <span class="main">[</span><span class="operator">simp</span><span class="ma
 ›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> ExampleInstantiations
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TreewidthCompleteGraph.html">TreewidthCompleteGraph</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TreewidthCompleteGraph">TreewidthCompleteGraph</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">datatype</span></span> Vertices <span class="main">=</span> u0 <span class="main">|</span> v0 <span class="main">|</span> w0
 

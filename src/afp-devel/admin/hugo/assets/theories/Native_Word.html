@@ -10,14 +10,13 @@
 
 <span class="keyword1"><span class="command">theory</span></span> More_Bits_Int
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../Word_Lib/Bits_Int.html">Word_Lib.Bits_Int</a>"</span>
-  <span class="quoted">"<a href="../Word_Lib/Bit_Comprehension.html">Word_Lib.Bit_Comprehension</a>"</span>
+  <span class="quoted">"<a href="../../word_lib/theories/#Bits_Int">Word_Lib.Bits_Int</a>"</span>
+  <span class="quoted">"<a href="../../word_lib/theories/#Bit_Comprehension">Word_Lib.Bit_Comprehension</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Preliminaries›</span></span>
 
-<span class="keyword1" id="More_Bits_Int-last_rev'"><span class="command">lemma</span></span> last_rev' <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">"last <span class="main">(</span>rev <span class="free">xs</span><span class="main">)</span> <span class="main">=</span> hd <span class="free">xs</span>"</span></span> <span class="comment1">― ‹TODO define <span class="antiquoted"><span class="raw_text"><span class="operator">‹</span>last []›</span></span> as <span class="antiquoted"><span class="raw_text"><span class="operator">‹</span>hd []›</span></span>?›</span>
-  <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="free">xs</span></span><span class="main">)</span> <span class="main">(</span><span class="operator">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> last_def hd_def<span class="main"><span class="keyword3">,</span></span> <span class="operator">simp</span><span class="main">)</span>
+<span class="keyword1"><span class="command">declare</span></span> hd_Nil_eq_last <span class="main">[</span><span class="operator">simp</span><span class="main">]</span>
 
 <span class="keyword1" id="More_Bits_Int-nat_LEAST_True"><span class="command">lemma</span></span> nat_LEAST_True<span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="main">(</span><span class="keyword1">LEAST</span> <span class="main"><span class="bound">_</span></span> <span class="main">::</span> nat<span class="main">.</span> True<span class="main">)</span> <span class="main">=</span> <span class="main">0</span>"</span></span>
   <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">rule</span> Least_equality<span class="main">)</span> <span class="operator">simp_all</span>
@@ -142,9 +141,9 @@
 
 <span class="keyword1"><span class="command">theory</span></span> Code_Symbolic_Bits_Int
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../Word_Lib/Generic_set_bit.html">Word_Lib.Generic_set_bit</a>"</span>
-  <span class="quoted">"<a href="../Word_Lib/Least_significant_bit.html">Word_Lib.Least_significant_bit</a>"</span>
-  <a href="More_Bits_Int.html">More_Bits_Int</a>
+  <span class="quoted">"<a href="../../word_lib/theories/#Generic_set_bit">Word_Lib.Generic_set_bit</a>"</span>
+  <span class="quoted">"<a href="../../word_lib/theories/#Least_significant_bit">Word_Lib.Least_significant_bit</a>"</span>
+  <a href="#More_Bits_Int">More_Bits_Int</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Implementations of bit operations on <span class="antiquoted"><span class="antiquoted"><span class="operator"><span class="operator"><span class="hidden">\&lt;^</span><span class="control">typ</span><span class="hidden">&gt;</span></span></span><span class="quoted"><span class="quoted">‹int›</span></span></span></span> operating on symbolic representation›</span></span>
@@ -268,8 +267,8 @@
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Bit operations for target language integers›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Bits_Integer <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="More_Bits_Int.html">More_Bits_Int</a>
-  <a href="Code_Symbolic_Bits_Int.html">Code_Symbolic_Bits_Int</a>
+  <a href="#More_Bits_Int">More_Bits_Int</a>
+  <a href="#Code_Symbolic_Bits_Int">Code_Symbolic_Bits_Int</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">lemmas</span></span> <span class="main">[</span><span class="operator">transfer_rule</span><span class="main">]</span> <span class="main">=</span>
@@ -962,8 +961,8 @@ def testBit(x: BigInt, n: BigInt) : Boolean =
 
 <span class="keyword1"><span class="command">theory</span></span> Code_Target_Bits_Int
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Bits_Integer.html">Bits_Integer</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Code_Target_Int.html">HOL-Library.Code_Target_Int</a>"</span>
+  <a href="#Bits_Integer">Bits_Integer</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Code_Target_Int.html">HOL-Library.Code_Target_Int</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">declare</span></span> <span class="main">[</span><span class="main">[</span><span class="operator">code</span> <span class="quasi_keyword">drop</span><span class="main"><span class="main">:</span></span>
@@ -1058,9 +1057,9 @@ def testBit(x: BigInt, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Common base for target language implementations of word types›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Code_Target_Word_Base <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Word.html">HOL-Library.Word</a>"</span>
-  <span class="quoted">"<a href="../Word_Lib/Signed_Division_Word.html">Word_Lib.Signed_Division_Word</a>"</span>
-  <a href="Bits_Integer.html">Bits_Integer</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Word.html">HOL-Library.Word</a>"</span>
+  <span class="quoted">"<a href="../../word_lib/theories/#Signed_Division_Word">Word_Lib.Signed_Division_Word</a>"</span>
+  <a href="#Bits_Integer">Bits_Integer</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹More lemmas›</span></span>
@@ -1129,8 +1128,6 @@ def testBit(x: BigInt, n: BigInt) : Boolean =
      <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">simp_all</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> of_nat_diff<span class="main">)</span>
     <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">subst</span> of_nat_diff<span class="main">)</span>
     <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">simp_all</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> word_le_nat_alt take_bit_nat_eq_self unat_sub_if' unat_word_ariths<span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">cases</span> <span class="quoted"><span class="quoted">‹<span class="numeral">2</span> <span class="main">≤</span> <span class="keyword1">LENGTH</span><span class="main">(</span><span class="tfree">'a</span><span class="main">)</span>›</span></span><span class="main">)</span>
-    <span class="keyword1"><span class="command"><span class="improper"><span class="command">apply</span></span></span></span> <span class="main">(</span><span class="operator">simp_all</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> unat_word_ariths take_bit_nat_eq_self<span class="main">)</span>
     <span class="keyword1"><span class="command"><span class="improper"><span class="command">done</span></span></span></span>
   <span class="keyword1"><span class="command">then</span></span> <span class="keyword3"><span class="command">show</span></span> <span class="var"><span class="quoted"><span class="var">?thesis</span></span></span> <span class="keyword1"><span class="command">using</span></span> n m div_half_nat <span class="main">[</span><span class="operator">OF</span> <span class="quoted"><span class="quoted">‹<span class="skolem">m</span> <span class="main">≠</span> <span class="main">0</span>›</span></span><span class="main">,</span> <span class="operator">of</span> <span class="quoted"><span class="skolem">n</span></span><span class="main">]</span> <span class="keyword1"><span class="command">unfolding</span></span> q
     <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> word_le_nat_alt word_div_def word_mod_def Let_def take_bit_nat_eq_self
@@ -1456,7 +1453,7 @@ def testBit(x: BigInt, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Unsigned words of 64 bits›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Uint64 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2430,7 +2427,7 @@ def test_bit(x: Long, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Unsigned words of 32 bits›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Uint32 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">declare</span></span> prod.Quotient<span class="main">[</span><span class="operator">transfer_rule</span><span class="main">]</span>
@@ -3205,7 +3202,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Unsigned words of 16 bits›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Uint16 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3833,7 +3830,7 @@ def test_bit(x: scala.Char, n: BigInt) : Boolean = (x &amp; (1.toChar &lt;&lt; n
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Unsigned words of 8 bits›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Uint8 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -4538,7 +4535,7 @@ def test_bit(x: Byte, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Unsigned words of default size›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Uint <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -5440,10 +5437,10 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Cast
   <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Uint8.html">Uint8</a>
-  <a href="Uint16.html">Uint16</a>
-  <a href="Uint32.html">Uint32</a>
-  <a href="Uint64.html">Uint64</a>
+  <a href="#Uint8">Uint8</a>
+  <a href="#Uint16">Uint16</a>
+  <a href="#Uint32">Uint32</a>
+  <a href="#Uint64">Uint64</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Auxiliary stuff›</span></span>
@@ -5610,8 +5607,8 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Cast_Uint <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Cast.html">Native_Cast</a>
-  <a href="Uint.html">Uint</a>
+  <a href="#Native_Cast">Native_Cast</a>
+  <a href="#Uint">Uint</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">lift_definition</span></span> uint_of_uint8 <span class="main">::</span> <span class="quoted"><span class="quoted">"uint8 <span class="main">⇒</span> uint"</span></span> <span class="keyword2"><span class="keyword">is</span></span> <span class="quoted">ucast</span> <span class="keyword1"><span class="command">.</span></span>
@@ -5706,8 +5703,8 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Compatibility with Imperative/HOL›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Imperative_HOL <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Code_Target_Word_Base.html">Code_Target_Word_Base</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Imperative_HOL/Heap_Monad.html">HOL-Imperative_HOL.Heap_Monad</a>"</span>
+  <a href="#Code_Target_Word_Base">Code_Target_Word_Base</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Imperative_HOL/Heap_Monad.html">HOL-Imperative_HOL.Heap_Monad</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -5730,8 +5727,8 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 <span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Test cases›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Uint64.html">Uint64</a> <a href="Uint32.html">Uint32</a> <a href="Uint16.html">Uint16</a> <a href="Uint8.html">Uint8</a> <a href="Uint.html">Uint</a> <a href="Native_Cast_Uint.html">Native_Cast_Uint</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Code_Test.html">HOL-Library.Code_Test</a>"</span>
+  <a href="#Uint64">Uint64</a> <a href="#Uint32">Uint32</a> <a href="#Uint16">Uint16</a> <a href="#Uint8">Uint8</a> <a href="#Uint">Uint</a> <a href="#Native_Cast_Uint">Native_Cast_Uint</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Code_Test.html">HOL-Library.Code_Test</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Tests for <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">typ</span></span> <span class="quoted"><span class="quoted">uint32</span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span>›</span></span>
@@ -6218,8 +6215,8 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_Emu <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
-  <a href="Code_Target_Bits_Int.html">Code_Target_Bits_Int</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
+  <a href="#Code_Target_Bits_Int">Code_Target_Bits_Int</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test cases for emulation of native words›</span></span>
@@ -6278,7 +6275,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_PolyML <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with PolyML›</span></span>
@@ -6303,7 +6300,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_PolyML2 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test_Emu.html">Native_Word_Test_Emu</a>
+  <a href="#Native_Word_Test_Emu">Native_Word_Test_Emu</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">test_code</span></span>
@@ -6323,7 +6320,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_PolyML64 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">test_code</span></span> <span class="quoted"><span class="quoted">"test_uint64' <span class="main">=</span> <span class="numeral">0x12</span>"</span></span>
@@ -6346,7 +6343,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_Scala <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with Scala›</span></span>
@@ -6380,7 +6377,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_GHC <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with GHC›</span></span>
@@ -6450,7 +6447,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_MLton <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with MLton›</span></span>
@@ -6496,7 +6493,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_MLton2 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test_Emu.html">Native_Word_Test_Emu</a>
+  <a href="#Native_Word_Test_Emu">Native_Word_Test_Emu</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">export_code</span></span> <span class="quoted"><span class="quoted">test_casts'</span></span> <span class="keyword2"><span class="keyword">in</span></span> SML <span class="keyword2"><span class="keyword">module_name</span></span> Generated_Code
@@ -6518,7 +6515,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_OCaml <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with OCaml›</span></span>
@@ -6542,7 +6539,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_OCaml2 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test_Emu.html">Native_Word_Test_Emu</a>
+  <a href="#Native_Word_Test_Emu">Native_Word_Test_Emu</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">test_code</span></span>
@@ -6563,7 +6560,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_SMLNJ <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test.html">Native_Word_Test</a>
+  <a href="#Native_Word_Test">Native_Word_Test</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Test with SML/NJ›</span></span>
@@ -6612,7 +6609,7 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> Native_Word_Test_SMLNJ2 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Native_Word_Test_Emu.html">Native_Word_Test_Emu</a>
+  <a href="#Native_Word_Test_Emu">Native_Word_Test_Emu</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">test_code</span></span>
@@ -6635,9 +6632,9 @@ def test_bit(x: Int, n: BigInt) : Boolean =
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Uint_Userguide <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Uint32.html">Uint32</a>
-  <a href="Uint16.html">Uint16</a>
-  <a href="Code_Target_Bits_Int.html">Code_Target_Bits_Int</a>
+  <a href="#Uint32">Uint32</a>
+  <a href="#Uint16">Uint16</a>
+  <a href="#Code_Target_Bits_Int">Code_Target_Bits_Int</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 

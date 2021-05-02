@@ -4,7 +4,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Boolean functions›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Bool_Func
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
   The end result of our implementation is verified against these functions:
@@ -76,7 +76,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Binary Decision Trees›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> BDT
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Bool_Func.html">Bool_Func</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Bool_Func">Bool_Func</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
@@ -809,7 +809,7 @@ Tests like being tautology testing are then trivial.
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Option Helpers›</span></span>
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹These definitions were contributed by Peter Lammich.›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Option_Helpers
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Monad_Syntax.html">HOL-Library.Monad_Syntax</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Monad_Syntax.html">HOL-Library.Monad_Syntax</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">primrec</span></span> <span class="entity"><span class="entity">oassert</span></span> <span class="main">::</span> <span class="quoted"><span class="quoted"><span class="quoted">"bool <span class="main"><span class="main">⇒</span></span> unit option"</span></span></span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -862,9 +862,9 @@ Tests like being tautology testing are then trivial.
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Abstract ITE Implementation›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Abstract_Impl
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="BDT.html">BDT</a>
-        <a href="../Automatic_Refinement/Refine_Lib.html">Automatic_Refinement.Refine_Lib</a>
-        <a href="Option_Helpers.html">Option_Helpers</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#BDT">BDT</a>
+        <a href="../../automatic_refinement/theories/#Refine_Lib">Automatic_Refinement.Refine_Lib</a>
+        <a href="#Option_Helpers">Option_Helpers</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">datatype</span></span> <span class="main">(</span><span class="tfree">'a</span><span class="main">,</span> <span class="tfree">'ni</span><span class="main">)</span> IFEXD <span class="main">=</span> TD <span class="main">|</span> FD <span class="main">|</span> IFD <span class="tfree"><span class="quoted"><span class="tfree">'a</span></span></span> <span class="tfree"><span class="quoted"><span class="tfree">'ni</span></span></span> <span class="tfree"><span class="quoted"><span class="tfree">'ni</span></span></span> 
@@ -1392,7 +1392,7 @@ Tests like being tautology testing are then trivial.
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Pointermap›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Pointer_Map
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
@@ -1559,7 +1559,7 @@ using ne by linarith
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Functional interpretation for the abstract implementation›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Middle_Impl
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Abstract_Impl.html">Abstract_Impl</a> <a href="Pointer_Map.html">Pointer_Map</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Abstract_Impl">Abstract_Impl</a> <a href="#Pointer_Map">Pointer_Map</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹For the lack of a better name, the suffix mi stands for middle-implementation. 
@@ -1873,7 +1873,7 @@ nor has it been made fully concrete: the data structures are decided, but not th
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹Most of this has been contributed by Peter Lammich.›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Array_List
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../Separation_Logic_Imperative_HOL/Array_Blit.html">Separation_Logic_Imperative_HOL.Array_Blit</a>
+  <a href="../../separation_logic_imperative_hol/theories/#Array_Blit">Separation_Logic_Imperative_HOL.Array_Blit</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
     This implements a datastructure that efficiently supports two operations: appending an element and looking up the nth element. 
@@ -1947,10 +1947,10 @@ nor has it been made fully concrete: the data structures are decided, but not th
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Imparative implementation for Pointermap›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Pointer_Map_Impl
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Array_List.html">Array_List</a> 
-  <a href="../Separation_Logic_Imperative_HOL/Sep_Main.html">Separation_Logic_Imperative_HOL.Sep_Main</a>
-  <a href="../Separation_Logic_Imperative_HOL/Hash_Map_Impl.html">Separation_Logic_Imperative_HOL.Hash_Map_Impl</a>
-  <a href="Pointer_Map.html">Pointer_Map</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Array_List">Array_List</a> 
+  <a href="../../separation_logic_imperative_hol/theories/#Sep_Main">Separation_Logic_Imperative_HOL.Sep_Main</a>
+  <a href="../../separation_logic_imperative_hol/theories/#Hash_Map_Impl">Separation_Logic_Imperative_HOL.Hash_Map_Impl</a>
+  <a href="#Pointer_Map">Pointer_Map</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="keyword1"><span class="command">record</span></span> <span class="tfree">'a</span> pointermap_impl <span class="main">=</span>
@@ -2032,7 +2032,7 @@ nor has it been made fully concrete: the data structures are decided, but not th
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Imparative implementation›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Conc_Impl
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pointer_Map_Impl.html">Pointer_Map_Impl</a> <a href="Middle_Impl.html">Middle_Impl</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pointer_Map_Impl">Pointer_Map_Impl</a> <a href="#Middle_Impl">Middle_Impl</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">record</span></span> bddi <span class="main">=</span>
@@ -2532,7 +2532,7 @@ nor has it been made fully concrete: the data structures are decided, but not th
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Collapsing the levels›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Level_Collapse
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Conc_Impl.html">Conc_Impl</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Conc_Impl">Conc_Impl</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
 The theory up to this point is implemented in a way that separated the different aspects into different levels.
@@ -2804,7 +2804,7 @@ Instead of using ifci, a combination of litci and iteci has to be used.›</span
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Tests and examples›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> BDD_Examples
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Level_Collapse.html">Level_Collapse</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Level_Collapse">Level_Collapse</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹Just two simple examples:›</span></span>
@@ -2838,7 +2838,7 @@ Instead of using ifci, a combination of litci and iteci has to be used.›</span
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Code export›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> BDD_Code
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Level_Collapse.html">Level_Collapse</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Level_Collapse">Level_Collapse</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹For convenience reasons, the code export is in a separate theory. For Haskell, we only have to reactivate the original equation for <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">term</span></span> <span class="quoted"><span class="quoted">blit</span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span>. Other languages might need an implementation for it.›</span></span>

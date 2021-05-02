@@ -55,7 +55,7 @@
         "Vertex_Walk",
         "Digraph_Component_Vwalk",
         "Digraph_Isomorphism",
-        "Funpow",
+        "Auxiliary",
         "Subdivision",
         "Euler",
         "Kuratowski",

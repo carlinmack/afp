@@ -4,9 +4,9 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Term_Utils
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Monad_Syntax.html">HOL-Library.Monad_Syntax</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/State_Monad.html">HOL-Library.State_Monad</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Monad_Syntax.html">HOL-Library.Monad_Syntax</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/State_Monad.html">HOL-Library.State_Monad</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">fun</span></span> <span class="entity">map2</span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -112,7 +112,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Find_First
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
   <span class="quoted">"<a href="../List-Index/List_Index.html">List-Index.List_Index</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
@@ -316,7 +316,7 @@
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Names as a unique datatype›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Name
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -447,8 +447,8 @@
 
 <span class="keyword1"><span class="command">theory</span></span> Fresh_Monad
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/State_Monad.html">HOL-Library.State_Monad</a>"</span>
-  <a href="Term_Utils.html">Term_Utils</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/State_Monad.html">HOL-Library.State_Monad</a>"</span>
+  <a href="#Term_Utils">Term_Utils</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -564,8 +564,8 @@
 
 <span class="keyword1"><span class="command">theory</span></span> Fresh_Class
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Fresh_Monad.html">Fresh_Monad</a>
-  <a href="Name.html">Name</a>
+  <a href="#Fresh_Monad">Fresh_Monad</a>
+  <a href="#Name">Name</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -650,10 +650,10 @@
 
 <span class="keyword1"><span class="command">theory</span></span> Term_Class
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../Datatype_Order_Generator/Order_Generator.html">Datatype_Order_Generator.Order_Generator</a>
-  <a href="Name.html">Name</a>
-  <a href="Term_Utils.html">Term_Utils</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Disjoint_FSets.html">HOL-Library.Disjoint_FSets</a>"</span>
+  <a href="../../datatype_order_generator/theories/#Order_Generator">Datatype_Order_Generator.Order_Generator</a>
+  <a href="#Name">Name</a>
+  <a href="#Term_Utils">Term_Utils</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Disjoint_FSets.html">HOL-Library.Disjoint_FSets</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">hide_type</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">open</span></span><span class="main">)</span> <span class="quoted">"term"</span>
@@ -1947,7 +1947,7 @@ nomatch<span class="main">:</span> <span class="quoted"><span class="quoted">"ma
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Instantiation of class <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>term›</span></span></span></span> for type <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>term›</span></span></span></span>›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Term
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Term_Class.html">Term_Class</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Term_Class">Term_Class</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">instantiation</span></span> <span class="quoted">"term"</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"term"</span></span> <span class="keyword2"><span class="keyword">begin</span></span>
@@ -2345,7 +2345,7 @@ nomatch<span class="main">:</span> <span class="quoted"><span class="quoted">"ma
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Wellformedness of patterns›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Pats
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Term.html">Term</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Term">Term</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2819,7 +2819,7 @@ nomatch<span class="main">:</span> <span class="quoted"><span class="quoted">"ma
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Terms with explicit bound variable names›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Nterm
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Term_Class.html">Term_Class</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Term_Class">Term_Class</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2948,10 +2948,10 @@ nomatch<span class="main">:</span> <span class="quoted"><span class="quoted">"ma
 
 <span class="keyword1"><span class="command">theory</span></span> Term_to_Nterm
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Fresh_Class.html">Fresh_Class</a>
-  <a href="Find_First.html">Find_First</a>
-  <a href="Term.html">Term</a>
-  <a href="Nterm.html">Nterm</a>
+  <a href="#Fresh_Class">Fresh_Class</a>
+  <a href="#Find_First">Find_First</a>
+  <a href="#Term">Term</a>
+  <a href="#Nterm">Nterm</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹<span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>α›</span></span></span></span>-equivalence›</span></span>
@@ -3609,8 +3609,8 @@ app<span class="main">:</span> <span class="quoted"><span class="quoted">"<span 
 
 <span class="keyword1"><span class="command">theory</span></span> Unification_Compat
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-ex/Unification.html">HOL-ex.Unification</a>"</span>
-  <a href="Term_Class.html">Term_Class</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-ex/Unification.html">HOL-ex.Unification</a>"</span>
+  <a href="#Term_Class">Term_Class</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3747,7 +3747,7 @@ app<span class="main">:</span> <span class="quoted"><span class="quoted">"<span 
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Instantiation for <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>λ›</span></span></span></span>-free terms according to Blanchette›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Lambda_Free_Compat
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Unification_Compat.html">Unification_Compat</a> <span class="quoted">"<a href="../Lambda_Free_RPOs/Lambda_Free_Term.html">Lambda_Free_RPOs.Lambda_Free_Term</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Unification_Compat">Unification_Compat</a> <span class="quoted">"<a href="../../lambda_free_rpos/theories/#Lambda_Free_Term">Lambda_Free_RPOs.Lambda_Free_Term</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹

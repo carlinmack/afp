@@ -4,7 +4,7 @@
 </div>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> CJDDLplus
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">nitpick_params</span></span><span class="main">[</span>user_axioms<span class="main">=</span>true<span class="main">,</span> show_all<span class="main">,</span> expect<span class="main">=</span>genuine<span class="main">,</span> format <span class="main">=</span> 3<span class="main">]</span>
 <span class="comment1">(*&gt;*)</span>
@@ -191,7 +191,7 @@ abbreviation ldvalid::"m⇒bool" ("⌊_⌋") where "⌊φ⌋ ≡ ∀c. ⌊φ⌋<
 </div>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> ExtendedDDL
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="CJDDLplus.html">CJDDLplus</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#CJDDLplus">CJDDLplus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">nitpick_params</span></span><span class="main">[</span>user_axioms<span class="main">=</span>true<span class="main">,</span> show_all<span class="main">,</span> expect<span class="main">=</span>genuine<span class="main">,</span> format <span class="main">=</span> 3<span class="main">]</span>
 <span class="comment1">(*&gt;*)</span>
@@ -280,7 +280,7 @@ use the necessitation rule for some inference steps.}›</span></span>
 </div>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> GewirthArgument
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="ExtendedDDL.html">ExtendedDDL</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#ExtendedDDL">ExtendedDDL</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">nitpick_params</span></span><span class="main">[</span>user_axioms<span class="main">=</span>true<span class="main">,</span> show_all<span class="main">,</span> expect<span class="main">=</span>genuine<span class="main">,</span> format <span class="main">=</span> 3<span class="main">]</span> 
 <span class="comment1">(*&gt;*)</span>

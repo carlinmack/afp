@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Address Graph›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Graph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -86,7 +86,7 @@ it returns the empty list otherwise.
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Marking Using a Set›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> SetMark
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Graph.html">Graph</a> <a href="../DataRefinementIBP/DataRefinement.html">DataRefinementIBP.DataRefinement</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Graph">Graph</a> <a href="../../datarefinementibp/theories/#DataRefinement">DataRefinementIBP.DataRefinement</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
@@ -422,7 +422,7 @@ ordering on pairs $(i,\, n)$ where $i\in I$ and $n\in \mathit{nat}$.
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Marking Using a Stack›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> StackMark
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="SetMark.html">SetMark</a> <a href="../DataRefinementIBP/DataRefinement.html">DataRefinementIBP.DataRefinement</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#SetMark">SetMark</a> <a href="../../datarefinementibp/theories/#DataRefinement">DataRefinementIBP.DataRefinement</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹
@@ -584,7 +584,7 @@ has distinct elements and the elements of the list and the set are the same.
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Generalization of Deutsch-Schorr-Waite Algorithm›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> LinkMark
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="StackMark.html">StackMark</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#StackMark">StackMark</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -914,7 +914,7 @@ modifying the variable $ \mathit{link}$ and $ \mathit{label}$.
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Deutsch-Schorr-Waite Marking Algorithm›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> DSWMark
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="LinkMark.html">LinkMark</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#LinkMark">LinkMark</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹

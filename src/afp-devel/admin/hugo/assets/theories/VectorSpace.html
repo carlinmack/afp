@@ -5,9 +5,9 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Basic facts about rings and modules›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> RingModuleFacts
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
   <span class="comment1">(*MonoidSums*)</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
@@ -134,8 +134,8 @@ This is the reverse of smult-assoc1.›</span></span><span class="comment1">(*Ad
 
 <span class="keyword1"><span class="command">theory</span></span> FunctionLemmas
 
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FuncSet.html">HOL-Library.FuncSet</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FuncSet.html">HOL-Library.FuncSet</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹These are used in simplification. Note that the difference from Pi-mem is that the statement
@@ -156,10 +156,10 @@ about the function comes first, so Isabelle can more easily figure out what $S$ 
 
 <span class="keyword1"><span class="command">theory</span></span> MonoidSums
 
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
-  <a href="RingModuleFacts.html">RingModuleFacts</a>
-  <a href="FunctionLemmas.html">FunctionLemmas</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
+  <a href="#RingModuleFacts">RingModuleFacts</a>
+  <a href="#FunctionLemmas">FunctionLemmas</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We build on the finite product simplifications in FiniteProduct.thy and the analogous ones
@@ -278,12 +278,12 @@ Note I had to dig back into the definitions of foldSet to show this.›</span></
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Linear Combinations›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> LinearCombinations
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
-  <a href="RingModuleFacts.html">RingModuleFacts</a>
-  <a href="MonoidSums.html">MonoidSums</a>
-  <a href="FunctionLemmas.html">FunctionLemmas</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
+  <a href="#RingModuleFacts">RingModuleFacts</a>
+  <a href="#MonoidSums">MonoidSums</a>
+  <a href="#FunctionLemmas">FunctionLemmas</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Lemmas for simplification›</span></span>
@@ -1142,13 +1142,13 @@ linear independence, span do not depend on the ambient module.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The direct sum of modules.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> SumSpaces
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
-  <a href="RingModuleFacts.html">RingModuleFacts</a>
-  <a href="MonoidSums.html">MonoidSums</a>
-  <a href="FunctionLemmas.html">FunctionLemmas</a>
-  <a href="LinearCombinations.html">LinearCombinations</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
+  <a href="#RingModuleFacts">RingModuleFacts</a>
+  <a href="#MonoidSums">MonoidSums</a>
+  <a href="#FunctionLemmas">FunctionLemmas</a>
+  <a href="#LinearCombinations">LinearCombinations</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We define the direct sum $M_1\oplus M_2$ of 2 vector spaces as the set $M_1\times M_2$ under
@@ -1360,13 +1360,13 @@ both $M_1\subseteq M$ and $M_2\subseteq M$.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Basic theory of vector spaces, using locales›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> VectorSpace
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
-  <a href="RingModuleFacts.html">RingModuleFacts</a>
-  <a href="MonoidSums.html">MonoidSums</a>
-  <a href="LinearCombinations.html">LinearCombinations</a>
-  <a href="SumSpaces.html">SumSpaces</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Module.html">HOL-Algebra.Module</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Algebra/Coset.html">HOL-Algebra.Coset</a>"</span>
+  <a href="#RingModuleFacts">RingModuleFacts</a>
+  <a href="#MonoidSums">MonoidSums</a>
+  <a href="#LinearCombinations">LinearCombinations</a>
+  <a href="#SumSpaces">SumSpaces</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Basic definitions and facts carried over from modules›</span></span>

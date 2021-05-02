@@ -1277,7 +1277,14 @@
                 "length_drop_mask",
                 "map_bits_rev_to_bl",
                 "of_bl_length2",
-                "of_bl_max"
+                "of_bl_max",
+                "sshiftr_clamp_pos",
+                "sshiftr_clamp_neg",
+                "sshiftr_clamp",
+                "sshiftr1_bl_of",
+                "sshiftr1_bl_of'",
+                "sshiftr_bl_of",
+                "sshiftr_bl"
             ]
         },
         {

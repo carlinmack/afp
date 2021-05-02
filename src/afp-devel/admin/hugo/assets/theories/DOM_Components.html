@@ -36,7 +36,7 @@
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹DOM Components›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Core_DOM_Components
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../Core_DOM/Core_DOM.html">Core_DOM.Core_DOM</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../core_dom/theories/#Core_DOM">Core_DOM.Core_DOM</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -2195,8 +2195,8 @@ set <span class="main">|</span><span class="free">h'</span> <span class="main">�
 
 <span class="keyword1"><span class="command">theory</span></span> Shadow_DOM_Components
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="../Shadow_DOM/Shadow_DOM.html">Shadow_DOM.Shadow_DOM</a>
-    <a href="Core_DOM_Components.html">Core_DOM_Components</a>
+    <a href="../../shadow_dom/theories/#Shadow_DOM">Shadow_DOM.Shadow_DOM</a>
+    <a href="#Core_DOM_Components">Core_DOM_Components</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹get\_component›</span></span>
@@ -3767,7 +3767,7 @@ distinct <span class="bound">assigned_nodes</span>›</span></span> <span class=
 
 <span class="keyword1"><span class="command">theory</span></span> fancy_tabs
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../Shadow_DOM/Shadow_DOM.html">Shadow_DOM.Shadow_DOM</a>"</span>
+  <span class="quoted">"<a href="../../shadow_dom/theories/#Shadow_DOM">Shadow_DOM.Shadow_DOM</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">fancy_tabs_heap</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"heap<span class="hidden">⇩</span><sub>f</sub><span class="hidden">⇩</span><sub>i</sub><span class="hidden">⇩</span><sub>n</sub><span class="hidden">⇩</span><sub>a</sub><span class="hidden">⇩</span><sub>l</sub>"</span></span> <span class="keyword2"><span class="keyword">where</span></span>

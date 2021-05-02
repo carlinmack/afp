@@ -1,7 +1,17 @@
-* Replaced search autocomplete with a datalist
 * Changed download links on download page to be buttons
-* Change the about section to be more relevant to the redesign
+* Change the about section to be more relevant to the redesign, and add a box around this
 * Add banner
-* Show "Browse theories" link if theory asset page not found
-* Standardise the entry attributes to be a bullet pointed list rather than a written list
-* Replace logo with SVG
+* Replace logo with SVG, reverted this
+* Fixes to improve UI on narrow displays
+    * Banner, home search box, side menu
+* Fix the browse theories dependencies links to go to AFP/Isabelle library as appropriate
+
+Entries
+    * Show "Browse theories" link if theory asset page not found
+    * Standardise the entry attributes to be a bullet pointed list rather than a written list
+
+Search 
+    * Replaced search autocomplete with a datalist
+    * Search headings now always show even if no results
+    * Fix the show more buttons
+    * Fix topic links in search

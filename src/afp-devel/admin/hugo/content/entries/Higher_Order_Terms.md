@@ -35,7 +35,6 @@
         "Fresh_Monad",
         "Fresh_Class",
         "Term_Class",
-        "Term_Utils",
         "Term",
         "Pats",
         "Nterm",

@@ -4,7 +4,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Indexed_FSet
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹It is convenient to address the members of a finite set by a natural number, and
@@ -101,10 +101,10 @@ also to convert a finite set to a list.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Abstract_Formula
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
-  <a href="Indexed_FSet.html">Indexed_FSet</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+  <a href="#Indexed_FSet">Indexed_FSet</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -212,10 +212,10 @@ of a substitution.
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Signatures
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a> 
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
-  <a href="Abstract_Formula.html">Abstract_Formula</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+  <a href="#Abstract_Formula">Abstract_Formula</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory contains the definition for proof graph signatures, in the variants
@@ -286,11 +286,11 @@ of a substitution.
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Deduction
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a> 
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
-  <a href="Incredible_Signatures.html">Incredible_Signatures</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+  <a href="#Incredible_Signatures">Incredible_Signatures</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory contains the definition for actual proof graphs, and their various possible
@@ -819,7 +819,7 @@ corresponding input port may mention such a locally scoped variable in its subst
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Abstract_Rules
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_Formula.html">Abstract_Formula</a>
+  <a href="#Abstract_Formula">Abstract_Formula</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -949,11 +949,11 @@ Both assumptions and conclusions are closed expressions that may not be changed 
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Abstract_Rules_To_Incredible
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a> 
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
-  <a href="Incredible_Deduction.html">Incredible_Deduction</a>
-  <a href="Abstract_Rules.html">Abstract_Rules</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+  <a href="#Incredible_Deduction">Incredible_Deduction</a>
+  <a href="#Abstract_Rules">Abstract_Rules</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹In this theory, the abstract rules given in <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">theory</span></span> <a href="Abstract_Rules.html"></a><a href="Abstract_Rules.html">Incredible_Proof_Machine.Abstract_Rules</a><span class="antiquote"><span class="antiquote">}</span></span></span></span> are used to
@@ -1079,7 +1079,7 @@ as conclusion blocks in the graph.›</span></span>
 <h1>Theory Entailment</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Entailment
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">type_synonym</span></span> <span class="tfree">'form</span> entailment <span class="main">=</span> <span class="quoted"><span class="quoted">"<span class="main">(</span><span class="tfree">'form</span> fset <span class="main">×</span> <span class="tfree">'form</span><span class="main">)</span>"</span></span>
@@ -1098,9 +1098,9 @@ as conclusion blocks in the graph.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Natural_Deduction
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../Abstract_Completeness/Abstract_Completeness.html">Abstract_Completeness.Abstract_Completeness</a>
-  <a href="Abstract_Rules.html">Abstract_Rules</a>
-  <a href="Entailment.html">Entailment</a>
+  <a href="../../abstract_completeness/theories/#Abstract_Completeness">Abstract_Completeness.Abstract_Completeness</a>
+  <a href="#Abstract_Rules">Abstract_Rules</a>
+  <a href="#Entailment">Entailment</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Our formalization of natural deduction builds on <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">theory</span></span> <a href="../Abstract_Completeness/Abstract_Completeness.html"></a><a href="../Abstract_Completeness/Abstract_Completeness.html">Abstract_Completeness.Abstract_Completeness</a><span class="antiquote"><span class="antiquote">}</span></span></span></span> and refines and
@@ -1192,8 +1192,8 @@ consequent per rule›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Correctness
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_Rules_To_Incredible.html">Abstract_Rules_To_Incredible</a>
-  <a href="Natural_Deduction.html">Natural_Deduction</a>
+  <a href="#Abstract_Rules_To_Incredible">Abstract_Rules_To_Incredible</a>
+  <a href="#Natural_Deduction">Natural_Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -1749,7 +1749,7 @@ represented as the context <span class="antiquoted"><span class="antiquoted"><sp
 <h1>Theory Rose_Tree</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Rose_Tree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Sublist.html">HOL-Library.Sublist</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Sublist.html">HOL-Library.Sublist</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹For theory <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><span class="raw_text"><span class="operator"><span class="operator">‹</span></span>Incredible_Trees›</span></span></span></span> we need rose trees; this theory contains
@@ -1852,11 +1852,11 @@ the generally useful part of that development.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Trees
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Sublist.html">HOL-Library.Sublist</a>"</span> 
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
-  <a href="Entailment.html">Entailment</a>
-  <a href="Rose_Tree.html">Rose_Tree</a>
-  <a href="Abstract_Rules_To_Incredible.html">Abstract_Rules_To_Incredible</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Sublist.html">HOL-Library.Sublist</a>"</span> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
+  <a href="#Entailment">Entailment</a>
+  <a href="#Rose_Tree">Rose_Tree</a>
+  <a href="#Abstract_Rules_To_Incredible">Abstract_Rules_To_Incredible</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory defines incredible trees, which carry roughly the same information
@@ -2498,7 +2498,7 @@ local constants occurring anywhere else in the tree.›</span></span>
 <h1>Theory Build_Incredible_Tree</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Build_Incredible_Tree
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Incredible_Trees.html">Incredible_Trees</a> <a href="Natural_Deduction.html">Natural_Deduction</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Incredible_Trees">Incredible_Trees</a> <a href="#Natural_Deduction">Natural_Deduction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2656,7 +2656,7 @@ deduction tree.
 <h1>Theory Incredible_Completeness</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Completeness
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Natural_Deduction.html">Natural_Deduction</a> <a href="Incredible_Deduction.html">Incredible_Deduction</a> <a href="Build_Incredible_Tree.html">Build_Incredible_Tree</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Natural_Deduction">Natural_Deduction</a> <a href="#Incredible_Deduction">Incredible_Deduction</a> <a href="#Build_Incredible_Tree">Build_Incredible_Tree</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3351,7 +3351,7 @@ This theory takes the tree produced in <span class="antiquoted"><span class="ant
 </div>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Incredible_Everything
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Incredible_Correctness.html">Incredible_Correctness</a> <a href="Incredible_Completeness.html">Incredible_Completeness</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Incredible_Correctness">Incredible_Correctness</a> <a href="#Incredible_Completeness">Incredible_Completeness</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* This file depends on all theory, to have a single entry point. *)</span>
@@ -3368,9 +3368,9 @@ This theory takes the tree produced in <span class="antiquoted"><span class="ant
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Propositional_Formulas
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_Formula.html">Abstract_Formula</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
+  <a href="#Abstract_Formula">Abstract_Formula</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">class</span></span> infinite <span class="main">=</span>
@@ -3483,8 +3483,8 @@ This theory takes the tree produced in <span class="antiquoted"><span class="ant
 <h1>Theory Incredible_Propositional</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Propositional <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_Rules_To_Incredible.html">Abstract_Rules_To_Incredible</a>
-  <a href="Propositional_Formulas.html">Propositional_Formulas</a>
+  <a href="#Abstract_Rules_To_Incredible">Abstract_Rules_To_Incredible</a>
+  <a href="#Propositional_Formulas">Propositional_Formulas</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Our concrete interpretation with propositional logic will cover conjunction and implication
@@ -3561,8 +3561,8 @@ This theory takes the tree produced in <span class="antiquoted"><span class="ant
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Propositional_Tasks
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Incredible_Completeness.html">Incredible_Completeness</a>
-  <a href="Incredible_Propositional.html">Incredible_Propositional</a>
+  <a href="#Incredible_Completeness">Incredible_Completeness</a>
+  <a href="#Incredible_Propositional">Incredible_Propositional</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> ND_Rules_Inst <span class="keyword2"><span class="keyword">begin</span></span>
@@ -3892,10 +3892,10 @@ This theory takes the tree produced in <span class="antiquoted"><span class="ant
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Predicate_Formulas
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
-  <a href="Abstract_Formula.html">Abstract_Formula</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Countable.html">HOL-Library.Countable</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <a href="#Abstract_Formula">Abstract_Formula</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory contains an example instantiation of <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">term</span></span> <span class="quoted"><span class="quoted">Abstract_Formulas</span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span> with an 
@@ -4159,8 +4159,8 @@ a hack to support lemma  <span class="antiquoted"><span class="raw_text"><span c
 <h1>Theory Incredible_Predicate</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Predicate <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Abstract_Rules_To_Incredible.html">Abstract_Rules_To_Incredible</a>
-  <a href="Predicate_Formulas.html">Predicate_Formulas</a>
+  <a href="#Abstract_Rules_To_Incredible">Abstract_Rules_To_Incredible</a>
+  <a href="#Predicate_Formulas">Predicate_Formulas</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Our example interpretation with predicate logic will cover implication and the
@@ -4251,9 +4251,9 @@ a hack to support lemma  <span class="antiquoted"><span class="raw_text"><span c
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Incredible_Predicate_Tasks
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Incredible_Completeness.html">Incredible_Completeness</a>
-  <a href="Incredible_Predicate.html">Incredible_Predicate</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <a href="#Incredible_Completeness">Incredible_Completeness</a>
+  <a href="#Incredible_Predicate">Incredible_Predicate</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">declare</span></span> One_nat_def <span class="main">[</span><span class="operator">simp</span> <span class="quasi_keyword">del</span><span class="main">]</span>

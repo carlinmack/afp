@@ -2,6 +2,7 @@
     "theories": [
         {
             "PermutationLemmas": [
+                "count_eq",
                 "perm_count",
                 "count_0",
                 "count_Suc",

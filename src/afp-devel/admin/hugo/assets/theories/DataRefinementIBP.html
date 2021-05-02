@@ -5,8 +5,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Preliminaries›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Preliminaries
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="../LatticeProperties/Complete_Lattice_Prop.html">LatticeProperties.Complete_Lattice_Prop</a> 
-  <a href="../LatticeProperties/Conj_Disj.html">LatticeProperties.Conj_Disj</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="../../latticeproperties/theories/#Complete_Lattice_Prop">LatticeProperties.Complete_Lattice_Prop</a> 
+  <a href="../../latticeproperties/theories/#Conj_Disj">LatticeProperties.Conj_Disj</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">notation</span></span>
@@ -46,7 +46,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Program Statements as Predicate Transformers›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Statements
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Preliminaries.html">Preliminaries</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Preliminaries">Preliminaries</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -206,7 +206,7 @@ is enabled or fails.
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Hoare Triples›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Hoare
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Statements.html">Statements</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Statements">Statements</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -381,7 +381,7 @@ the recursive program is correct $\models SUP\ p\ \{| lfp\  F |\}\  y$
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Predicate Transformers Semantics of Invariant Diagrams›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Diagram
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Hoare.html">Hoare</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Hoare">Hoare</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -693,7 +693,7 @@ The following definition introduces the concept of correct Hoare triples for dia
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Data Refinement of Diagrams›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> DataRefinement
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Diagram.html">Diagram</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Diagram">Diagram</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹

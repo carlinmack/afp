@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Sequences as Lists›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Sequences
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> Sequences 
@@ -32,7 +32,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹I/O Automata with Finite-Trace Semantics›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> IOA
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="Sequences.html">Sequences</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#Sequences">Sequences</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory is inspired and draws material from the IOA theory of Nipkow and Müller›</span></span>
@@ -427,7 +427,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Recoverable Data Types›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> RDR
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="Sequences.html">Sequences</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#Sequences">Sequences</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹The pre-RDR locale contains definitions later used in the RDR locale 
@@ -709,7 +709,7 @@
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The SLin Automata specification›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> SLin
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="IOA.html">IOA</a> <a href="RDR.html">RDR</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#IOA">IOA</a> <a href="#RDR">RDR</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">datatype</span></span> <span class="main">(</span><span class="tfree">'a</span><span class="main">,</span><span class="tfree">'b</span><span class="main">,</span><span class="tfree">'c</span><span class="main">,</span><span class="tfree">'d</span><span class="main">)</span>SLin_action <span class="main">=</span>
@@ -861,7 +861,7 @@
   Forward Simulations and Backward Simulations›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Simulations
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="IOA.html">IOA</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#IOA">IOA</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> IOA
@@ -1156,7 +1156,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Idempotence of the SLin I/O automaton›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Idempotence
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="SLin.html">SLin</a> <a href="Simulations.html">Simulations</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#SLin">SLin</a> <a href="#Simulations">Simulations</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> Idempotence <span class="main">=</span> SLin <span class="main">+</span>
@@ -3108,7 +3108,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The Consensus Data Type›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Consensus
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="RDR.html">RDR</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#RDR">RDR</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹This theory provides a model for the RDR locale, thus showing 

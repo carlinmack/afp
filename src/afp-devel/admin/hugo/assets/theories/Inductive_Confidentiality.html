@@ -13,7 +13,7 @@ Inductive relations "parts", "analz" and "synth"
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Agents and Messages for Security Protocols against Dolev-Yao›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Message
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*Needed occasionally with spy_analz_tac, e.g. in analz_insert_Key_newK*)</span>
@@ -955,7 +955,7 @@ Datatype of events; function "spies"; freshness
 
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Events for Security Protocols against Dolev-Yao›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> Event <span class="keyword2"><span class="keyword">imports</span></span> <a href="Message.html">Message</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> Event <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Message">Message</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">consts</span></span>  <span class="comment1">(*Initial states of agents -- parameter of the construction*)</span>
   initState <span class="main">::</span> <span class="quoted"><span class="quoted">"agent <span class="main">=&gt;</span> msg set"</span></span>
@@ -1271,7 +1271,7 @@ Datatype of events; function "spies"; freshness
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Cryptographic Keys for Security Protocols against Dolev-Yao›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Public
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Event.html">Event</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Event">Event</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Public-invKey_K"><span class="command">lemma</span></span> invKey_K<span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">K</span> <span class="main">∈</span> symKeys <span class="main">==&gt;</span> invKey <span class="free">K</span> <span class="main">=</span> <span class="free">K</span>"</span></span>
@@ -1720,7 +1720,7 @@ Session Key Compromise Theorem›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹The Needham-Schroeder Public-Key Protocol against Dolev-Yao --- with Gets event, hence with Reception rule›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> NS_Public_Bad <span class="keyword2"><span class="keyword">imports</span></span> <a href="Public.html">Public</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> NS_Public_Bad <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Public">Public</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">inductive_set</span></span> <span class="entity">ns_public</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"event list set"</span></span>
   <span class="keyword2"><span class="keyword">where</span></span>
@@ -1948,7 +1948,7 @@ was sent›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Inductive Study of Confidentiality against Dolev-Yao›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> ConfidentialityDY <span class="keyword2"><span class="keyword">imports</span></span> <a href="NS_Public_Bad.html">NS_Public_Bad</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> ConfidentialityDY <span class="keyword2"><span class="keyword">imports</span></span> <a href="#NS_Public_Bad">NS_Public_Bad</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Existing study - fully spelled out›</span></span>
 
@@ -2288,7 +2288,7 @@ apply (force dest: <span class="antiquoted"><span class="antiquoted"><span class
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Agents and Messages for Security Protocols against the General Attacker›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> MessageGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> MessageGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*Needed occasionally with spy_analz_tac, e.g. in analz_insert_Key_newK*)</span>
 <span class="keyword1"><span class="command">lemma</span></span> <span class="main">[</span><span class="operator">simp</span><span class="main">]</span> <span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">A</span> <span class="main">∪</span> <span class="main">(</span><span class="free">B</span> <span class="main">∪</span> <span class="free">A</span><span class="main">)</span> <span class="main">=</span> <span class="free">B</span> <span class="main">∪</span> <span class="free">A</span>"</span></span>
@@ -3222,7 +3222,7 @@ rewritten, and others will not!›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Events for Security Protocols against the General Attacker›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> EventGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="MessageGA.html">MessageGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> EventGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="#MessageGA">MessageGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">consts</span></span>  <span class="comment1">(*Initial states of agents -- parameter of the construction*)</span>
   initState <span class="main">::</span> <span class="quoted"><span class="quoted">"agent <span class="main">=&gt;</span> msg set"</span></span>
@@ -3428,7 +3428,7 @@ rewritten, and others will not!›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Theory of Cryptographic Keys for Security Protocols against the General Attacker›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> PublicGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="EventGA.html">EventGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> PublicGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="#EventGA">EventGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="PublicGA-invKey_K"><span class="command">lemma</span></span> invKey_K<span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">K</span> <span class="main">∈</span> symKeys <span class="main">⟹</span> invKey <span class="free">K</span> <span class="main">=</span> <span class="free">K</span>"</span></span>
 <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> symKeys_def<span class="main">)</span>
@@ -3845,7 +3845,7 @@ Session Key Compromise Theorem›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹The Needham-Schroeder Public-Key Protocol against the General Attacker›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span> NS_Public_Bad_GA <span class="keyword2"><span class="keyword">imports</span></span> <a href="PublicGA.html">PublicGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span> NS_Public_Bad_GA <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PublicGA">PublicGA</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">inductive_set</span></span> <span class="entity">ns_public</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"event list set"</span></span>
   <span class="keyword2"><span class="keyword">where</span></span>
@@ -3889,7 +3889,7 @@ Session Key Compromise Theorem›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Inductive Study of Confidentiality against the General Attacker›</span></span>
 
-<span class="keyword1"><span class="command">theory</span></span>  ConfidentialityGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="NS_Public_Bad_GA.html">NS_Public_Bad_GA</a> <span class="keyword2"><span class="keyword">begin</span></span>
+<span class="keyword1"><span class="command">theory</span></span>  ConfidentialityGA <span class="keyword2"><span class="keyword">imports</span></span> <a href="#NS_Public_Bad_GA">NS_Public_Bad_GA</a> <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹New subsidiary lemmas to reason on a generic agent initial state›</span></span>
 
@@ -4121,7 +4121,7 @@ apply (blast dest: analz_insert_analz)
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Study on knowledge equivalence --- results to relate the knowledge of an agent to that of another's›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Knowledge
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="NS_Public_Bad_GA.html">NS_Public_Bad_GA</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#NS_Public_Bad_GA">NS_Public_Bad_GA</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*Protocol independent study*)</span>

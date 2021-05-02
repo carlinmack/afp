@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Coinductive lists›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> MoreCoinductiveList2
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../Parity_Game/MoreCoinductiveList.html">Parity_Game.MoreCoinductiveList</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../parity_game/theories/#MoreCoinductiveList">Parity_Game.MoreCoinductiveList</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="MoreCoinductiveList2-ltake_infinity"><span class="command">lemma</span></span> ltake_infinity<span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">"ltake <span class="main">∞</span> <span class="free">x</span> <span class="main">=</span> <span class="free">x</span>"</span></span> <span class="keyword1"><span class="command">by</span></span> <span class="main">(</span><span class="operator">simp</span> <span class="quasi_keyword">add</span><span class="main"><span class="main">:</span></span> ltake_all<span class="main">)</span>
@@ -64,7 +64,7 @@
       some lemmas that should help with that.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> MoreENat
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="MoreCoinductiveList2.html">MoreCoinductiveList2</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#MoreCoinductiveList2">MoreCoinductiveList2</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="MoreENat-eSuc_n_not_le_n"><span class="command">lemma</span></span> eSuc_n_not_le_n<span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span>
@@ -127,7 +127,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Extra theorems on prefixes of Lists and their coinductive counterparts›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> MorePrefix
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="MoreCoinductiveList2.html">MoreCoinductiveList2</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#MoreCoinductiveList2">MoreCoinductiveList2</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹ Reasoning about prefixes ›</span></span>
@@ -283,7 +283,7 @@
       do exactly this, and define certain properties.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> AlternatingLists
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="MoreCoinductiveList2.html">MoreCoinductiveList2</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#MoreCoinductiveList2">MoreCoinductiveList2</a> <span class="comment1">(* for notation and lemmas like infinite_small_llength *)</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The functions ``alternate" and ``lalternate" are our main workhorses:
@@ -432,7 +432,7 @@
    Annals of Mathematics Studies 28, Princeton University Press (1953), pp 245–266. *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> GaleStewartGames
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="AlternatingLists.html">AlternatingLists</a> <a href="MorePrefix.html">MorePrefix</a> <a href="MoreENat.html">MoreENat</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#AlternatingLists">AlternatingLists</a> <a href="#MorePrefix">MorePrefix</a> <a href="#MoreENat">MoreENat</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Basic definitions and their properties.›</span></span>
@@ -839,7 +839,7 @@
        so these strategies are a crucial step towards proving that such games are determined.
         ›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> GaleStewartDefensiveStrategies
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="GaleStewartGames.html">GaleStewartGames</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#GaleStewartGames">GaleStewartGames</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">context</span></span> GSgame
@@ -1077,7 +1077,7 @@
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Determined games›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> GaleStewartDeterminedGames
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="GaleStewartDefensiveStrategies.html">GaleStewartDefensiveStrategies</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#GaleStewartDefensiveStrategies">GaleStewartDefensiveStrategies</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> closed_GSgame <span class="main">=</span> GSgame <span class="main">+</span>

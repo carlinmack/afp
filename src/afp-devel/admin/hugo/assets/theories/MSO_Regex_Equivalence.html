@@ -5,7 +5,7 @@
 <pre class="source"><span class="comment1">(* Author: Dmitry Traytel *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> List_More
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../List-Index/List_Index.html">List-Index.List_Index</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Library/Multiset.html">HOL-Library.Multiset</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../List-Index/List_Index.html">List-Index.List_Index</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Multiset.html">HOL-Library.Multiset</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Library Functions›</span></span>
@@ -154,7 +154,7 @@
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Regular_Set
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -717,8 +717,8 @@
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Regular_Exp
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Regular_Set.html">Pi_Regular_Set</a> <span class="quoted">"<a href="../../HOL/HOL-Library/List_Lexorder.html">HOL-Library.List_Lexorder</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Library/Code_Target_Nat.html">HOL-Library.Code_Target_Nat</a>"</span>
-  <a href="../Deriving/Compare_Instances.html">Deriving.Compare_Instances</a>   
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Regular_Set">Pi_Regular_Set</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/List_Lexorder.html">HOL-Library.List_Lexorder</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Code_Target_Nat.html">HOL-Library.Code_Target_Nat</a>"</span>
+  <a href="../../deriving/theories/#Compare_Instances">Deriving.Compare_Instances</a>   
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Syntax of regular expressions›</span></span>
@@ -1144,7 +1144,7 @@
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Derivatives of $\Pi$-Extended Regular Expressions›</span></span>
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Derivatives
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Regular_Exp.html">Pi_Regular_Exp</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Regular_Exp">Pi_Regular_Exp</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -1500,7 +1500,7 @@
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Regular_Operators
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Derivatives.html">Pi_Derivatives</a> <span class="quoted">"<a href="../../HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Derivatives">Pi_Derivatives</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2059,7 +2059,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Regular_Exp_Dual
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Derivatives.html">Pi_Derivatives</a> <span class="quoted">"<a href="../../HOL/HOL-Library/List_Lexorder.html">HOL-Library.List_Lexorder</a>"</span> <span class="quoted">"<a href="../../HOL/HOL-Library/Code_Target_Nat.html">HOL-Library.Code_Target_Nat</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Derivatives">Pi_Derivatives</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/List_Lexorder.html">HOL-Library.List_Lexorder</a>"</span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Code_Target_Nat.html">HOL-Library.Code_Target_Nat</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Syntax of regular expressions›</span></span>
@@ -2398,7 +2398,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Pi_Equivalence_Checking
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Regular_Exp.html">Pi_Regular_Exp</a> <span class="quoted">"<a href="../../HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span> <a href="List_More.html">List_More</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Regular_Exp">Pi_Regular_Exp</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span> <a href="#List_More">List_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -2953,7 +2953,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Init_Normalization
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Regular_Exp.html">Pi_Regular_Exp</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Simps_Case_Conv.html">HOL-Library.Simps_Case_Conv</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Regular_Exp">Pi_Regular_Exp</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Simps_Case_Conv.html">HOL-Library.Simps_Case_Conv</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3227,7 +3227,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> PNormalization
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Derivatives.html">Pi_Derivatives</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Derivatives">Pi_Derivatives</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3353,7 +3353,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Formula
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Pi_Regular_Operators.html">Pi_Regular_Operators</a> <a href="List_More.html">List_More</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Pi_Regular_Operators">Pi_Regular_Operators</a> <a href="#List_More">List_More</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -3566,7 +3566,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> M2L
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Formula.html">Formula</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Formula">Formula</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4736,7 +4736,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> M2L_Normalization
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="M2L.html">M2L</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#M2L">M2L</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4803,11 +4803,11 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> M2L_Equivalence_Checking
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Pi_Equivalence_Checking.html">Pi_Equivalence_Checking</a>
-  <a href="PNormalization.html">PNormalization</a>
-  <a href="Init_Normalization.html">Init_Normalization</a>
-  <a href="M2L_Normalization.html">M2L_Normalization</a>
-  <a href="Pi_Regular_Exp_Dual.html">Pi_Regular_Exp_Dual</a>
+  <a href="#Pi_Equivalence_Checking">Pi_Equivalence_Checking</a>
+  <a href="#PNormalization">PNormalization</a>
+  <a href="#Init_Normalization">Init_Normalization</a>
+  <a href="#M2L_Normalization">M2L_Normalization</a>
+  <a href="#Pi_Regular_Exp_Dual">Pi_Regular_Exp_Dual</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -4983,7 +4983,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> WS1S
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Formula.html">Formula</a> <a href="Pi_Regular_Operators.html">Pi_Regular_Operators</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Formula">Formula</a> <a href="#Pi_Regular_Operators">Pi_Regular_Operators</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -6513,7 +6513,7 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> WS1S_Normalization
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="WS1S.html">WS1S</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#WS1S">WS1S</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -6580,11 +6580,11 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> WS1S_Equivalence_Checking
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Pi_Equivalence_Checking.html">Pi_Equivalence_Checking</a>
-  <a href="PNormalization.html">PNormalization</a>
-  <a href="Init_Normalization.html">Init_Normalization</a>
-  <a href="WS1S_Normalization.html">WS1S_Normalization</a>
-  <a href="Pi_Regular_Exp_Dual.html">Pi_Regular_Exp_Dual</a>
+  <a href="#Pi_Equivalence_Checking">Pi_Equivalence_Checking</a>
+  <a href="#PNormalization">PNormalization</a>
+  <a href="#Init_Normalization">Init_Normalization</a>
+  <a href="#WS1S_Normalization">WS1S_Normalization</a>
+  <a href="#Pi_Regular_Exp_Dual">Pi_Regular_Exp_Dual</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="comment1">(*&gt;*)</span>
 
@@ -6759,8 +6759,8 @@ lemma wf_biderivs[simp]: "wf n r ⟹ wf n (biderivs w1 w2 r)"
 <pre class="source"><span class="comment1">(* Author: Dmitriy Traytel *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> M2L_Examples
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="M2L_Equivalence_Checking.html">M2L_Equivalence_Checking</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Char_ord.html">HOL-Library.Char_ord</a>"</span>
-    <span class="quoted">"<a href="../../HOL/HOL-Library/Product_Lexorder.html">HOL-Library.Product_Lexorder</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#M2L_Equivalence_Checking">M2L_Equivalence_Checking</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Char_ord.html">HOL-Library.Char_ord</a>"</span>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Product_Lexorder.html">HOL-Library.Product_Lexorder</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">abbreviation</span></span> <span class="entity">FALSE</span> <span class="keyword2"><span class="keyword">where</span></span> <span class="quoted"><span class="quoted">"<span class="free">FALSE</span> <span class="main">≡</span> FExists <span class="main">(</span>FLess <span class="main">0</span> <span class="main">0</span><span class="main">)</span>"</span></span>
@@ -6871,8 +6871,8 @@ ML {* PolyML.timing true; open M2L_Thm1_slow; thm1_slow (Nat 0); thm1_slow (Nat 
 <pre class="source"><span class="comment1">(* Author: Dmitriy Traytel *)</span>
 
 <span class="keyword1"><span class="command">theory</span></span> WS1S_Examples
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="WS1S_Equivalence_Checking.html">WS1S_Equivalence_Checking</a> <span class="quoted">"<a href="../../HOL/HOL-Library/Char_ord.html">HOL-Library.Char_ord</a>"</span>
-    <span class="quoted">"<a href="../../HOL/HOL-Library/Product_Lexorder.html">HOL-Library.Product_Lexorder</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#WS1S_Equivalence_Checking">WS1S_Equivalence_Checking</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Char_ord.html">HOL-Library.Char_ord</a>"</span>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Product_Lexorder.html">HOL-Library.Product_Lexorder</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">abbreviation</span></span> <span class="entity">FALSE</span> <span class="keyword2"><span class="keyword">where</span></span> <span class="quoted"><span class="quoted">"<span class="free">FALSE</span> <span class="main">≡</span> FExists <span class="main">(</span>FLess <span class="main">0</span> <span class="main">0</span><span class="main">)</span>"</span></span>

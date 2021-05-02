@@ -5,9 +5,9 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Commonly used Lemmas›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Common
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Extended_Nat.html">HOL-Library.Extended_Nat</a>"</span> 
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Extended_Nat.html">HOL-Library.Extended_Nat</a>"</span> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">declare</span></span> <span class="main">[</span><span class="main">[</span><span class="operator">coercion_enabled</span> <span class="main"><span class="main">=</span></span> <span class="quasi_keyword">false</span><span class="main">]</span><span class="main">]</span>
@@ -244,7 +244,7 @@
 ›</span></span>
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Chapter_Prim
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
 <span class="comment1">(*&gt;*)</span>
 </pre>
 </div><div id="Undirected_Graph">
@@ -254,7 +254,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span>  <span class="quoted"><span class="plain_text">‹Undirected Graphs›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Undirected_Graph
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Common.html">Common</a>
+  <a href="#Common">Common</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Nodes and Edges›</span></span>  
 
@@ -1423,7 +1423,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Abstract Graph Datatype›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Undirected_Graph_Specs
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Undirected_Graph.html">Undirected_Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Undirected_Graph">Undirected_Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Abstract Weighted Graph›</span></span>
@@ -1614,10 +1614,10 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Abstract Prim Algorithm›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Prim_Abstract
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="../../HOL/HOL/Main.html">Main</a> 
-  <a href="Common.html">Common</a>
-  <a href="Undirected_Graph.html">Undirected_Graph</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
+  <a href="#Common">Common</a>
+  <a href="#Undirected_Graph">Undirected_Graph</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
     
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Generic Algorithm: Light Edges\label{sec:generic_mst}›</span></span>
@@ -2541,9 +2541,9 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Implementation of Weighted Undirected Graph by Map›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Undirected_Graph_Impl
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <span class="quoted">"<a href="../../HOL/HOL-Data_Structures/Map_Specs.html">HOL-Data_Structures.Map_Specs</a>"</span>
-  <a href="Common.html">Common</a>
-  <a href="Undirected_Graph_Specs.html">Undirected_Graph_Specs</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Data_Structures/Map_Specs.html">HOL-Data_Structures.Map_Specs</a>"</span>
+  <a href="#Common">Common</a>
+  <a href="#Undirected_Graph_Specs">Undirected_Graph_Specs</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Doubleton Set to Pair›</span></span>
@@ -2738,11 +2738,11 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Implementation of Prim's Algorithm›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Prim_Impl
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Prim_Abstract.html">Prim_Abstract</a>
-  <a href="Undirected_Graph_Impl.html">Undirected_Graph_Impl</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
-  <span class="quoted">"<a href="../Priority_Search_Trees/PST_RBT.html">Priority_Search_Trees.PST_RBT</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Data_Structures/RBT_Map.html">HOL-Data_Structures.RBT_Map</a>"</span>
+  <a href="#Prim_Abstract">Prim_Abstract</a>
+  <a href="#Undirected_Graph_Impl">Undirected_Graph_Impl</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
+  <span class="quoted">"<a href="../../priority_search_trees/theories/#PST_RBT">Priority_Search_Trees.PST_RBT</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Data_Structures/RBT_Map.html">HOL-Data_Structures.RBT_Map</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -3245,7 +3245,7 @@
 ›</span></span>
 <span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Chapter_Dijkstra
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
 <span class="comment1">(*&gt;*)</span>
 </pre>
 </div><div id="Directed_Graph">
@@ -3254,7 +3254,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Weighted Directed Graphs›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Directed_Graph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Common.html">Common</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Common">Common</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3400,7 +3400,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Abstract Datatype for Weighted Directed Graphs›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Directed_Graph_Specs
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Directed_Graph.html">Directed_Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Directed_Graph">Directed_Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> adt_wgraph <span class="main">=</span>
@@ -3534,7 +3534,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Abstract Dijkstra Algorithm›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Dijkstra_Abstract
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Directed_Graph.html">Directed_Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Directed_Graph">Directed_Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Abstract Algorithm›</span></span>
@@ -3927,8 +3927,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Weighted Digraph Implementation by Adjacency Map›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Directed_Graph_Impl
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Directed_Graph_Specs.html">Directed_Graph_Specs</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Data_Structures/Map_Specs.html">HOL-Data_Structures.Map_Specs</a>"</span>
+  <a href="#Directed_Graph_Specs">Directed_Graph_Specs</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Data_Structures/Map_Specs.html">HOL-Data_Structures.Map_Specs</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> wgraph_by_map <span class="main">=</span> 
@@ -4000,11 +4000,11 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Implementation of Dijkstra's Algorithm›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Dijkstra_Impl
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Dijkstra_Abstract.html">Dijkstra_Abstract</a>
-  <span class="quoted">"<a href="Directed_Graph_Impl.html">Directed_Graph_Impl</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
-  <span class="quoted">"<a href="../Priority_Search_Trees/PST_RBT.html">Priority_Search_Trees.PST_RBT</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Data_Structures/RBT_Map.html">HOL-Data_Structures.RBT_Map</a>"</span>
+  <a href="#Dijkstra_Abstract">Dijkstra_Abstract</a>
+  <span class="quoted">"<a href="#Directed_Graph_Impl">Directed_Graph_Impl</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/While_Combinator.html">HOL-Library.While_Combinator</a>"</span>
+  <span class="quoted">"<a href="../../priority_search_trees/theories/#PST_RBT">Priority_Search_Trees.PST_RBT</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Data_Structures/RBT_Map.html">HOL-Data_Structures.RBT_Map</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Implementation using ADT Interfaces›</span></span>

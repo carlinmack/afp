@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Type Application›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> TypeApp
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOLCF/HOLCF.html">HOLCF</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOLCF/HOLCF.html">HOLCF</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Class of type constructors›</span></span>
@@ -79,7 +79,7 @@ which we can use to derive other useful lemmas. \medskip›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Coercion Operator›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Coerce
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOLCF/HOLCF.html">HOLCF</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOLCF/HOLCF.html">HOLCF</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Coerce›</span></span>
@@ -279,7 +279,7 @@ for various HOLCF datatypes. \medskip›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Functor Class›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Functor
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="TypeApp.html">TypeApp</a> <a href="Coerce.html">Coerce</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#TypeApp">TypeApp</a> <a href="#Coerce">Coerce</a>
 <span class="keyword2"><span class="keyword">keywords</span></span> <span class="quoted">"tycondef"</span> <span class="main">::</span> thy_defn <span class="keyword2"><span class="keyword">and</span></span> <span class="quoted">"⋅"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
@@ -1532,7 +1532,7 @@ the abstract functor laws.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Monad Class›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Functor.html">Functor</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Functor">Functor</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Class definition›</span></span>
@@ -1722,7 +1722,7 @@ reduce them to coercions on simpler types.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Monad-Zero Class›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Monad_Zero
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad.html">Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad">Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">class</span></span> zeroU <span class="main">=</span> tycon <span class="main">+</span>
@@ -1774,7 +1774,7 @@ reduce them to coercions on simpler types.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Monad-Plus Class›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Monad_Plus
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad.html">Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad">Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">hide_const</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">open</span></span><span class="main">)</span> Fixrec.mplus
@@ -1839,7 +1839,7 @@ reduce them to coercions on simpler types.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Monad-Zero-Plus Class›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Monad_Zero_Plus
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Zero.html">Monad_Zero</a> <a href="Monad_Plus.html">Monad_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Zero">Monad_Zero</a> <a href="#Monad_Plus">Monad_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">hide_const</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">open</span></span><span class="main">)</span> Fixrec.mplus
@@ -1879,7 +1879,7 @@ reduce them to coercions on simpler types.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Lazy list monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Lazy_List_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Zero_Plus.html">Monad_Zero_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Zero_Plus">Monad_Zero_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹To illustrate the general process of defining a new type
@@ -2084,7 +2084,7 @@ with the <span class="antiquoted"><span class="raw_text"><span class="antiquoted
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Maybe monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Maybe_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Zero_Plus.html">Monad_Zero_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Zero_Plus">Monad_Zero_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -2242,7 +2242,7 @@ with the <span class="antiquoted"><span class="raw_text"><span class="antiquoted
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Error monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Error_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Plus.html">Monad_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Plus">Monad_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -2364,7 +2364,7 @@ with the <span class="antiquoted"><span class="raw_text"><span class="antiquoted
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Writer monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Writer_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad.html">Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad">Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Monoid class›</span></span>
@@ -2507,7 +2507,7 @@ using <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Binary tree monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Binary_Tree_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad.html">Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad">Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -2607,7 +2607,7 @@ using <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Lift monad›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Lift_Monad
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad.html">Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad">Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -2692,7 +2692,7 @@ using <span class="antiquoted"><span class="raw_text"><span class="antiquoted"><
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Resumption monad transformer›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Resumption_Transformer
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Plus.html">Monad_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Plus">Monad_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -2915,7 +2915,7 @@ it for one step, and then calls itself recursively.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹State monad transformer›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> State_Transformer
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Monad_Zero_Plus.html">Monad_Zero_Plus</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Monad_Zero_Plus">Monad_Zero_Plus</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3134,7 +3134,7 @@ it for one step, and then calls itself recursively.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Error monad transformer›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Error_Transformer
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Error_Monad.html">Error_Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Error_Monad">Error_Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -3513,7 +3513,7 @@ set of fixed-points of a deflation.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Writer monad transformer›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Writer_Transformer
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Writer_Monad.html">Writer_Monad</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Writer_Monad">Writer_Monad</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type definition›</span></span>
@@ -3964,16 +3964,16 @@ functions. \medskip›</span></span>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Monad_Transformer
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Lazy_List_Monad.html">Lazy_List_Monad</a>
-  <a href="Maybe_Monad.html">Maybe_Monad</a>
-  <a href="Error_Monad.html">Error_Monad</a>
-  <a href="Writer_Monad.html">Writer_Monad</a>
-  <a href="Binary_Tree_Monad.html">Binary_Tree_Monad</a>
-  <a href="Lift_Monad.html">Lift_Monad</a>
-  <a href="Resumption_Transformer.html">Resumption_Transformer</a>
-  <a href="State_Transformer.html">State_Transformer</a>
-  <a href="Error_Transformer.html">Error_Transformer</a>
-  <a href="Writer_Transformer.html">Writer_Transformer</a>
+  <a href="#Lazy_List_Monad">Lazy_List_Monad</a>
+  <a href="#Maybe_Monad">Maybe_Monad</a>
+  <a href="#Error_Monad">Error_Monad</a>
+  <a href="#Writer_Monad">Writer_Monad</a>
+  <a href="#Binary_Tree_Monad">Binary_Tree_Monad</a>
+  <a href="#Lift_Monad">Lift_Monad</a>
+  <a href="#Resumption_Transformer">Resumption_Transformer</a>
+  <a href="#State_Transformer">State_Transformer</a>
+  <a href="#Error_Transformer">Error_Transformer</a>
+  <a href="#Writer_Transformer">Writer_Transformer</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword2"><span class="keyword">end</span></span>

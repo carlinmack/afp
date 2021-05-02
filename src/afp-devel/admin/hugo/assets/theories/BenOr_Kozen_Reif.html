@@ -3,10 +3,10 @@
 <h1>Theory More_Matrix</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> More_Matrix
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Jordan_Normal_Form/Matrix.html">Jordan_Normal_Form.Matrix</a>"</span>
-    <span class="quoted">"<a href="../Jordan_Normal_Form/DL_Rank.html">Jordan_Normal_Form.DL_Rank</a>"</span>
-    <span class="quoted">"<a href="../Jordan_Normal_Form/VS_Connect.html">Jordan_Normal_Form.VS_Connect</a>"</span>
-    <span class="quoted">"<a href="../Jordan_Normal_Form/Gauss_Jordan_Elimination.html">Jordan_Normal_Form.Gauss_Jordan_Elimination</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../jordan_normal_form/theories/#Matrix">Jordan_Normal_Form.Matrix</a>"</span>
+    <span class="quoted">"<a href="../../jordan_normal_form/theories/#DL_Rank">Jordan_Normal_Form.DL_Rank</a>"</span>
+    <span class="quoted">"<a href="../../jordan_normal_form/theories/#VS_Connect">Jordan_Normal_Form.VS_Connect</a>"</span>
+    <span class="quoted">"<a href="../../jordan_normal_form/theories/#Gauss_Jordan_Elimination">Jordan_Normal_Form.Gauss_Jordan_Elimination</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">"Kronecker Product"</span></span>
@@ -2022,8 +2022,8 @@ lemma foo:
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> BKR_Algorithm
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <span class="quoted">"<a href="More_Matrix.html">More_Matrix</a>"</span>
-    <span class="quoted">"<a href="../Sturm_Tarski/Sturm_Tarski.html">Sturm_Tarski.Sturm_Tarski</a>"</span>
+    <span class="quoted">"<a href="#More_Matrix">More_Matrix</a>"</span>
+    <span class="quoted">"<a href="../../sturm_tarski/theories/#Sturm_Tarski">Sturm_Tarski.Sturm_Tarski</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">"Setup"</span></span>
@@ -2172,7 +2172,7 @@ lemma foo:
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Matrix_Equation_Construction
 
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="BKR_Algorithm.html">BKR_Algorithm</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#BKR_Algorithm">BKR_Algorithm</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">"Results with Sturm's Theorem"</span></span>
@@ -3056,7 +3056,7 @@ lemma foo:
 <h1>Theory BKR_Proofs</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> BKR_Proofs
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Matrix_Equation_Construction.html">Matrix_Equation_Construction</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Matrix_Equation_Construction">Matrix_Equation_Construction</a>"</span>
 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
@@ -5283,11 +5283,11 @@ row <span class="main">(</span>take_rows_from_matrix <span class="main">(</span>
 <h1>Theory BKR_Decision</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> BKR_Decision
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="BKR_Algorithm.html">BKR_Algorithm</a>
-    <span class="quoted">"<a href="../Berlekamp_Zassenhaus/Factorize_Rat_Poly.html">Berlekamp_Zassenhaus.Factorize_Rat_Poly</a>"</span>
-    <span class="quoted">"<a href="../Algebraic_Numbers/Real_Roots.html">Algebraic_Numbers.Real_Roots</a>"</span>
-    <span class="quoted">"<a href="BKR_Proofs.html">BKR_Proofs</a>"</span>
-    <span class="quoted">"<a href="../../HOL/HOL/Deriv.html">HOL.Deriv</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#BKR_Algorithm">BKR_Algorithm</a>
+    <span class="quoted">"<a href="../../berlekamp_zassenhaus/theories/#Factorize_Rat_Poly">Berlekamp_Zassenhaus.Factorize_Rat_Poly</a>"</span>
+    <span class="quoted">"<a href="../../algebraic_numbers/theories/#Real_Roots">Algebraic_Numbers.Real_Roots</a>"</span>
+    <span class="quoted">"<a href="#BKR_Proofs">BKR_Proofs</a>"</span>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Deriv.html">HOL.Deriv</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">"Algorithm"</span></span>
@@ -7321,7 +7321,7 @@ Then, since the polynomials have constant signs within those intervals, the zero
 <h1>Theory Renegar_Algorithm</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Renegar_Algorithm
-  <span class="keyword2"><span class="keyword">imports</span></span>  <a href="BKR_Algorithm.html">BKR_Algorithm</a>
+  <span class="keyword2"><span class="keyword">imports</span></span>  <a href="#BKR_Algorithm">BKR_Algorithm</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* There is significant overlap between Renegar's algorithm and BKR's.  
@@ -7433,8 +7433,8 @@ Then, since the polynomials have constant signs within those intervals, the zero
 <h1>Theory Renegar_Proofs</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Renegar_Proofs
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Renegar_Algorithm.html">Renegar_Algorithm</a>"</span>
-    <span class="quoted">"<a href="BKR_Proofs.html">BKR_Proofs</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Renegar_Algorithm">Renegar_Algorithm</a>"</span>
+    <span class="quoted">"<a href="#BKR_Proofs">BKR_Proofs</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* Note that there is significant overlap between Renegar and BKR in general, so there is some
@@ -10213,8 +10213,8 @@ row <span class="main">(</span>take_rows_from_matrix <span class="main">(</span>
 <h1>Theory Renegar_Decision</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Renegar_Decision
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Renegar_Proofs.html">Renegar_Proofs</a>"</span>
-    <span class="quoted">"<a href="BKR_Decision.html">BKR_Decision</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Renegar_Proofs">Renegar_Proofs</a>"</span>
+    <span class="quoted">"<a href="#BKR_Decision">BKR_Decision</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* Note that there is significant overlap between Renegar and BKR in general, so there is some

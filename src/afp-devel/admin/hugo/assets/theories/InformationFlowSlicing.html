@@ -5,8 +5,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Slicing guarantees IFC Noninterference›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> NonInterferenceIntra <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="../Slicing/Slice.html">Slicing.Slice</a> 
-  <a href="../Slicing/CFGExit_wf.html">Slicing.CFGExit_wf</a>
+  <a href="../../slicing/theories/#Slice">Slicing.Slice</a> 
+  <a href="../../slicing/theories/#CFGExit_wf">Slicing.CFGExit_wf</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Assumptions of this Approach›</span></span>
@@ -566,7 +566,7 @@ reulting states are again low equivalent:›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Framework Graph Lifting for Noninterference›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> LiftingIntra 
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="NonInterferenceIntra.html">NonInterferenceIntra</a> <a href="../Slicing/CDepInstantiations.html">Slicing.CDepInstantiations</a> 
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#NonInterferenceIntra">NonInterferenceIntra</a> <a href="../../slicing/theories/#CDepInstantiations">Slicing.CDepInstantiations</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹In this section, we show how a valid CFG from the slicing framework in
@@ -2036,9 +2036,9 @@ to operate on this new graph.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Information Flow for While›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> NonInterferenceWhile <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../Slicing/SemanticsWellFormed.html">Slicing.SemanticsWellFormed</a>
-  <a href="../Slicing/StaticControlDependences.html">Slicing.StaticControlDependences</a>
-  <a href="LiftingIntra.html">LiftingIntra</a>
+  <a href="../../slicing/theories/#SemanticsWellFormed">Slicing.SemanticsWellFormed</a>
+  <a href="../../slicing/theories/#StaticControlDependences">Slicing.StaticControlDependences</a>
+  <a href="#LiftingIntra">LiftingIntra</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">locale</span></span> SecurityTypes <span class="main">=</span>

@@ -3,7 +3,7 @@
 <h1>Theory Refine_Util_Bootstrap1</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Refine_Util_Bootstrap1
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
   <span class="keyword1"><span class="keyword">infix</span></span> <span class="inner_numeral">1</span> ##
@@ -86,7 +86,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Matching-Pattern Antiquotation›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Mpat_Antiquot
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util_Bootstrap1.html">Refine_Util_Bootstrap1</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util_Bootstrap1">Refine_Util_Bootstrap1</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">typedecl</span></span> term_struct
@@ -346,7 +346,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Antiquotation to Build Terms›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Mk_Term_Antiquot
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util_Bootstrap1.html">Refine_Util_Bootstrap1</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util_Bootstrap1">Refine_Util_Bootstrap1</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -563,7 +563,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">"General Utilities"</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Refine_Util
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util_Bootstrap1.html">Refine_Util_Bootstrap1</a> <a href="Mpat_Antiquot.html">Mpat_Antiquot</a> <a href="Mk_Term_Antiquot.html">Mk_Term_Antiquot</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util_Bootstrap1">Refine_Util_Bootstrap1</a> <a href="#Mpat_Antiquot">Mpat_Antiquot</a> <a href="#Mk_Term_Antiquot">Mk_Term_Antiquot</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">conv_tag</span> <span class="keyword2"><span class="keyword">where</span></span> <span class="quoted"><span class="quoted">"<span class="free">conv_tag</span> <span class="free"><span class="bound"><span class="entity">n</span></span></span> <span class="free"><span class="bound"><span class="entity">x</span></span></span> <span class="main">==</span> <span class="free"><span class="bound"><span class="entity">x</span></span></span>"</span></span> 
   <span class="comment1">― ‹Used internally for <span class="antiquoted"><span class="antiquote">@{</span><span class="operator">text</span> <span class="raw_text">"pat_conv"</span><span class="antiquote">}</span></span>-conversion›</span>
@@ -1532,7 +1532,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Attribute Combinators›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Attr_Comb
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util.html">Refine_Util</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util">Refine_Util</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -1645,7 +1645,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Named Theorems with Explicit Filtering and Sorting›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Named_Sorted_Thms
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Attr_Comb.html">Attr_Comb</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Attr_Comb">Attr_Comb</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
   <span class="keyword1"><span class="keyword">signature</span></span> <span class="entity">NAMED_SORTED_THMS</span> <span class="main">=</span>
@@ -1724,7 +1724,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Priority Lists›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Prio_List
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
   <span class="comment1">(*
@@ -1827,7 +1827,7 @@
 <h1>Theory Tagged_Solver</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Tagged_Solver
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util.html">Refine_Util</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util">Refine_Util</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* TODO/FIXME:
@@ -2143,7 +2143,7 @@ ML_val {*
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Anti-Unification›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Anti_Unification
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util.html">Refine_Util</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util">Refine_Util</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We implement a simple anti-unification.
     Currently, we do not handle lambdas, nor sorts, and avoid
@@ -2331,12 +2331,12 @@ ML_val {*
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Miscellaneous Definitions and Lemmas›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Misc
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Multiset.html">HOL-Library.Multiset</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-ex/Quicksort.html">HOL-ex.Quicksort</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Option_ord.html">HOL-Library.Option_ord</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
-  <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Multiset.html">HOL-Library.Multiset</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-ex/Quicksort.html">HOL-ex.Quicksort</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Option_ord.html">HOL-Library.Option_ord</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Infinite_Set.html">HOL-Library.Infinite_Set</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach.html">HOL-Eisbach.Eisbach</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text_raw</span></span> <span class="quoted"><span class="plain_text">‹\label{thy:Misc}›</span></span>
 
@@ -6848,7 +6848,7 @@ relations.›</span></span>
 *)</span>
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Interuptible Fold›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Foldi
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> 
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Left folding›</span></span>
@@ -6979,7 +6979,7 @@ relations.›</span></span>
 <h1>Theory Indep_Vars</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Indep_Vars
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="Refine_Util.html">Refine_Util</a> <a href="Mpat_Antiquot.html">Mpat_Antiquot</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#Refine_Util">Refine_Util</a> <a href="#Mpat_Antiquot">Mpat_Antiquot</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">INDEP</span> <span class="free"><span class="bound"><span class="entity">v</span></span></span> <span class="main">≡</span> True"</span></span>
@@ -7043,7 +7043,7 @@ relations.›</span></span>
 <h1>Theory Select_Solve</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Select_Solve
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="Refine_Util.html">Refine_Util</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#Refine_Util">Refine_Util</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*
@@ -7277,7 +7277,7 @@ relations.›</span></span>
 <h1>Theory Mk_Record_Simp</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Mk_Record_Simp
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Refine_Util.html">Refine_Util</a> <a href="Mpat_Antiquot.html">Mpat_Antiquot</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Refine_Util">Refine_Util</a> <a href="#Mpat_Antiquot">Mpat_Antiquot</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*
@@ -7328,19 +7328,19 @@ relations.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Refine_Lib
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Refine_Util.html">Refine_Util</a> 
-  <a href="Attr_Comb.html">Attr_Comb</a> 
-  <a href="Named_Sorted_Thms.html">Named_Sorted_Thms</a> 
-  <a href="Prio_List.html">Prio_List</a> 
-  <a href="Mpat_Antiquot.html">Mpat_Antiquot</a>
-  <a href="Mk_Term_Antiquot.html">Mk_Term_Antiquot</a>
-  <a href="Tagged_Solver.html">Tagged_Solver</a>
-  <a href="Anti_Unification.html">Anti_Unification</a>
-  <a href="Misc.html">Misc</a>
-  <a href="Foldi.html">Foldi</a>
-  <a href="Indep_Vars.html">Indep_Vars</a>
-  <a href="Select_Solve.html">Select_Solve</a>
-  <a href="Mk_Record_Simp.html">Mk_Record_Simp</a>
+  <a href="#Refine_Util">Refine_Util</a> 
+  <a href="#Attr_Comb">Attr_Comb</a> 
+  <a href="#Named_Sorted_Thms">Named_Sorted_Thms</a> 
+  <a href="#Prio_List">Prio_List</a> 
+  <a href="#Mpat_Antiquot">Mpat_Antiquot</a>
+  <a href="#Mk_Term_Antiquot">Mk_Term_Antiquot</a>
+  <a href="#Tagged_Solver">Tagged_Solver</a>
+  <a href="#Anti_Unification">Anti_Unification</a>
+  <a href="#Misc">Misc</a>
+  <a href="#Foldi">Foldi</a>
+  <a href="#Indep_Vars">Indep_Vars</a>
+  <a href="#Select_Solve">Select_Solve</a>
+  <a href="#Mk_Record_Simp">Mk_Record_Simp</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">ML_file</span></span> <span class="quoted">‹Cond_Rewr_Conv.ML›</span>
   <span class="keyword1"><span class="command">ML_file</span></span> <span class="quoted">‹Revert_Abbrev.ML›</span>
@@ -7424,7 +7424,7 @@ relations.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Parametricity Solver›</span></span>
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Param_Chapter <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
+<span class="keyword1"><span class="command">theory</span></span> Param_Chapter <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
 <span class="comment1">(*&gt;*)</span>
 </pre>
 </div><div id="Relators">
@@ -7433,7 +7433,7 @@ relations.›</span></span>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Relators›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Relators
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Refine_Lib.html">../Lib/Refine_Lib</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Refine_Lib">../Lib/Refine_Lib</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -8417,7 +8417,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Basic Parametricity Reasoning›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Param_Tool
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Relators.html">Relators</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Relators">Relators</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Auxiliary Lemmas›</span></span>
@@ -8770,7 +8770,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Parametricity Theorems for HOL›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Param_HOL
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Param_Tool.html">Param_Tool</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Param_Tool">Param_Tool</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Sets›</span></span>
@@ -9343,7 +9343,7 @@ end
 </div>
 <pre class="source"><span class="comment1">(*&lt;*)</span>
 <span class="keyword1"><span class="command">theory</span></span> Parametricity
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Param_Tool.html">Param_Tool</a> <a href="Param_HOL.html">Param_HOL</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Param_Tool">Param_Tool</a> <a href="#Param_HOL">Param_HOL</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword2"><span class="keyword">end</span></span>
@@ -9355,7 +9355,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Infrastructure for Multi-Phase Methods›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Phases
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Refine_Lib.html">../Lib/Refine_Lib</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Refine_Lib">../Lib/Refine_Lib</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -9585,7 +9585,7 @@ end
 <h1>Theory Autoref_Data</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Autoref_Data
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="Refine_Util.html">../Lib/Refine_Util</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="#Refine_Util">../Lib/Refine_Util</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -9642,7 +9642,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Tagging of Terms›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Tagging
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Refine_Lib.html">../Lib/Refine_Lib</a>"</span> 
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Refine_Lib">../Lib/Refine_Lib</a>"</span> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
   We provide a mechanism to tag terms, that supports relator annotations,
@@ -9850,11 +9850,11 @@ end
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Operation Identification›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Id_Ops
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <span class="quoted">"<a href="Refine_Lib.html">../Lib/Refine_Lib</a>"</span> 
-  <a href="Autoref_Phases.html">Autoref_Phases</a>
-  <a href="Autoref_Data.html">Autoref_Data</a>
-  <a href="Autoref_Tagging.html">Autoref_Tagging</a>
-  <span class="quoted">"<a href="Parametricity.html">../Parametricity/Parametricity</a>"</span>
+  <span class="quoted">"<a href="#Refine_Lib">../Lib/Refine_Lib</a>"</span> 
+  <a href="#Autoref_Phases">Autoref_Phases</a>
+  <a href="#Autoref_Data">Autoref_Data</a>
+  <a href="#Autoref_Tagging">Autoref_Tagging</a>
+  <span class="quoted">"<a href="#Parametricity">../Parametricity/Parametricity</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Main Tool›</span></span>
@@ -10546,7 +10546,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Relator Fixing›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Fix_Rel
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Autoref_Id_Ops.html">Autoref_Id_Ops</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Autoref_Id_Ops">Autoref_Id_Ops</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML_val</span></span> <span class="quoted">"<span class="inner_numeral">2</span> upto <span class="inner_numeral">5</span>"</span>
@@ -11534,7 +11534,7 @@ end
 <h1>Theory Autoref_Relator_Interface</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Autoref_Relator_Interface
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <a href="Autoref_Id_Ops.html">Autoref_Id_Ops</a> <a href="Autoref_Fix_Rel.html">Autoref_Fix_Rel</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <a href="#Autoref_Id_Ops">Autoref_Id_Ops</a> <a href="#Autoref_Fix_Rel">Autoref_Fix_Rel</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span> <span class="quoted"><span class="quoted">"<span class="free">REL_INTF</span> <span class="free"><span class="bound"><span class="entity">R</span></span></span> <span class="free"><span class="bound"><span class="entity">I</span></span></span> <span class="main">≡</span> True"</span></span>
@@ -11665,7 +11665,7 @@ end
 <h1>Theory Autoref_Translate</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Autoref_Translate
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Autoref_Fix_Rel.html">Autoref_Fix_Rel</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Autoref_Fix_Rel">Autoref_Fix_Rel</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Definitions›</span></span>
@@ -11998,7 +11998,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Infrastructure for Generic Algorithms›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Gen_Algo
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Autoref_Translate.html">Autoref_Translate</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Autoref_Translate">Autoref_Translate</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* TODO/FIXME: The priority ordering is not yet suited for generic
@@ -12082,7 +12082,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">chapter</span></span> <span class="quoted"><span class="plain_text">‹Automatic Refinement›</span></span>
 <span class="comment1">(*&lt;*)</span>
-<span class="keyword1"><span class="command">theory</span></span> Autoref_Chapter <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
+<span class="keyword1"><span class="command">theory</span></span> Autoref_Chapter <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="keyword2"><span class="keyword">begin</span></span> <span class="keyword2"><span class="keyword">end</span></span>
 <span class="comment1">(*&gt;*)</span>
 </pre>
 </div><div id="Autoref_Tool">
@@ -12092,9 +12092,9 @@ end
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Automatic Refinement Tool›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Tool
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Autoref_Translate.html">Autoref_Translate</a> 
-  <a href="Autoref_Gen_Algo.html">Autoref_Gen_Algo</a>
-  <a href="Autoref_Relator_Interface.html">Autoref_Relator_Interface</a>
+  <a href="#Autoref_Translate">Autoref_Translate</a> 
+  <a href="#Autoref_Gen_Algo">Autoref_Gen_Algo</a>
+  <a href="#Autoref_Relator_Interface">Autoref_Relator_Interface</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Standard setup›</span></span>
 
@@ -12321,7 +12321,7 @@ end
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Standard HOL Bindings›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Autoref_Bindings_HOL
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Autoref_Tool.html">Tool/Autoref_Tool</a>"</span>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Autoref_Tool">Tool/Autoref_Tool</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -13014,8 +13014,8 @@ end
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Entry Point for the Automatic Refinement Tool›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Automatic_Refinement
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <span class="quoted">"<a href="Autoref_Tool.html">Tool/Autoref_Tool</a>"</span>
-  <a href="Autoref_Bindings_HOL.html">Autoref_Bindings_HOL</a>
+  <span class="quoted">"<a href="#Autoref_Tool">Tool/Autoref_Tool</a>"</span>
+  <a href="#Autoref_Bindings_HOL">Autoref_Bindings_HOL</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The automatic refinement tool should be used by 
     importing this theory›</span></span>

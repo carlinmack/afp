@@ -3,7 +3,7 @@
 <h1>Theory MDP_Aux</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> MDP_Aux
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Markov_Models/Markov_Decision_Process.html">Markov_Models.Markov_Decision_Process</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../markov_models/theories/#Markov_Decision_Process">Markov_Models.Markov_Decision_Process</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="MDP_Aux-sets_stream_space_cylinder"><span class="command">lemma</span></span> sets_stream_space_cylinder<span class="main">:</span> 
@@ -46,7 +46,7 @@
 <h1>Theory Finiteness</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Finiteness
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="../../HOL/HOL-Eisbach/Eisbach_Tools.html">HOL-Eisbach.Eisbach_Tools</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Eisbach/Eisbach_Tools.html">HOL-Eisbach.Eisbach_Tools</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Two Eisbach proof methods for finiteness of sets›</span></span>
@@ -295,7 +295,7 @@
 <span class="comment1">(* This is originally a part of the CAVA model checker *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Basic
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="keyword1"><span class="command">abbreviation</span></span> <span class="main">(</span>input<span class="main">)</span> <span class="quoted"><span class="quoted">"<span class="free">const</span> <span class="free"><span class="bound"><span class="entity">x</span></span></span> <span class="main">≡</span> <span class="main">λ</span> <span class="main"><span class="bound">_</span></span><span class="main">.</span> <span class="free"><span class="bound"><span class="entity">x</span></span></span>"</span></span>
@@ -395,8 +395,8 @@
 <span class="comment1">(* This is originally a part of the CAVA model checker *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Sequence
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Basic.html">Basic</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
+  <a href="#Basic">Basic</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Stream.html">HOL-Library.Stream</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="comment1">(* list basics *)</span>
@@ -727,8 +727,8 @@
 <span class="comment1">(* This is originally a part of the CAVA model checker *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Sequence_LTL
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Sequence.html">Sequence</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Linear_Temporal_Logic_on_Streams.html">HOL-Library.Linear_Temporal_Logic_on_Streams</a>"</span>
+  <a href="#Sequence">Sequence</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Linear_Temporal_Logic_on_Streams.html">HOL-Library.Linear_Temporal_Logic_on_Streams</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="comment1">(* basics *)</span>
@@ -816,7 +816,7 @@
 </div>
 <pre class="source"><span class="comment1">(* Author: Manuel Eberl *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Instantiate_Existentials
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -853,8 +853,8 @@
 <pre class="source"><span class="comment1">(* Author: Simon Wimmer *)</span>
 <span class="keyword1"><span class="command">theory</span></span> More_List
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="../../HOL/HOL/Main.html">Main</a>
-    <a href="Instantiate_Existentials.html">Instantiate_Existentials</a>
+    <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
+    <a href="#Instantiate_Existentials">Instantiate_Existentials</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹First and Last Elements of Lists›</span></span>
@@ -1158,9 +1158,9 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Stream_More
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Sequence_LTL.html">Sequence_LTL</a>
-  <a href="Instantiate_Existentials.html">Instantiate_Existentials</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+  <a href="#Sequence_LTL">Sequence_LTL</a>
+  <a href="#Instantiate_Existentials">Instantiate_Existentials</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(*
@@ -1495,9 +1495,9 @@ lemma sset_finite_decomp:
 <pre class="source"><span class="comment1">(* Author: Simon Wimmer *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Graphs
   <span class="keyword2"><span class="keyword">imports</span></span>
-    <a href="More_List.html">More_List</a> <a href="Stream_More.html">Stream_More</a>
-    <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
-    <a href="Instantiate_Existentials.html">Instantiate_Existentials</a>
+    <a href="#More_List">More_List</a> <a href="#Stream_More">Stream_More</a>
+    <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+    <a href="#Instantiate_Existentials">Instantiate_Existentials</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Graphs›</span></span>
@@ -2860,13 +2860,13 @@ lemma sset_finite_decomp:
 <h1>Theory Lib</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Lib
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../Timed_Automata/Timed_Automata.html">Timed_Automata.Timed_Automata</a>"</span>
-          <span class="quoted">"<a href="../Timed_Automata/Approx_Beta.html">Timed_Automata.Approx_Beta</a>"</span>
-          <span class="quoted">"<a href="MDP_Aux.html">MDP_Aux</a>"</span>
-          <span class="quoted">"<a href="Finiteness.html">Finiteness</a>"</span>
-          <span class="quoted">"<a href="Sequence_LTL.html">Sequence_LTL</a>"</span>
-          <span class="quoted">"<a href="Instantiate_Existentials.html">Instantiate_Existentials</a>"</span>
-          <span class="quoted">"<a href="Graphs.html">Graphs</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../timed_automata/theories/#Timed_Automata">Timed_Automata.Timed_Automata</a>"</span>
+          <span class="quoted">"<a href="../../timed_automata/theories/#Approx_Beta">Timed_Automata.Approx_Beta</a>"</span>
+          <span class="quoted">"<a href="#MDP_Aux">MDP_Aux</a>"</span>
+          <span class="quoted">"<a href="#Finiteness">Finiteness</a>"</span>
+          <span class="quoted">"<a href="#Sequence_LTL">Sequence_LTL</a>"</span>
+          <span class="quoted">"<a href="#Instantiate_Existentials">Instantiate_Existentials</a>"</span>
+          <span class="quoted">"<a href="#Graphs">Graphs</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Misc›</span></span>
@@ -3682,7 +3682,7 @@ lemma sset_finite_decomp:
 <h1>Theory PTA</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> PTA
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Lib.html">library/Lib</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Lib">library/Lib</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Bisimulation on a Relation›</span></span> <span class="keyword1"><span class="command">text_raw</span></span> <span class="quoted"><span class="plain_text">‹\label{thm:bisim}›</span></span>
@@ -6393,7 +6393,7 @@ by (smt One_nat_def add.right_neutral add_Suc_right assms nat_intv_frac_decomp)
 <h1>Theory PTA_Reachability</h1>
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> PTA_Reachability
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="PTA.html">PTA</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#PTA">PTA</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Classifying Regions for Divergence›</span></span>

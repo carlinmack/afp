@@ -29,6 +29,7 @@
                 "init_segment_empty",
                 "init_segment_insert_iff",
                 "init_segment_insert",
+                "Ramsey_eq",
                 "comparables_iff",
                 "comparables_subset",
                 "comparables_empty",

@@ -37,7 +37,7 @@ def addDependencies():
 
                 dependencies = [x.strip().replace('"', "") for x in dependencies]
                 dependencies = [
-                    x for x in dependencies if len(x) > 0 and not re.match("HOL", x)
+                    x for x in dependencies if len(x) > 0 and not re.match("(HOL|FOL|ZF|CCL|LCF|FOLP|Sequents|CTT|Cube|Pure)", x)
                 ]
                 # remove duplicates but preserve order
                 dependencies = list(dict.fromkeys(dependencies))

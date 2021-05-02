@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Finite partial functions›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> More_Finite_Map <span class="keyword2"><span class="keyword">imports</span></span>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Finite_Map.html">HOL-Library.Finite_Map</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">unbundle</span></span> lifting_syntax
@@ -116,7 +116,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹General purpose definitions and lemmas›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> JHelper <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="../../HOL/HOL/Main.html">Main</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="JHelper-Collect_iff"><span class="command">lemma</span></span> Collect_iff<span class="main">:</span> 
@@ -180,7 +180,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Proof chains›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Proofchain <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="JHelper.html">JHelper</a>  
+  <a href="#JHelper">JHelper</a>  
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹An (<span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">typ</span></span> <span class="quoted"><span class="tfree"><span class="quoted"><span class="tfree">'a</span></span></span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span>, <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">typ</span></span> <span class="quoted"><span class="tfree"><span class="quoted"><span class="tfree">'c</span></span></span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span>) chain is a sequence of alternating 
@@ -389,7 +389,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Assertions, commands, and separation logic proof rules›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Ribbons_Basic <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="../../HOL/HOL/Main.html">Main</a> 
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a> 
 <span class="keyword2"><span class="keyword">begin</span></span> 
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We define a command language, assertions, and the rules of separation
@@ -515,9 +515,9 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Ribbon proof interfaces›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Ribbons_Interfaces <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Ribbons_Basic.html">Ribbons_Basic</a>
-  <a href="Proofchain.html">Proofchain</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
+  <a href="#Ribbons_Basic">Ribbons_Basic</a>
+  <a href="#Proofchain">Proofchain</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/FSet.html">HOL-Library.FSet</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Interfaces are the top and bottom boundaries through which diagrams 
@@ -730,8 +730,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Syntax and proof rules for stratified diagrams›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Ribbons_Stratified <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Ribbons_Interfaces.html">Ribbons_Interfaces</a>
-  <a href="Proofchain.html">Proofchain</a>
+  <a href="#Ribbons_Interfaces">Ribbons_Interfaces</a>
+  <a href="#Proofchain">Proofchain</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We define the syntax of stratified diagrams. We give proof rules 
@@ -861,7 +861,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Syntax and proof rules for graphical diagrams›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Ribbons_Graphical <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Ribbons_Interfaces.html">Ribbons_Interfaces</a>
+  <a href="#Ribbons_Interfaces">Ribbons_Interfaces</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We introduce a graphical syntax for diagrams, describe how to extract 
@@ -1125,8 +1125,8 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Soundness for graphical diagrams›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Ribbons_Graphical_Soundness <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Ribbons_Graphical.html">Ribbons_Graphical</a>
-  <a href="More_Finite_Map.html">More_Finite_Map</a>
+  <a href="#Ribbons_Graphical">Ribbons_Graphical</a>
+  <a href="#More_Finite_Map">More_Finite_Map</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We prove that the proof rules for graphical ribbon proofs are sound

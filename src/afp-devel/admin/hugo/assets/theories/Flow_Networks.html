@@ -4,10 +4,10 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Fofu_Abs_Base
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="../../HOL/HOL/Complex_Main.html">Complex_Main</a> 
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
-  <a href="../Automatic_Refinement/Misc.html">Automatic_Refinement.Misc</a>
-  <a href="../Refine_Imperative_HOL/Sepref_Misc.html">Refine_Imperative_HOL.Sepref_Misc</a>
+  <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Complex_Main.html">Complex_Main</a> 
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+  <a href="../../automatic_refinement/theories/#Misc">Automatic_Refinement.Misc</a>
+  <a href="../../refine_imperative_hol/theories/#Sepref_Misc">Refine_Imperative_HOL.Sepref_Misc</a>
   <span class="quoted">"<a href="../Program-Conflict-Analysis/LTS.html">Program-Conflict-Analysis.LTS</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>  
 
@@ -61,10 +61,10 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Fofu_Impl_Base
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Fofu_Abs_Base.html">Fofu_Abs_Base</a>
-  <a href="../Refine_Imperative_HOL/IICF.html">Refine_Imperative_HOL.IICF</a>
-  <a href="../Refine_Imperative_HOL/Sepref_ICF_Bindings.html">Refine_Imperative_HOL.Sepref_ICF_Bindings</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
+  <a href="#Fofu_Abs_Base">Fofu_Abs_Base</a>
+  <a href="../../refine_imperative_hol/theories/#IICF">Refine_Imperative_HOL.IICF</a>
+  <a href="../../refine_imperative_hol/theories/#Sepref_ICF_Bindings">Refine_Imperative_HOL.Sepref_ICF_Bindings</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/Rewrite.html">HOL-Library.Rewrite</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
   <span class="keyword1"><span class="command">hide_type</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">open</span></span><span class="main">)</span> List_Seg.node
 
@@ -77,8 +77,8 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">theory</span></span> Refine_Add_Fofu
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <a href="Fofu_Impl_Base.html">Fofu_Impl_Base</a> 
-  <a href="../DFS_Framework/DFS_Framework_Refine_Aux.html">DFS_Framework.DFS_Framework_Refine_Aux</a>
+  <a href="#Fofu_Impl_Base">Fofu_Impl_Base</a> 
+  <a href="../../dfs_framework/theories/#DFS_Framework_Refine_Aux">DFS_Framework.DFS_Framework_Refine_Aux</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
   <span class="keyword1"><span class="command">hide_type</span></span> <span class="main">(</span><span class="keyword2"><span class="keyword">open</span></span><span class="main">)</span> List_Seg.node    
@@ -112,7 +112,7 @@
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Directed Graphs›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Graph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
   We define a specialized graph library for graphs that are induced by 
@@ -1162,7 +1162,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Flows, Cuts, and Networks›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Network
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Graph.html">Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Graph">Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
   In this theory, we define the basic concepts of flows, cuts, 
@@ -1542,7 +1542,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Residual Graph›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Residual_Graph
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Network.html">Network</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Network">Network</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
   In this theory, we define the residual graph.
@@ -1915,7 +1915,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Augmenting Flows›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Augmenting_Flow
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Residual_Graph.html">Residual_Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Residual_Graph">Residual_Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2210,7 +2210,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Augmenting Paths›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Augmenting_Path
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Residual_Graph.html">Residual_Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Residual_Graph">Residual_Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We define the concept of an augmenting path in the residual graph,
   and the residual flow induced by an augmenting path.›</span></span>
@@ -2375,7 +2375,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹The Ford-Fulkerson Theorem›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Ford_Fulkerson
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Augmenting_Flow.html">Augmenting_Flow</a> <a href="Augmenting_Path.html">Augmenting_Path</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Augmenting_Flow">Augmenting_Flow</a> <a href="#Augmenting_Path">Augmenting_Path</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹In this theory, we prove the Ford-Fulkerson theorem, 
   and its well-known corollary, the min-cut max-flow theorem.
@@ -2651,7 +2651,7 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 </div>
 <pre class="source"><span class="comment1">(* TODO: That's quite specific to the BFS alg. Move to Edka! *)</span>
 <span class="keyword1"><span class="command">theory</span></span> Graph_Impl
-<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Refine_Add_Fofu.html">Lib/Refine_Add_Fofu</a>"</span> <a href="Graph.html">Graph</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Refine_Add_Fofu">Lib/Refine_Add_Fofu</a>"</span> <a href="#Graph">Graph</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">― ‹Fixing capacities to integer values›</span>
@@ -2682,8 +2682,8 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Implementation of Flow Networks›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> Network_Impl
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <span class="quoted">"<a href="Refine_Add_Fofu.html">Lib/Refine_Add_Fofu</a>"</span>
-  <a href="Ford_Fulkerson.html">Ford_Fulkerson</a> 
+  <span class="quoted">"<a href="#Refine_Add_Fofu">Lib/Refine_Add_Fofu</a>"</span>
+  <a href="#Ford_Fulkerson">Ford_Fulkerson</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Type Constraints›</span></span>  
@@ -3105,10 +3105,10 @@ butlast <span class="main">(</span>pathVertices <span class="free">u</span> <spa
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Checking for Valid Network›</span></span>
 <span class="keyword1"><span class="command">theory</span></span> NetCheck
 <span class="keyword2"><span class="keyword">imports</span></span> 
-  <span class="quoted">"<a href="Refine_Add_Fofu.html">Lib/Refine_Add_Fofu</a>"</span>
-  <a href="Network.html">Network</a>
-  <a href="Graph_Impl.html">Graph_Impl</a>
-  <a href="../DFS_Framework/Reachable_Nodes.html">DFS_Framework.Reachable_Nodes</a>
+  <span class="quoted">"<a href="#Refine_Add_Fofu">Lib/Refine_Add_Fofu</a>"</span>
+  <a href="#Network">Network</a>
+  <a href="#Graph_Impl">Graph_Impl</a>
+  <a href="../../dfs_framework/theories/#Reachable_Nodes">DFS_Framework.Reachable_Nodes</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
   This theory contains code to read a network from an edge list, 

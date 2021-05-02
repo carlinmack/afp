@@ -1014,12 +1014,7 @@
         },
         {
             "Quicksort": [
-                "perm_set_eq",
-                "perm_Cons_eq",
-                "perm_app_Cons_eq1",
-                "perm_app_Cons_eq2",
-                "sorted_append",
-                "perm_append_blocks"
+                "sorted_append"
             ]
         },
         {

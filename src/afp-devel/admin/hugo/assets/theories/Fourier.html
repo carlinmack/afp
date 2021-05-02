@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Shifting the origin for integration of periodic functions›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Periodic
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Analysis/Analysis.html">HOL-Analysis.Analysis</a>"</span> 
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Analysis.html">HOL-Analysis.Analysis</a>"</span> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1" id="Periodic-has_bochner_integral_null"><span class="command">lemma</span></span> has_bochner_integral_null <span class="main">[</span><span class="operator">intro</span><span class="main">]</span><span class="main">:</span>
@@ -233,7 +233,7 @@
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹Mainly a repackaging of existing material from Lp›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Lspace
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../Lp/Lp.html">Lp.Lp</a> 
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/Lp.html">Lp.Lp</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">abbreviation</span></span> <span class="entity">lspace</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"<span class="tfree">'a</span> measure <span class="main">⇒</span> ennreal <span class="main">⇒</span> <span class="main">(</span><span class="tfree">'a</span> <span class="main">⇒</span> real<span class="main">)</span> set"</span></span>
@@ -386,7 +386,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Square integrable functions over the reals›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Square_Integrable
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Lspace.html">Lspace</a> 
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Lspace">Lspace</a> 
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Basic definitions›</span></span>
@@ -1215,7 +1215,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Confining a series to a set›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Confine
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Complex_Main.html">Complex_Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Complex_Main.html">Complex_Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">definition</span></span> <span class="entity">confine</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"<span class="main">(</span><span class="tfree">'a</span> <span class="main">⇒</span> <span class="tfree">'b</span><span class="main">::</span>zero<span class="main">)</span> <span class="main">⇒</span> <span class="tfree">'a</span> set <span class="main">⇒</span> <span class="tfree">'a</span> <span class="main">⇒</span> <span class="tfree">'b</span>"</span></span>
@@ -1293,7 +1293,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span><span class="quoted"><span class="plain_text">‹Lemmas possibly destined for future Isabelle releases›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Fourier_Aux2
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="../../HOL/HOL-Analysis/Analysis.html">HOL-Analysis.Analysis</a>"</span> 
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Analysis/Analysis.html">HOL-Analysis.Analysis</a>"</span> 
 <span class="keyword2"><span class="keyword">begin</span></span>
     
 <span class="keyword1" id="Fourier_Aux2-integral_sin_Z"><span class="command">lemma</span></span> integral_sin_Z <span class="main">[</span><span class="operator">simp</span><span class="main">]</span><span class="main">:</span>
@@ -1342,7 +1342,7 @@
 <span class="keyword1"><span class="command">text</span></span><span class="quoted"><span class="plain_text">‹Ported from HOL Light; thanks to Manuel Eberl for help with the real asymp proof methods›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> <span class="quoted">"Fourier"</span>
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Periodic.html">Periodic</a> <a href="Square_Integrable.html">Square_Integrable</a> <span class="quoted">"<a href="../../HOL/HOL-Real_Asymp/Real_Asymp.html">HOL-Real_Asymp.Real_Asymp</a>"</span> <a href="Confine.html">Confine</a> <a href="Fourier_Aux2.html">Fourier_Aux2</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Periodic">Periodic</a> <a href="#Square_Integrable">Square_Integrable</a> <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Real_Asymp/Real_Asymp.html">HOL-Real_Asymp.Real_Asymp</a>"</span> <a href="#Confine">Confine</a> <a href="#Fourier_Aux2">Fourier_Aux2</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span><span class="quoted"><span class="plain_text">‹Orthonormal system of L2 functions and their Fourier coefficients›</span></span>

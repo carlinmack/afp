@@ -55,28 +55,6 @@
             ]
         },
         {
-            "Duplicate_Free_Multiset": [
-                "remove_diff_multiset",
-                "distinct_mset_remdups_mset_id",
-                "notin_add_mset_remdups_mset",
-                "distinct_mset_image_mset",
-                "distinct_mset_mono",
-                "distinct_mset_mono_strict",
-                "distinct_set_mset_eq_iff",
-                "distinct_mset_union2",
-                "distinct_mset_mset_set",
-                "distinct_mset_inter_remdups_mset",
-                "finite_mset_set_inter",
-                "removeAll_notin",
-                "same_mset_distinct_iff",
-                "in_set_conv_iff",
-                "in_set_take_conv_nth",
-                "in_set_remove1D",
-                "mset_drop_upto",
-                "Collect_eq_comp'"
-            ]
-        },
-        {
             "Finite_Map_Multiset": [
                 "fset_mset_mset_fset",
                 "mset_fset_fset_mset",
@@ -420,6 +398,14 @@
                 "term_poly_list_rel_same_rightD",
                 "list_rel_term_poly_list_rel_same_rightD",
                 "weak_equality_l_weak_equality_spec"
+            ]
+        },
+        {
+            "PAC_Misc": [
+                "Collect_eq_comp'",
+                "in_set_conv_iff",
+                "in_set_take_conv_nth",
+                "in_set_remove1D"
             ]
         },
         {

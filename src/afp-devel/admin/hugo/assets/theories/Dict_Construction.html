@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Dictionary Construction›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Introduction
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Introduction›</span></span>
@@ -156,7 +156,7 @@
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹Coauthor of this section: Florian Haftmann›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Impossibility
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">axiomatization</span></span> <span class="free">of_prop</span> <span class="main">::</span> <span class="quoted"><span class="quoted">"prop <span class="main">⇒</span> bool"</span></span> <span class="keyword2"><span class="keyword">where</span></span>
@@ -196,7 +196,7 @@ impossible.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Setup›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Dict_Construction
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="../Automatic_Refinement/Refine_Util.html">Automatic_Refinement.Refine_Util</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="../../automatic_refinement/theories/#Refine_Util">Automatic_Refinement.Refine_Util</a>
 <span class="keyword2"><span class="keyword">keywords</span></span> <span class="quoted">"declassify"</span> <span class="main">::</span> thy_decl
 <span class="keyword2"><span class="keyword">begin</span></span>
 
@@ -2409,7 +2409,7 @@ impossible.›</span></span>
 <span class="keyword1"><span class="command">text_raw</span></span> <span class="quoted"><span class="plain_text">‹\label{sec:termination}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Termination
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Dict_Construction.html">../Dict_Construction</a>"</span>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Dict_Construction">../Dict_Construction</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2650,8 +2650,8 @@ impossible.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Test_Dict_Construction
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Dict_Construction.html">Dict_Construction</a>
-  <span class="quoted">"<a href="../../HOL/HOL-Library/ListVector.html">HOL-Library.ListVector</a>"</span>
+  <a href="#Dict_Construction">Dict_Construction</a>
+  <span class="quoted">"<a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL-Library/ListVector.html">HOL-Library.ListVector</a>"</span>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Code equations with different number of explicit arguments›</span></span>
@@ -2889,7 +2889,7 @@ impossible.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Contrived side conditions›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Test_Side_Conditions
-<span class="keyword2"><span class="keyword">imports</span></span> <a href="Dict_Construction.html">Dict_Construction</a>
+<span class="keyword2"><span class="keyword">imports</span></span> <a href="#Dict_Construction">Dict_Construction</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">ML</span></span> <span class="quoted">‹
@@ -3026,9 +3026,9 @@ impossible.›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Test_Lazy_Case
 <span class="keyword2"><span class="keyword">imports</span></span>
-  <a href="Dict_Construction.html">Dict_Construction</a>
-  <a href="../Lazy_Case/Lazy_Case.html">Lazy_Case.Lazy_Case</a>
-  <a href="../Show/Show_Instances.html">Show.Show_Instances</a>
+  <a href="#Dict_Construction">Dict_Construction</a>
+  <a href="../../lazy_case/theories/#Lazy_Case">Lazy_Case.Lazy_Case</a>
+  <a href="../../show/theories/#Show_Instances">Show.Show_Instances</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">datatype</span></span> <span class="tfree">'a</span> tree <span class="main">=</span> Node <span class="main">|</span> Fork <span class="tfree"><span class="quoted"><span class="tfree">'a</span></span></span> <span class="quoted"><span class="quoted">"<span class="tfree">'a</span> tree list"</span></span>

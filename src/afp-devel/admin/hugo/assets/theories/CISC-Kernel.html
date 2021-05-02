@@ -5,7 +5,7 @@
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Binders for the option type \label{sect:binders}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Option_Binders
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -54,7 +54,7 @@
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Theorems on lists›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> List_Theorems
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="comment1">(* Returns the last n elements of list x *)</span>
@@ -188,7 +188,7 @@
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹A generic model for separation kernels \label{sect:generic}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> K
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="List_Theorems.html">List_Theorems</a> <a href="Option_Binders.html">Option_Binders</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#List_Theorems">List_Theorems</a> <a href="#Option_Binders">Option_Binders</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -354,7 +354,7 @@ Non-kernel actions are not take into account.
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹SK (Separation Kernel) \label{sec:sep_kernel}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> SK
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="K.html">K</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#K">K</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -1746,7 +1746,7 @@ This is expressed by ``secure''.
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹ISK (Interruptible Separation Kernel)›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> ISK
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="SK.html">SK</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#SK">SK</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -2468,7 +2468,7 @@ The following constraints are assumed and must therefore be proven for the insta
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹CISK (Controlled Interruptible Separation Kernel)›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> CISK
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="ISK.html">ISK</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#ISK">ISK</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -2960,7 +2960,7 @@ The following constraints are assumed and must therefore be proven for the insta
 <pre class="source"><span class="keyword1"><span class="command">section</span></span> <span class="quoted"><span class="plain_text">‹Instantiation by a separation kernel with concrete actions \label{sect:instantiation}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_configuration
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="../../HOL/HOL/Main.html">Main</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/Main.html">Main</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -3059,7 +3059,7 @@ maintained, without modeling any API for an open/close operation.}
 policy, and showing both can be derived from subject-object configuration data›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_policies
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step_configuration.html">Step_configuration</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step_configuration">Step_configuration</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">subsubsection</span></span> <span class="quoted"><span class="plain_text">‹Specification\label{sect:policy_specification}›</span></span>
@@ -3164,7 +3164,7 @@ We derive the subject-subject policy and the information flow policy from the co
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Separation kernel state and atomic step function›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step_policies.html">Step_policies</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step_policies">Step_policies</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -3371,7 +3371,7 @@ available from the API.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Preconditions and invariants for the atomic step \label{sect:step_invariants}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_invariants
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step.html">Step</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step">Step</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The dynamic/implementation policies have to be compatible with the static configuration.›</span></span>
@@ -3561,7 +3561,7 @@ not a context switch does not change the current thread.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹The view-partitioning equivalence relation›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_vpeq
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step.html">Step</a> <a href="Step_invariants.html">Step_invariants</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step">Step</a> <a href="#Step_invariants">Step_invariants</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The view consists of
@@ -3646,7 +3646,7 @@ not a context switch does not change the current thread.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Atomic step locally respects the information flow policy›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_vpeq_locally_respects
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step.html">Step</a> <a href="Step_invariants.html">Step_invariants</a> <a href="Step_vpeq.html">Step_vpeq</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step">Step</a> <a href="#Step_invariants">Step_invariants</a> <a href="#Step_vpeq">Step_vpeq</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹The notion of locally respects is common usage. We augment it by assuming that the <span class="antiquoted"><span class="antiquoted"><span class="antiquote"><span class="antiquote">@{</span></span><span class="operator"><span class="operator">term</span></span> <span class="quoted"><span class="quoted">atomic_step_invariant</span></span><span class="antiquote"><span class="antiquote">}</span></span></span></span> holds (see~\cite{Verbeek2013}).›</span></span>
@@ -3808,7 +3808,7 @@ not a context switch does not change the current thread.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Weak step consistency›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Step_vpeq_weakly_step_consistent
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Step.html">Step</a> <a href="Step_invariants.html">Step_invariants</a> <a href="Step_vpeq.html">Step_vpeq</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Step">Step</a> <a href="#Step_invariants">Step_invariants</a> <a href="#Step_vpeq">Step_vpeq</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 
@@ -4091,12 +4091,12 @@ not a context switch does not change the current thread.›</span></span>
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Separation kernel model \label{sect:separation_kernel_model}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Separation_kernel_model
-  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="Step.html">../../step/Step</a>"</span>
-          <span class="quoted">"<a href="Step_invariants.html">../../step/Step_invariants</a>"</span>
-          <span class="quoted">"<a href="Step_vpeq.html">../../step/Step_vpeq</a>"</span>
-          <span class="quoted">"<a href="Step_vpeq_locally_respects.html">../../step/Step_vpeq_locally_respects</a>"</span>
-          <span class="quoted">"<a href="Step_vpeq_weakly_step_consistent.html">../../step/Step_vpeq_weakly_step_consistent</a>"</span>
-          <a href="CISK.html">CISK</a>
+  <span class="keyword2"><span class="keyword">imports</span></span> <span class="quoted">"<a href="#Step">../../step/Step</a>"</span>
+          <span class="quoted">"<a href="#Step_invariants">../../step/Step_invariants</a>"</span>
+          <span class="quoted">"<a href="#Step_vpeq">../../step/Step_vpeq</a>"</span>
+          <span class="quoted">"<a href="#Step_vpeq_locally_respects">../../step/Step_vpeq_locally_respects</a>"</span>
+          <span class="quoted">"<a href="#Step_vpeq_weakly_step_consistent">../../step/Step_vpeq_weakly_step_consistent</a>"</span>
+          <a href="#CISK">CISK</a>
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹
@@ -4908,7 +4908,7 @@ qed
 <pre class="source"><span class="keyword1"><span class="command">subsection</span></span> <span class="quoted"><span class="plain_text">‹Link implementation to CISK: the specific separation kernel is an interpretation of the generic model.\label{sect:link_to_CISK}›</span></span>
 
 <span class="keyword1"><span class="command">theory</span></span> Link_separation_kernel_model_to_CISK
-  <span class="keyword2"><span class="keyword">imports</span></span> <a href="Separation_kernel_model.html">Separation_kernel_model</a>         
+  <span class="keyword2"><span class="keyword">imports</span></span> <a href="#Separation_kernel_model">Separation_kernel_model</a>         
 <span class="keyword2"><span class="keyword">begin</span></span>
 
 <span class="keyword1"><span class="command">text</span></span> <span class="quoted"><span class="plain_text">‹We show that the separation kernel instantiation satisfies the 
