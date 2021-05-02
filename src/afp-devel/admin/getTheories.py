@@ -138,14 +138,14 @@ def getTheory(url, name):
 
 
 def dependancyLink(link):
-    if re.match("../../", str(link)):
+    if re.match(r"\.\./\.\./", str(link)):
         link = re.sub(
-            "../../",
+            r"\.\./\.\./",
             "https://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/",
             link,
         )
-    elif re.match("../", str(link)):
-        matches = re.search("..\/(\w+)\/(\w+).html", link)
+    elif re.match(r"\.\./", str(link)):
+        matches = re.search(r"\.\.\/(\w+)\/(\w+).html", link)
         if matches:
             link = "../../%s/theories/#%s" % (
                 matches.group(1).lower(),
