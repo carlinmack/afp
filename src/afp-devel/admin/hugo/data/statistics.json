@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 167739,
-    "num_loc": 2939033,
+    "num_lemmas": 167888,
+    "num_loc": 2943127,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        596
+        597
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2939000
+        2943100
     ],
     "author_years": [
         14,
@@ -677,7 +677,8 @@
         7214,
         1309,
         10332,
-        9264
+        9264,
+        4094
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1275,6 +1276,7 @@
         "Progress_Tracking",
         "GaleStewart_Games",
         "BenOr_Kozen_Reif",
-        "Metalogic_ProofChecker"
+        "Metalogic_ProofChecker",
+        "Regression_Test_Selection"
     ]
 }
