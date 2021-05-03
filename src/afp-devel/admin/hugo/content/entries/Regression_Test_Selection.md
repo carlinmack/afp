@@ -15,5 +15,19 @@
     "licence": "BSD",
     "dependencies": [
         "JinjaDCI"
+    ],
+    "theories": [
+        "RTS_safe",
+        "Semantics",
+        "CollectionSemantics",
+        "CollectionBasedRTS",
+        "JVMSemantics",
+        "ClassesChanged",
+        "Subcls",
+        "ClassesAbove",
+        "JVMCollectionSemantics",
+        "JVMExecStepInductive",
+        "JVMCollectionBasedRTS",
+        "RTS"
     ]
 }
