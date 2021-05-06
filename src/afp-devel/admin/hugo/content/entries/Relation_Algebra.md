@@ -60,7 +60,7 @@
     ],
     "relatedEntries": [
         "KAD",
-        "KAT_and_DRA",
-        "Multirelations"
+        "Multirelations",
+        "KAT_and_DRA"
     ]
 }

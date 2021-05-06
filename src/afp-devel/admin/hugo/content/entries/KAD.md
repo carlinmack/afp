@@ -49,8 +49,8 @@
         "Modal_Kleene_Algebra_Applications"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
         "Relation_Algebra",
+        "KAT_and_DRA",
         "Kleene_Algebra"
     ]
 }
