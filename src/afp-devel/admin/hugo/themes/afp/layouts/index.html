@@ -29,7 +29,7 @@
         by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}
     </div>
     <span class="date">
-      {{ .Date.Format "02 Jan" }}
+      {{ .Date.Format "Jan 02" }}
     </span>
   </article>
   {{- end -}}

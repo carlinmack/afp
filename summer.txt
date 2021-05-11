@@ -7,10 +7,12 @@
 * Fix the browse theories dependencies links to go to AFP/Isabelle library as appropriate
 * Fix topics page duplicate entries bug
 * Improve topics page by adding tables
+* Change date format of entries on the homepage
 
 Entries
     * Show "Browse theories" link if theory asset page not found
     * Standardise the entry attributes to be a bullet pointed list rather than a written list
+    * Move theories to bottom of page
 
 Search 
     * Replaced search autocomplete with a datalist
