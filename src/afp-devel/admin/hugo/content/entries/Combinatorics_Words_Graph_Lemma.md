@@ -16,5 +16,8 @@
     "licence": "BSD",
     "dependencies": [
         "Combinatorics_Words"
+    ],
+    "theories": [
+        "Graph_Lemma"
     ]
 }

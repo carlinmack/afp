@@ -1,0 +1,59 @@
+{
+    "url": "entries/combinatorics_words_lyndon/theories",
+    "title": "Session Combinatorics_Words_Lyndon",
+    "theories": [
+        {
+            "Lyndon": [
+                "sorted_dual_rev_iff",
+                "LyndonD",
+                "LyndonD_nemp",
+                "LyndonI",
+                "Lyndon_sing",
+                "Lyndon_prim",
+                "Lyndon_conj_greater",
+                "Lyndon_rec_all",
+                "Lyndon_Lyndon_rec",
+                "Lyndon_code",
+                "conjug_Lyndon_ex",
+                "conjug_Lyndon_ex'",
+                "Lyndon_suf_less",
+                "Lyndon_pref_suf_less",
+                "suf_less_Lyndon",
+                "Lyndon_suf_le",
+                "unbordered_pref_Lyndon",
+                "longest_Lyndon_suf_ext",
+                "longest_Lyndon_suf_suf",
+                "longest_Lyndon_suf_max",
+                "longest_Lyndon_suf_Lyndon_id",
+                "longest_Lyndon_suf_longest",
+                "longest_Lyndon_suf_sing",
+                "longest_Lyndon_suf_Lyndon",
+                "longest_Lyndon_suf_nemp",
+                "longest_Lyndon_sufI",
+                "longest_Lyndon_suf_shorter",
+                "Lyndon_fac_simp",
+                "Lyndon_fac_emp",
+                "Lyndon_fac_longest_Lyndon_id",
+                "Lyndon_fac_set",
+                "Lyndon_fac_longest_dec",
+                "Lyndon_fac_longest_pref",
+                "Lyndon_mono_set",
+                "Lyndon_mono_sorted",
+                "Lyndon_mono_nth",
+                "Lyndon_mono_empty",
+                "Lyndon_mono_sing",
+                "Lyndon_mono_fac_Lyndon_mono",
+                "Lyndon_mono_last_smallest",
+                "Lyndon_mono_last_longest",
+                "Lyndon_mono_fac",
+                "Lyndon_std"
+            ]
+        },
+        {
+            "Lyndon_Addition": [
+                "Lyndon_rotate_rel_iff",
+                "slo_linorder"
+            ]
+        }
+    ]
+}

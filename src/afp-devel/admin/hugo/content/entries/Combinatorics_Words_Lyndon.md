@@ -17,5 +17,9 @@
     "dependencies": [
         "Combinatorics_Words",
         "Szpilrajn"
+    ],
+    "theories": [
+        "Lyndon",
+        "Lyndon_Addition"
     ]
 }
