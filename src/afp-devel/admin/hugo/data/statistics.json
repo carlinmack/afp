@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 168971,
-    "num_loc": 2958974,
+    "num_lemmas": 169834,
+    "num_loc": 2964899,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        598
+        601
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2959000
+        2964900
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        11
+        14
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        381
+        384
     ],
     "loc_articles": [
         839,
@@ -679,7 +679,10 @@
         1309,
         10332,
         9264,
-        4094
+        4094,
+        4696,
+        830,
+        399
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1279,6 +1282,9 @@
         "GaleStewart_Games",
         "BenOr_Kozen_Reif",
         "Metalogic_ProofChecker",
-        "Regression_Test_Selection"
+        "Regression_Test_Selection",
+        "Combinatorics_Words",
+        "Combinatorics_Words_Lyndon",
+        "Combinatorics_Words_Graph_Lemma"
     ]
 }
