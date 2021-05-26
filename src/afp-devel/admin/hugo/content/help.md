@@ -8,29 +8,29 @@ menu:
 
 This section focuses on the Archive of Formal Proofs. For help with Isabelle, see the [Isabelle Wiki](https://isabelle.in.tum.de/community/Main_Page) and [Documentation](https://isabelle.in.tum.de/documentation.html)
 
-## Referring to AFP Entries in Isabelle
+## Referring to AFP Entries in Isabelle/JEdit
 
 Once you have downloaded the AFP, you can include its articles and theories in your own developments. If you would like to make your work available to others _without_ having to include the AFP articles you depend on, here is how to do it.
 
+From Isabelle2021 on, the recommended method for making the whole AFP available to Isabelle is the `isabelle components -u` command.
+
 #### Linux and Mac
 
-If you are using Isabelle2020, and have downloaded your AFP directory to `/home/myself/afp`, you can run the following command to make the AFP session ROOTS available to Isabelle:
+Assuming you have downloaded and unzipped the afp to `/home/myself/afp`, run:
 
-    echo "/home/myself/afp/thys" >> ~/.isabelle/Isabelle2020/ROOTS
-
-This adds the path /home/myself/afp/thys/ to the ROOTS file, which Isabelle will scan by default. You can also manually edit and/or create that ROOTS file. There are many other ways to achieve the same outcome, this is just one option.
+    isabelle components -u /home/myself/afp
 
 #### Windows
 
-The idea is the same just the path is slightly different. If the AFP is in `C:\afp`, you should be able to run the following in a Cygwin terminal.
+If the AFP is in `C:\afp`, run the following command in a Cygwin terminal:
 
-    echo "/cygdrive/c/afp/thys" >> ~/.isabelle/Isabelle2021/ROOTS
+    isabelle components -u /cygdrive/c/afp
 
-----
+#### Use
 
-You can now refer to article `ABC` from the AFP in some theory of yours via
+You can now refer to article `ABC` from the AFP in another theory via:
 
-    imports "ABC.Some\_ABC\_Theory"
+    imports "ABC.Some_ABC_Theory"
 
 This allows you to distribute your material separately from any AFP theories. Users of your distribution also need to install the AFP in the above manner.
 
