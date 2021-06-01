@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 169834,
-    "num_loc": 2964899,
+    "num_lemmas": 169846,
+    "num_loc": 2965283,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        601
+        602
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2964900
+        2965300
     ],
     "author_years": [
         14,
@@ -679,6 +679,7 @@
         1309,
         10332,
         9264,
+        384,
         4094,
         4696,
         830,
@@ -1282,6 +1283,7 @@
         "GaleStewart_Games",
         "BenOr_Kozen_Reif",
         "Metalogic_ProofChecker",
+        "Lifting_the_Exponent",
         "Regression_Test_Selection",
         "Combinatorics_Words",
         "Combinatorics_Words_Lyndon",
