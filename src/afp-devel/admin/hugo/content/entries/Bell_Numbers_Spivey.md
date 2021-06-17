@@ -37,7 +37,7 @@
     ],
     "relatedEntries": [
         "Twelvefold_Way",
-        "Card_Equiv_Relations",
-        "Card_Partitions"
+        "Card_Partitions",
+        "Card_Equiv_Relations"
     ]
 }
