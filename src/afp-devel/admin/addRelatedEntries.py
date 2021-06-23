@@ -1,3 +1,13 @@
+"""
+This script generates related entries, using three metrics:
+    * Sharing dependencies
+    * Sharing keywords
+    * Sharing keywords
+
+These are weighted and used to find entries which are likely similar.
+
+These are then added to the entries to improve site navigation.
+"""
 import os
 import json
 
@@ -5,6 +15,18 @@ from writeFile import writeFile
 
 
 def addRelatedEntries():
+    """
+    First three dictionaries are created as follows: 
+
+    dependencies = {"dependency": [list-of-entries, ...], ...}
+    keywords = {"keyword": [list-of-entries, ...], ...}
+    topics = {"topic": [list-of-entries, ...], ...}
+
+    Keywords that feature in more than 10 entries are dropped. Then
+    a dictionary is created with the relatedness scores between each 
+    entry. Finally, the top three related entries are chosen for each 
+    entry.
+    """
     hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
     keywordsFile = hugoDir + "themes/afp/static/data/keywords.json"
@@ -82,6 +104,15 @@ def addRelatedEntries():
 
 
 def populateRelated(dataSet, relatedEntries, modifier=1):
+    """This is a heavliy nested loop to create the relatedEntries dictionary.
+    
+    For each of the categories, the list of entries associated with 
+    each key is iterated over twice and, if the entries are not the 
+    same, the modifier of that category is added to the relatedness 
+    score between the two entries in the dictionary. As the loop 
+    iterates twice over the value set, the resulting dictionary is 
+    bijective — i.e., the value for A->B will be equal to B->A.
+    """
     for _, entries in dataSet.items():
         for keyEntry in entries:
             for valueEntry in entries:
@@ -96,6 +127,7 @@ def populateRelated(dataSet, relatedEntries, modifier=1):
 
 
 def topThree(dictionary):
+    """Returns the highest three dictionary keys by value"""
     return sorted(dictionary, key=dictionary.get, reverse=True)[:3]
 
 

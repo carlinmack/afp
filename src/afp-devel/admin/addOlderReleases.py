@@ -1,3 +1,9 @@
+"""
+This script traverses the `metadata/release-dates` and `metadata/releases`
+files and adds all the releases (except the most recent) of each entry
+to its JSON file.
+"""
+
 import re
 from datetime import date
 
@@ -5,6 +11,8 @@ from writeFile import writeFile
 
 
 def addOlderReleases():
+    """First build a list of release dates, second traverse each release and 
+    add all but the most recent to its entry file."""
     releaseNames = []
     releaseDates = []
 

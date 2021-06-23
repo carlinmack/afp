@@ -94,6 +94,8 @@ python exportMetadata.py
 hugo --minify
 ```
 
+👉 [Documentation of all available modules](DOCUMENTATION.md)
+
 ## Contributions
 
 I gladly accept contributions via GitHub pull requests! Please create an issue first so 

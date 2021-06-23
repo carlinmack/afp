@@ -1,3 +1,13 @@
+"""
+Converts the metadata stored in an INI file into individual JSON files. The 
+shortname, title, date and abstract are preserved as is, but the other 
+attributes are transformed into more appropriate formats like arrays and 
+objects. 
+
+Author emails are extracted from the entry data and are collated into an 
+authors.json file.
+"""
+
 import configparser
 import os
 import re
@@ -6,6 +16,10 @@ from writeFile import writeFile
 
 
 def iniToJson():
+    """
+    Iterates over each entry in the metadata/metadata file and extracts
+    the information before outputting the data as a JSON file.
+    """
     hugoDir = "hugo/"
     entriesDir = hugoDir + "content/entries/"
     theoriesDir = hugoDir + "content/theories/"
@@ -64,7 +78,14 @@ def iniToJson():
     writeFile(dataDir + "authors.json", authorsDictionary, overwrite=True)
 
 
-def processName(val, authorsDictionary):
+def processName(val: str, authorsDictionary) -> list:
+    """
+    Extracts a string of authors into a python list. The website/email
+    address is extracted here.
+    
+    Note: Only one website/email address is kept per author, if there
+    are multiple values they are overwritten.
+    """
     authors = val.split(",")
     jsonAuthors = []
     for author in authors:
@@ -90,7 +111,13 @@ def processName(val, authorsDictionary):
     return jsonAuthors
 
 
-def standardiseInitials(name):
+def standardiseInitials(name: str) -> str:
+    """Standardises the format of a name with initials.
+    
+    Format is:
+        * Initial always followed by a period
+        * Initials are always seperated by a space 
+    """
     if re.match(".* [A-Z] .*", name):
         name = re.sub(r"( [A-Z]) ", r"\1. ", name)
 
@@ -100,7 +127,9 @@ def standardiseInitials(name):
     return name
 
 
-def deduplicate(name):
+def deduplicate(name: str) -> str:
+    """Many authors have spelt there name in many ways. This is a manual 
+    de-duplication of these."""
     if name == "Florian Kammueller":
         return "Florian Kammüller"
     if name == "Jasmin Blanchette":

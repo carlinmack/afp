@@ -1,5 +1,12 @@
 """
-Designed to be run once on new release of Isabelle. Takes around 80 minutes?
+This script downloads and transforms the HTML documents for theory browsing.
+
+
+
+By default this script only gets theories which do not have a theory file 
+i.e., new theories. The `--all` flag can be passed to get all theories, 
+but this should be run sparingly as it is intensive on the upstream server. 
+A full run takes around 80 minutes.
 """
 import argparse
 import os
@@ -14,7 +21,9 @@ from tqdm import tqdm
 from writeFile import writeFile
 
 
-def getTheories(all=False, entry=""):
+def getTheories(all: bool = False, entry: str = ""):
+    """Entry point, either downloads one entry or all of them 
+    based on the passed flags"""
     hugoDir = "hugo/"
     theoriesHtmlDir = hugoDir + "assets/theories/"
     theoriesJsonDir = hugoDir + "content/theories/"
@@ -45,6 +54,7 @@ def getTheories(all=False, entry=""):
 
 
 def processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir):
+    """Gets the theories for an entry and writes it to the requisite files"""
     names, links = theoryLinks(entry)
 
     if links != 0:
@@ -69,15 +79,18 @@ def processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir):
         writeFile(entriesJsonDir + entry + ".md", {"theories": names})
 
 
-def theoryLinks(entry):
-    def getTheoryLinks(url):
+def theoryLinks(entry: str):
+    """Download the  “Browse theories” page for an entry to get a 
+    list of theories. """
+
+    def getTheoryLinks(url: str) -> list:
         content = requests.get(url).content
         soup = BeautifulSoup(content, features="lxml")
         theories = soup.find("div", {"class": "contents"}).findAll("a")
 
         return theories
 
-    def getOutput(theories, url):
+    def getOutput(theories: list, url: str):
         names = [re.sub(".html$", "", a["href"]) for a in theories]
         links = [url + a["href"] for a in theories]
         return names, links
@@ -103,6 +116,15 @@ def theoryLinks(entry):
 
 
 def getTheory(url, name):
+    """
+    The theories are then downloaded, 
+    transformed, and concatenated together. The first transformation 
+    is to keep the <body> and change it to be a <div>, as there can 
+    only be one body tag in a document. The next transformation is 
+    to select all lemmas in the document and add unique IDs to them. 
+    The resulting HTML and lemma names are returned to be added to 
+    the theory’s front matter.
+    """
     content = requests.get(url).content
     soup = BeautifulSoup(content, features="lxml")
     contents = soup.body
@@ -138,6 +160,7 @@ def getTheory(url, name):
 
 
 def dependancyLink(link):
+    """Fixes dependency links to be internal"""
     if re.match(r"\.\./\.\./", str(link)):
         link = re.sub(
             r"\.\./\.\./",
@@ -157,7 +180,7 @@ def dependancyLink(link):
     return link
 
 
-def updateProgressBar(desc, t):
+def updateProgressBar(desc: str, t):
     t.update()
     t.set_description(desc)
 

@@ -1,4 +1,7 @@
-"""Generates a list of keywords for autocomplete"""
+"""Generates a list of keywords for the search autocomplete. Each entry’s 
+abstract is sanitised and then the keywords are extracted with the RAKE 
+algorithm.
+"""
 import json
 import os
 import re
@@ -12,6 +15,11 @@ from rake import Rake
 
 
 def generateKeywords():
+    """RAKE is used to extract the keywords from every abstract. 
+    
+    The top 8 keywords are added to a list of all keywords and the keywords 
+    that appear in more than two abstracts are preserved. Finally, plurals 
+    are removed."""
     entriesDir = "hugo/content/entries/"
 
     stoppath = "rake/data/stoplists/SmartStoplist.txt"
@@ -41,6 +49,7 @@ def generateKeywords():
         textKeywords = [x[0] for x in textKeywords[:8]]
         keywords += textKeywords
 
+    # keep keywords that appear in 2 or more abstracts
     keywords = [i for i, c in groupby(sorted(keywords)) if len(list(c)) > 1]
 
     # remove plurals if we have the singular
@@ -48,6 +57,7 @@ def generateKeywords():
         if keyword + "s" in keywords:
             keywords.remove(keyword + "s")
 
+    # create output format
     jsonObject = [{"id": i, "keyword": x} for i, x in enumerate(keywords)]
 
     with open("hugo/themes/afp/static/data/keywords.json", "w") as f:

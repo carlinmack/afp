@@ -1,3 +1,5 @@
+"""This script creates a JSON release of the AFP's metadata"""
+
 import os
 import json
 from typing import Set
@@ -5,16 +7,16 @@ from writeFile import writeFile
 
 
 def exportJsonMetadata():
+    """Iterates over each entry and builds the output list"""
     inputDir = "hugo/content/entries/"
     outputFile = "hugo/static/release/metadata.json"
-
 
     data = []
 
     for entry in os.listdir(inputDir):
 
         entryPath = os.path.join(inputDir, entry)
-        
+
         if entry != "Example-Submission.md":
             data.append(processEntry(entryPath, entry))
 
@@ -22,6 +24,7 @@ def exportJsonMetadata():
 
 
 def processEntry(entryPath, entry):
+    """Removes the emails and related entries and returns the dictionary"""
     fileExists = os.path.isfile(entryPath)
 
     entryData = {"session": entry[:-3]}
