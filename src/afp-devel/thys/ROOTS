@@ -246,6 +246,7 @@ IEEE_Floating_Point
 IFC_Tracking
 IMAP-CRDT
 IMO2019
+IMP_Compiler
 IMP2
 IMP2_Binary_Heap
 IP_Addresses
@@ -581,6 +582,7 @@ UTP
 Universal_Turing_Machine
 UpDown_Scheme
 Valuation
+Van_der_Waerden
 VectorSpace
 VeriComp
 Verified-Prover
