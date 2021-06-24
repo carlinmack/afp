@@ -44,7 +44,7 @@
         "CL_Z"
     ],
     "relatedEntries": [
-        "Decreasing-Diagrams-II",
-        "Decreasing-Diagrams"
+        "Decreasing-Diagrams",
+        "Decreasing-Diagrams-II"
     ]
 }
