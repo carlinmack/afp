@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 169902,
-    "num_loc": 2967037,
+    "num_lemmas": 170910,
+    "num_loc": 2987317,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        604
+        606
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2967000
+        2987300
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        15
+        16
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        385
+        386
     ],
     "loc_articles": [
         839,
@@ -685,6 +685,8 @@
         830,
         399,
         666,
+        413,
+        19867,
         1088
     ],
     "all_articles": [
@@ -1291,6 +1293,8 @@
         "Combinatorics_Words_Lyndon",
         "Combinatorics_Words_Graph_Lemma",
         "IMP_Compiler",
+        "Public_Announcement_Logic",
+        "MiniSail",
         "Van_der_Waerden"
     ]
 }
