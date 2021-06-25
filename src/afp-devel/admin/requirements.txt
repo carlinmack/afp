@@ -8,6 +8,7 @@ tqdm
 unidecode
 bs4
 requests
+lxml
 
 # requirements from the RAKE code
 six

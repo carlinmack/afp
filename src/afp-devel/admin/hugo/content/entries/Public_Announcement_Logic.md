@@ -14,5 +14,8 @@
     "licence": "BSD",
     "dependencies": [
         "Epistemic_Logic"
+    ],
+    "theories": [
+        "PAL"
     ]
 }

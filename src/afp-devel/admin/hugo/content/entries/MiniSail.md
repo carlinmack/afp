@@ -16,5 +16,25 @@
         "Nominal2",
         "Native_Word",
         "Show"
+    ],
+    "theories": [
+        "Nominal-Utils",
+        "Syntax",
+        "IVSubst",
+        "BTVSubst",
+        "Wellformed",
+        "RCLogic",
+        "SyntaxL",
+        "WellformedL",
+        "Typing",
+        "Operational",
+        "SubstMethods",
+        "RCLogicL",
+        "TypingL",
+        "ContextSubtypingL",
+        "IVSubstTypingL",
+        "BTVSubstTypingL",
+        "Safety",
+        "MiniSail"
     ]
 }
