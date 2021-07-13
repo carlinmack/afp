@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 170910,
-    "num_loc": 2987515,
+    "num_lemmas": 171153,
+    "num_loc": 2991946,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        607
+        608
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2987500
+        2991900
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        18
+        19
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        388
+        389
     ],
     "loc_articles": [
         839,
@@ -688,7 +688,8 @@
         413,
         19867,
         1088,
-        198
+        198,
+        4431
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1297,6 +1298,7 @@
         "Public_Announcement_Logic",
         "MiniSail",
         "Van_der_Waerden",
-        "SpecCheck"
+        "SpecCheck",
+        "Finitely_Generated_Abelian_Groups"
     ]
 }
