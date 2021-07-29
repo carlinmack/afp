@@ -76,6 +76,6 @@
     "relatedEntries": [
         "Decreasing-Diagrams-II",
         "Finite_Automata_HF",
-        "Polynomials"
+        "Well_Quasi_Orders"
     ]
 }

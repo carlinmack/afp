@@ -38,7 +38,7 @@
     ],
     "relatedEntries": [
         "Twelvefold_Way",
-        "Bell_Numbers_Spivey",
-        "Card_Partitions"
+        "Card_Partitions",
+        "Bell_Numbers_Spivey"
     ]
 }
