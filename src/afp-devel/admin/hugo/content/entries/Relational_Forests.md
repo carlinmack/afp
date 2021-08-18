@@ -14,5 +14,9 @@
     "licence": "BSD",
     "dependencies": [
         "Stone_Kleene_Relation_Algebras"
+    ],
+    "theories": [
+        "Forests",
+        "Algorithms"
     ]
 }
