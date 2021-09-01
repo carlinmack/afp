@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 171321,
-    "num_loc": 2994210,
+    "num_lemmas": 171449,
+    "num_loc": 2997970,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        610
+        611
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2994200
+        2998000
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        20
+        21
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        390
+        391
     ],
     "loc_articles": [
         839,
@@ -691,7 +691,8 @@
         198,
         4431,
         1961,
-        303
+        303,
+        3760
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1303,6 +1304,7 @@
         "SpecCheck",
         "Finitely_Generated_Abelian_Groups",
         "Relational_Forests",
-        "Fresh_Identifiers"
+        "Fresh_Identifiers",
+        "Three_Circles"
     ]
 }
