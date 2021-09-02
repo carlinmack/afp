@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 171449,
-    "num_loc": 2997970,
+    "num_lemmas": 172108,
+    "num_loc": 3002843,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        611
+        612
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        2998000
+        3002800
     ],
     "author_years": [
         14,
@@ -691,6 +691,7 @@
         198,
         4431,
         1961,
+        4873,
         303,
         3760
     ],
@@ -1304,6 +1305,7 @@
         "SpecCheck",
         "Finitely_Generated_Abelian_Groups",
         "Relational_Forests",
+        "Design_Theory",
         "Fresh_Identifiers",
         "Three_Circles"
     ]
