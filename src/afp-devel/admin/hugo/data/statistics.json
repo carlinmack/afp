@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 172108,
-    "num_loc": 3002843,
+    "num_lemmas": 172163,
+    "num_loc": 3004263,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        612
+        613
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3002800
+        3004300
     ],
     "author_years": [
         14,
@@ -693,7 +693,8 @@
         1961,
         4873,
         303,
-        3760
+        3760,
+        1420
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1307,6 +1308,7 @@
         "Relational_Forests",
         "Design_Theory",
         "Fresh_Identifiers",
-        "Three_Circles"
+        "Three_Circles",
+        "Cubic_Quartic_Equations"
     ]
 }
