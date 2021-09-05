@@ -16,5 +16,13 @@
         "Algebraic_Numbers",
         "Complex_Geometry",
         "Hermite_Lindemann"
+    ],
+    "theories": [
+        "Ferraris_Formula",
+        "Cardanos_Formula",
+        "Min_Int_Poly_Impl",
+        "Complex_Roots",
+        "Cubic_Polynomials",
+        "Quartic_Polynomials"
     ]
 }

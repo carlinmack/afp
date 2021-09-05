@@ -17,5 +17,12 @@
     "dependencies": [
         "Budan_Fourier",
         "Polynomial_Interpolation"
+    ],
+    "theories": [
+        "RRI_Misc",
+        "Bernstein_01",
+        "Bernstein",
+        "Normal_Poly",
+        "Three_Circles"
     ]
 }

@@ -17,5 +17,18 @@
         "Card_Partitions",
         "Nested_Multisets_Ordinals",
         "Graph_Theory"
+    ],
+    "theories": [
+        "Multisets_Extras",
+        "Design_Basics",
+        "Design_Operations",
+        "Block_Designs",
+        "BIBD",
+        "Resolvable_Designs",
+        "Group_Divisible_Designs",
+        "Designs_And_Graphs",
+        "Sub_Designs",
+        "Design_Isomorphisms",
+        "Design_Theory_Root"
     ]
 }
