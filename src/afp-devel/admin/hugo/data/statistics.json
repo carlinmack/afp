@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 172163,
-    "num_loc": 3004263,
+    "num_lemmas": 172176,
+    "num_loc": 3005080,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        613
+        614
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3004300
+        3005100
     ],
     "author_years": [
         14,
@@ -694,6 +694,7 @@
         4873,
         303,
         3760,
+        817,
         1420
     ],
     "all_articles": [
@@ -1309,6 +1310,7 @@
         "Design_Theory",
         "Fresh_Identifiers",
         "Three_Circles",
+        "Logging_Independent_Anonymity",
         "Cubic_Quartic_Equations"
     ]
 }
