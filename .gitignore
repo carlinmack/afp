@@ -1,3 +1,7 @@
 src/hugo/public/*
 src/afp-devel/.hg/
 **/__pycache__/**
+.vscode/**
+.sessions
+afp.tgz
+*.pptx
