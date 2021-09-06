@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 172176,
-    "num_loc": 3005080,
+    "num_lemmas": 172482,
+    "num_loc": 3013316,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        614
+        615
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3005100
+        3013300
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        21
+        24
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        391
+        394
     ],
     "loc_articles": [
         839,
@@ -690,6 +690,7 @@
         1088,
         198,
         4431,
+        8236,
         1961,
         4873,
         303,
@@ -1306,6 +1307,7 @@
         "Van_der_Waerden",
         "SpecCheck",
         "Finitely_Generated_Abelian_Groups",
+        "Schutz_Spacetime",
         "Relational_Forests",
         "Design_Theory",
         "Fresh_Identifiers",
