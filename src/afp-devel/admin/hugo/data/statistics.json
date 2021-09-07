@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 172482,
-    "num_loc": 3013316,
+    "num_lemmas": 172721,
+    "num_loc": 3016794,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        615
+        616
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3013300
+        3016800
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        24
+        25
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        394
+        395
     ],
     "loc_articles": [
         839,
@@ -696,7 +696,8 @@
         303,
         3760,
         817,
-        1420
+        1420,
+        3478
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1313,6 +1314,7 @@
         "Fresh_Identifiers",
         "Three_Circles",
         "Logging_Independent_Anonymity",
-        "Cubic_Quartic_Equations"
+        "Cubic_Quartic_Equations",
+        "Dominance_CHK"
     ]
 }
