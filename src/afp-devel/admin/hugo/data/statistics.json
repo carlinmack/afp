@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 172721,
-    "num_loc": 3016794,
+    "num_lemmas": 179341,
+    "num_loc": 3115420,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        616
+        623
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3016800
+        3115400
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        25
+        26
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        395
+        396
     ],
     "loc_articles": [
         839,
@@ -697,7 +697,14 @@
         3760,
         817,
         1420,
-        3478
+        3478,
+        192,
+        175,
+        28077,
+        34972,
+        16171,
+        1074,
+        17965
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1315,6 +1322,13 @@
         "Three_Circles",
         "Logging_Independent_Anonymity",
         "Cubic_Quartic_Equations",
-        "Dominance_CHK"
+        "Dominance_CHK",
+        "Conditional_Simplification",
+        "Intro_Dest_Elim",
+        "CZH_Foundations",
+        "CZH_Elementary_Categories",
+        "CZH_Universal_Constructions",
+        "Conditional_Transfer_Rule",
+        "Types_To_Sets_Extension"
     ]
 }
