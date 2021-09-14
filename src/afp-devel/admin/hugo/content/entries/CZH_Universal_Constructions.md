@@ -14,5 +14,16 @@
     "licence": "BSD",
     "dependencies": [
         "CZH_Elementary_Categories"
+    ],
+    "theories": [
+        "CZH_UCAT_Introduction",
+        "CZH_UCAT_Universal",
+        "CZH_UCAT_Limit",
+        "CZH_UCAT_Complete",
+        "CZH_UCAT_Adjoints",
+        "CZH_UCAT_Kan",
+        "CZH_UCAT_PWKan",
+        "CZH_UCAT_PWKan_Example",
+        "CZH_UCAT_Conclusions"
     ]
 }
