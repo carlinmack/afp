@@ -58,7 +58,7 @@
     ],
     "relatedEntries": [
         "Polynomial_Interpolation",
-        "Certification_Monads",
-        "Real_Impl"
+        "Real_Impl",
+        "Certification_Monads"
     ]
 }

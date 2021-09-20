@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 179341,
-    "num_loc": 3115420,
+    "num_lemmas": 180692,
+    "num_loc": 3134091,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        623
+        624
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3115400
+        3134100
     ],
     "author_years": [
         14,
@@ -704,7 +704,8 @@
         34972,
         16171,
         1074,
-        17965
+        17965,
+        18671
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1329,6 +1330,7 @@
         "CZH_Elementary_Categories",
         "CZH_Universal_Constructions",
         "Conditional_Transfer_Rule",
-        "Types_To_Sets_Extension"
+        "Types_To_Sets_Extension",
+        "Complex_Bounded_Operators"
     ]
 }

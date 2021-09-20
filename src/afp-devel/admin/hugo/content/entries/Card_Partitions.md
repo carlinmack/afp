@@ -43,6 +43,6 @@
     "relatedEntries": [
         "Card_Equiv_Relations",
         "Bell_Numbers_Spivey",
-        "Twelvefold_Way"
+        "Card_Number_Partitions"
     ]
 }
