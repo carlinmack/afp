@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 180692,
-    "num_loc": 3134091,
+    "num_lemmas": 180988,
+    "num_loc": 3138330,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        624
+        625
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3134100
+        3138300
     ],
     "author_years": [
         14,
@@ -705,6 +705,7 @@
         16171,
         1074,
         17965,
+        4239,
         18671
     ],
     "all_articles": [
@@ -1331,6 +1332,7 @@
         "CZH_Universal_Constructions",
         "Conditional_Transfer_Rule",
         "Types_To_Sets_Extension",
+        "Weighted_Path_Order",
         "Complex_Bounded_Operators"
     ]
 }

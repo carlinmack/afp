@@ -27,6 +27,7 @@
         "KBO"
     ],
     "relatedEntries": [
+        "Weighted_Path_Order",
         "Functional_Ordered_Resolution_Prover"
     ]
 }
