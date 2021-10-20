@@ -6,3 +6,4 @@ src/afp-devel/.hg/
 afp.tgz
 *.pptx
 **/hugo/resources/**
+node_modules/

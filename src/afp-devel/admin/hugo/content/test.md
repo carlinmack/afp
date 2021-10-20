@@ -1,0 +1,5 @@
+---
+title: Account test
+---
+
+{{< test >}}
