@@ -23,7 +23,7 @@
         "Instance"
     ],
     "relatedEntries": [
-        "Incompleteness",
-        "Goedel_HFSet_Semanticless"
+        "Goedel_HFSet_Semanticless",
+        "Incompleteness"
     ]
 }

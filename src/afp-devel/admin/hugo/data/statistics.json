@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 180988,
-    "num_loc": 3138330,
+    "num_lemmas": 183946,
+    "num_loc": 3174285,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        625
+        628
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3138300
+        3174300
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        26
+        28
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        396
+        398
     ],
     "loc_articles": [
         839,
@@ -699,14 +699,17 @@
         1420,
         3478,
         192,
-        175,
-        28077,
-        34972,
-        16171,
-        1074,
-        17965,
+        176,
+        28078,
+        34970,
+        16167,
+        1059,
+        17903,
         4239,
-        18671
+        18671,
+        645,
+        21773,
+        13618
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1333,6 +1336,9 @@
         "Conditional_Transfer_Rule",
         "Types_To_Sets_Extension",
         "Weighted_Path_Order",
-        "Complex_Bounded_Operators"
+        "Complex_Bounded_Operators",
+        "FOL_Axiomatic",
+        "Virtual_Substitution",
+        "Correctness_Algebras"
     ]
 }

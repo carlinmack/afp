@@ -809,10 +809,12 @@
         "mailto": "lor.gheri@gmail.com"
     },
     "André Platzer": {
-        "website": "https://www.cs.cmu.edu/~aplatzer/"
+        "website": "https://www.cs.cmu.edu/~aplatzer/",
+        "mailto": "aplatzer@cs.cmu.edu"
     },
     "Katherine Cordwell": {
-        "website": "https://www.cs.cmu.edu/~kcordwel/"
+        "website": "https://www.cs.cmu.edu/~kcordwel/",
+        "mailto": "kcordwel@cs.cmu.edu"
     },
     "Yong Kiam Tan": {
         "website": "https://www.cs.cmu.edu/~yongkiat/"
@@ -943,5 +945,14 @@
     },
     "Fox Thomson": {
         "mailto": "foxthomson0@gmail.com"
+    },
+    "Mihails Milehins": {
+        "mailto": "user9716869@gmail.com"
+    },
+    "Matias Scharager": {
+        "mailto": "mscharag@cs.cmu.edu"
+    },
+    "Stefan Mitsch": {
+        "mailto": "smitsch@cs.cmu.edu"
     }
 }
