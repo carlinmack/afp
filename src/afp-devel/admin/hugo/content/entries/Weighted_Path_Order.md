@@ -19,5 +19,21 @@
     ],
     "relatedEntries": [
         "Knuth_Bendix_Order"
+    ],
+    "theories": [
+        "Status",
+        "Precedence",
+        "Relations",
+        "List_Order",
+        "Multiset_Extension_Pair",
+        "Multiset_Extension_Pair_Impl",
+        "Multiset_Extension2",
+        "Multiset_Extension2_Impl",
+        "WPO",
+        "RPO",
+        "LPO",
+        "KBO_Transformation",
+        "KBO_as_WPO",
+        "Executable_Orders"
     ]
 }
