@@ -20,5 +20,35 @@
     "licence": "BSD",
     "dependencies": [
         "Polynomials"
+    ],
+    "theories": [
+        "QE",
+        "MPolyExtension",
+        "ExecutiblePolyProps",
+        "PolyAtoms",
+        "Debruijn",
+        "Reindex",
+        "Optimizations",
+        "OptimizationProofs",
+        "VSAlgos",
+        "Heuristic",
+        "PrettyPrinting",
+        "Exports",
+        "LinearCase",
+        "QuadraticCase",
+        "EliminateVariable",
+        "LuckyFind",
+        "EqualityVS",
+        "UniAtoms",
+        "NegInfinity",
+        "NegInfinityUni",
+        "Infinitesimals",
+        "InfinitesimalsUni",
+        "DNFUni",
+        "GeneralVSProofs",
+        "DNF",
+        "VSQuad",
+        "HeuristicProofs",
+        "ExportProofs"
     ]
 }
