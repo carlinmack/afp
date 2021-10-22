@@ -1,0 +1,99 @@
+{
+    "url": "entries/belief_revision/theories",
+    "title": "Session Belief_Revision",
+    "theories": [
+        {
+            "AGM_Logic": [
+                "idempotency_L",
+                "assumption_L",
+                "validD_L",
+                "valid_expansion",
+                "transitivity2_L",
+                "Cn_same",
+                "Cn_union",
+                "Cn_Union",
+                "Cn_inter",
+                "Cn_Inter",
+                "non_consistency",
+                "imp_PL",
+                "not_PL",
+                "notnot_PL",
+                "conj_PL",
+                "disj_PL",
+                "equiv_PL",
+                "nonemptyCn",
+                "Cn_true",
+                "Cn_false",
+                "Cn_imp",
+                "Cn_not",
+                "Cn_conj",
+                "Cn_conj_bis",
+                "Cn_disj",
+                "Cn_equiv",
+                "consistency",
+                "Cn_notnot",
+                "conj_com",
+                "conj_com_Cn",
+                "disj_com",
+                "disj_com_Cn",
+                "imp_contrapos",
+                "equiv_negation",
+                "imp_trans",
+                "imp_recovery0",
+                "imp_recovery1",
+                "imp_recovery2",
+                "impI2",
+                "conj_equiv",
+                "conj_imp",
+                "conj_not_impE_PL",
+                "disj_notE_PL",
+                "disj_not_impE_PL",
+                "imp_conj",
+                "conj_overlap",
+                "morgan",
+                "conj_superexpansion1",
+                "conj_superexpansion2",
+                "chain_closure"
+            ]
+        },
+        {
+            "AGM_Remainder": [
+                "rem_inclusion",
+                "rem_closure",
+                "remainder_extensionality",
+                "nonconsequence_remainder",
+                "taut2emptyrem",
+                "remainder_recovery",
+                "remainder_recovery_bis",
+                "remainder_expansion",
+                "remainder_conj",
+                "upper_remainder"
+            ]
+        },
+        {
+            "AGM_Contraction": [
+                "pmc_inclusion",
+                "pmc_vacuity",
+                "pmc_closure",
+                "pmc_extensionality",
+                "pmc_tautology",
+                "selection_completion",
+                "pmc_completion",
+                "pmc_recovery",
+                "pmc_success",
+                "contraction_is_pmc",
+                "contraction_with_completion",
+                "rel_sel_conj_overlap",
+                "trmc_conj_overlap",
+                "rel_sel_conj_inclusion",
+                "trmc_conj_inclusion",
+                "AGM_rel_sel_completion",
+                "full_meet_weak1",
+                "full_meet_weak2"
+            ]
+        },
+        {
+            "AGM_Revision": []
+        }
+    ]
+}
