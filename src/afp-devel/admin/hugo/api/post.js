@@ -6,13 +6,7 @@ const database = new sqlite3.Database('/var/lib/sqlite/afp.db');
 
 //create a table to insert post
 const createPostTable = () => {
-  const query = `
-        CREATE TABLE IF NOT EXISTS posts (
-        id integer PRIMARY KEY,
-        title text,
-        description text,
-        createDate text,
-        author text )`;
+  const query = `CREATE TABLE IF NOT EXISTS posts (  id integer PRIMARY KEY,   title text,    description text,   createDate text,   author text )`;
 
   return database.run(query);
 };
@@ -36,12 +30,12 @@ var queryType = new graphql.GraphQLObjectType({
   name: 'Query',
   fields: {
     //first query to select all
-    Posts: {
+    posts: {
       type: graphql.GraphQLList(PostType),
       resolve: (root, args, context, info) => {
         return new Promise((resolve, reject) => {
           // raw SQLite query to select from table
-          database.all('SELECT * FROM Posts;', function (err, rows) {
+          database.all('SELECT * FROM posts;', function (err, rows) {
             if (err) {
               reject([]);
             }
@@ -61,7 +55,7 @@ var queryType = new graphql.GraphQLObjectType({
       resolve: (root, { id }, context, info) => {
         return new Promise((resolve, reject) => {
           database.all(
-            'SELECT * FROM Posts WHERE id = (?);',
+            'SELECT * FROM posts WHERE id = (?);',
             [id],
             function (err, rows) {
               if (err) {
@@ -102,7 +96,7 @@ var mutationType = new graphql.GraphQLObjectType({
         return new Promise((resolve, reject) => {
           //raw SQLite to insert a new post in post table
           database.run(
-            'INSERT INTO Posts (title, description, createDate, author) VALUES (?,?,?,?);',
+            'INSERT INTO posts (title, description, createDate, author) VALUES (?,?,?,?);',
             [title, description, createDate, author],
             (err) => {
               if (err) {
@@ -148,7 +142,7 @@ var mutationType = new graphql.GraphQLObjectType({
         return new Promise((resolve, reject) => {
           //raw SQLite to update a post in post table
           database.run(
-            'UPDATE Posts SET title = (?), description = (?), createDate = (?), author = (?) WHERE id = (?);',
+            'UPDATE posts SET title = (?), description = (?), createDate = (?), author = (?) WHERE id = (?);',
             [title, description, createDate, author, id],
             (err) => {
               if (err) {
@@ -172,7 +166,7 @@ var mutationType = new graphql.GraphQLObjectType({
       resolve: (root, { id }) => {
         return new Promise((resolve, reject) => {
           //raw query to delete from post table by id
-          database.run('DELETE from Posts WHERE id =(?);', [id], (err) => {
+          database.run('DELETE from posts WHERE id =(?);', [id], (err) => {
             if (err) {
               reject(err);
             }

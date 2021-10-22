@@ -1,5 +1,5 @@
 ---
-title: Account test
+title: Graphql test
 ---
 
 {{< test >}}
