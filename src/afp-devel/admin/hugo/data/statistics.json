@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 183946,
-    "num_loc": 3174285,
+    "num_lemmas": 184035,
+    "num_loc": 3175609,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        628
+        629
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3174300
+        3175600
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        28
+        30
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        398
+        400
     ],
     "loc_articles": [
         839,
@@ -709,7 +709,8 @@
         18671,
         645,
         21773,
-        13618
+        13618,
+        1324
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1339,6 +1340,7 @@
         "Complex_Bounded_Operators",
         "FOL_Axiomatic",
         "Virtual_Substitution",
-        "Correctness_Algebras"
+        "Correctness_Algebras",
+        "Belief_Revision"
     ]
 }
