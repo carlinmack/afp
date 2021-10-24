@@ -68,12 +68,23 @@ router.post('/signup', function (req, res, next) {
 });
 
 router.get('/logged-in', function (req, res, next) {
-    res.json({
-        a: req.isAuthenticated,
-        b: req.isAuthenticated(),
-        c: req.user,
-        e: req.session,
-    });
+    if (req?.session?.passport?.user) {
+        res.json({
+            authenticated: true,
+        });
+    } else {
+        res.json({
+            authenticated: false,
+            error: 'Not logged in',
+        });
+    }
+    // res.json({
+    //     a: !!req.isAuthenticated,
+    //     b: !!req.isAuthenticated(),
+    //     c: !!req.user,
+    //     e: !!req.session,
+    //     f: !!req.session.passport.user,
+    // });
 });
 
 // router.get('/', function (req, res, next) {

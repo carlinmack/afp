@@ -3,27 +3,37 @@ const { graphqlHTTP } = require('express-graphql');
 const schema = require('./post.js');
 const app = express();
 
-var cookieParser = require('cookie-parser');
 var passport = require('passport');
-const bodyParser = require('body-parser');
 
 var authRouter = require('./routes/auth');
 
 require('./boot/db')();
 require('./boot/auth')();
 
-// app.use('/graphql', graphqlHTTP({ schema: schema.schema, graphiql: true }));
 // URL prefix: /api/
 app.use(
-    bodyParser.urlencoded({
+    express.urlencoded({
         extended: true,
     })
 );
-app.use(cookieParser());
 app.use(passport.initialize());
-// app.use(passport.session());
+app.use(
+    require('express-session')({
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: false,
+    })
+);
+app.use(function (req, res, next) {
+    var msgs = req.session.messages || [];
+    res.locals.messages = msgs;
+    res.locals.hasMessages = !!msgs.length;
+    req.session.messages = [];
+    next();
+});
 app.use(passport.authenticate('session'));
 
+// app.use('/graphql', graphqlHTTP({ schema: schema.schema, graphiql: true }));
 app.use('/graphql', graphqlHTTP({ schema: schema.schema }));
 app.use('/auth', authRouter);
 
