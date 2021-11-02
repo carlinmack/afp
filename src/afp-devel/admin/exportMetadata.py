@@ -14,6 +14,7 @@ from addOlderReleases import addOlderReleases
 from addRelatedEntries import addRelatedEntries
 from addStatistics import addStatistics
 from exportJsonMetadata import exportJsonMetadata
+from getTheories import getTheories
 
 # from generateKeywords import generateKeywords
 from iniToJson import iniToJson
@@ -21,7 +22,7 @@ from iniToJson import iniToJson
 
 def exportMetadata():
     """Main method which calls each submodule in turn. No options can be passed."""
-    t = tqdm(total=6, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s")
+    t = tqdm(total=7, bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt} {elapsed_s:.0f}s")
 
     updateProgressBar("Export metadata to JSON", t)
     iniToJson()
@@ -44,6 +45,9 @@ def exportMetadata():
     updateProgressBar("Export statistics", t)
     # for this to work add `return data` at line 212 in templates.py
     addStatistics()
+
+    updateProgressBar("Get theories", t)
+    getTheories()
 
     t.close()
 
