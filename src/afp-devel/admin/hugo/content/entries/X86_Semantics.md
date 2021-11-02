@@ -20,5 +20,18 @@
     "licence": "BSD",
     "dependencies": [
         "Word_Lib"
+    ],
+    "theories": [
+        "BitByte",
+        "Memory",
+        "State",
+        "X86_InstructionSemantics",
+        "StateCleanUp",
+        "files/MySubst.ML",
+        "SymbolicExecution",
+        "Examples",
+        "X86_Parse",
+        "files/X86_Parse.ML",
+        "Example_WC"
     ]
 }
