@@ -6,11 +6,6 @@ var db = require('../db');
 var router = express.Router();
 
 // URL prefix: /api/auth/
-router.get('/login', function (req, res, next) {
-    // res.redirect('/login');
-    res.send('login');
-});
-
 router.post(
     '/login/password',
     // passport.authenticate('local', {
@@ -20,13 +15,18 @@ router.post(
     // })
     passport.authenticate('local'),
     function (req, res) {
-        res.send('Hello ' + req.user.displayName + ' (' + req.user.username + ')');
+        res.cookie('authenticated', true);
+        res.redirect('/account');
     }
 );
 
 router.get('/logout', function (req, res, next) {
-    req.logout();
-    res.redirect('/');
+    // console.log(req.user)
+    req.logOut();
+    req.session.destroy(function (err) {
+        res.clearCookie('authenticated');
+        res.redirect('/account'); //Inside a callback… bulletproof!
+    });
 });
 
 router.post('/signup', function (req, res, next) {
@@ -71,6 +71,8 @@ router.get('/logged-in', function (req, res, next) {
     if (req?.session?.passport?.user) {
         res.json({
             authenticated: true,
+            user: req.session.passport.user,
+            also: req.user
         });
     } else {
         res.json({
@@ -78,7 +80,7 @@ router.get('/logged-in', function (req, res, next) {
             error: 'Not logged in',
         });
     }
-    // res.json({
+    // res.json({se
     //     a: !!req.isAuthenticated,
     //     b: !!req.isAuthenticated(),
     //     c: !!req.user,
