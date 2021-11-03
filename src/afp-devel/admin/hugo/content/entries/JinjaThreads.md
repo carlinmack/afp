@@ -269,7 +269,7 @@
     ],
     "relatedEntries": [
         "Collections",
-        "Containers",
-        "ROBDD"
+        "Separation_Logic_Imperative_HOL",
+        "Containers"
     ]
 }
