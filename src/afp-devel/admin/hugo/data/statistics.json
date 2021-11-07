@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 184748,
-    "num_loc": 3184119,
+    "num_lemmas": 184832,
+    "num_loc": 3185408,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        631
+        632
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3184100
+        3185400
     ],
     "author_years": [
         14,
@@ -712,7 +712,8 @@
         13618,
         2609,
         1324,
-        5901
+        5901,
+        1289
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1345,6 +1346,7 @@
         "Correctness_Algebras",
         "X86_Semantics",
         "Belief_Revision",
-        "Registers"
+        "Registers",
+        "Szemeredi_Regularity"
     ]
 }
