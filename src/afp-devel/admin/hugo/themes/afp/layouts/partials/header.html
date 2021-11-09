@@ -18,6 +18,13 @@
     {{ with .website}}
     <p><a href="{{ . }}">{{ . }}</a></p>
   {{- end -}}{{- end -}}{{- end -}}
+  {{ if (eq .File.TranslationBaseName "account")}}
+  <button><a href="/account/settings/">Settings</a></button>
+  <button><a href="/account/edit/">Edit</a></button>
+  {{ end }}
+  {{ if (or (eq .File.TranslationBaseName "account-settings") (eq .File.TranslationBaseName "account-edit") )}}
+  <button><a href="/account/">Back</a></button>
+  {{ end }}
   {{- $site := . -}}
   {{ with .Params.authors}}
     <p>{{- partial "authors.html" (dict "site" $site "authors" .) -}}

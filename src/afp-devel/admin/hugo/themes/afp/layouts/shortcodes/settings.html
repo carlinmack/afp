@@ -1,0 +1,15 @@
+<script src="/js/account-settings.js"></script>
+
+<form action="/api/auth/changePassword" method="post">
+  <label for="accountEmail">Account email</label>
+  <input id="accountEmail" name="accountEmail" type="email"><br>
+  <label for="contactEmail">Contact email</label>
+  <input id="contactEmail" name="contactEmail" type="email"><br><br>
+  <label for="current">Current password</label>
+  <input id="current" name="current" type="password"><br>
+  <label for="password">New password</label>
+  <input id="password" name="password" type="password"><br>
+  <label for="confirm">Confirm password</label>
+  <input id="confirm" name="confirm" type="password"><br>
+  <input type="submit" value="Submit"></input>
+</form>
