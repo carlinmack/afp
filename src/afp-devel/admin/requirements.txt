@@ -12,3 +12,6 @@ lxml
 
 # requirements from the RAKE code
 six
+
+# Isso comment server
+isso

@@ -7,3 +7,4 @@ afp.tgz
 *.pptx
 **/hugo/resources/**
 node_modules/
+.hugo_build.lock

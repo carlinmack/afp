@@ -60,14 +60,20 @@
 <ul>
   {{ $file := printf "assets/theories/%s.html" $entryName}}
   {{ if fileExists $file -}}
-  {{- with .Params.theories -}}
-  {{- range . -}}
-  <li>{{- printf "[%s](theories/#%s)" . . | $.Page.RenderString -}}</li>
-  {{- end -}}
-  {{- end -}}
+    {{- with .Params.theories -}}
+      {{- range $index, $theory := . -}}
+        {{- if (lt $index 5)}}
+        <li>{{- printf "[%s](theories/#%s)" $theory $theory | $.Page.RenderString -}}</li>
+        {{- else -}}
+        {{- if (eq $index 5)}}<button
+          onclick='[... this.parentElement.querySelectorAll("li")].map(x => x.classList.remove("hidden")); this.classList.add("hidden")'>Show all theories</button>{{- end -}}
+        <li class="hidden">{{- printf "[%s](theories/#%s)" $theory $theory | $.Page.RenderString -}}</li>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
   {{ else }}
-  <li>{{- printf "[Browse theories](https://www.isa-afp.org/browser_info/current/AFP/%s/index.html)" $entryName |
-    $.Page.RenderString -}}</li>
+    <li>{{- printf "[Browse theories](https://www.isa-afp.org/browser_info/current/AFP/%s/index.html)" $entryName |
+      $.Page.RenderString -}}</li>
   {{- end -}}
 </ul>
 
@@ -83,6 +89,8 @@
     document</a>
   <a href="https://www.isa-afp.org/browser_info/current/AFP/{{- $entryName -}}/session_graph.pdf">Dependencies</a>
 </nav>
+
+<section id="isso-thread"></section>
 
 <div id="citePopUp" class="overlay">
   <a class="cancel" href="#"></a>
