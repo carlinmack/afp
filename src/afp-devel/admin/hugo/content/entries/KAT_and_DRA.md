@@ -47,8 +47,8 @@
     ],
     "relatedEntries": [
         "KAD",
-        "Relation_Algebra",
-        "Multirelations"
+        "Multirelations",
+        "Relation_Algebra"
     ],
     "theories": [
         "Test_Dioid",

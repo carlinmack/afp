@@ -623,7 +623,10 @@
         "mailto": "jake.palmer@ed.ac.uk"
     },
     "Jacques Fleuriot": {
-        "mailto": " jdf@ed.ac.uk"
+        "website": "https://www.inf.ed.ac.uk/people/staff/Jacques_Fleuriot.html"
+    },
+    "Jacques D. Fleuriot": {
+        "website": "https://www.inf.ed.ac.uk/people/staff/Jacques_Fleuriot.html"
     },
     "Benjamin Bisping": {
         "mailto": "benjamin.bisping@campus.tu-berlin.de"
@@ -773,7 +776,7 @@
         "website": "http://www.cs.cmu.edu/~scott/"
     },
     "Angeliki Koutsoukou-Argyraki": {
-        "website": "https://www.cl.cam.ac.uk/~ak2110/"
+        "website": "https://www.cst.cam.ac.uk/people/ak2110"
     },
     "Anthony Bordg": {
         "website": "https://sites.google.com/site/anthonybordg/"
