@@ -19,8 +19,9 @@ menu:
 
 The editors of the Archive of Formal Proofs are:
 
-*   [Manuel Eberl](http://www.in.tum.de/~eberlm/), [Technische Universität München](http://www.tum.de/)
-*   [Gerwin Klein](http://www.cse.unsw.edu.au/~kleing/), [Data61](http://www.data61.csiro.au)
+*   [Manuel Eberl](http://pruvisto.org/), [University of Innsbruck](https://www.uibk.ac.at/)
+*   [Gerwin Klein](http://www.cse.unsw.edu.au/~kleing/), [Proofcraft](https://proofcraft.systems) and [UNSW](https://unsw.edu.au)
+*   [Andreas Lochbihler](http://www.andreas-lochbihler.de), [Digital Asset](https://www.digitalasset.com)
 *   [Tobias Nipkow](http://www.in.tum.de/~nipkow/), [Technische Universität München](http://www.tum.de/)
 *   [Larry Paulson](http://www.cl.cam.ac.uk/users/lcp/), [University of Cambridge](http://www.cam.ac.uk/)
 *   [René Thiemann](http://cl-informatik.uibk.ac.at/users/thiemann/), [University of Innsbruck](https://www.uibk.ac.at/)
