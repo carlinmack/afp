@@ -53,6 +53,8 @@
 
   {{- if eq .Section "entries" -}}
   <script src="{{- .Site.BaseURL -}}js/entries.js"></script>
+  <script data-isso="/api/comments" data-isso-css="false" src="{{- .Site.BaseURL -}}js/isso.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isso.css">
   {{- end -}}
   
   <script src="{{- .Site.BaseURL -}}js/flexsearch.min.js"></script>
@@ -64,5 +66,4 @@
     <script src="{{- .Site.BaseURL -}}js/header-search.js"></script>
   {{- end -}}
 
-  <script data-isso="/api/comments" src="{{- .Site.BaseURL -}}js/isso.min.js"></script>
 </head>
