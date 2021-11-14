@@ -35,7 +35,7 @@
         "website": "https://lig-membres.imag.fr/mechenim/"
     },
     "Manuel Eberl": {
-        "website": "https://www21.in.tum.de/~eberlm",
+        "website": "https://pruvisto.org",
         "mailto": "eberlm@in.tum.de"
     },
     "Conrad Watt": {
@@ -960,5 +960,8 @@
     },
     "Valentin Fouillard": {
         "mailto": "valentin.fouillard@limsi.fr"
+    },
+    "Sebastian Reiche": {
+        "website": "https://www.linkedin.com/in/sebastian-reiche-0b2093178"
     }
 }
