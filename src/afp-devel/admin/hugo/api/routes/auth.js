@@ -43,8 +43,8 @@ router.post('/signup', function (req, res, next) {
             }
 
             db.run(
-                'INSERT INTO users (username, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
-                [req.body.username, hashedPassword, salt, req.body.name],
+                'INSERT INTO users (email, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
+                [req.body.email, hashedPassword, salt, req.body.name],
                 function (err) {
                     if (err) {
                         return next(err);
@@ -52,7 +52,7 @@ router.post('/signup', function (req, res, next) {
 
                     var user = {
                         id: this.lastID.toString(),
-                        username: req.body.username,
+                        email: req.body.email,
                         displayName: req.body.name,
                     };
                     req.login(user, function (err) {
@@ -73,8 +73,8 @@ router.post('/changePassword', function (req, res, next) {
         req.body.password == req.body.confirm
     ) {
         db.get(
-            'SELECT salt FROM users WHERE username = ?  ',
-            [req.session.passport.user.username],
+            'SELECT salt FROM users WHERE email = ?  ',
+            [req.session.passport.user.email],
             function (err, row) {
                 if (err) {
                     return next(err);
@@ -91,8 +91,8 @@ router.post('/changePassword', function (req, res, next) {
                         }
 
                         db.get(
-                            'SELECT 1 FROM users WHERE username = ? AND hashed_password = ?',
-                            [req.session.passport.user.username, hashedPassword],
+                            'SELECT 1 FROM users WHERE email = ? AND hashed_password = ?',
+                            [req.session.passport.user.email, hashedPassword],
                             function (err, row) {
                                 if (err) {
                                     return next(err);
@@ -114,11 +114,11 @@ router.post('/changePassword', function (req, res, next) {
                                         }
 
                                         db.run(
-                                            'UPDATE users SET hashed_password = ?, salt = ? WHERE username = ?',
+                                            'UPDATE users SET hashed_password = ?, salt = ? WHERE email = ?',
                                             [
                                                 hashedPassword,
                                                 salt,
-                                                req.session.passport.user.username,
+                                                req.session.passport.user.email,
                                             ],
                                             function (err) {
                                                 if (err) {
@@ -127,7 +127,7 @@ router.post('/changePassword', function (req, res, next) {
 
                                                 var user = {
                                                     id: this.lastID.toString(),
-                                                    username: req.body.username,
+                                                    email: req.body.email,
                                                     displayName: req.body.name,
                                                 };
                                                 req.login(user, function (err) {
@@ -153,8 +153,8 @@ router.post('/changePassword', function (req, res, next) {
 
 router.post('/changeName', function (req, res, next) {
     db.run(
-        'UPDATE users SET name = ? WHERE username = ?',
-        [req.body.name, req.session.passport.user.username],
+        'UPDATE users SET name = ? WHERE email = ?',
+        [req.body.name, req.session.passport.user.email],
         function (err) {
             if (err) {
                 return next(err);
@@ -167,8 +167,8 @@ router.post('/changeName', function (req, res, next) {
 router.get('/logged-in', function (req, res, next) {
     if (req?.session?.passport?.user) {
         db.get(
-            'select * from users WHERE username = ?',
-            [req.session.passport.user.username],
+            'select * from users WHERE email = ?',
+            [req.session.passport.user.email],
             function (err, row) {
                 if (err) {
                     return next(err);
@@ -204,7 +204,7 @@ router.get('/logged-in', function (req, res, next) {
 
 // router.get('/', function (req, res, next) {
 //     db.get(
-//         'SELECT rowid AS id, username, name FROM users WHERE rowid = ?',
+//         'SELECT rowid AS id, email, name FROM users WHERE rowid = ?',
 //         [req.user.id],
 //         function (err, row) {
 //             if (err) {
@@ -215,7 +215,7 @@ router.get('/logged-in', function (req, res, next) {
 
 //             var user = {
 //                 id: row.id.toString(),
-//                 username: row.username,
+//                 email: row.email,
 //                 displayName: row.name,
 //             };
 //             res.render('profile', { user: user });

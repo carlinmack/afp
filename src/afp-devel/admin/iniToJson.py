@@ -92,7 +92,7 @@ def processName(val: str, authorsDictionary) -> list:
         metadata = re.findall("<(.*?)>", author)
         authorName = re.sub("<(.*?)>", "", author).strip()
         authorName = standardiseInitials(authorName)
-        authorName = deduplicate(authorName)
+        # authorName = deduplicate(authorName)
 
         for datum in metadata:
             if re.match("mailto:", datum):

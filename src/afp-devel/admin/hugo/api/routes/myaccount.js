@@ -8,14 +8,14 @@ var router = express.Router();
 router.get('/',
   ensureLoggedIn(),
   function(req, res, next) {
-    db.get('SELECT rowid AS id, username, name FROM users WHERE rowid = ?', [ req.user.id ], function(err, row) {
+    db.get('SELECT rowid AS id, email, name FROM users WHERE rowid = ?', [ req.user.id ], function(err, row) {
       if (err) { return next(err); }
     
       // TODO: Handle undefined row.
     
       var user = {
         id: row.id.toString(),
-        username: row.username,
+        email: row.email,
         displayName: row.name
       };
       res.render('profile', { user: user });
