@@ -60,6 +60,10 @@
           data-isso-reply-to-self="true" src="{{- .Site.BaseURL -}}js/isso.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isso.css">
   {{- end -}}
+
+  {{- if eq .Kind "term" -}}
+  <script data-isso="/api/comments" src="{{- .Site.BaseURL -}}js/count.min.js"></script>
+  {{- end -}}
   
   <script src="{{- .Site.BaseURL -}}js/flexsearch.min.js"></script>
   <script src="{{- .Site.BaseURL -}}js/banner.js"></script>
