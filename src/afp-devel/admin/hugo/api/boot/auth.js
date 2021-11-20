@@ -11,7 +11,7 @@ module.exports = function () {
     // that the password is correct and then invoke `cb` with a user object, which
     // will be set at `req.user` in route handlers after authentication.
     passport.use(
-        new Strategy(function (email, password, cb) {
+        new Strategy({ usernameField: 'email' }, function (email, password, cb) {
             db.get(
                 'SELECT rowid AS id, * FROM users WHERE email = ?',
                 [email],
@@ -77,14 +77,13 @@ module.exports = function () {
             return cb(null, user);
         });
     });
-        // passport.serializeUser(function (user, done) {
-        //     done(null, user.id);
-        // });
+    // passport.serializeUser(function (user, done) {
+    //     done(null, user.id);
+    // });
 
-        // passport.deserializeUser(function (id, done) {
-        //     User.findById(id, function (err, user) {
-        //         done(err, user);
-        //     });
-        // });
-
+    // passport.deserializeUser(function (id, done) {
+    //     User.findById(id, function (err, user) {
+    //         done(err, user);
+    //     });
+    // });
 };

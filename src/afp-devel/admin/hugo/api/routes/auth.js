@@ -30,41 +30,47 @@ router.get('/logout', function (req, res, next) {
 });
 
 router.post('/signup', function (req, res, next) {
-    var salt = crypto.randomBytes(16);
-    crypto.pbkdf2(
-        req.body.password,
-        salt,
-        310000,
-        32,
-        'sha256',
-        function (err, hashedPassword) {
-            if (err) {
-                return next(err);
-            }
+    if (
+        req.body.password == req.body.confirm
+    ) {
+        var salt = crypto.randomBytes(16);
+        crypto.pbkdf2(
+            req.body.password,
+            salt,
+            310000,
+            32,
+            'sha256',
+            function (err, hashedPassword) {
+                if (err) {
+                    return next(err);
+                }
 
-            db.run(
-                'INSERT INTO users (email, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
-                [req.body.email, hashedPassword, salt, req.body.name],
-                function (err) {
-                    if (err) {
-                        return next(err);
-                    }
-
-                    var user = {
-                        id: this.lastID.toString(),
-                        email: req.body.email,
-                        displayName: req.body.name,
-                    };
-                    req.login(user, function (err) {
+                db.run(
+                    'INSERT INTO users (email, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
+                    [req.body.email, hashedPassword, salt, req.body.name],
+                    function (err) {
                         if (err) {
                             return next(err);
                         }
-                        res.redirect('/');
-                    });
-                }
-            );
-        }
-    );
+
+                        var user = {
+                            id: this.lastID.toString(),
+                            email: req.body.email,
+                            displayName: req.body.name,
+                        };
+                        req.login(user, function (err) {
+                            if (err) {
+                                return next(err);
+                            }
+                            res.redirect('/');
+                        });
+                    }
+                );
+            }
+        );
+    } else {
+        res.send('Passwords did not match');
+    }
 });
 
 router.post('/changePassword', function (req, res, next) {
@@ -167,7 +173,7 @@ router.post('/changeName', function (req, res, next) {
 router.get('/logged-in', function (req, res, next) {
     if (req?.session?.passport?.user) {
         db.get(
-            'select * from users WHERE email = ?',
+            'select name, email from users WHERE email = ?',
             [req.session.passport.user.email],
             function (err, row) {
                 if (err) {

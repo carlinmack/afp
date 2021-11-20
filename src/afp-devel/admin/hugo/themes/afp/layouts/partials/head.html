@@ -53,7 +53,11 @@
 
   {{- if eq .Section "entries" -}}
   <script src="{{- .Site.BaseURL -}}js/entries.js"></script>
-  <script data-isso="/api/comments" data-isso-css="false" src="{{- .Site.BaseURL -}}js/isso.min.js"></script>
+  <script data-isso="/api/comments" 
+          data-isso-css="false"
+          data-isso-require-author="true"
+          data-isso-require-email="true"
+          data-isso-reply-to-self="true" src="{{- .Site.BaseURL -}}js/isso.min.js"></script>
   <link rel="stylesheet" type="text/css" href="{{- .Site.BaseURL -}}css/isso.css">
   {{- end -}}
   
