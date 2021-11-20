@@ -60,8 +60,9 @@ function removeAuthInputs(name, email) {
 }
 
 function loggedOut() {
+    let currentURL = window.location.pathname;
     document.querySelector('.isso-postbox .form-wrapper').innerHTML =
-        '<i><a href="/login">Sign in</a> to make a comment</i>';
+        '<i><a href="/login/?next=' + currentURL + '">Sign in</a> to make a comment</i>';
     let footers = document.querySelectorAll('.isso-comment-footer');
     console.log(footers.length);
     if (footers) {

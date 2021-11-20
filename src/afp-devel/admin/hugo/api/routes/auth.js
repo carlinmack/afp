@@ -16,7 +16,11 @@ router.post(
     passport.authenticate('local'),
     function (req, res) {
         res.cookie('authenticated', true);
-        res.redirect('/account');
+        if (req.body.next) {
+            res.redirect(req.body.next);
+        } else {
+            res.redirect('/account');
+        }
     }
 );
 
