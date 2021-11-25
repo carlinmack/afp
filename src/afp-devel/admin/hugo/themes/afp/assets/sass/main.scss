@@ -571,15 +571,6 @@ tr:nth-child(even) {
             align-items: center;
         }
 
-        .subtitle {
-            color: $dark-grey;
-            font-size: 0.875em;
-
-            >p {
-                margin: 0;
-            }
-        }
-
         a[download] {
             padding: 5px 7.5px;
             flex-shrink: 0;
@@ -589,6 +580,15 @@ tr:nth-child(even) {
 
     #search-sidebar {
         grid-area: sidebar;
+    }
+}
+
+.subtitle {
+    color: $dark-grey;
+    font-size: 0.875em;
+
+    >p {
+        margin: 0;
     }
 }
 

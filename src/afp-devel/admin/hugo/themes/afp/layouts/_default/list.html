@@ -8,7 +8,7 @@
   <span class="item-text">
     <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
       {{- with .Params.authors -}}by {{ partial "authors.html" (dict "site" $site "authors" .) -}}{{- end -}} <br>
-      <a href="{{ .RelPermalink }}#isso-thread">Comments</a>
+      <span class='subtitle'><a href="{{ .RelPermalink }}#isso-thread">Comments</a></span>
     </p>
   </span>
   <span class="date">

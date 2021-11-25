@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (elem) {
                     elem.insertAdjacentHTML("beforeend", totalViews + " entry views")
                 }
+
+                for (let [entry, count] of Object.entries(data)) {
+                    document.querySelector("a[href='" + entry + "']").parentElement.querySelector("span").insertAdjacentHTML('afterbegin', count + " Views, ")
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
