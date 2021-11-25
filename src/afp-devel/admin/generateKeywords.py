@@ -10,8 +10,7 @@ from itertools import groupby
 
 import unidecode
 
-sys.path.append("rake")
-from rake import Rake
+import RAKE
 
 
 def generateKeywords():
@@ -22,9 +21,7 @@ def generateKeywords():
     are removed."""
     entriesDir = "hugo/content/entries/"
 
-    stoppath = "rake/data/stoplists/SmartStoplist.txt"
-
-    rake_object = Rake(stoppath, min_char_length=3, max_words_length=2)
+    rake = RAKE.Rake("rake/stoplist.txt")
 
     replacements = [
         ("\s+", " "),
@@ -45,7 +42,7 @@ def generateKeywords():
 
         text = unidecode.unidecode(text)
 
-        textKeywords = rake_object.run(text)
+        textKeywords = rake.run(text, minCharacters = 3, maxWords = 2)
         textKeywords = [x[0] for x in textKeywords[:8]]
         keywords += textKeywords
 
