@@ -3,19 +3,22 @@ const { graphqlHTTP } = require('express-graphql');
 const schema = require('./post.js');
 const app = express();
 
-var passport = require('passport');
+const passport = require('passport');
 
-var authRouter = require('./routes/auth');
-
-require('./boot/db')();
-require('./boot/auth')();
-
-// URL prefix: /api/
 app.use(
     express.urlencoded({
         extended: true,
     })
 );
+app.use(express.json());
+
+const authRouter = require('./routes/auth');
+const pageviews = require('./pageviews.js');
+
+require('./boot/db')();
+require('./boot/auth')();
+
+// URL prefix: /api/
 app.use(passport.initialize());
 app.use(
     require('express-session')({
@@ -36,6 +39,7 @@ app.use(passport.authenticate('session'));
 // app.use('/graphql', graphqlHTTP({ schema: schema.schema, graphiql: true }));
 app.use('/graphql', graphqlHTTP({ schema: schema.schema }));
 app.use('/auth', authRouter);
+app.use('/pageviews', pageviews);
 
 
 // app.get('/', function (req, res) {

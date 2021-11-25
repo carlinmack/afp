@@ -15,3 +15,6 @@ six
 
 # Isso comment server
 isso
+
+# Logs
+apache-log-parser

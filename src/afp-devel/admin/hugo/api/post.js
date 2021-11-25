@@ -6,9 +6,9 @@ const database = new sqlite3.Database('/var/lib/sqlite/afp.db');
 
 //create a table to insert post
 const createPostTable = () => {
-  const query = `CREATE TABLE IF NOT EXISTS posts (  id integer PRIMARY KEY,   title text,    description text,   createDate text,   author text )`;
+    const query = `CREATE TABLE IF NOT EXISTS posts (  id integer PRIMARY KEY,   title text,    description text,   createDate text,   author text )`;
 
-  return database.run(query);
+    return database.run(query);
 };
 
 //call function to init the post table
@@ -16,61 +16,61 @@ createPostTable();
 
 //create graphql post object
 const PostType = new graphql.GraphQLObjectType({
-  name: 'Post',
-  fields: {
-    id: { type: graphql.GraphQLID },
-    title: { type: graphql.GraphQLString },
-    description: { type: graphql.GraphQLString },
-    createDate: { type: graphql.GraphQLString },
-    author: { type: graphql.GraphQLString },
-  },
+    name: 'Post',
+    fields: {
+        id: { type: graphql.GraphQLID },
+        title: { type: graphql.GraphQLString },
+        description: { type: graphql.GraphQLString },
+        createDate: { type: graphql.GraphQLString },
+        author: { type: graphql.GraphQLString },
+    },
 });
 // create a graphql query to select all and by id
 var queryType = new graphql.GraphQLObjectType({
-  name: 'Query',
-  fields: {
-    //first query to select all
-    posts: {
-      type: graphql.GraphQLList(PostType),
-      resolve: (root, args, context, info) => {
-        return new Promise((resolve, reject) => {
-          // raw SQLite query to select from table
-          database.all('SELECT * FROM posts;', function (err, rows) {
-            if (err) {
-              reject([]);
-            }
-            resolve(rows);
-          });
-        });
-      },
-    },
-    //second query to select by id
-    Post: {
-      type: PostType,
-      args: {
-        id: {
-          type: new graphql.GraphQLNonNull(graphql.GraphQLID),
+    name: 'Query',
+    fields: {
+        //first query to select all
+        posts: {
+            type: graphql.GraphQLList(PostType),
+            resolve: (root, args, context, info) => {
+                return new Promise((resolve, reject) => {
+                    // raw SQLite query to select from table
+                    database.all('SELECT * FROM posts;', function (err, rows) {
+                        if (err) {
+                            reject([]);
+                        }
+                        resolve(rows);
+                    });
+                });
+            },
         },
-      },
-      resolve: (root, { id }, context, info) => {
-        return new Promise((resolve, reject) => {
-          database.all(
-            'SELECT * FROM posts WHERE id = (?);',
-            [id],
-            function (err, rows) {
-              if (err) {
-                reject(null);
-              }
-              resolve(rows[0]);
-            }
-          );
-        });
-      },
+        //second query to select by id
+        Post: {
+            type: PostType,
+            args: {
+                id: {
+                    type: new graphql.GraphQLNonNull(graphql.GraphQLID),
+                },
+            },
+            resolve: (root, { id }, context, info) => {
+                return new Promise((resolve, reject) => {
+                    database.all(
+                        'SELECT * FROM posts WHERE id = (?);',
+                        [id],
+                        function (err, rows) {
+                            if (err) {
+                                reject(null);
+                            }
+                            resolve(rows[0]);
+                        }
+                    );
+                });
+            },
+        },
     },
-  },
 });
-//mutation type is a type of object to modify data (INSERT,DELETE,UPDATE)
-var mutationType = new graphql.GraphQLObjectType({
+// mutation type is a type of object to modify data (INSERT,DELETE,UPDATE)
+/* var mutationType = new graphql.GraphQLObjectType({
   name: 'Mutation',
   fields: {
     //mutation for create
@@ -176,15 +176,15 @@ var mutationType = new graphql.GraphQLObjectType({
       },
     },
   },
-});
+});*/
 
-//define schema with post object, queries, and mustation
+//define schema with post object, queries, and mutation
 const schema = new graphql.GraphQLSchema({
-  query: queryType,
-  mutation: mutationType,
+    query: queryType,
+    //   mutation: mutationType,
 });
 
 //export schema to use on index.js
 module.exports = {
-  schema,
+    schema,
 };
