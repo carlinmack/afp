@@ -16,7 +16,7 @@ from addStatistics import addStatistics
 from exportJsonMetadata import exportJsonMetadata
 from getTheories import getTheories
 
-# from generateKeywords import generateKeywords
+from generateKeywords import generateKeywords
 from iniToJson import iniToJson
 
 
@@ -33,8 +33,8 @@ def exportMetadata():
     updateProgressBar("Add dependencies", t)
     addDependencies()
 
-    # updateProgressBar("Generate keywords", t)
-    # generateKeywords()
+    updateProgressBar("Generate keywords", t)
+    generateKeywords()
 
     updateProgressBar("Add related entries", t)
     addRelatedEntries()

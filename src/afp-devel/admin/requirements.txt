@@ -10,5 +10,5 @@ bs4
 requests
 lxml
 
-# requirements from the RAKE code
-six
+# for keyword extraction
+python-rake
