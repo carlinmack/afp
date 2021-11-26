@@ -32,7 +32,8 @@
         "website": "http://www21.in.tum.de/~brunnerj/"
     },
     "Mnacho Echenim": {
-        "website": "https://lig-membres.imag.fr/mechenim/"
+        "website": "https://lig-membres.imag.fr/mechenim/",
+        "mailto": "mnacho.echenim@univ-grenoble-alpes.fr"
     },
     "Manuel Eberl": {
         "website": "https://pruvisto.org",
@@ -963,5 +964,11 @@
     },
     "Sebastian Reiche": {
         "website": "https://www.linkedin.com/in/sebastian-reiche-0b2093178"
+    },
+    "Marie Cousin": {
+        "mailto": "marie.cousin@grenoble-inp.org"
+    },
+    "Hervé Guiol": {
+        "mailto": "herve.guiol@univ-grenoble-alpes.fr"
     }
 }

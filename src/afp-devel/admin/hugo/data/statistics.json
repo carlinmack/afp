@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 186154,
-    "num_loc": 3211888,
+    "num_lemmas": 186284,
+    "num_loc": 3214507,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        637
+        638
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3211900
+        3214500
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        38
+        40
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        408
+        410
     ],
     "loc_articles": [
         839,
@@ -718,6 +718,7 @@
         3019,
         133,
         471,
+        2619,
         20654
     ],
     "all_articles": [
@@ -1357,6 +1358,7 @@
         "Factor_Algebraic_Polynomial",
         "PAL",
         "SimplifiedOntologicalArgument",
+        "Hahn_Jordan_Decomposition",
         "Van_Emde_Boas_Trees"
     ]
 }
