@@ -97,6 +97,6 @@
     "relatedEntries": [
         "JinjaThreads",
         "ROBDD",
-        "Collections"
+        "Separation_Logic_Imperative_HOL"
     ]
 }

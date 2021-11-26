@@ -39,8 +39,6 @@
         "PNT_Consequences"
     ],
     "relatedEntries": [
-        "Dirichlet_Series",
-        "Prime_Number_Theorem",
-        "Gauss_Sums"
+        "Prime_Number_Theorem"
     ]
 }

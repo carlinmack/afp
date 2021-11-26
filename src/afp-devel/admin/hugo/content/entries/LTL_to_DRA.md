@@ -65,7 +65,7 @@
     ],
     "relatedEntries": [
         "LTL_Master_Theorem",
-        "LTL",
+        "Stuttering_Equivalence",
         "LTL_Normal_Form"
     ]
 }

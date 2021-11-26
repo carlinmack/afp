@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 185234,
-    "num_loc": 3190763,
+    "num_lemmas": 186154,
+    "num_loc": 3211888,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        635
+        637
     ],
     "loc_years": [
         60900,
@@ -39,7 +39,7 @@
         2121900,
         2421600,
         2801400,
-        3190800
+        3211900
     ],
     "author_years": [
         14,
@@ -59,7 +59,7 @@
         28,
         38,
         33,
-        37
+        38
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +79,7 @@
         299,
         337,
         370,
-        407
+        408
     ],
     "loc_articles": [
         839,
@@ -716,7 +716,9 @@
         1289,
         2203,
         3019,
-        133
+        133,
+        471,
+        20654
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1353,6 +1355,8 @@
         "Szemeredi_Regularity",
         "Real_Power",
         "Factor_Algebraic_Polynomial",
-        "PAL"
+        "PAL",
+        "SimplifiedOntologicalArgument",
+        "Van_Emde_Boas_Trees"
     ]
 }

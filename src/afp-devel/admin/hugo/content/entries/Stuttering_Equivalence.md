@@ -65,6 +65,8 @@
         "PLTL"
     ],
     "relatedEntries": [
-        "LTL_to_GBA"
+        "LTL_Normal_Form",
+        "LTL_to_GBA",
+        "LTL_to_DRA"
     ]
 }

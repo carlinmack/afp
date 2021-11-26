@@ -45,8 +45,6 @@
         "Dirichlet_Efficient_Code"
     ],
     "relatedEntries": [
-        "Prime_Distribution_Elementary",
-        "Zeta_Function",
-        "Gauss_Sums"
+        "Dirichlet_L"
     ]
 }

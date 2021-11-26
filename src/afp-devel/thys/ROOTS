@@ -539,6 +539,7 @@ Signature_Groebner
 Simpl
 Simple_Firewall
 Simplex
+SimplifiedOntologicalArgument
 Skew_Heap
 Skip_Lists
 Slicing
@@ -609,6 +610,7 @@ UTP
 Universal_Turing_Machine
 UpDown_Scheme
 Valuation
+Van_Emde_Boas_Trees
 Van_der_Waerden
 VectorSpace
 VeriComp

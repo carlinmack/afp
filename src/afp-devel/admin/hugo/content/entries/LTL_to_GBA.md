@@ -51,6 +51,7 @@
     ],
     "relatedEntries": [
         "Stuttering_Equivalence",
-        "Promela"
+        "LTL_Normal_Form",
+        "LTL_to_DRA"
     ]
 }

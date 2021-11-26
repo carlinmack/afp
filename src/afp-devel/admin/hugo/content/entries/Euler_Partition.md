@@ -39,7 +39,6 @@
         "Euler_Partition"
     ],
     "relatedEntries": [
-        "Descartes_Sign_Rule",
         "Twelvefold_Way"
     ]
 }

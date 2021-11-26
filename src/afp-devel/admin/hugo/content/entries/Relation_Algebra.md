@@ -61,6 +61,6 @@
     "relatedEntries": [
         "KAD",
         "KAT_and_DRA",
-        "Multirelations"
+        "Relational_Paths"
     ]
 }

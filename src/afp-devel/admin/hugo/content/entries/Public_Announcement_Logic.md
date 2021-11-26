@@ -17,5 +17,8 @@
     ],
     "theories": [
         "PAL"
+    ],
+    "relatedEntries": [
+        "Epistemic_Logic"
     ]
 }

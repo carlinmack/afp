@@ -38,6 +38,6 @@
         "Card_Number_Partitions"
     ],
     "relatedEntries": [
-        "Card_Partitions"
+        "Bell_Numbers_Spivey"
     ]
 }

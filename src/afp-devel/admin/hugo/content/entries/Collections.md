@@ -197,7 +197,6 @@
         "ICF_Userguide"
     ],
     "relatedEntries": [
-        "JinjaThreads",
-        "Containers"
+        "JinjaThreads"
     ]
 }

@@ -22,5 +22,8 @@
     ],
     "theories": [
         "Epistemic_Logic"
+    ],
+    "relatedEntries": [
+        "Public_Announcement_Logic"
     ]
 }

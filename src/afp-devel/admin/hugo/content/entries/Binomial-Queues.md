@@ -57,5 +57,8 @@
         "PQ",
         "Binomial_Queue",
         "PQ_Implementation"
+    ],
+    "relatedEntries": [
+        "Van_Emde_Boas_Trees"
     ]
 }

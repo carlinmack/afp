@@ -35,8 +35,8 @@
         "Dirichlet_Theorem"
     ],
     "relatedEntries": [
-        "Zeta_Function",
+        "Prime_Number_Theorem",
         "Dirichlet_Series",
-        "Gauss_Sums"
+        "Zeta_Function"
     ]
 }

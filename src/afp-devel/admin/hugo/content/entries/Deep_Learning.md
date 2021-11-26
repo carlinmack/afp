@@ -58,7 +58,7 @@
         "DL_Fundamental_Theorem_Network_Capacity"
     ],
     "relatedEntries": [
-        "Isabelle_Marries_Dirac",
-        "Groebner_Bases"
+        "Groebner_Bases",
+        "Isabelle_Marries_Dirac"
     ]
 }

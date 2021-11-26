@@ -41,6 +41,7 @@
         "DeterministicProcesses"
     ],
     "relatedEntries": [
-        "Noninterference_Generic_Unwinding"
+        "Noninterference_Generic_Unwinding",
+        "Noninterference_Inductive_Unwinding"
     ]
 }
