@@ -53,7 +53,7 @@
         "mailto": "michaelrawson76@gmail.com"
     },
     "Julius Michaelis": {
-        "website": "http://liftm.de"
+        "website": "http://liftm.de/"
     },
     "Tobias Nipkow": {
         "website": "http://www21.in.tum.de/~nipkow"
@@ -461,7 +461,7 @@
         "website": "https://www.unirioja.es/cu/jodivaso/"
     },
     "Jesús Aransay": {
-        "website": "http://www.unirioja.es/cu/jearansa"
+        "website": "https://www.unirioja.es/cu/jearansa"
     },
     "Stefan Richter": {
         "website": "http://www-lti.informatik.rwth-aachen.de/~richter/"
@@ -970,5 +970,8 @@
     },
     "Hervé Guiol": {
         "mailto": "herve.guiol@univ-grenoble-alpes.fr"
+    },
+    "Alejandro del Campo": {
+        "mailto": "alejandro.del-campo@alum.unirioja.es"
     }
 }

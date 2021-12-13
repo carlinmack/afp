@@ -49,5 +49,8 @@
         "CZH_ECAT_CSimplicial",
         "CZH_ECAT_Structure_Example",
         "CZH_ECAT_Conclusions"
+    ],
+    "relatedEntries": [
+        "CZH_Universal_Constructions"
     ]
 }

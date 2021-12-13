@@ -71,5 +71,8 @@
         "CZH_SMC_Par",
         "CZH_SMC_Set",
         "CZH_SMC_Conclusions"
+    ],
+    "relatedEntries": [
+        "CZH_Universal_Constructions"
     ]
 }

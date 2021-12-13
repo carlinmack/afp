@@ -25,5 +25,9 @@
         "CZH_UCAT_PWKan",
         "CZH_UCAT_PWKan_Example",
         "CZH_UCAT_Conclusions"
+    ],
+    "relatedEntries": [
+        "CZH_Elementary_Categories",
+        "CZH_Foundations"
     ]
 }
