@@ -1,3 +1,7 @@
+---
+title: Sign up
+---
+
 <form action="/api/auth/signup" method="post">
   <input type="email" name="email" placeholder="Email">
   <input type="password" name="password" placeholder="Password">
@@ -6,7 +10,8 @@
   <input type="submit" value="Sign up"></input>
 </form>
 
-or <a href="/login/">sign in</a><script>
+or <a href="/login/">sign in</a>
+<script>
 
   function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
@@ -17,3 +22,5 @@ or <a href="/login/">sign in</a><script>
     document.querySelector('a[href="/login/"]').href += "?next=" + nextURL
   }
 </script>
+
+<noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>

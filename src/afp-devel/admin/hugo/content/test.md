@@ -1,5 +1,0 @@
----
-title: Graphql test
----
-
-{{< test >}}

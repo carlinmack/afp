@@ -1,5 +1,0 @@
----
-title: Sign up
----
-
-{{< signup >}}

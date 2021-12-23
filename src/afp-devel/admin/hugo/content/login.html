@@ -1,3 +1,11 @@
+---
+title: Sign in
+menu: 
+    bottom:
+        name: "Sign in"
+        weight: 2
+---
+
 <form action="/api/auth/login/password" method="post">
   <input type="email" name="email" placeholder="Email">
   <input type="password" name="password" placeholder="Password">
@@ -17,3 +25,5 @@ or <a href="/signup/">create an account</a>
       document.querySelector('a[href="/signup/"]').href += "?next=" + nextURL
     }
 </script>
+
+<noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>
