@@ -6,17 +6,23 @@ url: /account/settings/
 <script src="/js/account-settings.js"></script>
 
 <form action="/api/auth/changePassword" method="post">
-  <label for="accountEmail">Account email</label>
-  <input id="accountEmail" name="accountEmail" type="email"><br>
-  <label for="contactEmail">Contact email</label>
-  <input id="contactEmail" name="contactEmail" type="email"><br><br>
-  <label for="current">Current password</label>
-  <input id="current" name="current" type="password"><br>
-  <label for="password">New password</label>
-  <input id="password" name="password" type="password"><br>
-  <label for="confirm">Confirm password</label>
-  <input id="confirm" name="confirm" type="password"><br>
-  <input type="submit" value="Submit"></input>
+  <label disabled for="accountEmail">Account email</label>
+  <input disabled id="accountEmail" name="accountEmail" type="email"><br>
+  <label disabled for="contactEmail">Contact email</label>
+  <input disabled id="contactEmail" name="contactEmail" type="email"><br><br>
+  <label disabled for="current">Current password</label>
+  <input disabled id="current" name="current" type="password"><br>
+  <label disabled for="password">New password</label>
+  <input disabled id="password" name="password" type="password"><br>
+  <label disabled for="confirm">Confirm password</label>
+  <input disabled id="confirm" name="confirm" type="password"><br>
+  <input disabled type="submit" value="Submit"></input>
 </form>
 
+<script>
+  var inputs = document.querySelectorAll('input');
+  for (var input of inputs) {
+    input.removeAttribute("disabled");
+  }
+</script>
 <noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>

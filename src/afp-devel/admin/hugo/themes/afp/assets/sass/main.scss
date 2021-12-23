@@ -41,6 +41,11 @@ $border-bottom: 2px $darker-grey solid;
     color: $black;
     line-height: 0;
     font-family: $sans-serif;
+
+    &:disabled {
+        color: $light-grey;
+        border: 1px solid $lighter-grey;
+    }
 }
 
 %button-image {

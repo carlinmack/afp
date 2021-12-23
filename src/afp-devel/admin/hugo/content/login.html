@@ -7,23 +7,28 @@ menu:
 ---
 
 <form action="/api/auth/login/password" method="post">
-  <input type="email" name="email" placeholder="Email">
-  <input type="password" name="password" placeholder="Password">
-  <input type="hidden" name="next">
-  <input type="submit" value="Sign in"></input>
+  <input disabled type="email" name="email" placeholder="Email">
+  <input disabled type="password" name="password" placeholder="Password">
+  <input disabled type="hidden" name="next">
+  <input disabled type="submit" value="Sign in"></input>
 </form>
 
 or <a href="/signup/">create an account</a>
 
 <script>
-    function getURLParameter(name) {
-        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-      }
-    let nextURL = getURLParameter("next");
-    if (nextURL) {
-      document.querySelector("input[name='next']").value = nextURL
-      document.querySelector('a[href="/signup/"]').href += "?next=" + nextURL
+  var inputs = document.querySelectorAll('input');
+  for (var input of inputs) {
+    input.removeAttribute("disabled");
+  }
+
+  function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
     }
+  let nextURL = getURLParameter("next");
+  if (nextURL) {
+    document.querySelector("input[name='next']").value = nextURL
+    document.querySelector('a[href="/signup/"]').href += "?next=" + nextURL
+  }
 </script>
 
-<noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>
+<br><noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>
