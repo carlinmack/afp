@@ -3,7 +3,7 @@ $theme: hsl(242, 27%, 24%);
 $theme-hover: hsl(241, 26%, 36%);
 $theme-lightest: hsl(261, 36%, 86%);
 $theme-focus: #acabcf;
-$link:#0645ad;
+$link: #0645ad;
 $link-hover: #0000ee;
 $link-visited: #42047c;
 $white: #fff;
@@ -15,17 +15,26 @@ $darker-grey: #555;
 $darkest-grey: #303030;
 $black: #000;
 $black_15: rgba(0, 0, 0, 0.15);
+$success: #d4edda;
+$warn: #fff3cd;
+$danger: #f8d7da;
 
 //fonts
-$sans-serif: "Open Sans", sans-serif;
-$monospace: "Consolas", monospace;
-$OpenSans: "Open Sans";
+$sans-serif: 'Open Sans', sans-serif;
+$monospace: 'Consolas', monospace;
+$OpenSans: 'Open Sans';
 
 $light: 300;
 $normal: 400;
 $bold: 700;
 
 $border-bottom: 2px $darker-grey solid;
+
+%alert {
+    display: block;
+    height: 3rem;
+    text-align: center;
+}
 
 %code {
     font-family: $monospace;
@@ -41,6 +50,7 @@ $border-bottom: 2px $darker-grey solid;
     color: $black;
     line-height: 0;
     font-family: $sans-serif;
+    cursor: pointer;
 
     &:disabled {
         color: $light-grey;
@@ -60,8 +70,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 300;
-    src: local(""), url("/font/open-sans-v18-latin-300.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-300.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-300.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-300.woff') format('woff');
 }
 
 @font-face {
@@ -69,8 +79,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 400;
-    src: local(""), url("/font/open-sans-v18-latin-regular.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-regular.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-regular.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -78,8 +88,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: italic;
     font-weight: 400;
-    src: local(""), url("/font/open-sans-v18-latin-italic.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-italic.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-italic.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-italic.woff') format('woff');
 }
 
 @font-face {
@@ -87,8 +97,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 700;
-    src: local(""), url("/font/open-sans-v18-latin-700.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-700.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-700.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-700.woff') format('woff');
 }
 
 @font-face {
@@ -96,8 +106,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: italic;
     font-weight: 700;
-    src: local(""), url("/font/open-sans-v18-latin-700italic.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-700italic.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-700italic.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-700italic.woff') format('woff');
 }
 
 *::selection {
@@ -110,8 +120,8 @@ body {
     background: $white;
     font-family: $sans-serif;
     display: grid;
-    grid-template-columns: #{"max(20%, 200px)"} 1fr;
-    grid-template-areas: "sidebar content";
+    grid-template-columns: #{'max(20%, 200px)'} 1fr;
+    grid-template-areas: 'sidebar content';
     justify-items: center;
     margin: 0;
 }
@@ -320,14 +330,14 @@ header {
     }
 
     li::before {
-        content: "–";
+        content: '–';
         position: absolute;
         margin-left: -1.3em;
     }
 }
 
 .entries {
-    >div {
+    > div {
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-template-rows: auto auto;
@@ -537,12 +547,13 @@ tr:nth-child(even) {
 }
 
 .searchPage {
-    >div {
+    > div {
         display: grid;
-        grid-template-columns: 3fr #{"max(25%, 175px)"};
+        grid-template-columns: 3fr #{'max(25%, 175px)'};
         grid-template-rows: 150px 1fr;
-        grid-template-areas: "search search"
-        "entries sidebar";
+        grid-template-areas:
+            'search search'
+            'entries sidebar';
         min-width: 560px;
     }
 
@@ -557,15 +568,14 @@ tr:nth-child(even) {
     }
 
     #search-results {
-
-        >div {
+        > div {
             position: relative;
             margin: 1.5rem 0;
             border-bottom: 2px $lighter-grey solid;
             padding-bottom: 1.5rem;
         }
 
-        div+div {
+        div + div {
             margin-top: 1rem;
         }
 
@@ -592,7 +602,7 @@ tr:nth-child(even) {
     color: $dark-grey;
     font-size: 0.875em;
 
-    >p {
+    > p {
         margin: 0;
     }
 }
@@ -615,12 +625,12 @@ a[download] {
         color: $black;
     }
     &:after {
-        content: url("/images/download.svg");
-        @extend %button-image
+        content: url('/images/download.svg');
+        @extend %button-image;
     }
 }
 
-input[type=submit] {
+input[type='submit'] {
     @extend %button;
     height: 2rem;
 }
@@ -697,8 +707,8 @@ button {
 
 button[copy] {
     &:after {
-        content: url("/images/copy.svg");
-        @extend %button-image
+        content: url('/images/copy.svg');
+        @extend %button-image;
     }
 }
 
@@ -766,15 +776,19 @@ iframe {
     height: 90vh;
 }
 
+.content .warn {
+    @extend %alert;
+    background-color: $warn;
+    line-height: 3em;
+}
+
 #banner {
-    display: block;
-    background-color: $theme-lightest;
-    height: 3rem;
-    width: 80vw;
+    @extend %alert;
     position: fixed;
     bottom: 0;
     left: 20vw;
-    text-align: center;
+    background-color: $theme-lightest;
+    width: 80vw;
     z-index: 1;
 
     p {

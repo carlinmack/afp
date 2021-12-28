@@ -7,8 +7,8 @@ menu:
 ---
 
 <form action="/api/auth/login/password" method="post">
-  <input disabled type="email" name="email" placeholder="Email">
-  <input disabled type="password" name="password" placeholder="Password">
+  <input disabled required type="email" name="email" placeholder="Email">
+  <input disabled required type="password" name="password" placeholder="Password">
   <input disabled type="hidden" name="next">
   <input disabled type="submit" value="Sign in"></input>
 </form>

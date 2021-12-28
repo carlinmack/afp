@@ -19,7 +19,7 @@ router.post(
                 return next(err);
             }
             if (!user) {
-                res.cookie('message', info.message);  
+                res.cookie('message', info.message, {maxAge: 30000});  
                 return res.redirect('/login');
             }
             req.logIn(user, function (err) {

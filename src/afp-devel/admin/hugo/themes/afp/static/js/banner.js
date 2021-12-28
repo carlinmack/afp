@@ -31,7 +31,11 @@ function displayMessages() {
     if (cookieExists('message')) {
         const content = document.querySelector('.content');
         if (content) {
-            content.insertAdjacentText('beforeend', getCookie('message'));
+            var flash = '<div class="warn" data-id="0"><p>' + getCookie('message');
+            flash += "</p></div>"
+            content.insertAdjacentHTML('beforeend', flash);
+
+            clearCookie('message')
         }
     }
 }
@@ -62,10 +66,18 @@ function cookieExists(key) {
 }
 
 function getCookie(key) {
-    return decodeURI(
+    return decodeURIComponent(
         document.cookie
             .split('; ')
             .find((row) => row.startsWith(key + '='))
             .split('=')[1]
     );
+}
+
+function clearCookie(key) {
+    if (cookieExists(key)) {
+        document.cookie = key + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+        return true;
+    }
+    return false;
 }

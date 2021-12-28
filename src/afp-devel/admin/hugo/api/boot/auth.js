@@ -21,7 +21,7 @@ module.exports = function () {
                     }
                     if (!row) {
                         return cb(null, false, {
-                            message: 'Incorrect email or password.',
+                            message: 'Incorrect email and/or password.',
                         });
                     }
 
@@ -42,7 +42,7 @@ module.exports = function () {
                                 )
                             ) {
                                 return cb(null, false, {
-                                    message: 'Incorrect email or password.',
+                                    message: 'Incorrect email and/or password.',
                                 });
                             }
 

@@ -3,9 +3,9 @@ title: Sign up
 ---
 
 <form action="/api/auth/signup" method="post">
-  <input disabled type="email" name="email" placeholder="Email">
-  <input disabled type="password" name="password" placeholder="Password">
-  <input disabled type="password" name="confirm" placeholder="Confirm Password">
+  <input disabled required type="email" name="email" placeholder="Email">
+  <input disabled required type="password" name="password" placeholder="Password">
+  <input disabled required type="password" name="confirm" placeholder="Confirm Password">
   <input disabled type="hidden" name="next">
   <input disabled type="submit" value="Sign up"></input>
 </form>
