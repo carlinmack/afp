@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     banner();
     menuLink();
+    displayMessages();
 });
 
 function banner() {
@@ -22,6 +23,15 @@ function banner() {
                     localStorage.setItem('banner-' + bannerID, 'true');
                 });
             }
+        }
+    }
+}
+
+function displayMessages() {
+    if (cookieExists('message')) {
+        const content = document.querySelector('.content');
+        if (content) {
+            content.insertAdjacentText('beforeend', getCookie('message'));
         }
     }
 }
@@ -49,4 +59,13 @@ function cookieExists(key) {
         return true;
     }
     return false;
+}
+
+function getCookie(key) {
+    return decodeURI(
+        document.cookie
+            .split('; ')
+            .find((row) => row.startsWith(key + '='))
+            .split('=')[1]
+    );
 }

@@ -13,14 +13,27 @@ router.post(
     //     failureRedirect: '/login',
     //     failureMessage: true,
     // })
-    passport.authenticate('local'),
     function (req, res) {
-        res.cookie('authenticated', true);
-        if (req.body.next) {
-            res.redirect(req.body.next);
-        } else {
-            res.redirect('/account');
-        }
+        passport.authenticate('local', function (err, user, info) {
+            if (err) {
+                return next(err);
+            }
+            if (!user) {
+                res.cookie('message', info.message);  
+                return res.redirect('/login');
+            }
+            req.logIn(user, function (err) {
+                if (err) {
+                    return next(err);
+                }
+                res.cookie('authenticated', true);
+                if (req.body.next) {
+                    res.redirect(req.body.next);
+                } else {
+                    res.redirect('/account');
+                }
+            });
+        })(req, res);
     }
 );
 
@@ -34,9 +47,7 @@ router.get('/logout', function (req, res, next) {
 });
 
 router.post('/signup', function (req, res, next) {
-    if (
-        req.body.password == req.body.confirm
-    ) {
+    if (req.body.password == req.body.confirm) {
         var salt = crypto.randomBytes(16);
         crypto.pbkdf2(
             req.body.password,

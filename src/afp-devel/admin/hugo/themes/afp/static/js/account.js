@@ -17,5 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch((error) => {
             console.error('Error:', error);
+            window.location.replace('/login');
         });
 });
