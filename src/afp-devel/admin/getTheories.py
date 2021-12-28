@@ -47,7 +47,7 @@ def getTheories(all: bool = False, entry: str = ""):
         entryPath = os.path.join(rootDir, entry)
         # Don't correctly handle the example submission yet
         # The second two are broken due to excessively nested html (hundreds of elements)
-        brokenEntries = ["Example-Submission", "MonoidalCategory", "Bicategory", "CoSMed"]
+        brokenEntries = ["Example-Submission", "MonoidalCategory", "Bicategory", "CoSMed", "CoCon"]
         if entry not in brokenEntries and os.path.isdir(entryPath):
             if all or not os.path.isfile(theoriesHtmlDir + entry + ".html"):
                 processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir)
