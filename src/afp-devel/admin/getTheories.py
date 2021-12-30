@@ -47,7 +47,7 @@ def getTheories(all: bool = False, entry: str = ""):
         entryPath = os.path.join(rootDir, entry)
         # Don't correctly handle the example submission yet
         # The second two are broken due to excessively nested html (hundreds of elements)
-        brokenEntries = ["Example-Submission", "MonoidalCategory", "Bicategory", "CoSMed", "CoCon", "MDP-Algorithms"]
+        brokenEntries = ["Example-Submission", "MonoidalCategory", "Bicategory"]
         if entry not in brokenEntries and os.path.isdir(entryPath):
             if all or not os.path.isfile(theoriesHtmlDir + entry + ".html"):
                 processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir)
@@ -58,16 +58,19 @@ def processURL(entry, theoriesHtmlDir, theoriesJsonDir, entriesJsonDir):
     names, links = theoryLinks(entry)
 
     if links != 0:
-        theoriesHtml = ""
+        theoriesHtml = []
         theoriesJson = []
 
         for i, link in enumerate(links):
-            html, lemmas = getTheory(link, names[i])
-            theoriesHtml += html
-            theoriesJson.append({names[i]: lemmas})
+            html = getTheory(link, names[i])
+            theoriesHtml.append(html)
+            theoriesJson.append({names[i]: ""})
 
         with open(theoriesHtmlDir + entry + ".html", "w") as w:
-            w.write(theoriesHtml)
+            for html in theoriesHtml:
+                w.write("<div id='" + names[i] + "'>")
+                w.write(html[389:-17])
+                w.write("</div>")
 
         theoryData = {
             "url": "entries" + "/" + entry.lower() + "/" + "theories",
@@ -125,38 +128,39 @@ def getTheory(url, name):
     The resulting HTML and lemma names are returned to be added to 
     the theory’s front matter.
     """
-    content = requests.get(url).content
-    soup = BeautifulSoup(content, features="lxml")
-    contents = soup.body
-    contents.name = "div"
-    contents["id"] = name
+    content = requests.get(url).text
+    return content
+    # soup = BeautifulSoup(content, features="lxml")
+    # contents = soup.body
+    # contents.name = "div"
+    # contents["id"] = name
 
-    # make lemmas navigable
-    lemmaElements = contents.find_all(class_="keyword1", string="lemma")
-    lemmas = []
-    for lemmaElement in lemmaElements:
-        lemmaName = lemmaElement.next_sibling
-        if isinstance(lemmaName, NavigableString):
-            lemmaName = lemmaName.strip()
-            if lemmaName:
-                lemmaElement["id"] = name + "-" + lemmaName
-                lemmas.append(lemmaName)
+    # # make lemmas navigable
+    # lemmaElements = contents.find_all(class_="keyword1", string="lemma")
+    # lemmas = []
+    # for lemmaElement in lemmaElements:
+    #     lemmaName = lemmaElement.next_sibling
+    #     if isinstance(lemmaName, NavigableString):
+    #         lemmaName = lemmaName.strip()
+    #         if lemmaName:
+    #             lemmaElement["id"] = name + "-" + lemmaName
+    #             lemmas.append(lemmaName)
 
-    # fix dependency links
-    imports = contents.find(class_="keyword2", string="imports")
-    if imports:
-        for sibling in imports.next_siblings:
-            if sibling.string == "begin":
-                break
+    # # fix dependency links
+    # imports = contents.find(class_="keyword2", string="imports")
+    # if imports:
+    #     for sibling in imports.next_siblings:
+    #         if sibling.string == "begin":
+    #             break
 
-            if sibling.name == "a":
-                sibling["href"] = dependancyLink(sibling["href"])
-            elif sibling.name == "span":
-                linkElem = sibling.find("a")
-                if linkElem:
-                    linkElem["href"] = dependancyLink(linkElem["href"])
+    #         if sibling.name == "a":
+    #             sibling["href"] = dependancyLink(sibling["href"])
+    #         elif sibling.name == "span":
+    #             linkElem = sibling.find("a")
+    #             if linkElem:
+    #                 linkElem["href"] = dependancyLink(linkElem["href"])
 
-    return str(contents), lemmas
+    # return str(contents), lemmas
 
 
 def dependancyLink(link):
