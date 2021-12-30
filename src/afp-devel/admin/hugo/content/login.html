@@ -7,18 +7,18 @@ menu:
 ---
 
 <form action="/api/auth/login/password" method="post">
-  <p>
+  <div>
     <label for="email">Email</label><br>
-    <input required="" type="email" name="email" id="email">
-  </p>
-  <p>
+    <input disabled required type="email" name="email" id="email">
+  </div>
+  <div>
     <label for="password">Password</label><br>
-    <input required="" type="password" name="password" id="password"><br>
+    <input disabled required type="password" name="password" id="password"><br>
     <a href="">Forgot password?</a>
-  </p>
+  </div>
   <input type="hidden" name="next">
   <input class="action" type="submit" value="Sign in">
-  <p style="line-height: 1em;">or <a href="/signup/">create an account</a></p>
+  <p style="line-height: 1.5em;">or <a href="/signup/">create an account</a></div>
 </form>
 
 <script>

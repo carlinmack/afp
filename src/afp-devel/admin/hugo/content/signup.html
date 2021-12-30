@@ -3,14 +3,24 @@ title: Sign up
 ---
 
 <form action="/api/auth/signup" method="post">
-  <input disabled required type="email" name="email" placeholder="Email">
-  <input disabled required type="password" name="password" placeholder="Password">
-  <input disabled required type="password" name="confirm" placeholder="Confirm Password">
+  <div>
+    <label for="email">Email</label><br>
+    <input disabled required type="email" name="email" id="email">
+  </div>
+  <div></div>
+  <div>
+    <label for="password">Password</label><br>
+    <input disabled required type="password" name="password" id="password"><br>
+  </div>
+  <div>
+    <label for="confirm">Confirm Password</label><br>
+    <input disabled required type="password" name="confirm" id="confirm"><br>
+  </div>
   <input disabled type="hidden" name="next">
-  <input disabled type="submit" value="Sign up"></input>
+  <input class="action" disabled type="submit" value="Sign up"></input>
+  <p style="line-height: 1.5em;">or <a href="/login/">sign in</a></p>
 </form>
 
-or <a href="/login/">sign in</a>
 <script>
   var inputs = document.querySelectorAll('input');
   for (var input of inputs) {

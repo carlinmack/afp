@@ -50,7 +50,7 @@ $border-bottom: 2px $darker-grey solid;
     color: $black;
     line-height: 0;
     font-family: $sans-serif;
-    cursor: pointer;
+    height: 2rem;
 
     &:disabled {
         color: $light-grey;
@@ -274,13 +274,31 @@ header {
             border-bottom: $border-bottom;
         }
     }
+    
+    #homeSearch {
+        display: block;
+        margin: 2rem auto 0;
+        width: 50%;
+        min-width: 290px;
+        padding: 1rem 0;
+    }
 
     > div {
-        form {
-            margin: 2rem auto 0;
-            width: 50%;
-            min-width: 290px;
-            padding: 1rem 0;
+        form {            
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 1em 0;
+            grid-gap: 0.5em;
+
+            input {
+                padding: 0 7px;
+                margin: 0.5em 0;
+            }
+        }
+
+        #searchInput {
+            height: 2.5rem;
+            width: 75%;
         }
 
         #searchButton {
@@ -291,11 +309,15 @@ header {
             color: $white;
             border: 1px $theme solid;
         }
+    }
 
-        #searchInput {
-            height: 2.5rem;
-            width: 75%;
-        }
+    .action {
+        height: 2.5rem;
+        width: 25%;
+        min-width: 70px;
+        background: $theme;
+        color: $white;
+        border: 1px $theme solid;
     }
 
     .popup {
@@ -639,9 +661,12 @@ a[download] {
     }
 }
 
-input[type='submit'] {
+input {
     @extend %button;
-    height: 2rem;
+}
+
+input[type='submit'] {
+    cursor: pointer;
 }
 
 .entry {
@@ -673,7 +698,6 @@ input[type='submit'] {
 }
 
 #searchInput {
-    @extend %button;
     border-right: none;
     font-family: $sans-serif;
     padding: 0.5em;
