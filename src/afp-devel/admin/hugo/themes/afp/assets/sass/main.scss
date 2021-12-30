@@ -214,6 +214,15 @@ header {
         padding: 0.5rem 0;
     }
 
+    #settings {
+        padding: 0.5rem 0;
+        float: left;
+
+        button {
+            margin-right: 0.5em;
+        }
+    }
+
     form {
         padding: 0.5rem 0;
         float: right;

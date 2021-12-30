@@ -38,11 +38,10 @@ router.post(
 );
 
 router.get('/logout', function (req, res, next) {
-    // console.log(req.user)
     req.logOut();
     req.session.destroy(function (err) {
         res.clearCookie('authenticated');
-        res.redirect('/account'); //Inside a callback… bulletproof!
+        res.redirect('/'); //Inside a callback… bulletproof!
     });
 });
 

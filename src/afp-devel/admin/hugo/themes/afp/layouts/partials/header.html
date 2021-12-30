@@ -1,12 +1,18 @@
 <header>
+  {{ if (eq .File.TranslationBaseName "account")}}
+  <span id='settings'>
+    <button><a href="/account/settings/">Settings</a></button>
+    <button><a href="/api/auth/logout">Log out</a></button>
+  </span>
+  {{ end }}
   {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
-  <div class='form-container'>
-    <input id="searchInput" type="search" size="31" maxlength="255" value="" aria-label="Search the AFP" list="autocomplete"><button
-      id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg" alt="Search" /></button>
-    <datalist id="autocomplete">
-    </datalist>
-  </div>
+    <div class='form-container'>
+      <input id="searchInput" type="search" size="31" maxlength="255" value="" aria-label="Search the AFP" list="autocomplete"><button
+        id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg" alt="Search" /></button>
+      <datalist id="autocomplete">
+      </datalist>
+    </div>
   </form>
   {{ end -}}
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
@@ -19,7 +25,6 @@
     <p><a href="{{ . }}">{{ . }}</a></p>
   {{- end -}}{{- end -}}{{- end -}}
   {{ if (eq .File.TranslationBaseName "account")}}
-  <button><a href="/account/settings/">Settings</a></button>
   <button><a href="/account/edit/">Edit</a></button>
   {{ end }}
   {{ if (or (eq .File.TranslationBaseName "account-settings") (eq .File.TranslationBaseName "account-edit") )}}
