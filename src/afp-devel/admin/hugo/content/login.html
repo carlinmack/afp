@@ -1,19 +1,25 @@
 ---
 title: Sign in
-menu: 
-    bottom:
-        name: "Sign in"
-        weight: 2
+menu:
+  bottom:
+    name: "Sign in"
+    weight: 2
 ---
 
 <form action="/api/auth/login/password" method="post">
-  <input disabled required type="email" name="email" placeholder="Email">
-  <input disabled required type="password" name="password" placeholder="Password">
-  <input disabled type="hidden" name="next">
-  <input disabled type="submit" value="Sign in"></input>
+  <p>
+    <label for="email">Email</label><br>
+    <input required="" type="email" name="email" id="email">
+  </p>
+  <p>
+    <label for="password">Password</label><br>
+    <input required="" type="password" name="password" id="password"><br>
+    <a href="">Forgot password?</a>
+  </p>
+  <input type="hidden" name="next">
+  <input class="action" type="submit" value="Sign in">
+  <p style="line-height: 1em;">or <a href="/signup/">create an account</a></p>
 </form>
-
-or <a href="/signup/">create an account</a>
 
 <script>
   var inputs = document.querySelectorAll('input');
@@ -22,8 +28,8 @@ or <a href="/signup/">create an account</a>
   }
 
   function getURLParameter(name) {
-      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-    }
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+  }
   let nextURL = getURLParameter("next");
   if (nextURL) {
     document.querySelector("input[name='next']").value = nextURL
@@ -31,4 +37,4 @@ or <a href="/signup/">create an account</a>
   }
 </script>
 
-<br><noscript><i>As JavaScript is disabled, account functionality does not work</i></noscript>
+<br><noscript><i class='warn'>As JavaScript is disabled, account functionality does not work</i></noscript>
