@@ -16,6 +16,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -46,7 +52,7 @@
     "dependencies": [
         "Regular-Sets",
         "Efficient-Mergesort",
-        "Spec_Check"
+        "SpecCheck"
     ],
     "theories": [
         "Automaton",

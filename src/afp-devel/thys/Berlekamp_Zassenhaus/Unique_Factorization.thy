@@ -2,10 +2,10 @@ theory Unique_Factorization
   imports
     Polynomial_Interpolation.Ring_Hom_Poly
     Polynomial_Factorization.Polynomial_Divisibility
-    "HOL-Library.Permutations" 
+    "HOL-Combinatorics.Permutations" 
     "HOL-Computational_Algebra.Euclidean_Algorithm"
     Containers.Containers_Auxiliary (* only for a lemma *)
-    Missing_Multiset2
+    More_Missing_Multiset
     "HOL-Algebra.Divisibility"
 begin
 
@@ -209,6 +209,7 @@ context idom begin
   lemma essentially_equal_connect[simp]:
     "essentially_equal mk_monoid fs gs \<longleftrightarrow> rel_mset (ddvd) (mset fs) (mset gs)"
     by (auto simp: essentially_equal_def rel_mset_via_perm)
+    
 
   lemma irred_idom_nz:
     assumes x0: "(x::'a) \<noteq> 0"

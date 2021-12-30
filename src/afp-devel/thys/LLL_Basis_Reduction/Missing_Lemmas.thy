@@ -23,14 +23,9 @@ theory Missing_Lemmas
     Berlekamp_Zassenhaus.Berlekamp_Hensel (* for unique_factorization_m_factor *)
 begin
 
-no_notation test_bit (infixl "!!" 100)
-
 hide_const(open) module.smult up_ring.monom up_ring.coeff
 
 (**** Could be merged to HOL/Rings.thy ****)
-
-lemma (in zero_less_one) zero_le_one [simp]: "0 \<le> 1" by (rule less_imp_le, simp)
-subclass (in zero_less_one) zero_neq_one by (unfold_locales, simp add: less_imp_neq)
 
 class ordered_semiring_1 = Rings.ordered_semiring_0 + monoid_mult + zero_less_one
 begin

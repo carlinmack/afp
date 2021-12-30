@@ -9,6 +9,8 @@ theory Residuated_Boolean_Algebras
   imports Residuated_Lattices
 begin
 
+unbundle lattice_syntax
+
 subsection \<open>Conjugation on Boolean Algebras\<close>
 
 text \<open>
@@ -26,7 +28,7 @@ lemma le_iff_inf_bot: "x \<le> y \<longleftrightarrow> x \<sqinter> -y = \<botto
   by (metis inf_bot_iff_le compl_le_compl_iff inf_commute)
   
 lemma indirect_eq: "(\<And>z. x \<le> z \<longleftrightarrow> y \<le> z) \<Longrightarrow> x = y"
-  by (metis eq_iff)
+  by (metis order.eq_iff)
 
 text \<open>
   Let $B$ be a boolean algebra. The maps $f$ and $g$ on $B$ are
@@ -78,7 +80,7 @@ proof -
     hence "g = h"
       apply (unfold conjugation_pair_def)
       apply (rule ext)
-      apply (rule antisym)
+      apply (rule order.antisym)
       by (metis le_iff_inf_bot inf_commute inf_compl_bot)+
   } 
   moreover assume "residuated f"
@@ -176,7 +178,7 @@ proof -
     by (metis conjugate_iff_def resf)
   hence "x \<sqinter> conjugate f (y \<sqinter> -z) = \<bottom>"
     apply (subgoal_tac "conjugate f (y \<sqinter> -z) \<le> conjugate f y \<sqinter> conjugate f (-z)")
-    apply (metis (no_types, hide_lams) dual_order.trans inf.commute inf_bot_iff_le inf_left_commute)
+    apply (metis (no_types, opaque_lifting) dual_order.trans inf.commute inf_bot_iff_le inf_left_commute)
     by (metis conj_iso inf_le2 inf_top.left_neutral le_inf_iff resf)
   hence "f(x) \<sqinter> y \<sqinter> -z = \<bottom>"
     by (metis conjugateI2 inf.assoc resf)
@@ -222,7 +224,7 @@ lemma conjugate_eq: "residuated f \<Longrightarrow> conjugate f y = \<Sqinter>{x
 proof -
   assume assm: "residuated f" obtain g where g_def: "g = conjugate f" by auto
   have "g y = \<Sqinter>{x. x \<ge> g y}"
-    by (auto intro!: antisym Inf_lower Inf_greatest)
+    by (auto intro!: order.antisym Inf_lower Inf_greatest)
   also have "... = \<Sqinter>{x. -x \<sqinter> g y = \<bottom>}"
     by (simp add: inf_bot_iff_le)
   also have "... = \<Sqinter>{x. f(-x) \<sqinter> y = \<bottom>}"
@@ -413,10 +415,10 @@ lemma maddux2b: "x\<cdot>a \<sqinter> y \<le> (x \<sqinter> (y \<lhd> a))\<cdot>
 lemma maddux2c: "(a \<lhd> x) \<sqinter> y \<le> a \<lhd> (x \<sqinter> (y \<rhd> a))"
   by (insert maddux2 [of "\<lambda>x. a \<lhd> x"]) simp
   
-lemma maddux2d: "(a \<rhd> x) \<sqinter> y \<le> a \<rhd> (x \<sqinter> a\<cdot>y)"
+lemma maddux2d: "(a \<rhd> x) \<sqinter> y \<le> a \<rhd> (x \<sqinter> (a\<cdot>y))"
   by (insert maddux2 [of "\<lambda>x. a \<rhd> x"]) simp
 
-lemma maddux2e: "(x \<lhd> a) \<sqinter> y \<le> (x \<sqinter> y\<cdot>a) \<lhd> a"
+lemma maddux2e: "(x \<lhd> a) \<sqinter> y \<le> (x \<sqinter> (y\<cdot>a)) \<lhd> a"
   by (insert maddux2 [of "\<lambda>x. x \<lhd> a"]) simp
   
 lemma maddux2f: "(x \<rhd> a) \<sqinter> y \<le> (x \<sqinter> (a \<lhd> y)) \<rhd> a"
@@ -573,7 +575,7 @@ lemma jonsson3a: "(\<forall>x. (x \<rhd> 1) \<rhd> 1 = x) \<longleftrightarrow> 
 proof safe
   fix x assume "\<forall>x. x \<rhd> 1 \<rhd> 1 = x"
   thus "1 \<lhd> (1 \<lhd> x) = x"
-    by (metis compl_le_swap1 compl_le_swap2 conjr2_iff eq_iff)
+    by (metis compl_le_swap1 compl_le_swap2 conjr2_iff order.eq_iff)
 next
   fix x assume "\<forall>x. 1 \<lhd> (1 \<lhd> x) = x"
   thus "x \<rhd> 1 \<rhd> 1 = x"
@@ -581,7 +583,7 @@ next
 qed
 
 lemma jonsson3b: "(\<forall>x. (x \<rhd> 1) \<rhd> 1 = x) \<Longrightarrow> (x \<sqinter> y) \<rhd> 1 = (x \<rhd> 1) \<sqinter> (y \<rhd> 1)"
-proof (rule antisym, auto simp: conjr2_iso)
+proof (rule order.antisym, auto simp: conjr2_iso)
   assume assm: "\<forall>x. (x \<rhd> 1) \<rhd> 1 = x"
   hence "(x \<rhd> 1) \<sqinter> (y \<rhd> 1) \<rhd> 1 = x \<sqinter> (((x \<rhd> 1) \<sqinter> (y \<rhd> 1) \<rhd> 1) \<sqinter> y)"
     by (metis (no_types) conjr2_iso inf.cobounded2 inf.commute inf.orderE)
@@ -657,7 +659,7 @@ next
     by (metis conjugate_l_def double_compl resl3)
   also have "... = y\<cdot>(1 \<lhd> x)"
     by (metis assms jonsson1b jonsson1c jonsson3c mult_onel)
-  finally show "y \<lhd> x = y\<cdot>(1 \<lhd> x)".
+  finally show "y \<lhd> x = y\<cdot>(1 \<lhd> x)" .
 qed
 
 end (* residuated_boolean_monoid *)

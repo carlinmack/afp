@@ -33,5 +33,13 @@
         "Drinks_Machine",
         "Drinks_Machine_2",
         "Drinks_Machine_LTL"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-09-19"
+        }
     ]
 }

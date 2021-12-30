@@ -95,7 +95,7 @@ lemma sorted_map: "\<lbrakk> sorted xs; mono f \<rbrakk> \<Longrightarrow> sorte
 lemma sorted_distinct [intro]: "\<lbrakk> sorted (xs); distinct(xs) \<rbrakk> \<Longrightarrow> (\<forall> i<length xs - 1. xs!i < xs!(i + 1))"
   apply (induct xs)
    apply (auto)
-  apply (metis (no_types, hide_lams) Suc_leI Suc_less_eq Suc_pred gr0_conv_Suc not_le not_less_iff_gr_or_eq nth_Cons_Suc nth_mem nth_non_equal_first_eq)
+  apply (metis (no_types, opaque_lifting) Suc_leI Suc_less_eq Suc_pred gr0_conv_Suc not_le not_less_iff_gr_or_eq nth_Cons_Suc nth_mem nth_non_equal_first_eq)
   done
 
 text \<open> Is the given list a permutation of the given set? \<close>
@@ -126,13 +126,11 @@ next
     done
   from srt hyps(2) have "distinct xs"
     by (simp add: is_sorted_list_of_set_def)
-  with isl show "distinct (x # xs)"
-  proof -
-    have "(\<forall>n. \<not> n < length (x # xs) - 1 \<or> (x # xs) ! n < (x # xs) ! (n + 1)) \<and> set (x # xs) = A"
-      by (meson \<open>is_sorted_list_of_set A (x # xs)\<close> is_sorted_list_of_set_def)
-  then show ?thesis
-    by (metis \<open>distinct xs\<close> add.commute add_diff_cancel_left' distinct.simps(2) leD length_Cons length_greater_0_conv length_pos_if_in_set less_le nth_Cons_0 nth_Cons_Suc plus_1_eq_Suc set_ConsD sorted.elims(2) srtd)    
-  qed
+  then have False if "x \<in> set xs"
+    using distinct_Ex1 [OF _ that] isl unfolding is_sorted_list_of_set_def
+    by (metis add.commute add_diff_cancel_left' leD length_Cons less_le not_gr_zero nth_Cons' plus_1_eq_Suc sorted_iff_nth_mono srtd)
+  with isl \<open>distinct xs\<close> show "distinct (x # xs)"
+    by force
 qed
 
 lemma is_sorted_list_of_set_alt_def:
@@ -351,11 +349,11 @@ lemma strict_prefix_map_inj:
   "\<lbrakk> inj_on f (set xs \<union> set ys); strict_prefix (map f xs) (map f ys) \<rbrakk> \<Longrightarrow>
    strict_prefix xs ys"
   apply (induct xs arbitrary:ys)
-   apply (auto)
-  using prefix_bot.bot.not_eq_extremum apply fastforce
+  apply auto
+   apply (simp flip: prefix_bot.bot_less)
   apply (erule strict_prefix_Cons_elim)
   apply (auto)
-  apply (metis (hide_lams, full_types) image_insert insertI1 insert_Diff_if singletonE)
+  apply (metis image_eqI insert_Diff_single insert_iff)
   done
 
 lemma strict_prefix_map_inj_eq [simp]:

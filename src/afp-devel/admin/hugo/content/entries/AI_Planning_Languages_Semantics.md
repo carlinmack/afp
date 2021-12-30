@@ -29,6 +29,15 @@
         "Lifschitz_Consistency"
     ],
     "relatedEntries": [
-        "XML"
+        "XML",
+        "Polynomial_Factorization"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-10-30"
+        }
     ]
 }

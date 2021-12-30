@@ -17,224 +17,6 @@ imports
 begin
 
 subsection \<open>Auxiliary Facts\<close>
-  
-(* TODO Move *)
-lemma arg_of_real [simp]:
-  "x > 0 \<Longrightarrow> arg (complex_of_real x) = 0"
-  "x < 0 \<Longrightarrow> arg (complex_of_real x) = pi"
-  by (rule arg_unique; simp add: complex_sgn_def scaleR_conv_of_real)+
-  
-lemma arg_conv_arctan:
-  assumes "Re z > 0"
-  shows   "arg z = arctan (Im z / Re z)"
-proof (rule arg_unique)
-  show "sgn z = cis (arctan (Im z / Re z))"
-  proof (rule complex_eqI)
-    have "Re (cis (arctan (Im z / Re z))) = 1 / sqrt (1 + (Im z)\<^sup>2 / (Re z)\<^sup>2)"
-      by (simp add: cos_arctan power_divide)
-    also have "1 + Im z ^ 2 / Re z ^ 2 = norm z ^ 2 / Re z ^ 2"
-      using assms by (simp add: cmod_def field_simps)
-    also have "1 / sqrt \<dots> = Re z / norm z"
-      using assms by (simp add: real_sqrt_divide)
-    finally show "Re (sgn z) = Re (cis (arctan (Im z / Re z)))"
-      by simp
-  next
-    have "Im (cis (arctan (Im z / Re z))) = Im z / (Re z * sqrt (1 + (Im z)\<^sup>2 / (Re z)\<^sup>2))"
-      by (simp add: sin_arctan field_simps)
-    also have "1 + Im z ^ 2 / Re z ^ 2 = norm z ^ 2 / Re z ^ 2"
-      using assms by (simp add: cmod_def field_simps)
-    also have "Im z / (Re z * sqrt \<dots>) = Im z / norm z"
-      using assms by (simp add: real_sqrt_divide)
-    finally show "Im (sgn z) = Im (cis (arctan (Im z / Re z)))"
-      by simp
-  qed
-next
-  show "arctan (Im z / Re z) > -pi"
-    by (rule le_less_trans[OF _ arctan_lbound]) auto
-next
-  have "arctan (Im z / Re z) < pi / 2"
-    by (rule arctan_ubound)
-  also have "\<dots> \<le> pi" by simp
-  finally show "arctan (Im z / Re z) \<le> pi"
-    by simp
-qed
-
-lemma mult_indicator_cong:
-  fixes f g :: "_ \<Rightarrow> 'a :: semiring_1"
-  shows "(\<And>x. x \<in> A \<Longrightarrow> f x = g x) \<Longrightarrow> indicator A x * f x = indicator A x * g x"
-  by (auto simp: indicator_def)
-  
-lemma has_absolute_integral_change_of_variables_1':
-  fixes f :: "real \<Rightarrow> real" and g :: "real \<Rightarrow> real"
-  assumes S: "S \<in> sets lebesgue"
-    and der_g: "\<And>x. x \<in> S \<Longrightarrow> (g has_field_derivative g' x) (at x within S)"
-    and inj: "inj_on g S"
-  shows "(\<lambda>x. \<bar>g' x\<bar> *\<^sub>R f(g x)) absolutely_integrable_on S \<and>
-           integral S (\<lambda>x. \<bar>g' x\<bar> *\<^sub>R f(g x)) = b
-     \<longleftrightarrow> f absolutely_integrable_on (g ` S) \<and> integral (g ` S) f = b"
-proof -
-  have "(\<lambda>x. \<bar>g' x\<bar> *\<^sub>R vec (f(g x)) :: real ^ 1) absolutely_integrable_on S \<and>
-           integral S (\<lambda>x. \<bar>g' x\<bar> *\<^sub>R vec (f(g x))) = (vec b :: real ^ 1)
-         \<longleftrightarrow> (\<lambda>x. vec (f x) :: real ^ 1) absolutely_integrable_on (g ` S) \<and>
-           integral (g ` S) (\<lambda>x. vec (f x)) = (vec b :: real ^ 1)"
-    using assms unfolding has_field_derivative_iff_has_vector_derivative
-    by (intro has_absolute_integral_change_of_variables_1 assms) auto
-  thus ?thesis
-    by (simp add: absolutely_integrable_on_1_iff integral_on_1_eq)
-qed
-
-corollary Ln_times_of_nat:
-    "\<lbrakk>r > 0; z \<noteq> 0\<rbrakk> \<Longrightarrow> Ln(of_nat r * z :: complex) = ln (of_nat r) + Ln(z)"
-  using Ln_times_of_real[of "of_nat r" z] by simp
-
-lemma tendsto_of_real_0_I: 
-  "(f \<longlongrightarrow> 0) G \<Longrightarrow> ((\<lambda>x. (of_real (f x))) \<longlongrightarrow> (0 ::'a::real_normed_div_algebra)) G"
-  by (subst (asm) tendsto_of_real_iff [symmetric]) simp  
-
-lemma negligible_atLeastAtMostI: "b \<le> a \<Longrightarrow> negligible {a..(b::real)}"
-  by (cases "b < a") auto
-    
-lemma vector_derivative_cong_eq:
-  assumes "eventually (\<lambda>x. x \<in> A \<longrightarrow> f x = g x) (nhds x)" "x = y" "A = B" "x \<in> A"
-  shows   "vector_derivative f (at x within A) = vector_derivative g (at y within B)"
-proof -
-  from eventually_nhds_x_imp_x[OF assms(1)] assms(4) have "f x = g x" by blast
-  hence "(\<lambda>D. (f has_vector_derivative D) (at x within A)) = 
-           (\<lambda>D. (g has_vector_derivative D) (at x within A))" using assms
-    by (intro ext has_vector_derivative_cong_ev refl assms) simp_all
-  thus ?thesis by (simp add: vector_derivative_def assms)
-qed
-
-lemma differentiable_of_real [simp]: "of_real differentiable at x within A"
-proof -
-  have "(of_real has_vector_derivative 1) (at x within A)"
-    by (auto intro!: derivative_eq_intros)
-  thus ?thesis by (rule differentiableI_vector)
-qed
-  
-lemma higher_deriv_cong_ev:
-  assumes "eventually (\<lambda>x. f x = g x) (nhds x)" "x = y"
-  shows   "(deriv ^^ n) f x = (deriv ^^ n) g y"
-proof -
-  from assms(1) have "eventually (\<lambda>x. (deriv ^^ n) f x = (deriv ^^ n) g x) (nhds x)"
-  proof (induction n arbitrary: f g)
-    case (Suc n)
-    from Suc.prems have "eventually (\<lambda>y. eventually (\<lambda>z. f z = g z) (nhds y)) (nhds x)"
-      by (simp add: eventually_eventually)
-    hence "eventually (\<lambda>x. deriv f x = deriv g x) (nhds x)"
-      by eventually_elim (rule deriv_cong_ev, simp_all)
-    thus ?case by (auto intro!: deriv_cong_ev Suc simp: funpow_Suc_right simp del: funpow.simps)
-  qed auto
-  from eventually_nhds_x_imp_x[OF this] assms(2) show ?thesis by simp
-qed
-
-lemma deriv_of_real [simp]: 
-  "at x within A \<noteq> bot \<Longrightarrow> vector_derivative of_real (at x within A) = 1"
-  by (auto intro!: vector_derivative_within derivative_eq_intros)
-
-lemma deriv_Re [simp]: "deriv Re = (\<lambda>_. 1)"
-  by (auto intro!: DERIV_imp_deriv simp: fun_eq_iff)
-    
-lemma vector_derivative_of_real_left:
-  assumes "f differentiable at x"
-  shows   "vector_derivative (\<lambda>x. of_real (f x)) (at x) = of_real (deriv f x)"
-proof -
-  have "vector_derivative (of_real \<circ> f) (at x) = (of_real (deriv f x))"
-    by (subst vector_derivative_chain_at)
-       (simp_all add: scaleR_conv_of_real field_derivative_eq_vector_derivative assms)
-  thus ?thesis by (simp add: o_def)
-qed
-  
-lemma vector_derivative_of_real_right:
-  assumes "f field_differentiable at (of_real x)"
-  shows   "vector_derivative (\<lambda>x. f (of_real x)) (at x) = deriv f (of_real x)"
-proof -
-  have "vector_derivative (f \<circ> of_real) (at x) = deriv f (of_real x)"
-    using assms by (subst vector_derivative_chain_at_general) simp_all
-  thus ?thesis by (simp add: o_def)
-qed
-  
-lemma Ln_holomorphic [holomorphic_intros]:
-  assumes "A \<inter> \<real>\<^sub>\<le>\<^sub>0 = {}"
-  shows   "Ln holomorphic_on (A :: complex set)"
-proof (intro holomorphic_onI)
-  fix z assume "z \<in> A"
-  with assms have "(Ln has_field_derivative inverse z) (at z within A)"
-    by (auto intro!: derivative_eq_intros)
-  thus "Ln field_differentiable at z within A" by (auto simp: field_differentiable_def)
-qed
-
-lemma higher_deriv_Polygamma:
-  assumes "z \<notin> \<int>\<^sub>\<le>\<^sub>0"
-  shows   "(deriv ^^ n) (Polygamma m) z = 
-             Polygamma (m + n) (z :: 'a :: {real_normed_field,euclidean_space})"
-proof -
-  have "eventually (\<lambda>u. (deriv ^^ n) (Polygamma m) u = Polygamma (m + n) u) (nhds z)"
-  proof (induction n)
-    case (Suc n)
-    from Suc.IH have "eventually (\<lambda>z. eventually (\<lambda>u. (deriv ^^ n) (Polygamma m) u = Polygamma (m + n) u) (nhds z)) (nhds z)"
-      by (simp add: eventually_eventually)
-    hence "eventually (\<lambda>z. deriv ((deriv ^^ n) (Polygamma m)) z = 
-             deriv (Polygamma (m + n)) z) (nhds z)"
-      by eventually_elim (intro deriv_cong_ev refl)
-    moreover have "eventually (\<lambda>z. z \<in> UNIV - \<int>\<^sub>\<le>\<^sub>0) (nhds z)" using assms
-      by (intro eventually_nhds_in_open open_Diff open_UNIV) auto
-    ultimately show ?case by eventually_elim (simp_all add: deriv_Polygamma)
-  qed simp_all
-  thus ?thesis by (rule eventually_nhds_x_imp_x)
-qed
-  
-lemma higher_deriv_cmult:
-  assumes "f holomorphic_on A" "x \<in> A" "open A"
-  shows   "(deriv ^^ j) (\<lambda>x. c * f x) x = c * (deriv ^^ j) f x"
-  using assms
-proof (induction j arbitrary: f x)
-  case (Suc j f x)
-  have "deriv ((deriv ^^ j) (\<lambda>x. c * f x)) x = deriv (\<lambda>x. c * (deriv ^^ j) f x) x"
-    using eventually_nhds_in_open[of A x] assms(2,3) Suc.prems
-    by (intro deriv_cong_ev refl) (auto elim!: eventually_mono simp: Suc.IH)
-  also have "\<dots> = c * deriv ((deriv ^^ j) f) x" using Suc.prems assms(2,3)
-    by (intro deriv_cmult holomorphic_on_imp_differentiable_at holomorphic_higher_deriv) auto
-  finally show ?case by simp
-qed simp_all
-
-lemma higher_deriv_ln_Gamma_complex:
-  assumes "(x::complex) \<notin> \<real>\<^sub>\<le>\<^sub>0"
-  shows   "(deriv ^^ j) ln_Gamma x = (if j = 0 then ln_Gamma x else Polygamma (j - 1) x)"
-proof (cases j)
-  case (Suc j')
-  have "(deriv ^^ j') (deriv ln_Gamma) x = (deriv ^^ j') Digamma x"
-    using eventually_nhds_in_open[of "UNIV - \<real>\<^sub>\<le>\<^sub>0" x] assms
-    by (intro higher_deriv_cong_ev refl)
-       (auto elim!: eventually_mono simp: open_Diff deriv_ln_Gamma_complex)
-  also have "\<dots> = Polygamma j' x" using assms
-    by (subst higher_deriv_Polygamma)
-       (auto elim!: nonpos_Ints_cases simp: complex_nonpos_Reals_iff)
-  finally show ?thesis using Suc by (simp del: funpow.simps add: funpow_Suc_right)
-qed simp_all
-
-lemma higher_deriv_ln_Gamma_real:
-  assumes "(x::real) > 0"
-  shows   "(deriv ^^ j) ln_Gamma x = (if j = 0 then ln_Gamma x else Polygamma (j - 1) x)"
-proof (cases j)
-  case (Suc j')
-  have "(deriv ^^ j') (deriv ln_Gamma) x = (deriv ^^ j') Digamma x"
-    using eventually_nhds_in_open[of "{0<..}" x] assms
-    by (intro higher_deriv_cong_ev refl)
-       (auto elim!: eventually_mono simp: open_Diff deriv_ln_Gamma_real)
-  also have "\<dots> = Polygamma j' x" using assms
-    by (subst higher_deriv_Polygamma)
-       (auto elim!: nonpos_Ints_cases simp: complex_nonpos_Reals_iff)
-  finally show ?thesis using Suc by (simp del: funpow.simps add: funpow_Suc_right)
-qed simp_all
-  
-lemma higher_deriv_ln_Gamma_complex_of_real:
-  assumes "(x :: real) > 0"
-  shows   "(deriv ^^ j) ln_Gamma (complex_of_real x) = of_real ((deriv ^^ j) ln_Gamma x)"
-    using assms
-    by (auto simp: higher_deriv_ln_Gamma_real higher_deriv_ln_Gamma_complex
-                   ln_Gamma_complex_of_real Polygamma_of_real)
-(* END TODO *)
 
 (* TODO: could be automated with Laurent series expansions in the future *)
 lemma stirling_limit_aux1: 
@@ -304,27 +86,27 @@ qed
 
 lemma arg_cis [simp]:
   assumes "x \<in> {-pi<..pi}"
-  shows   "arg (cis x) = x"
-  using assms by (intro arg_unique) auto
+  shows   "Arg (cis x) = x"
+  using assms by (intro cis_Arg_unique) auto
 
 lemma arg_mult_of_real_left [simp]:
   assumes "r > 0"
-  shows   "arg (of_real r * z) = arg z"
+  shows   "Arg (of_real r * z) = Arg z"
 proof (cases "z = 0")
   case False
   thus ?thesis
-    using arg_bounded[of z] assms
-    by (intro arg_unique) (auto simp: sgn_mult sgn_of_real cis_arg)
+    using Arg_bounded[of z] assms
+    by (intro cis_Arg_unique) (auto simp: sgn_mult sgn_of_real cis_Arg)
 qed auto
 
 lemma arg_mult_of_real_right [simp]:
   assumes "r > 0"
-  shows   "arg (z * of_real r) = arg z"
+  shows   "Arg (z * of_real r) = Arg z"
   by (subst mult.commute, subst arg_mult_of_real_left) (simp_all add: assms)
 
 lemma arg_rcis [simp]:
   assumes "x \<in> {-pi<..pi}" "r > 0"
-  shows   "arg (rcis r x) = x"
+  shows   "Arg (rcis r x) = x"
   using assms by (simp add: rcis_def)
 
 lemma rcis_in_complex_cone [intro]: 
@@ -333,11 +115,11 @@ lemma rcis_in_complex_cone [intro]:
   using assms by (auto simp: complex_cone_def)  
 
 lemma arg_imp_in_complex_cone:
-  assumes "arg z \<in> {a..b}"
+  assumes "Arg z \<in> {a..b}"
   shows   "z \<in> complex_cone a b"
 proof -
-  have "z = rcis (norm z) (arg z)"
-    by (simp add: rcis_cmod_arg)
+  have "z = rcis (norm z) (Arg z)"
+    by (simp add: rcis_cmod_Arg)
   also have "\<dots> \<in> complex_cone a b"
     using assms by auto
   finally show ?thesis .
@@ -345,12 +127,12 @@ qed
 
 lemma complex_cone_altdef:
   assumes "-pi < a" "a \<le> b" "b \<le> pi"
-  shows   "complex_cone a b = insert 0 {z. arg z \<in> {a..b}}"
+  shows   "complex_cone a b = insert 0 {z. Arg z \<in> {a..b}}"
 proof (intro equalityI subsetI)
   fix z assume "z \<in> complex_cone a b"
   then obtain r \<alpha> where *: "r \<ge> 0" "\<alpha> \<in> {a..b}" "z = rcis r \<alpha>"
     by (auto elim: complex_coneE)
-  have "arg z \<in> {a..b}" if [simp]: "z \<noteq> 0"
+  have "Arg z \<in> {a..b}" if [simp]: "z \<noteq> 0"
   proof -
     have "r > 0" using that * by (subst (asm) *) auto
     hence "\<alpha> \<in> {a..b}"
@@ -360,7 +142,7 @@ proof (intro equalityI subsetI)
     ultimately show ?thesis using *(3) \<open>r > 0\<close>
       by (subst *) auto
   qed
-  thus "z \<in> insert 0 {z. arg z \<in> {a..b}}"
+  thus "z \<in> insert 0 {z. Arg z \<in> {a..b}}"
     by auto
 qed (use assms in \<open>auto intro: arg_imp_in_complex_cone\<close>)
 
@@ -604,7 +386,7 @@ proof -
              (of_nat n + 1/2 + s) * (ln (of_nat (n + 1) + s) - ln (of_nat n + s)) - 1) 
            {of_nat n..of_nat (n + 1)}" for n
   proof (rule has_integral_spike)      
-    have "((\<lambda>x. (of_nat n + 1/2 + s) * (1 / (x + s)) - 1) has_integral 
+    have "((\<lambda>x. (of_nat n + 1/2 + s) * (1 / (of_real x + s)) - 1) has_integral 
               (of_nat n + 1/2 + s) * (ln (of_real (real (n + 1)) + s) - ln (of_real (real n) + s)) - 1) 
             {of_nat n..of_nat (n + 1)}" 
       using s has_integral_const_real[of 1 "of_nat n" "of_nat (n + 1)"]
@@ -612,7 +394,7 @@ proof -
          (auto intro!: derivative_eq_intros has_vector_derivative_real_field
                simp: has_field_derivative_iff_has_vector_derivative [symmetric] field_simps
                      complex_nonpos_Reals_iff)
-    thus "((\<lambda>x. (of_nat n + 1/2 + s) * (1 / (x + s)) - 1) has_integral 
+    thus "((\<lambda>x. (of_nat n + 1/2 + s) * (1 / (of_real x + s)) - 1) has_integral 
               (of_nat n + 1/2 + s) * (ln (of_nat (n + 1) + s) - ln (of_nat n + s)) - 1) 
             {of_nat n..of_nat (n + 1)}" by simp
              
@@ -709,7 +491,11 @@ text \<open>
   This following proof is based on ``Rudiments of the theory of the gamma function'' 
   by Bruce Berndt~\cite{berndt}.
 \<close>
-qualified lemma integral_pbernpoly_1: 
+lemma tendsto_of_real_0_I: 
+  "(f \<longlongrightarrow> 0) G \<Longrightarrow> ((\<lambda>x. (of_real (f x))) \<longlongrightarrow> (0 ::'a::real_normed_div_algebra)) G"
+  using tendsto_of_real_iff by force
+
+qualified lemma integral_pbernpoly_1:
   "(\<lambda>N. integral {0..real N} (\<lambda>x. pbernpoly 1 x / (x + s)))
      \<longlonglongrightarrow> -ln_Gamma s - s + (s - 1 / 2) * ln s + ln (2 * pi) / 2"
 proof -  
@@ -875,7 +661,8 @@ lemma pbernpoly_over_power_tendsto_0:
 proof -
   from s have neq: "s + of_nat n \<noteq> 0" for n
     by (auto simp: complex_eq_iff complex_nonpos_Reals_iff)
-  from bounded_pbernpoly[of "Suc n"] guess c . note c = this
+  obtain c where c: "\<And>x. norm (pbernpoly (Suc n) x) \<le> c"
+    using bounded_pbernpoly by auto
   have "eventually (\<lambda>x. real x + Re s > 0) at_top"
     by real_asymp
   hence "eventually (\<lambda>x. norm (of_real (pbernpoly (Suc n) (real x)) / 
@@ -1217,7 +1004,7 @@ proof -
   have *: "norm (stirling_integral n s) \<le> C / norm s ^ (n - 1)"
     if s: "s \<in> complex_cone' \<alpha> - {0}" for s :: complex
   proof (rule Lim_norm_ubound[OF _ LIMSEQ_stirling_integral])
-    from s \<alpha> have arg: "\<bar>arg s\<bar> \<le> \<alpha>" by (auto simp: complex_cone_altdef)
+    from s \<alpha> have Arg: "\<bar>Arg s\<bar> \<le> \<alpha>" by (auto simp: complex_cone_altdef)
     have s': "s \<notin> \<real>\<^sub>\<le>\<^sub>0"
       using complex_cone_inter_nonpos_Reals[of "-\<alpha>" \<alpha>] \<alpha> s  by auto
     from s have [simp]: "s \<noteq> 0" by auto
@@ -1288,32 +1075,32 @@ proof -
       next
 
         case False
-        have "cos \<bar>arg s\<bar> = cos (arg s)"
+        have "cos \<bar>Arg s\<bar> = cos (Arg s)"
           by (simp add: abs_if)
-        also have "cos (arg s) = Re (rcis (norm s) (arg s)) / norm s"
+        also have "cos (Arg s) = Re (rcis (norm s) (Arg s)) / norm s"
           by (subst Re_rcis) auto
         also have "\<dots> = Re s / norm s"
-          by (subst rcis_cmod_arg) auto
+          by (subst rcis_cmod_Arg) auto
         also have "\<dots> \<le> cos (pi / 2)"
           using False by (auto simp: field_simps)
-        finally have "\<bar>arg s\<bar> \<ge> pi / 2"
-          using arg \<alpha> by (subst (asm) cos_mono_le_eq) auto
+        finally have "\<bar>Arg s\<bar> \<ge> pi / 2"
+          using Arg \<alpha> by (subst (asm) cos_mono_le_eq) auto
 
         have "sin \<alpha> * norm s = sin (pi - \<alpha>) * norm s"
           by simp
-        also have "\<dots> \<le> sin (pi - \<bar>arg s\<bar>) * norm s"
-          using \<alpha> arg \<open>\<bar>arg s\<bar> \<ge> pi / 2\<close>
+        also have "\<dots> \<le> sin (pi - \<bar>Arg s\<bar>) * norm s"
+          using \<alpha> Arg \<open>\<bar>Arg s\<bar> \<ge> pi / 2\<close>
           by (intro mult_right_mono sin_monotone_2pi_le) auto
-        also have "sin \<bar>arg s\<bar> \<ge> 0"
-          using arg_bounded[of s] by (intro sin_ge_zero) auto
-        hence "sin (pi - \<bar>arg s\<bar>) = \<bar>sin \<bar>arg s\<bar>\<bar>"
+        also have "sin \<bar>Arg s\<bar> \<ge> 0"
+          using Arg_bounded[of s] by (intro sin_ge_zero) auto
+        hence "sin (pi - \<bar>Arg s\<bar>) = \<bar>sin \<bar>Arg s\<bar>\<bar>"
           by simp 
-        also have "\<dots> = \<bar>sin (arg s)\<bar>"
+        also have "\<dots> = \<bar>sin (Arg s)\<bar>"
           by (simp add: abs_if)
-        also have "\<dots> * norm s = \<bar>Im (rcis (norm s) (arg s))\<bar>"
+        also have "\<dots> * norm s = \<bar>Im (rcis (norm s) (Arg s))\<bar>"
           by (simp add: abs_mult)
         also have "\<dots> = \<bar>Im s\<bar>"
-          by (subst rcis_cmod_arg) auto
+          by (subst rcis_cmod_Arg) auto
         finally have abs_Im_ge: "\<bar>Im s\<bar> \<ge> sin \<alpha> * norm s" .
 
         have [simp]: "Im s \<noteq> 0" "s \<noteq> 0"
@@ -1546,7 +1333,8 @@ lemma deriv_stirling_integral_real_bound:
   assumes m: "m > 0"
   shows   "(deriv ^^ j) (stirling_integral m) \<in> O(\<lambda>x::real. 1 / x ^ (m + j))"
 proof -
-  from stirling_integral_bound[OF m] guess c . note c = this
+  obtain c where c: "\<And>s. 0 < Re s \<Longrightarrow> cmod (stirling_integral m s) \<le> c / Re s ^ m"
+    using stirling_integral_bound[OF m] by auto
   have "0 \<le> cmod (stirling_integral m 1)" by simp
   also have "\<dots> \<le> c" using c[of 1] by simp
   finally have c_nonneg: "c \<ge> 0" .
@@ -1946,7 +1734,7 @@ subsection \<open>Asymptotics of the complex Gamma function\<close>
 
 text \<open>
   The \<open>m\<close>-th order remainder of Stirling's formula for $\log\Gamma$ is $O(s^{-m})$ uniformly over
-  any complex cone $\text{arg}(z) \leq \alpha$, $z\neq 0$ for any angle
+  any complex cone $\text{Arg}(z) \leq \alpha$, $z\neq 0$ for any angle
   $\alpha\in(0, \pi)$. This means that there is bounded by $c z^{-m}$ for some constant $c$ for
   all $z$ in this cone.
 \<close>
@@ -1990,7 +1778,7 @@ theorem ln_Gamma_complex_asymptotics_explicit:
   where "\<forall>s::complex. s \<notin> \<real>\<^sub>\<le>\<^sub>0 \<longrightarrow>
                ln_Gamma s = (s - 1/2) * ln s - s + ln (2 * pi) / 2 +
                             (\<Sum>k=1..<m. bernoulli (k+1) / (k * (k+1) * s ^ k)) - R s"
-    and "\<forall>s. s \<noteq> 0 \<and> \<bar>arg s\<bar> \<le> \<alpha> \<longrightarrow> norm (R s) \<le> C / norm s ^ m"    
+    and "\<forall>s. s \<noteq> 0 \<and> \<bar>Arg s\<bar> \<le> \<alpha> \<longrightarrow> norm (R s) \<le> C / norm s ^ m"    
 proof -
   obtain c where c: "\<And>s. s \<in> complex_cone' \<alpha> - {0} \<Longrightarrow> norm (stirling_integral m s) \<le> c / norm s ^ m"
     using stirling_integral_bound'[OF assms] by blast
@@ -2007,7 +1795,7 @@ proof -
                ln_Gamma s = (s - 1 / 2) * ln s - s + ln (2 * pi) / 2 +
                (\<Sum>k=1..<m. bernoulli (k+1) / (k * (k+1) * s ^ k)) - R s"
       by (auto simp add: R_def algebra_simps)
-    show "\<forall>s. s \<noteq> 0 \<and> \<bar>arg s\<bar> \<le> \<alpha> \<longrightarrow> cmod (R s) \<le> c / real m / cmod s ^ m"
+    show "\<forall>s. s \<noteq> 0 \<and> \<bar>Arg s\<bar> \<le> \<alpha> \<longrightarrow> cmod (R s) \<le> c / real m / cmod s ^ m"
     proof (safe, goal_cases)
       case (1 s)
       show ?case
@@ -2021,7 +1809,7 @@ qed
 text \<open>
   Lastly, we can also derive the asymptotics of $\Gamma$ itself:
   \[\Gamma(z) \sim \sqrt{2\pi / z} \left(\frac{z}{e}\right)^z\]
-  uniformly for $|z|\to\infty$ within the cone $\text{arg}(z) \leq \alpha$ for $\alpha\in(0,\pi)$:
+  uniformly for $|z|\to\infty$ within the cone $\text{Arg}(z) \leq \alpha$ for $\alpha\in(0,\pi)$:
 \<close>
 
 context

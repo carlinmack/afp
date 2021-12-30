@@ -19,5 +19,13 @@
     ],
     "relatedEntries": [
         "Knuth_Morris_Pratt"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-09-02"
+        }
     ]
 }

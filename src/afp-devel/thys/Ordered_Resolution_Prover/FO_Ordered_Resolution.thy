@@ -226,7 +226,7 @@ proof (cases rule: ord_resolve.cases)
     define BB where "BB \<equiv> AAs ! i"
     have c_cf': "C \<subseteq># \<Sum>\<^sub># (mset CAs)"
       unfolding C_def using a_in_aa cas cas_len
-      by (metis less_subset_eq_Union_mset mset_subset_eq_add_left subset_mset.order.trans)
+      by (metis less_subset_eq_Union_mset mset_subset_eq_add_left subset_mset.trans)
     have c_in_cc: "C + poss BB \<in># mset CAs"
       using C_def BB_def a_in_aa cas_len in_set_conv_nth cas by fastforce
     {
@@ -1162,9 +1162,9 @@ proof (cases rule: ord_resolve.cases)
     then obtain \<tau> where
       \<tau>_p: "Some \<tau> = mgu (set_mset ` set (map2 add_mset As0' AAs0'))"
       using mgu_complete
-      by (metis (mono_tags, hide_lams) List.finite_set finite_imageI finite_set_mset image_iff)
+      by (metis (mono_tags, opaque_lifting) List.finite_set finite_imageI finite_set_mset image_iff)
     moreover then obtain \<phi> where \<phi>_p: "\<tau> \<odot> \<phi> = \<eta> \<odot> \<sigma>"
-      by (metis (mono_tags, hide_lams) finite_set \<eta>\<sigma>uni finite_imageI finite_set_mset image_iff
+      by (metis (mono_tags, opaque_lifting) finite_set \<eta>\<sigma>uni finite_imageI finite_set_mset image_iff
           mgu_sound set_mset_mset substitution_ops.is_mgu_def) (* should be simpler *)
     ultimately show thesis
       using that by auto

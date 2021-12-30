@@ -55,7 +55,7 @@ lemma strict_prefix_butlast:
 using assms unfolding append_butlast_last_id[symmetric] by (auto simp add:less_le butlast_strict_prefix prefix_order.le_less_trans)
 
 lemma prefix_tl_subset: "prefix xs ys \<Longrightarrow> set (tl xs) \<subseteq> set (tl ys)"
-  by (metis Nil_tl prefix_bot.bot.extremum prefix_def set_mono_prefix tl_append2)
+  by (metis Nil_tl prefix_bot.extremum prefix_def set_mono_prefix tl_append2)
 
 lemma suffix_tl_subset: "suffix xs ys \<Longrightarrow> set (tl xs) \<subseteq> set (tl ys)"
   by (metis append_Nil suffix_def set_mono_suffix suffix_tl suffix_order.order_trans tl_append2)
@@ -239,7 +239,7 @@ by (induct xs rule:length_induct, rule assms) auto
 lemma The_Min: "Ex1 P \<Longrightarrow> The P = Min {x. P x}"
 apply (rule the_equality)
  apply (metis (mono_tags) Min.infinite Min_in Min_singleton all_not_in_conv finite_subset insert_iff mem_Collect_eq subsetI)
-by (metis (erased, hide_lams) Least_Min Least_equality Set.set_insert ex_in_conv finite.emptyI finite_insert insert_iff mem_Collect_eq order_refl)
+by (metis (erased, opaque_lifting) Least_Min Least_equality Set.set_insert ex_in_conv finite.emptyI finite_insert insert_iff mem_Collect_eq order_refl)
 
 lemma The_Max: "Ex1 P \<Longrightarrow> The P = Max {x. P x}"
 apply (rule the_equality)

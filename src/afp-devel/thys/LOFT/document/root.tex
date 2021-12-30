@@ -1,4 +1,5 @@
 \documentclass[a4paper]{article}
+\usepackage[T1]{fontenc}
 \usepackage{isabelle,isabellesym}
 
 % further packages required for unusual symbols (see also
@@ -22,7 +23,6 @@
   %for \<onequarter>, \<onehalf>, \<threequarters>, \<degree>, \<cent>,
   %\<currency>
 
-\usepackage[utf8]{inputenc}
 \usepackage{makeidx}
 \usepackage{graphicx}
 \usepackage{tabularx}
@@ -76,12 +76,12 @@
 % for \frqq (whatever that actually is)
 
 \begin{document}
-\title{LOFT — Verified Migration of Linux Firewalls to SDN}
+\title{LOFT --- Verified Migration of Linux Firewalls to SDN}
 \author{Julius Michaelis and Cornelius Diekmann}
 \maketitle
 
 \begin{abstract}
-	We present LOFT — \emph{L}inux firewall \emph{O}pen\emph{F}low \emph{T}ranslator, a system that transforms the main routing table and \texttt{FORWARD} chain of iptables of a Linux-based firewall into a set of static OpenFlow rules.
+	We present LOFT --- \emph{L}inux firewall \emph{O}pen\emph{F}low \emph{T}ranslator, a system that transforms the main routing table and \texttt{FORWARD} chain of iptables of a Linux-based firewall into a set of static OpenFlow rules.
 	Our implementation is verified against a model of a simplified Linux-based router and we can directly show how much of the original functionality is preserved.
 \end{abstract}
 \vspace{1em}

@@ -132,7 +132,7 @@ proof (induction fl arbitrary: ls thesis)
   case (Cons x xs)
     then obtain l ls' where [simp]: "ls = l#ls'" "f l = x" by force
     with Cons.prems(2) have "map f ls' = xs @ fl'" by simp
-    from Cons.IH[OF _ this] guess ll ll' .
+    from Cons.IH[OF _ this] obtain ll ll' where "ls' = ll @ ll'" "map f ll = xs" "map f ll' = fl'" .
     with Cons.prems(1)[of "l#ll" ll'] show thesis by simp
 qed simp
 
@@ -250,23 +250,7 @@ lemma acyclic_union:
   "acyclic (A\<union>B) \<Longrightarrow> acyclic B"
   by (metis Un_upper1 Un_upper2 acyclic_subset)+
     
-    
-    
-subsubsection \<open>Lattice Syntax\<close>    
-(* Providing the syntax in a locale makes it more usable, without polluting the global namespace*)    
-locale Lattice_Syntax begin
-  notation
-    bot ("\<bottom>") and
-    top ("\<top>") and
-    inf  (infixl "\<sqinter>" 70) and
-    sup  (infixl "\<squnion>" 65) and
-    Inf  ("\<Sqinter>_" [900] 900) and
-    Sup  ("\<Squnion>_" [900] 900)
-
-end
-    
-    
-    
+   
 text \<open>Here we provide a collection of miscellaneous definitions and helper lemmas\<close>
 
 subsection "Miscellaneous (1)"
@@ -1589,7 +1573,7 @@ qed
 
 lemma sorted_hd_last:
   "\<lbrakk>sorted l; l\<noteq>[]\<rbrakk> \<Longrightarrow> hd l \<le> last l"
-by (metis eq_iff hd_Cons_tl last_in_set not_hd_in_tl sorted.simps(2))
+by (metis eq_iff hd_Cons_tl last_in_set not_hd_in_tl sorted_wrt.simps(2))
 
 lemma (in linorder) sorted_hd_min:
   "\<lbrakk>xs \<noteq> []; sorted xs\<rbrakk> \<Longrightarrow> \<forall>x \<in> set xs. hd xs \<le> x"
@@ -1895,12 +1879,12 @@ subsubsection \<open>Sorted List with arbitrary Relations\<close>
 
 lemma (in linorder) sorted_wrt_rev_linord [simp] :
   "sorted_wrt (\<ge>) l \<longleftrightarrow> sorted (rev l)"
-by (simp add: sorted_sorted_wrt sorted_wrt_rev)
+by (simp add: sorted_wrt_rev)
 
 lemma (in linorder) sorted_wrt_map_linord [simp] :
   "sorted_wrt (\<lambda>(x::'a \<times> 'b) y. fst x \<le> fst y) l
   \<longleftrightarrow> sorted (map fst l)"
-by (simp add: sorted_sorted_wrt sorted_wrt_map)
+by (simp add: sorted_wrt_map)
 
 lemma (in linorder) sorted_wrt_map_rev_linord [simp] :
   "sorted_wrt (\<lambda>(x::'a \<times> 'b) y. fst x \<ge> fst y) l
@@ -2607,8 +2591,7 @@ qed
 
 lemma sorted_quicksort_by_rel:
   "sorted (quicksort_by_rel (\<le>) [] xs)"
-unfolding sorted_sorted_wrt
-by (rule sorted_wrt_quicksort_by_rel) auto
+  by (rule sorted_wrt_quicksort_by_rel) auto
 
 lemma sort_quicksort_by_rel:
   "sort = quicksort_by_rel (\<le>) []"
@@ -2819,7 +2802,6 @@ qed
 
 lemma sorted_mergesort_by_rel:
   "sorted (mergesort_by_rel (\<le>) xs)"
-unfolding sorted_sorted_wrt
 by (rule sorted_wrt_mergesort_by_rel) auto
 
 lemma sort_mergesort_by_rel:
@@ -3388,7 +3370,7 @@ subsection \<open>Directed Graphs and Relations\<close>
       by (metis insertE prod.inject r_into_trancl' rtrancl_eq_or_trancl)
   next
     case (step y z) thus ?thesis
-      by (metis (hide_lams, no_types)
+      by (metis (opaque_lifting, no_types)
         Pair_inject insertE rtrancl.simps trancl.simps trancl_into_rtrancl)
   qed
 

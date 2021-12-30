@@ -146,7 +146,8 @@ proof -
     using assms by (simp_all add: linorder_sorted_wrt_list_of_set xs_def ys_def)
       
   from xs_ys have "mset ys = mset xs" by (simp add: set_eq_iff_mset_eq_distinct [symmetric])
-  from mset_eq_permutation[OF this] guess \<pi> . note \<pi> = this
+  then obtain \<pi> where \<pi>: "\<pi> permutes {..<length xs}" "permute_list \<pi> xs = ys"
+    by (rule mset_eq_permutation)
   define \<pi>' where "\<pi>' = (\<lambda>x. if x \<notin> A then x else xs ! inv \<pi> (index xs x))"
   have \<pi>': "\<pi>' permutes A"
   proof (rule permutesI)
@@ -256,7 +257,8 @@ proof -
     by (intro product_nn_integral_pair) auto
   also have "\<dots> = (\<integral>\<^sup>+ x. (\<integral>\<^sup>+y. (if x = y then 1 else 0) \<partial>M) \<partial>M)"
     by (subst M.nn_integral_fst [symmetric]) simp_all
-  also have "\<dots> = (\<integral>\<^sup>+ x. (\<integral>\<^sup>+y. indicator {x} y \<partial>M) \<partial>M)" by (simp add: indicator_def eq_commute)
+  also have "\<dots> = (\<integral>\<^sup>+ x. (\<integral>\<^sup>+y. indicator {x} y \<partial>M) \<partial>M)"
+    by (simp add: indicator_def of_bool_def eq_commute)
   also have "\<dots> = (\<integral>\<^sup>+ x. emeasure M {x} \<partial>M)" by (subst nn_integral_indicator) (simp_all add: M_def)
   also have "\<dots> = (\<integral>\<^sup>+ x. 0 \<partial>M)" unfolding M_def
     by (intro nn_integral_cong_AE refl AE_uniform_measureI) auto

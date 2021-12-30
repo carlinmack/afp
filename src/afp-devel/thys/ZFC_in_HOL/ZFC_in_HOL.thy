@@ -99,7 +99,7 @@ lemma inf: "small (range (g :: nat \<Rightarrow> V))"
   by (simp add: inf_raw small_iff_range)
 
 lemma small_image_nat_V [simp]: "small (g ` N)" for g :: "nat \<Rightarrow> V"
-  by (metis (mono_tags, hide_lams) down elts_of_set image_iff inf rangeI subsetI)
+  by (metis (mono_tags, opaque_lifting) down elts_of_set image_iff inf rangeI subsetI)
 
 lemma Finite_V:
   fixes X :: "V set"
@@ -788,6 +788,9 @@ proof -
   then show ?thesis
     using assms by (metis Ord_linear2 Sup_least Sup_upper eq_iff mem_Collect_eq subsetD succ_le_iff)
 qed
+
+lemma in_succ_iff: "Ord i \<Longrightarrow> j \<in> elts (ZFC_in_HOL.succ i) \<longleftrightarrow> Ord j \<and> j \<le> i"
+  by (metis Ord_in_Ord Ord_mem_iff_lt Ord_not_le Ord_succ succ_le_iff)
 
 lemma zero_in_succ [simp,intro]: "Ord i \<Longrightarrow> 0 \<in> elts (succ i)"
   using mem_0_Ord by auto

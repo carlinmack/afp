@@ -423,7 +423,8 @@ lemma open_contains_box:
   assumes "open A" "x \<in> A"
   obtains a b where "box a b \<subseteq> A" "x \<in> box a b" "\<forall>i\<in>Basis. a \<bullet> i < b \<bullet> i"
 proof -
-  from open_contains_cbox[OF assms] guess a b .
+  from assms obtain a b where "cbox a b \<subseteq> A" "x \<in> box a b" "\<forall>i\<in>Basis. a \<bullet> i < b \<bullet> i"
+    by (rule open_contains_cbox)
   with that[of a b] box_subset_cbox[of a b] show ?thesis by auto
 qed
 
@@ -1156,7 +1157,7 @@ proof -
     by (auto dest: completion_ex_borel_measurable_real)
 
   from I have "((\<lambda>x. abs (indicator \<Omega> x * f x)) has_integral I) UNIV"
-    using nonneg by (simp add: indicator_def if_distrib[of "\<lambda>x. x * f y" for y] cong: if_cong)
+    using nonneg by (simp add: indicator_def of_bool_def if_distrib[of "\<lambda>x. x * f y" for y] cong: if_cong)
   also have "((\<lambda>x. abs (indicator \<Omega> x * f x)) has_integral I) UNIV \<longleftrightarrow> ((\<lambda>x. abs (f' x)) has_integral I) UNIV"
     using eq by (intro has_integral_AE) auto
   finally have "integral\<^sup>N lborel (\<lambda>x. abs (f' x)) = I"

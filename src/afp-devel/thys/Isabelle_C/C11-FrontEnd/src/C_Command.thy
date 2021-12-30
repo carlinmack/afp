@@ -4,6 +4,7 @@
  * Copyright (c) 2018-2019 Université Paris-Saclay, Univ. Paris-Sud, France
  *
  * All rights reserved.
+ * Author:     Frédéric Tuong, Burkhart Wolff, Université Paris-Saclay 
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -48,13 +49,9 @@ begin
 
 subsection \<open>Parsing Entry-Point: Error and Acceptance Cases\<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Tools/ghc.ML\<close>\<close>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/Tools/ghc.ML\<close>\<close>
 (*  Author:     Frédéric Tuong, Université Paris-Saclay *)
-(*  Title:      Pure/Tools/ghc.ML
-    Author:     Makarius
 
-Support for GHC: Glasgow Haskell Compiler.
-*)
 \<open>
 structure C_Serialize =
 struct
@@ -80,24 +77,23 @@ fun print_codepoint c =
       else error "Not yet implemented");
 
 fun print_symbol sym =
-  (case Symbol.decode sym of
-    Symbol.Char s => print_codepoint (ord s)
-  | Symbol.UTF8 s => UTF8.decode_permissive s |> map print_codepoint |> implode
-  | Symbol.Sym s => "\\092<" ^ s ^ ">"
-  | Symbol.Control s => "\\092<^" ^ s ^ ">"
-  | _ => translate_string (print_codepoint o ord) sym);
+  let val ord = SML90.ord; (* copied from ML_init in Isabelle2020. *)
+  in
+     (case Symbol.decode sym of
+       Symbol.Char s => print_codepoint (ord s)
+     | Symbol.UTF8 s => UTF8.decode_permissive s |> map print_codepoint |> implode
+     | Symbol.Sym s => "\\092<" ^ s ^ ">"
+     | Symbol.Control s => "\\092<^" ^ s ^ ">"
+     | _ => translate_string (print_codepoint o ord) sym)
+  end;
 
 val print_string = quote o implode o map print_symbol o Symbol.explode;
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Tools/generated_files.ML\<close>\<close>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/Tools/generated_files.ML\<close>\<close>
 (*  Author:     Frédéric Tuong, Université Paris-Saclay *)
-(*  Title:      Pure/Tools/generated_files.ML
-    Author:     Makarius
 
-Generated source files for other languages: with antiquotations, without Isabelle symbols.
-*)
 \<open>
 structure C_Generated_Files =
 struct
@@ -145,7 +141,111 @@ end
 \<close>
 
 ML \<comment> \<open>\<^theory>\<open>Isabelle_C.C_Eval\<close>\<close> \<open>
-structure C_Module =
+
+signature C_MODULE =
+ sig
+    structure Data_Accept    : GENERIC_DATA
+    structure Data_In_Env    : GENERIC_DATA
+    structure Data_In_Source : GENERIC_DATA
+    structure Data_Term      : GENERIC_DATA
+
+    structure C_Term:
+      sig
+        val key0_default: string
+        val key0_expression: string
+        val key0_external_declaration: string
+        val key0_statement: string
+        val key0_translation_unit: string
+        val key_default: Input.source
+        val key_expression: Input.source
+        val key_external_declaration: Input.source
+        val key_statement: Input.source
+        val key_translation_unit: Input.source
+        val map_default: (C_Grammar_Rule.ast_generic -> C_Env.env_lang -> local_theory -> term) -> theory -> theory
+        val map_expression: (C_Grammar_Rule_Lib.CExpr -> C_Env.env_lang -> local_theory -> term) -> theory -> theory
+        val map_external_declaration:
+           (C_Grammar_Rule_Lib.CExtDecl -> C_Env.env_lang -> local_theory -> term) -> theory -> theory
+        val map_statement: (C_Grammar_Rule_Lib.CStat -> C_Env.env_lang -> local_theory -> term) -> theory -> theory
+        val map_translation_unit:
+           (C_Grammar_Rule_Lib.CTranslUnit -> C_Env.env_lang -> local_theory -> term) -> theory -> theory
+        val tok0_expression: string * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok0_external_declaration: string * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok0_statement: string * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok0_translation_unit: string * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok_expression: Input.source * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok_external_declaration: Input.source * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok_statement: Input.source * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tok_translation_unit: Input.source * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)
+        val tokens: (string * ('a * 'a -> (C_Grammar.Tokens.svalue, 'a) LALR_Parser_Eval.Token.token)) list
+      end
+    structure C_Term':
+      sig
+        val accept:
+           local_theory ->
+             (Input.source * (Position.range -> (C_Grammar.Tokens.svalue, Position.T) LALR_Parser_Eval.Token.token)) option ->
+               (Input.source -> Context.generic -> (C_Grammar.Tokens.svalue, Position.T) LALR_Parser_Eval.Token.token) *
+               (Data_In_Env.T ->
+                  'a * (C_Grammar_Rule.ast_generic * 'b * 'c) ->
+                    {context: Context.generic, error_lines: 'd, reports_text: 'e} ->
+                      term * {context: Context.generic, error_lines: 'd, reports_text: 'e})
+        val err:
+           C_Env.env_lang ->
+             (LALR_Table.state * (C_Grammar_Parser.svalue0 * Position.T * Position.T)) list ->
+               Position.T ->
+                 {context: Context.generic, error_lines: string list, reports_text: Position.report_text list} ->
+                   term * {context: Context.generic, error_lines: string list, reports_text: Position.report_text list}
+        val eval_in:
+           Input.source ->
+             Context.generic ->
+               (Context.generic ->
+                  C_Env.env_lang) ->
+                 (Input.source * (Position.range -> (C_Grammar.Tokens.svalue, Position.T) LALR_Parser_Eval.Token.token)) option
+                   -> C_Lex.token list * (C_Env.error_lines -> string list) -> term
+        val parse_translation:
+           ('a * (Input.source * (Position.range -> (C_Grammar.Tokens.svalue, Position.T) LALR_Parser_Eval.Token.token)) option)
+           list
+             -> ('a * (Proof.context -> term list -> term)) list
+      end
+
+    val accept:
+       Data_In_Env.T ->
+         'a * (C_Grammar_Rule.ast_generic * 'b * 'c) ->
+           {context: Context.generic, error_lines: 'd, reports_text: 'e} ->
+             unit * {context: Context.generic, error_lines: 'd, reports_text: 'e}
+    val accept0:
+       (Context.generic -> C_Grammar_Rule.ast_generic -> Data_In_Env.T -> Context.generic -> 'a) ->
+         Data_In_Env.T -> C_Grammar_Rule.ast_generic -> Context.generic -> 'a
+    val c_enclose: string -> string -> Input.source -> C_Lex.token list * (string list -> string list)
+    val env: Context.generic -> Data_In_Env.T
+    val env0: Proof.context -> Data_In_Env.T
+    val err:
+       C_Env.env_lang ->
+         (LALR_Table.state * (C_Grammar_Parser.svalue0 * Position.T * Position.T)) list ->
+           Position.T ->
+             {context: Context.generic, error_lines: string list, reports_text: Position.report_text list} ->
+               unit * {context: Context.generic, error_lines: string list, reports_text: Position.report_text list}
+    val err0:
+       'a ->
+         'b ->
+           Position.T ->
+             {context: 'c, error_lines: string list, reports_text: 'd} ->
+               {context: 'c, error_lines: string list, reports_text: 'd}
+    val eval_in: Input.source -> Context.generic option -> C_Lex.token list * (C_Env.error_lines -> string list) -> unit
+    val eval_source: Input.source -> unit
+    val exec_eval: Input.source -> Context.generic -> Context.generic
+    val start: Input.source -> Context.generic -> (C_Grammar.Tokens.svalue, Position.T) LALR_Parser_Eval.Token.token
+
+
+    (* toplevel command semantics of Isabelle_C *)
+    val C: Input.source -> Context.generic -> Context.generic
+    val C': C_Env.env_lang -> Input.source -> Context.generic -> Context.generic
+    val C_export_boot: Input.source -> Context.generic -> generic_theory
+    val C_export_file: Position.T * 'a -> Proof.context -> Proof.context
+    val C_prf: Input.source -> Proof.state -> Proof.state
+
+  end
+
+structure C_Module : C_MODULE =
 struct
 
 structure Data_In_Source = Generic_Data
@@ -161,46 +261,47 @@ structure Data_In_Env = Generic_Data
    val merge = K empty)
 
 structure Data_Accept = Generic_Data
-  (type T = C_Grammar_Rule.start_happy -> C_Env.env_lang -> Context.generic -> Context.generic
+  (type T = C_Grammar_Rule.ast_generic -> C_Env.env_lang -> Context.generic -> Context.generic
    fun empty _ _ = I
    val extend = I
    val merge = #2)
 
 structure Data_Term = Generic_Data
-  (type T = (C_Grammar_Rule.start_happy -> C_Env.env_lang -> local_theory -> term) Symtab.table
+  (type T = (C_Grammar_Rule.ast_generic -> C_Env.env_lang -> local_theory -> term) Symtab.table
    val empty = Symtab.empty
    val extend = I
    val merge = #2)
 
+(* keys for major syntactic categories *)
 structure C_Term =
 struct
-val key_translation_unit = \<open>translation_unit\<close>
-val key_external_declaration = \<open>external_declaration\<close>
-val key_statement = \<open>statement\<close>
-val key_expression = \<open>expression\<close>
-val key_default = \<open>default\<close>
+   val key_translation_unit     = \<open>translation_unit\<close>
+   val key_external_declaration = \<open>external_declaration\<close>
+   val key_statement            = \<open>statement\<close>
+   val key_expression           = \<open>expression\<close>
+   val key_default              = \<open>default\<close>
 
 local
-val source_content = Input.source_content #> #1
+   val source_content = Input.source_content #> #1
 in
-val key0_translation_unit = source_content key_translation_unit
-val key0_external_declaration = source_content key_external_declaration
-val key0_statement = source_content key_statement
-val key0_expression = source_content key_expression
-val key0_default = source_content key_default
+   val key0_translation_unit = source_content key_translation_unit
+   val key0_external_declaration = source_content key_external_declaration
+   val key0_statement = source_content key_statement
+   val key0_expression = source_content key_expression
+   val key0_default = source_content key_default
 end
 
-val tok0_translation_unit = (key0_translation_unit, C_Grammar.Tokens.start_translation_unit)
+val tok0_translation_unit     = (key0_translation_unit, C_Grammar.Tokens.start_translation_unit)
 val tok0_external_declaration = ( key0_external_declaration
                                 , C_Grammar.Tokens.start_external_declaration)
-val tok0_statement = (key0_statement, C_Grammar.Tokens.start_statement)
-val tok0_expression = (key0_expression, C_Grammar.Tokens.start_expression)
+val tok0_statement            = (key0_statement, C_Grammar.Tokens.start_statement)
+val tok0_expression           = (key0_expression, C_Grammar.Tokens.start_expression)
 
-val tok_translation_unit = (key_translation_unit, C_Grammar.Tokens.start_translation_unit)
-val tok_external_declaration = ( key_external_declaration
-                               , C_Grammar.Tokens.start_external_declaration)
-val tok_statement = (key_statement, C_Grammar.Tokens.start_statement)
-val tok_expression = (key_expression, C_Grammar.Tokens.start_expression)
+val tok_translation_unit      = (key_translation_unit, C_Grammar.Tokens.start_translation_unit)
+val tok_external_declaration  = ( key_external_declaration
+                                , C_Grammar.Tokens.start_external_declaration)
+val tok_statement             = (key_statement, C_Grammar.Tokens.start_statement)
+val tok_expression            = (key_expression, C_Grammar.Tokens.start_expression)
 
 val tokens = [ tok0_translation_unit
              , tok0_external_declaration
@@ -211,10 +312,10 @@ local
 fun map_upd0 key v = Context.theory_map (Data_Term.map (Symtab.update (key, v)))
 fun map_upd key start f = map_upd0 key (f o the o start)
 in
-val map_translation_unit = map_upd key0_translation_unit C_Grammar_Rule.start_happy1
-val map_external_declaration = map_upd key0_external_declaration C_Grammar_Rule.start_happy2
-val map_statement = map_upd key0_statement C_Grammar_Rule.start_happy3
-val map_expression = map_upd key0_expression C_Grammar_Rule.start_happy4
+val map_translation_unit = map_upd key0_translation_unit C_Grammar_Rule.get_CTranslUnit
+val map_external_declaration = map_upd key0_external_declaration C_Grammar_Rule.get_CExtDecl
+val map_statement = map_upd key0_statement C_Grammar_Rule.get_CStat
+val map_expression = map_upd key0_expression C_Grammar_Rule.get_CExpr
 val map_default = map_upd0 key0_default
 end
 
@@ -243,11 +344,11 @@ fun err0 _ _ pos =
 
 val err = pair () oooo err0
 
-fun accept0 f env_lang ast =
+fun accept0 f (env_lang:C_Env.env_lang) ast =
   Data_In_Env.put env_lang
   #> (fn context => f context ast env_lang (Data_Accept.get context ast env_lang context))
 
-fun accept env_lang (_, (ast, _, _)) =
+fun accept (env_lang:C_Env.env_lang) (_, (ast, _, _)) =
   pair () o C_Env.map_context (accept0 (K (K (K I))) env_lang ast)
 
 val eval_source = C_Context.eval_source env start err accept
@@ -350,11 +451,13 @@ fun C_export_boot source context =
   |> Config.restore_generic ML_Env.ML_environment context
   |> Local_Theory.propagate_ml_env
 
-fun C source =
-  exec_eval source
-  #> Local_Theory.propagate_ml_env
+val C: Input.source -> Context.generic -> Context.generic  = 
+       fn source => 
+                    exec_eval source
+                    #> Local_Theory.propagate_ml_env
 
-fun C' env_lang src context =
+val C': C_Env.env_lang -> Input.source -> Context.generic -> Context.generic  =
+    fn env_lang:C_Env.env_lang => fn src:Input.source => fn context:Context.generic =>
   context
   |> C_Env.empty_env_tree
   |> C_Context.eval_source'
@@ -366,7 +469,7 @@ fun C' env_lang src context =
   |> (fn (_, {context, reports_text, error_lines}) => 
      tap (fn _ => case error_lines of [] => () | l => warning (cat_lines (rev l)))
          (C_Stack.Data_Tree.map (curry C_Stack.Data_Tree_Args.merge (reports_text, []))
-                                context))
+                                 context))
 
 fun C_export_file (pos, _) lthy =
   let
@@ -392,12 +495,19 @@ fun C_export_file (pos, _) lthy =
 end
 \<close>
 
-subsection \<open>Definitions of Inner Directive Commands\<close>
+subsection \<open>Definitions of C11 Directives as C-commands\<close>
 
 subsubsection \<open>Initialization\<close>
 
-ML \<comment> \<open>\<^theory>\<open>Pure\<close>\<close> \<open>
-structure C_Directive =
+ML \<comment> \<open>analogous to \<^theory>\<open>Pure\<close>\<close> \<open>
+structure C_Directive :
+ sig
+    val setup_define:
+       Position.T ->
+         (C_Lex.token list -> string * Position.range -> Context.generic 
+          -> C_Lex.token list * Context.generic) ->
+           (string * Position.range -> Context.generic -> Context.generic) -> theory -> theory
+  end =
 struct
 local
 fun directive_update keyword data = C_Context.directive_update keyword (data, K (K (K I)))
@@ -482,10 +592,10 @@ end
 end
 \<close>
 
-subsection \<open>Definitions of Inner Annotation Commands\<close>
+subsection \<open>Definitions of C Annotation Commands\<close>
 subsubsection \<open>Library\<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/toplevel.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/Isar/toplevel.ML\<close>\<close> \<open>
 structure C_Inner_Toplevel =
 struct
 val theory = Context.map_theory
@@ -502,7 +612,7 @@ fun keep'' f = tap (f o Context.proof_of)
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/isar_cmd.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/Isar/isar_cmd.ML\<close>\<close> \<open>
 structure C_Inner_Isar_Cmd = 
 struct
 
@@ -576,7 +686,7 @@ end;
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/outer_syntax.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/Isar/outer_syntax.ML\<close>\<close> \<open>
 structure C_Inner_Syntax =
 struct
 val drop1 = fn C_Scan.Left f => C_Scan.Left (K o f)
@@ -676,7 +786,7 @@ fun command0' f kind scan =
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/ML/ml_file.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/ML/ml_file.ML\<close>\<close> \<open>
 structure C_Inner_File =
 struct
 
@@ -691,7 +801,7 @@ fun command_ml environment debug files gthy =
     val file: Token.file = hd (files (Context.theory_of gthy));
     val source = Token.file_source file;
 
-    val _ = Thy_Output.check_comments (Context.proof_of gthy) (Input.source_explode source);
+    val _ = Document_Output.check_comments (Context.proof_of gthy) (Input.source_explode source);
 
     val flags: ML_Compiler.flags =
       {environment = environment, redirect = true, verbose = true,
@@ -709,7 +819,7 @@ end;
 
 subsubsection \<open>Initialization\<close>
 
-setup \<comment> \<open>\<^theory>\<open>Pure\<close>\<close> \<open>
+setup \<comment> \<open>analogous to \<^theory>\<open>Pure\<close>\<close> \<open>
 C_Thy_Header.add_keywords_minor
   (maps (fn ((name, pos_lex, pos_bot, pos_top), ty) =>
           [ ((C_Inner_Syntax.pref_lex name, pos_lex), ty)
@@ -720,7 +830,7 @@ C_Thy_Header.add_keywords_minor
         , (("done", \<^here>, \<^here>, \<^here>), ((Keyword.qed_script, []), ["proof"])) ])
 \<close>
 
-ML \<comment> \<open>\<^theory>\<open>Pure\<close>\<close> \<open>
+ML \<comment> \<open>analogous to \<^theory>\<open>Pure\<close>\<close> \<open>
 local
 val semi = Scan.option (C_Parse.$$$ ";");
 
@@ -839,20 +949,15 @@ in end
 subsection \<open>Definitions of Outer Classical Commands\<close>
 subsubsection \<open>Library\<close>
 (*  Author:     Frédéric Tuong, Université Paris-Saclay *)
-(*  Title:      Pure/Pure.thy
-    Author:     Makarius
 
-The Pure theory, with definitions of Isar commands and some lemmas.
-*)
-
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/parse.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogously to \<^file>\<open>~~/src/Pure/Isar/parse.ML\<close>\<close> \<open>
 structure C_Outer_Parse =
 struct
   val C_source = Parse.input (Parse.group (fn () => "C source") Parse.text)
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/outer_syntax.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogously to \<^file>\<open>~~/src/Pure/Isar/outer_syntax.ML\<close>\<close> \<open>
 structure C_Outer_Syntax =
 struct
 val _ =
@@ -861,7 +966,7 @@ val _ =
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/Isar/isar_cmd.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogously to \<^file>\<open>~~/src/Pure/Isar/isar_cmd.ML\<close>\<close> \<open>
 structure C_Outer_Isar_Cmd =
 struct
 (* diagnostic ML evaluation *)
@@ -896,7 +1001,7 @@ val _ = Theory.setup
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/ML/ml_file.ML\<close>\<close> \<open>
+ML \<comment> \<open>analogously to \<^file>\<open>~~/src/Pure/ML/ml_file.ML\<close>\<close> \<open>
 structure C_Outer_File =
 struct
 
@@ -914,9 +1019,9 @@ fun C files gthy =
 end;
 \<close>
 
-subsubsection \<open>Initialization\<close>
+subsubsection \<open>Setup for  \<^verbatim>\<open>C\<close> and \<^verbatim>\<open>C_file\<close> Command Syntax\<close>
 
-ML \<comment> \<open>\<^theory>\<open>Pure\<close>\<close> \<open>
+ML \<open>
 local
 
 val semi = Scan.option \<^keyword>\<open>;\<close>;
@@ -943,7 +1048,7 @@ val _ =
     (Scan.succeed () >> K (C_Module.C_export_file Position.no_range));
 in end\<close>
 
-subsection \<open>Syntax for Pure Term\<close>
+subsection \<open>Term-Cartouches for C Syntax\<close>
 
 syntax "_C_translation_unit" :: \<open>cartouche_position \<Rightarrow> string\<close> ("\<^C>\<^sub>u\<^sub>n\<^sub>i\<^sub>t _")
 syntax "_C_external_declaration" :: \<open>cartouche_position \<Rightarrow> string\<close> ("\<^C>\<^sub>d\<^sub>e\<^sub>c\<^sub>l _")
@@ -958,6 +1063,122 @@ C_Module.C_Term'.parse_translation
   , (\<^syntax_const>\<open>_C_expression\<close>, SOME C_Module.C_Term.tok_expression)
   , (\<^syntax_const>\<open>_C_statement\<close>, SOME C_Module.C_Term.tok_statement)
   , (\<^syntax_const>\<open>_C\<close>, NONE) ]
+\<close>
+
+(*test*)
+ML\<open>C_Module.env (Context.the_generic_context())\<close>
+
+ML\<open>open Args\<close>
+subsection\<open>C-env related ML-Antiquotations as Programming Support\<close>
+
+ML\<open>
+
+(*
+was in Isabelle2020: 
+    (Args.context -- Scan.lift Args.embedded_position >> (fn (ctxt, (name, pos)) =>
+
+with:
+
+val embedded_token = ident || string || cartouche;
+val embedded_inner_syntax = embedded_token >> Token.inner_syntax_of;
+val embedded_input = embedded_token >> Token.input_of;
+val embedded = embedded_token >> Token.content_of;
+val embedded_position = embedded_input >> Input.source_content;
+
+defined in args.
+
+Setting it to :
+
+    (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+
+makes this syntactically more restrictive. 
+*)
+
+val _ = Theory.setup(
+  ML_Antiquotation.value_embedded \<^binding>\<open>C\<^sub>e\<^sub>n\<^sub>v\<close>
+    (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+      (warning"arg variant not implemented";"C_Module.env (Context.the_generic_context())"))
+    || Scan.succeed "C_Module.env (Context.the_generic_context())"))
+
+\<close>
+
+text\<open>Note that this anti-quotation is controlled by the \<^verbatim>\<open>C_starting_env\<close> - flag.  \<close>    
+
+declare[[C\<^sub>e\<^sub>n\<^sub>v\<^sub>0 = last]]
+ML\<open>@{C\<^sub>e\<^sub>n\<^sub>v}\<close>
+
+declare[[C\<^sub>e\<^sub>n\<^sub>v\<^sub>0 = empty]]
+ML\<open>@{C\<^sub>e\<^sub>n\<^sub>v}\<close>
+
+subsection\<open>The Standard Store C11-AST's generated from C-commands\<close>
+text\<open>Each call of the C command will register the parsed root AST in this theory-name indexed table.\<close>
+
+ML\<open>
+structure Root_Ast_Store = Generic_Data
+  (type T = C_Grammar_Rule.ast_generic list Symtab.table
+   val empty = Symtab.empty
+   val extend = I
+   val merge = K empty);
+
+
+Root_Ast_Store.map: (   C_Grammar_Rule.ast_generic list Symtab.table 
+                            -> C_Grammar_Rule.ast_generic list Symtab.table) 
+                        -> Context.generic -> Context.generic;
+
+
+fun update_Root_Ast filter ast _ ctxt =
+    let val theory_id = Context.theory_long_name(Context.theory_of ctxt)
+        val insert_K_ast  = Symtab.map_default (theory_id,[]) (cons ast)
+    in  case filter ast of 
+         NONE => (warning "No appropriate c11 ast found - store unchanged."; ctxt)
+        |SOME _ => (Root_Ast_Store.map insert_K_ast) ctxt
+    end;
+
+
+fun get_Root_Ast filter thy =
+  let val ctxt = Context.Theory thy
+      val thid = Context.theory_long_name(Context.theory_of ctxt)
+      val ast = case Symtab.lookup (Root_Ast_Store.get ctxt) (thid) of
+                SOME (a::_) => (case filter a of 
+                                 NONE => error "Last C command is not of appropriate AST-class."
+                               | SOME x => x)
+              | _ => error"No C command in the current theory."
+  in ast
+  end
+
+val get_CExpr  = get_Root_Ast C_Grammar_Rule.get_CExpr;
+val get_CStat  = get_Root_Ast C_Grammar_Rule.get_CStat;
+val get_CExtDecl  = get_Root_Ast C_Grammar_Rule.get_CExtDecl;
+val get_CTranslUnit  = get_Root_Ast C_Grammar_Rule.get_CTranslUnit;
+\<close>
+
+setup \<open>Context.theory_map (C_Module.Data_Accept.put (update_Root_Ast SOME))\<close>
+
+
+ML\<open>
+(* Was : Args.embedded_position changed to : Args.name_position.
+  See comment above. *)
+val _ = Theory.setup(
+        ML_Antiquotation.value_embedded \<^binding>\<open>C11_CTranslUnit\<close>
+          (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+            (warning"arg variant not implemented";"get_CTranslUnit (Context.the_global_context())"))
+          || Scan.succeed "get_CTranslUnit (Context.the_global_context())")
+        #> 
+        ML_Antiquotation.value_embedded \<^binding>\<open>C11_CExtDecl\<close>
+          (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+            (warning"arg variant not implemented";"get_CExtDecl (Context.the_global_context())"))
+          || Scan.succeed "get_CExtDecl (Context.the_global_context())")
+        #> 
+        ML_Antiquotation.value_embedded \<^binding>\<open>C11_CStat\<close>
+          (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+            (warning"arg variant not implemented";"get_CStat (Context.the_global_context())"))
+          || Scan.succeed "get_CStat (Context.the_global_context())")
+        #> 
+        ML_Antiquotation.value_embedded \<^binding>\<open>C11_CExpr\<close>
+          (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+            (warning"arg variant not implemented";"get_CExpr (Context.the_global_context())"))
+          || Scan.succeed "get_CExpr (Context.the_global_context())")
+       )
 \<close>
 
 end

@@ -180,7 +180,8 @@ proof -
       assume "F = {}"
       with m show False by simp
     next
-      assume "\<exists>E. E \<in> F \<and> E \<noteq> \<box>" then guess E .. note E = this
+      assume "\<exists>E. E \<in> F \<and> E \<noteq> \<box>"
+      then obtain E where E: "E \<in> F \<and> E \<noteq> \<box>" ..
       show False proof cases
         assume "G = {}" with m show False by simp
       next
@@ -208,7 +209,7 @@ proof -
   obtain S' where su: "S'\<subseteq>S" and fin: "finite S'" "Ball S' finite" and pr: "(S' \<turnstile> \<box>)" by blast
   from Resolution_LSC_pre_nodisj[OF pr finite.emptyI fin]
   obtain S'' where "is_nnf S''" "cnf S'' \<subseteq> S'" "{# S'' #} \<Rightarrow>\<^sub>n" 
-    using *[OF disj_is_nnf, of _ Mempty]
+    using * [OF disj_is_nnf, of _ \<open>{#}\<close>]
     by (metis LSC_weaken add_mset_commute empty_iff set_mset_empty)
   with su show ?thesis by blast
 qed

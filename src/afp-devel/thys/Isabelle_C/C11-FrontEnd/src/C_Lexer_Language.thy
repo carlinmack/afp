@@ -412,19 +412,14 @@ struct
 val lexer_trace = Attrib.setup_config_bool @{binding C_lexer_trace} (K false);
 val parser_trace = Attrib.setup_config_bool @{binding C_parser_trace} (K false);
 val ML_verbose = Attrib.setup_config_bool @{binding C_ML_verbose} (K true);
-val starting_env = Attrib.setup_config_string @{binding C_starting_env} (K "empty");
-val starting_rule = Attrib.setup_config_string @{binding C_starting_rule} (K "translation_unit");
+val starting_env = Attrib.setup_config_string @{binding C\<^sub>e\<^sub>n\<^sub>v\<^sub>0} (K "empty");
+val starting_rule = Attrib.setup_config_string @{binding C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0} (K "translation_unit");
 
 end
 \<close>
 
-ML \<comment> \<open>\<^file>\<open>~~/src/Pure/ML/ml_lex.ML\<close>\<close>
+ML \<comment> \<open>analogous to \<^file>\<open>~~/src/Pure/ML/ml_lex.ML\<close>\<close>
 (*  Author:     Frédéric Tuong, Université Paris-Saclay *)
-(*  Title:      Pure/ML/ml_lex.ML
-    Author:     Makarius
-
-Lexical syntax for Isabelle/ML and Standard ML.
-*)
 \<open>
 structure C_Lex =
 struct
@@ -723,7 +718,7 @@ val range_list_of0 =
   | toks as tok1 :: _ => Position.range (pos_of tok1, end_pos_of (List.last toks))
     (* WARNING the use of:
        \<comment>\<open>\<^ML>\<open>fn content_of => fn pos_of => fn tok2 =>
-             List.last (Symbol_Pos.explode (content_of tok2, pos_of tok2)) |-> Position.advance\<close>\<close>
+             List.last (Symbol_Pos.explode (content_of tok2, pos_of tok2)) |-> Position.symbol\<close>\<close>
        would not return an accurate position if for example several
        "backslash newlines" are present in the symbol *)
 
@@ -1445,8 +1440,8 @@ fun reader scan syms =
       if null syms then []
       else
         let
-          val pos1 = List.last syms |-> Position.advance;
-          val pos2 = Position.advance Symbol.space pos1;
+          val pos1 = List.last syms |-> Position.symbol;
+          val pos2 = Position.symbol Symbol.space pos1;
         in [Token (Position.range (pos1, pos2), (Space, Symbol.space))] end;
 
     val backslash1 =

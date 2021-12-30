@@ -22,6 +22,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-18"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -41,7 +47,6 @@
         }
     ],
     "dependencies": [
-        "JNF-AFP-Lib",
         "Polynomial_Factorization"
     ],
     "theories": [

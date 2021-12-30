@@ -38,5 +38,10 @@
         "Laws_Complement_Quantum",
         "Quantum_Extra2",
         "Pure_States"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-11-07"
+        }
     ]
 }

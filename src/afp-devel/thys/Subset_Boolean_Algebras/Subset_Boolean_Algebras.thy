@@ -1726,7 +1726,7 @@ lemma test_sub_identity:
 
 lemma neg_unique:
   "are_complementary x y \<Longrightarrow> are_complementary x z \<Longrightarrow> y = z"
-  by (metis antisym il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone_var)
+  by (metis order.antisym il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone_var)
 
 definition neg :: "'a \<Rightarrow> 'a" ("!")
   where "!x \<equiv> THE y . are_complementary x y"
@@ -1808,7 +1808,7 @@ qed
 
 lemma test_inf_commutative:
   "test x \<Longrightarrow> test y \<Longrightarrow> x \<sqinter> y = y \<sqinter> x"
-  by (simp add: antisym test_inf_semicommutative)
+  by (simp add: order.antisym test_inf_semicommutative)
 
 lemma test_inf_bot:
   "test x \<Longrightarrow> x \<sqinter> bot = bot"
@@ -1824,7 +1824,7 @@ lemma test_absorb_2:
 
 lemma test_absorb_3:
   "test x \<Longrightarrow> test y \<Longrightarrow> x \<sqinter> (x \<squnion> y) = x"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (metis il_associative il_inf_right_unit il_less_eq il_sub_inf_right_isotone test_sub_identity)
   by (metis il_sub_inf_right_isotone_var test_absorb_1 test_inf_idempotent)
 
@@ -1972,7 +1972,7 @@ lemma de_morgan_1:
       and "test y"
       and "test (x \<sqinter> y)"
     shows "!(x \<sqinter> y) = !x \<squnion> !y"
-proof (rule antisym)
+proof (rule order.antisym)
   have 1: "test (!(x \<sqinter> y))"
     by (simp add: assms neg_test)
   have "x \<le> (x \<sqinter> y) \<squnion> !y"
@@ -1996,7 +1996,7 @@ lemma de_morgan_2:
       and "test y"
       and "test (x \<squnion> y)"
     shows "!(x \<squnion> y) = !x \<sqinter> !y"
-proof (rule antisym)
+proof (rule order.antisym)
   have 1: "!(x \<squnion> y) \<le> !x"
     by (metis assms il_inf_left_unit il_sub_inf_left_isotone neg_antitone test_absorb_3 test_sub_identity)
   have "!(x \<squnion> y) \<le> !y"
@@ -2099,7 +2099,7 @@ lemma d_strict_eq:
 
 lemma test_d_fixpoint:
   "test x \<Longrightarrow> d x = x"
-  by (metis antisym d1_eq d2 test_inf_idempotent test_inf_right_below)
+  by (metis order.antisym d1_eq d2 test_inf_idempotent test_inf_right_below)
 
 lemma d_surjective:
   "test x \<Longrightarrow> \<exists>y . d y = x"
@@ -2120,7 +2120,7 @@ lemma tests_d_range:
 lemma llp:
   assumes "test y"
     shows "d x \<le> y \<longleftrightarrow> x \<le> y \<sqinter> x"
-  by (metis assms d1_eq d2 eq_iff il_sub_inf_left_isotone test_inf_left_below)
+  by (metis assms d1_eq d2 order.eq_iff il_sub_inf_left_isotone test_inf_left_below)
 
 lemma gla:
   assumes "test y"
@@ -2154,7 +2154,7 @@ lemma llp_var:
   assumes "test y"
     shows "y \<le> !(d x) \<longleftrightarrow> x \<le> !y \<sqinter> x"
   apply (rule iffI)
-  apply (metis (no_types, hide_lams) assms gla Least_equality il_inf_left_unit il_inf_right_dist_sup il_less_eq il_unit_bot order.refl neg_char)
+  apply (metis (no_types, opaque_lifting) assms gla Least_equality il_inf_left_unit il_inf_right_dist_sup il_less_eq il_unit_bot order.refl neg_char)
   by (metis assms gla gla_var llp il_commutative il_sub_inf_right_isotone neg_char)
 
 lemma d_idempotent:
@@ -2196,7 +2196,7 @@ lemma d_isotone_var:
 
 lemma d3_conv:
   "d (x \<sqinter> y) \<le> d (x \<sqinter> d y)"
-  by (metis (mono_tags, hide_lams) d1_eq d2 d_closed il_inf_associative)
+  by (metis (mono_tags, opaque_lifting) d1_eq d2 d_closed il_inf_associative)
 
 lemma d_test_inf_idempotent:
   "d x \<sqinter> d x = d x"
@@ -2206,7 +2206,7 @@ lemma d_test_inf_closed:
   assumes "test x"
       and "test y"
     shows "d (x \<sqinter> y) = x \<sqinter> y"
-proof (rule antisym)
+proof (rule order.antisym)
   have "d (x \<sqinter> y) = d (x \<sqinter> y) \<sqinter> d (x \<sqinter> y)"
     by (simp add: d_test_inf_idempotent)
   also have "... \<le> x \<sqinter> d (x \<sqinter> y)"
@@ -2230,7 +2230,7 @@ lemma test_sup_closed:
 lemma d_export:
   assumes "test x"
     shows "d (x \<sqinter> y) = x \<sqinter> d y"
-proof (rule antisym)
+proof (rule order.antisym)
   have 1: "d (x \<sqinter> y) \<le> x"
     by (simp add: assms d2)
   have "d (x \<sqinter> y) \<le> d y"
@@ -2308,7 +2308,7 @@ qed
 
 lemma d_dist_sup:
   "d (x \<squnion> y) = d x \<squnion> d y"
-proof (rule antisym)
+proof (rule order.antisym)
   have "x \<le> d x \<sqinter> x"
     by (simp add: d1)
   also have "... \<le> (d x \<squnion> d y) \<sqinter> (x \<squnion> y)"
@@ -2347,7 +2347,7 @@ class d_semiring = pd_semiring +
 begin
 
 lemma d3_eq: "d (x \<sqinter> d y) = d (x \<sqinter> y)"
-  by (simp add: antisym d3 d3_conv)
+  by (simp add: order.antisym d3 d3_conv)
 
 end
 
@@ -2412,7 +2412,7 @@ proof -
   hence "!p \<sqinter> d (p \<sqinter> x) = bot"
     using d_bot_only by blast
   thus ?thesis
-    by (metis (no_types, hide_lams) assms d_sub_identity il_bot_unit il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone neg_char)
+    by (metis (no_types, opaque_lifting) assms d_sub_identity il_bot_unit il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone neg_char)
 qed
 
 subclass d_semiring
@@ -2457,11 +2457,11 @@ lemma l3:
 
 lemma l5:
   "--x \<le> --y \<Longrightarrow> -y \<le> -x"
-  by (metis (mono_tags, hide_lams) l3 a_stone bot_least il_bot_unit il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone sup_right_isotone)
+  by (metis (mono_tags, opaque_lifting) l3 a_stone bot_least il_bot_unit il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone sup_right_isotone)
 
 lemma l4:
   "---x = -x"
-  by (metis l5 a_inf_complement_bot a_stone antisym bot_least il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone il_unit_bot)
+  by (metis l5 a_inf_complement_bot a_stone order.antisym bot_least il_inf_left_unit il_inf_right_dist_sup il_inf_right_unit il_sub_inf_right_isotone il_unit_bot)
 
 lemma l6:
   "-x \<sqinter> --x = bot"
@@ -3459,7 +3459,7 @@ qed
 
 lemma l17:
   "-(x \<sqinter> y) = -(x \<sqinter> --y)"
-  by (simp add: ad3 antisym l14)
+  by (simp add: ad3 order.antisym l14)
 
 lemma a_complement_inf_double_complement:
   "-(x \<sqinter> --y) = -(x \<sqinter> y)"

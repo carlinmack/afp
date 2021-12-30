@@ -3,7 +3,6 @@ section \<open>The Chandy--Lamport algorithm\<close>
 theory Snapshot
   imports
     "HOL-Library.Sublist"
-    "HOL-Library.Permutation"
     Distributed_System
     Trace
     Util
@@ -1236,7 +1235,7 @@ proof (induct "j - (i+1)" arbitrary: j t)
     moreover have "i < length ((t[i := t ! j])[j := t ! i])" 
       using "0.prems"(1) "0.prems"(2) by auto
     ultimately show ?thesis unfolding prerecording_event 
-      by (metis (no_types, hide_lams) "0.prems"(1) \<open>take (j - (i + 1)) (drop (i + 1) t) = []\<close> \<open>take i t @ [t ! j] @ [t ! i] @ drop (j + 1) t = t[i := t ! j, j := t ! i]\<close> append_Cons length_list_update nat_less_le nth_list_update_eq nth_list_update_neq self_append_conv2)
+      by (metis (no_types, opaque_lifting) "0.prems"(1) \<open>take (j - (i + 1)) (drop (i + 1) t) = []\<close> \<open>take i t @ [t ! j] @ [t ! i] @ drop (j + 1) t = t[i := t ! j, j := t ! i]\<close> append_Cons length_list_update nat_less_le nth_list_update_eq nth_list_update_neq self_append_conv2)
   qed
   moreover have "postrecording_event (swap_events i j t) (i+1)"
   proof -
@@ -1285,7 +1284,7 @@ next
   then have "trace (S t i) ?t (S t (j+1))" 
     by (metis Suc.prems(1) Suc.prems(6) Suc_eq_plus1 exists_trace_for_any_i_j less_SucI nat_less_le)
   then have reg_tr_1:  "trace (S t i) (t ! i # ?subt) (S t j)" 
-    by (metis (no_types, hide_lams) Suc.hyps(2) Suc.prems(1) Suc.prems(4) Suc.prems(6) Suc_eq_plus1 discrete exists_trace_for_any_i_j postrecording_event step_Suc tr_step)
+    by (metis (no_types, opaque_lifting) Suc.hyps(2) Suc.prems(1) Suc.prems(4) Suc.prems(6) Suc_eq_plus1 discrete exists_trace_for_any_i_j postrecording_event step_Suc tr_step)
   have reg_st_2: "(S t j) \<turnstile> (t ! j) \<mapsto> (S t (j+1))" 
     using Suc.prems(2) Suc.prems(6) step_Suc by auto
   have "?subt = ?subt' @ [t ! (j-1)]"
@@ -3094,7 +3093,7 @@ proof -
   next
     case (Send cid' r s u u' m)
     then have "cid = cid'" 
-      by (metis (no_types, hide_lams) assms(4) assms(5) local.step next_send)
+      by (metis (no_types, opaque_lifting) assms(4) assms(5) local.step next_send)
     moreover have "(p, q) = (r, s)"
     proof -
       have "channel cid = channel cid'" using \<open>cid = cid'\<close> by simp
@@ -3155,7 +3154,7 @@ proof (induct "j - i" arbitrary: i)
 next
   case (Suc n)
   then have step: "(S t i) \<turnstile> (t ! i) \<mapsto> (S t (i+1))" 
-    by (metis (no_types, hide_lams) Suc_eq_plus1 cancel_comm_monoid_add_class.diff_cancel distributed_system.step_Suc distributed_system_axioms less_le_trans linorder_not_less old.nat.distinct(2) order_eq_iff)
+    by (metis (no_types, opaque_lifting) Suc_eq_plus1 cancel_comm_monoid_add_class.diff_cancel distributed_system.step_Suc distributed_system_axioms less_le_trans linorder_not_less old.nat.distinct(2) order_eq_iff)
   then have "Marker \<notin> set (msgs (S t (i+1)) cid)"
     using no_marker_and_snapshotted_implies_no_more_markers Suc step by blast
   moreover have "has_snapshotted (S t (i+1)) p" 
@@ -3231,7 +3230,7 @@ proof (induct "j - (i+1)" arbitrary: i)
 next
   case (Suc n)
   then have step: "(S t i) \<turnstile> (t ! i) \<mapsto> (S t (i+1))" 
-    by (metis (no_types, hide_lams) Suc_eq_plus1 distributed_system.step_Suc distributed_system_axioms less_le_trans)
+    by (metis (no_types, opaque_lifting) Suc_eq_plus1 distributed_system.step_Suc distributed_system_axioms less_le_trans)
   have marker_present: "Marker : set (msgs (S t (i+1)) cid)" 
     by (meson Suc.prems(1) Suc.prems(2) Suc.prems(3) Suc.prems(5) Suc.prems(6) Suc.prems(8) discrete le_add1 less_imp_le_nat marker_not_vanishing_means_always_present)
   moreover have "Marker = last (msgs (S t (i+1)) cid)"
@@ -3358,7 +3357,7 @@ proof (induct "j - i" arbitrary: i)
 next
   case (Suc n)
   then have step: "(S t i) \<turnstile> (t ! i) \<mapsto> (S t (i+1))" 
-    by (metis (no_types, hide_lams) Suc_eq_plus1 Suc_n_not_le_n diff_self_eq_0 distributed_system.step_Suc distributed_system_axioms le0 le_eq_less_or_eq less_le_trans)
+    by (metis (no_types, opaque_lifting) Suc_eq_plus1 Suc_n_not_le_n diff_self_eq_0 distributed_system.step_Suc distributed_system_axioms le0 le_eq_less_or_eq less_le_trans)
   then have "msgs (S t i) cid = msgs (S t (i+1)) cid \<and> cs (S t i) cid = cs (S t (i+1)) cid"
   proof -
     have "~ occurs_on (t ! i) = p" using Suc by simp
@@ -4272,7 +4271,7 @@ proof (unfold cs_equal_to_snapshot_def, rule allI, rule impI)
           proof (cases "regular_event (t ! k)")
             case True
             then have "prerecording_event t k" 
-              by (metis (no_types, hide_lams) \<open>k < j\<close> \<open>occurs_on (t ! k) = p\<close> all_processes_snapshotted_in_final_state assms(1) final_is_s_t_len_t computation.prerecording_event computation_axioms less_trans nat_le_linear not_less snap_p(1) snapshot_stable_ver_2)
+              by (metis (no_types, opaque_lifting) \<open>k < j\<close> \<open>occurs_on (t ! k) = p\<close> all_processes_snapshotted_in_final_state assms(1) final_is_s_t_len_t computation.prerecording_event computation_axioms less_trans nat_le_linear not_less snap_p(1) snapshot_stable_ver_2)
             then show ?thesis using assms \<open>i \<le> k\<close> by auto
           next
             case False
@@ -4296,7 +4295,7 @@ proof (unfold cs_equal_to_snapshot_def, rule allI, rule impI)
                  = map Msg (fst (cs (S t (j+1)) cid)) @ takeWhile ((\<noteq>) Marker) (msgs (S t (j+1)) cid)"
         proof -
           have o: "~ regular_event (t ! j) \<and> occurs_on (t ! j) = p"
-            by (metis (no_types, hide_lams) distributed_system.no_state_change_if_no_event distributed_system.regular_event_cannot_induce_snapshot distributed_system_axioms snap_p(1) snap_p(2) step_j)
+            by (metis (no_types, opaque_lifting) distributed_system.no_state_change_if_no_event distributed_system.regular_event_cannot_induce_snapshot distributed_system_axioms snap_p(1) snap_p(2) step_j)
           then show ?thesis
             using chan snapshot_step_cs_preservation_p step_j by blast
         qed
@@ -5110,7 +5109,7 @@ lemma desired_trace_always_exists:
   assumes
     "trace init t final"
   shows
-    "\<exists>t'. perm t' t
+    "\<exists>t'. mset t' = mset t
         \<and> all_prerecording_before_postrecording t'"
 using assms proof (induct "count_violations t" arbitrary: t)
   case 0
@@ -5193,20 +5192,20 @@ next
           \<and> (\<forall>k. k \<ge> j + 1 \<longrightarrow> S (swap_events i j t) k = S t k)
           \<and> (\<forall>k. k \<le> i \<longrightarrow> S (swap_events i j t) k = S t k)"
     using Suc swap_events by presburger
-  moreover have "perm (swap_events i j t) t" using swap_events_perm ind by blast
+  moreover have "mset (swap_events i j t) = mset t" using swap_events_perm ind by blast
   moreover have "count_violations (swap_events i j t) = n"
     using count_violations_swap Suc ind by simp
-  ultimately show ?case using Suc.hyps by blast
+  ultimately show ?case using Suc.hyps by metis 
 qed
 
 theorem snapshot_algorithm_is_correct:
   assumes
     "trace init t final"
   shows
-    "\<exists>t' i. trace init t' final \<and> perm t' t
+    "\<exists>t' i. trace init t' final \<and> mset t' = mset t
           \<and> state_equal_to_snapshot (S t' i) final \<and> i \<le> length t'"
 proof -
-  obtain t' where "perm t' t" and
+  obtain t' where "mset t' = mset t" and
                   "all_prerecording_before_postrecording t'"
     using assms desired_trace_always_exists by blast
   then show ?thesis using snapshot_after_all_prerecording_events
@@ -5231,7 +5230,7 @@ lemma has_snapshot_stable:
 definition some_snapshot_state where
   "some_snapshot_state t \<equiv>
      SOME (t', i). trace init t final
-                 \<and> trace init t' final \<and> perm t' t
+                 \<and> trace init t' final \<and> mset t' = mset t
                  \<and> state_equal_to_snapshot (S t' i) final"
 
 lemma split_S:
@@ -5256,13 +5255,13 @@ theorem Stable_Property_Detection:
     "p final"
 proof -
   have "\<exists>t' i. trace init t final
-             \<and> trace init t' final \<and> perm t' t
+             \<and> trace init t' final \<and> mset t' = mset t
              \<and> state_equal_to_snapshot (S t' i) final"
     using snapshot_algorithm_is_correct assms(2) by blast
   then have "trace init t' final"
     using assms
     unfolding some_snapshot_state_def
-    by (metis (lifting) case_prodD case_prodI someI_ex)
+    by auto (metis (mono_tags, lifting) case_prod_conv tfl_some)
   then show ?thesis
     using assms stable_def split_S by metis
 qed

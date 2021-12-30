@@ -25,5 +25,13 @@
         "Goedel_HFSet_Semanticless",
         "Syntax_Independent_Logic",
         "HereditarilyFinite"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-09-18"
+        }
     ]
 }

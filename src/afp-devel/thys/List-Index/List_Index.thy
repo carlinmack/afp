@@ -268,9 +268,9 @@ shows "index (xs[i := xs!j, j := xs!i]) x =
 proof-
   have "distinct(xs[i := xs!j, j := xs!i])" using assms by simp
   with assms show ?thesis
-    apply (auto simp: swap_def simp del: distinct_swap)
+    apply (auto simp: simp del: distinct_swap)
     apply (metis index_nth_id list_update_same_conv)
-    apply (metis (erased, hide_lams) index_nth_id length_list_update list_update_swap nth_list_update_eq)
+    apply (metis (erased, opaque_lifting) index_nth_id length_list_update list_update_swap nth_list_update_eq)
     apply (metis index_nth_id length_list_update nth_list_update_eq)
     by (metis index_update_if_diff2 length_list_update nth_list_update)
 qed
@@ -469,7 +469,7 @@ proof (induct pxs arbitrary: xs i p b)
       case (snoc pb' pxs)
       then obtain p' b' where "pb' = (p', b')" by auto
       with snoc.prems have "\<forall>p \<in> fst ` set pxs. p < p'" "p' \<le> Suc (length xs + length pxs)"
-        by (auto simp: image_iff sorted_append le_eq_less_or_eq)
+        by (auto simp: image_iff sorted_wrt_append le_eq_less_or_eq)
       with snoc.prems show ?case by (intro snoc(1)) (auto simp: sorted_append)
     qed auto
     with 0 Cons.prems show ?thesis unfolding fold.simps o_apply

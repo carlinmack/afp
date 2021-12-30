@@ -144,9 +144,9 @@ proof -
   interpret a: linorder "(\<sqsubseteq>\<^sub>a)" "(\<sqsubset>\<^sub>a)" by(fact lin_a)
 
   note [simp] = 
-    linorder.sorted.simps(1)[OF linorder_prod] linorder.sorted.simps(2)[OF linorder_prod]
+    linorder.sorted0[OF linorder_prod] linorder.sorted1[OF linorder_prod]
     linorder.sorted_append[OF linorder_prod]
-    linorder.sorted.simps(2)[OF lin_b]
+    linorder.sorted1[OF lin_b]
 
   show ?thesis using xs
   proof(induction xs)
@@ -157,7 +157,7 @@ proof -
     have "linorder.sorted (\<sqsubseteq>) (map fst (map (\<lambda>(c, d). ((a, c), f a b c d)) ys))"
       using ys by(induct ys) auto
     thus ?case using x Cons
-      by(fastforce simp add: set_alist_product a.not_less dest: bspec a.antisym intro: rev_image_eqI)
+      by(fastforce simp add: set_alist_product a.not_less dest: bspec a.order_antisym intro: rev_image_eqI)
   qed
 qed
 

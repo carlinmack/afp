@@ -5,7 +5,7 @@
 section \<open>Generated Groups\<close>
 
 theory Generated_Groups_Extend
-  imports Miscellaneous_Groups "HOL-Algebra.Algebra"
+  imports Miscellaneous_Groups
 begin
 
 text \<open>This section extends the lemmas and facts about \<open>generate\<close>. Starting with a basic fact.\<close>
@@ -84,7 +84,7 @@ lemma (in group) generate_idem_fim_Un:
   assumes "\<Union>(f ` A) \<subseteq> carrier G"
   shows "generate G (\<Union>S \<in> A. generate G (f S)) = generate G (\<Union> {generate G {x} |x. x \<in> \<Union> (f ` A)})"
 proof
-  
+
   have "\<And>S. S \<in> A \<Longrightarrow> generate G (f S) = generate G (\<Union> {generate G {x} |x. x \<in> f S})"
     using generate_idem_fUn[of f] assms by blast
   then have "generate G (\<Union>S \<in> A. generate G (f S))
@@ -229,7 +229,7 @@ proof -
     next
       case False
       then show ?thesis using that by auto
-    qed 
+    qed
     ultimately show ?thesis by blast
   qed
   with generate_nat_pow[OF assms] show ?thesis by simp

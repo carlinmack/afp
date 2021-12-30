@@ -17,7 +17,7 @@ where
                      (\<lambda>pc. eff (bs!pc) G pc et)"
 
 locale JVM_sl =
-  fixes P :: jvm_prog and mxs and mxl\<^sub>0
+  fixes P :: jvm_prog and mxs and mxl\<^sub>0 and n
   fixes Ts :: "ty list" and "is" and xt and T\<^sub>r
 
   fixes mxl and A and r and f and app and eff and step
@@ -30,6 +30,7 @@ locale JVM_sl =
   defines [simp]: "eff \<equiv> \<lambda>pc. Effect.eff (is!pc) P pc xt"
   defines [simp]: "step \<equiv> err_step (size is) app eff"
 
+  defines [simp]: "n \<equiv> size is"
 
 locale start_context = JVM_sl +
   fixes p and C
@@ -43,10 +44,12 @@ locale start_context = JVM_sl +
   defines [simp]:
   "start \<equiv> OK first # replicate (size is - 1) (OK None)"
 
-
-
 subsection \<open>Connecting JVM and Framework\<close>
-
+lemma (in start_context) semi: "semilat (A, r, f)"
+  apply (insert semilat_JVM[OF wf])
+  apply (unfold A_def r_def f_def JVM_SemiType.le_def JVM_SemiType.sup_def states_def)
+  apply auto
+  done
 
 lemma (in JVM_sl) step_def_exec: "step \<equiv> exec P mxs T\<^sub>r xt is" 
   by (simp add: exec_def)  
@@ -107,16 +110,16 @@ theorem (in start_context) exec_pres_type:
   apply (fastforce simp add: typeof_lit_is_type)
 
   \<comment> \<open>New\<close>
-  apply fastforce
+  apply clarsimp apply fastforce
 
   \<comment> \<open>Getfield\<close>
-  apply (fastforce dest: sees_field_is_type)
+  apply clarsimp apply (fastforce dest: sees_field_is_type)
 
   \<comment> \<open>Putfield\<close>
-  apply fastforce
+  apply clarsimp apply fastforce
 
   \<comment> \<open>Checkcast\<close>
-  apply fastforce
+  apply clarsimp apply fastforce
 
   defer 
   
@@ -139,7 +142,7 @@ theorem (in start_context) exec_pres_type:
   apply fastforce
 
   \<comment> \<open>Throw\<close>
-  apply fastforce
+ apply clarsimp  apply fastforce
 
   \<comment> \<open>Invoke\<close>
   apply (clarsimp split!: if_splits)
@@ -242,7 +245,7 @@ theorem (in JVM_sl) step_mono:
   apply (insert bounded_step)
   apply (unfold JVM_states_unfold)
   apply (rule mono_lift)
-     apply blast
+     apply blast   \<comment>\<open> order_sup_state_opt' \<close>
     apply (unfold app_mono_def lesub_def)
     apply clarsimp
     apply (erule (2) app_mono)

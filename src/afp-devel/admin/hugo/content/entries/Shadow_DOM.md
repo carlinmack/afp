@@ -32,5 +32,10 @@
     ],
     "relatedEntries": [
         "Shadow_SC_DOM"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

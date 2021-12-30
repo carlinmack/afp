@@ -14,5 +14,10 @@
     "licence": "BSD",
     "theories": [
         "Hood_Melville_Queue"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

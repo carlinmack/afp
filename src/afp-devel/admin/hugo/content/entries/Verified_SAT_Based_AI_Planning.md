@@ -35,5 +35,16 @@
         "AST_SAS_Plus_Equivalence",
         "Set2_Join_RBT",
         "Solve_SASP"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-11-13"
+        },
+        {
+            "2020": "2020-11-03"
+        }
     ]
 }

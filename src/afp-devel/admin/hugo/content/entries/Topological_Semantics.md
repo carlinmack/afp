@@ -33,5 +33,13 @@
         "topo_border_algebra",
         "topo_closure_algebra",
         "topo_interior_algebra"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-12-22"
+        }
     ]
 }

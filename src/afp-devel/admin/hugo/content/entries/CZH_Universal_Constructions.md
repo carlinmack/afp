@@ -29,5 +29,13 @@
     "relatedEntries": [
         "CZH_Elementary_Categories",
         "CZH_Foundations"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-05"
+        },
+        {
+            "2021": "2021-09-14"
+        }
     ]
 }

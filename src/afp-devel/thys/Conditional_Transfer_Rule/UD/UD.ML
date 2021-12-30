@@ -15,7 +15,7 @@ Andreas Schropp [1].
 
 [1] Krauss A, Schropp A. A Mechanized Translation from Higher-Order Logic
 to Set Theory. In: Kaufmann M, Paulson LC, editors. Interactive Theorem
-Proving. Berlin: Springer; 2010. p. 323–38. 
+Proving. Berlin: Springer; 2010. p. 323--38. 
 (Lecture Notes in Computer Science; vol. 6172).
 *)
 
@@ -109,7 +109,7 @@ fun map_sorts ctxt map_sortsT thm =
       |> map (Term.map_atyps (map_sortsT (Proof_Context.theory_of ctxt)))
       |> map (Thm.ctyp_of ctxt)
       |> curry op~~ Ts
-  in Drule.instantiate_normalize (instTs, []) thm end;
+  in Drule.instantiate_normalize (TVars.make instTs, Vars.empty) thm end;
 
 fun trivial_ud thy b cid' =
   let
@@ -207,7 +207,7 @@ fun nontrivial_ud thy defs (b, mixfix) cid T =
       in 
         Global_Theory.add_defs false [((b', def_t), [])] thy' |>> the_single
           handle ERROR c =>
-            let val msg_match = "Specification depends on extra type variables"
+            let val msg_match = "Extra type variables on rhs"
             in 
               if String.isSubstring msg_match c
               then error msg_extra_type_variables 

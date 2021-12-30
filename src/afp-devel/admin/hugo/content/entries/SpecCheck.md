@@ -50,5 +50,10 @@
         "files/dynamic_construct.ML",
         "files/speccheck_dynamic.ML",
         "SpecCheck_Examples"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-07-08"
+        }
     ]
 }

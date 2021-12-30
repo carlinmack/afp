@@ -74,5 +74,13 @@
     ],
     "relatedEntries": [
         "CZH_Universal_Constructions"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-05"
+        },
+        {
+            "2021": "2021-09-14"
+        }
     ]
 }

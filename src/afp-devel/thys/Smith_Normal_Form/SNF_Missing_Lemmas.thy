@@ -907,7 +907,7 @@ next
   have "sorted_list_of_set (g ` {0..<Suc n}) = sorted_list_of_set (insert (g n) (g ` {0..<n}))"
     using g_image_rw by simp
   also have "... = insort (g n) (sorted_list_of_set (g ` {0..<n}))"
-  proof (rule sorted_list_of_set.insert)
+  proof (rule sorted_list_of_set_insert)
     have "inj_on g {0..<Suc n}" using sg strict_mono_on_imp_inj_on by blast
     thus "g n \<notin> g ` {0..<n}" unfolding inj_on_def by fastforce
   qed (simp)
@@ -947,7 +947,7 @@ proof -
   have finI: "finite I"
   proof (rule ccontr)
     assume "infinite I"
-    hence "length (sorted_list_of_set I) = 0" using sorted_list_of_set.infinite by auto
+    hence "length (sorted_list_of_set I) = 0" by auto
     thus False using i by simp
   qed
   show ?thesis
@@ -963,7 +963,7 @@ next
   proof (unfold pick.simps, rule Least_equality[symmetric], rule conjI)
     show 1: "pick I i < sorted_list_of_set I ! Suc i"
       by (metis Suc.hyps Suc.prems Suc_lessD distinct_sorted_list_of_set find_first_unique lessI
-          nat_less_le sorted_sorted_list_of_set sorted_sorted_wrt sorted_wrt_nth_less)
+          nat_less_le sorted_sorted_list_of_set sorted_wrt_nth_less)
     show "sorted_list_of_set I ! Suc i \<in> I"
       using Suc.prems finI nth_mem set_sorted_list_of_set by blast
     have rw: "sorted_list_of_set I ! i = pick I i"

@@ -1,11 +1,12 @@
 chapter AFP
 
 session Types_To_Sets_Extension (AFP) = Conditional_Transfer_Rule +
-  options [timeout = 600]
+  options [timeout = 1200]
   sessions
     "HOL-Types_To_Sets"
     "HOL-Eisbach"
     "HOL-Analysis"
+    SpecCheck
   directories
     "ETTS"
     "ETTS/ETTS_Tools"

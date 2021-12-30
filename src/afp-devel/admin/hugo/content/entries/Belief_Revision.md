@@ -21,5 +21,10 @@
         "AGM_Remainder",
         "AGM_Contraction",
         "AGM_Revision"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-22"
+        }
     ]
 }

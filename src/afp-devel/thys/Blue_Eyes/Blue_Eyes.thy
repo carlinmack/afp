@@ -1,6 +1,7 @@
 (*<*)
 theory Blue_Eyes
-  imports Main
+  imports
+    "HOL-Combinatorics.Transposition"
 begin
 (*>*)
 
@@ -46,7 +47,7 @@ text \<open>We begin by fixing two type variables: @{typ "'color"} and @{typ "'p
 The puzzle doesn't specify how many eye colors are possible, but four are mentioned.
 Crucially, we must assume they are distinct. We specify the existence of colors other
 than blue and brown, even though we don't mention them later, because when blue and brown
-are the only possible colors, the puzzle has a different solution — the brown-eyed logicians
+are the only possible colors, the puzzle has a different solution --- the brown-eyed logicians
 may leave one day after the blue-eyed ones.
 
 We refrain from specifying the exact population of the island, choosing to only assume
@@ -122,16 +123,17 @@ The original color is specified too, so that the transformation composes nicely
 with the recursive hypothetical worlds of @{const possible}.\<close>
 
 definition try_swap :: "'person \<Rightarrow> 'color \<Rightarrow> 'color \<Rightarrow> ('person \<Rightarrow> 'color) \<Rightarrow> ('person \<Rightarrow> 'color)" where
-  "try_swap p c\<^sub>1 c\<^sub>2 w x = (if c\<^sub>1 = blue \<or> c\<^sub>2 = blue \<or> x \<noteq> p then w x else Fun.swap c\<^sub>1 c\<^sub>2 id (w x))"
+  "try_swap p c\<^sub>1 c\<^sub>2 w x = (if c\<^sub>1 = blue \<or> c\<^sub>2 = blue \<or> x \<noteq> p then w x else transpose c\<^sub>1 c\<^sub>2 (w x))"
 
 lemma try_swap_valid[simp]: "valid (try_swap p c\<^sub>1 c\<^sub>2 w) = valid w"
-  by (auto simp add: try_swap_def valid_def swap_def)
+  by (cases \<open>c\<^sub>1 = blue\<close>; cases \<open>c\<^sub>2 = blue\<close>)
+    (auto simp add: try_swap_def valid_def transpose_eq_iff)
 
 lemma try_swap_eq[simp]: "try_swap p c\<^sub>1 c\<^sub>2 w x = try_swap p c\<^sub>1 c\<^sub>2 w' x \<longleftrightarrow> w x = w' x"
-  by (auto simp add: try_swap_def swap_def)
+  by (auto simp add: try_swap_def transpose_eq_iff)
 
 lemma try_swap_inv[simp]: "try_swap p c\<^sub>1 c\<^sub>2 (try_swap p c\<^sub>1 c\<^sub>2 w) = w"
-  by (rule ext) (auto simp add: try_swap_def swap_def)
+  by (rule ext) (auto simp add: try_swap_def swap_id_eq)
 
 lemma leaves_try_swap[simp]:
   assumes "valid w"

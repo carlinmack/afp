@@ -15,5 +15,10 @@
     "theories": [
         "Compiler",
         "Compiler2"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-06-21"
+        }
     ]
 }

@@ -33,7 +33,6 @@ structure CTRTestData = Generic_Data
   (
     type T = ctr_test_data Symtab.table
     val empty = Symtab.empty
-    val extend = I
     val merge = Symtab.merge (K true)
   );
 
@@ -105,7 +104,10 @@ definition LL :: "'a L \<Rightarrow> 'a L \<Rightarrow> bool"
   where "LL k1 k2 \<equiv> k1 = k2"
 
 definition rel_L :: 
-  "('a::group_add \<Rightarrow> 'b::group_add \<Rightarrow> bool) \<Rightarrow> 'a::group_add L \<Rightarrow> 'b::group_add L \<Rightarrow> bool" 
+  "('a::group_add \<Rightarrow> 'b::group_add \<Rightarrow> bool) \<Rightarrow>
+  'a::group_add L \<Rightarrow>
+  'b::group_add L \<Rightarrow>
+  bool" 
   where "rel_L A b c = True"
 
 ctr_relator rel_L
@@ -227,31 +229,22 @@ ML_file\<open>CTR_TEST_PROCESS_RELATIVIZATION.ML\<close>
 context
   includes lifting_syntax
 begin
-
 ML\<open>
-val ctr_test_process_relativization_test_results =
-  ctr_test_process_relativization.execute_test_suite_process_relativization
-    @{context}
+Lecker.test_group @{context} () [ctr_test_process_relativization.test_suite]
 \<close>
-ML\<open>
-val _ = ctr_test_process_relativization_test_results
-  |> UT_Test_Suite.output_test_results true
-\<close>
-
 end
 
 
 subsubsection\<open>\<open>process_ctr_relator\<close>\<close>
 
 ML_file\<open>CTR_TEST_PROCESS_CTR_RELATOR.ML\<close>
+
+context
+  includes lifting_syntax
+begin
 ML\<open>
-val ctr_test_process_ctr_relator_test_results =
-  ctr_test_process_ctr_relator.execute_test_suite_process_ctr_relator
-    @{context}
+Lecker.test_group @{context} () [ctr_test_process_ctr_relator.test_suite]
 \<close>
-ML\<open>
-val _ = ctr_test_process_ctr_relator_test_results
-  |> UT_Test_Suite.output_test_results true
-\<close>
+end
 
 end

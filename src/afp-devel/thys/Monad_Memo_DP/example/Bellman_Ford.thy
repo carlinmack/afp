@@ -247,8 +247,8 @@ text \<open>
 \<close>
 
 fun weight :: "nat list \<Rightarrow> int extended" where
-  "weight [s] = 0"
-| "weight (i # j # xs) = W i j + weight (j # xs)"
+  "weight [v] = 0"
+| "weight (v # w # xs) = W v w + weight (w # xs)"
 
 definition
   "OPT i v = (
@@ -356,7 +356,7 @@ proof -
   next
     case sink
     then have "OPT i v \<le> OPT (Suc i) v"
-      unfolding OPT_def by auto
+      unfolding OPT_def by simp
     then show ?thesis
       by (rule min.coboundedI1)
   qed
@@ -366,9 +366,9 @@ proof -
 qed
 
 fun bf :: "nat \<Rightarrow> nat \<Rightarrow> int extended" where
-  "bf 0 j = (if t = j then 0 else \<infinity>)"
-| "bf (Suc k) j = min_list
-      (bf k j # [W j i + bf k i . i \<leftarrow> [0 ..< Suc n]])"
+  "bf 0 v = (if t = v then 0 else \<infinity>)"
+| "bf (Suc i) v = min_list
+      (bf i v # [W v w + bf i w . w \<leftarrow> [0 ..< Suc n]])"
 
 lemmas [simp del] = bf.simps
 lemmas bf_simps[simp] = bf.simps[unfolded min_list_fold]
@@ -545,7 +545,7 @@ lemma fold_sum_aux:
   assumes "\<forall>u \<in> set (a # xs). \<forall>v \<in> set (a # xs). f v + W u v \<ge> f u"
   shows "sum_list (map f (a # xs @ [a])) \<le> sum_list (map f (a # xs @ [a])) + weight (a # xs @ [a])"
   using fold_sum_aux'[of a xs a f] assms
-  by auto (metis (no_types, hide_lams) add.assoc add.commute add_left_mono)
+  by auto (metis (no_types, opaque_lifting) add.assoc add.commute add_left_mono)
 
 context
 begin
@@ -1005,13 +1005,12 @@ proof -
     apply (subst Transfer.Rel_def[symmetric]) \<comment> \<open>Setup typical goal for automated reasoner.\<close>
     \<comment> \<open>We need to reason manually because we are not in the context where \<open>bf\<^sub>m\<close> was defined.\<close>
     \<comment> \<open>This is roughly what @{method "memoize_prover_match_step"}/\<open>Transform_Tactic.step_tac\<close> does.\<close>
-    ML_prf \<open>val ctxt = @{context}\<close>
-    apply (tactic \<open>Transform_Tactic.solve_relator_tac ctxt 1\<close>
+    apply (tactic \<open>Transform_Tactic.solve_relator_tac \<^context> 1\<close>
           | rule HOL.refl
           | rule bf\<^sub>m.dp_match_rule
           | rule bf\<^sub>m.crel_vs_return_ext
           | (subst Rel_def, rule crel_bf\<^sub>m')
-          | tactic \<open>Transform_Tactic.transfer_raw_tac ctxt 1\<close>)+
+          | tactic \<open>Transform_Tactic.transfer_raw_tac \<^context> 1\<close>)+
     done
 qed
 

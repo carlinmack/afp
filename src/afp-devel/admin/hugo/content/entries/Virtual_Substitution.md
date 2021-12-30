@@ -50,5 +50,10 @@
         "VSQuad",
         "HeuristicProofs",
         "ExportProofs"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-19"
+        }
     ]
 }

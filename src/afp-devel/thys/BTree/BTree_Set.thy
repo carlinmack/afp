@@ -18,7 +18,7 @@ lemma drop_not_empty: "xs \<noteq> [] \<Longrightarrow> drop (length xs div 2) x
 
 lemma split_half_not_empty: "length xs \<ge> 1 \<Longrightarrow> \<exists>ls sub sep rs. split_half xs = (ls,(sub,sep)#rs)"
   using drop_not_empty
-  by (metis (no_types, hide_lams) drop0 drop_eq_Nil eq_snd_iff hd_Cons_tl le_trans not_one_le_zero split_half.simps)
+  by (metis (no_types, opaque_lifting) drop0 drop_eq_Nil eq_snd_iff hd_Cons_tl le_trans not_one_le_zero split_half.simps)
 
 subsection "The split function locale"
 
@@ -106,6 +106,11 @@ fun node\<^sub>i:: "nat \<Rightarrow> ('a btree \<times> 'a) list \<Rightarrow> 
     )
   )"
 
+lemma nodei_ti_simp: "node\<^sub>i k ts t = T\<^sub>i x \<Longrightarrow> x = Node ts t"
+  apply (cases "length ts \<le> 2*k")
+   apply (auto split!: list.splits)
+  done
+
 
 fun ins:: "nat \<Rightarrow> 'a \<Rightarrow> 'a btree \<Rightarrow> 'a up\<^sub>i" where
   "ins k x Leaf = (Up\<^sub>i Leaf x Leaf)" |
@@ -140,7 +145,7 @@ fun insert::"nat \<Rightarrow> 'a \<Rightarrow> 'a btree \<Rightarrow> 'a btree"
 
 subsection "Deletion"
 
-text "The following deletion method is inspired by Bayer (70) and Fielding (??).
+text "The following deletion method is inspired by Bayer (70) and Fielding (80).
 Rather than stealing only a single node from the neighbour,
 the neighbour is fully merged with the potentially underflowing node.
 If the resulting node is still larger than allowed, the merged node is split

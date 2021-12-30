@@ -17,5 +17,16 @@
     ],
     "theories": [
         "Disjoint_Set_Forests"
+    ],
+    "extra": {
+        "Change history": "[2021-06-19]\nadded path halving, path splitting, relational Peano structures, union by rank\n(revision 98c7aa03457d)"
+    },
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-08-26"
+        }
     ]
 }

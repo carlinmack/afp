@@ -23,8 +23,8 @@ section \<open>Introduction\<close>
 
 text\<open>
 The 1985 paper by Carlos Alchourrón, Peter Gärdenfors,
-and David Makinson (AGM), “On the Logic of Theory Change: Partial Meet
-Contraction and Revision Functions” @{cite "alchourron1985logic"} launches a large and
+and David Makinson (AGM), ``On the Logic of Theory Change: Partial Meet
+Contraction and Revision Functions'' @{cite "alchourron1985logic"} launches a large and
 rapidly growing literature that employs formal models and logics to handle changing beliefs of a rational agent
 and to take into account new piece of information observed by this agent. 
 In 2011, a review book titled "AGM 25 Years: Twenty-Five Years of Research in Belief Change"
@@ -356,8 +356,8 @@ next
   show \<open>Cn({}) \<subseteq> Cn({p}) \<inter> Cn({.\<not> p})\<close> by (simp add: monotonicity_L)
 qed
 
-lemma Cn_notnot: \<open>Cn({.\<not> (.\<not> \<phi>)}) = Cn({\<phi>})\<close> 
-  by (metis (no_types, hide_lams) notnot_PL valid_Cn_equiv valid_equiv_PL) 
+lemma Cn_notnot: \<open>Cn({.\<not> (.\<not> \<phi>)}) = Cn({\<phi>})\<close>
+  by (metis (no_types, opaque_lifting) notnot_PL valid_Cn_equiv valid_equiv_PL)
 
 lemma conj_com: \<open>A \<turnstile> p .\<and>. q \<longleftrightarrow> A \<turnstile> q .\<and>. p\<close>
   using conj_PL by auto

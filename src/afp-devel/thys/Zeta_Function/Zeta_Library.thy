@@ -35,7 +35,7 @@ proof -
       with **[of "c - max 0 (c - x) / 2"] show ?case by force
     qed
     then obtain X where X: "\<And>n. f (X n) \<notin> A m" "\<And>n. X n < c" "\<And>n. X (Suc n) > c - max 0 ((c - X n) / 2)"
-      by auto
+      by auto (metis diff_gt_0_iff_gt half_gt_zero_iff max.absorb3 max.commute)
     have X_ge: "X n \<ge> c - (c - X 0) / 2 ^ n" for n
     proof (induction n)
       case (Suc n)
@@ -131,7 +131,7 @@ proof -
       with **[of "c + max 0 (x - c) / 2"] show ?case by force
     qed
     then obtain X where X: "\<And>n. f (X n) \<notin> A m" "\<And>n. X n > c" "\<And>n. X (Suc n) < c + max 0 ((X n - c) / 2)"
-      by auto
+      by auto (metis add.left_neutral half_gt_zero_iff less_diff_eq max.absorb4) 
     have X_le: "X n \<le> c + (X 0 - c) / 2 ^ n" for n
     proof (induction n)
       case (Suc n)
@@ -256,7 +256,7 @@ proof -
     by (auto dest: completion_ex_borel_measurable_real)
 
   from I have "((\<lambda>x. abs (indicator \<Omega> x * f x)) has_integral I) UNIV"
-    using nonneg by (simp add: indicator_def if_distrib[of "\<lambda>x. x * f y" for y] cong: if_cong)
+    using nonneg by (simp add: indicator_def of_bool_def if_distrib[of "\<lambda>x. x * f y" for y] cong: if_cong)
   also have "((\<lambda>x. abs (indicator \<Omega> x * f x)) has_integral I) UNIV \<longleftrightarrow> ((\<lambda>x. abs (f' x)) has_integral I) UNIV"
     using eq by (intro has_integral_AE) auto
   finally have "integral\<^sup>N lborel (\<lambda>x. abs (f' x)) = I"
@@ -302,7 +302,8 @@ proof -
     using assms eq by (intro nn_integral_lborel_eq_integral)
                       (auto simp: indicator_def set_borel_measurable_def)
   also have "integral UNIV (\<lambda>x. indicator A x * f x) = integral A (\<lambda>x. indicator A x * f x)"
-    by (rule integral_spike_set) (auto simp: indicator_def)
+    by (rule integral_spike_set) (auto intro: empty_imp_negligible)
+ 
   also have "\<dots> = integral A f"
     by (rule integral_cong) (auto simp: indicator_def)
   finally show ?thesis .

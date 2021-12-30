@@ -107,11 +107,11 @@ lemma conv_bot [simp]:
 
 lemma conv_top [simp]:
   "top\<^sup>T = top"
-  by (metis conv_involutive conv_order eq_iff top_greatest)
+  by (metis conv_involutive conv_order order.eq_iff top_greatest)
 
 lemma conv_dist_inf:
   "(x \<sqinter> y)\<^sup>T = x\<^sup>T \<sqinter> y\<^sup>T"
-  apply (rule antisym)
+  apply (rule order.antisym)
   using conv_order apply simp
   by (metis conv_order conv_involutive inf.boundedI inf.cobounded1 inf.cobounded2)
 
@@ -206,7 +206,7 @@ The intersection with a vector can still be exported from the first argument of 
 
 lemma vector_inf_comp:
   "vector x \<Longrightarrow> (x \<sqinter> y) * z = x \<sqinter> (y * z)"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (metis comp_left_subdist_inf comp_right_isotone inf.sup_left_isotone order_lesseq_imp top_greatest)
   by (metis comp_left_isotone comp_right_isotone dedekind_2 inf_commute inf_mono order_refl order_trans top_greatest)
 
@@ -227,7 +227,7 @@ proof -
   also have "... \<le> (y \<sqinter> x\<^sup>T) * (x \<sqinter> z)"
     by (metis assms comp_left_isotone comp_right_isotone inf_le2 inf_mono order_refl inf_commute)
   finally show ?thesis
-    by (simp add: comp_right_isotone antisym)
+    by (simp add: comp_right_isotone order.antisym)
 qed
 
 lemma covector_inf_comp_2:
@@ -239,7 +239,7 @@ proof -
   also have "... \<le> (y \<sqinter> x\<^sup>T) * (x \<sqinter> z)"
     by (metis assms comp_left_isotone conv_dist_comp conv_order conv_top eq_refl inf_le1 inf_mono)
   finally show ?thesis
-    using comp_left_subdist_inf antisym by auto
+    using comp_left_subdist_inf order.antisym by auto
 qed
 
 lemma covector_inf_comp_3:
@@ -248,7 +248,7 @@ lemma covector_inf_comp_3:
 
 lemma covector_inf_closed:
   "covector x \<Longrightarrow> covector y \<Longrightarrow> covector (x \<sqinter> y)"
-  by (metis comp_right_subdist_inf inf.antisym top_left_mult_increasing)
+  by (metis comp_right_subdist_inf order.antisym top_left_mult_increasing)
 
 lemma vector_conv_covector:
   "vector v \<longleftrightarrow> covector (v\<^sup>T)"
@@ -260,7 +260,7 @@ lemma covector_conv_vector:
 
 lemma covector_comp_inf:
   "covector z \<Longrightarrow> x * (y \<sqinter> z) = x * y \<sqinter> z"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (metis comp_isotone comp_right_subdist_inf inf.boundedE inf.boundedI inf.cobounded2 top.extremum)
   by (metis comp_left_isotone comp_right_isotone dedekind_1 inf_commute inf_mono order_refl order_trans top_greatest)
 
@@ -548,7 +548,7 @@ We show a fact about equivalences.
 
 lemma equivalence_comp_dist_inf:
   "equivalence x \<Longrightarrow> x * y \<sqinter> x * z = x * (y \<sqinter> x * z)"
-  by (metis antisym comp_right_subdist_inf dedekind_1 eq_iff inf.absorb1 inf.absorb2 mult_1_right mult_assoc)
+  by (metis order.antisym comp_right_subdist_inf dedekind_1 order.eq_iff inf.absorb1 inf.absorb2 mult_1_right mult_assoc)
 
 text \<open>
 The following result generalises the fact that composition with a test amounts to intersection with the corresponding vector.
@@ -557,7 +557,7 @@ Both tests and vectors can be used to represent sets as relations.
 
 lemma coreflexive_comp_top_inf:
   "coreflexive x \<Longrightarrow> x * top \<sqinter> y = x * y"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (metis comp_left_isotone comp_left_one coreflexive_symmetric dedekind_1 inf_top_left order_trans)
   using comp_left_isotone comp_right_isotone by fastforce
 
@@ -625,7 +625,7 @@ Also the equational version of the Dedekind rule continues to hold.
 
 lemma dedekind_eq:
   "x * y \<sqinter> z = (x \<sqinter> (z * y\<^sup>T)) * (y \<sqinter> (x\<^sup>T * z)) \<sqinter> z"
-proof (rule antisym)
+proof (rule order.antisym)
   have "x * y \<sqinter> z \<le> x * (y \<sqinter> (x\<^sup>T * z)) \<sqinter> z"
     by (simp add: dedekind_1)
   also have "... \<le> (x \<sqinter> (z * (y \<sqinter> (x\<^sup>T * z))\<^sup>T)) * (y \<sqinter> (x\<^sup>T * z)) \<sqinter> z"
@@ -678,7 +678,7 @@ lemma ex231d:
 
 lemma ex231e [simp]:
   "x * top * x * top = x * top"
-  by (metis ex231d antisym comp_associative mult_right_isotone top.extremum)
+  by (metis ex231d order.antisym comp_associative mult_right_isotone top.extremum)
 
 lemma arc_injective:
   "arc x \<Longrightarrow> injective x"
@@ -695,7 +695,7 @@ lemma arc_univalent:
 lemma injective_codomain:
   assumes "injective x"
   shows "x * (x \<sqinter> 1) = x \<sqinter> 1"
-proof (rule antisym)
+proof (rule order.antisym)
   show "x * (x \<sqinter> 1) \<le> x \<sqinter> 1"
     by (metis assms comp_right_one dual_order.trans inf.boundedI inf.cobounded1 inf.sup_monoid.add_commute mult_right_isotone one_inf_conv)
 next
@@ -748,7 +748,7 @@ proof -
   also have "... \<le> e"
     using assms(2) coreflexive_comp_top_inf inf.sup_right_divisibility by blast
   finally show ?thesis
-    by (simp add: assms(1) top_left_mult_increasing antisym)
+    by (simp add: assms(1) top_left_mult_increasing order.antisym)
 qed
 
 lemma comp_inf_vector:
@@ -770,7 +770,7 @@ Well-known distributivity properties of univalent and injective relations over m
 lemma univalent_comp_left_dist_inf:
   assumes "univalent x"
     shows "x * (y \<sqinter> z) = x * y \<sqinter> x * z"
-proof (rule antisym)
+proof (rule order.antisym)
   show "x * (y \<sqinter> z) \<le> x * y \<sqinter> x * z"
     by (simp add: comp_right_isotone)
 next
@@ -874,7 +874,7 @@ proof -
   finally have "x * x\<^sup>T * x \<le> x"
     by simp
   thus ?thesis
-    by (simp add: antisym ex231c)
+    by (simp add: order.antisym ex231c)
 qed
 
 lemma arc_eq_2:
@@ -889,6 +889,43 @@ lemma points_arc:
 lemma point_arc:
   "point x \<Longrightarrow> arc (x * x\<^sup>T)"
   by (simp add: points_arc)
+
+lemma arc_expanded_1:
+  "arc e \<Longrightarrow> e * x * e\<^sup>T \<le> 1"
+  by (meson arc_expanded order_trans top_greatest mult_left_isotone mult_right_isotone)
+
+lemma arc_expanded_2:
+  "arc e \<Longrightarrow> e\<^sup>T * x * e \<le> 1"
+  by (meson arc_expanded order_trans top_greatest mult_left_isotone mult_right_isotone)
+
+lemma point_conv_comp:
+  "point x \<Longrightarrow> x\<^sup>T * x = top"
+  using order_eq_iff shunt_bijective top_greatest vector_conv_covector by blast
+
+lemma point_antisymmetric:
+  "point x \<Longrightarrow> antisymmetric x"
+  by (simp add: vector_covector)
+
+lemma mapping_inf_point_arc:
+  assumes "mapping x"
+      and "point y"
+    shows "arc (x \<sqinter> y)"
+proof (unfold arc_expanded, intro conjI)
+  show "(x \<sqinter> y) * top * (x \<sqinter> y)\<^sup>T \<le> 1"
+    by (metis assms conv_dist_comp covector_conv_vector inf.orderE inf.sup_monoid.add_commute surjective_conv_total top.extremum top_right_mult_increasing vector_export_comp)
+  have "(x \<sqinter> y)\<^sup>T * top * (x \<sqinter> y) = x\<^sup>T * y * (x \<sqinter> y)"
+    by (simp add: assms(2) conv_dist_inf covector_inf_comp_3)
+  also have "... = x\<^sup>T * (y \<sqinter> y\<^sup>T) * x"
+    by (simp add: assms(2) comp_associative covector_inf_comp_3 inf.sup_monoid.add_commute)
+  also have "... \<le> x\<^sup>T * x"
+    by (metis assms(2) comp_right_one mult_left_isotone mult_right_isotone vector_covector)
+  also have "... \<le> 1"
+    by (simp add: assms(1))
+  finally show "(x \<sqinter> y)\<^sup>T * top * (x \<sqinter> y) \<le> 1"
+    .
+  show "top * (x \<sqinter> y) * top = top"
+    by (metis assms inf_top_right inf_vector_comp mult_assoc)
+qed
 
 end
 
@@ -973,7 +1010,7 @@ The following result looks similar to a property of (anti)domain.
 
 lemma p_comp_pp [simp]:
   "-(x * --y) = -(x * y)"
-  using comp_pp_semi_commute comp_right_isotone inf.eq_iff p_antitone pp_increasing by fastforce
+  using comp_pp_semi_commute comp_right_isotone order.eq_iff p_antitone pp_increasing by fastforce
 
 lemma pp_comp_semi_commute:
   "--x * y \<le> --(x * y)"
@@ -981,7 +1018,7 @@ lemma pp_comp_semi_commute:
 
 lemma p_pp_comp [simp]:
   "-(--x * y) = -(x * y)"
-  using pp_comp_semi_commute comp_left_isotone inf.eq_iff p_antitone pp_increasing by fastforce
+  using pp_comp_semi_commute comp_left_isotone order.eq_iff p_antitone pp_increasing by fastforce
 
 lemma pp_comp_subdist:
   "--x * --y \<le> --(x * y)"
@@ -995,7 +1032,7 @@ proof -
   also have "... \<le> x * (y \<sqinter> -z)"
     using comp_right_isotone conv_complement_sub_leq inf.sup_right_isotone by auto
   finally show ?thesis
-    using comp_right_subdist_inf antisym inf.coboundedI2 inf.commute by auto
+    using comp_right_subdist_inf order.antisym inf.coboundedI2 inf.commute by auto
 qed
 
 text \<open>
@@ -1004,11 +1041,11 @@ Even in Stone relation algebras, we do not obtain the backward implication in th
 
 lemma vector_complement_closed:
   "vector x \<Longrightarrow> vector (-x)"
-  by (metis complement_conv_sub conv_top eq_iff top_right_mult_increasing)
+  by (metis complement_conv_sub conv_top order.eq_iff top_right_mult_increasing)
 
 lemma covector_complement_closed:
   "covector x \<Longrightarrow> covector (-x)"
-  by (metis conv_complement_sub_leq conv_top eq_iff top_left_mult_increasing)
+  by (metis conv_complement_sub_leq conv_top order.eq_iff top_left_mult_increasing)
 
 lemma covector_vector_comp:
   "vector v \<Longrightarrow> -v\<^sup>T * v = bot"
@@ -1052,7 +1089,7 @@ lemma linear_asymmetric:
 
 lemma strict_linear_sup_closed:
   "strict_linear x \<Longrightarrow> strict_linear y \<Longrightarrow> strict_linear (x \<squnion> y)"
-  by (metis (mono_tags, hide_lams) conv_dist_sup sup.right_idem sup_assoc sup_commute)
+  by (metis (mono_tags, opaque_lifting) conv_dist_sup sup.right_idem sup_assoc sup_commute)
 
 lemma strict_linear_irreflexive:
   "strict_linear x \<Longrightarrow> irreflexive x"
@@ -1091,7 +1128,7 @@ proof (rule conjI)
   also have "... = (x \<sqinter> x\<^sup>T \<sqinter> -1) * (x \<sqinter> x\<^sup>T \<sqinter> -1)"
     by (simp add: conv_complement conv_dist_inf inf.absorb2 inf.sup_monoid.add_assoc)
   also have "... = bot"
-    using assms inf.antisym reflexive_conv_closed by fastforce
+    using assms order.antisym reflexive_conv_closed by fastforce
   finally have "(x \<sqinter> -1) * (x \<sqinter> -1) \<le> -1"
     using le_bot pseudo_complement by blast
   thus "transitive (x \<sqinter> -1)"
@@ -1113,7 +1150,7 @@ lemma linear_order_strict_order:
   "linear_order x \<Longrightarrow> linear_strict_order (x \<sqinter> -1)"
   apply (rule conjI)
   using order_strict_order apply simp
-  by (metis conv_complement conv_dist_inf coreflexive_symmetric eq_iff inf.absorb2 inf.distrib_left inf.sup_monoid.add_commute top.extremum)
+  by (metis conv_complement conv_dist_inf coreflexive_symmetric order.eq_iff inf.absorb2 inf.distrib_left inf.sup_monoid.add_commute top.extremum)
 
 lemma regular_conv_closed:
   "regular x \<Longrightarrow> regular (x\<^sup>T)"
@@ -1125,7 +1162,7 @@ We show a number of facts about equivalences.
 
 lemma equivalence_comp_left_complement:
   "equivalence x \<Longrightarrow> x * -x = -x"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (metis conv_complement_sub_leq preorder_idempotent)
   using mult_left_isotone by fastforce
 
@@ -1326,7 +1363,7 @@ proof -
   also have "... \<le> e\<^sup>T * e"
     by (metis assms(3) coreflexive_comp_top_inf le_infE mult_semi_associative point_injective)
   finally have 2: "e\<^sup>T * top * e = e\<^sup>T * e"
-    by (simp add: inf.antisym mult_left_isotone top_right_mult_increasing)
+    by (simp add: order.antisym mult_left_isotone top_right_mult_increasing)
   have "(v \<squnion> e\<^sup>T * top) * (v \<squnion> e\<^sup>T * top)\<^sup>T = (v \<squnion> e\<^sup>T * top) * (v\<^sup>T \<squnion> top * e)"
     by (simp add: conv_dist_comp conv_dist_sup)
   also have "... = v * v\<^sup>T \<squnion> v * top * e \<squnion> e\<^sup>T * top * v\<^sup>T \<squnion> e\<^sup>T * top * top * e"
@@ -1341,7 +1378,7 @@ qed
 
 lemma ev:
   "vector v \<Longrightarrow> e \<le> v * -v\<^sup>T \<Longrightarrow> e * v = bot"
-  by (metis covector_vector_comp antisym bot_least comp_associative mult_left_isotone mult_right_zero)
+  by (metis covector_vector_comp order.antisym bot_least comp_associative mult_left_isotone mult_right_zero)
 
 lemma vTeT:
   "vector v \<Longrightarrow> e \<le> v * -v\<^sup>T \<Longrightarrow> v\<^sup>T * e\<^sup>T = bot"
@@ -1428,7 +1465,7 @@ Bijective relations and mappings can be exported from a pseudocomplement.
 
 lemma comp_bijective_complement:
   "bijective y \<Longrightarrow> -x * y = -(x * y)"
-  using comp_injective_below_complement complement_conv_sub antisym shunt_bijective by blast
+  using comp_injective_below_complement complement_conv_sub order.antisym shunt_bijective by blast
 
 lemma comp_mapping_complement:
   "mapping x \<Longrightarrow> x * -y = -(x * y)"
@@ -1550,6 +1587,10 @@ proof -
     using inf_pp_semi_commute order_lesseq_imp by blast
 qed
 
+lemma antisymmetric_inf_diversity:
+  "antisymmetric x \<Longrightarrow> x \<sqinter> -1 = x \<sqinter> -x\<^sup>T"
+  by (smt (verit, del_insts) inf.orderE inf.sup_monoid.add_assoc inf.sup_monoid.add_commute inf_import_p one_inf_conv)
+
 end
 
 subsection \<open>Stone Relation Algebras\<close>
@@ -1638,7 +1679,7 @@ proof -
   also have "... \<le> x"
     by (metis assms comp_right_one conv_top comp_associative conv_dist_comp conv_involutive mult_right_isotone vector_top_closed)
   finally show ?thesis
-    by (simp add: antisym pp_increasing)
+    by (simp add: order.antisym pp_increasing)
 qed
 
 (*
@@ -1853,7 +1894,7 @@ lemma distinct_points:
     and "point y"
     and "x \<noteq> y"
   shows "x \<sqinter> y = bot"
-  by (metis assms antisym comp_bijective_complement inf.sup_monoid.add_commute mult_left_one pseudo_complement regular_one_closed point_in_vector_or_pseudo_complement)
+  by (metis assms order.antisym comp_bijective_complement inf.sup_monoid.add_commute mult_left_one pseudo_complement regular_one_closed point_in_vector_or_pseudo_complement)
 
 lemma point_in_vector_or_complement:
   assumes "point p"
@@ -1932,7 +1973,7 @@ lemma different_arc_in_sup_arc:
     shows "x \<le> z"
 proof -
   have "x \<le> -y"
-    using arc_in_arc_or_complement assms(1,2,4) eq_iff p_antitone_iff by blast
+    using arc_in_arc_or_complement assms(1,2,4) order.eq_iff p_antitone_iff by blast
   hence "x \<le> -y \<sqinter> (z \<squnion> y)"
     using assms arc_in_sup_arc by simp
   thus ?thesis
@@ -1956,6 +1997,10 @@ lemma arc_not_bot:
   "arc x \<Longrightarrow> x \<noteq> bot"
   using consistent mult_right_zero by auto
 
+lemma point_not_bot:
+  "point p \<Longrightarrow> p \<noteq> bot"
+  using consistent by force
+
 end
 
 class relation_algebra_consistent = relation_algebra + stone_relation_algebra_consistent
@@ -1968,6 +2013,8 @@ lemma arc_in_partition_xor:
   by (simp add: non_bot_arc_in_partition_xor arc_not_bot)
 
 end
+
+class relation_algebra_tarski_consistent = relation_algebra + stone_relation_algebra_tarski_consistent
 
 end
 

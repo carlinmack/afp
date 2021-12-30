@@ -24,5 +24,10 @@
     ],
     "relatedEntries": [
         "SC_DOM_Components"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

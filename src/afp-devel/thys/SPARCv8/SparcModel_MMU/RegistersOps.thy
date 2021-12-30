@@ -1,6 +1,10 @@
 section\<open>Register Operations\<close>
 theory RegistersOps
-imports Main "../lib/WordDecl" "Word_Lib.Traditional_Infix_Syntax"
+imports Main "../lib/WordDecl" "Word_Lib.Bit_Shifts_Infix_Syntax"
+begin
+
+context
+  includes bit_operations_syntax
 begin
 
 text\<open>
@@ -75,5 +79,7 @@ where
                                                   let (w,res) = get_nat_from_mask w 1 res in
                                                         res
 "
+
+end
 
 end 

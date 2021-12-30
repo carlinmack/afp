@@ -5,7 +5,7 @@
 section \<open>Set Multiplication\<close>
 
 theory Set_Multiplication
-  imports "HOL-Algebra.Algebra"
+  imports "HOL-Algebra.Multiplicative_Group"
 begin
 
 text \<open>This theory/section is of auxiliary nature and is mainly used to establish a connection
@@ -84,11 +84,11 @@ next
   have "card (insert x H) * card J = card H * card J + card J" using \<open>x \<notin> H\<close> using step by simp
   then have "({x} <#> J) \<inter> (H <#> J) = {}"
     using card_eq card_x ins card_Un_Int[of "H <#> J" "{x} <#> J"] step set_mult_finite by auto
-  then have "\<And>a. a \<in> H \<Longrightarrow> (\<Union>y\<in>J. {a \<otimes> y}) \<inter> (\<Union>y\<in>J. {x \<otimes> y}) = {}" 
+  then have "\<And>a. a \<in> H \<Longrightarrow> (\<Union>y\<in>J. {a \<otimes> y}) \<inter> (\<Union>y\<in>J. {x \<otimes> y}) = {}"
     using set_mult_def[of G _ J] by blast
   then have "\<And>a b. \<lbrakk>a \<in> (insert x H); b \<in> (insert x H); a \<noteq> b\<rbrakk> \<Longrightarrow> ((\<otimes>) a ` J) \<inter> ((\<otimes>) b ` J) = {}"
     using \<open>x \<notin> H\<close> ih by blast
-  then show ?case using step by algebra
+  then show ?case using step by presburger
 qed
 
 lemma (in group) set_mult_card_eq_impl_empty_inter':
@@ -171,7 +171,7 @@ proof
       have J1: "\<one> \<in> J" using assms subgroup.one_closed by auto
       have lx: "?iv \<otimes> \<one> = ?iv" using r_one[of "?iv"] subgroup.subset inv_in assms by blast
       have rx: "\<one> \<otimes> ?iv = ?iv" using l_one[of "?iv"] incl subgroup.subset inv_in assms by blast
-      show ?case 
+      show ?case
       proof (cases "?iv \<in> H")
         case True
         then show ?thesis using set_mult_def[of G H J] J1 lx by fastforce

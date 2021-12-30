@@ -8,9 +8,9 @@ section \<open>Locale-Based Duality\<close>
 
 theory Order_Lattice_Props_Loc
   imports Main 
-          "HOL-Library.Lattice_Syntax"
-
 begin
+
+unbundle lattice_syntax
 
 text \<open>This section explores order and lattice duality based on locales. Used within the context of a class or locale, 
 this is very effective, though more opaque than the previous approach. Outside of such a context, however, it apparently
@@ -286,7 +286,7 @@ context order
 begin
 
 lemma downset_inj: "inj \<down>"
-  by (metis injI downset_iso_iff eq_iff)
+  by (metis injI downset_iso_iff order.eq_iff)
 
 end
 
@@ -447,7 +447,7 @@ context complete_lattice
 begin
 
 lemma fSup_unfold: "(f::nat \<Rightarrow> 'a) 0 \<squnion> (\<Squnion>n. f (Suc n)) = (\<Squnion>n. f n)"
-  apply (intro antisym sup_least)
+  apply (intro order.antisym sup_least)
     apply (rule Sup_upper, force)
    apply (rule Sup_mono, force)
   apply (safe intro!: Sup_least)
@@ -455,7 +455,7 @@ lemma fSup_unfold: "(f::nat \<Rightarrow> 'a) 0 \<squnion> (\<Squnion>n. f (Suc 
 
 
 lemma fInf_unfold: "(f::nat \<Rightarrow> 'a) 0 \<sqinter> (\<Sqinter>n. f (Suc n)) = (\<Sqinter>n. f n)"
-  apply (intro antisym inf_greatest)
+  apply (intro order.antisym inf_greatest)
   apply (rule Inf_greatest, safe)
   apply (case_tac n)
    apply simp_all
@@ -474,7 +474,7 @@ lemma fun_isor: "mono f \<Longrightarrow> mono (\<lambda>x. x \<circ> f)"
 lemma Sup_sup_pres: 
   fixes f :: "'a::complete_lattice \<Rightarrow> 'b::complete_lattice"
   shows "Sup_pres f \<Longrightarrow> sup_pres f"
-  by (metis (no_types, hide_lams) Sup_empty Sup_insert comp_apply image_insert sup_bot.right_neutral)
+  by (metis (no_types, opaque_lifting) Sup_empty Sup_insert comp_apply image_insert sup_bot.right_neutral)
 
 lemma Inf_inf_pres: 
   fixes f :: "'a::complete_lattice \<Rightarrow> 'b::complete_lattice"

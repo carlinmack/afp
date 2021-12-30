@@ -232,7 +232,7 @@ lemma sorted_list_lemma_var:
   fixes l:: "real list"
   fixes x:: "real"
   assumes "length l > 1"
-  assumes strict_sort: "strict_sorted l"
+  assumes strict_sort: "sorted_wrt (<) l"
   assumes x_not_in: "\<not> (List.member l x)"
   assumes lt_a: "x > (l ! 0)"
   assumes b_lt: "x < (l ! (length l - 1))"
@@ -271,8 +271,8 @@ next
       have xlt_1: " x < l ! (length l - 1)"
         using Cons.prems(5)
         by (metis Cons.prems(1) One_nat_def add_diff_cancel_right' list.size(4) nth_Cons_pos zero_less_diff) 
-      have ssl: "strict_sorted l " using Cons.prems(2)
-        using strict_sorted.simps(2) by blast  
+      have ssl: "sorted_wrt (<) l " using Cons.prems(2)
+        using sorted_wrt.simps(2) by auto  
       have " \<not> List.member l x" using Cons.prems(3)
         by (meson member_rec(1)) 
       then have " \<exists>n<length l - 1. l ! n < x \<and> x < l ! (n + 1)"
@@ -299,7 +299,7 @@ lemma all_sample_points_prop:
   shows "consistent_sign_vectors_R qs UNIV = consistent_sign_vectors_R qs (set S)"
 proof - 
   let ?zer_list = "sorted_list_of_set {(x::real). (\<exists>q \<in> set(qs). (q \<noteq> 0 \<and> poly q x = 0))} :: real list"
-  have strict_sorted_h: "strict_sorted ?zer_list" using sorted_sorted_list_of_set
+  have strict_sorted_h: "sorted_wrt (<) ?zer_list" using sorted_sorted_list_of_set
       strict_sorted_iff by auto
   have poly_f_is: "poly_f qs  = (pderiv (prod_list_var qs) * prod_list_var qs)* ([:-(crb (prod_list_var qs)),1:]) * ([:(crb (prod_list_var qs)),1:])"
     unfolding poly_f_def using is_not_const by auto
@@ -417,7 +417,7 @@ proof -
           then show "\<exists> k \<in> (set S). consistent_sign_vec qs k = consistent_sign_vec qs y"
             using neg_crb_in unfolding consistent_sign_vec_def squash_def  
             apply (auto)
-            by (metis (no_types, hide_lams) antisym_conv3 class_field.neg_1_not_0 equal_neg_zero less_irrefl of_int_minus) 
+            by (metis (no_types, opaque_lifting) antisym_conv3 class_field.neg_1_not_0 equal_neg_zero less_irrefl of_int_minus) 
         qed
         have c_c2: "length ?zer_list > 0 \<Longrightarrow>  \<exists> k \<in> (set S). consistent_sign_vec qs k = consistent_sign_vec qs y"
         proof - 
@@ -695,7 +695,7 @@ proof -
               by fastforce 
             then show ?thesis 
               using s_prop unfolding squash_def consistent_sign_vec_def apply (auto)
-              by (metis (no_types, hide_lams) class_field.neg_1_not_0 equal_neg_zero less_irrefl linorder_neqE_linordered_idom) 
+              by (metis (no_types, opaque_lifting) class_field.neg_1_not_0 equal_neg_zero less_irrefl linorder_neqE_linordered_idom) 
           qed
           show ?thesis
             using lengt sg1 sg2 sg3 sg4 len_gtz_prop is_not_const

@@ -208,14 +208,6 @@ definition
 lemma if_assertion: "(If p then x else y) = {\<cdot>p} * x \<squnion> {\<cdot> -p} * y"
   by (simp add: if_stm_def if_Assertion_assumption)
 
-lemma (in boolean_algebra) sup_neg_inf:
-  "(p \<le> q \<squnion> r) = (p \<sqinter> -q \<le> r)"
-  apply (safe)
-  apply(cut_tac a = p and c = "q \<squnion> r" and b = "-q" and d = "-q" in inf_mono)
-  apply simp apply simp apply (simp add: inf_sup_distrib2)
-  apply(cut_tac b = "p \<sqinter> - q" and d = "r" and a = "q" and c = "q" in sup_mono)
-  apply simp apply simp  by (simp add: sup_inf_distrib)
-
 lemma hoare_if: "hoare p (If b then x else y) q = (hoare (p \<sqinter> b) x q \<and> hoare (p \<sqinter> -b) y q)"
   by (simp add: hoare_def if_stm_def wp_choice inf_fun_def wp_comp wp_assume sup_neg_inf)
 
@@ -371,12 +363,12 @@ lemma "hoare p S q \<Longrightarrow> datarefin ({\<cdot>p} * S) S1 D D1 \<Longri
 lemma inf_pres_conj: "x \<in> conjunctive \<Longrightarrow> y \<in> conjunctive \<Longrightarrow> x \<sqinter> y \<in> conjunctive"
   apply (subst conjunctive_def, safe)
   apply (simp add: inf_comp conjunctiveD)
-  by (metis (hide_lams, no_types) inf_assoc inf_left_commute)
+  by (metis (opaque_lifting, no_types) inf_assoc inf_left_commute)
 
 lemma sup_pres_disj: "x \<in> disjunctive \<Longrightarrow> y \<in> disjunctive \<Longrightarrow> x \<squnion> y \<in> disjunctive"
   apply (subst disjunctive_def, safe)
   apply (simp add: sup_comp disjunctiveD)
-  by (metis (hide_lams, no_types) sup_assoc sup_left_commute)
+  by (metis (opaque_lifting, no_types) sup_assoc sup_left_commute)
 
 lemma assumption_conjuncive [simp]: "[\<cdot>p] \<in> conjunctive"
   by (simp add: assume_def dual_disjunctive assertion_disjunctive)
@@ -427,19 +419,7 @@ lemma while_pres_conj: "(x::'a::mbt_algebra_fusion) \<in> conjunctive \<Longrigh
   apply(unfold while_def)
   by (simp add: comp_pres_conj omega_pres_conj)
 
-no_notation
-  bot  ("\<bottom>") and
-  top  ("\<top>") and
-  inf  (infixl "\<sqinter>" 70) and
-  sup  (infixl "\<squnion>" 65) and
-  Inf  ("\<Sqinter>_" [900] 900) and
-  Sup  ("\<Squnion>_" [900] 900)
-
-no_syntax
-  "_INF1"     :: "pttrns \<Rightarrow> 'b \<Rightarrow> 'b"           ("(3\<Sqinter>_./ _)" [0, 10] 10)
-  "_INF"      :: "pttrn \<Rightarrow> 'a set \<Rightarrow> 'b \<Rightarrow> 'b"  ("(3\<Sqinter>_\<in>_./ _)" [0, 0, 10] 10)
-  "_SUP1"     :: "pttrns \<Rightarrow> 'b \<Rightarrow> 'b"           ("(3\<Squnion>_./ _)" [0, 10] 10)
-  "_SUP"      :: "pttrn \<Rightarrow> 'a set \<Rightarrow> 'b \<Rightarrow> 'b"  ("(3\<Squnion>_\<in>_./ _)" [0, 0, 10] 10)
+unbundle no_lattice_syntax
 
 end
 

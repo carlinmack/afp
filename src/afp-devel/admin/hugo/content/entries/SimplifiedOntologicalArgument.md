@@ -27,5 +27,10 @@
         "SimpleVariantSEinT",
         "SimpleVariantHF",
         "KanckosLethenNo2Possibilist"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-11-26"
+        }
     ]
 }

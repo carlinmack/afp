@@ -105,7 +105,7 @@ next
     by fastforce
   ultimately show ?case by(simp add: "4.IH")
 next
-  case 5 thus ?case by(simp add: not_less eq_iff)
+  case 5 thus ?case by(simp add: not_less order_eq_iff)
 qed
 
 lemma sorted_quicksort [simp]: "sorted (quicksort xs)"
@@ -284,16 +284,6 @@ lemma is_UNIV_unfold [code_unfold]:
   "set_eq UNIV A \<longleftrightarrow> is_UNIV A"
 by(auto simp add: is_UNIV_def set_eq_def)
 
-lemma [code_unfold del, symmetric, code_post del]:
-  "x \<in> set xs \<equiv> List.member xs x" 
-by(simp add: List.member_def)
-
-lemma [code_unfold del, symmetric, code_post del]:
-  "finite \<equiv> Cardinality.finite'" by(simp)
-
-lemma [code_unfold del, symmetric, code_post del]:
-  "card \<equiv> Cardinality.card'" by simp
-
 declare [[code drop:
   Set.empty
   Set.is_empty
@@ -333,26 +323,18 @@ declare [[code drop:
   List.map_project
   Sup_pred_inst.Sup_pred
   finite
-  Cardinality.finite'
   card
-  Cardinality.card'
   Inf_pred_inst.Inf_pred
   pred_of_set
-  Cardinality.subset'
-  Cardinality.eq_set
   Wellfounded.acc
   Bleast
   can_select
-  "set_eq :: 'a set \<Rightarrow> 'a set \<Rightarrow> bool"
+  (* "set_eq :: 'a set \<Rightarrow> 'a set \<Rightarrow> bool" *)
   irrefl
   bacc
   set_of_pred
   set_of_seq
   ]]
-
-declare 
-  Cardinality.finite'_def[code]
-  Cardinality.card'_def[code]
 
 subsection \<open>Set implementations\<close>
 
@@ -407,8 +389,8 @@ by(rule exI[where x="\<lambda>_. id"])(simp, unfold_locales, auto)
 setup_lifting type_definition_comp_fun_commute
 
 lemma comp_fun_commute_apply' [simp]:
-  "comp_fun_commute (comp_fun_commute_apply f)"
-using comp_fun_commute_apply[of f] by simp
+  "comp_fun_commute_on UNIV (comp_fun_commute_apply f)"
+using comp_fun_commute_apply[of f] by (simp add: comp_fun_commute_def')
 
 lift_definition set_fold_cfc :: "('a, 'b) comp_fun_commute \<Rightarrow> 'b \<Rightarrow> 'a set \<Rightarrow> 'b" is "Finite_Set.fold" .
 
@@ -435,17 +417,18 @@ lemma set_fold_cfc_code [code]:
                      | Some _ \<Rightarrow> RBT_Set2.fold (comp_fun_commute_apply f'') rbt b)"
   (is ?RBT_set)
 proof -
+  note fold_set_fold_remdups = comp_fun_commute_def' comp_fun_commute_on.fold_set_fold_remdups[OF _ subset_UNIV]
   show ?Set_Monad
-    by(auto split: option.split dest!: Collection_Eq.ID_ceq simp add: set_fold_cfc_def comp_fun_commute.fold_set_fold_remdups)
-  show ?DList_set
-    apply(auto split: option.split simp add: DList_set_def)
-    apply transfer
-    apply(auto dest: Collection_Eq.ID_ceq simp add: List.member_def[abs_def] comp_fun_commute.fold_set_fold_remdups distinct_remdups_id)
+    by(auto split: option.split dest!: Collection_Eq.ID_ceq simp add: set_fold_cfc_def fold_set_fold_remdups)
+  show ?DList_set                                 
+    apply(auto split: option.splits simp add: DList_set_def)
+    apply transfer                      
+    apply(auto dest: Collection_Eq.ID_ceq simp add: List.member_def[abs_def] fold_set_fold_remdups distinct_remdups_id)
     done
   show ?RBT_set
     apply(auto split: option.split simp add: RBT_set_conv_keys fold_conv_fold_keys)
     apply transfer
-    apply(simp add: comp_fun_commute.fold_set_fold_remdups distinct_remdups_id linorder.distinct_keys[OF ID_ccompare] ord.is_rbt_rbt_sorted)
+    apply(simp add: fold_set_fold_remdups distinct_remdups_id linorder.distinct_keys[OF ID_ccompare] ord.is_rbt_rbt_sorted)
     done
 qed simp_all
 
@@ -456,8 +439,8 @@ by(rule exI[where x="\<lambda>_. id"])(simp, unfold_locales, auto)
 setup_lifting type_definition_comp_fun_idem
 
 lemma comp_fun_idem_apply' [simp]:
-  "comp_fun_idem (comp_fun_idem_apply f)"
-using comp_fun_idem_apply[of f] by simp
+  "comp_fun_idem_on UNIV (comp_fun_idem_apply f)"
+using comp_fun_idem_apply[of f] by (simp add: comp_fun_idem_def')
 
 lift_definition set_fold_cfi :: "('a, 'b) comp_fun_idem \<Rightarrow> 'b \<Rightarrow> 'a set \<Rightarrow> 'b" is "Finite_Set.fold" .
 
@@ -481,16 +464,16 @@ lemma set_fold_cfi_code [code]:
   (is ?RBT_set)
 proof -
   show ?Set_Monad
-    by(auto split: option.split dest!: Collection_Eq.ID_ceq simp add: set_fold_cfi_def comp_fun_idem.fold_set_fold)
+    by(auto split: option.split dest!: Collection_Eq.ID_ceq simp add: set_fold_cfi_def comp_fun_idem_def' comp_fun_idem_on.fold_set_fold[OF _ subset_UNIV])
   show ?DList_set
     apply(auto split: option.split simp add: DList_set_def)
     apply transfer
-    apply(auto dest: Collection_Eq.ID_ceq simp add: List.member_def[abs_def] comp_fun_idem.fold_set_fold)
+    apply(auto dest: Collection_Eq.ID_ceq simp add: List.member_def[abs_def] comp_fun_idem_def' comp_fun_idem_on.fold_set_fold[OF _ subset_UNIV])
     done
   show ?RBT_set
     apply(auto split: option.split simp add: RBT_set_conv_keys fold_conv_fold_keys)
     apply transfer
-    apply(simp add: comp_fun_idem.fold_set_fold)
+    apply(simp add: comp_fun_idem_def' comp_fun_idem_on.fold_set_fold[OF _ subset_UNIV])
     done
 qed simp_all
 
@@ -508,7 +491,7 @@ lemma semilattice_set_apply' [simp]:
 using semilattice_set_apply[of f] by simp
 
 lemma comp_fun_idem_semilattice_set_apply [simp]:
-  "comp_fun_idem (semilattice_set_apply f)"
+  "comp_fun_idem_on UNIV (semilattice_set_apply f)"
 proof -
   interpret semilattice_set "semilattice_set_apply f" by simp
   show ?thesis by(unfold_locales)(simp_all add: fun_eq_iff left_commute)
@@ -540,12 +523,13 @@ lemma set_fold1_code [code]:
                                  else RBT_Set2.fold1 (semilattice_set_apply f'') rbt)"
   (is "?RBT_set")
 proof -
+  note fold_set_fold = comp_fun_idem_def' comp_fun_idem_on.fold_set_fold[OF _ subset_UNIV]
   show ?Set_Monad
-    by(simp add: set_fold1_def semilattice_set.eq_fold comp_fun_idem.fold_set_fold)
+    by(simp add: set_fold1_def semilattice_set.eq_fold fold_set_fold)
   show ?DList_set
-    by(simp add: set_fold1_def semilattice_set.F_set_conv_fold comp_fun_idem.fold_set_fold DList_set_def DList_Set.Collect_member split: option.split)(transfer, simp)
+    by(simp add: set_fold1_def semilattice_set.F_set_conv_fold fold_set_fold DList_set_def DList_Set.Collect_member split: option.split)(transfer, simp)
   show ?RBT_set
-    by(simp add: set_fold1_def semilattice_set.F_set_conv_fold comp_fun_idem.fold_set_fold RBT_set_def RBT_Set2.member_conv_keys RBT_Set2.fold1_conv_fold split: option.split)
+    by(simp add: set_fold1_def semilattice_set.F_set_conv_fold fold_set_fold RBT_set_def RBT_Set2.member_conv_keys RBT_Set2.fold1_conv_fold split: option.split)
 qed simp_all
 
 text \<open>Implementation of set operations\<close>
@@ -577,6 +561,10 @@ lemma finite_code [code]:
   "finite (Collect_set P) \<longleftrightarrow>
   of_phantom (finite_UNIV :: 'c finite_UNIV) \<or> Code.abort (STR ''finite Collect_set'') (\<lambda>_. finite (Collect_set P))"
 by(auto simp add: DList_set_def RBT_set_def member_conv_keys card_gt_0_iff finite_UNIV split: option.split elim: finite_subset[rotated 1])
+
+lemma CARD_code [code_unfold]:
+  "CARD('a :: card_UNIV) = of_phantom (card_UNIV :: 'a card_UNIV)"
+by(simp add: card_UNIV)
 
 lemma card_code [code]:
   fixes dxs :: "'a :: ceq set_dlist" and xs :: "'a list"
@@ -732,8 +720,13 @@ lemma Set_uminus_cenum:
   and "- (Complement B) = B"
 by(auto split: option.split dest: ID_cEnum)
 
-lemma Set_minus_code [code]: "A - B = A \<inter> (- B)"
-by(rule Diff_eq)
+lemma Set_minus_code [code]:
+  fixes rbt1 rbt2 :: "'a :: ccompare set_rbt"
+  shows "A - B = A \<inter> (- B)"
+    "RBT_set rbt1 - RBT_set rbt2 =
+    (case ID CCOMPARE('a) of None \<Rightarrow> Code.abort (STR ''minus RBT_set RBT_set: ccompare = None'') (\<lambda>_. RBT_set rbt1 - RBT_set rbt2)
+    | Some _ \<Rightarrow> RBT_set (RBT_Set2.minus rbt1 rbt2))"
+  by (auto simp: Set_member_code(3) split: option.splits)
 
 lemma Set_union_code [code]:
   fixes rbt1 rbt2 :: "'a :: ccompare set_rbt"
@@ -1217,10 +1210,10 @@ context linorder begin
 lemma sorted_list_subset_correct:
   "\<lbrakk> sorted xs; distinct xs; sorted ys; distinct ys \<rbrakk> 
   \<Longrightarrow> sorted_list_subset (=) xs ys \<longleftrightarrow> set xs \<subseteq> set ys"
-apply(induct "(=) :: 'a \<Rightarrow> 'a \<Rightarrow> bool" xs ys rule: sorted_list_subset.induct)
-apply(auto 6 2)
-apply auto
-by (metis eq_iff insert_iff subsetD)
+  apply(induct "(=) :: 'a \<Rightarrow> 'a \<Rightarrow> bool" xs ys rule: sorted_list_subset.induct)
+    apply(auto 6 2)
+   using order_antisym apply auto
+   done
 
 end
 
@@ -1245,23 +1238,7 @@ end
 
 lemmas [code] = ord.sorted_list_subset_fusion_code
 
-text \<open>
-  Define a new constant for the subset operation
-  because @{theory "HOL-Library.Cardinality"} introduces @{const "Cardinality.subset'"}
-  and rewrites @{const "subset"} to @{const "Cardinality.subset'"} 
-  based on the sort of the element type.
-\<close>
-
-definition subset_eq :: "'a set \<Rightarrow> 'a set \<Rightarrow> bool"
-where [simp, code del]: "subset_eq = (\<subseteq>)"
-
-lemma subseteq_code [code]: "(\<subseteq>) = subset_eq"
-by simp
-
-lemma subset'_code [code]: "Cardinality.subset' = subset_eq"
-by simp
-
-lemma subset_eq_code [folded subset_eq_def, code]:
+lemma subset_eq_code [code]:
   fixes A1 A2 :: "'a set"
   and rbt :: "'b :: ccompare set_rbt"
   and rbt1 rbt2 :: "'d :: {ccompare, ceq} set_rbt"
@@ -1274,9 +1251,9 @@ lemma subset_eq_code [folded subset_eq_def, code]:
   (case ID CEQ('c) of None \<Rightarrow> Code.abort (STR ''subset DList_set1: ceq = None'') (\<lambda>_. DList_set dxs \<subseteq> C)
                      | Some _ \<Rightarrow> DList_Set.dlist_all (\<lambda>x. x \<in> C) dxs)" (is ?dlist)
   "Set_Monad xs \<subseteq> C \<longleftrightarrow> list_all (\<lambda>x. x \<in> C) xs" (is ?Set_Monad)
-  and Collect_subset_eq_Complement [folded subset_eq_def, set_complement_code]:
+  and Collect_subset_eq_Complement [set_complement_code]:
   "Collect_set P \<subseteq> Complement A \<longleftrightarrow> A \<subseteq> {x. \<not> P x}" (is ?Collect_set_Compl)
-  and Complement_subset_eq_Complement [folded subset_eq_def, set_complement_code]:
+  and Complement_subset_eq_Complement [set_complement_code]:
   "Complement A1 \<subseteq> Complement A2 \<longleftrightarrow> A2 \<subseteq> A1" (is ?Compl)
   and
   "RBT_set rbt1 \<subseteq> RBT_set rbt2 \<longleftrightarrow>
@@ -1294,12 +1271,6 @@ proof -
   show ?Set_Monad by(auto simp add: list_all_iff split: option.split)
   show ?Collect_set_Compl ?Compl by auto
 qed
-
-hide_const (open) subset_eq
-hide_fact (open) subset_eq_def
-
-lemma eq_set_code [code]: "Cardinality.eq_set = set_eq"
-by(simp add: set_eq_def)
 
 lemma set_eq_code [code]:
   fixes rbt1 rbt2 :: "'b :: {ccompare, ceq} set_rbt" shows

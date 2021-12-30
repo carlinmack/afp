@@ -14,6 +14,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-18"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -31,5 +37,8 @@
     ],
     "relatedEntries": [
         "Relational_Minimum_Spanning_Trees"
-    ]
+    ],
+    "extra": {
+        "Change history": "[2020-12-09]\nmoved Hoare logic to HOL-Hoare, moved spanning trees to Relational_Minimum_Spanning_Trees\n(revision dbb9bfaf4283)"
+    }
 }

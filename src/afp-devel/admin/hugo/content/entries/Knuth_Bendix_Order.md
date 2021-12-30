@@ -29,5 +29,16 @@
     "relatedEntries": [
         "Weighted_Path_Order",
         "Functional_Ordered_Resolution_Prover"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-05-16"
+        },
+        {
+            "2020": "2020-05-15"
+        }
     ]
 }

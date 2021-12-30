@@ -909,7 +909,7 @@ lemma ordermap: "wf r \<Longrightarrow> ordermap A r a = set (ordermap A r ` {y 
   unfolding ordermap_def
   by (auto simp: wfrec_fixpoint adm_wf_def)
 
-lemma Ord_ordermap [iff]: assumes "wf r" "trans r" shows "Ord (ordermap A r x)"
+lemma wf_Ord_ordermap [iff]: assumes "wf r" "trans r" shows "Ord (ordermap A r x)"
   using \<open>wf r\<close>
 proof (induction x rule: wf_induct_rule)
   case (less u)
@@ -942,13 +942,16 @@ proof -
     if "y = ordermap A r x" "x \<in> A" "small (ordermap A r ` A)" for x y
     using that by (auto simp: less_eq_V_def ordermap [OF \<open>wf r\<close>, of A x])
   moreover have "z \<le> y" if "y \<in> ordermap A r ` A" "z \<in> elts y" for y z
-    by (metis Ord_ordermap OrdmemD assms imageE order.strict_implies_order that)
+    by (metis wf_Ord_ordermap OrdmemD assms imageE order.strict_implies_order that)
   ultimately show ?thesis
     unfolding ordertype_def Ord_def Transset_def by simp
 qed
 
 lemma Ord_ordertype [simp]: "Ord(ordertype A VWF)"
   using wf_Ord_ordertype by blast
+
+lemma Ord_ordermap [simp]: "Ord (ordermap A VWF x)"
+  by blast
 
 lemma ordertype_singleton [simp]:
   assumes "wf r" 
@@ -988,6 +991,11 @@ next
   then show ?thesis
     by (meson ordermap_mono assms mem_not_sym)
 qed
+
+lemma converse_ordermap_mono_iff:
+  assumes "wf r" "total_on A r" "x \<in> A" "y \<in> A" "small A"
+  shows "ordermap A r y \<in> elts (ordermap A r x) \<longleftrightarrow> (y, x) \<in> r"
+  by (metis assms converse_ordermap_mono ordermap_mono)
 
 lemma ordermap_surj: "elts (ordertype A r) \<subseteq> ordermap A r ` A"
   unfolding ordertype_def by simp
@@ -1075,7 +1083,7 @@ proof -
     case (less x)
     have "ordermap X r z < ordermap Y r x" if "z \<in> X" and zx: "(z,x) \<in> r" for z
       using less [OF zx] assms
-      by (meson Ord_linear2 OrdmemD Ord_ordermap ordermap_mono in_mono leD that(1) vsubsetD zx)
+      by (meson Ord_linear2 OrdmemD wf_Ord_ordermap ordermap_mono in_mono leD that(1) vsubsetD zx)
     then show ?case
       by (auto simp add: ordermap [of _ X x] \<open>small X\<close> Ord_mem_iff_lt set_image_le_iff less_eq_V_def r)
   qed
@@ -1134,6 +1142,16 @@ proof -
     by (meson \<beta> f_inv_into_f in_mono ordermap_surj)
   finally show ?thesis .
 qed
+
+lemma inv_ordermap_VWF_mono_iff:
+  assumes "M \<subseteq> ON" "small M" and "\<alpha> \<in> elts (ordertype M VWF)" and "\<beta> \<in> elts (ordertype M VWF)"
+  shows "inv_into M (ordermap M VWF) \<alpha> \<le> inv_into M (ordermap M VWF) \<beta> \<longleftrightarrow> \<alpha> \<le> \<beta>"
+  by (metis ON_imp_Ord Ord_linear_le assms dual_order.eq_iff inv_into_ordermap inv_ordermap_VWF_mono_le)
+
+lemma inv_ordermap_VWF_strict_mono_iff:
+  assumes "M \<subseteq> ON" "small M" and "\<alpha> \<in> elts (ordertype M VWF)" and "\<beta> \<in> elts (ordertype M VWF)"
+  shows "inv_into M (ordermap M VWF) \<alpha> < inv_into M (ordermap M VWF) \<beta> \<longleftrightarrow> \<alpha> < \<beta>"
+  by (simp add: assms inv_ordermap_VWF_mono_iff less_le_not_le)
 
 lemma strict_mono_on_ordertype:
   assumes "M \<subseteq> ON" "small M"
@@ -1211,7 +1229,7 @@ proof (rule ordertype_inc_eq)
     by (meson assms smaller_than_small)
   show "(ordermap A r x, ordermap A r y) \<in> VWF"
     if "x \<in> X" "y \<in> X" "(x, y) \<in> r" for x y
-    by (meson that Ord_ordermap VWF_iff_Ord_less assms ordermap_mono_less subsetD)
+    by (meson that wf_Ord_ordermap VWF_iff_Ord_less assms ordermap_mono_less subsetD)
 qed (use assms in auto)
     
 lemma ordertype_map_image:
@@ -1268,7 +1286,7 @@ proof
     moreover have "ordermap A r x \<in> ordermap B s ` B"
       by (meson L \<open>x \<in> A\<close> \<open>small A\<close> in_mono ordermap_in_ordertype ordermap_surj vsubsetD)
     moreover have "ordermap A r x < ordermap A r y"
-      using * r s by (metis (no_types) Ord_ordermap OrdmemD \<open>(x, y) \<in> r\<close> \<open>x \<in> A\<close> \<open>small A\<close> ordermap_mono)
+      using * r s by (metis (no_types) wf_Ord_ordermap OrdmemD \<open>(x, y) \<in> r\<close> \<open>x \<in> A\<close> \<open>small A\<close> ordermap_mono)
     ultimately show "(f x, f y) \<in> s"
       using \<dagger> s by (metis assms(7) f_inv_into_f inv_into_into less_asym ordermap_mono_less total_on_def)
   qed

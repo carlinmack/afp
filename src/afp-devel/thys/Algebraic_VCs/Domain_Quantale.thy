@@ -20,19 +20,6 @@ notation
   top ("\<top>") and
   inf (infixl "\<sqinter>" 65) and
   sup (infixl "\<squnion>" 65)
-(*
-  Inf ("\<Sqinter>_" [900] 900) and
-  Sup ("\<Squnion>_" [900] 900)
-*)
-
-(*
-syntax
-  "_INF1"     :: "pttrns \<Rightarrow> 'b \<Rightarrow> 'b"           ("(3\<Sqinter>_./ _)" [0, 10] 10)
-  "_INF"      :: "pttrn \<Rightarrow> 'a set \<Rightarrow> 'b \<Rightarrow> 'b"  ("(3\<Sqinter>_\<in>_./ _)" [0, 0, 10] 10)
-  "_SUP1"     :: "pttrns \<Rightarrow> 'b \<Rightarrow> 'b"           ("(3\<Squnion>_./ _)" [0, 10] 10)
-  "_SUP"      :: "pttrn \<Rightarrow> 'a set \<Rightarrow> 'b \<Rightarrow> 'b"  ("(3\<Squnion>_\<in>_./ _)" [0, 0, 10] 10)
-
-*)
 
 subsection \<open>Lattice-Ordered Monoids with Domain\<close>
 
@@ -112,7 +99,7 @@ lemma a_d_iff: "a x = 1 \<sqinter> -(x \<cdot> \<top>)"
   by (clarsimp simp: a_def dblo.d_def inf_sup_distrib1) 
 
 lemma topr: "-(x \<cdot> \<top>) \<cdot> \<top> = -(x \<cdot> \<top>)" 
-proof (rule antisym)
+proof (rule order.antisym)
   show "-(x \<cdot> \<top>) \<le> -(x \<cdot> \<top>) \<cdot> \<top>"
     by (metis mult_isol_var mult_oner order_refl top_greatest)
   have "-(x \<cdot> \<top>) \<sqinter> (x \<cdot> \<top>) = \<bottom>"
@@ -180,7 +167,7 @@ lemma ar_r_iff: "ar x = 1 \<sqinter> -(\<top> \<cdot> x)"
   by (simp add: ar_def inf_sup_distrib1 r_def)
 
 lemma topl: "\<top>\<cdot>(-(\<top> \<cdot> x)) = -(\<top> \<cdot> x)" 
-proof (rule antisym)
+proof (rule order.antisym)
   show "\<top> \<cdot> - (\<top> \<cdot> x) \<le> - (\<top> \<cdot> x)"
     by (metis bot_annir' compl_inf_bot inf_bot_iff_le ldv')
   show "- (\<top> \<cdot> x) \<le> \<top> \<cdot> - (\<top> \<cdot> x)"
@@ -254,7 +241,7 @@ sublocale dioid_one_zero "(\<squnion>)" "(\<cdot>)" "1" "\<bottom>" "(\<le>)" "(
   by (standard, simp add: le_iff_sup, auto)
 
 lemma Sup_sup_pred: "x \<squnion> Sup{y. P y} = Sup{y. y = x \<or> P y}"
-  apply (rule antisym)
+  apply (rule order.antisym)
   apply (simp add: Collect_mono Sup_subset_mono Sup_upper) 
   using Sup_least Sup_upper le_supI2 by fastforce
 
@@ -464,9 +451,10 @@ end
 
 subsection\<open>Relational Model of Boolean Domain Quantales\<close>
 
-interpretation rel_dbq: domain_boolean_quantale Inter Union "(\<inter>)" "(\<subseteq>)" "(\<subset>)" "(\<union>)" "{}" UNIV minus uminus Id "(O)"
-  apply (standard, simp_all add: O_assoc)
-  by blast +
+interpretation rel_dbq: domain_boolean_quantale
+  \<open>(-)\<close> uminus \<open>(\<inter>)\<close> \<open>(\<subseteq>)\<close> \<open>(\<subset>)\<close> \<open>(\<union>)\<close> \<open>{}\<close> UNIV \<open>\<Inter>\<close> \<open>\<Union>\<close> Id \<open>(O)\<close>
+  by standard auto
+
 
 subsection\<open>Modal Boolean Quantales\<close>
 

@@ -20,5 +20,13 @@
         "Generic_ADS_Construction",
         "Inclusion_Proof_Construction",
         "Canton_Transaction_Tree"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-27"
+        }
     ]
 }

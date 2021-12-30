@@ -2372,7 +2372,7 @@ next
         using \<open>t \<in> \<O> U\<close> \<open>i \<in> I\<close> H(2) that
         unfolding sheaf_spec_morphisms_def
         apply (simp add: D split: if_split_asm)
-        by (metis (mono_tags, hide_lams) F1  extensional_arb [OF sec_is_extensional])
+        by (metis (mono_tags, opaque_lifting) F1  extensional_arb [OF sec_is_extensional])
     qed
     thus "sheaf_spec_morphisms U (V i) t \<pp> = s i \<pp>"
       using sheaf_spec_morphisms_def D F1
@@ -3707,7 +3707,7 @@ locale lideal = subgroup_of_additive_group_of_ring +
 begin
 
 lemma subset: "I \<subseteq> R"
-  by simp
+  by blast
 
 lemma has_one_imp_equal:
   assumes "\<one> \<in> I"
@@ -4623,14 +4623,16 @@ proof -
           then show "multA r a \<in> (g \<circ> f \<down> A) \<^sup>\<inverse> A \<ww>\<^sub>C"
             by (simp add: maxC.lideal gf.multiplicative.commutes_with_composition)
         qed (use maxgf.unit_closed maxgf.composition_closed in auto)
-        show "(g \<circ> f \<down> A) \<^sup>\<inverse> A \<ww>\<^sub>C \<noteq> A"
-          by (metis f.source.multiplicative.unit_closed f.target.multiplicative.unit_closed Int_iff
-              compose_eq f.multiplicative.commutes_with_unit maxg.has_one_imp_equal maxg.neq_ring
-              vimage_eq)
-        show "\<ww>\<^sub>A \<subseteq> (g \<circ> f \<down> A) \<^sup>\<inverse> A \<ww>\<^sub>C"
-          apply clarsimp
-          using f.preimage_of_max_lideal g.preimage_of_max_lideal \<ww>\<^sub>B
-          by (metis IntD1 maxA.additive.sub compose_eq max vimageD)
+        have "\<And>x. x \<in> \<ww>\<^sub>A \<Longrightarrow> g (f x) \<in> \<ww>\<^sub>C"
+          by (metis IntD1 \<ww>\<^sub>B f.preimage_of_max_lideal g.preimage_of_max_lideal max vimageD)
+        then show "\<ww>\<^sub>A \<subseteq> (g \<circ> f \<down> A) \<^sup>\<inverse> A \<ww>\<^sub>C"
+          by (auto simp: compose_eq)
+        have "oneB \<notin> g -` \<ww>\<^sub>C"
+          using maxg.has_one_imp_equal maxg.neq_ring by force
+        then have "g oneB \<notin> \<ww>\<^sub>C"
+          by blast
+        then show "(g \<circ> f \<down> A) \<^sup>\<inverse> A \<ww>\<^sub>C \<noteq> A"
+          by (metis Int_iff compose_eq f.multiplicative.commutes_with_unit f.source.multiplicative.unit_closed vimage_eq)
       qed
     qed
   qed
@@ -4647,7 +4649,6 @@ interpretation pi:pr_ideal R \<pp> "(+)" "(\<cdot>)" \<zero> \<one>
   by (simp add: is_prime spectrum_imp_pr)
 
 interpretation top: topological_space Spec is_zariski_open
-
   by simp
 
 interpretation pr:presheaf_of_rings Spec is_zariski_open sheaf_spec sheaf_spec_morphisms
@@ -4746,7 +4747,7 @@ lemma key_map_is_coherent:
 proof-
   have "sheaf_spec_morphisms U V s \<in> \<O> V"
     using assms sheaf_spec_morphisms_are_maps map.map_closed
-    by (metis (mono_tags, hide_lams))
+    by (metis (mono_tags, opaque_lifting))
   thus "(key_map V \<circ> sheaf_spec_morphisms U V) s = key_map U s"
     by (simp add: \<open>s \<in> \<O> U\<close> assms(4) key_map_def sheaf_spec_morphisms_def)
 qed
@@ -4893,9 +4894,9 @@ next
         show ?thesis
         proof
           show "sheaf_spec_morphisms V U s' \<in> \<O> U"
-            by (metis (mono_tags, hide_lams) HU(1,2) HV(3) map.map_closed sheaf_spec_morphisms_are_maps)
+            by (metis (mono_tags, opaque_lifting) HU(1,2) HV(3) map.map_closed sheaf_spec_morphisms_are_maps)
           show "sheaf_spec_morphisms V U t' \<in> \<O> U"
-            by (metis (mono_tags, hide_lams) HU(1,2) HV(4) map.map_closed sheaf_spec_morphisms_are_maps)
+            by (metis (mono_tags, opaque_lifting) HU(1,2) HV(4) map.map_closed sheaf_spec_morphisms_are_maps)
           show "s = st.class_of U (sheaf_spec_morphisms V U s')"
             by (simp add: HU(1-3) HV same_class_from_restrict)
           show "t = st.class_of U (sheaf_spec_morphisms V U t')"
@@ -4931,10 +4932,10 @@ next
         by (simp add: Hh(1) \<open>f \<in> R\<close> \<open>g \<in> R\<close> standard_open_is_zariski_open)
       have ssm_s': "sheaf_spec_morphisms U (U \<inter> \<D>(f) \<inter> \<D>(g) \<inter> \<D>(h)) s'
                 \<in> \<O> (U \<inter> \<D>(f) \<inter> \<D>(g) \<inter> \<D>(h))"
-        by (metis (no_types, hide_lams) FU(3) Int_assoc inf_le1 izo map.map_closed sheaf_spec_morphisms_are_maps)
+        by (metis (no_types, opaque_lifting) FU(3) Int_assoc inf_le1 izo map.map_closed sheaf_spec_morphisms_are_maps)
       have ssm_t': "sheaf_spec_morphisms U (U \<inter> \<D>(f) \<inter> \<D>(g) \<inter> \<D>(h)) t'
                 \<in> \<O> (U \<inter> \<D>(f) \<inter> \<D>(g) \<inter> \<D>(h))"
-        by (metis (no_types, hide_lams) FU(4) Int_assoc inf_le1 izo map.map_closed sheaf_spec_morphisms_are_maps)      have [simp]: "\<pp> \<in> \<D>(f)" "\<pp> \<in> \<D>(g)" "\<pp> \<in> \<D>(h)"
+        by (metis (no_types, opaque_lifting) FU(4) Int_assoc inf_le1 izo map.map_closed sheaf_spec_morphisms_are_maps)      have [simp]: "\<pp> \<in> \<D>(f)" "\<pp> \<in> \<D>(g)" "\<pp> \<in> \<D>(h)"
         using Hh \<open>f \<in> R\<close> \<open>f \<notin> \<pp>\<close> \<open>g \<in> R\<close> \<open>g \<notin> \<pp>\<close> belongs_standard_open_iff st.is_elem by blast+
       have eq: "s' \<qq> = t' \<qq>" if "\<qq> \<in> U \<inter> \<D>(f) \<inter> \<D>(g) \<inter> \<D>(h)" for \<qq>
       proof -

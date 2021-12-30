@@ -29,5 +29,10 @@
     "relatedEntries": [
         "Functional_Ordered_Resolution_Prover",
         "Saturation_Framework"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

@@ -24,5 +24,13 @@
     ],
     "relatedEntries": [
         "Aggregation_Algebras"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-12-08"
+        }
     ]
 }

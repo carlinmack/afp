@@ -34,831 +34,616 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************)
 
-chapter \<open>Example: Annotation Navigation and Context Serialization\<close>
+chapter \<open>Appendix III: Examples for the SML Interfaces to Generic and Specific C11 ASTs\<close>
 
 theory C1
   imports "../C_Main"
-          "HOL-ex.Cartouche_Examples"
 begin
 
-text \<open> Operationally, the \<^theory_text>\<open>C\<close> command can be thought of as
-behaving as \<^theory_text>\<open>ML\<close>, where it is for example possible to recursively nest C
-code in C. Generally, the present chapter assumes a familiarity with all advance concepts of ML as
-described in \<^file>\<open>~~/src/HOL/Examples/ML.thy\<close>, as well as the concept of ML
-antiquotations (\<^file>\<open>~~/src/Doc/Implementation/ML.thy\<close>). However, even if
-\<^theory_text>\<open>C\<close> might resemble to \<^theory_text>\<open>ML\<close>, we will now see
-in detail that there are actually subtle differences between the two commands.\<close>
+section\<open>Access to Main C11 AST Categories via the Standard Interface \<close>
 
-section \<open>Setup of ML Antiquotations Displaying the Environment (For Debugging) \<close>
+text\<open>For the parsing root key's, c.f. ~ \<^verbatim>\<open>C_Command.thy\<close>\<close>
+
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "expression"]]
+C\<open>a + b * c - a / b\<close>
+ML\<open>val ast_expr = @{C11_CExpr}\<close>
+
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "statement"]]
+C\<open>a = a + b;\<close>
+ML\<open>val ast_stmt = @{C11_CStat}\<close>
+
+
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "external_declaration"]]
+C\<open>int  m ();\<close>
+ML\<open>val ast_ext_decl = @{C11_CExtDecl}\<close>
+
+declare [[C\<^sub>e\<^sub>n\<^sub>v\<^sub>0 = last]]
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "translation_unit"]]
+C\<open>int b; int a = a + b;\<close>
+ML\<open>val ast_unit = @{C11_CTranslUnit}
+   val env_unit = @{C\<^sub>e\<^sub>n\<^sub>v}
+  \<close>
+
+
+
+text\<open>... and completely low-level in ML:\<close>
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "expression"]]
+ML\<open>
+val src = \<open>a + d\<close>;
+val ctxt = (Context.Theory @{theory});
+val ctxt' = C_Module.C' @{C\<^sub>e\<^sub>n\<^sub>v} src ctxt;
+val tt  = Context.the_theory ctxt';
+\<close>
+
+subsection\<open>Queries on C11-Asts via the iterator\<close>
 
 ML\<open>
-fun print_top make_string f _ (_, (value, _, _)) _ = tap (fn _ => writeln (make_string value)) o f
 
-fun print_top' _ f _ _ env = tap (fn _ => writeln ("ENV " ^ C_Env.string_of env)) o f
+fun selectIdent0 (a:C11_Ast_Lib.node_content) b c=  if #tag a = "Ident0" then a::c else c;
 
-fun print_stack s make_string stack _ _ thy =
-  let
-    val () = Output.information ("SHIFT  " ^ (case s of NONE => "" | SOME s => "\"" ^ s ^ "\" ")
-                                 ^ Int.toString (length stack - 1) ^ "    +1 ")
-    val () =   stack
-            |> split_list
-            |> #2
-            |> map_index I
-            |> app (fn (i, (value, pos1, pos2)) =>
-                     writeln ("   " ^ Int.toString (length stack - i) ^ " " ^ make_string value
-                              ^ " " ^ Position.here pos1 ^ " " ^ Position.here pos2))
-  in thy end
+(* and here comes the hic >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> *)
 
-fun print_stack' s _ stack _ env thy =
-  let
-    val () = Output.information ("SHIFT  " ^ (case s of NONE => "" | SOME s => "\"" ^ s ^ "\" ")
-                                 ^ Int.toString (length stack - 1) ^ "    +1 ")
-    val () = writeln ("ENV " ^ C_Env.string_of env)
-  in thy end
+val S =  (C11_Ast_Lib.fold_cTranslationUnit selectIdent0 ast_unit []);
+
+(* ... end of hic *)
+
+fun print ({args = (C11_Ast_Lib.data_string S)::_::C11_Ast_Lib.data_string S'::[], 
+           sub_tag = STAG, tag = TAG}
+          :C11_Ast_Lib.node_content)
+         = let fun dark_matter (x:bstring) = XML.content_of (YXML.parse_body x) 
+           in writeln (":>"^dark_matter(S)^"<:>"^(S')^"<:>"^STAG^"<:>"^TAG^"<:") end;
+
+app print S; (* these strings are representations for C_Ast.abr_string, 
+                where the main constructor is C_Ast.SS_base. *)
+map (YXML.parse_body o (fn {args = (C11_Ast_Lib.data_string S)::_::C11_Ast_Lib.data_string S'::[], 
+           sub_tag = _, tag = _} =>S)) S ;
 \<close>
 
-setup \<open>ML_Antiquotation.inline @{binding print_top}
-                               (Args.context
-                                >> K ("print_top " ^ ML_Pretty.make_string_fn ^ " I"))\<close>
-setup \<open>ML_Antiquotation.inline @{binding print_top'}
-                               (Args.context
-                                >> K ("print_top' " ^ ML_Pretty.make_string_fn ^ " I"))\<close>
-setup \<open>ML_Antiquotation.inline @{binding print_stack}
-                               (Scan.peek (fn _ => Scan.option Args.text)
-                                >> (fn name => ("print_stack "
-                                                ^ (case name of NONE => "NONE"
-                                                              | SOME s => "(SOME \"" ^ s ^ "\")")
-                                                ^ " " ^ ML_Pretty.make_string_fn)))\<close>
-setup \<open>ML_Antiquotation.inline @{binding print_stack'}
-                               (Scan.peek (fn _ => Scan.option Args.text)
-                                >> (fn name => ("print_stack' "
-                                                ^ (case name of NONE => "NONE"
-                                                              | SOME s => "(SOME \"" ^ s ^ "\")")
-                                                ^ " " ^ ML_Pretty.make_string_fn)))\<close>
-
-declare[[C_lexer_trace]]
-
-section \<open>Introduction to C Annotations: Navigating in the Parsing Stack\<close>
-
-subsection \<open>Basics\<close>
-
-text \<open> Since the present theory \<^file>\<open>C1.thy\<close> is depending on
-\<^theory>\<open>Isabelle_C.C_Lexer_Language\<close> and
-\<^theory>\<open>Isabelle_C.C_Parser_Language\<close>, the syntax one is writing in the
-\<^theory_text>\<open>C\<close> command is C11. Additionally, \<^file>\<open>C1.thy\<close> also
-depends on \<^theory>\<open>Isabelle_C.C_Parser_Annotation\<close>, making it possible to write
-commands in C comments, called annotation commands, such as
-\<^theory_text>\<open>\<approx>setup\<close>. \<close>
-
-C \<comment> \<open>Nesting ML code in C comments\<close> \<open>
-int a = (((0))); /*@ highlight */
-                 /*@ \<approx>setup \<open>@{print_stack}\<close> */
-                 /*@ \<approx>setup \<open>@{print_top}\<close> */
-\<close>
-
-text \<open> In terms of execution order, nested annotation commands are not pre-filtered out of the
-C code, but executed when the C code is still being parsed. Since the parser implemented is a LALR
-parser \<^footnote>\<open>\<^url>\<open>https://en.wikipedia.org/wiki/LALR\<close>\<close>, C tokens
-are uniquely read and treated from left to right. Thus, each nested command is (supposed by default
-to be) executed when the parser has already read all C tokens before the comment associated to the
-nested command, so when the parser is in a particular intermediate parsing step (not necessarily
-final)
-\<^footnote>\<open>\<^url>\<open>https://en.wikipedia.org/wiki/Shift-reduce_parser\<close>\<close>. \<close>
-
-text \<open>The command \<^theory_text>\<open>\<approx>setup\<close> is similar to the command
-\<^theory_text>\<open>setup\<close> except that the former takes a function with additional
-arguments. These arguments are precisely depending on the current parsing state. To better examine
-these arguments, it is convenient to use ML antiquotations (be it for printing, or for doing any
-regular ML actions like PIDE reporting).
-
-Note that, in contrast with \<^theory_text>\<open>setup\<close>, the return type of the
-\<^theory_text>\<open>\<approx>setup\<close> function is not
-\<^ML_type>\<open>theory -> theory\<close> but
-\<^ML_type>\<open>Context.generic -> Context.generic\<close>. \<close>
-
-C \<comment> \<open>Positional navigation: referring to any previous parsed sub-tree in the stack\<close> \<open>
-int a = (((0
-      + 5)))  /*@@ \<approx>setup \<open>print_top @{make_string} I\<close>
-                 @ highlight
-               */
-      * 4; 
-float b = 7 / 3;
-\<close>
-
-text \<open>The special \<open>@\<close> symbol makes the command be executed whenever the first element \<open>E\<close>
- in the stack is about to be irremediably replaced by a more structured parent element (having \<open>E\<close>
-as one of its direct children). It is the parent element which is provided to the ML code.
-
-Instead of always referring to the first element of the stack, 
-\<open>N\<close> consecutive occurrences of \<open>@\<close> will make the ML code getting as argument the direct parent
-of the \<open>N\<close>-th element.\<close>
-
-C \<comment> \<open>Positional navigation: referring to any previous parsed sub-tree in the stack\<close> \<open>
-int a = (((0 + 5)))  /*@@ highlight */
-      * 4;
-
-int a = (((0 + 5)))  /*@& highlight */
-      * 4;
-
-int a = (((0 + 5)))  /*@@@@@ highlight */
-      * 4;
-
-int a = (((0 + 5)))  /*@&&&& highlight */
-      * 4;
-\<close>
-
-text \<open>\<open>&\<close> behaves as \<open>@\<close>, but instead of always giving the designated direct parent to the ML code,
-it finds the first parent ancestor making non-trivial changes in the respective grammar rule
-(a non-trivial change can be for example the registration of the position of the current AST node
-being built).\<close>
-
-C \<comment> \<open>Positional navigation: moving the comment after a number of C token\<close> \<open>
-int b = 7 / (3) * 50;
-/*@+++@@ highlight */
-long long f (int a) {
-  while (0) { return 0; }
-}
-int b = 7 / (3) * 50;
-\<close>
-
-text \<open>\<open>N\<close> consecutive occurrences of \<open>+\<close> will delay the interpretation of the comment,
-which is ignored at the place it is written. The comment is only really considered after the
-C parser has treated \<open>N\<close> more tokens.\<close>
-
-C \<comment> \<open>Closing C comments \<open>*/\<close> must close anything, even when editing ML code\<close> \<open>
-int a = (((0 //@ (* inline *) \<approx>setup \<open>fn _ => fn _ => fn _ => fn context => let in (* */ *) context end\<close>
-             /*@ \<approx>setup \<open>(K o K o K) I\<close> (*   * /   *) */
-         )));
-\<close>
-
-C \<comment> \<open>Inline comments with antiquotations\<close> \<open>
- /*@ \<approx>setup\<open>(K o K o K) (fn x => K x @{con\
-text (**)})\<close> */ // break of line activated everywhere (also in antiquotations)
-int a = 0; //\
-@ \<approx>setup\<open>(K o K o K) (fn x => K x @{term \<open>a \
-          + b\<close> (* (**) *\      
-\     
-)})\<close>
-\<close>
-
-subsection \<open>Erroneous Annotations Treated as Regular C Comments\<close>
-
-C \<comment> \<open>Permissive Types of Antiquotations\<close> \<open>
-int a = 0;
-  /*@ \<approx>setup (* Errors: Explicit warning + Explicit markup reporting *)
-   */
-  /** \<approx>setup (* Errors: Turned into tracing report information *)
-   */
-
-  /** \<approx>setup \<open>fn _ => fn _ => fn _ => I\<close> (* An example of correct syntax accepted as usual *)
-   */
-\<close>
-
-C \<comment> \<open>Permissive Types of Antiquotations\<close> \<open>
-int a = 0;
-  /*@ \<approx>setup \<open>fn _ => fn _ => fn _ => I\<close>
-      \<approx>setup (* Parsing error of a single command does not propagate to other commands *)
-      \<approx>setup \<open>fn _ => fn _ => fn _ => I\<close>
-      context
-   */
-  /** \<approx>setup \<open>fn _ => fn _ => fn _ => I\<close>
-      \<approx>setup (* Parsing error of a single command does not propagate to other commands *)
-      \<approx>setup \<open>fn _ => fn _ => fn _ => I\<close>
-      context
-   */
-  
-  /*@ \<approx>setup (* Errors in all commands are all rendered *)
-      \<approx>setup (* Errors in all commands are all rendered *)
-      \<approx>setup (* Errors in all commands are all rendered *)
-   */
-  /** \<approx>setup (* Errors in all commands makes the whole comment considered as an usual comment *)
-      \<approx>setup (* Errors in all commands makes the whole comment considered as an usual comment *)
-      \<approx>setup (* Errors in all commands makes the whole comment considered as an usual comment *)
-   */
-\<close>
-
-subsection \<open>Bottom-Up vs. Top-Down Evaluation\<close>
+subsection\<open>A small compiler to Isabelle term's.\<close>
 
 ML\<open>
-structure Example_Data = Generic_Data (type T = string list
-                                       val empty = [] val extend = I val merge = K empty)
-fun add_ex s1 s2 =
-  Example_Data.map (cons s2)
-  #> (fn context => let val () = Output.information (s1 ^ s2)
-                        val () = app (fn s => writeln ("  Data content: " ^ s))
-                                     (Example_Data.get context)
-                    in context end)
+
+fun drop_dark_matter x = (XML.content_of o YXML.parse_body) x 
+
+
+fun node_content_2_free (x : C11_Ast_Lib.node_content) =
+    let  val C11_Ast_Lib.data_string a_markup = hd(#args(x));
+         val id = hd(tl(String.tokens (fn x => x = #"\"")(drop_dark_matter a_markup)))
+    in Free(id,dummyT) end  (* no type inference *);
+
+
+
+fun selectIdent0Binary (a as { tag, sub_tag, args }:C11_Ast_Lib.node_content) 
+                       (b:  C_Ast.nodeInfo ) 
+                       (c : term list)=  
+    case tag of
+      "Ident0" => (node_content_2_free a)::c
+     |"CBinary0" => (case (drop_dark_matter sub_tag, c) of 
+                      ("CAddOp0",b::a::R) => (Const("Groups.plus_class.plus",dummyT) $ a $ b :: R)
+                    | ("CMulOp0",b::a::R) => (Const("Groups.times_class.times",dummyT) $ a $ b :: R)
+                    | ("CDivOp0",b::a::R) => (Const("Rings.divide_class.divide",dummyT) $ a $ b :: R)
+                    | ("CSubOp0",b::a::R) => (Const("Groups.minus_class.minus",dummyT) $ a $ b :: R)
+                    | _ => (writeln ("sub_tag all " ^sub_tag^" :>> "^ @{make_string} c);c ))
+     | _ => c;
+
+
 \<close>
 
-setup \<open>Context.theory_map (Example_Data.put [])\<close>
-
-declare[[ML_source_trace]]
-declare[[C_parser_trace]]
-
-C \<comment> \<open>Arbitrary interleaving of effects: \<open>\<approx>setup\<close> vs \<open>\<approx>setup\<Down>\<close>\<close> \<open>
-int b,c,d/*@@ \<approx>setup \<open>fn s => fn x => fn env => @{print_top} s x env
-                                                #> add_ex "evaluation of " "3_print_top"\<close>
-          */,e = 0; /*@@
-              \<approx>setup \<open>fn s => fn x => fn env => @{print_top} s x env
-                                                #> add_ex "evaluation of " "4_print_top"\<close> */
-
-int b,c,d/*@@ \<approx>setup\<Down> \<open>fn s => fn x => fn env => @{print_top} s x env
-                                                #> add_ex "evaluation of " "6_print_top"\<close>
-          */,e = 0; /*@@
-              \<approx>setup\<Down> \<open>fn s => fn x => fn env => @{print_top} s x env
-                                                #> add_ex "evaluation of " "5_print_top"\<close> */
+text\<open>
+And here comes the ultra-hic: direct compilation of C11 expressions into (untyped) \<open>\<lambda>\<close>-terms in Isabelle.
+The term-list of the @{ML \<open>C11_Ast_Lib.fold_cExpression\<close>} - iterator serves as term-stack in which
+sub-expressions were stored in reversed polish notation. The example shows that the resulting term is
+structurally equivalent.    
 \<close>
-
-section \<open>Reporting of Positions and Contextual Update of Environment\<close>
-
-text \<open>
-To show the content of the parsing environment, the ML antiquotations \<open>print_top'\<close> and \<open>print_stack'\<close>
-will respectively be used instead of \<open>print_top\<close> and \<open>print_stack\<close>. 
-This example suite allows to explore the bindings represented in the C environment 
-and made accessible in PIDE for hovering. \<close>
-
-subsection \<open>Reporting: \<open>typedef\<close>, \<open>enum\<close>\<close> (*\<open>struct\<close>*)
-
-declare [[ML_source_trace = false]]
-declare [[C_lexer_trace = false]]
-
-C \<comment> \<open>Reporting of Positions\<close> \<open>
-typedef int i, j;
-  /*@@ \<approx>setup \<open>@{print_top'}\<close> @highlight */ //@ +++++@ \<approx>setup \<open>@{print_top'}\<close> +++++@highlight
-int j = 0;
-typedef int i, j;
-j jj1 = 0;
-j jj = jj1;
-j j = jj1 + jj;
-typedef i j;
-typedef i j;
-typedef i j;
-i jj = jj;
-j j = jj;
-\<close>
-
-C \<comment> \<open>Nesting type definitions\<close> \<open>
-typedef int j;
-j a = 0;
-typedef int k;
-int main (int c) {
-  j b = 0;
-  typedef int k;
-  typedef k l;
-  k a = c;
-  l a = 0;
-}
-k a = a;
-\<close>
-
-C \<comment> \<open>Reporting \<open>enum\<close>\<close> \<open>
-enum a b; // bound case: undeclared
-enum a {aaa}; // define case
-enum a {aaa}; // define case: redefined
-enum a _; // bound case
-
-__thread (f ( enum a,  enum a vv));
-
-enum a /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.function_definition4\<close>\<close>*/ f (enum a a) {
-}
-
-__thread enum a /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.declaration_specifier2\<close>\<close>*/ f (enum a a) {
-  enum c {ccc}; // define case
-  __thread enum c f (enum c a) {
-    return 0;
-  }
-  enum c /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.nested_function_definition2\<close>\<close>*/ f (enum c a) {
-    return 0;
-  }
-  return 0;
-}
-
-enum z {zz}; // define case
-int main (enum z *x) /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.parameter_type_list2\<close>\<close>*/ {
-  return zz; }
-int main (enum a *x, ...) /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.parameter_type_list3\<close>\<close>*/ {
-  return zz; }
-\<close>
-
-subsection \<open>Continuation Calculus with the C Environment: Presentation in ML\<close>
-
-declare [[C_parser_trace = false]]
-
 ML\<open>
-val C = tap o C_Module.C
-val C' = C_Module.C'
+val S =  (C11_Ast_Lib.fold_cExpression selectIdent0Binary ast_expr []);
+val S' = @{term "a + b * c - a / b"};
 \<close>
 
-C \<comment> \<open>Nesting C code without propagating the C environment\<close> \<open>
-int a = 0;
-int b = 7 / (3) * 50
-  /*@@@@@ \<approx>setup \<open>fn _ => fn _ => fn _ =>
-               C      \<open>int b = a + a + a + a + a + a + a
-                       ;\<close> \<close> */;
-\<close>
+section \<open>Late-binding a Simplistic Post-Processor for ASTs and ENVs\<close>
 
-C \<comment> \<open>Nesting C code and propagating the C environment\<close> \<open>
-int a = 0;
-int b = 7 / (3) * 50
-  /*@@@@@ \<approx>setup \<open>fn _ => fn _ => fn env =>
-               C' env \<open>int b = a + a + a + a + a + a + a
-                       ;\<close> \<close> */;
-\<close>
-
-subsection \<open>Continuation Calculus with the C Environment: Presentation with Outer Commands\<close>
-
-ML\<open>
-val _ = Theory.setup
-          (C_Inner_Syntax.command0 
-            (fn src => fn context => C' (C_Stack.Data_Lang.get' context |> #2) src context)
-            C_Parse.C_source
-            ("C'", \<^here>, \<^here>, \<^here>))
-\<close>
-
-C \<comment> \<open>Nesting C code without propagating the C environment\<close> \<open>
-int f (int a) {
-  int b = 7 / (3) * 50 /*@ C  \<open>int b = a + a + a + a + a + a + a;\<close> */;
-  int c = b + a + a + a + a + a + a;
-} \<close>
-
-C \<comment> \<open>Nesting C code and propagating the C environment\<close> \<open>
-int f (int a) {
-  int b = 7 / (3) * 50 /*@ C' \<open>int b = a + a + a + a + a + a + a;\<close> */;
-  int c = b + b + b + b + a + a + a + a + a + a;
-} \<close>
-
-C \<comment> \<open>Miscellaneous\<close> \<open>
-int f (int a) {
-  int b = 7 / (3) * 50 /*@ C  \<open>int b = a + a + a + a + a; //@ C' \<open>int c = b + b + b + b + a;\<close> \<close> */;
-  int b = 7 / (3) * 50 /*@ C' \<open>int b = a + a + a + a + a; //@ C' \<open>int c = b + b + b + b + a;\<close> \<close> */;
-  int c = b + b + b + b + a + a + a + a + a + a;
-} \<close>
-
-subsection \<open>Continuation Calculus with the C Environment: Deep-First Nesting vs Breadth-First Folding: Propagation of \<^ML_type>\<open>C_Env.env_lang\<close>\<close>
-
-C \<comment> \<open>Propagation of report environment while manually composing at ML level (with \<open>#>\<close>)\<close>
-  \<comment> \<open>In \<open>c1 #> c2\<close>, \<open>c1\<close> and \<open>c2\<close> should not interfere each other.\<close> \<open>
-//@ ML \<open>fun C_env src _ _ env = C' env src\<close>
-int a;
-int f (int b) {
-int c = 0; /*@ \<approx>setup \<open>fn _ => fn _ => fn env =>
-     C' env \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C' env \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-\<close> */
-int e = a + b + c + d;
-}\<close>
-
-C \<comment> \<open>Propagation of directive environment (evaluated before parsing)
-      to any other annotations (evaluated at parsing time)\<close> \<open>
-#undef int
-#define int(a,b) int
-#define int int
-int a;
-int f (int b) {
-int c = 0; /*@ \<approx>setup \<open>fn _ => fn _ => fn env =>
-     C' env \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C' env \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ \<approx>setup \<open>C_env \<open>int e = a + b + c + d;\<close>\<close>\<close>
-\<close> */
-#undef int
-int e = a + b + c + d;
-}
-\<close>
-
-subsection \<open>Continuation Calculus with the C Environment: Deep-First Nesting vs Breadth-First Folding: Propagation of \<^ML_type>\<open>C_Env.env_tree\<close>\<close>
+subsection\<open>Definition of Core Data Structures\<close>
+text\<open>The following setup just stores the result of the parsed values in the environment.\<close>
 
 ML\<open>
 structure Data_Out = Generic_Data
-  (type T = int
-   val empty = 0
+  (type T = (C_Grammar_Rule.ast_generic * C_Antiquote.antiq C_Env.stream) list
+   val empty = []
    val extend = I
    val merge = K empty)
 
-fun show_env0 make_string f msg context =
-  Output.information ("(" ^ msg ^ ") " ^ make_string (f (Data_Out.get context)))
+fun get_CTranslUnit thy =
+  let val context = Context.Theory thy
+  in (Data_Out.get context 
+      |> map (apfst (C_Grammar_Rule.get_CTranslUnit #> the)), C_Module.Data_In_Env.get context)
+  end
 
-val show_env = tap o show_env0 @{make_string} I
+fun get_CExpr thy =
+  let val context = Context.Theory thy
+  in (Data_Out.get context 
+      |> map (apfst (C_Grammar_Rule.get_CExpr #> the)), C_Module.Data_In_Env.get context)
+  end
+
 \<close>
 
-setup \<open>Context.theory_map (C_Module.Data_Accept.put (fn _ => fn _ => Data_Out.map (fn x => x + 1)))\<close>
+text\<open>... this gives :\<close>
 
-C \<comment> \<open>Propagation of Updates\<close> \<open>
-typedef int i, j;
-int j = 0;
-typedef int i, j;
-j jj1 = 0;
-j jj = jj1; /*@@ \<approx>setup \<open>fn _ => fn _ => fn _ => show_env "POSITION 0"\<close> @\<approx>setup \<open>@{print_top'}\<close> */
-typedef int k; /*@@ \<approx>setup \<open>fn _ => fn _ => fn env =>
-                          C' env \<open>k jj = jj; //@@ \<approx>setup \<open>@{print_top'}\<close>
-                                  k jj = jj + jj1;
-                                  typedef k l; //@@ \<approx>setup \<open>@{print_top'}\<close>\<close>
-                          #> show_env "POSITION 1"\<close> */
-j j = jj1 + jj; //@@ \<approx>setup \<open>@{print_top'}\<close>
-typedef i j; /*@@ \<approx>setup \<open>fn _ => fn _ => fn _ => show_env "POSITION 2"\<close> */
-typedef i j;
-typedef i j;
-i jj = jj;
-j j = jj;
+ML\<open> Data_Out.map: (   (C_Grammar_Rule.ast_generic * C_Antiquote.antiq C_Env.stream) list 
+                   -> (C_Grammar_Rule.ast_generic * C_Antiquote.antiq C_Env.stream) list) 
+                  -> Context.generic -> Context.generic \<close>
+
+subsection\<open>Registering A Store-Function in \<^ML>\<open>C_Module.Data_Accept.put\<close>\<close>
+
+text\<open>... as C-method call-back. \<close> 
+setup \<open>Context.theory_map (C_Module.Data_Accept.put
+                            (fn ast => fn env_lang =>
+                              Data_Out.map (cons (ast, #stream_ignored env_lang |> rev))))\<close>
+
+
+subsection\<open>Registering an ML-Antiquotation with an Access-Function \<close>
+ML\<open>
+val _ = Theory.setup(
+  ML_Antiquotation.value_embedded \<^binding>\<open>C11_AST_CTranslUnit\<close>
+    (Args.context -- Scan.lift Args.name_position >> (fn (ctxt, (name, pos)) =>
+      (warning"arg variant not implemented";"get_CTranslUnit (Context.the_global_context())"))
+    || Scan.succeed "get_CTranslUnit (Context.the_global_context())"))
+
 \<close>
 
-ML\<open>show_env "POSITION 3" (Context.Theory @{theory})\<close>
+subsection\<open>Accessing the underlying C11-AST's via the ML Interface.\<close>
 
-setup \<open>Context.theory_map (C_Module.Data_Accept.put (fn _ => fn _ => I))\<close>
-
-subsection \<open>Reporting: Scope of Recursive Functions\<close>
-
-declare [[C_starting_env = last]]
-
-C \<comment> \<open>Propagation of Updates\<close> \<open>
-int a = 0;
-int b = a * a + 0;
-int jjj = b;
-int main (void main(int *x,int *y),int *jjj) {
-  return a + jjj + main(); }
-int main2 () {
-  int main3 () { main2() + main(); }
-  int main () { main2() + main(); }
-  return a + jjj + main3() + main(); }
-\<close>
-
-C \<open>
-int main3 () { main2 (); }
-\<close>
-
-declare [[C_starting_env = empty]]
-
-subsection \<open>Reporting: Extensions to Function Types, Array Types\<close>
-
-C \<open>int f (int z);\<close>
-C \<open>int * f (int z);\<close>
-C \<open>int (* f) (int z /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.declarator1\<close>\<close>*/);\<close>
-C \<open>typedef int (* f) (int z);\<close>
-C \<open>int f (int z) {}\<close>
-C \<open>int * f (int z) {return z;}\<close>
-C \<open>int ((* f) (int z1, int z2)) {return z1 + z2;}\<close>
-C \<open>int (* (* f) (int z1, int z2)) {return z1 + z2;}\<close>
-C \<open>typedef int (* f) (int z); f uuu (int b) {return b;};\<close>
-C \<open>typedef int (* (* f) (int z, int z)) (int a); f uuu (int b) {return b;};\<close>
-C \<open>struct z { int (* f) (int z); int (* (* ff) (int z)) (int a); };\<close>
-C \<open>double (* (* f (int a /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Wrap_Overloading.declarator1\<close>\<close>*/)) (int a, double d)) (char a);\<close>
-C \<open>double (* (((* f) []) (int a)) (int b, double c)) (char d) {int a = b + c + d;}\<close>
-C \<open>double ((*((f) (int a))) (int a /* \<leftarrow>\<comment> \<open>\<^ML>\<open>C_Grammar_Rule_Lib.doFuncParamDeclIdent\<close>\<close>*/, double)) (char c) {int a = 0;}\<close>
-
-C \<comment> \<open>Nesting functions\<close> \<open>
-double (* (* f (int a)) (int a, double)) (char c) {
-double (* (* f (int a)) (double a, int a)) (char) {
-  return a;
-}
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "translation_unit"]]
+C\<open>
+void swap(int *x,int *y)
+{
+    int temp;
+ 
+    temp = *x;
+    *x = *y;
+    *y = temp;
 }
 \<close>
 
-C \<comment> \<open>Old function syntax\<close> \<open>
-f (x) int x; {return x;}
+ML\<open>
+local open C_Ast in
+val _ = CTranslUnit0
+val (A::R, _) = @{C11_AST_CTranslUnit};
+val (CTranslUnit0 (t,u), v) = A
+fun rule_trans (CTranslUnit0 (t,u), v) = case C_Grammar_Rule_Lib.decode u of 
+                  Left (p1,p2) => writeln (Position.here p1 ^ " " ^ Position.here p2)
+                | Right S => warning ("Not expecting that value:"^S)
+val bb = rule_trans A
+end
+
+val (R, env_final) = @{C11_AST_CTranslUnit};
+val rules = map rule_trans R;
+@{C\<^sub>e\<^sub>n\<^sub>v}
 \<close>
 
-section \<open>General Isar Commands\<close>
 
-locale zz begin definition "z' = ()"
-          end
+section \<open>Example: A Possible Semantics for \<open>#include\<close>\<close>
 
-C \<comment> \<open>Mixing arbitrary commands\<close> \<open>
-int a = 0;
-int b = a * a + 0;
-int jjj = b;
-/*@
-  @@@ ML \<open>@{lemma \<open>A \<and> B \<longrightarrow> B \<and> A\<close> by (ml_tactic \<open>blast_tac ctxt 1\<close>)}\<close>
-  definition "a' = ()"
-  declare [[ML_source_trace]]
-  lemma (in zz) \<open>A \<and> B \<longrightarrow> B \<and> A\<close> by (ml_tactic \<open>blast_tac ctxt 1\<close>)
-  definition (in zz) "z = ()"
-  corollary "zz.z' = ()"
-   apply (unfold zz.z'_def)
-  by blast
-  theorem "True &&& True" by (auto, presburger?)
-*/
-\<close>
+subsubsection \<open>Implementation\<close>
 
-declare [[ML_source_trace = false]]
+text \<open> The CPP directive \<^C>\<open>#include _\<close> is used to import signatures of
+modules in C. This has the effect that imported identifiers are included in the C environment and,
+as a consequence, appear as constant symbols and not as free variables in the output. \<close>
 
-C \<comment> \<open>Backslash newlines must be supported by \<^ML>\<open>C_Token.syntax'\<close> (in particular in keywords)\<close> \<open>
-//@  lem\
-ma (i\
-n z\
-z) \
-\<open>\  
-AA \<and> B\
-                    \<longrightarrow>\     
-                    B \<and> A\    
-\
-A\<close> b\
-y (ml_t\
-actic \<open>\
-bla\
-st_tac c\
-txt\
- 0\  
-001\<close>)
-\<close>
-
-section \<open>Starting Parsing Rule\<close>
-
-subsection \<open>Basics\<close>
-
-C \<comment> \<open>Parameterizing starting rule\<close> \<open>
-/*@
-declare [[C_starting_rule = "statement"]]
-C \<open>while (a) {}\<close>
-C \<open>a = 2;\<close>
-declare [[C_starting_rule = "expression"]]
-C \<open>2 + 3\<close>
-C \<open>a = 2\<close>
-C \<open>a[1]\<close>
-C \<open>&a\<close>
-C \<open>a\<close>
-*/
-\<close>
-
-subsection \<open>Embedding in Inner Terms\<close>
-
-term \<open>\<^C> \<comment> \<open>default behavior of parsing depending on the activated option\<close> \<open>0\<close>\<close>
-term \<open>\<^C>\<^sub>u\<^sub>n\<^sub>i\<^sub>t \<comment> \<open>force the explicit parsing\<close> \<open>f () {while (a) {}; return 0;} int a = 0;\<close>\<close>
-term \<open>\<^C>\<^sub>d\<^sub>e\<^sub>c\<^sub>l \<comment> \<open>force the explicit parsing\<close> \<open>int a = 0; \<close>\<close>
-term \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r \<comment> \<open>force the explicit parsing\<close> \<open>a\<close>\<close>
-term \<open>\<^C>\<^sub>s\<^sub>t\<^sub>m\<^sub>t \<comment> \<open>force the explicit parsing\<close> \<open>while (a) {}\<close>\<close>
-
-declare [[C_starting_rule = "translation_unit"]]
-
-term \<open>\<^C> \<comment> \<open>default behavior of parsing depending on the current option\<close> \<open>int a = 0;\<close>\<close>
-
-subsection \<open>User Defined Setup of Syntax\<close>
-
-setup \<open>C_Module.C_Term.map_expression (fn _ => fn _ => fn _ => @{term "10 :: nat"})\<close>
-setup \<open>C_Module.C_Term.map_statement (fn _ => fn _ => fn _ => @{term "20 :: nat"})\<close>
-value \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>1\<close> + \<^C>\<^sub>s\<^sub>t\<^sub>m\<^sub>t\<open>for (;;);\<close>\<close>
-
-setup \<comment> \<open>redefinition\<close> \<open>C_Module.C_Term.map_expression
-                           (fn _ => fn _ => fn _ => @{term "1000 :: nat"})\<close>
-value \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>1\<close> + \<^C>\<^sub>s\<^sub>t\<^sub>m\<^sub>t\<open>for (;;);\<close>\<close>
-
-setup \<open>C_Module.C_Term.map_default (fn _ => fn _ => fn _ => @{term "True"})\<close>
-
-subsection \<open>Validity of Context for Annotations\<close>
-
-ML \<open>fun fac x = if x = 0 then 1 else x * fac (x - 1)\<close>
-
-ML \<comment> \<open>Execution of annotations in term possible in (the outermost) \<^theory_text>\<open>ML\<close>\<close> \<open>
-\<^term>\<open> \<^C> \<open>int c = 0; /*@ ML \<open>fac 100\<close> */\<close> \<close>
-\<close>
-
-definition \<comment> \<open>Execution of annotations in term possible in \<^ML_type>\<open>local_theory\<close> commands (such as \<^theory_text>\<open>definition\<close>)\<close> \<open>
-term = \<^C> \<open>int c = 0; /*@ ML \<open>fac 100\<close> */\<close>
-\<close>
-
-section \<open>Scopes of Inner and Outer Terms\<close>
+text \<open> The following structure is an extra mechanism to define the effect of \<^C>\<open>#include _\<close> wrt. to
+its definition in its environment. \<close>
 
 ML \<open>
+structure Directive_include = Generic_Data
+  (type T = (Input.source * C_Env.markup_ident) list Symtab.table
+   val empty = Symtab.empty
+   val extend = I
+   val merge = K empty)
+\<close>
+
+ML \<comment> \<open>\<^theory>\<open>Pure\<close>\<close> \<open>
 local
-fun bind scan ((stack1, (to_delay, stack2)), _) =
-  C_Parse.range scan
-  >> (fn (src, range) =>
-      C_Env.Parsing
-        ( (stack1, stack2)
-        , ( range
-          , C_Inner_Syntax.bottom_up
-              (fn _ => fn context =>
-                ML_Context.exec
-                  (tap (fn _ => Syntax.read_term (Context.proof_of context)
-                                                 (Token.inner_syntax_of src)))
-                  context)
-          , Symtab.empty
-          , to_delay)))
-in
+fun return f (env_cond, env) = ([], (env_cond, f env))
+
 val _ =
   Theory.setup
-    (   C_Annotation.command'
-          ("term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r", \<^here>)
-          ""
-          (bind (C_Token.syntax' (Parse.token Parse.cartouche)))
-     #> C_Inner_Syntax.command0
-          (C_Inner_Toplevel.keep'' o C_Inner_Isar_Cmd.print_term)
-          (C_Token.syntax' (Scan.succeed [] -- Parse.term))
-          ("term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r", \<^here>, \<^here>, \<^here>))
+  (Context.theory_map
+    (C_Context0.Directives.map
+      (C_Context.directive_update ("include", \<^here>)
+        ( (return o K I)
+        , fn C_Lex.Include (C_Lex.Group2 (toks_bl, _, tok :: _)) =>
+               let
+                 fun exec file =
+                   if exists (fn C_Scan.Left _ => false | C_Scan.Right _ => true) file then
+                     K (error ("Unsupported character"
+                               ^ Position.here
+                                   (Position.range_position
+                                     (C_Lex.pos_of tok, C_Lex.end_pos_of (List.last toks_bl)))))
+                   else
+                     fn (env_lang, env_tree) =>
+                       fold
+                         (fn (src, data) => fn (env_lang, env_tree) => 
+                           let val (name, pos) = Input.source_content src
+                           in C_Grammar_Rule_Lib.shadowTypedef0''''
+                                name
+                                [pos]
+                                data
+                                env_lang
+                                env_tree
+                           end)
+                         (these (Symtab.lookup (Directive_include.get (#context env_tree))
+                                               (String.concat
+                                                 (maps (fn C_Scan.Left s => [s] | _ => []) file))))
+                         (env_lang, env_tree)
+               in
+                 case tok of
+                   C_Lex.Token (_, (C_Lex.String (_, file), _)) => exec file
+                 | C_Lex.Token (_, (C_Lex.File (_, file), _)) => exec file
+                 | _ => tap (fn _ => (* not yet implemented *)
+                                     warning ("Ignored directive"
+                                              ^ Position.here 
+                                                  (Position.range_position
+                                                    ( C_Lex.pos_of tok
+                                                    , C_Lex.end_pos_of (List.last toks_bl)))))
+               end |> K |> K
+           | _ => K (K I)))))
+in end
+\<close>
+
+ML \<open>
+structure Include =
+struct
+fun init name vars =
+  Context.theory_map
+    (Directive_include.map
+      (Symtab.update
+        (name, map (rpair {global = true, params = [], ret = C_Env.Previous_in_stack}) vars)))
+
+fun append name vars =
+  Context.theory_map
+    (Directive_include.map
+      (Symtab.map_default
+        (name, [])
+        (rev o fold (cons o rpair {global = true, params = [], ret = C_Env.Previous_in_stack}) vars
+             o rev)))
+
+val show =
+  Context.theory_map
+    (Directive_include.map
+      (tap
+        (Symtab.dest
+         #>
+          app (fn (fic, vars) =>
+            writeln ("Content of \"" ^ fic ^ "\": "
+                     ^ String.concat (map (fn (i, _) => let val (name, pos) = Input.source_content i
+                                                        in name ^ Position.here pos ^ " " end)
+                                          vars))))))
 end
 \<close>
 
-C \<open>
-int z = z;
- /*@ C  \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
-     C  \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close> */\<close>
-term(*outer*) \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
+setup \<open>Include.append "stdio.h" [\<open>printf\<close>, \<open>scanf\<close>]\<close>
+
+subsubsection \<open>Tests\<close>
 
 C \<open>
-int z = z;
- /*@ C  \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
-     C  \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close> */\<close>
-term(*outer*) \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
+//@ setup \<open>Include.append "tmp" [\<open>b\<close>]\<close>
+#include "tmp"
+int a = b;
 
-declare [[C_starting_env = last]]
+\<close>
 
 C \<open>
-int z = z;
- /*@ C  \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
-     C  \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-     C' \<open>//@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>\<close>
-             term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close> */\<close>
-term(*outer*) \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>z\<close>\<close>
+int b = 0;
+//@ setup \<open>Include.init "tmp" [\<open>b\<close>]\<close>
+#include "tmp"
+int a = b;
+\<close>
 
-declare [[C_starting_env = empty]]
-
-C \<comment> \<open>Propagation of report environment while manually composing at ML level\<close> \<open>
-int a;
-int f (int b) {
+C \<open>
 int c = 0;
-/*@ \<approx>setup \<open>fn _ => fn _ => fn env =>
-     C' env \<open>int d = a + b + c + d; //@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close> term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close> term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close>\<close>
-  #> C' env \<open>int d = a + b + c + d; //@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close> term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close>\<close>
-  #> C      \<open>int d = a + b + c + d; //@ term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close> term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close>\<close>
-\<close>
-    term\<^sub>i\<^sub>n\<^sub>n\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close>
-    term\<^sub>o\<^sub>u\<^sub>t\<^sub>e\<^sub>r \<open>\<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>c\<close> + \<^C>\<^sub>e\<^sub>x\<^sub>p\<^sub>r\<open>d\<close>\<close> */
-int e = a + b + c + d;
-}\<close>
-
-section \<open>Calculation in Directives\<close>
-
-subsection \<open>Annotation Command Classification\<close>
-
-C \<comment> \<open>Lexing category vs. parsing category\<close> \<open>
-int a = 0;
-
-// \<comment> \<open>Category 2: only parsing\<close>
-
-//@   \<approx>setup  \<open>K (K (K I))\<close> (* evaluation at parsing *)
-//@@  \<approx>setup\<Down> \<open>K (K (K I))\<close> (* evaluation at parsing *)
-
-//@   highlight             (* evaluation at parsing *)
-//@@  highlight\<Down>            (* evaluation at parsing *)
-
-// \<comment> \<open>Category 3: with lexing\<close>
-
-//@  #setup  I              (* evaluation at lexing (and directives resolving) *)
-//@   setup  I              (* evaluation at parsing *)
-//@@  setup\<Down> I              (* evaluation at parsing *)
-
-//@  #ML     I              (* evaluation at lexing (and directives resolving) *)
-//@   ML     I              (* evaluation at parsing *)
-//@@  ML\<Down>    I              (* evaluation at parsing *)
-
-//@  #C     \<open>\<close>              (* evaluation at lexing (and directives resolving) *)
-//@   C     \<open>\<close>              (* evaluation at parsing *)
-//@@  C\<Down>    \<open>\<close>              (* evaluation at parsing *)
+//@ setup \<open>Include.append "tmp" [\<open>c\<close>]\<close>
+//@ setup \<open>Include.append "tmp" [\<open>c\<close>]\<close>
+#include "tmp"
+int a = b + c;
+//@ setup \<open>Include.show\<close>
 \<close>
 
-C \<comment> \<open>Scheduling example\<close> \<open>
-//@+++++   ML  \<open>writeln "2"\<close>
-int a = 0;
-//@@       ML\<Down> \<open>writeln "3"\<close>
-//@       #ML  \<open>writeln "1"\<close>
-\<close>
+C\<open>
 
-C \<comment> \<open>Scheduling example\<close> \<open>
-//*  lemma True  by simp
-//* #lemma True #by simp
-//* #lemma True  by simp
-//*  lemma True #by simp
-\<close>
-
-C \<comment> \<open>Scheduling example\<close> \<open> /*@
-lemma \<open>1 = one\<close>
-      \<open>2 = two\<close>
-      \<open>two + one = three\<close>
-by auto
-
-#definition [simp]: \<open>three = 3\<close>
-#definition [simp]: \<open>two   = 2\<close>
-#definition [simp]: \<open>one   = 1\<close>
-*/ \<close>
-
-subsection \<open>Generalizing ML Antiquotations with C Directives\<close>
-
-ML \<open>
-structure Directive_setup_define = Generic_Data
-  (type T = int
-   val empty = 0
-   val extend = I
-   val merge = K empty)
-
-fun setup_define1 pos f =
-  C_Directive.setup_define
-    pos
-    (fn toks => fn (name, (pos1, _)) =>
-      tap (fn _ => writeln ("Executing " ^ name ^ Position.here pos1 ^ " (only once)"))
-      #> pair (f toks))
-    (K I)
-
-fun setup_define2 pos = C_Directive.setup_define pos (K o pair)
-\<close>
-
-C \<comment> \<open>General scheme of C antiquotations\<close> \<open>
-/*@
-    #setup \<comment> \<open>Overloading \<open>#define\<close>\<close> \<open>
-      setup_define2
-        \<^here>
-        (fn (name, (pos1, _)) =>
-          op ` Directive_setup_define.get
-          #>> (case name of "f3" => curry op * 152263 | _ => curry op + 1)
-          #>  tap (fn (nb, _) =>
-                    tracing ("Executing antiquotation " ^ name ^ Position.here pos1
-                             ^ " (number = " ^ Int.toString nb ^ ")"))
-          #>  uncurry Directive_setup_define.put)
-    \<close>
-*/
-#define f1
-#define f2 int a = 0;
-#define f3
-        f1
-        f2
-        f1
-        f3
-
-//@ #setup \<comment> \<open>Resetting \<open>#define\<close>\<close> \<open>setup_define2 \<^here> (K I)\<close>
-        f3
-#define f3
-        f3
-\<close>
-
-C \<comment> \<open>Dynamic token computing in \<open>#define\<close>\<close> \<open>
-
-//@ #setup \<open>setup_define1 \<^here> (K [])\<close>
-#define f int a = 0;
-        f f f f
-
-//@ #setup \<open>setup_define1 \<^here> (fn toks => toks @ toks)\<close>
-#define f int b = a;
-        f f
-
-//@ #setup \<open>setup_define1 \<^here> I\<close>
-#define f int a = 0;
-        f f
-\<close>
-
-section \<open>Miscellaneous\<close>
-
-C \<comment> \<open>Antiquotations acting on a parsed-subtree\<close> \<open>
-# /**/ include  <a\b\\c> // backslash rendered unescaped
-f(){0 +  0;} /**/  // val _ : theory => 'a => theory
-# /* context */ if if elif
 #include <stdio.h>
-if then else ;
-# /* zzz */  elif /**/
-#else\
-            
-#define FOO  00 0 "" ((
-FOO(FOO(a,b,c))
-#endif\<close>
-
-C \<comment> \<open>Header-names in directives\<close> \<open>
-#define F <stdio.h>
-#define G "stdio\h" // expecting an error whenever expanded
-#define H "stdio_h" // can be used anywhere without errors
-int f = /*F*/ "";
-int g = /*G*/ "";
-int h =   H   "";
-
-#include F
+#include /*sdfsdf */ <stdlib.h>
+#define a B
+#define b(C) 
+#pragma   /* just exists syntaxically */
 \<close>
 
-C \<comment> \<open>Parsing tokens as directives only when detecting space symbols before \<open>#\<close>\<close> \<open>/*
- */ \
-    \
 
- //
-         #  /*
-*/   define /**/ \
- a
-a a /*#include <>*/ // must not be considered as a directive
+text\<open>In the following, we retrieve the C11 AST parsed above. \<close>
+ML\<open> val ((C_Ast.CTranslUnit0 (t,u), v)::R, env) =  @{C11_AST_CTranslUnit};
+    val u = C_Grammar_Rule_Lib.decode u; 
+    C_Ast.CTypeSpec0; \<close>
+
+
+
+section \<open>Defining a C-Annotation Commands Language \<close>
+
+ML \<comment> \<open>\<^theory>\<open>Isabelle_C.C_Command\<close>\<close> \<open>
+\<comment> \<open>setup for a dummy ensures : the "Hello World" of Annotation Commands\<close>
+local
+datatype antiq_hol = Term of string (* term *)
+
+val scan_opt_colon = Scan.option (C_Parse.$$$ ":")
+
+fun msg cmd_name call_pos cmd_pos =
+  tap (fn _ =>
+        tracing ("\<open>Hello World\<close> reported by \"" ^ cmd_name ^ "\" here" ^ call_pos cmd_pos))
+
+fun command (cmd as (cmd_name, _)) scan0 scan f =
+  C_Annotation.command'
+    cmd
+    ""
+    (fn (_, (cmd_pos, _)) =>
+      (scan0 -- (scan >> f) >> (fn _ => C_Env.Never |> msg cmd_name Position.here cmd_pos)))
+in
+val _ = Theory.setup (   C_Inner_Syntax.command_no_range
+                           (C_Inner_Toplevel.generic_theory oo C_Inner_Isar_Cmd.setup \<open>K (K (K I))\<close>)
+                           ("loop", \<^here>, \<^here>)
+                      #> command ("ensures", \<^here>) scan_opt_colon C_Parse.term Term
+                      #> command ("invariant", \<^here>) scan_opt_colon C_Parse.term Term
+                      #> command ("assigns", \<^here>) scan_opt_colon C_Parse.term Term
+                      #> command ("requires", \<^here>) scan_opt_colon C_Parse.term Term
+                      #> command ("variant", \<^here>) scan_opt_colon C_Parse.term Term)
+end
 \<close>
 
-C \<comment> \<open>Universal character names in identifiers and Isabelle symbols\<close> \<open>
-#include <stdio.h>
-int main () {
-  char * ó\<^url>ò = "ó\<^url>ò";
-  printf ("%s", ó\<^url>ò);
+C\<open>
+/*@ ensures "result >= x && result >= y"
+ */
+
+int max(int x, int y) {
+  if (x > y) return x; else return y;
 }
+\<close>
+
+text\<open>What happens on C11 AST level:\<close>
+ML\<open> 
+val ((C_Ast.CTranslUnit0 (t,u), v)::R, env) = get_CTranslUnit @{theory};
+val u = C_Grammar_Rule_Lib.decode u
+\<close>
+
+
+subsection \<open>C Code: Various Annotated Examples\<close>
+
+text\<open>This example suite is drawn from Frama-C and used in our GLA - TPs. \<close>
+
+C\<open>
+int sqrt(int a) {
+  int i = 0;
+  int tm = 1;
+  int sum = 1;
+
+  /*@ loop invariant "1 <= sum <= a+tm"
+      loop invariant "(i+1)*(i+1) == sum"
+      loop invariant "tm+(i*i) == sum"
+      loop invariant "1<=tm<=sum"
+      loop assigns "i, tm, sum"
+      loop variant "a-sum"
+   */
+  while (sum <= a) {      
+    i++;
+    tm = tm + 2;
+    sum = sum + tm;
+  }
+  
+  return i;
+}
+\<close>
+
+C\<open>
+/*@ requires "n >= 0"
+    requires "valid(t+(0..n-1))"
+    ensures "exists integer i; (0<=i<n && t[i] != 0) <==> result == 0"
+    ensures "(forall integer i; 0<=i<n ==> t[i] == 0) <==> result == 1"
+    assigns nothing
+ */
+
+int allzeros(int t[], int n) {
+  int k = 0;
+
+  /*@ loop invariant "0 <= k <= n"
+      loop invariant "forall integer i; 0<=i<k ==> t[i] == 0"
+      loop assigns k
+      loop variant "n-k"
+   */
+  while(k < n) {
+    if (t[k]) return 0;
+    k = k + 1;
+  }
+  return 1;
+}
+
+\<close>
+
+C\<open>
+
+/*@ requires "n >= 0"
+    requires "valid(t+(0..n-1))"
+    ensures "(forall integer i; 0<=i<n ==> t[i] != v) <==> result == -1"
+    ensures "(exists integer i; 0<=i<n && t[i] == v) <==> result == v"
+    assigns nothing
+ */
+
+int binarysearch(int t[], int n, int v) {
+  int l = 0;
+  int u = n-1;
+
+  /*@ loop invariant false
+   */
+  while (l <= u) {
+    int m = (l + u) / 2;
+    if (t[m] < v) {
+      l = m + 1;
+    } else if (t[m] > v) {
+      u = m - 1;
+    }
+    else return m; 
+  }
+  return -1;
+}
+\<close>
+
+
+C\<open>
+/*@ requires "n >= 0"
+    requires "valid(t+(0..n-1))"
+    requires "(forall integer i,j; 0<=i<=j<n ==> t[i] <= t[j])"
+    ensures "exists integer i; (0<=i<n && t[i] == x) <==> result == 1"
+    ensures "(forall integer i; 0<=i<n ==> t[i] != x) <==> result == 0"
+    assigns nothing
+ */
+
+int linearsearch(int x, int t[], int n) {
+  int i = 0;
+
+  /*@ loop invariant "0<=i<=n"
+      loop invariant "forall integer j; 0<=j<i ==> (t[j] != x)"
+      loop assigns i
+      loop variant "n-i"
+   */
+  while (i < n) {
+    if (t[i] < x) {
+      i++;
+    } else {
+      return (t[i] == x);
+    }
+  }
+
+  return 0;
+}
+\<close>
+
+
+subsection \<open>Example: An Annotated Sorting Algorithm\<close>
+
+C\<open>
+#include <stdio.h>
+ 
+int main()
+{
+  int array[100], n, c, d, position, swap;
+ 
+  printf("Enter number of elements\n");
+  scanf("%d", &n);
+ 
+  printf("Enter %d integers\n", n);
+ 
+  for (c = 0; c < n; c++) scanf("%d", &array[c]);
+ 
+  for (c = 0; c < (n - 1); c++)
+  {
+    position = c;
+   
+    for (d = c + 1; d < n; d++)
+    {
+      if (array[position] > array[d])
+        position = d;
+    }
+    if (position != c)
+    {
+      swap = array[c];
+      array[c] = array[position];
+      array[position] = swap;
+    }
+  }
+
+printf("Sorted list in ascending order:\n");
+ 
+  for (c = 0; c < n; c++)
+    printf("%d\n", array[c]);
+ 
+  return 0;
+}
+\<close>
+
+text\<open>A better example implementation:\<close>
+
+C\<open>
+#include <stdio.h>
+#include <stdlib.h>
+ 
+#define SIZE 10
+ 
+void swap(int *x,int *y);
+void selection_sort(int* a, const int n);
+void display(int a[],int size);
+ 
+void main()
+{
+ 
+    int a[SIZE] = {8,5,2,3,1,6,9,4,0,7};
+ 
+    int i;
+    printf("The array before sorting:\n");
+    display(a,SIZE);
+ 
+    selection_sort(a,SIZE);
+ 
+    printf("The array after sorting:\n");
+    display(a,SIZE);
+}
+ 
+/*
+    swap two integers
+*/
+void swap(int *x,int *y)
+{
+    int temp;
+ 
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+/*
+    perform selection sort
+*/
+void selection_sort(int* a,const int size)
+{
+    int i, j, min;
+ 
+    for (i = 0; i < size - 1; i++)
+    {
+        min = i;
+        for (j = i + 1; j < size; j++)
+        {
+            if (a[j] < a[min])
+            {
+                min = j;
+            }
+        }
+        swap(&a[i], &a[min]);
+    }
+}
+/*
+    display array content
+*/
+void display(int a[],const int size)
+{
+    int i;
+    for(i=0; i<size; i++)
+        printf("%d ",a[i]);
+    printf("\n");
+}
+\<close>
+
+
+
+section \<open>C Code: Floats Exist\<close>
+
+declare [[C\<^sub>r\<^sub>u\<^sub>l\<^sub>e\<^sub>0 = "translation_unit"]]
+
+C\<open>
+int a;
+float b;
+int m() {return 0;}
 \<close>
 
 end

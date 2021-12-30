@@ -226,18 +226,29 @@ lemma poly_x_minus_y_as_comp: "poly_x_minus_y = (\<lambda>p. p \<circ>\<^sub>p x
 context idom_isom begin
   sublocale comm_semiring_isom..
 end
+
 interpretation poly_x_minus_y_hom:
   factor_preserving_hom "poly_x_minus_y :: 'a :: idom poly \<Rightarrow> 'a poly poly"
-proof-
-  interpret x_y_hom: bijective "\<lambda>p :: 'a poly poly. p \<circ>\<^sub>p x_y"
-  proof (unfold bijective_eq_bij, rule id_imp_bij)
-    fix p :: "'a poly poly" show "p \<circ>\<^sub>p x_y \<circ>\<^sub>p x_y = p"
-      apply (induct p,simp)
-      apply(unfold x_y_def hom_distribs pcompose_pCons) by (simp)
+proof -
+  have \<open>p \<circ>\<^sub>p x_y \<circ>\<^sub>p x_y = p\<close> for p :: \<open>'a poly poly\<close>
+  proof (induction p)
+    case 0
+    show ?case
+      by simp
+  next
+    case (pCons a p)
+    then show ?case
+      by (unfold x_y_def hom_distribs pcompose_pCons) simp
   qed
-  interpret x_y_hom: idom_isom "\<lambda>p :: 'a poly poly. p \<circ>\<^sub>p x_y" by (unfold_locales, auto)
-  show "factor_preserving_hom (poly_x_minus_y :: 'a poly \<Rightarrow> _)"
-    by (unfold poly_x_minus_y_as_comp, rule factor_preserving_hom_comp, unfold_locales)
+  then interpret x_y_hom: bijective "\<lambda>p :: 'a poly poly. p \<circ>\<^sub>p x_y"
+    by (unfold bijective_eq_bij) (rule involuntory_imp_bij)
+  interpret x_y_hom: idom_isom "\<lambda>p :: 'a poly poly. p \<circ>\<^sub>p x_y"
+    by standard simp_all
+  have \<open>factor_preserving_hom (\<lambda>p :: 'a poly poly. p \<circ>\<^sub>p x_y)\<close>
+    and \<open>factor_preserving_hom (poly_lift :: 'a poly \<Rightarrow> 'a poly poly)\<close>
+    ..
+  then show "factor_preserving_hom (poly_x_minus_y :: 'a poly \<Rightarrow> _)"
+    by (unfold poly_x_minus_y_as_comp) (rule factor_preserving_hom_comp)
 qed
 
 text \<open>
@@ -823,7 +834,6 @@ qed
 lemma algebraic_nth_root: "n \<noteq> 0 \<Longrightarrow> algebraic x \<Longrightarrow> y^n = x \<Longrightarrow> algebraic y"
   by (auto dest: algebraic_imp_represents_irreducible_cf_pos intro: algebraic_representsI represents_nth_root)
 
-
 subsection \<open>More on algebraic integers\<close>
 
 (* TODO: this is actually equal to @{term "(-1)^(m*n)"}, but we need a bit more theory on
@@ -866,7 +876,7 @@ proof -
 
   define f where "f = (\<lambda> \<sigma>. signof \<sigma> * (\<Prod>i=0..<m+n. M $$ (i, \<sigma> i)))"
   have "degree (f \<pi>) = degree (\<Prod>i=0..<m + n. M $$ (i, \<pi> i))"
-    using nz by (auto simp: f_def degree_mult_eq signof_def)
+    using nz by (auto simp: f_def degree_mult_eq sign_def)
   also have "\<dots> = (\<Sum>i=0..<m+n. degree (M $$ (i, \<pi> i)))"
     using nz by (subst degree_prod_eq_sum_degree) auto
   also have "\<dots> = (\<Sum>i<n. degree (M $$ (i, \<pi> i))) + (\<Sum>i<m. degree (M $$ (n + i, \<pi> (n + i))))"
@@ -891,7 +901,7 @@ proof -
     from that have \<sigma>_less: "\<sigma> i < m + n" if "i < m + n" for i
       using permutes_in_image[OF \<open>\<sigma> permutes _\<close>] that by auto
     have "degree (f \<sigma>) = degree (\<Prod>i=0..<m + n. M $$ (i, \<sigma> i))"
-      using nz by (auto simp: f_def degree_mult_eq signof_def)
+      using nz by (auto simp: f_def degree_mult_eq sign_def)
     also have "\<dots> = (\<Sum>i=0..<m+n. degree (M $$ (i, \<sigma> i)))"
       using nz by (subst degree_prod_eq_sum_degree) auto
     also have "\<dots> = (\<Sum>i<n. degree (M $$ (i, \<sigma> i))) + (\<Sum>i<m. degree (M $$ (n + i, \<sigma> (n + i))))"
@@ -1008,7 +1018,7 @@ proof -
   have "lead_coeff (f \<pi>) = poly_add_sign m n"
   proof -
     have "lead_coeff (f \<pi>) = signof \<pi> * (\<Prod>i=0..<m + n. lead_coeff (M $$ (i, \<pi> i)))"
-      by (simp add: f_def signof_def lead_coeff_prod)
+      by (simp add: f_def sign_def lead_coeff_prod)
     also have "(\<Prod>i=0..<m + n. lead_coeff (M $$ (i, \<pi> i))) =
                (\<Prod>i<n. lead_coeff (M $$ (i, \<pi> i))) * (\<Prod>i<m. lead_coeff (M $$ (n + i, \<pi> (n + i))))"
       by (subst indices_eq, subst prod.union_disjoint) (auto simp: prod.reindex)
@@ -1064,7 +1074,7 @@ proof -
 
   define f where "f = (\<lambda> \<sigma>. signof \<sigma> * (\<Prod>i=0..<m+n. M $$ (i, \<sigma> i)))"
   have "degree (f id) = degree (\<Prod>i=0..<m + n. M $$ (i, i))"
-    using nz by (auto simp: f_def degree_mult_eq signof_def)
+    using nz by (auto simp: f_def degree_mult_eq sign_def)
   also have "\<dots> = (\<Sum>i=0..<m+n. degree (M $$ (i, i)))"
     using nz by (subst degree_prod_eq_sum_degree) auto
   also have "\<dots> = (\<Sum>i<n. degree (M $$ (i, i))) + (\<Sum>i<m. degree (M $$ (n + i, n + i)))"
@@ -1090,7 +1100,7 @@ proof -
     from that have \<sigma>_less: "\<sigma> i < m + n" if "i < m + n" for i
       using permutes_in_image[OF \<open>\<sigma> permutes _\<close>] that by auto
     have "degree (f \<sigma>) = degree (\<Prod>i=0..<m + n. M $$ (i, \<sigma> i))"
-      using nz by (auto simp: f_def degree_mult_eq signof_def)
+      using nz by (auto simp: f_def degree_mult_eq sign_def)
     also have "\<dots> = (\<Sum>i=0..<m+n. degree (M $$ (i, \<sigma> i)))"
       using nz by (subst degree_prod_eq_sum_degree) auto
     also have "\<dots> = (\<Sum>i<n. degree (M $$ (i, \<sigma> i))) + (\<Sum>i<m. degree (M $$ (n + i, \<sigma> (n + i))))"
@@ -1164,7 +1174,7 @@ proof -
   have "lead_coeff (f id) = 1"
   proof -
     have "lead_coeff (f id) = (\<Prod>i=0..<m + n. lead_coeff (M $$ (i, i)))"
-      by (simp add: f_def signof_def lead_coeff_prod sign_id)
+      by (simp add: f_def lead_coeff_prod)
     also have "(\<Prod>i=0..<m + n. lead_coeff (M $$ (i, i))) =
                (\<Prod>i<n. lead_coeff (M $$ (i, i))) * (\<Prod>i<m. lead_coeff (M $$ (n + i, n + i)))"
       by (subst indices_eq, subst prod.union_disjoint) (auto simp: prod.reindex)
@@ -1210,7 +1220,7 @@ proof -
   define r where "r = poly_add_sign (degree p) (degree q) * poly_add p q"
 
   have "lead_coeff r = 1" using p q deg_pos
-    by (simp add: r_def lead_coeff_mult poly_add_sign_def signof_def lead_coeff_poly_add)
+    by (simp add: r_def lead_coeff_mult poly_add_sign_def sign_def lead_coeff_poly_add)
   moreover have "ipoly r (x + y) = 0"
     using p q by (simp add: ipoly_poly_add r_def of_int_poly_hom.hom_mult)
   ultimately show ?thesis

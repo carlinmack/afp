@@ -37,7 +37,7 @@
     },
     "Manuel Eberl": {
         "website": "https://pruvisto.org",
-        "mailto": "eberlm@in.tum.de"
+        "mailto": "manuel@pruvisto.org"
     },
     "Conrad Watt": {
         "website": "http://www.cl.cam.ac.uk/~caw77/"
@@ -84,7 +84,7 @@
     },
     "René Thiemann": {
         "mailto": "rene.thiemann@uibk.ac.at",
-        "website": "http://cl-informatik.uibk.ac.at/~thiemann/"
+        "website": "http://cl-informatik.uibk.ac.at/users/thiemann/"
     },
     "Akihisa Yamada": {
         "mailto": "akihisa.yamada@aist.go.jp",
@@ -162,7 +162,8 @@
         "website": "http://www.hoefner-online.de/"
     },
     "Christian Sternagel": {
-        "mailto": "c.sternagel@gmail.com"
+        "mailto": "c.sternagel@gmail.com",
+        "website": "http://cl-informatik.uibk.ac.at/users/griff/"
     },
     "Freek Verbeek": {
         "mailto": "freek@vt.edu"
@@ -475,6 +476,13 @@
     "Wenda Li": {
         "website": "https://www.cl.cam.ac.uk/~wl302/"
     },
+    "Maximilian Schäffeler": {
+        "mailto": "schaeffm@in.tum.de"
+    },
+    "Mohammad Abdulaziz": {
+        "mailto": "mansour@in.tum.de",
+        "website": "http://home.in.tum.de/~mansour/"
+    },
     "Salomon Sickert": {
         "website": "https://www7.in.tum.de/~sickert",
         "mailto": "s.sickert@tum.de"
@@ -566,6 +574,9 @@
     },
     "Markus N. Rabe": {
         "website": "http://www.react.uni-saarland.de/people/rabe.html"
+    },
+    "Thomas Bauereiss": {
+        "mailto": "thomas@bauereiss.name"
     },
     "Alessandro Coglio": {
         "website": "http://www.kestrel.edu/~coglio"
@@ -740,9 +751,6 @@
     "Sven Linker": {
         "mailto": "s.linker@liverpool.ac.uk"
     },
-    "Mohammad Abdulaziz": {
-        "website": "http://home.in.tum.de/~mansour/"
-    },
     "Ben Fiedler": {
         "mailto": "ben.fiedler@inf.ethz.ch"
     },
@@ -828,6 +836,9 @@
     },
     "Peter Zeller": {
         "mailto": "p_zeller@cs.uni-kl.de"
+    },
+    "Lukas Stevens": {
+        "website": "https://www21.in.tum.de/team/stevensl"
     },
     "Hai Nguyen Van": {
         "mailto": "hai.nguyenvan.phie@gmail.com"
@@ -944,9 +955,6 @@
     "Sebastian Willenbrink": {
         "mailto": "sebastian.willenbrink@tum.de"
     },
-    "Thomas Bauereiss": {
-        "mailto": "thomas@bauereiss.name"
-    },
     "Fox Thomson": {
         "mailto": "foxthomson0@gmail.com"
     },
@@ -973,5 +981,8 @@
     },
     "Alejandro del Campo": {
         "mailto": "alejandro.del-campo@alum.unirioja.es"
+    },
+    "Alexander Lochmann": {
+        "mailto": "alexander.lochmann@uibk.ac.at"
     }
 }

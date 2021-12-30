@@ -265,7 +265,7 @@ proof -
   have "t - 2 * deltaG(TYPE('a)) = min t (t- deltaG(TYPE('a))) - deltaG(TYPE('a))"
     unfolding min_def using antisym by fastforce
   also have "... \<le> min (Gromov_product_at x (geodesic_segment_param G x t) y) (Gromov_product_at x y (geodesic_segment_param H x t)) - deltaG(TYPE('a))"
-    using I * by auto
+    using I * by (simp add: algebra_simps)
   also have "... \<le> Gromov_product_at x (geodesic_segment_param G x t) (geodesic_segment_param H x t)"
     by (rule hyperb_ineq)
   finally have I: "Gromov_product_at x (geodesic_segment_param G x t) (geodesic_segment_param H x t) \<ge> t - 2 * deltaG(TYPE('a))"
@@ -995,7 +995,7 @@ proof
   have *: "(x \<le> y \<and> y \<le> z) \<or> (z \<le> y \<and> y \<le> x)"
     using G H \<open>G \<inter> H = {y}\<close> unfolding min_def max_def
     apply auto
-    apply (metis (mono_tags, hide_lams) min_le_iff_disj order_refl)
+    apply (metis (mono_tags, opaque_lifting) min_le_iff_disj order_refl)
     by (metis (full_types) less_eq_real_def max_def)
   show "geodesic_segment_between (G \<union> H) x z"
     using * apply rule

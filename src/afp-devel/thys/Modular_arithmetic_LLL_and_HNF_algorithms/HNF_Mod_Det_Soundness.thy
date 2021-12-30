@@ -419,7 +419,7 @@ proof -
     finally show ?thesis by auto
   qed
   ultimately show ?thesis unfolding lattice_of_altdef_lincomb[OF set_cols_in]
-    by (metis (mono_tags, hide_lams))
+    by (metis (mono_tags, opaque_lifting))
 qed
 
 
@@ -890,7 +890,7 @@ lemma invertible_mat_mult_int:
     and "invertible_mat P" 
     and "invertible_mat (map_mat rat_of_int B)"
   shows "invertible_mat (map_mat rat_of_int A)"
-  by (metis (no_types, hide_lams) assms dvd_field_iff 
+  by (metis (no_types, opaque_lifting) assms dvd_field_iff 
       invertible_iff_is_unit_JNF invertible_mult_JNF map_carrier_mat not_is_unit_0 
       of_int_hom.hom_0 of_int_hom.hom_det of_int_hom.mat_hom_mult)
 
@@ -1382,16 +1382,16 @@ proof
   next
     case True
       (*
-    Problem detected: at this point, we don't know if j < dim_col A. 
-    That is, upper_triangular definition only works for matrices \<in> carrier_mat m n with n\<ge>m.
-    The definition is: 
-       - upper_triangular A \<equiv> \<forall>i < dim_row A. \<forall> j < i. A $$ (i,j) = 0
-     But we need here:
-       - upper_triangular A \<equiv> \<forall>i < dim_row A. \<forall> j < dim_col A. j < i  \<longrightarrow> A $$ (i,j) = 0
-  
-    Anyway, the existing definition makes sense since upper triangular is usually 
-    restricted to square matrices.
-  *)
+        Problem detected: at this point, we don't know if j < dim_col A.
+        That is, upper_triangular definition only works for matrices \<in> carrier_mat m n with n\<ge>m.
+        The definition is:
+           - upper_triangular A \<equiv> \<forall>i < dim_row A. \<forall> j < i. A $$ (i,j) = 0
+        But we need here:
+           - upper_triangular A \<equiv> \<forall>i < dim_row A. \<forall> j < dim_col A. j < i  \<longrightarrow> A $$ (i,j) = 0
+
+        Anyway, the existing definition makes sense since upper triangular is usually
+        restricted to square matrices.
+      *)
     then show ?thesis unfolding is_zero_row_JNF_def oops
 
 
@@ -6378,12 +6378,17 @@ proof (rule echelon_form_JNF_intro)
 
     have least_not0: "(LEAST n. H $$ (i, n) \<noteq> 0) \<noteq> 0" 
     proof -
-      have "\<exists>n. H $$ (i, n) \<noteq> 0 \<and> H $$ (i, 0) = 0"
-        by (metis (no_types) False H Hi0 Num.numeral_nat(7) atLeastLessThan_iff carrier_matD(1)
-            is_zero_row_JNF_def j nat_LEAST_True nat_neq_iff not_less_Least not_less_eq order.strict_trans
-            ij not_zero_iH wellorder_Least_lemma(1) wellorder_Least_lemma(2))
-      then show ?thesis
-        by (metis (mono_tags, lifting) LeastI_ex)
+      have \<open>dim_row H = m\<close>
+        using H by auto
+      with \<open>i < j\<close> \<open>j < dim_row H\<close> have \<open>i < m\<close>
+        by simp
+      then have \<open>H $$ (i, 0) = 0\<close>
+        using i_not0 by (auto simp add: Suc_le_eq intro: Hi0)
+      moreover from is_zero_row_JNF_def [of i H] not_zero_iH
+      obtain n where \<open>H $$ (i, n) \<noteq> 0\<close>
+        by blast
+      ultimately show ?thesis
+        by (metis (mono_tags, lifting) LeastI)
     qed
     have least_not0j: "(LEAST n. H $$ (j, n) \<noteq> 0) \<noteq> 0"
     proof -
@@ -8988,7 +8993,7 @@ proof (intro rel_funI, goal_cases)
     let ?s' = "((res_int (A' $h i' $h j') (A' $h ?from_nat_rows n $h j') 
       - A' $h ?from_nat_rows n $h j') div A' $h i' $h j')"
     have ss'[transfer_rule]: "?s = ?s'" unfolding res_int_def Anj Aij
-      by (metis (no_types, hide_lams) Groups.add_ac(2) add_diff_cancel_left' div_by_0 
+      by (metis (no_types, opaque_lifting) Groups.add_ac(2) add_diff_cancel_left' div_by_0 
           minus_div_mult_eq_mod more_arith_simps(7) nat_arith.rule0 nonzero_mult_div_cancel_right
           uminus_add_conv_diff)
     have H_JNF_eq: "?H_JNF A (Suc n) i j = ?H_JNF (addrow (- (A $$ (n, j) div A $$ (i, j))) n i A) n i j"

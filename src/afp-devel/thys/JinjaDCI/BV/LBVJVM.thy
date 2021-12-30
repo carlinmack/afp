@@ -28,7 +28,7 @@ where
 definition wt_lbv :: "jvm_prog \<Rightarrow> cname \<Rightarrow> staticb \<Rightarrow> ty list \<Rightarrow> ty \<Rightarrow> nat \<Rightarrow> nat \<Rightarrow> 
              ex_table \<Rightarrow> ty\<^sub>i' err list \<Rightarrow> instr list \<Rightarrow> bool"
 where
-  "wt_lbv P C b Ts T\<^sub>r mxs mxl\<^sub>0 et cert ins \<equiv>
+  "wt_lbv P C b Ts T\<^sub>r mxs mxl\<^sub>0 et cert ins \<equiv> (b = Static \<or> b = NonStatic) \<and>
    check_cert P mxs ((case b of Static \<Rightarrow> 0 | NonStatic \<Rightarrow> 1)+size Ts+mxl\<^sub>0) (size ins) cert \<and>
    0 < size ins \<and> 
    (let start  = Some ([],(case b of Static \<Rightarrow> [] | NonStatic \<Rightarrow> [OK (Class C)])
@@ -88,7 +88,8 @@ lemma (in start_context) wt_lbv_wt_method:
   shows "\<exists>\<tau>s. wt_method P C b Ts T\<^sub>r mxs mxl\<^sub>0 is xt \<tau>s"
 (*<*)
 proof -
-  from lbv have l: "is \<noteq> []" by (simp add: wt_lbv_def)
+  from lbv have l: "is \<noteq> []" and  
+             stab: "b = Static \<or> b = NonStatic" by (auto simp add: wt_lbv_def)
   moreover
   from wf lbv C Ts obtain \<tau>s where 
     list:  "\<tau>s \<in> list (size is) A" and
@@ -178,17 +179,15 @@ proof -
     by (rule lbvc.wtl_complete [OF lbvc.intro, OF lbv.intro lbvc_axioms.intro, OF Semilat.intro lbv_axioms.intro])
   moreover from 0 size have "\<tau>s \<noteq> []" by auto
   moreover from ck_types have "check_types P mxs mxl ?cert"
-    apply (auto simp add: make_cert_def check_types_def JVM_states_unfold)
-    apply (subst Ok_in_err [symmetric])
-    apply (drule nth_mem)
-    apply auto
-    done
+    by (fastforce simp: make_cert_def check_types_def JVM_states_unfold
+                  dest!: nth_mem)
   moreover note 0 size
-  ultimately show ?thesis 
+  ultimately show ?thesis using staticb
     by (simp add: wt_lbv_def lbvjvm_def mk_cert_def step_def_exec [symmetric]
                   check_cert_def make_cert_def nth_append)
 qed  
 (*>*)
+
 
 
 theorem jvm_lbv_correct:
@@ -197,15 +196,26 @@ theorem jvm_lbv_correct:
 proof -  
   let ?\<Phi> = "\<lambda>C mn. let (C,b,Ts,T\<^sub>r,(mxs,mxl\<^sub>0,is,xt)) = method P C mn in 
               SOME \<tau>s. wt_method P C b Ts T\<^sub>r mxs mxl\<^sub>0 is xt \<tau>s"
-    
+  
+  let ?A = "\<lambda>P C (mn,b,Ts,T\<^sub>r,(mxs,mxl\<^sub>0,ins,et)). wt_lbv P C b Ts T\<^sub>r mxs mxl\<^sub>0 et (Cert C mn) ins"
+  let ?B = "\<lambda>P C (M,b,Ts,T\<^sub>r,(mxs,mxl\<^sub>0,is,xt)). 
+                wt_method P C b Ts T\<^sub>r mxs mxl\<^sub>0 is xt (?\<Phi> C M)"
+
   assume wt: "wt_jvm_prog_lbv P Cert"
-  hence "wf_jvm_prog\<^bsub>?\<Phi>\<^esub> P"
-    apply (unfold wf_jvm_prog_phi_def wt_jvm_prog_lbv_def) 
-    apply (erule wf_prog_lift)
-    apply (auto dest!: start_context.wt_lbv_wt_method [OF start_context.intro] 
-                intro: someI)
-    apply (erule sees_method_is_class)
-    done
+  then have "wf_prog ?A P" by(simp add: wt_jvm_prog_lbv_def)
+  moreover {
+    fix wf_md C M b Ts Ca T m bd
+    
+    assume ass1: "wf_prog wf_md P" and sees: "P \<turnstile> Ca sees M, b :  Ts\<rightarrow>T = m in Ca" and
+           ass2: "set Ts \<subseteq> types P" and ass3: "bd = (M, b, Ts, T, m)" and
+           ass4: "?A P Ca bd"
+    from ass3 ass4 have stab: "b = Static \<or> b = NonStatic" by (simp add:wt_lbv_def)        
+    from ass1 sees ass2 ass3 ass4 have "?B P Ca bd" using sees_method_is_class[OF sees] 
+      by (auto  dest!: start_context.wt_lbv_wt_method [OF start_context_intro_auxi[OF stab]]
+               intro: someI)  
+  }
+  ultimately have "wf_prog ?B P" by(rule wf_prog_lift)
+  hence "wf_jvm_prog\<^bsub>?\<Phi>\<^esub> P" by (simp add: wf_jvm_prog_phi_def)
   thus ?thesis by (unfold wf_jvm_prog_def) blast
 qed
 (*>*)
@@ -214,13 +224,27 @@ theorem jvm_lbv_complete:
   assumes wt: "wf_jvm_prog\<^bsub>\<Phi>\<^esub> P" 
   shows "wt_jvm_prog_lbv P (prg_cert P \<Phi>)"
 (*<*)
-  using wt
-  apply (unfold wf_jvm_prog_phi_def wt_jvm_prog_lbv_def)
-  apply (erule wf_prog_lift)
-  apply (auto simp add: prg_cert_def 
-              intro!: start_context.wt_method_wt_lbv start_context.intro)
-  apply (erule sees_method_is_class)                                     
-  done
+proof -
+  let ?cert = "prg_cert P \<Phi>"
+  let ?A = "\<lambda>P C (M,b,Ts,T\<^sub>r,(mxs,mxl\<^sub>0,is,xt)). 
+                wt_method P C b Ts T\<^sub>r mxs mxl\<^sub>0 is xt (\<Phi> C M)"
+  let ?B = "\<lambda>P C (mn,b,Ts,T\<^sub>r,(mxs,mxl\<^sub>0,ins,et)).
+                wt_lbv P C b Ts T\<^sub>r mxs mxl\<^sub>0 et (?cert C mn) ins"
+
+  from wt have "wf_prog ?A P" by(clarsimp simp: wf_jvm_prog_def wf_jvm_prog_phi_def)
+  moreover {
+    fix wf_md C M b Ts Ca T m bd
+    assume ass1: "wf_prog wf_md P" and sees: "P \<turnstile> Ca sees M, b :  Ts\<rightarrow>T = m in Ca" and
+           ass2: "set Ts \<subseteq> types P" and ass3: "bd = (M, b, Ts, T, m)" and
+           ass4: "?A P Ca bd"
+    from ass3 ass4 have stab: "b = Static \<or> b = NonStatic" by (simp add:wt_method_def)
+    from ass1 sees ass2 ass3 ass4 have "?B P Ca bd" using sees_method_is_class[OF sees]  
+      by (auto simp add: prg_cert_def 
+               intro!: start_context.wt_method_wt_lbv start_context_intro_auxi[OF stab])
+  }
+  ultimately have "wf_prog ?B P" by(rule wf_prog_lift)
+  thus "wt_jvm_prog_lbv P (prg_cert P \<Phi>)" by (simp add: wt_jvm_prog_lbv_def)
+qed
 (*>*)
 
-end  
+end

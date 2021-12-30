@@ -22,6 +22,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
+        {
             "2019": "2020-04-12"
         },
         {
@@ -46,5 +52,8 @@
     ],
     "relatedEntries": [
         "MFOTL_Monitor"
-    ]
+    ],
+    "extra": {
+        "Change history": "[2021-10-19] corrected a mistake in the calculation of median aggregations\n(reported by Nicolas Kaletsch, revision 02b14c9bf3da)<br>"
+    }
 }

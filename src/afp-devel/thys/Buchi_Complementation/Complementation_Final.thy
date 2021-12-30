@@ -6,7 +6,7 @@ imports
   "Formula"
   "Transition_Systems_and_Automata.NBA_Translate"
   "Transition_Systems_and_Automata.NGBA_Algorithms"
-  "HOL-Library.Permutation"
+  "HOL-Library.Multiset"
 begin
 
   subsection \<open>Syntax\<close>
@@ -20,21 +20,20 @@ begin
 
   definition "hci k \<equiv> uint32_of_nat k * 1103515245 + 12345"
   definition "hc \<equiv> \<lambda> (p, q, b). hci p + hci q * 31 + (if b then 1 else 0)"
-  definition "list_hash xs \<equiv> fold ((XOR) \<circ> hc) xs 0"
+  definition "list_hash xs \<equiv> fold (xor \<circ> hc) xs 0"
 
   lemma list_hash_eq:
     assumes "distinct xs" "distinct ys" "set xs = set ys"
     shows "list_hash xs = list_hash ys"
   proof -
-    have "remdups xs <~~> remdups ys" using eq_set_perm_remdups assms(3) by this
-    then have "xs <~~> ys" using assms(1, 2) by (simp add: distinct_remdups_id)
-    then have "fold ((XOR) \<circ> hc) xs a = fold ((XOR) \<circ> hc) ys a" for a
-    proof (induct arbitrary: a)
-      case (swap y x l)
-      have "x XOR y XOR a = y XOR x XOR a" for x y by (transfer) (simp add: word_bw_lcs(3))
-      then show ?case by simp
-    qed simp+
-    then show ?thesis unfolding list_hash_def by this
+    have "mset (remdups xs) = mset (remdups ys)" using assms(3)
+      using set_eq_iff_mset_remdups_eq by blast 
+    then have "mset xs = mset ys" using assms(1, 2) by (simp add: distinct_remdups_id)
+    have "fold (xor \<circ> hc) xs = fold (xor \<circ> hc) ys"
+      apply (rule fold_multiset_equiv)
+       apply (simp_all add: fun_eq_iff ac_simps)
+      using \<open>mset xs = mset ys\<close> .
+    then show ?thesis unfolding list_hash_def by simp
   qed
 
   definition state_hash :: "nat \<Rightarrow> Complementation_Implement.state \<Rightarrow> nat" where

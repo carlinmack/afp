@@ -37,5 +37,10 @@
         "TheoryExe",
         "CheckerExe",
         "CodeGen"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-04-28"
+        }
     ]
 }

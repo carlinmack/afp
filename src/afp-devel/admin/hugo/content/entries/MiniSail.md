@@ -36,5 +36,10 @@
         "BTVSubstTypingL",
         "Safety",
         "MiniSail"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-06-25"
+        }
     ]
 }

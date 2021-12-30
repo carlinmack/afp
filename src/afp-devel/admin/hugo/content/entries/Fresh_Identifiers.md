@@ -19,5 +19,10 @@
         "Fresh_Nat",
         "Fresh_String",
         "Fresh_Infinite"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-08-18"
+        }
     ]
 }

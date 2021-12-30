@@ -4,7 +4,7 @@ theory Util
   imports
     Main
     "HOL-Library.Sublist"
-    "HOL-Library.Permutation"
+    "HOL-Library.Multiset"
 
 begin
 
@@ -92,16 +92,16 @@ lemma swap_events_perm:
     "i < j" and
     "j < length t"
   shows
-    "perm (swap_events i j t) t"
+    "mset (swap_events i j t) = mset t"
 proof -
   have swap: "swap_events i j t
       = take i t @ [t ! j, t ! i] @ (take (j - (i+1)) (drop (i+1) t)) @ (drop (j+1) t)"
     by auto
   have reg: "t = take i t @ (take ((j+1) - i) (drop i t)) @ drop (j+1) t" 
     by (metis add_diff_inverse_nat add_lessD1 append.assoc append_take_drop_id assms(1) less_imp_add_positive less_not_refl take_add)
-  have "perm (take i t) (take i t)" by simp
-  moreover have "perm (drop (j+1) t) (drop (j+1) t)" by simp
-  moreover have "perm ([t ! j, t ! i] @ (take (j - (i+1)) (drop (i+1) t))) (take ((j+1) - i) (drop i t))"
+  have "mset (take i t) = mset (take i t)" by simp
+  moreover have "mset (drop (j+1) t) = mset (drop (j+1) t)" by simp
+  moreover have "mset ([t ! j, t ! i] @ (take (j - (i+1)) (drop (i+1) t))) = mset (take ((j+1) - i) (drop i t))"
   proof -
     let ?l = "take (j - (i+1)) (drop (i+1) t)"
     have "take ((j+1) - i) (drop i t) = t ! i # ?l @ [t ! j]"
@@ -117,10 +117,10 @@ proof -
       then show ?thesis
         using f3 f2 f1 by (metis (no_types) Cons_nth_drop_Suc Suc_diff_le Suc_eq_plus1 assms(1) assms(2) hd_drop_conv_nth length_drop less_diff_conv nat_less_le take_Suc_Cons take_hd_drop)
     qed
-    then show ?thesis using mset_eq_perm by fastforce
+    then show ?thesis by fastforce
   qed
-  ultimately show ?thesis using swap reg 
-    by (metis append.assoc perm_append1 perm_append2)
+  ultimately show ?thesis using swap reg
+    by simp (metis mset_append union_mset_add_mset_left union_mset_add_mset_right)
 qed
 
 lemma sum_eq_if_same_subterms:
@@ -255,7 +255,7 @@ proof -
   have "\<forall>j. j < length l' - 1 \<longrightarrow> l' ! j \<noteq> m" 
     by (metis assms(1) assms(2) butlast_snoc length_butlast nth_append nth_mem)
   then have one_j: "\<forall>j. j < length l' \<and> l' ! j = m \<longrightarrow> j = (length l' - 1)"
-    by (metis (no_types, hide_lams) diff_Suc_1 lessE)
+    by (metis (no_types, opaque_lifting) diff_Suc_1 lessE)
   show ?thesis
   proof (rule ccontr)
     assume "~ ?P"
@@ -319,7 +319,7 @@ next
         let ?ys = "drop (k+1) l"
         case True
         then have "length (filter ((=) a) ?xs) > 0" 
-          by (metis (full_types, hide_lams) add.commute assm discrete filter_empty_conv length_greater_0_conv length_take less_add_one lka min.absorb2 nth_mem nth_take)
+          by (metis (full_types, opaque_lifting) add.commute assm discrete filter_empty_conv length_greater_0_conv length_take less_add_one lka min.absorb2 nth_mem nth_take)
         moreover have "length (filter ((=) a) ?ys) > 0"
         proof -
           have "?ys ! (j - (k+1)) = l ! j" 
@@ -339,7 +339,7 @@ next
         let ?ys = "drop (j+1) l"
         case False
         then have "length (filter ((=) a) ?xs) > 0" 
-          by (metis (full_types, hide_lams) add.commute j discrete filter_empty_conv length_greater_0_conv length_take less_add_one min.absorb2 nth_mem nth_take)
+          by (metis (full_types, opaque_lifting) add.commute j discrete filter_empty_conv length_greater_0_conv length_take less_add_one min.absorb2 nth_mem nth_take)
         moreover have "length (filter ((=) a) ?ys) > 0"
         proof -
           have "?ys ! (k - (j+1)) = l ! k" 

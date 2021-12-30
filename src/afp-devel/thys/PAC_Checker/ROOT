@@ -11,7 +11,6 @@ session PAC_Checker (AFP) = "Sepref_IICF" +
     Nested_Multisets_Ordinals
   theories
     PAC_More_Poly
-    Duplicate_Free_Multiset
     Finite_Map_Multiset
     WB_Sort
     More_Loops
@@ -34,5 +33,5 @@ session PAC_Checker (AFP) = "Sepref_IICF" +
     "root.tex"
     "root.bib"
   export_files (in "code") [1]
-    "PAC_Checker.PAC_Checker_MLton:**"
+    "PAC_Checker.PAC_Checker_MLton:code/**"
 

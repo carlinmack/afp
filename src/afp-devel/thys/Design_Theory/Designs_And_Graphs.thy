@@ -88,7 +88,7 @@ next
   fix xa
   assume assm1: "{x, y} = arc_to_block  xa" and assm2: "xa \<in> (arcs G)"
   thus "(y, x) \<in> arc_to_ends G ` arcs G" using arcs_ends_def
-    by (metis (mono_tags, hide_lams) arc_blocks_end_subset graph_symmetric image_iff subset_refl)
+    by (metis dual_order.refl graph.arc_blocks_end_subset graph_axioms graph_symmetric imageI)
 qed
 
 lemma arcs_blocks_iff: "{x, y} \<in># arcs_blocks \<longleftrightarrow> (x, y) \<in> arcs_ends G \<and> (y, x) \<in> arcs_ends G"
@@ -278,7 +278,7 @@ end
 text \<open>A regular digraph is defined as one where the in degree equals the out degree which in turn 
 equals some fixed integer $\mathrm{r}$\<close>
 locale regular_digraph = wf_digraph + 
-  fixes \<r> :: int
+  fixes \<r> :: nat
   assumes in_deg_r: "v \<in> verts G \<Longrightarrow> in_degree G v = \<r>"
   assumes out_deg_r: "v \<in> verts G \<Longrightarrow> out_degree G v = \<r>"
 

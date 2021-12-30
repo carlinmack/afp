@@ -25,5 +25,13 @@
     ],
     "relatedEntries": [
         "DOM_Components"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-11-27"
+        }
     ]
 }

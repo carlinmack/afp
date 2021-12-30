@@ -26,7 +26,7 @@ next
   then have x: "enumerate S i < x"
     by (meson enumerate_step finite_enumerate_step less_trans)
   have cardSx: "Suc i < card (S - {x})" and "i < card S"
-    using Suc \<open>finite S\<close> card_Diff_singleton_if finite_enumerate_Ex by fastforce+
+    using Suc \<open>finite S\<close> card_Diff_singleton_if[of S] finite_enumerate_Ex by fastforce+
   have "(LEAST s. s \<in> S \<and> s\<noteq>x \<and> enumerate (S - {x}) i < s) = (LEAST s. s \<in> S \<and> enumerate S i < s)"
        (is "_ = ?r")
   proof (intro Least_equality conjI)
@@ -142,7 +142,7 @@ lemma atLeast_less_sets: "\<lbrakk>less_sets A {x}; B \<subseteq> {x..}\<rbrakk>
 
 subsection \<open>The list-of function\<close>
 
-lemma sorted_list_of_set_insert_cons:
+lemma sorted_list_of_set_insert_remove_cons:
   assumes "finite A" "less_sets {a} A"
   shows "sorted_list_of_set (insert a A) = a # sorted_list_of_set A"
 proof -
@@ -162,7 +162,7 @@ lemma sorted_list_of_set_Un:
 proof -
   have "strict_sorted (sorted_list_of_set A @ sorted_list_of_set B)"
     using AB unfolding less_sets_def
-    by (metis fin set_sorted_list_of_set sorted_wrt_append strict_sorted_list_of_set strict_sorted_sorted_wrt)
+    by (metis fin set_sorted_list_of_set sorted_wrt_append strict_sorted_list_of_set)
   moreover have "card A + card B = card (A \<union> B)"
     using less_sets_imp_disjnt [OF AB]
     by (simp add: assms card_Un_disjoint disjnt_def)
@@ -237,7 +237,7 @@ proof -
   have "enum N 0 \<in> N"
     using assms range_enum by auto
   moreover have "\<And>x. x \<in> N \<Longrightarrow> enum N 0 \<le> x"
-    by (metis (mono_tags, hide_lams) assms imageE le0 less_mono_imp_le_mono range_enum strict_monoD strict_mono_enum)
+    by (metis (mono_tags, opaque_lifting) assms imageE le0 less_mono_imp_le_mono range_enum strict_monoD strict_mono_enum)
   ultimately show ?thesis
     by (metis cInf_eq_minimum)
 qed

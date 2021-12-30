@@ -18,9 +18,10 @@ subsubsection\<open>Relationships between determinants and elementary row operat
 lemma det_interchange_rows:
 shows "det (interchange_rows A i j) = of_int (if i = j then 1 else -1) * det A"
 proof -
-  have "(interchange_rows A i j) = (\<chi> a. A $ (Fun.swap i j id) a)" unfolding interchange_rows_def Fun.swap_def by vector
-  hence "det(interchange_rows A i j) = det(\<chi> a. A$(Fun.swap i j id) a)" by simp
-  also have "... = of_int (sign (Fun.swap i j id)) * det A" by (rule det_permute_rows[of "Fun.swap i j id" A], simp add: permutes_swap_id)
+  have "(interchange_rows A i j) = (\<chi> a. A $ (Transposition.transpose i j) a)"
+    unfolding interchange_rows_def Transposition.transpose_def by vector
+  hence "det(interchange_rows A i j) = det(\<chi> a. A$(Transposition.transpose i j) a)" by simp
+  also have "... = of_int (sign (Transposition.transpose i j)) * det A" by (rule det_permute_rows[of "Transposition.transpose i j" A], simp add: permutes_swap_id)
   finally show ?thesis unfolding sign_swap_id .
 qed
 
@@ -61,9 +62,10 @@ subsubsection\<open>Relationships between determinants and elementary column ope
 lemma det_interchange_columns:
 shows "det (interchange_columns A i j) = of_int (if i = j then 1 else -1) * det A"
 proof - 
-have "(interchange_columns A i j) = (\<chi> a b. A $ a $ (Fun.swap i j id) b)" unfolding interchange_columns_def Fun.swap_def by vector
-hence "det(interchange_columns A i j) = det(\<chi> a b. A $ a $ (Fun.swap i j id) b)" by simp
-also have "... = of_int (sign (Fun.swap i j id)) * det A" by (rule det_permute_columns[of "Fun.swap i j id" A], simp add: permutes_swap_id)
+  have "(interchange_columns A i j) = (\<chi> a b. A $ a $ (Transposition.transpose i j) b)"
+    unfolding interchange_columns_def Transposition.transpose_def by vector
+hence "det(interchange_columns A i j) = det(\<chi> a b. A $ a $ (Transposition.transpose i j) b)" by simp
+also have "... = of_int (sign (Transposition.transpose i j)) * det A" by (rule det_permute_columns[of "Transposition.transpose i j" A], simp add: permutes_swap_id)
 finally show ?thesis unfolding sign_swap_id .
 qed
 
@@ -290,7 +292,7 @@ show "A $ i $ j = 0"
       next
       case False
       have zero_i_k: "is_zero_row_upt_k i k A" unfolding is_zero_row_upt_k_def
-      by (metis (hide_lams, mono_tags) Suc.hyps leD le_less_linear less_imp_le j_eq_k j_less_i le_trans to_nat_mono' upper_triangular_upt_k_def)
+      by (metis (opaque_lifting, mono_tags) Suc.hyps leD le_less_linear less_imp_le j_eq_k j_less_i le_trans to_nat_mono' upper_triangular_upt_k_def)
       have not_zero_i_suc_k: "\<not> is_zero_row_upt_k i (Suc k) A" unfolding is_zero_row_upt_k_def using False by (metis j_eq_k lessI to_nat_from_nat)      
       have Least_eq: "(LEAST n. A $ i $ n \<noteq> 0) = from_nat k"
         proof (rule Least_equality)

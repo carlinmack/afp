@@ -15,6 +15,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -85,5 +91,8 @@
         "AbsAlgo",
         "Ta_impl",
         "Ta_impl_codegen"
+    ],
+    "relatedEntries": [
+        "Regular_Tree_Relations"
     ]
 }

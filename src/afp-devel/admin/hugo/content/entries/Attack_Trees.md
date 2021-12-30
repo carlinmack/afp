@@ -17,5 +17,10 @@
         "AT",
         "Infrastructure",
         "GDPRhealthcare"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

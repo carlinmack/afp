@@ -14,5 +14,10 @@
     "licence": "BSD",
     "theories": [
         "LTE"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-05-31"
+        }
     ]
 }

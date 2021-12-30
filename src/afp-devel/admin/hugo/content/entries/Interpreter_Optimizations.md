@@ -37,5 +37,13 @@
         "Std",
         "Std_to_Inca_simulation",
         "Std_to_Inca_compiler"
+    ],
+    "extra": {
+        "Change history": "[2021-06-14] refactored function definitions to contain explicit basic blocks<br>\n[2021-06-25] proved conditional completeness of compilation<br>"
+    },
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        }
     ]
 }

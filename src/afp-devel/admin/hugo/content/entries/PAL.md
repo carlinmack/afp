@@ -15,5 +15,10 @@
     "licence": "BSD",
     "theories": [
         "PAL"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-11-14"
+        }
     ]
 }

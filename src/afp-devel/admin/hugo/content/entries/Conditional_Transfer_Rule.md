@@ -51,5 +51,16 @@
         "CTR_Introduction",
         "UD_Reference",
         "CTR_Reference"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-13"
+        },
+        {
+            "2021": "2021-09-14"
+        }
+    ],
+    "dependencies": [
+        "SpecCheck"
     ]
 }

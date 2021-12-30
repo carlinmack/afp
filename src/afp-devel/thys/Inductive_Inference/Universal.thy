@@ -403,7 +403,8 @@ proof -
     proof -
       have "length (take k ?ys) < length gs"
         by (simp add: \<open>k < length gs\<close> less_imp_le_nat min_less_iff_disj)
-      then show ?thesis using step_reachable by auto
+      then show ?thesis using step_reachable \<open>k < length gs\<close>
+        by auto
     qed
     finally have "reachable (?stack, None) (?stack1, None)" .
     moreover have "nonterminating (?stack1, None)"
@@ -714,7 +715,7 @@ proof -
     next
       case (Suc t)
       then show ?case
-        using h_inj by (metis (no_types, hide_lams) le_Suc_eq less_not_refl3 less_trans)
+        using h_inj by (metis (no_types, opaque_lifting) le_Suc_eq less_not_refl3 less_trans)
     qed
 
     have "nonterminating (?stack, None)"

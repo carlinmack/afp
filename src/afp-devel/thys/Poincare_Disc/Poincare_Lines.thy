@@ -43,7 +43,7 @@ proof (transfer, transfer)
   assume "circline_eq_cmat H1 H2"
   thus "is_poincare_line_cmat H1 \<longleftrightarrow> is_poincare_line_cmat H2"
     using hh
-    by (cases H1, cases H2) (auto simp add: power_mult_distrib)
+    by (cases H1, cases H2) (auto simp: norm_mult power_mult_distrib)
 qed
 
 lemma is_poincare_line_mk_circline:
@@ -497,14 +497,14 @@ next
 
       have u: "cor ((Re (u1/u2))\<^sup>2) + cor ((Im (u1/u2))\<^sup>2) = 1"
         using \<open>on_circline_cmat_cvec unit_circle_cmat ?u\<close> uv
-        apply (subst cor_add[symmetric])
+        apply (subst of_real_add[symmetric])
         apply (subst complex_mult_cnj[symmetric])
         apply (simp add: vec_cnj_def mult.commute)
         done
 
       have v: "cor ((Re (v1/v2))\<^sup>2) + cor ((Im (v1/v2))\<^sup>2) = 1"
         using \<open>on_circline_cmat_cvec unit_circle_cmat ?v\<close> uv
-        apply (subst cor_add[symmetric])
+        apply (subst of_real_add[symmetric])
         apply (subst complex_mult_cnj[symmetric])
         apply (simp add: vec_cnj_def mult.commute)
         done
@@ -1261,7 +1261,7 @@ proof (transfer, transfer, safe)
           using complex_mult_cnj_cmod[symmetric, of v1]
           using complex_mult_cnj_cmod[symmetric, of u2]
           using complex_mult_cnj_cmod[symmetric, of v2]
-          apply (auto simp add: power_divide)
+          apply (simp add: power_divide norm_mult norm_divide)
           apply (rule_tac x="Re ?k" in exI)
           apply simp
           apply (simp add: field_simps)
@@ -1377,7 +1377,7 @@ proof (transfer, transfer, safe)
           using complex_mult_cnj_cmod[symmetric, of v1]
           using complex_mult_cnj_cmod[symmetric, of u2]
           using complex_mult_cnj_cmod[symmetric, of v2]
-          apply (auto simp add: power_divide)
+          apply (simp add: power_divide norm_mult norm_divide)
           apply (rule_tac x="Re ?k" in exI)
           apply simp
           apply (simp add: field_simps)
@@ -1824,7 +1824,7 @@ lemma poincare_collinear_zero_polar_form:
   shows "\<exists> \<phi> rx ry. x = cor rx * cis \<phi> \<and> y = cor ry * cis \<phi> \<and> rx \<noteq> 0 \<and> ry \<noteq> 0"
 proof-
   from \<open>x \<noteq> 0\<close> \<open>y \<noteq> 0\<close> obtain \<phi> \<phi>' rx ry where
-    polar: "x = cor rx * cis \<phi>" "y = cor ry * cis \<phi>'" and  "\<phi> = arg x" "\<phi>' = arg y"
+    polar: "x = cor rx * cis \<phi>" "y = cor ry * cis \<phi>'" and  "\<phi> = Arg x" "\<phi>' = Arg y"
     by (metis cmod_cis)
   hence "rx \<noteq> 0" "ry \<noteq> 0"
     using \<open>x \<noteq> 0\<close> \<open>y \<noteq> 0\<close>

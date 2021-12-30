@@ -15,5 +15,10 @@
     "licence": "BSD",
     "theories": [
         "FOL_Axiomatic"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-05"
+        }
     ]
 }

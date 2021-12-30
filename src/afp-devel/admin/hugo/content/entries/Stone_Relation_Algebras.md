@@ -14,6 +14,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -40,5 +46,8 @@
     "relatedEntries": [
         "Relation_Algebra",
         "Stone_Kleene_Relation_Algebras"
-    ]
+    ],
+    "extra": {
+        "Change history": "[2017-07-05]\ngeneralised extended reals to linear orders\n(revision b8e703159177)"
+    }
 }

@@ -12,9 +12,15 @@
     "notify": [
         "traytel@inf.ethz.ch"
     ],
-    "abstract": "\nAuthenticated data structures are a technique for outsourcing data\nstorage and maintenance to an untrusted server. The server is required\nto produce an efficiently checkable and cryptographically secure proof\nthat it carried out precisely the requested computation. <a\nhref=\"https://doi.org/10.1145/2535838.2535851\">Miller et\nal.</a> introduced &lambda;&bull; (pronounced\n<i>lambda auth</i>)&mdash;a functional programming\nlanguage with a built-in primitive authentication construct, which\nsupports a wide range of user-specified authenticated data structures\nwhile guaranteeing certain correctness and security properties for all\nwell-typed programs. We formalize &lambda;&bull; and prove its\ncorrectness and security properties. With Isabelle's help, we\nuncover and repair several mistakes in the informal proofs and lemma\nstatements. Our findings are summarized in a <a\nhref=\"http://people.inf.ethz.ch/trayteld/papers/lambdaauth/lambdaauth.pdf\">paper\ndraft</a>.",
+    "abstract": "\nAuthenticated data structures are a technique for outsourcing data\nstorage and maintenance to an untrusted server. The server is required\nto produce an efficiently checkable and cryptographically secure proof\nthat it carried out precisely the requested computation. <a\nhref=\"https://doi.org/10.1145/2535838.2535851\">Miller et\nal.</a> introduced &lambda;&bull; (pronounced\n<i>lambda auth</i>)&mdash;a functional programming\nlanguage with a built-in primitive authentication construct, which\nsupports a wide range of user-specified authenticated data structures\nwhile guaranteeing certain correctness and security properties for all\nwell-typed programs. We formalize &lambda;&bull; and prove its\ncorrectness and security properties. With Isabelle's help, we\nuncover and repair several mistakes in the informal proofs and lemma\nstatements. Our findings are summarized in an <a\nhref=\"https://doi.org/10.4230/LIPIcs.ITP.2019.10\">ITP'19 paper</a>.",
     "licence": "BSD",
     "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-18"
+        },
         {
             "2019": "2019-06-11"
         },

@@ -14,5 +14,13 @@
     "licence": "BSD",
     "theories": [
         "Blue_Eyes"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2021-02-01"
+        }
     ]
 }

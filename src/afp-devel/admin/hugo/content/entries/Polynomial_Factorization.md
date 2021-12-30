@@ -16,6 +16,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -32,10 +38,13 @@
         }
     ],
     "dependencies": [
-        "JNF-AFP-Lib",
-        "Partial_Function_MR",
+        "Containers",
+        "Abstract-Rewriting",
+        "Gauss_Jordan Matrix",
         "Polynomial_Interpolation",
         "Show",
+        "VectorSpace",
+        "Partial_Function_MR",
         "Sqrt_Babylonian"
     ],
     "theories": [
@@ -57,8 +66,8 @@
         "Rational_Factorization"
     ],
     "relatedEntries": [
+        "Berlekamp_Zassenhaus",
         "Polynomial_Interpolation",
-        "Certification_Monads",
-        "Real_Impl"
+        "Polynomials"
     ]
 }

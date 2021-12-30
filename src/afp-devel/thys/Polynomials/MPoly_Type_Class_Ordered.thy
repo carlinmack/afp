@@ -286,9 +286,8 @@ lemma lt_in_keys:
   by (metis assms in_keys_iff lc_def lc_not_0)
 
 lemma lt_monomial:
-  assumes "c \<noteq> 0"
-  shows "lt (monomial c t) = t"
-  by (metis assms lookup_single_eq lookup_single_not_eq lt_eqI ord_term_lin.eq_iff)
+  "lt (monomial c t) = t" if "c \<noteq> 0"
+  using that by (auto simp add: lt_def dest: monomial_0D)
 
 lemma lc_monomial [simp]: "lc (monomial c t) = c"
 proof (cases "c = 0")
@@ -570,7 +569,7 @@ lemma lt_minus_lessE_2: "lt q \<prec>\<^sub>t lt (p - q) \<Longrightarrow> lt q 
 
 lemma lt_minus_lessI: "p - q \<noteq> 0 \<Longrightarrow> lt q = lt p \<Longrightarrow> lc q = lc p \<Longrightarrow> lt (p - q) \<prec>\<^sub>t lt p"
   for p q :: "'t \<Rightarrow>\<^sub>0 'b::ab_group_add"
-  by (metis (no_types, hide_lams) diff_diff_eq2 diff_self group_eq_aux lc_def lc_not_0 lookup_minus
+  by (metis (no_types, opaque_lifting) diff_diff_eq2 diff_self group_eq_aux lc_def lc_not_0 lookup_minus
       lt_minus_eqI ord_term_lin.antisym_conv3)
     
 lemma lt_max_keys:
@@ -2528,7 +2527,7 @@ proof -
     have tr: "transp (\<preceq>\<^sub>t)" using transp_def by fastforce
     have *: "(\<lambda>x y. y \<succeq>\<^sub>t x) = (\<preceq>\<^sub>t)" by simp
     show ?thesis
-      by (simp only: * pps_to_list_def sorted_wrt_rev ord_term_lin.sorted_sorted_wrt[symmetric],
+      by (simp only: * pps_to_list_def sorted_wrt_rev,
           rule ord_term_lin.sorted_sorted_list_of_set)
   qed
   with distinct_pps_to_list have "sorted_wrt (\<lambda>x y. x \<succeq>\<^sub>t y \<and> x \<noteq> y) (pps_to_list S)"

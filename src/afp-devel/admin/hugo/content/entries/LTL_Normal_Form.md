@@ -26,5 +26,13 @@
         "LTL_to_GBA",
         "LTL_to_DRA",
         "Stuttering_Equivalence"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-05-09"
+        }
     ]
 }

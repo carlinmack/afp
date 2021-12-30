@@ -18,5 +18,10 @@
     "theories": [
         "Forests",
         "Algorithms"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-08-08"
+        }
     ]
 }

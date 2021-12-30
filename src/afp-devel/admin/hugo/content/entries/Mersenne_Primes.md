@@ -8,11 +8,17 @@
     ],
     "date": "2020-01-17",
     "notify": [
-        "eberlm@in.tum.de"
+        "manuel@pruvisto.org"
     ],
     "abstract": "\n<p>This article provides formal proofs of basic properties of\nMersenne numbers, i. e. numbers of the form\n2<sup><em>n</em></sup> - 1, and especially of\nMersenne primes.</p> <p>In particular, an efficient,\nverified, and executable version of the Lucas&ndash;Lehmer test is\ndeveloped. This test decides primality for Mersenne numbers in time\npolynomial in <em>n</em>.</p>",
     "licence": "BSD",
     "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-20"
+        },
         {
             "2019": "2020-01-20"
         }

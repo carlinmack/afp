@@ -55,7 +55,7 @@ lemma (in group) subgroups_card_coprime_inter_card_one:
   shows "card (H \<inter> J) = 1"
 proof -
   from assms inter_subgroup_dvd_card have "is_unit (card (H \<inter> J))" unfolding coprime_def
-    by (meson Int_lower2 sub_subgroup_dvd_card subgroup_Int)
+    by (metis assms(3) coprime_common_divisor inf_commute)
   then show ?thesis by simp
 qed
 
@@ -206,7 +206,7 @@ next
   assume x:"x \<in> P"
   then have xc: "x \<in> carrier G" using assms subgroup.subset unfolding normal_def by fast
   from x have "P #> x = P" using assms
-    by (simp add: normal_imp_subgroup subgroup.rcos_const) 
+    by (simp add: normal_imp_subgroup subgroup.rcos_const)
   thus "x \<in> kernel G (G Mod P) ((#>) P)" unfolding kernel_def using xc by simp
 qed
 

@@ -29,7 +29,7 @@ locale monoid =
 text \<open>p 29, ll 27--28\<close>
 locale submonoid = monoid M "(\<cdot>)" \<one>
   for N and M and composition (infixl "\<cdot>" 70) and unit ("\<one>") +
-  assumes subset [intro, simp]: "N \<subseteq> M"
+  assumes subset: "N \<subseteq> M"
     and sub_composition_closed: "\<lbrakk> a \<in> N; b \<in> N \<rbrakk> \<Longrightarrow> a \<cdot> b \<in> N"
     and sub_unit_closed: "\<one> \<in> N"
 begin
@@ -263,7 +263,7 @@ proof (rule subgroupI)
   have "(inverse u2 \<cdot> inverse u1) \<cdot> (u1 \<cdot> u2) = (inverse u2 \<cdot> (inverse u1 \<cdot> u1)) \<cdot> u2"
     by (simp add: associative del: invertible_left_inverse invertible_right_inverse)
   also have "\<dots> = \<one>" by simp
-  finally have inv2: "(inverse u2 \<cdot> inverse u1) \<cdot> (u1 \<cdot> u2) = \<one>" by simp  \<comment> \<open>l 9, “and similarly”\<close>
+  finally have inv2: "(inverse u2 \<cdot> inverse u1) \<cdot> (u1 \<cdot> u2) = \<one>" by simp  \<comment> \<open>l 9, ``and similarly''\<close>
   show "u1 \<cdot> u2 \<in> Units" using inv1 inv2 invertibleI mem_UnitsI by auto
 qed (auto simp: Units_def)
 
@@ -1600,7 +1600,7 @@ theorem induced_kernel:
 proof -
   have "induced.Ker = { a \<cdot>| L | a. a \<in> G \<and> a \<in> Ker }"
     unfolding induced.Ker_equality
-    by simp (metis (hide_lams) contained.Class_is_Left_Coset Ker_image Ker_memI
+    by simp (metis (opaque_lifting) contained.Class_is_Left_Coset Ker_image Ker_memI
         induced_left_coset_equality contained.Class_in_Partition contained.representant_exists)
   also have "\<dots> = Ker / L.Congruence"
     using L.Class_is_Left_Coset L.Class_in_Partition

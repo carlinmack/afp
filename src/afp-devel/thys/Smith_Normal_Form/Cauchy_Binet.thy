@@ -32,8 +32,7 @@ proof -
           i2 less_Suc_eq sorted_list_of_set(1) sorted_list_of_set(3))
   qed
   also have "... = insort a (sorted_list_of_set I) ! i"
-    using sorted_list_of_set.insert
-    by (metis a_notin_I card.infinite i2 not_less0)
+    by (simp add: a_notin_I finI)
   also have "... = (sorted_list_of_set I) ! i"
   proof (rule insort_nth[OF])
      show "sorted (sorted_list_of_set I)" by auto
@@ -90,8 +89,7 @@ next
           i2 less_Suc_eq sorted_list_of_set(1) sorted_list_of_set(3))
   qed
   also have 2: "... = insort a (sorted_list_of_set I) ! i"
-    using sorted_list_of_set.insert
-    by (metis a_notin_I card.infinite i2 not_less0)
+    by (simp add: a_notin_I finI)
   also have "... = insort a (sorted_list_of_set I) ! Suc (i-1)" using i0 by auto
   also have "... < pick I i"
   proof (cases "i = a'")
@@ -99,8 +97,9 @@ next
     have "(sorted_list_of_set I) ! i > a"
       by (smt "1" Suc_less_eq True a_def a_notin_I distinct_card distinct_sorted_list_of_set finI i2
           ia' index_a' insort_nth2 length_insort lessI list.size(3) nat_less_le not_less_zero
-          pick_in_set_le set_sorted_list_of_set sorted_list_of_set(2) sorted_list_of_set.insert
-          sorted_list_of_set_eq_pick sorted_sorted_wrt sorted_wrt_nth_less)
+          pick_in_set_le set_sorted_list_of_set sorted_list_of_set(2)
+          sorted_list_of_set_insert
+          sorted_list_of_set_eq_pick sorted_wrt_nth_less)
     moreover have "a = insort a (sorted_list_of_set I) ! i" using True 1 2 a_def by auto
     ultimately show ?thesis using 1 2
       by (metis distinct_card finI i0 i2 set_sorted_list_of_set
@@ -155,8 +154,7 @@ next
           finI i2 set_sorted_list_of_set)
   qed
   also have 2: "... = insort a (sorted_list_of_set I) ! Suc i"
-    using sorted_list_of_set.insert
-    by (metis a_notin_I card.infinite i2 not_less0)
+    by (simp add: a_notin_I finI)
   also have "... = pick I i"
   proof (cases "i = a'")
     case True
@@ -709,7 +707,7 @@ proof -
      proof (cases "i<n")
        case True
        obtain a where xa_gi: "x a = g i" and a: "a < n" using xg True
-         by (metis (mono_tags, hide_lams) atLeast0LessThan imageE imageI lessThan_iff)
+         by (metis (mono_tags, opaque_lifting) atLeast0LessThan imageE imageI lessThan_iff)
        show ?thesis
        proof (rule ex1I[of _ a])
          have the_ai: "(THE j. j < n \<and> x a = g j) = i"
@@ -726,7 +724,7 @@ proof -
          proof (cases "j<n")
            case True
            obtain b where xj_gb: "x j = g b" and b: "b < n" using xg True
-             by (metis (mono_tags, hide_lams) atLeast0LessThan imageE imageI lessThan_iff)
+             by (metis (mono_tags, opaque_lifting) atLeast0LessThan imageE imageI lessThan_iff)
            let ?P = "\<lambda>ja. ja < n \<and> x j = g ja"
            have the_ji: "(THE ja. ja < n \<and> x j = g ja) = i" using tj True by auto
            have "?P (THE ja. ?P ja)"
@@ -754,7 +752,7 @@ proof -
          proof (cases "j<n")
            case True
            obtain a where xj_ga: "x j = g a" and a: "a < n" using xg True
-             by (metis (mono_tags, hide_lams) atLeast0LessThan imageE imageI lessThan_iff)
+             by (metis (mono_tags, opaque_lifting) atLeast0LessThan imageE imageI lessThan_iff)
            have "(THE ja. ja < n \<and> x j = g ja) < n"
            proof (rule theI2)
              show "a < n \<and> x j = g a" using xj_ga a by auto
@@ -775,7 +773,7 @@ proof -
        have "x xa = g (THE j. j < n \<and> x xa = g j)" if xa: "xa < n" for xa
        proof -
          obtain c where c: "c < n" and xxa_gc: "x xa = g c"
-           by (metis (mono_tags, hide_lams) atLeast0LessThan imageE imageI lessThan_iff xa xg)
+           by (metis (mono_tags, opaque_lifting) atLeast0LessThan imageE imageI lessThan_iff xa xg)
          show ?thesis
          proof (rule theI2)
            show c1: "c < n \<and> x xa = g c" using c xxa_gc by auto

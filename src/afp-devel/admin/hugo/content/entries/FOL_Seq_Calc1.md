@@ -15,9 +15,15 @@
     "notify": [
         "ahfrom@dtu.dk"
     ],
-    "abstract": "\nThis work formalizes soundness and completeness of a one-sided sequent\ncalculus for first-order logic. The completeness is shown via a\ntranslation from a complete semantic tableau calculus, the proof of\nwhich is based on the First-Order Logic According to Fitting theory.\nThe calculi and proof techniques are taken from Ben-Ari's\nMathematical Logic for Computer Science.",
+    "abstract": "\nThis work formalizes soundness and completeness of a one-sided sequent\ncalculus for first-order logic. The completeness is shown via a\ntranslation from a complete semantic tableau calculus, the proof of\nwhich is based on the First-Order Logic According to Fitting theory.\nThe calculi and proof techniques are taken from Ben-Ari's\nMathematical Logic for Computer Science.\nPaper: <a href=\"http://ceur-ws.org/Vol-3002/paper7.pdf\">http://ceur-ws.org/Vol-3002/paper7.pdf</a>.",
     "licence": "BSD",
     "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-18"
+        },
         {
             "2019": "2019-07-18"
         }

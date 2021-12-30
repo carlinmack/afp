@@ -20,5 +20,13 @@
         "Reference_Prerequisites",
         "files/ISABELLE_HOME/src/Doc/antiquote_setup.ML",
         "IDE_Reference"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-10-05"
+        },
+        {
+            "2021": "2021-09-14"
+        }
     ]
 }

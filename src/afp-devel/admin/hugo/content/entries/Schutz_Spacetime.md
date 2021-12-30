@@ -20,5 +20,10 @@
         "TernaryOrdering",
         "Minkowski",
         "TemporalOrderOnPath"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-09-06"
+        }
     ]
 }

@@ -56,10 +56,12 @@ chapter \<open>Auxiliary Definitions needed by Lem\<close>
 theory "LemExtraDefs"
 
 imports
-   Main
-   "HOL-Library.Permutation"
-   "HOL-Library.While_Combinator"
+  Main
+  "HOL-Combinatorics.List_Permutation"
+  "HOL-Library.While_Combinator"
 begin
+
+hide_const (open) sign
 
 subsection \<open>General\<close>
 
@@ -328,7 +330,7 @@ next
            perm_append2 [of "l1 @ [x]" "x # l1" l2]
       have "l1 @ x # l2 <~~> x # (l1 @ l2)" by simp
       hence "x # xs <~~> l1 @ x # l2 \<longleftrightarrow> x # xs <~~> x # (l1 @ l2)"
-        by (metis perm.trans perm_sym)
+        by simp
       thus ?thesis by simp
     qed
     with del_eq l_eq l'_eq show ?thesis by simp
@@ -350,7 +352,8 @@ proof (rule ext)
     case Nil thus ?case by simp
   next
     case (Cons x xs)
-    thus ?case by (cases xs) (simp_all del: sorted.simps(2) add: sorted2_simps)
+    thus ?case
+      by (smt (verit, best) list.inject sorted1 sorted2 sorted_by.elims(1))
   qed
 qed
 
@@ -388,17 +391,7 @@ by (induct l) auto
 
 lemma insert_sort_insert_by_perm :
   "(insert_sort_insert_by cmp e l) <~~> (e # l)"
-proof (induct l)
-  case Nil thus ?case by simp
-next
-  case (Cons e2 l')
-  note ind_hyp = this
-
-  have "e2 # e # l' <~~> e # e2 # l'" by (rule perm.swap)
-  hence "e2 # insert_sort_insert_by cmp e l' <~~> e # e2 # l'"
-    using ind_hyp by (metis cons_perm_eq perm.trans)
-  thus ?case by simp
-qed
+  by (induction l) simp_all
 
 
 lemma insert_sort_insert_by_sorted_by :
@@ -463,13 +456,7 @@ fun insert_sort_by :: "('a \<Rightarrow> 'a \<Rightarrow> bool) \<Rightarrow> 'a
 
 lemma insert_sort_by_perm :
   "(insert_sort_by cmp l) <~~> l"
-proof (induct l)
-  case Nil thus ?case by simp
-next
-  case (Cons x l)
-  thus ?case
-   by simp (metis cons_perm_eq insert_sort_insert_by_perm perm.trans)
-qed
+  by (induction l) (simp_all add: insert_sort_insert_by_perm)
 
 lemma insert_sort_by_length [simp]:
   "length (insert_sort_by cmp l) = length l"

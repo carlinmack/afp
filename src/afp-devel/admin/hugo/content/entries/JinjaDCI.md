@@ -72,5 +72,16 @@
         "Compiler",
         "TypeComp",
         "JinjaDCI"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2021-01-13"
+        }
+    ],
+    "relatedEntries": [
+        "Dominance_CHK"
     ]
 }

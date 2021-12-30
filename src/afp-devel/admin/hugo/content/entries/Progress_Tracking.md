@@ -27,5 +27,10 @@
         "Graph",
         "Propagate",
         "Combined"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-04-16"
+        }
     ]
 }

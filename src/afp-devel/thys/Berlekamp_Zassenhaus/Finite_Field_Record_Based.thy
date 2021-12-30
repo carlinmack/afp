@@ -105,7 +105,7 @@ definition uminus_p32 :: "uint32 \<Rightarrow> uint32" where
 definition mult_p32 :: "uint32 \<Rightarrow> uint32 \<Rightarrow> uint32" where
   "mult_p32 x y = (x * y mod p)"
 
-lemma int_of_uint32_shift: "int_of_uint32 (shiftr n k) = (int_of_uint32 n) div (2 ^ k)" 
+lemma int_of_uint32_shift: "int_of_uint32 (drop_bit k n) = (int_of_uint32 n) div (2 ^ k)" 
   apply transfer
   apply transfer
   apply (simp add: take_bit_drop_bit min_def)
@@ -135,11 +135,15 @@ lemma int_of_uint32_mod: "int_of_uint32 (x mod y) = (int_of_uint32 x mod int_of_
   by (transfer, unfold uint_mod two_32, rule refl)  
 
 lemma int_of_uint32_inv: "0 \<le> x \<Longrightarrow> x < 4294967296 \<Longrightarrow> int_of_uint32 (uint32_of_int x) = x"
-  by transfer (simp add: take_bit_int_eq_self)
+  by transfer (simp add: take_bit_int_eq_self unsigned_of_int)
+
+context
+  includes bit_operations_syntax
+begin
 
 function power_p32 :: "uint32 \<Rightarrow> uint32 \<Rightarrow> uint32" where
   "power_p32 x n = (if n = 0 then 1 else
-    let rec = power_p32 (mult_p32 x x) (shiftr n 1) in
+    let rec = power_p32 (mult_p32 x x) (drop_bit 1 n) in
     if n AND 1 = 0 then rec else mult_p32 rec x)"
   by pat_completeness auto
 
@@ -154,6 +158,8 @@ proof -
   show ?thesis
     by (relation "measure (\<lambda> (x,n). nat (int_of_uint32 n))", auto simp: int_of_uint32_shift *) 
 qed
+
+end
 
 text \<open>In experiments with Berlekamp-factorization (where the prime $p$ is usually small),
   it turned out that taking the below implementation of inverse via exponentiation
@@ -184,7 +190,7 @@ definition finite_field_ops32 :: "uint32 arith_ops_record" where
 end 
 
 lemma shiftr_uint32_code [code_unfold]: "drop_bit 1 x = (uint32_shiftr x 1)"
-  by (simp add: uint32_shiftr_def shiftr_eq_drop_bit)
+  by (simp add: uint32_shiftr_def)
 
 (* ******************************************************************************** *)
 subsubsection \<open>Transfer Relation\<close>
@@ -610,7 +616,7 @@ shows "urel32 (if y = 0 then x else 0) (if y' = 0 then x' else 0)"
   unfolding urel32_eq[OF y urel32_0] using urel32_0 x by auto 
 
 lemma urel32_power: "urel32 x x' \<Longrightarrow> urel32 y (int y') \<Longrightarrow> urel32 (power_p32 pp x y) (power_p p x' y')"
-proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
+including bit_operations_syntax proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
   case (1 x' y' x y)
   note x = 1(2) note y = 1(3)
   show ?case
@@ -621,29 +627,24 @@ proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
   next
     case False
     hence id: "(y = 0) = False" "(y' = 0) = False" using urel32_eq[OF y urel32_0] by auto
+    from y have \<open>int y' = int_of_uint32 y\<close> \<open>int y' < p\<close>
+      by (simp_all add: urel32_def)
     obtain d' r' where dr': "Divides.divmod_nat y' 2 = (d',r')" by force
     from divmod_nat_def[of y' 2, unfolded dr']
     have r': "r' = y' mod 2" and d': "d' = y' div 2" by auto
     have "urel32 (y AND 1) r'"
-      unfolding r'
-      using y
-      unfolding urel32_def
-      using small
-      apply (simp add: ppp and_one_eq)
-      apply transfer
-      apply transfer
-      apply (auto simp add: zmod_int take_bit_int_eq_self)
-      apply (rule le_less_trans)
-       apply (rule zmod_le_nonneg_dividend)
-      apply simp_all
+      using \<open>int y' < p\<close> small
+      apply (simp add: urel32_def and_one_eq r')
+      apply (auto simp add: ppp and_one_eq)
+      apply (simp add: of_nat_mod int_of_uint32.rep_eq modulo_uint32.rep_eq uint_mod \<open>int y' = int_of_uint32 y\<close>)
       done
     from urel32_eq[OF this urel32_0]     
     have rem: "(y AND 1 = 0) = (r' = 0)" by simp
-    have div: "urel32 (shiftr y 1) (int d')" unfolding d' using y unfolding urel32_def using small
+    have div: "urel32 (drop_bit 1 y) (int d')" unfolding d' using y unfolding urel32_def using small
       unfolding ppp 
       apply transfer
       apply transfer
-      apply (auto simp add: drop_bit_Suc)
+      apply (auto simp add: drop_bit_Suc take_bit_int_eq_self)
       done
     note IH = 1(1)[OF False refl dr'[symmetric] urel32_mult[OF x x] div]
     show ?thesis unfolding power_p.simps[of _ _ "y'"] power_p32.simps[of _ _ y] dr' id if_False rem
@@ -656,7 +657,7 @@ lemma urel32_inverse: assumes x: "urel32 x x'"
   shows "urel32 (inverse_p32 pp x) (inverse_p p x')" 
 proof -
   have p: "urel32 (pp - 2) (int (nat (p - 2)))" using p2 small unfolding urel32_def unfolding ppp
-    by (transfer, auto simp: uint_word_ariths)
+    by (simp add: int_of_uint32.rep_eq minus_uint32.rep_eq uint_sub_if')
   show ?thesis
     unfolding inverse_p32_def inverse_p_def urel32_eq[OF x urel32_0] using urel32_0 urel32_power[OF x p]
     by auto
@@ -805,7 +806,7 @@ definition uminus_p64 :: "uint64 \<Rightarrow> uint64" where
 definition mult_p64 :: "uint64 \<Rightarrow> uint64 \<Rightarrow> uint64" where
   "mult_p64 x y = (x * y mod p)"
 
-lemma int_of_uint64_shift: "int_of_uint64 (shiftr n k) = (int_of_uint64 n) div (2 ^ k)" 
+lemma int_of_uint64_shift: "int_of_uint64 (drop_bit k n) = (int_of_uint64 n) div (2 ^ k)" 
   apply transfer
   apply transfer
   apply (simp add: take_bit_drop_bit min_def)
@@ -835,11 +836,15 @@ lemma int_of_uint64_mod: "int_of_uint64 (x mod y) = (int_of_uint64 x mod int_of_
   by (transfer, unfold uint_mod two_64, rule refl)  
 
 lemma int_of_uint64_inv: "0 \<le> x \<Longrightarrow> x < 18446744073709551616 \<Longrightarrow> int_of_uint64 (uint64_of_int x) = x"
-  by transfer (simp add: take_bit_int_eq_self)
+  by transfer (simp add: take_bit_int_eq_self unsigned_of_int)
+
+context
+  includes bit_operations_syntax 
+begin
 
 function power_p64 :: "uint64 \<Rightarrow> uint64 \<Rightarrow> uint64" where
   "power_p64 x n = (if n = 0 then 1 else
-    let rec = power_p64 (mult_p64 x x) (shiftr n 1) in
+    let rec = power_p64 (mult_p64 x x) (drop_bit 1 n) in
     if n AND 1 = 0 then rec else mult_p64 rec x)"
   by pat_completeness auto
 
@@ -854,6 +859,8 @@ proof -
   show ?thesis
     by (relation "measure (\<lambda> (x,n). nat (int_of_uint64 n))", auto simp: int_of_uint64_shift *) 
 qed
+
+end
 
 text \<open>In experiments with Berlekamp-factorization (where the prime $p$ is usually small),
   it turned out that taking the below implementation of inverse via exponentiation
@@ -1039,7 +1046,7 @@ shows "urel64 (if y = 0 then x else 0) (if y' = 0 then x' else 0)"
   unfolding urel64_eq[OF y urel64_0] using urel64_0 x by auto 
 
 lemma urel64_power: "urel64 x x' \<Longrightarrow> urel64 y (int y') \<Longrightarrow> urel64 (power_p64 pp x y) (power_p p x' y')"
-proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
+including bit_operations_syntax proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
   case (1 x' y' x y)
   note x = 1(2) note y = 1(3)
   show ?case
@@ -1050,29 +1057,24 @@ proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
   next
     case False
     hence id: "(y = 0) = False" "(y' = 0) = False" using urel64_eq[OF y urel64_0] by auto
+    from y have \<open>int y' = int_of_uint64 y\<close> \<open>int y' < p\<close>
+      by (simp_all add: urel64_def)
     obtain d' r' where dr': "Divides.divmod_nat y' 2 = (d',r')" by force
     from divmod_nat_def[of y' 2, unfolded dr']
     have r': "r' = y' mod 2" and d': "d' = y' div 2" by auto
     have "urel64 (y AND 1) r'"
-      unfolding r'
-      using y
-      unfolding urel64_def
-      using small
-      apply (simp add: ppp and_one_eq)
-      apply transfer apply transfer
-      apply (auto simp add: int_eq_iff nat_take_bit_eq nat_mod_distrib zmod_int)
-       apply (auto simp add: zmod_int mod_2_eq_odd)
-       apply (metis (full_types) even_take_bit_eq le_less_trans odd_iff_mod_2_eq_one take_bit_nonnegative zero_neq_numeral zmod_le_nonneg_dividend)
-      apply (auto simp add: less_le)
-      apply (simp add: le_less)
+      using \<open>int y' < p\<close> small
+      apply (simp add: urel64_def and_one_eq r')
+      apply (auto simp add: ppp and_one_eq)
+      apply (simp add: of_nat_mod int_of_uint64.rep_eq modulo_uint64.rep_eq uint_mod \<open>int y' = int_of_uint64 y\<close>)
       done
     from urel64_eq[OF this urel64_0]     
     have rem: "(y AND 1 = 0) = (r' = 0)" by simp
-    have div: "urel64 (shiftr y 1) (int d')" unfolding d' using y unfolding urel64_def using small
+    have div: "urel64 (drop_bit 1 y) (int d')" unfolding d' using y unfolding urel64_def using small
       unfolding ppp
       apply transfer
       apply transfer
-      apply (auto simp add: drop_bit_Suc)
+      apply (auto simp add: drop_bit_Suc take_bit_int_eq_self)
       done
     note IH = 1(1)[OF False refl dr'[symmetric] urel64_mult[OF x x] div]
     show ?thesis unfolding power_p.simps[of _ _ "y'"] power_p64.simps[of _ _ y] dr' id if_False rem
@@ -1085,7 +1087,7 @@ lemma urel64_inverse: assumes x: "urel64 x x'"
   shows "urel64 (inverse_p64 pp x) (inverse_p p x')" 
 proof -
   have p: "urel64 (pp - 2) (int (nat (p - 2)))" using p2 small unfolding urel64_def unfolding ppp
-    by (transfer, auto simp: uint_word_ariths)
+    by (simp add: int_of_uint64.rep_eq minus_uint64.rep_eq uint_sub_if')
   show ?thesis
     unfolding inverse_p64_def inverse_p_def urel64_eq[OF x urel64_0] using urel64_0 urel64_power[OF x p]
     by auto
@@ -1252,13 +1254,16 @@ lemma int_of_integer_mod: "int_of_integer (x mod y) = (int_of_integer x mod int_
 
 lemma int_of_integer_inv: "int_of_integer (integer_of_int x) = x" by simp
 
-lemma int_of_integer_shift: "int_of_integer (shiftr n k) = (int_of_integer n) div (2 ^ k)" 
+lemma int_of_integer_shift: "int_of_integer (drop_bit k n) = (int_of_integer n) div (2 ^ k)" 
   by transfer (simp add: int_of_integer_pow shiftr_integer_conv_div_pow2)
 
+context
+  includes bit_operations_syntax
+begin
 
 function power_p_integer :: "integer \<Rightarrow> integer \<Rightarrow> integer" where
   "power_p_integer x n = (if n \<le> 0 then 1 else
-    let rec = power_p_integer (mult_p_integer x x) (shiftr n 1) in
+    let rec = power_p_integer (mult_p_integer x x) (drop_bit 1 n) in
     if n AND 1 = 0 then rec else mult_p_integer rec x)"
   by pat_completeness auto
 
@@ -1275,6 +1280,8 @@ proof -
   show ?thesis
     by (relation "measure (\<lambda> (x,n). nat (int_of_integer n))", auto simp: * int_of_integer_shift) 
 qed
+
+end
 
 text \<open>In experiments with Berlekamp-factorization (where the prime $p$ is usually small),
   it turned out that taking the below implementation of inverse via exponentiation
@@ -1458,7 +1465,7 @@ shows "urel_integer (if y = 0 then x else 0) (if y' = 0 then x' else 0)"
   unfolding urel_integer_eq[OF y urel_integer_0] using urel_integer_0 x by auto 
 
 lemma urel_integer_power: "urel_integer x x' \<Longrightarrow> urel_integer y (int y') \<Longrightarrow> urel_integer (power_p_integer pp x y) (power_p p x' y')"
-proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
+including bit_operations_syntax proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
   case (1 x' y' x y)
   note x = 1(2) note y = 1(3)
   show ?case
@@ -1481,7 +1488,7 @@ proof (induct x' y' arbitrary: x y rule: power_p.induct[of _ p])
       done
     from urel_integer_eq[OF this urel_integer_0]     
     have rem: "(y AND 1 = 0) = (r' = 0)" by simp
-    have div: "urel_integer (shiftr y 1) (int d')" unfolding d' using y unfolding urel_integer_def
+    have div: "urel_integer (drop_bit 1 y) (int d')" unfolding d' using y unfolding urel_integer_def
       unfolding ppp shiftr_integer_conv_div_pow2 by auto
     from id have "y' \<noteq> 0" by auto
     note IH = 1(1)[OF this refl dr'[symmetric] urel_integer_mult[OF x x] div]
@@ -1647,5 +1654,4 @@ thm
   ring_finite_field_ops_int
 end
 
-no_notation shiftr (infixl ">>" 55) (* to avoid conflict with bind *)
 end

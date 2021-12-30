@@ -33,7 +33,7 @@ lemma in_minus_pairs [simp]: "p \<in> A -\<^sub>p B \<longleftrightarrow> (p \<i
   by (metis Diff_iff in_pair_def minus_pairs_def)
 
 lemma in_pair_Int_pairs [simp]: "p \<in>\<^sub>p A \<inter>\<^sub>p B \<longleftrightarrow> (p \<in>\<^sub>p A \<and> p \<in>\<^sub>p B)"
-  by (metis (no_types, hide_lams) Int_iff Int_pairs_def in_pair_alt in_pair_def old.prod.exhaust swap_simp)
+  by (metis (no_types, opaque_lifting) Int_iff Int_pairs_def in_pair_alt in_pair_def old.prod.exhaust swap_simp)
 
 lemma in_pair_Un [simp]: "p \<in>\<^sub>p A \<union> B \<longleftrightarrow> (p \<in>\<^sub>p A \<or> p \<in>\<^sub>p B)"
   by (metis (mono_tags, lifting) UnE UnI1 UnI2 image_Un in_pair_def)
@@ -44,7 +44,7 @@ lemma in_pair_trans [trans]:
   using assms by (auto simp: in_pair_def)
 
 lemma in_pair_same [simp]: "p \<in>\<^sub>p A \<times> A \<longleftrightarrow> p \<in> A \<times> A"
-  by (auto simp: in_pair_def swap_def)
+  by (auto simp: in_pair_def)
 
 lemma subset_pairsI [intro]:
   assumes "\<And>x. x \<in>\<^sub>p A \<Longrightarrow> x \<in>\<^sub>p B"
@@ -2004,7 +2004,7 @@ next
         case True
         moreover from \<open>a1 \<in> set gs \<union> set bs\<close> \<open>b1 \<in> set gs \<union> set bs\<close> disj1
         have "(a1, b1) \<notin>\<^sub>p set hs \<times> (set gs \<union> set bs \<union> set hs)"
-          by (auto simp: in_pair_def swap_def)
+          by (auto simp: in_pair_def)
         ultimately have "(a1, b1) \<in>\<^sub>p set (ps -- sps) -\<^sub>p set ps'" by auto
         with \<open>fst a1 \<noteq> 0\<close> \<open>fst b1 \<noteq> 0\<close> show ?thesis by (rule a)
       next
@@ -4336,8 +4336,7 @@ next
   hence "set (punit.Keys_to_list (map fst bs)) \<noteq> {}" by (simp add: punit.set_Keys_to_list)
   hence "punit.Keys_to_list (map fst bs) \<noteq> []" by simp
   thus "remdups (map (\<lambda>_. ()) (punit.Keys_to_list (map fst bs))) = [()]"
-    by (metis (full_types) old.unit.exhaust sorted.cases Nil_is_map_conv \<open>punit.Keys_to_list (map fst bs) \<noteq> []\<close> distinct_length_2_or_more distinct_remdups remdups_eq_nil_right_iff) 
-    (*SLOW: 13s*)
+    by (metis (full_types) remdups_adj.cases old.unit.exhaust  Nil_is_map_conv \<open>punit.Keys_to_list (map fst bs) \<noteq> []\<close> distinct_length_2_or_more distinct_remdups remdups_eq_nil_right_iff)
 qed
 
 lemma count_const_lt_components_punit [code]:

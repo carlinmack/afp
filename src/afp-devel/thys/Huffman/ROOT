@@ -5,7 +5,6 @@ session Huffman (AFP) = HOL +
   theories 
     Huffman
   document_files
-    "build"
     "forest-a.eps"
     "forest-a.pdf"
     "forest-a.svg"

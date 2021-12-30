@@ -1142,7 +1142,8 @@ begin
   proof
     assume "edge_succ M a = a'"
     then have "G.face_cycle_set a' = {a'}"
-      using face_cycle_succ_a_neigh by (auto simp: G.face_cycle_set_altdef id_funpow_id G.face_cycle_succ_def)
+      using face_cycle_succ_a_neigh
+      by auto (metis G.arev_arev_raw G.face_cycle_succ_def G.fcs_x_eq_x a_in comp_apply singletonD)
     with a_neq_a' same_face G.face_cycle_set_self[of a] show False by auto
   qed
 
@@ -1200,7 +1201,7 @@ begin
         by (simp add: m_def)
 
       have *: "(G.face_cycle_succ ^^ Suc m) a' = a"
-        using a_in_o by (simp add: m_def funpow_simp_l funpow_dist1_prop del: funpow.simps)
+        using a_in_o by (simp add: m_def funpow_dist1_prop del: funpow.simps)
       have "(H.face_cycle_succ ^^ m) a_neigh = a_neigh"
       proof -
         have "a = G.face_cycle_succ ((H.face_cycle_succ ^^ m) a_neigh)"
@@ -1587,7 +1588,7 @@ context digraph_map begin
     {
       fix x show "(x \<in> arcs G) = (edge_rev (rev_swap a b) x \<noteq> x)"
         using assms(2)
-        by (cases "x \<in> {a,b}") (auto simp: rev_swap_def perm_swap_def arev_dom swap_def split: if_splits)
+        by (cases "x \<in> {a,b}") (auto simp: rev_swap_def perm_swap_def arev_dom Transposition.transpose_def split: if_splits)
     next
       fix x assume "x \<in> arcs G" then show "edge_rev ?M' (edge_rev ?M' x) = x"
         by (auto simp: rev_swap_def perm_swap_comp[symmetric])

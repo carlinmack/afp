@@ -74,7 +74,7 @@ ML \<comment> \<open>\<^file>\<open>../generated/c_grammar_fun.grm.sml\<close>\<
 \<open>
 signature C_GRAMMAR_RULE_LIB =
 sig
-  type arg = C_Env.T
+  type arg = (C_Antiquote.antiq * C_Env.antiq_language list) C_Env.T
   type 'a monad = arg -> 'a * arg
 
   (* type aliases *)
@@ -256,7 +256,7 @@ end
 structure C_Grammar_Rule_Lib : C_GRAMMAR_RULE_LIB =
 struct
   open C_Ast
-  type arg = C_Env.T
+  type arg = (C_Antiquote.antiq * C_Env.antiq_language list) C_Env.T
   type 'a monad = arg -> 'a * arg
 
   (**)
@@ -317,12 +317,27 @@ struct
                                                         | _ => NONE));
       val entity = Markup.entity varN name
       val cons' = cons o markup_init
+      val _ = make_entity_markup
+      (* PATCH: copied as such from Isabelle2020 *)
+      fun entity_properties_of def serial pos =
+          if def then (Markup.defN, Value.print_int serial) :: properties_of pos
+          else (Markup.refN, Value.print_int serial) :: def_properties_of pos;
+
     in
      (cons' var
       #> report' cons' def global
       #> (case typing of NONE => I | SOME x => cons x))
        (map (fn pos =>
-              markup_init (Markup.properties (Position.entity_properties_of def id pos) entity))
+(* WAS:  markup_init (Markup.properties (Position.entity_properties_of def id pos) entity))  *)
+(* NEW in Isabelle 2021-1RC:
+  fun make_entity_markup {def} serial kind (name, pos) =
+  let
+    val props =
+      if def then (Markup.defN, Value.print_int serial) :: properties_of pos
+      else (Markup.refN, Value.print_int serial) :: def_properties_of pos;
+  in Markup.entity kind name |> Markup.properties props end;
+*)
+              markup_init (Markup.properties (entity_properties_of def id pos) entity))
             ps)
     end)
 
@@ -496,6 +511,7 @@ struct
     val bits14 = Integer.pow 14 2
     val bits21 = Integer.pow 21 2
     val bits28 = Integer.pow 28 2
+    val ord = SML90.ord; (* copied from ML_init in Isabelle2020. *)
   in
   fun quad s = case s of
     [] => 0
@@ -584,7 +600,7 @@ struct
                    env
   fun shadowTypedef (i, params, ret) env =
     shadowTypedef0 (C_Env.Parsed ret) (List.null (C_Env_Ext.get_scopes env)) (K I) (i, params) env
-  fun isTypeIdent s0 = Symtab.exists (fn (s1, _) => s0 = s1) o C_Env_Ext.get_tyidents_typedef
+  fun isTypeIdent s0 arg = (Symtab.exists (fn (s1, _) => s0 = s1) o C_Env_Ext.get_tyidents_typedef) arg
   fun enterScope env =
     ((), C_Env_Ext.map_scopes (cons (NONE, C_Env_Ext.get_var_table env)) env)
   fun leaveScope env = 
@@ -808,7 +824,7 @@ struct
 local
 
 fun ml_text name ml =
-  Thy_Output.antiquotation_raw_embedded name (Scan.lift Args.text_input \<comment> \<open>TODO: enable reporting with \<^ML_type>\<open>Token.file\<close> as in \<^ML>\<open>Resources.parse_files\<close>\<close>)
+  Document_Output.antiquotation_raw_embedded name (Scan.lift Args.text_input \<comment> \<open>TODO: enable reporting with \<^ML_type>\<open>Token.file\<close> as in \<^ML>\<open>Resources.parse_files\<close>\<close>)
     (fn ctxt => fn text =>
       let val file_content =
             Token.file_source
@@ -836,8 +852,8 @@ fun ml_text name ml =
          |> Symbol_Pos.implode
          |> enclose "\n" "\n"
          |> cartouche
-         |> Thy_Output.output_source ctxt
-         |> Thy_Output.isabelle ctxt
+         |> Document_Output.output_source ctxt
+         |> Document_Output.isabelle ctxt
       end);
 
 fun ml_enclose bg en source =

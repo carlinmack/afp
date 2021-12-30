@@ -22,5 +22,17 @@
         "Dom_Kildall",
         "Dom_Kildall_Property",
         "Dom_Kildall_Correct"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-09-07"
+        }
+    ],
+    "dependencies": [
+        "List-Index",
+        "Jinja"
+    ],
+    "relatedEntries": [
+        "JinjaDCI"
     ]
 }

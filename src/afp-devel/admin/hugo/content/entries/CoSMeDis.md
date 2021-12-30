@@ -1,0 +1,83 @@
+{
+    "title": "CoSMeDis: A confidentiality-verified distributed social media platform",
+    "authors": [
+        "Thomas Bauereiss",
+        "Andrei Popescu"
+    ],
+    "topics": [
+        "Computer science/Security"
+    ],
+    "date": "2021-08-16",
+    "notify": [
+        "thomas@bauereiss.name",
+        "a.popescu@sheffield.ac.uk"
+    ],
+    "abstract": "\nThis entry contains the confidentiality verification of the\n(functional kernel of) the CoSMeDis  distributed social media platform\npresented in [<a href=\"https://doi.org/10.1109/SP.2017.24\">1</a>].\nCoSMeDis is a multi-node extension the CoSMed prototype social media\nplatform [<a href=\"https://doi.org/10.1007/978-3-319-43144-4_6\">2</a>,\n<a href=\"https://doi.org/10.1007/s10817-017-9443-3\">3</a>,\n<a href=\"https://www.isa-afp.org/entries/CoSMed.html\">4</a>].\nThe confidentiality properties are formalized as instances of BD\nSecurity [<a href=\"https://doi.org/10.4230/LIPIcs.ITP.2021.3\">5</a>,\n<a href=\"https://www.isa-afp.org/entries/Bounded_Deducibility_Security.html\">6</a>].\nThe lifting of confidentiality properties from single nodes to the\nentire CoSMeDis network is performed using compositionality and\ntransport theorems for BD Security, which are described in [<a\nhref=\"https://doi.org/10.1109/SP.2017.24\">1</a>]\nand formalized in a separate <a\nhref=\"https://www.isa-afp.org/entries/BD_Security_Compositional.html\">AFP\nentry</a>.",
+    "licence": "BSD",
+    "olderReleases": [],
+    "dependencies": [
+        "BD_Security_Compositional",
+        "Fresh_Identifiers"
+    ],
+    "relatedEntries": [
+        "CoCon",
+        "CoSMed"
+    ],
+    "theories": [
+        "Prelim",
+        "System_Specification",
+        "API_Network",
+        "Automation_Setup",
+        "Safety_Properties",
+        "Post_Intro",
+        "Post_Observation_Setup_ISSUER",
+        "Post_Unwinding_Helper_ISSUER",
+        "Post_Value_Setup_ISSUER",
+        "Post_ISSUER",
+        "Post_Observation_Setup_RECEIVER",
+        "Post_Unwinding_Helper_RECEIVER",
+        "Post_Value_Setup_RECEIVER",
+        "Post_RECEIVER",
+        "Post_COMPOSE2",
+        "Post_Network",
+        "DYNAMIC_Post_Value_Setup_ISSUER",
+        "DYNAMIC_Post_ISSUER",
+        "DYNAMIC_Post_COMPOSE2",
+        "DYNAMIC_Post_Network",
+        "Independent_Post_Observation_Setup_ISSUER",
+        "Independent_DYNAMIC_Post_Value_Setup_ISSUER",
+        "Independent_DYNAMIC_Post_ISSUER",
+        "Independent_Post_Observation_Setup_RECEIVER",
+        "Independent_Post_Value_Setup_RECEIVER",
+        "Independent_Post_RECEIVER",
+        "Independent_DYNAMIC_Post_Network",
+        "Independent_Posts_Network",
+        "Post_All",
+        "Friend_Intro",
+        "Friend_Observation_Setup",
+        "Friend_State_Indistinguishability",
+        "Friend_Openness",
+        "Friend_Value_Setup",
+        "Friend",
+        "Friend_Network",
+        "Friend_All",
+        "Friend_Request_Intro",
+        "Friend_Request_Value_Setup",
+        "Friend_Request",
+        "Friend_Request_Network",
+        "Friend_Request_All",
+        "Outer_Friend_Intro",
+        "Outer_Friend",
+        "Outer_Friend_Issuer_Observation_Setup",
+        "Outer_Friend_Issuer_State_Indistinguishability",
+        "Outer_Friend_Issuer_Openness",
+        "Outer_Friend_Issuer_Value_Setup",
+        "Outer_Friend_Issuer",
+        "Outer_Friend_Receiver_Observation_Setup",
+        "Outer_Friend_Receiver_State_Indistinguishability",
+        "Outer_Friend_Receiver_Value_Setup",
+        "Outer_Friend_Receiver",
+        "Outer_Friend_Network",
+        "Outer_Friend_All"
+    ]
+}

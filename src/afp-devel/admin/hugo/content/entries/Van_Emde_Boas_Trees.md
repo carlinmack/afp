@@ -53,5 +53,10 @@
         "VEBT_DelImperative",
         "VEBT_Intf_Imperative",
         "VEBT_Example"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-11-26"
+        }
     ]
 }

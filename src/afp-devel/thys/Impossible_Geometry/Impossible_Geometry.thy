@@ -308,10 +308,8 @@ unique).\<close>
 
 lemma radical_sqrt_correct_expr:
   "x \<in> radical_sqrt \<Longrightarrow> (\<exists> e. \<lbrace>e\<rbrace> = x)"
-  apply (rule radical_sqrt.induct)
-  apply auto
-  apply (erule Rats_induct)
-  apply (metis translation.simps(1))
+  apply (erule radical_sqrt.induct)
+  apply (metis Rats_cases translation.simps(1))
   apply (metis translation.simps(2))
   apply (metis translation.simps(3))
   apply (metis translation.simps(4))
@@ -403,7 +401,7 @@ radicals of @{term e} is not empty and is also finite.\<close>
 lemma finite_order_radicals:
   "radicals e \<noteq> {} \<Longrightarrow> finite (radicals e) \<Longrightarrow>
    order_radicals (radicals e) \<noteq> {} \<and> finite (order_radicals (radicals e))"
-  by simp (metis equals0I)
+  by auto
 
 text \<open>The following lemma states that given an expression @{term e},
 if the set @{term "order_radicals"} of the set @{term "radicals e"} is
@@ -438,8 +436,7 @@ upmost radicals in this expression are Addition (Const @{term a})
 lemma upmost_radical_sqrt2:
   "radicals e \<noteq> {} \<Longrightarrow>
    \<exists> r \<in> radicals e. \<forall> s \<in> radicals e. r \<notin> radicals s"
-  using in_radicals_smaller_order_contrap [of r s]  finite_radicals [of e]
-  by (metis finite_order_radicals finite_order_radicals_has_max in_radicals_smaller_order_contrap)
+  by (meson finite_order_radicals finite_order_radicals_has_max finite_radicals in_radicals_smaller_order leD)
 
 
 text \<open>The following 7 lemmas are used to prove the main lemma @{term
@@ -1008,7 +1005,7 @@ next
     using c e by (auto intro: radical_sqrt.intros simp add: power2_eq_square)
   have sl6: "(a^2 * e^2 + f^2 + (- 2 * e *b* f) + b^2 * e^2 + (- c* e^2)) \<in> radical_sqrt"
     using a e f b c sl6 sl7 sl8 sl9 sl10
-    by (metis (hide_lams, no_types) power2_eq_square radical_sqrt.intros(4))
+    by (metis (opaque_lifting, no_types) power2_eq_square radical_sqrt.intros(4))
   have "a^2 * e^2 + f^2 - 2* e *b* f + b^2 * e^2 - e^2 *c = a^2 * e^2 + f^2 + (- 2 * e *b* f) + b^2 * e^2 + (- c* e^2)"
     by auto
   hence "(a^2 * e^2 + f^2 - 2* e *b* f + b^2 * e^2 - e^2 *c) \<in> radical_sqrt"
@@ -1248,15 +1245,22 @@ subsection \<open>An important property about constructible points: their
 coordinates are radicals\<close>
 
 lemma constructible_radical_sqrt:
-  assumes h: "M \<in> constructible"
+  assumes "M \<in> constructible"
   shows "(abscissa M) \<in> radical_sqrt & (ordinate M) \<in> radical_sqrt"
-  apply (rule constructible.induct)
-  apply (metis assms)
-  apply (metis radical_sqrt.intros(1))
-  apply (metis radical_sqrt_line_line_intersection)
-  apply (metis radical_sqrt_line_circle_intersection)
-  apply (metis radical_sqrt_circle_circle_intersection)
-  done
+  using assms
+proof (induction rule: constructible.induct)
+  case (1 M)
+  then show ?case by (metis radical_sqrt.intros(1))
+next
+  case (2 A B C D M)
+  then show ?case by (metis radical_sqrt_line_line_intersection)
+next
+  case (3 A B C D E M)
+  then show ?case by (metis radical_sqrt_line_circle_intersection)
+next
+  case (4 A B C D E F M)
+  then show ?case by (metis radical_sqrt_circle_circle_intersection)
+qed
 
 subsection \<open>Proving the impossibility of duplicating the cube\<close>
 
@@ -1331,7 +1335,7 @@ proof-
       by blast
   have r3eq: "r^3 - 3 * r = 1"
     using hypsy hypsr [[hypsubst_thin = true]]
-    by auto (metis (hide_lams, no_types) of_rat_1 of_rat_diff of_rat_eq_iff of_rat_mult of_rat_numeral_eq of_rat_power)
+    by auto (metis (opaque_lifting, no_types) of_rat_1 of_rat_diff of_rat_eq_iff of_rat_mult of_rat_numeral_eq of_rat_power)
   have l7: "(snd p) ^3 > 0 & coprime ((fst p)^3) ((snd p)^3)"
     using hypsp by simp
   have "r^3  = Fract ((fst p)^3) ((snd p)^3)"

@@ -375,14 +375,14 @@ qed
 lemma poincare_between_0uv:
   assumes "u \<in> unit_disc" and "v \<in> unit_disc" and "u \<noteq> 0\<^sub>h" and "v \<noteq> 0\<^sub>h"
   shows "poincare_between 0\<^sub>h u v \<longleftrightarrow>
-         (let u' = to_complex u; v' = to_complex v in arg u' = arg v' \<and> cmod u' \<le> cmod v')" (is "?P u v")
+         (let u' = to_complex u; v' = to_complex v in Arg u' = Arg v' \<and> cmod u' \<le> cmod v')" (is "?P u v")
 proof (cases "u = v")
   case True
   thus ?thesis
     by simp
 next
   case False
-  have "\<forall> v. v \<in> unit_disc \<and> v \<noteq> 0\<^sub>h \<and> v \<noteq> u \<longrightarrow> (poincare_between 0\<^sub>h u v \<longleftrightarrow> (let u' = to_complex u; v' = to_complex v in arg u' = arg v' \<and> cmod u' \<le> cmod v'))" (is "?P' u")
+  have "\<forall> v. v \<in> unit_disc \<and> v \<noteq> 0\<^sub>h \<and> v \<noteq> u \<longrightarrow> (poincare_between 0\<^sub>h u v \<longleftrightarrow> (let u' = to_complex u; v' = to_complex v in Arg u' = Arg v' \<and> cmod u' \<le> cmod v'))" (is "?P' u")
   proof (rule wlog_rotation_to_positive_x_axis)
     show "u \<in> unit_disc" "u \<noteq> 0\<^sub>h"
       by fact+
@@ -409,7 +409,7 @@ next
         using \<open>v \<in> unit_disc\<close> \<open>v \<noteq> 0\<^sub>h\<close> \<open>v \<in> circline_set x_axis\<close> of_complex_inj[of v']
         unfolding circline_set_x_axis
         by (auto simp add: cmod_eq_Re real_imag_0)
-      show "let u' = to_complex (of_complex x); v' = to_complex v in arg u' = arg v' \<and> cmod u' \<le> cmod v'"
+      show "let u' = to_complex (of_complex x); v' = to_complex v in Arg u' = Arg v' \<and> cmod u' \<le> cmod v'"
         using poincare_between_x_axis_0uv[of "Re x" "Re v'"] * **
         using \<open>poincare_between 0\<^sub>h (of_complex x) v\<close>
         using arg_complex_of_real_positive[of "Re x"] arg_complex_of_real_negative[of "Re x"]
@@ -421,7 +421,7 @@ next
       then obtain v' where **: "v = of_complex v'" "v' \<noteq> 0" "v' \<noteq> x"
         using inf_or_of_complex[of v]
         by auto blast
-      assume "let u' = to_complex (of_complex x); v' = to_complex v in arg u' = arg v' \<and> cmod u' \<le> cmod v'"
+      assume "let u' = to_complex (of_complex x); v' = to_complex v in Arg u' = Arg v' \<and> cmod u' \<le> cmod v'"
       hence ***: "Re x < 0 \<and> Re v' < 0 \<and> Re v' \<le> Re x \<or> 0 < Re x \<and> 0 < Re v' \<and> Re x \<le> Re v'" "is_real v'"
         using arg_pi_iff[of x] arg_pi_iff[of v']
         using arg_0_iff[of x] arg_0_iff[of v']
@@ -456,7 +456,7 @@ next
         using unit_disc_fix_moebius_preserve_poincare_between[of ?M "0\<^sub>h" u v]
         using \<open>v \<in> unit_disc\<close> \<open>u \<in> unit_disc\<close> \<open>v \<noteq> 0\<^sub>h\<close> \<open>u \<noteq> 0\<^sub>h\<close>
         using arg_mult_eq[of "cis \<phi>" u' v']
-        by simp (auto simp add: arg_mult)
+        by simp (auto simp add: arg_mult norm_mult)
     qed
   qed
   thus ?thesis
@@ -474,13 +474,8 @@ lemma poincare_between_y_axis_0uv:
   using poincare_between_0uv[of "of_complex (\<i> * x)" "of_complex (\<i> * y)"]
   using arg_pi2_iff[of "\<i> * cor x"] arg_pi2_iff[of "\<i> * cor y"]
   using arg_minus_pi2_iff[of "\<i> * cor x"] arg_minus_pi2_iff[of "\<i> * cor y"]
-  apply simp
-  apply (cases "x > 0")
-  apply (cases "y > 0", simp, simp)
-  apply (cases "y > 0")
-  apply simp
-  using pi_gt_zero apply linarith
-  apply simp
+  apply (simp add: norm_mult)
+  apply (smt (verit, best))
   done
 
 lemma poincare_between_x_axis_uvw:
@@ -561,7 +556,7 @@ next
            (y * y + y * (y * (x * z)) - (y * x + y * (y * (y * z)))) /
            (y * y + y * (y * (x * z)) - (y * z + y * (y * (y * x)))) =
            (y + y * (x * z) - (x + y * (y * z))) / (y + y * (x * z) - (z + y * (y * x)))"
-        by (metis (no_types, hide_lams) ab_group_add_class.ab_diff_conv_add_uminus distrib_left mult_divide_mult_cancel_left_if mult_minus_right)
+        by (metis (no_types, opaque_lifting) ab_group_add_class.ab_diff_conv_add_uminus distrib_left mult_divide_mult_cancel_left_if mult_minus_right)
       thus ?thesis
         using \<open>y \<noteq> x\<close> \<open>z \<noteq> x\<close> False \<open>\<not> (x = 0 \<or> y = 0 \<or> z = 0)\<close>
         using \<open>cor y * cor x \<noteq> 1\<close>
@@ -833,7 +828,7 @@ next
           using \<open>poincare_between 0\<^sub>h (of_complex x) n\<close> xx \<open>of_complex x \<noteq> 0\<^sub>h\<close>
           using False ** \<open>of_complex x \<in> unit_disc\<close> \<open>n \<noteq> 0\<^sub>h\<close>
           using cmod_Re_le_iff poincare_between_0uv
-          by (metis Re_complex_of_real arg_0_iff rcis_cmod_arg rcis_zero_arg to_complex_of_complex)
+          by (metis Re_complex_of_real arg_0_iff rcis_cmod_Arg rcis_zero_arg to_complex_of_complex)
         
         have "poincare_between (of_complex m') (of_complex x) (of_complex n')" 
           using \<open>Re x \<le> Re n'\<close> \<open>Re m' \<le> Re x\<close>
@@ -1195,7 +1190,7 @@ proof-
     have "of_complex x \<in> unit_disc"
       using x
       by (auto simp add: cmod_eq_Re)
-    have "arg x = 0"
+    have "Arg x = 0"
       using x
       using arg_0_iff by blast
     show "?P 0\<^sub>h (of_complex x)"
@@ -1212,9 +1207,9 @@ proof-
         using of_complex_zero_iff[of x]
         by force+
 
-      hence "arg y' = 0" "cmod y' \<ge> cmod x" "arg z' = 0" "cmod z' \<ge> cmod x"
+      hence "Arg y' = 0" "cmod y' \<ge> cmod x" "Arg z' = 0" "cmod z' \<ge> cmod x"
         using poincare_between_0uv[of "of_complex x" y] poincare_between_0uv[of "of_complex x" z]
-        using \<open>of_complex x \<in> unit_disc\<close> \<open>x \<noteq> 0\<close> \<open>arg x = 0\<close> \<open>y \<in> unit_disc\<close> \<open>z \<in> unit_disc\<close> betw yz
+        using \<open>of_complex x \<in> unit_disc\<close> \<open>x \<noteq> 0\<close> \<open>Arg x = 0\<close> \<open>y \<in> unit_disc\<close> \<open>z \<in> unit_disc\<close> betw yz
         by (simp_all add: Let_def)
       hence *: "is_real y'" "is_real z'" "Re y' > 0" "Re z' > 0"
         using arg_0_iff[of y'] arg_0_iff[of z'] x \<open>y \<noteq> 0\<^sub>h\<close> \<open>z \<noteq> 0\<^sub>h\<close> yz

@@ -37,5 +37,13 @@
         "SI_Astronomical",
         "SI_Pretty",
         "BIS"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-10-28"
+        }
     ]
 }

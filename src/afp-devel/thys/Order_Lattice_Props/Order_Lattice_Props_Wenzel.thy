@@ -8,9 +8,9 @@ section \<open>Duality Based on a Data Type\<close>
 
 theory Order_Lattice_Props_Wenzel
   imports Main 
-          "HOL-Library.Lattice_Syntax"
-
 begin
+
+unbundle lattice_syntax
 
 subsection \<open>Wenzel's Approach Revisited\<close>
 
@@ -265,7 +265,7 @@ lemma downset_set_upset_set_dual: "(`) \<partial> \<circ> \<Down> = \<Up> \<circ
   also have "... = {\<partial> y |y. \<exists>x \<in> X. \<partial> x \<le> \<partial> y}"
     by (meson dual_anti_iff)
   also have "... = {y. \<exists>x \<in> \<partial> ` X. x \<le> y}"
-    by (metis (mono_tags, hide_lams) dual.exhaust image_iff)
+    by (metis (mono_tags, opaque_lifting) dual.exhaust image_iff)
   finally have "((`) \<partial> \<circ> \<Down>) X = (\<Up> \<circ> (`) \<partial>) X"
     by (simp add: upset_set_def)}
   thus ?thesis
@@ -278,12 +278,3 @@ lemma upset_set_downset_set_dual: "(`) \<partial> \<circ> \<Up> = \<Down> \<circ
   by (metis (mono_tags, lifting) dual.exhaust dual_anti_iff mem_Collect_eq rev_image_eqI)
 
 end
-
-
-
-
-
-
-
-
-

@@ -29,5 +29,10 @@
         "JVMExecStepInductive",
         "JVMCollectionBasedRTS",
         "RTS"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-05-03"
+        }
     ]
 }

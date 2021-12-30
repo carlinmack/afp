@@ -15,7 +15,7 @@
     "dependencies": [
         "Algebraic_Numbers",
         "Complex_Geometry",
-        "Hermite_Lindemann"
+        "Factor_Algebraic_Polynomial"
     ],
     "theories": [
         "Ferraris_Formula",
@@ -24,5 +24,10 @@
         "Complex_Roots",
         "Cubic_Polynomials",
         "Quartic_Polynomials"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-09-03"
+        }
     ]
 }

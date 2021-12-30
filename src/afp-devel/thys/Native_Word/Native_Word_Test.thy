@@ -6,12 +6,25 @@ chapter \<open>Test cases\<close>
 
 theory Native_Word_Test imports
   Uint64 Uint32 Uint16 Uint8 Uint Native_Cast_Uint
-  "HOL-Library.Code_Test"
+  "HOL-Library.Code_Test" "Word_Lib.Bit_Shifts_Infix_Syntax"
 begin
+
+export_code
+  nat_of_uint8 uint8_of_nat
+  nat_of_uint16 uint16_of_nat
+  nat_of_uint32 uint32_of_nat
+  nat_of_uint64 uint64_of_nat
+  nat_of_uint uint_of_nat
+  in SML
 
 section \<open>Tests for @{typ uint32}\<close>
 
-notation sshiftr_uint32 (infixl ">>>" 55)
+context
+  includes bit_operations_syntax
+begin
+
+abbreviation (input) sshiftr_uint32 (infixl ">>>" 55)
+  where \<open>w >>> n \<equiv> signed_drop_bit_uint32 n w\<close>
 
 definition test_uint32 where
   "test_uint32 \<longleftrightarrow>
@@ -50,7 +63,7 @@ definition test_uint32 where
    , (0x5 :: uint32) < 0x5, (0x5 :: uint32) < 0x6, (-5 :: uint32) < 6, (6 :: uint32) < -5
    , (0x5 :: uint32) \<le> 0x5, (0x5 :: uint32) \<le> 0x4, (-5 :: uint32) \<le> 6, (6 :: uint32) \<le> -5 
    , (0x7FFFFFFF :: uint32) < 0x80000000, (0xFFFFFFFF :: uint32) < 0, (0x80000000 :: uint32) < 0x7FFFFFFF
-   , (0x7FFFFFFF :: uint32) !! 0, (0x7FFFFFFF :: uint32) !! 31, (0x80000000 :: uint32) !! 31, (0x80000000 :: uint32) !! 32
+   , bit (0x7FFFFFFF :: uint32) 0, bit (0x7FFFFFFF :: uint32) 31, bit (0x80000000 :: uint32) 31, bit (0x80000000 :: uint32) 32
    ]
   =
    [ True, False
@@ -62,8 +75,6 @@ definition test_uint32 where
   ([integer_of_uint32 0, integer_of_uint32 0x7FFFFFFF, integer_of_uint32 0x80000000, integer_of_uint32 0xAAAAAAAA]
   =
    [0, 0x7FFFFFFF, 0x80000000, 0xAAAAAAAA])"
-
-no_notation sshiftr_uint32 (infixl ">>>" 55)
 
 export_code test_uint32 checking SML Haskell? OCaml? Scala
 
@@ -90,9 +101,17 @@ lemma "(f :: uint32 \<Rightarrow> unit) = g"
 quickcheck[narrowing, size=3, expect=no_counterexample]
 by(simp add: fun_eq_iff)
 
+end
+
+
 section \<open>Tests for @{typ uint16}\<close>
 
-notation sshiftr_uint16 (infixl ">>>" 55)
+context
+  includes bit_operations_syntax
+begin
+
+abbreviation (input) sshiftr_uint16 (infixl ">>>" 55)
+  where \<open>w >>> n \<equiv> signed_drop_bit_uint16 n w\<close>
 
 definition test_uint16 where
   "test_uint16 \<longleftrightarrow>
@@ -131,7 +150,7 @@ definition test_uint16 where
    , (0x5 :: uint16) < 0x5, (0x5 :: uint16) < 0x6, (-5 :: uint16) < 6, (6 :: uint16) < -5
    , (0x5 :: uint16) \<le> 0x5, (0x5 :: uint16) \<le> 0x4, (-5 :: uint16) \<le> 6, (6 :: uint16) \<le> -5 
    , (0x7FFF :: uint16) < 0x8000, (0xFFFF :: uint16) < 0, (0x8000 :: uint16) < 0x7FFF
-   , (0x7FFF :: uint16) !! 0, (0x7FFF :: uint16) !! 15, (0x8000 :: uint16) !! 15, (0x8000 :: uint16) !! 16
+   , bit (0x7FFF :: uint16) 0, bit (0x7FFF :: uint16) 15, bit (0x8000 :: uint16) 15, bit (0x8000 :: uint16) 16
    ]
   =
    [ True, False
@@ -144,10 +163,8 @@ definition test_uint16 where
   =
    [0, 0x7FFF, 0x8000, 0xAAAA])"
 
-no_notation sshiftr_uint16 (infixl ">>>" 55)
-
 export_code test_uint16 checking Haskell? Scala
-export_code test_uint16 in SML_word
+export_code test_uint16 checking SML_word
 
 notepad begin
 have test_uint16 by code_simp
@@ -162,9 +179,17 @@ lemma "(f :: uint16 \<Rightarrow> unit) = g"
 quickcheck[narrowing, size=3, expect=no_counterexample]
 by(simp add: fun_eq_iff)
 
+end
+
+
 section \<open>Tests for @{typ uint8}\<close>
 
-notation sshiftr_uint8 (infixl ">>>" 55)
+context
+  includes bit_operations_syntax
+begin
+
+abbreviation (input) sshiftr_uint8 (infixl ">>>" 55)
+  where \<open>w >>> n \<equiv> signed_drop_bit_uint8 n w\<close>
 
 definition test_uint8 where
   "test_uint8 \<longleftrightarrow> 
@@ -203,7 +228,7 @@ definition test_uint8 where
    , (0x5 :: uint8) < 0x5, (0x5 :: uint8) < 0x6, (-5 :: uint8) < 6, (6 :: uint8) < -5
    , (0x5 :: uint8) \<le> 0x5, (0x5 :: uint8) \<le> 0x4, (-5 :: uint8) \<le> 6, (6 :: uint8) \<le> -5 
    , (0x7F :: uint8) < 0x80, (0xFF :: uint8) < 0, (0x80 :: uint8) < 0x7F
-   , (0x7F :: uint8) !! 0, (0x7F :: uint8) !! 7, (0x80 :: uint8) !! 7, (0x80 :: uint8) !! 8
+   , bit (0x7F :: uint8) 0, bit (0x7F :: uint8) 7, bit (0x80 :: uint8) 7, bit (0x80 :: uint8) 8
    ]
   =
    [ True, False
@@ -216,13 +241,10 @@ definition test_uint8 where
   =
    [0, 0x7F, 0x80, 0xAA])"
 
-no_notation sshiftr_uint8 (infixl ">>>" 55)
-
 export_code test_uint8 checking SML Haskell? Scala
 
-export_code test_uint8 in SML
-
 notepad begin
+
 have test_uint8 by eval
 have test_uint8 by code_simp
 have test_uint8 by normalization
@@ -246,9 +268,15 @@ lemma "(f :: uint8 \<Rightarrow> unit) = g"
 quickcheck[narrowing, size=3, expect=no_counterexample]
 by(simp add: fun_eq_iff)
 
+
 section \<open>Tests for @{typ "uint"}\<close>
 
-notation sshiftr_uint (infixl ">>>" 55)
+context
+  includes bit_operations_syntax
+begin
+
+abbreviation (input) sshiftr_uint (infixl ">>>" 55)
+  where \<open>w >>> n \<equiv> signed_drop_bit_uint n w\<close>
 
 definition "test_uint \<equiv> let 
   test_list1 = (let
@@ -267,7 +295,7 @@ definition "test_uint \<equiv> let
       , 5 mod 3, -5 mod 3, -5 mod -3, 5 mod -3
       , set_bit 5 4 True, set_bit (- 5) 2 True, set_bit 5 0 False, set_bit (- 5) 1 False
       , set_bit 5 dflt_size True, set_bit 5 dflt_size False, set_bit (- 5) dflt_size True, set_bit (- 5) dflt_size False
-      , 1 << 2, -1 << 3, 1 << dflt_size, 1 << 0
+      , 1 << 2, -1 << 3, push_bit dflt_size 1, 1 << 0
       , 31 >> 3, -1 >> 3, 31 >> dflt_size, -1 >> dflt_size
       , 15 >>> 2, -1 >>> 3, 15 >>> dflt_size, -1 >>> dflt_size]
     else []) :: uint list));
@@ -300,7 +328,7 @@ definition "test_uint \<equiv> let
    , (0x5 :: uint) < 0x5, (0x5 :: uint) < 0x6, (-5 :: uint) < 6, (6 :: uint) < -5
    , (0x5 :: uint) \<le> 0x5, (0x5 :: uint) \<le> 0x4, (-5 :: uint) \<le> 6, (6 :: uint) \<le> -5 
    , (HS - 1) < HS, (HS + HS - 1) < 0, HS < HS - 1
-   , (HS - 1) !! 0, (HS - 1 :: uint) !! (dflt_size - 1), (HS :: uint) !! (dflt_size - 1), (HS :: uint) !! dflt_size
+   , bit (HS - 1) 0, bit (HS - 1 :: uint) (dflt_size - 1), bit (HS :: uint) (dflt_size - 1), bit (HS :: uint) dflt_size
    ]);
 
   test_list_c2 =
@@ -313,8 +341,6 @@ definition "test_uint \<equiv> let
 in
   test_list1 = map uint_of_int test_list2
 \<and> test_list_c1 = test_list_c2"
-
-no_notation sshiftr_uint (infixl ">>>" 55)
 
 export_code test_uint checking SML Haskell? OCaml? Scala
 
@@ -335,9 +361,15 @@ lemma "(f :: uint \<Rightarrow> unit) = g"
 quickcheck[narrowing, size=3, expect=no_counterexample]
 by(simp add: fun_eq_iff)
 
-section \<open> Tests for @{typ uint64} \<close>
 
-notation sshiftr_uint64 (infixl ">>>" 55)
+section \<open>Tests for @{typ uint64} \<close>
+
+context
+  includes bit_operations_syntax
+begin
+
+abbreviation (input) sshiftr_uint64 (infixl ">>>" 55)
+  where \<open>w >>> n \<equiv> signed_drop_bit_uint64 n w\<close>
 
 definition test_uint64 where
   "test_uint64 \<longleftrightarrow>
@@ -376,7 +408,7 @@ definition test_uint64 where
    , (0x5 :: uint64) < 0x5, (0x5 :: uint64) < 0x6, (-5 :: uint64) < 6, (6 :: uint64) < -5
    , (0x5 :: uint64) \<le> 0x5, (0x5 :: uint64) \<le> 0x4, (-5 :: uint64) \<le> 6, (6 :: uint64) \<le> -5 
    , (0x7FFFFFFFFFFFFFFF :: uint64) < 0x8000000000000000, (0xFFFFFFFFFFFFFFFF :: uint64) < 0, (0x8000000000000000 :: uint64) < 0x7FFFFFFFFFFFFFFF
-   , (0x7FFFFFFFFFFFFFFF :: uint64) !! 0, (0x7FFFFFFFFFFFFFFF :: uint64) !! 63, (0x8000000000000000 :: uint64) !! 63, (0x8000000000000000 :: uint64) !! 64
+   , bit (0x7FFFFFFFFFFFFFFF :: uint64) 0, bit (0x7FFFFFFFFFFFFFFF :: uint64) 63, bit (0x8000000000000000 :: uint64) 63, bit (0x8000000000000000 :: uint64) 64
    ]
   =
    [ True, False
@@ -405,8 +437,6 @@ value [nbe] "[0x10000000000000001, -1, -9223372036854775808, 0xFFFFFFFFFFFFFFFF,
     , 100 >> 3, -100 >> 3, 100 >> 64, -100 >> 64
     , 100 >>> 3, -100 >>> 3, 100 >>> 64, -100 >>> 64] :: uint64 list"
 
-no_notation sshiftr_uint64 (infixl ">>>" 55)
-
 export_code test_uint64 checking SML Haskell? OCaml? Scala
 
 notepad begin
@@ -418,6 +448,9 @@ ML_val \<open>val true = @{code test_uint64}\<close>
 
 definition test_uint64' :: uint64
 where "test_uint64' = 0 + 10 - 14 * 3 div 6 mod 3 << 3 >> 2"
+
+end
+
 
 section \<open>Tests for casts\<close>
 
@@ -463,14 +496,14 @@ ML \<open>
 
 definition test_casts_uint :: bool where
   "test_casts_uint \<longleftrightarrow>
-  map uint_of_uint32 ([0, 10] @ (if dflt_size < 32 then [1 << (dflt_size - 1), 0xFFFFFFFF] else [0xFFFFFFFF])) = 
-  [0, 10] @ (if dflt_size < 32 then [1 << (dflt_size - 1), (1 << dflt_size) - 1] else [0xFFFFFFFF]) \<and>
-  map uint32_of_uint [0, 10, if dflt_size < 32 then 1 << (dflt_size - 1) else 0xFFFFFFFF] =
-  [0, 10, if dflt_size < 32 then 1 << (dflt_size - 1) else 0xFFFFFFFF] \<and>
-  map uint_of_uint64 [0, 10, 1 << (dflt_size - 1), 0xFFFFFFFFFFFFFFFF] =
-  [0, 10, 1 << (dflt_size - 1), (1 << dflt_size) - 1] \<and>
-  map uint64_of_uint [0, 10, 1 << (dflt_size - 1)] =
-  [0, 10, 1 << (dflt_size - 1)]"
+  map uint_of_uint32 ([0, 10] @ (if dflt_size < 32 then [push_bit (dflt_size - 1) 1, 0xFFFFFFFF] else [0xFFFFFFFF])) = 
+  [0, 10] @ (if dflt_size < 32 then [push_bit (dflt_size - 1) 1, (push_bit dflt_size 1) - 1] else [0xFFFFFFFF]) \<and>
+  map uint32_of_uint [0, 10, if dflt_size < 32 then push_bit (dflt_size - 1) 1 else 0xFFFFFFFF] =
+  [0, 10, if dflt_size < 32 then push_bit (dflt_size - 1) 1 else 0xFFFFFFFF] \<and>
+  map uint_of_uint64 [0, 10, push_bit (dflt_size - 1) 1, 0xFFFFFFFFFFFFFFFF] =
+  [0, 10, push_bit (dflt_size - 1) 1, (push_bit dflt_size 1) - 1] \<and>
+  map uint64_of_uint [0, 10, push_bit (dflt_size - 1) 1] =
+  [0, 10, push_bit (dflt_size - 1) 1]"
 
 definition test_casts_uint' :: bool where
   "test_casts_uint' \<longleftrightarrow>
@@ -481,5 +514,9 @@ definition test_casts_uint'' :: bool where
   "test_casts_uint'' \<longleftrightarrow>
   map uint_of_uint8 [0, 10, 0xFF] = [0, 10, 0xFF] \<and>
   map uint8_of_uint [0, 10, 0xFF] = [0, 10, 0xFF]"
+
+end
+
+end
 
 end

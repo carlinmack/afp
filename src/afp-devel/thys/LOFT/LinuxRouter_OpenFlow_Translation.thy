@@ -6,6 +6,7 @@ imports IP_Addresses.CIDR_Split
 	OpenFlow_Matches
 	OpenFlow_Action
 	Routing.Linux_Router
+	"Pure-ex.Guess"
 begin
 hide_const Misc.uncurry
 hide_fact Misc.uncurry_def
@@ -33,7 +34,7 @@ p_payload :: string
 definition "route2match r =
 	\<lparr>iiface = ifaceAny, oiface = ifaceAny, 
 	src = (0,0), dst=(pfxm_prefix (routing_match r),pfxm_length (routing_match r)), 
-	proto=ProtoAny, sports=(0,max_word), ports=(0,max_word)\<rparr>"
+	proto=ProtoAny, sports=(0,- 1), ports=(0,- 1)\<rparr>"
 
 definition toprefixmatch where
 "toprefixmatch m \<equiv> (let pm = PrefixMatch (fst m) (snd m) in if pm = PrefixMatch 0 0 then None else Some pm)"
@@ -62,9 +63,9 @@ definition simple_match_to_of_match_single ::
    The more smart way would be to insert a rule with the same match condition that additionally matches the input interface and drops. However, I'm afraid this is going to be very tricky to verify\<dots> *)
 definition simple_match_to_of_match :: "32 simple_match \<Rightarrow> string list \<Rightarrow> of_match_field set list" where
 "simple_match_to_of_match m ifs \<equiv> (let
-	npm = (\<lambda>p. fst p = 0 \<and> snd p = max_word);
+	npm = (\<lambda>p. fst p = 0 \<and> snd p = - 1);
 	sb = (\<lambda>p. (if npm p then [None] else if fst p \<le> snd p
-  then map (Some \<circ> (\<lambda>pfx. (pfxm_prefix pfx, NOT (pfxm_mask pfx)))) (wordinterval_CIDR_split_prefixmatch (WordInterval (fst p) (snd p))) else []))
+  then map (Some \<circ> (\<lambda>pfx. (pfxm_prefix pfx, Bit_Operations.not (pfxm_mask pfx)))) (wordinterval_CIDR_split_prefixmatch (WordInterval (fst p) (snd p))) else []))
 	in [simple_match_to_of_match_single m iif (proto m) sport dport.
 		iif \<leftarrow> (if iiface m = ifaceAny then [None] else [Some i. i \<leftarrow> ifs, match_iface (iiface m) i]),
 		sport \<leftarrow> sb (sports m),
@@ -108,7 +109,7 @@ proof(clarsimp, goal_cases)
     unfolding ball_Un
   proof((intro conjI; ((simp;fail)| - )), goal_cases)
     case 1
-    have e: "(fst (sports m) = 0 \<and> snd (sports m) = max_word) \<or> proto m = Proto TCP \<or> proto m = Proto UDP \<or> proto m = Proto L4_Protocol.SCTP"
+    have e: "(fst (sports m) = 0 \<and> snd (sports m) = - 1) \<or> proto m = Proto TCP \<or> proto m = Proto UDP \<or> proto m = Proto L4_Protocol.SCTP"
       using o(1)
       unfolding simple_match_valid_alt Let_def
       by(clarsimp split: if_splits)
@@ -117,7 +118,7 @@ proof(clarsimp, goal_cases)
       by(elim disjE; simp add: option2set_def split: if_splits prod.splits uncurry_splits)
   next
     case 2
-    have e: "(fst (dports m) = 0 \<and> snd (dports m) = max_word) \<or> proto m = Proto TCP \<or> proto m = Proto UDP \<or> proto m = Proto L4_Protocol.SCTP"
+    have e: "(fst (dports m) = 0 \<and> snd (dports m) = - 1) \<or> proto m = Proto TCP \<or> proto m = Proto UDP \<or> proto m = Proto L4_Protocol.SCTP"
       using o(1)
       unfolding simple_match_valid_alt Let_def
       by(clarsimp split: if_splits)
@@ -152,7 +153,7 @@ lemma simple_match_to_of_matchI:
 	assumes ippkt: "p_l2type p = 0x800"
 	shows eq: "\<exists>gr \<in> set (simple_match_to_of_match r ifs). OF_match_fields gr p = Some True"
 proof -
-	let ?npm = "\<lambda>p. fst p = 0 \<and> snd p = max_word"
+	let ?npm = "\<lambda>p. fst p = 0 \<and> snd p = - 1"
 	let ?sb = "\<lambda>p r. (if ?npm p then None else Some r)"
 	obtain si where si: "case si of Some ssi \<Rightarrow> p_sport p \<in> prefix_to_wordset ssi | None \<Rightarrow> True"
 		"case si of None \<Rightarrow> True | Some ssi \<Rightarrow> ssi \<in> set (
@@ -436,7 +437,7 @@ lemma sorted_word_upt:
   shows "sorted_descending (map won (rev [0..<Suc (length l)]))" 
 using assms
   by(induction l rule: rev_induct;clarsimp)
-    (metis (mono_tags, hide_lams) le_SucI le_unat_uoi of_nat_Suc order_refl word_le_nat_alt)
+    (metis (mono_tags, opaque_lifting) le_SucI le_unat_uoi of_nat_Suc order_refl word_le_nat_alt)
     (* This proof is kind of ugly. In case it breaks unfixably, go back to rev a9c4927 and get word_upto.
        The lemmas on word_upto can be used to shows this trivially. *)
 
@@ -483,7 +484,7 @@ definition "lr_of_tran rt fw ifs \<equiv>
   let	nrd = lr_of_tran_fbs rt fw ifs;
 	ard = map (apfst of_nat) (annotate_rlen nrd) \<comment> \<open>give them a priority\<close>
 	in
-	if length nrd < unat (max_word :: 16 word)
+	if length nrd < unat (- 1 :: 16 word)
 	then Inr (pack_OF_entries ifs ard)
 	else Inl ''Error in creating OpenFlow table: priority number space exhausted'')
 "

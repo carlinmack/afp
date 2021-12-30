@@ -23,5 +23,13 @@
         "Safe_Distance",
         "Safe_Distance_Reaction",
         "Evaluation"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-06-03"
+        }
     ]
 }

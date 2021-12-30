@@ -17,6 +17,12 @@
     "licence": "BSD",
     "olderReleases": [
         {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-04-18"
+        },
+        {
             "2019": "2019-06-11"
         },
         {
@@ -33,7 +39,11 @@
         }
     ],
     "dependencies": [
-        "Pre_BZ"
+        "Subresultants",
+        "Polynomial_Factorization",
+        "Polynomial_Interpolation",
+        "Efficient-Mergesort",
+        "Show"
     ],
     "theories": [
         "Finite_Field",
@@ -69,5 +79,8 @@
         "Square_Free_Factorization_Int",
         "Factorize_Int_Poly",
         "Factorize_Rat_Poly"
+    ],
+    "relatedEntries": [
+        "Polynomial_Factorization"
     ]
 }

@@ -74,12 +74,8 @@ proof -
       finally show "Re (exp (Complex wR \<theta>)) = Re z" .
     qed
     moreover have "-pi<\<theta>" "\<theta>\<le>pi"
-      unfolding \<theta>_def
-      subgoal by (auto intro:order_class.order.strict_trans[OF _ arctan_lbound])
-      subgoal
-        apply (rule preorder_class.less_imp_le)
-        by (auto intro:order_class.order.strict_trans[OF arctan_ubound])
-      done
+      using arctan_lbound [of \<open>Im z / Re z\<close>] arctan_ubound [of \<open>Im z / Re z\<close>]
+      by (simp_all add: \<theta>_def)
     ultimately have "Ln z = Complex wR \<theta>" using Ln_unique by auto
     then show ?thesis using that unfolding \<theta>_def by auto
   qed
@@ -377,7 +373,7 @@ proof -
     assume "\<not> - pi / 2 < a1"
     then have "a1=- pi / 2" using \<open>-pi/2\<le>a1\<close> by auto
     then have "cos a = 0" unfolding aa1
-      by (metis (no_types, hide_lams) add.commute add_0_left cos_pi_half 
+      by (metis (no_types, opaque_lifting) add.commute add_0_left cos_pi_half 
               diff_eq_eq mult.left_neutral mult_minus_right mult_zero_left 
               sin_add sin_pi_half sin_zero_iff_int2 times_divide_eq_left uminus_add_conv_diff)
     then show False using assms by auto
@@ -691,8 +687,7 @@ proof -
         finally have *:"dist x y = \<bar>k+k1-k2\<bar>*\<bar>\<delta>\<bar>" .
         then have "\<bar>k+k1-k2\<bar>*\<bar>\<delta>\<bar> < e" using \<open>dist x y<e\<close> by auto
         then have "\<bar>k+k1-k2\<bar>*\<bar>\<delta>\<bar> < \<bar>\<delta>\<bar>"
-          apply (elim order_class.dual_order.strict_trans1[rotated])
-          unfolding e_def by auto
+          by (simp add: e_def split: if_splits)
         then have "\<bar>k+k1-k2\<bar> = 0" unfolding e_def using \<open>\<delta>\<noteq>0\<close> by force
         then have "dist x y=0" using * by auto
         then show ?thesis by auto

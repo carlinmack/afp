@@ -12,7 +12,7 @@ begin
   primrec lookup :: "nat \<Rightarrow> ('a::len) word list \<Rightarrow> bool" where
     "lookup _ [] \<longleftrightarrow> False"
   | "lookup n (w#ws)
-      \<longleftrightarrow> (if n<LENGTH('a) then test_bit w n else lookup (n-LENGTH('a)) ws)"
+      \<longleftrightarrow> (if n<LENGTH('a) then bit w n else lookup (n-LENGTH('a)) ws)"
 
   lemma lookup_append[simp]: "lookup n (w1@w2 :: 'a::len word list)
     \<longleftrightarrow> (
@@ -55,7 +55,7 @@ begin
   lemma lookup_single_bit[simp]: "lookup i ((single_bit n)::'a::len word list) \<longleftrightarrow> i = n"
     apply (induction n arbitrary: i rule: single_bit.induct)
     apply (subst single_bit.simps)
-    apply (auto simp: bin_nth_sc_gen)
+    apply (auto simp add: bit_simps)
     done
 
   primrec set_bit :: "nat \<Rightarrow> 'a::len word list \<Rightarrow> 'a::len word list" where
@@ -68,7 +68,7 @@ begin
 
   lemma set_bit_lookup[simp]: "lookup i (set_bit j ws) \<longleftrightarrow> (lookup i ws \<or> i=j)"
     apply (induction ws arbitrary: i j)
-     apply (auto simp add: test_bit_eq_bit word_size ring_bit_operations_class.bit_set_bit_iff)
+     apply (auto simp add: word_size Bit_Operations.bit_set_bit_iff)
     done
 
   primrec reset_bit :: "nat \<Rightarrow> 'a::len word list \<Rightarrow> 'a::len word list" where
@@ -81,16 +81,20 @@ begin
 
   lemma reset_bit_lookup[simp]: "lookup i (reset_bit j ws) \<longleftrightarrow> (lookup i ws \<and> i\<noteq>j)"
     apply (induction ws arbitrary: i j)
-    apply (auto simp: test_bit_eq_bit word_size bit_unset_bit_iff)
+    apply (auto simp: word_size bit_unset_bit_iff)
     done
 
   subsubsection \<open>Binary Operations\<close>
+
+  context
+    includes bit_operations_syntax
+  begin
 
   definition
     is_bin_op_impl
     :: "(bool\<Rightarrow>bool\<Rightarrow>bool) \<Rightarrow> ('a::len word \<Rightarrow> 'a::len word \<Rightarrow> 'a::len word) \<Rightarrow> bool"
     where "is_bin_op_impl f g \<equiv>
-    (\<forall>w v.  \<forall>i<LENGTH('a). test_bit (g w v) i \<longleftrightarrow> f (test_bit w i) (test_bit v i))"
+    (\<forall>w v.  \<forall>i<LENGTH('a). bit (g w v) i \<longleftrightarrow> f (bit w i) (bit v i))"
 
   definition "is_strict_bin_op_impl f g \<equiv> is_bin_op_impl f g \<and> f False False = False"
 
@@ -262,7 +266,7 @@ begin
     apply (induction vs ws rule: subset.induct)
     apply (simp add: zeroes_lookup)
     apply (simp add: zeroes_lookup) []
-    apply (simp del: subseteq_correct add: subseteq_lookup)
+    apply (simp add: subseteq_lookup)
     apply safe
     apply simp_all
     apply (auto simp: word_ops_nth_size word_size word_eq_iff)
@@ -339,12 +343,13 @@ subsection \<open>Lifting to Uint\<close>
     subset.simps
     disjoint.simps
 
+  end
 
   hide_const (open) \<alpha> lookup empty single_bit set_bit reset_bit union inter diff zeroes
     equal subseteq subset disjoint
 
 
-subsection \<open>Autoref Setup\<close>
+  subsection \<open>Autoref Setup\<close>
 
   definition uv_set_rel_def_internal:
     "uv_set_rel Rk \<equiv>
@@ -376,7 +381,6 @@ subsection \<open>Autoref Setup\<close>
       simp: uv_memb_correct uv_empty_correct uv_insert_correct uv_delete_correct
       simp: uv_union_correct uv_inter_correct uv_diff_correct uv_isEmpty_correct
       simp: uv_equal_correct uv_subseteq_correct uv_subset_correct uv_disjoint_correct)
-
 
   export_code
     uv_lookup

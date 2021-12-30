@@ -157,7 +157,7 @@ begin
       proof(induction eth rule: iface_name_is_wildcard.induct)
       qed(simp_all)
     private lemma iface_name_is_wildcard_alt': "iface_name_is_wildcard eth \<longleftrightarrow> eth \<noteq> [] \<and> hd (rev eth) = CHR ''+''"
-      unfolding iface_name_is_wildcard_alt using hd_rev by fastforce
+      unfolding iface_name_is_wildcard_alt by (simp add: hd_rev)
     private lemma iface_name_is_wildcard_fst: "iface_name_is_wildcard (i # is) \<Longrightarrow> is \<noteq> [] \<Longrightarrow> iface_name_is_wildcard is"
       by(simp add: iface_name_is_wildcard_alt)
   
@@ -260,11 +260,9 @@ begin
   
     private  lemma internal_iface_name_wildcard_longest_commute: "iface_name_is_wildcard i1 \<Longrightarrow> iface_name_is_wildcard i2 \<Longrightarrow> 
       internal_iface_name_wildcard_longest i1 i2 = internal_iface_name_wildcard_longest i2 i1"
-      apply(simp add: internal_iface_name_wildcard_longest_def)
-      apply(safe)
-        apply(simp_all add: iface_name_is_wildcard_alt)
-        apply (metis One_nat_def append_butlast_last_id butlast_conv_take)
-       by (metis min.commute)+
+      by (cases i1 rule: rev_cases; cases i2 rule: rev_cases)
+        (simp_all add: internal_iface_name_wildcard_longest_def iface_name_is_wildcard_alt)
+
     private  lemma internal_iface_name_wildcard_longest_refl: "internal_iface_name_wildcard_longest i i = Some i"
       by(simp add: internal_iface_name_wildcard_longest_def)
   
@@ -645,11 +643,6 @@ begin
        apply (blast dest: iface_conjunct_None)
       by (blast dest: iface_conjunct_Some)
   qed
-
-
-
-  declare match_iface.simps[simp del]
-  declare iface_name_is_wildcard.simps[simp del]
 end
 
 end

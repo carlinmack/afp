@@ -86,7 +86,7 @@ proof-
   also have "... = \<Sqinter>{\<partial> u |u. u \<le> f u}"
     by (simp add: setcompr_eq_image)
   also have "... = \<Sqinter>{u |u. (\<partial>\<^sub>F f) u \<le> u}"
-    by (metis (no_types, hide_lams) dual_dual_ord dual_iff map_dual_def o_def)
+    by (metis (no_types, opaque_lifting) dual_dual_ord dual_iff map_dual_def o_def)
   finally have "\<partial> (gfp f) = lfp (\<partial>\<^sub>F f)"
     by (metis lfp_def)}
   thus ?thesis
@@ -163,7 +163,7 @@ lemma min_max_set_dual_var: "\<partial> ` (min_set X) = max_set (\<partial> ` X)
   using comp_eq_dest min_max_set_dual by fastforce  
 
 lemma max_min_set_dual: "(`) \<partial> \<circ> max_set = min_set \<circ> (`) \<partial>"
-  by (metis (no_types, hide_lams) comp_id fun.map_comp id_comp image_dual min_max_set_dual)  
+  by (metis (no_types, opaque_lifting) comp_id fun.map_comp id_comp image_dual min_max_set_dual)  
 
 lemma min_to_max_set: "min_set = (`) \<partial> \<circ> max_set \<circ> (`) \<partial>"
   by (metis comp_id image_dual max_min_set_dual o_assoc)
@@ -250,7 +250,7 @@ lemma downset_set_upset_set_dual: "(`) \<partial> \<circ> \<Down> = \<Up> \<circ
   by (clarsimp, metis (mono_tags, lifting) dual_iff image_iff mem_Collect_eq ord_dual)
 
 lemma upset_set_downset_set_dual: "(`) \<partial> \<circ> \<Up> = \<Down> \<circ> (`) \<partial>"
-  using downset_set_upset_set_dual by (metis (no_types, hide_lams) comp_id id_comp image_dual o_assoc)
+  using downset_set_upset_set_dual by (metis (no_types, opaque_lifting) comp_id id_comp image_dual o_assoc)
 
 lemma upset_set_to_downset_set: "\<Up> = (`) \<partial> \<circ> \<Down> \<circ> (`) \<partial>"
   by (simp add: comp_assoc downset_set_upset_set_dual)
@@ -464,7 +464,7 @@ context order
 begin
 
 lemma downset_inj: "inj \<down>"
-  by (metis injI downset_iso_iff eq_iff)
+  by (metis injI downset_iso_iff order.eq_iff)
 
 lemma "(X \<subseteq> Y) = (\<Down>X \<subseteq> \<Down>Y)" (*nitpick*)
   oops
@@ -657,48 +657,6 @@ lemma Sup_dual_upset_var: "(\<Inter>x \<in> X. \<up>x) = \<up>(\<Squnion>X)"
 end
 
 
-subsection \<open>Shunting Laws\<close>
-
-text \<open>The first set of laws supplies so-called shunting laws for boolean algebras. 
-Such laws rather belong into Isabelle Main.\<close>
-
-context boolean_algebra
-begin
-    
-lemma shunt1: "(x \<sqinter> y \<le> z) = (x \<le> -y \<squnion> z)"
-proof standard
-  assume "x \<sqinter> y \<le> z"
-  hence  "-y \<squnion> (x \<sqinter> y) \<le> -y \<squnion> z"
-    using sup.mono by blast
-  hence "-y \<squnion> x \<le> -y \<squnion> z"
-    by (simp add: sup_inf_distrib1)
-  thus "x \<le> -y \<squnion> z"
-    by simp
-next
-  assume "x \<le> -y \<squnion> z"
-  hence "x \<sqinter> y \<le> (-y \<squnion> z) \<sqinter> y"
-    using inf_mono by auto
-  thus  "x \<sqinter> y \<le> z"
-    using inf.boundedE inf_sup_distrib2 by auto
-qed
-
-lemma shunt2: "(x \<sqinter> -y \<le> z) = (x \<le> y \<squnion> z)"
-  by (simp add: shunt1)
-
-lemma meet_shunt: "(x \<sqinter> y = \<bottom>) = (x \<le> -y)"
-  by (simp add: eq_iff shunt1)
-  
-lemma join_shunt: "(x \<squnion> y = \<top>) = (-x \<le> y)"
-  by (metis compl_sup compl_top_eq double_compl meet_shunt)
-
-lemma meet_shunt_var: "(x - y = \<bottom>) = (x \<le> y)"
-  by (simp add: diff_eq meet_shunt)
-
-lemma join_shunt_var: "(x \<longrightarrow> y = \<top>) = (x \<le> y)"  
-  by simp
-
-end
-
 subsection \<open>Properties of Complete Lattices\<close>
 
 definition "Inf_closed_set X = (\<forall>Y \<subseteq> X. \<Sqinter>Y \<in> X)"
@@ -727,14 +685,14 @@ text \<open>The next two lemmas are about Sups and Infs of indexed families. The
 iterations and fixpoints.\<close>
 
 lemma fSup_unfold: "(f::nat \<Rightarrow> 'a) 0 \<squnion> (\<Squnion>n. f (Suc n)) = (\<Squnion>n. f n)"
-  apply (intro antisym sup_least)
+  apply (intro order.antisym sup_least)
     apply (rule Sup_upper, force)
    apply (rule Sup_mono, force)
   apply (safe intro!: Sup_least)
  by (case_tac n, simp_all add: Sup_upper le_supI2)
 
 lemma fInf_unfold: "(f::nat \<Rightarrow> 'a) 0 \<sqinter> (\<Sqinter>n. f (Suc n)) = (\<Sqinter>n. f n)"
-  apply (intro antisym inf_greatest)
+  apply (intro order.antisym inf_greatest)
   apply (rule Inf_greatest, safe)
   apply (case_tac n)
    apply simp_all
@@ -837,7 +795,7 @@ lemma fun_isor: "mono f \<Longrightarrow> mono (\<lambda>x. x \<circ> f)"
 lemma Sup_sup_pres: 
   fixes f :: "'a::complete_lattice \<Rightarrow> 'b::complete_lattice"
   shows "Sup_pres f \<Longrightarrow> sup_pres f"
-  by (metis (no_types, hide_lams) Sup_empty Sup_insert comp_apply image_insert sup_bot.right_neutral)
+  by (metis (no_types, opaque_lifting) Sup_empty Sup_insert comp_apply image_insert sup_bot.right_neutral)
 
 lemma Inf_inf_pres: 
   fixes f :: "'a::complete_lattice \<Rightarrow> 'b::complete_lattice"
@@ -1121,12 +1079,12 @@ proof
     finally have "(x \<sqinter> \<Squnion>Y \<le> t) = ((\<Squnion>y\<in>Y. x \<sqinter> y) \<le> t)"
       by (simp add: local.SUP_le_iff)}
   thus "x \<sqinter> \<Squnion>Y = (\<Squnion>y\<in>Y. x \<sqinter> y)"
-    using eq_iff by blast
+    using order.eq_iff by blast
 qed
 
 subclass complete_co_heyting_algebra
   apply unfold_locales
-  apply (rule antisym)
+  apply (rule order.antisym)
    apply (simp add: INF_greatest Inf_lower2)
   by (meson eq_refl le_INF_iff le_Inf_iff shunt2)
 
@@ -1143,7 +1101,7 @@ proof-
     using le_INF_iff by force
   finally have "(y \<le> -(\<Squnion>X)) = (y \<le>(\<Sqinter>x \<in> X. -x))".}
   thus ?thesis
-    using antisym by blast
+    using order.antisym by blast
 qed
 
 lemma de_morgan2: "-(\<Sqinter>X) = (\<Squnion>x \<in> X. -x)"
@@ -1222,19 +1180,19 @@ begin
 text \<open>The following two conditions are taken from Koppelberg's book~\cite{Koppelberg89}.\<close>
 
 lemma atom_neg: "atom x \<Longrightarrow> x \<noteq> \<bottom> \<and> (\<forall>y z. x \<le> y \<or> x \<le> -y)"
-  by (metis atom_def dual_order.order_iff_strict inf.cobounded1 inf.commute meet_shunt)
+  by (auto simp add: atom_def) (metis local.dual_order.not_eq_order_implies_strict local.inf.cobounded1 local.inf.cobounded2 local.inf_shunt)
 
 lemma atom_sup: "(\<forall>y. x \<le> y \<or> x \<le> -y) \<Longrightarrow> (\<forall>y z. (x \<le> y \<or> x \<le> z) = (x \<le> y \<squnion> z))"
   by (metis inf.orderE le_supI1 shunt2)
 
 lemma sup_atom: "x \<noteq> \<bottom> \<Longrightarrow> (\<forall>y z. (x \<le> y \<or> x \<le> z) = (x \<le> y \<squnion> z)) \<Longrightarrow> atom x"
-  unfolding atom_def apply clarsimp by (metis bot_less inf.absorb2 less_le_not_le meet_shunt sup_compl_top)
+  by (auto simp add: atom_def) (metis (full_types) local.inf.boundedI local.inf.cobounded2 local.inf_shunt local.inf_sup_ord(4) local.le_iff_sup local.shunt1 local.sup.absorb1 local.sup.strict_order_iff)
 
 lemma atom_sup_iff: "atom x = (x \<noteq> \<bottom> \<and> (\<forall>y z. (x \<le> y \<or> x \<le> z) = (x \<le> y \<squnion> z)))"
-  by  (standard, auto simp add: atom_neg atom_sup sup_atom)  
+  by rule (auto simp add: atom_neg atom_sup sup_atom)  
 
 lemma atom_neg_iff: "atom x = (x \<noteq> \<bottom> \<and> (\<forall>y z. x \<le> y \<or> x \<le> -y))"
-  by  (standard, auto simp add: atom_neg atom_sup sup_atom)
+  by rule (auto simp add: atom_neg atom_sup sup_atom)
 
 lemma atom_map_bot_pres: "atom_map \<bottom> = {}"
   using atom_def atom_map_def le_bot by auto
@@ -1248,7 +1206,7 @@ context complete_boolean_algebra_alt
 begin
 
 lemma atom_Sup: "\<And>Y. x \<noteq> \<bottom> \<Longrightarrow> (\<forall>y. x \<le> y \<or> x \<le> -y) \<Longrightarrow> ((\<exists>y \<in> Y. x \<le> y) = (x \<le> \<Squnion>Y))"
-  by (metis Sup_least Sup_upper2 compl_le_swap1 le_iff_inf meet_shunt)
+  by (metis Sup_least Sup_upper2 compl_le_swap1 le_iff_inf inf_shunt)
 
 lemma Sup_atom: "x \<noteq> \<bottom> \<Longrightarrow> (\<forall>Y. (\<exists>y \<in> Y. x \<le> y) = (x \<le> \<Squnion>Y)) \<Longrightarrow> atom x"
 proof-
@@ -1267,7 +1225,3 @@ lemma atom_Sup_iff: "atom x = (x \<noteq> \<bottom> \<and> (\<forall>Y. (\<exist
 end
 
 end
-
-
-
-

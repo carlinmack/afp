@@ -189,9 +189,11 @@ begin
     assume "x \<in> S0 - S" "S \<subseteq> S0" and \<sigma>_eq: "\<sigma> = Finite_Set.fold f \<sigma>0 S"
     from finite_S0 \<open>S \<subseteq> S0\<close> have fin_S: "finite S" by (metis finite_subset)
     from \<open>x \<in> S0 - S\<close> have x_nin_S: "x \<notin> S" by simp
-    note fold_eq = comp_fun_commute.fold_insert [OF lc_f fin_S x_nin_S]
 
-    show "f x \<sigma> = Finite_Set.fold f \<sigma>0 (insert x S)" 
+    interpret comp_fun_commute: comp_fun_commute f
+      by (fact lc_f)
+    note fold_eq = comp_fun_commute.fold_insert [OF fin_S x_nin_S]
+    show "f x \<sigma> = Finite_Set.fold f \<sigma>0 (insert x S)"
       by (simp add: fold_eq \<sigma>_eq)
   qed simp_all
 end
@@ -696,7 +698,7 @@ context linorder begin
   lemma set_iterator_linord_foldli_conv :
     "set_iterator_linord iti S \<longleftrightarrow>
      (\<exists>l0. distinct l0 \<and> S = set l0 \<and> sorted l0 \<and> iti = foldli l0)"
-  unfolding set_iterator_linord_def set_iterator_genord_def by (simp add: sorted_sorted_wrt)
+  unfolding set_iterator_linord_def set_iterator_genord_def by simp
 
   lemma set_iterator_linord_I [intro] :
     "\<lbrakk>distinct l0; S = set l0; sorted l0; iti = foldli l0\<rbrakk> \<Longrightarrow>
@@ -770,7 +772,7 @@ context linorder begin
     "map_iterator_linord iti m \<longleftrightarrow>
      (\<exists>l0. distinct (map fst l0) \<and> m = map_of l0 \<and> sorted (map fst l0) \<and> iti = foldli l0)"
   unfolding set_iterator_map_linord_def map_iterator_genord_foldli_conv
-  by (simp add: sorted_wrt_keys_map_fst sorted_sorted_wrt)
+  by (simp add: sorted_wrt_keys_map_fst)
 
   lemma map_iterator_linord_I [intro] :
     "\<lbrakk>distinct (map fst l0); m = map_of l0; sorted (map fst l0); iti = foldli l0\<rbrakk> \<Longrightarrow>

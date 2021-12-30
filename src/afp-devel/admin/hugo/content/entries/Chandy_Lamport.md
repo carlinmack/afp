@@ -22,5 +22,13 @@
         "Snapshot",
         "Co_Snapshot",
         "Example"
+    ],
+    "olderReleases": [
+        {
+            "2021": "2021-02-23"
+        },
+        {
+            "2020": "2020-08-04"
+        }
     ]
 }

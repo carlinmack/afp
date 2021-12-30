@@ -392,7 +392,7 @@ fun semi__theory in_theory in_local = let open META open META_overload in (*let 
               (Isabelle_Typedecl.abbrev_cmd0 (SOME s_bind) thy (of_semi__typ l))) thy
      end)
 | Theory_type_notation (Type_notation (n, e)) => in_local
-   (Specification.type_notation_cmd true ("", true) [(To_string0 n, Mixfix (Input.string (To_string0 e), [], 1000, Position.no_range))])
+   (Local_Theory.type_notation_cmd true ("", true) [(To_string0 n, Mixfix (Input.string (To_string0 e), [], 1000, Position.no_range))])
 | Theory_instantiation (Instantiation (n, n_def, expr)) => in_theory
    (fn thy =>
      let val name = To_string0 n
@@ -643,10 +643,11 @@ structure Export_code_env = struct
 end
 
 fun compile l cmd =
-  let val (l, rc) = fold (fn cmd => (fn (l, 0) =>
-                                         let val {out, err, rc, ...} = Bash.process cmd in
-                                         ((out, err) :: l, rc) end
-                                     | x => x)) l ([], 0)
+  let val (l, rc) = fold (fn cmd =>
+        (fn (l, 0) =>
+             let val res = Isabelle_System.bash_process (Bash.script cmd) in
+             ((Process_Result.out res, Process_Result.err res) :: l, Process_Result.rc res) end
+         | x => x)) l ([], 0)
       val l = rev l in
   if rc = 0 then
     (l, Isabelle_System.bash_output cmd)
@@ -953,10 +954,11 @@ datatype 'a generation_mode = Gen_deep of unit META.compiler_env_config_ext
                             | Gen_syntax_print of int option
 
 structure Data_gen = Theory_Data
-  (type T = theory generation_mode list Symtab.table
-   val empty = Symtab.empty
-   val extend = I
-   val merge = Symtab.merge (K true))
+(
+  type T = theory generation_mode list Symtab.table
+  val empty = Symtab.empty
+  val merge = Symtab.merge (K true)
+)
 
 val code_expr_argsP = Scan.optional (@{keyword "("} |-- Parse.args --| @{keyword ")"}) []
 
