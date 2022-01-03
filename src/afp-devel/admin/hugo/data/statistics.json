@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 190570,
-    "num_loc": 3290589,
+    "num_lemmas": 190706,
+    "num_loc": 3293674,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,7 @@
         455,
         511,
         577,
-        647
+        649
     ],
     "loc_years": [
         60600,
@@ -39,7 +39,7 @@
         2126500,
         2429900,
         2817100,
-        3290600
+        3293700
     ],
     "author_years": [
         14,
@@ -728,7 +728,9 @@
         1882,
         9541,
         4298,
-        4344
+        4344,
+        1699,
+        1386
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1377,6 +1379,8 @@
         "Simplicial_complexes_and_boolean_functions",
         "Regular_Tree_Relations",
         "MDP-Rewards",
-        "MDP-Algorithms"
+        "MDP-Algorithms",
+        "Roth_Arithmetic_Progressions",
+        "Gale_Shapley"
     ]
 }
