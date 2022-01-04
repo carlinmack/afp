@@ -47,43 +47,60 @@ router.get('/logout', function (req, res, next) {
 
 router.post('/signup', function (req, res, next) {
     if (req.body.password == req.body.confirm) {
-        var salt = crypto.randomBytes(16);
-        crypto.pbkdf2(
-            req.body.password,
-            salt,
-            310000,
-            32,
-            'sha256',
-            function (err, hashedPassword) {
+        db.get(
+            'SELECT rowid AS id, * FROM users WHERE email = ?',
+            [req.body.email],
+            function (err, row) {
                 if (err) {
-                    return next(err);
+                    return cb(err);
+                }
+                if (row) {
+                    res.cookie('warnMessage', 'Email has already been registered', {
+                        maxAge: 30000,
+                    });
+                    return res.redirect('/signup');
                 }
 
-                db.run(
-                    'INSERT INTO users (email, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
-                    [req.body.email, hashedPassword, salt, req.body.name],
-                    function (err) {
+                var salt = crypto.randomBytes(16);
+                crypto.pbkdf2(
+                    req.body.password,
+                    salt,
+                    310000,
+                    32,
+                    'sha256',
+                    function (err, hashedPassword) {
                         if (err) {
                             return next(err);
                         }
 
-                        var user = {
-                            id: this.lastID.toString(),
-                            email: req.body.email,
-                            displayName: req.body.name,
-                        };
-                        req.login(user, function (err) {
-                            if (err) {
-                                return next(err);
+                        db.run(
+                            'INSERT INTO users (email, hashed_password, salt, name) VALUES (?, ?, ?, ?)',
+                            [req.body.email, hashedPassword, salt, req.body.name],
+                            function (err) {
+                                if (err) {
+                                    return next(err);
+                                }
+
+                                var user = {
+                                    id: this.lastID.toString(),
+                                    email: req.body.email,
+                                    displayName: req.body.name,
+                                };
+                                req.login(user, function (err) {
+                                    if (err) {
+                                        return next(err);
+                                    }
+                                    res.redirect('/account/create');
+                                });
                             }
-                            res.redirect('/');
-                        });
+                        );
                     }
                 );
             }
         );
     } else {
-        res.send('Passwords did not match');
+        res.cookie('warnMessage', 'Passwords did not match', { maxAge: 30000 });
+        return res.redirect('/signup');
     }
 });
 
