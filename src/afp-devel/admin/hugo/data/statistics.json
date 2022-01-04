@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 190706,
-    "num_loc": 3293674,
+    "num_lemmas": 190973,
+    "num_loc": 3296782,
     "articles_year": [
         14,
         22,
@@ -19,7 +19,8 @@
         455,
         511,
         577,
-        649
+        649,
+        650
     ],
     "loc_years": [
         60600,
@@ -39,7 +40,8 @@
         2126500,
         2429900,
         2817100,
-        3293700
+        3293700,
+        3296800
     ],
     "author_years": [
         14,
@@ -59,7 +61,8 @@
         28,
         39,
         34,
-        44
+        44,
+        1
     ],
     "author_years_cumulative": [
         14,
@@ -79,7 +82,8 @@
         300,
         339,
         373,
-        417
+        417,
+        418
     ],
     "loc_articles": [
         839,
@@ -730,7 +734,8 @@
         4298,
         4344,
         1699,
-        1386
+        1386,
+        3108
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1381,6 +1386,7 @@
         "MDP-Rewards",
         "MDP-Algorithms",
         "Roth_Arithmetic_Progressions",
-        "Gale_Shapley"
+        "Gale_Shapley",
+        "Knights_Tour"
     ]
 }
