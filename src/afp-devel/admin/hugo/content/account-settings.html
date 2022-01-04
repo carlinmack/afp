@@ -3,22 +3,50 @@ title: Settings
 url: /account/settings/
 ---
 
-<script src="/js/account-settings.js"></script>
+<form action="/api/auth/updateSettings" method="post">
+  <div>
+    <label disabled for="name">Display Name</label><br>
+    <input disabled id="name" name="name" type="text">
+  </div>
+  <div>
+    <label disabled for="website">Website</label><br>
+    <input disabled id="website" name="website" type="text">
+  </div>
+  <div>
+    <label disabled for="description">Description</label><br>
+    <input disabled id="description" name="description" type="text">
+  </div>
+  <input class='action' disabled type="submit" value="Submit"></input>
+  <!-- </form> -->
 
-<form action="/api/auth/changePassword" method="post">
-  <label disabled for="accountEmail">Account email</label>
-  <input disabled id="accountEmail" name="accountEmail" type="email"><br>
-  <label disabled for="contactEmail">Contact email</label>
-  <input disabled id="contactEmail" name="contactEmail" type="email"><br><br>
-  <label disabled for="current">Current password</label>
-  <input disabled id="current" name="current" type="password"><br>
-  <label disabled for="password">New password</label>
-  <input disabled id="password" name="password" type="password"><br>
-  <label disabled for="confirm">Confirm password</label>
-  <input disabled id="confirm" name="confirm" type="password"><br>
-  <input disabled type="submit" value="Submit"></input>
+  <h2>Account details</h2>
+  <p></p>
+
+  <!-- <form action="/api/auth/changePassword" method="post"> -->
+  <div>
+    <label disabled for="accountEmail">Account email</label><br>
+    <input disabled id="accountEmail" name="accountEmail" type="email">
+  </div>
+  <div>
+    <label disabled for="contactEmail">Contact email</label><br>
+    <input disabled id="contactEmail" name="contactEmail" type="email">
+  </div>
+  <div>
+    <label disabled for="current">Current password</label><br>
+    <input disabled id="current" name="current" type="password">
+  </div>
+  <div>
+    <label disabled for="password">New password</label><br>
+    <input disabled id="password" name="password" type="password">
+  </div>
+  <div>
+    <label disabled for="confirm">Confirm password</label><br>
+    <input disabled id="confirm" name="confirm" type="password">
+  </div>
+  <input class='action' disabled type="submit" value="Submit"></input>
 </form>
 
+<script src="/js/account-settings.js"></script>
 <script>
   var inputs = document.querySelectorAll('input');
   for (var input of inputs) {

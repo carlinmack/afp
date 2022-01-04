@@ -19,7 +19,7 @@ router.post(
                 return next(err);
             }
             if (!user) {
-                res.cookie('message', info.message, {maxAge: 30000});  
+                res.cookie('warnMessage', info.message, { maxAge: 30000 });
                 return res.redirect('/login');
             }
             req.logIn(user, function (err) {
@@ -104,101 +104,111 @@ router.post('/signup', function (req, res, next) {
     }
 });
 
-router.post('/changePassword', function (req, res, next) {
-    if (
-        req.body.current != req.body.password &&
-        req.body.password == req.body.confirm
-    ) {
-        db.get(
-            'SELECT salt FROM users WHERE email = ?  ',
-            [req.session.passport.user.email],
-            function (err, row) {
+// router.post('/changePassword', function (req, res, next) {
+//     if (
+//         req.body.current != req.body.password &&
+//         req.body.password == req.body.confirm
+//     ) {
+//         db.get(
+//             'SELECT salt FROM users WHERE email = ?  ',
+//             [req.session.passport.user.email],
+//             function (err, row) {
+//                 if (err) {
+//                     return next(err);
+//                 }
+//                 crypto.pbkdf2(
+//                     req.body.current,
+//                     row.salt,
+//                     310000,
+//                     32,
+//                     'sha256',
+//                     function (err, hashedPassword) {
+//                         if (err) {
+//                             return next(err);
+//                         }
+
+//                         db.get(
+//                             'SELECT 1 FROM users WHERE email = ? AND hashed_password = ?',
+//                             [req.session.passport.user.email, hashedPassword],
+//                             function (err, row) {
+//                                 if (err) {
+//                                     return next(err);
+//                                 }
+
+//                                 if (row == undefined) {
+//                                     res.send('Wrong current password');
+//                                 }
+//                                 var salt = crypto.randomBytes(16);
+//                                 crypto.pbkdf2(
+//                                     req.body.password,
+//                                     salt,
+//                                     310000,
+//                                     32,
+//                                     'sha256',
+//                                     function (err, hashedPassword) {
+//                                         if (err) {
+//                                             return next(err);
+//                                         }
+
+//                                         db.run(
+//                                             'UPDATE users SET hashed_password = ?, salt = ? WHERE email = ?',
+//                                             [
+//                                                 hashedPassword,
+//                                                 salt,
+//                                                 req.session.passport.user.email,
+//                                             ],
+//                                             function (err) {
+//                                                 if (err) {
+//                                                     return next(err);
+//                                                 }
+
+//                                                 var user = {
+//                                                     id: this.lastID.toString(),
+//                                                     email: req.body.email,
+//                                                     displayName: req.body.name,
+//                                                 };
+//                                                 req.login(user, function (err) {
+//                                                     if (err) {
+//                                                         return next(err);
+//                                                     }
+//                                                     res.redirect('/account');
+//                                                 });
+//                                             }
+//                                         );
+//                                     }
+//                                 );
+//                             }
+//                         );
+//                     }
+//                 );
+//             }
+//         );
+//     } else {
+//         res.send('Passwords did not match');
+//     }
+// });
+
+router.post('/updateSettings', function (req, res, next) {
+    if (req.body.name) {
+        db.run(
+            'UPDATE users SET name = $name WHERE email = $email and name != $name',
+            {
+                $name: req.body.name,
+                $email: req.session.passport.user.email,
+            },
+            function (err) {
                 if (err) {
                     return next(err);
                 }
-                crypto.pbkdf2(
-                    req.body.current,
-                    row.salt,
-                    310000,
-                    32,
-                    'sha256',
-                    function (err, hashedPassword) {
-                        if (err) {
-                            return next(err);
-                        }
-
-                        db.get(
-                            'SELECT 1 FROM users WHERE email = ? AND hashed_password = ?',
-                            [req.session.passport.user.email, hashedPassword],
-                            function (err, row) {
-                                if (err) {
-                                    return next(err);
-                                }
-
-                                if (row == undefined) {
-                                    res.send('Wrong current password');
-                                }
-                                var salt = crypto.randomBytes(16);
-                                crypto.pbkdf2(
-                                    req.body.password,
-                                    salt,
-                                    310000,
-                                    32,
-                                    'sha256',
-                                    function (err, hashedPassword) {
-                                        if (err) {
-                                            return next(err);
-                                        }
-
-                                        db.run(
-                                            'UPDATE users SET hashed_password = ?, salt = ? WHERE email = ?',
-                                            [
-                                                hashedPassword,
-                                                salt,
-                                                req.session.passport.user.email,
-                                            ],
-                                            function (err) {
-                                                if (err) {
-                                                    return next(err);
-                                                }
-
-                                                var user = {
-                                                    id: this.lastID.toString(),
-                                                    email: req.body.email,
-                                                    displayName: req.body.name,
-                                                };
-                                                req.login(user, function (err) {
-                                                    if (err) {
-                                                        return next(err);
-                                                    }
-                                                    res.redirect('/account');
-                                                });
-                                            }
-                                        );
-                                    }
-                                );
-                            }
-                        );
-                    }
-                );
+                if (this.changes == 1) {
+                    res.cookie('warnMessage', "Name updated", {
+                        maxAge: 30000,
+                    });
+                }
+                res.redirect('/account');
             }
         );
-    } else {
-        res.send('Passwords did not match');
     }
-});
-
-router.post('/changeName', function (req, res, next) {
-    db.run(
-        'UPDATE users SET name = ? WHERE email = ?',
-        [req.body.name, req.session.passport.user.email],
-        function (err) {
-            if (err) {
-                return next(err);
-            }
-            res.redirect('/account');
-        }
-    );
 });
 
 router.get('/logged-in', function (req, res, next) {

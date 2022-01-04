@@ -28,14 +28,14 @@ function banner() {
 }
 
 function displayMessages() {
-    if (cookieExists('message')) {
+    if (cookieExists('warnMessage')) {
         const content = document.querySelector('.content');
         if (content) {
-            var flash = '<div class="warn" data-id="0"><p>' + getCookie('message');
+            var flash = '<div class="warn" data-id="0"><p>' + getCookie('warnMessage');
             flash += "</p></div>"
             content.insertAdjacentHTML('beforeend', flash);
 
-            clearCookie('message')
+            clearCookie('warnMessage');
         }
     }
 }
