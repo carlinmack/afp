@@ -189,26 +189,38 @@ router.post('/signup', function (req, res, next) {
 // });
 
 router.post('/updateSettings', function (req, res, next) {
-    if (req.body.name) {
-        db.run(
-            'UPDATE users SET name = $name WHERE email = $email and name != $name',
-            {
-                $name: req.body.name,
-                $email: req.session.passport.user.email,
-            },
-            function (err) {
-                if (err) {
-                    return next(err);
-                }
-                if (this.changes == 1) {
-                    res.cookie('warnMessage', "Name updated", {
-                        maxAge: 30000,
-                    });
-                }
-                res.redirect('/account');
+    Promise.all([
+        new Promise((resolve, reject) => {
+            if (!req.body.name || req.body.name.length == 0) {
+                resolve();
+            } else {
+                db.run(
+                    'UPDATE users SET name = $name WHERE email = $email and name != $name',
+                    {
+                        $name: req.body.name,
+                        $email: req.session.passport.user.email,
+                    },
+                    function (err) {
+                        if (err) {
+                            reject(err);
+                        }
+                        if (this.changes == 1) {
+                            resolve('name');
+                        }
+                    }
+                );
             }
-        );
-    }
+        }),
+    ]).then(function (responses) {
+        responses = responses.filter((x) => x !== undefined);
+        if (responses.length) {
+            var message = responses.join(', ') + ' updated';
+            res.cookie('warnMessage', message, {
+                maxAge: 30000,
+            });
+        }
+        res.redirect('/account');
+    });
 });
 
 router.get('/logged-in', function (req, res, next) {
