@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 190973,
-    "num_loc": 3296782,
+    "num_lemmas": 191242,
+    "num_loc": 3299728,
     "articles_year": [
         14,
         22,
@@ -19,8 +19,8 @@
         455,
         511,
         577,
-        649,
-        650
+        650,
+        651
     ],
     "loc_years": [
         60600,
@@ -40,8 +40,8 @@
         2126500,
         2429900,
         2817100,
-        3293700,
-        3296800
+        3296600,
+        3299700
     ],
     "author_years": [
         14,
@@ -61,7 +61,7 @@
         28,
         39,
         34,
-        44,
+        45,
         1
     ],
     "author_years_cumulative": [
@@ -82,8 +82,8 @@
         300,
         339,
         373,
-        417,
-        418
+        418,
+        419
     ],
     "loc_articles": [
         839,
@@ -735,6 +735,7 @@
         4344,
         1699,
         1386,
+        2946,
         3108
     ],
     "all_articles": [
@@ -1387,6 +1388,7 @@
         "MDP-Algorithms",
         "Roth_Arithmetic_Progressions",
         "Gale_Shapley",
+        "Hyperdual",
         "Knights_Tour"
     ]
 }
