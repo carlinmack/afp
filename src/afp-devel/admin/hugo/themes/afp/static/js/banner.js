@@ -28,14 +28,17 @@ function banner() {
 }
 
 function displayMessages() {
-    if (cookieExists('warnMessage')) {
-        const content = document.querySelector('.content');
-        if (content) {
-            var flash = '<div class="warn" data-id="0"><p>' + getCookie('warnMessage');
-            flash += "</p></div>"
-            content.insertAdjacentHTML('beforeend', flash);
+    var types = [["warnMessage", "warn"], ["successMessage", "success"]]
+    for (let [cookie, className] of types) {
+        if (cookieExists(cookie)) {
+            const content = document.querySelector('.content');
+            if (content) {
+                var flash = '<div class="' + className + '" data-id="0"><p>' + getCookie(cookie);
+                flash += "</p></div>"
+                content.insertAdjacentHTML('beforeend', flash);
 
-            clearCookie('warnMessage');
+                clearCookie(cookie);
+            }
         }
     }
 }
@@ -53,8 +56,15 @@ function localStorageTest() {
 
 function menuLink() {
     if (cookieExists('authenticated')) {
-        document.querySelector('a[href="/login/"').textContent = 'Profile';
-        document.querySelector('a[href="/login/"').href = '/account/';
+        const login = document.querySelector('a[href="/login/"]')
+        if (login) {
+            login.textContent = 'Profile';
+            login.href = '/account/';
+            login.insertAdjacentHTML(
+                'afterEnd',
+                "<a id='bell' href='/notifications'><img src='/images/bell.svg' alt='Notifications' /></a>"
+            );
+        }
     }
 }
 

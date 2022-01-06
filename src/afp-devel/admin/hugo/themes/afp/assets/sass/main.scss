@@ -320,6 +320,11 @@ header {
         border: 1px $theme solid;
     }
 
+    .warn, .success {
+        @extend %alert;
+        line-height: 3em;
+    }
+
     .popup {
         background: $white;
         box-shadow: 0 0 8px 0 $black_15, 0 4px 10px 0 $black_15;
@@ -577,6 +582,14 @@ tr:nth-child(even) {
     display: none;
 }
 
+.warn {
+    background-color: $warn;
+}
+
+.success {
+    background-color: $success;
+}
+
 .searchPage {
     > div {
         display: grid;
@@ -809,12 +822,6 @@ iframe {
     height: 90vh;
 }
 
-.content .warn {
-    @extend %alert;
-    background-color: $warn;
-    line-height: 3em;
-}
-
 #banner {
     @extend %alert;
     position: fixed;
@@ -847,4 +854,8 @@ iframe {
         left: 200px;
         width: calc(100vw - 200px);
     }
+}
+
+#bell {
+    float: right;
 }
