@@ -28,9 +28,9 @@
       <h5><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a></h5> <br>
         by {{ partial "authors.html" (dict "site" . "authors" .Params.authors) -}}
     </div>
-    <span class="date">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">
       {{ .Date.Format "Jan 02" }}
-    </span>
+    </time>
   </article>
   {{- end -}}
 </div>

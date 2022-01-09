@@ -686,6 +686,7 @@ input[type='submit'] {
     display: flex;
     align-items: center;
     margin-top: 1.35rem;
+    justify-content: space-between;
 
     a[download] {
         position: absolute;
@@ -693,9 +694,9 @@ input[type='submit'] {
         right: 0;
     }
 
-    .date {
+    time {
         text-align: right;
-        width: 15%;
+        min-width: 15%;
         font-family: $monospace;
     }
 
@@ -788,7 +789,7 @@ button[copy] {
     width: 85%;
 }
 
-.date {
+time {
     color: $darker-grey;
     font-size: 14px;
 }

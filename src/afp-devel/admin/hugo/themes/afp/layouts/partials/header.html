@@ -36,7 +36,7 @@
     </p>
   {{ end }}
   {{ with .Params.date }}
-    <p class="date">{{- dateFormat "2 January 2006" . -}}</p>
+    <time>{{- dateFormat "2 January 2006" . -}}</time>
   {{ end }}
   </div>
 </header>

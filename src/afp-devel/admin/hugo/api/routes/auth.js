@@ -261,25 +261,28 @@ router.get('/logged-in', function (req, res, next) {
     // });
 });
 
-// router.get('/', function (req, res, next) {
-//     db.get(
-//         'SELECT rowid AS id, email, name FROM users WHERE rowid = ?',
-//         [req.user.id],
-//         function (err, row) {
-//             if (err) {
-//                 return next(err);
-//             }
-
-//             // TODO: Handle undefined row.
-
-//             var user = {
-//                 id: row.id.toString(),
-//                 email: row.email,
-//                 displayName: row.name,
-//             };
-//             res.render('profile', { user: user });
-//         }
-//     );
-// });
+router.get('/notifications', function (req, res, next) {
+    if (req?.session?.passport?.user) {
+        db.all(
+            'select date, message, link, seen from notifications WHERE user = ?',
+            [req.session.passport.user.email],
+            function (err, rows) {
+                if (err) {
+                    return next(err);
+                }
+                res.json({
+                    authenticated: true,
+                    notifications: rows,
+                });
+            }
+        );
+    } else {
+        res.clearCookie('authenticated');
+        res.json({
+            authenticated: false,
+            error: 'Not logged in',
+        });
+    }
+});
 
 module.exports = router;
