@@ -264,7 +264,7 @@ router.get('/logged-in', function (req, res, next) {
 router.get('/notifications', function (req, res, next) {
     if (req?.session?.passport?.user) {
         db.all(
-            'select date, message, link, seen from notifications WHERE user = ?',
+            'select ROWID, date, message, link, seen from notifications WHERE user = ?',
             [req.session.passport.user.email],
             function (err, rows) {
                 if (err) {
@@ -274,6 +274,33 @@ router.get('/notifications', function (req, res, next) {
                     authenticated: true,
                     notifications: rows,
                 });
+            }
+        );
+    } else {
+        res.clearCookie('authenticated');
+        res.json({
+            authenticated: false,
+            error: 'Not logged in',
+        });
+    }
+});
+
+router.post('/readNotifications', function (req, res, next) {
+    if (req?.session?.passport?.user) {
+        const rows = req.body.rows;
+        db.run(
+            `UPDATE notifications SET seen = 1 WHERE user = ? and 
+            ROWID in (${rows.map(() => { return '?' }).join(',')})`,
+            req.session.passport.user.email, 
+            ...rows,
+            function (err) {
+                if (err) {
+                    res.json({
+                        error: err,
+                    });
+                } else {
+                    res.json({});
+                }
             }
         );
     } else {

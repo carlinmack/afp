@@ -9,14 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     var read = [];
                     for (var notification of data['notifications']) {
                         if (notification['seen']) {
-                            read.unshift(notificationElement(notification));
+                            read.unshift(notificationElement(notification, false));
                         } else {
-                            unread.unshift(notificationElement(notification));
+                            unread.unshift(notificationElement(notification, true));
                         }
                     }
                     const main = document.querySelector('main');
                     if (main) {
                         if (unread.length > 0) {
+                            if (unread.length > 1) {
+                                main.appendChild(allReadButton(unread));
+                            }
                             main.appendChild(header('Unread'));
                             for (var el of unread) {
                                 main.appendChild(el);
@@ -47,15 +50,29 @@ function header(str) {
     return title;
 }
 
-function notificationElement(notification) {
+function allReadButton(notifications) {
+    const readButton = document.createElement('button');
+    readButton.type = 'button';
+    readButton.style = 'float:right;';
+    readButton.textContent = 'Mark all read';
+    var unread = notifications.map((x) => x.dataset.id);
+    readButton.addEventListener('click', function () {
+        markRead(unread);
+    });
+    return readButton;
+}
+
+function notificationElement(notification, unread) {
     const article = document.createElement('article');
     article.className = 'entry';
+    article.dataset.id = notification['rowid'];
 
     const title = document.createElement('h5');
     const link = document.createElement('a');
     link.className = 'title';
     link.href = notification['link'];
     link.textContent = notification['message'];
+    title.appendChild(link);
 
     const date = document.createElement('time');
     date.className = 'date';
@@ -63,15 +80,52 @@ function notificationElement(notification) {
     date.dateTime = notification['date'];
     date.title = notification['date'];
 
-    title.appendChild(link);
+    if (unread) {
+        const readButton = document.createElement('button');
+        readButton.type = 'button';
+        readButton.style =
+            'width: 1.5rem;height: 1.5rem;padding: 3px;margin-left: 1rem;';
+        const readImage = document.createElement('img');
+        readImage.src = '/images/tick.svg';
+        readImage.alt = 'Mark as read';
+        readButton.appendChild(readImage);
+        readButton.addEventListener('click', () => {
+            markRead([notification['rowid'].toString()]);
+        });
+        title.appendChild(readButton);
+    }
+
     article.appendChild(title);
     article.appendChild(date);
     return article;
 }
 
+function markRead(data) {
+    fetch('/api/auth/readNotifications', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ rows: data }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if ('error' in data) {
+                console.error('Error:', data['error']);
+            } else {
+                location.reload();
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
 function formatDate(date) {
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
-                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    const months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+    ];
     var relDelta = Math.round((+new Date() - date) / 1000);
 
     var minute = 60;
