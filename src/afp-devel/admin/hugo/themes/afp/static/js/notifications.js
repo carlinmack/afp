@@ -34,15 +34,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 } else {
-                    window.location.replace('/login');
+                    pleaseLogin();
                 }
             })
             .catch((error) => {
                 console.error('Error:', error);
-                window.location.replace('/login');
+                pleaseLogin();
             });
+    } else {
+        pleaseLogin()
     }
 });
+
+function pleaseLogin() {
+    document.cookie ='warnMessage=Log in to view this page;MaxAge=5000;path=/'; 
+    window.location.replace("/login/?next=" + window.location.pathname);
+}
 
 function header(str) {
     const title = document.createElement('h3');

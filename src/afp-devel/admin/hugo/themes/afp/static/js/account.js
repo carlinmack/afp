@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     .join(' ');
                 document.querySelector('h1').innerHTML = title;
             } else {
-                window.location.replace('/login');
+                pleaseLogin();
             }
         })
-        .catch((error) => {
-            console.error('Error:', error);
-            window.location.replace('/login');
+        .catch(() => {
+            pleaseLogin();
         });
 });
+
+function pleaseLogin() {
+    document.cookie = 'warnMessage=Log in to view this page;MaxAge=5000;path=/';
+    window.location.replace('/login/?next=' + window.location.pathname);
+}
