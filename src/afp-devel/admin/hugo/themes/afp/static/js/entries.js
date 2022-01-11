@@ -41,9 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function removeAuthInputs(name, email) {
-    let inputs = document.querySelectorAll('.auth-section .input-wrapper');
+    let inputs = document.querySelectorAll('.auth-section input');
     for (let input of inputs) {
-        input.classList.add("hidden")
+        if (input.type != "submit") {
+            input.hidden = true;
+        }
     }
     let names = document.querySelectorAll("input[name='author']");
     let emails = document.querySelectorAll("input[name='email']");
