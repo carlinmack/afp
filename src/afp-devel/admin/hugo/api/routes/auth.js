@@ -3,6 +3,10 @@ var passport = require('passport');
 var crypto = require('crypto');
 var db = require('../db');
 
+const multer = require('multer');
+const upload = multer({ dest: '/var/www/html/images/user/' });
+// import { fileTypeFromFile } from 'file-type';
+
 var router = express.Router();
 
 // URL prefix: /api/auth/
@@ -311,5 +315,46 @@ router.post('/readNotifications', function (req, res, next) {
         });
     }
 });
+
+router.post('/upload', upload.single('avatar'), function (req, res) {
+    // req.file is the name of your file in the form above, here 'uploaded_file'
+    // req.body will hold the text fields, if there were any
+    console.log(req.file, req.body);
+    // console.log(await fileTypeFromFile(req.file.path));
+
+    // check file is a valid type
+    // if it is
+    //      insert name into db with user
+    // else
+    //      delete it
+
+    // when requesting user details, return name of file as URL to it
+    // set the src of the icon to that
+
+    if (req?.session?.passport?.user) {
+        db.run(
+            'UPDATE users SET image = $image WHERE email = $email',
+            {
+                $image: req.file.filename,
+                $email: req.session.passport.user.email,
+            },
+            function (err) {
+                if (err) {
+                    res.json({
+                        error: err,
+                    });
+                }
+            }
+        );
+    } else {
+        res.clearCookie('authenticated');
+        res.json({
+            authenticated: false,
+            error: 'Not logged in',
+        });
+    }
+
+});
+
 
 module.exports = router;
