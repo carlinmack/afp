@@ -353,8 +353,23 @@ router.post('/upload', upload.single('avatar'), function (req, res) {
             error: 'Not logged in',
         });
     }
-
 });
 
+router.post('/getUser', function (req, res) {
+    const user = req.body.user;
+    
+    db.get(
+        'SELECT name, image, website, affiliation FROM users WHERE username = $user',
+        {
+            $user: user,
+        },
+        function (err, row) {
+            if (err) {
+                return next(err);
+            }
+            res.json(row);
+        }
+    );
+});
 
 module.exports = router;

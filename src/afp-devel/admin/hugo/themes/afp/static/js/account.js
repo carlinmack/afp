@@ -6,14 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username: username }),
+            body: JSON.stringify({ user: username }),
         })
             .then((response) => response.json())
             .then((data) => {
-                if ('error' in data) {
-                    console.error('Error:', data['error']);
-                } else {
-                    location.reload();
+                let title = data.name;
+
+                title = title
+                    .split(' ')
+                    .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
+                    .join(' ');
+                const titleEl = document.querySelector('h1');
+                if (titleEl) {
+                    titleEl.innerHTML = title;
+                    if (data.image) {
+                        let picture = document.createElement('img');
+                        picture.src = '/images/user/' + data.image;
+                        titleEl.insertAdjacentElement('afterend', picture);
+                    }
                 }
             })
             .catch((error) => {
