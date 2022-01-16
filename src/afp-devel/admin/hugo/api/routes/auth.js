@@ -4,7 +4,18 @@ var crypto = require('crypto');
 var db = require('../db');
 
 const multer = require('multer');
-const upload = multer({ dest: '/var/www/html/images/user/' });
+const upload = multer({
+    storage: multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, '/var/www/html/images/user/');
+        },
+        filename: function (req, file, cb) {
+            // TODO should be username instead
+            cb(null, req.session.passport.user.id);
+        },
+    }),
+});
+
 // import { fileTypeFromFile } from 'file-type';
 
 var router = express.Router();
@@ -243,11 +254,6 @@ router.get('/logged-in', function (req, res, next) {
                 });
             }
         );
-        // res.json({
-        //     authenticated: true,
-        //     user: req.session.passport.user,
-        //     also: req.user,
-        // });
     } else {
         res.clearCookie('authenticated');
         res.json({
@@ -330,9 +336,6 @@ router.post('/upload', upload.single('avatar'), function (req, res) {
     //      insert name into db with user
     // else
     //      delete it
-
-    // when requesting user details, return name of file as URL to it
-    // set the src of the icon to that
 
     if (req?.session?.passport?.user) {
         db.run(

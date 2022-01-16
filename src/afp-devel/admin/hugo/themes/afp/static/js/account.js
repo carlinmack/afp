@@ -29,6 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch((error) => {
                 console.error('Error:', error);
             });
+        // fetch('/images/user/' + username)
+        //     .then((response) => {
+        //         if (response.status === 200) {
+        //             let picture = document.createElement('img');
+        //             picture.src = '/images/user/' + username;
+        //             document.body.insertAdjacentElement('afterstart', picture);
+        //         }
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error:', error);
+        //     });
     } else {
         fetch('/api/auth/logged-in')
             .then((r) => r.json())
