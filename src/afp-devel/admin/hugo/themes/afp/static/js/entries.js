@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.authenticated) {
                 document.getElementById('isso-thread').classList.remove('notAuth');
 
-                removeAuthInputs(data.db.name, data.db.email);
+                removeAuthInputs(data.db.name, data.db.email, data.db.username);
 
                 const targetNode = document.getElementById('isso-thread');
                 const config = { childList: true, subtree: true };
 
                 // Create an observer instance linked to the callback function
                 const observer = new MutationObserver(() => {
-                    removeAuthInputs(data.db.name, data.db.email);
+                    removeAuthInputs(data.db.name, data.db.email, data.db.username);
                 });
 
                 // Start observing the target node for configured mutations
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-function removeAuthInputs(name, email) {
+function removeAuthInputs(name, email, username) {
     let inputs = document.querySelectorAll('.auth-section input');
     for (let input of inputs) {
         if (input.type != "submit") {
@@ -49,15 +49,15 @@ function removeAuthInputs(name, email) {
     }
     let names = document.querySelectorAll("input[name='author']");
     let emails = document.querySelectorAll("input[name='email']");
-    let websites = document.querySelectorAll("input[name='website']"); // http://localhost/authors/jacques-d.-fleuriot/
+    let websites = document.querySelectorAll("input[name='website']");
     for (let elem of names) {
-        elem.value = name;
+        elem.value = "name";
     }
-    for (let elem of emails) {
-        elem.value = email;
-    }
+    // for (let elem of emails) {
+    //     elem.value = email;
+    // }
     for (let elem of websites) {
-        elem.value = '';
+        elem.value = '/account/?user=' + username;
     }
 }
 

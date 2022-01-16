@@ -230,7 +230,7 @@ router.post('/updateSettings', function (req, res, next) {
 router.get('/logged-in', function (req, res, next) {
     if (req?.session?.passport?.user) {
         db.get(
-            'select name, email from users WHERE email = ?',
+            'select username, name, email, image from users WHERE email = ?',
             [req.session.passport.user.email],
             function (err, row) {
                 if (err) {
@@ -240,7 +240,6 @@ router.get('/logged-in', function (req, res, next) {
                     authenticated: true,
                     user: req.session.passport.user,
                     db: row,
-                    also: req.user,
                 });
             }
         );
@@ -294,8 +293,12 @@ router.post('/readNotifications', function (req, res, next) {
         const rows = req.body.rows;
         db.run(
             `UPDATE notifications SET seen = 1 WHERE user = ? and 
-            ROWID in (${rows.map(() => { return '?' }).join(',')})`,
-            req.session.passport.user.email, 
+            ROWID in (${rows
+                .map(() => {
+                    return '?';
+                })
+                .join(',')})`,
+            req.session.passport.user.email,
             ...rows,
             function (err) {
                 if (err) {
