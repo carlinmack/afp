@@ -1,10 +1,4 @@
 <header>
-  {{ if (eq .File.TranslationBaseName "account")}}
-  <span id='settings'>
-    <button><a href="/account/settings/">Settings</a></button>
-    <button><a href="/api/auth/logout">Log out</a></button>
-  </span>
-  {{ end }}
   {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
   <form action="{{ " search" | absURL }}">
     <div class='form-container'>

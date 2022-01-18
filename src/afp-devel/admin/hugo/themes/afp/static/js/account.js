@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((data) => {
                 console.log(data);
                 if (data.authenticated) {
+                    addButtons()
                     displayProfile(data);
                 } else {
                     pleaseLogin();
@@ -76,6 +77,29 @@ function displayProfile(data) {
     //     .catch((error) => {
     //         console.error('Error:', error);
     //     });
+}
+
+function addButtons() {
+    const header = document.querySelector("header");
+    const buttonContainer = document.createElement("span")
+    buttonContainer.id = "settings";
+
+    const settingsButton = document.createElement("button")
+    const settingsLink = document.createElement("a")
+    settingsLink.text = "Settings"
+    settingsLink.href = "/account/settings/";
+    settingsButton.appendChild(settingsLink)
+    
+    const logoutButton = document.createElement("button")
+    const logoutLink = document.createElement("a")
+    logoutLink.text = "Log out"
+    logoutLink.href = "/api/auth/logout";
+    logoutButton.appendChild(logoutLink)
+
+    buttonContainer.appendChild(settingsButton)
+    buttonContainer.appendChild(logoutButton)
+
+    header.insertAdjacentElement("afterbegin",buttonContainer)
 }
 
 function pleaseLogin() {
