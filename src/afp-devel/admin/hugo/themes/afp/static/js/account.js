@@ -62,6 +62,18 @@ function displayProfile(data) {
         titleElement.insertAdjacentElement('beforebegin', profileDiv);
         profileDiv.appendChild(titleElement);
     }
+    if (data.affiliation) {
+        let affiliation = document.createElement('i');
+        affiliation.textContent = data.affiliation;
+        profileDiv.appendChild(affiliation);
+    }
+    if (data.description) {
+        let description = document.createElement('p');
+        description.textContent = data.description;
+        document
+            .querySelector('header')
+            .children[1].insertAdjacentElement('afterend', description);
+    }
 
     // Probably instead want to have a image set boolean
     // fetch('/images/user/' + username)

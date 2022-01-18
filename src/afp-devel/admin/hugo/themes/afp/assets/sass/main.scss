@@ -212,6 +212,7 @@ header {
         display: flex;
         justify-content: space-between;
         padding: 0.5rem 0;
+        flex-wrap: wrap;
     }
 
     #settings {
@@ -274,7 +275,7 @@ header {
             border-bottom: $border-bottom;
         }
     }
-    
+
     #homeSearch {
         display: block;
         margin: 2rem auto 0;
@@ -284,7 +285,7 @@ header {
     }
 
     > div {
-        form {            
+        form {
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 1em 0;
@@ -320,7 +321,8 @@ header {
         border: 1px $theme solid;
     }
 
-    .warn, .success {
+    .warn,
+    .success {
         @extend %alert;
         line-height: 3em;
     }
@@ -859,4 +861,30 @@ iframe {
 
 #bell {
     float: right;
+}
+
+#profile {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 1fr 1fr;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 50px 50px;
+    gap: 0px 0px;
+    grid-template-areas: 'picture title' 'picture affiliation';
+
+    h1 {
+        border: none;
+    }
+
+    img {
+        width: 100px;
+        border: 1px black solid;
+        display: inline-block;
+    }
+
+    > i {
+        grid-area: affiliation;
+    }
 }
