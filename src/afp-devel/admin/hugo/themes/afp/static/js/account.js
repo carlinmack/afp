@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then((data) => {
                 console.log(data);
                 if (data.authenticated) {
-                    addButtons()
+                    addButtons();
                     displayProfile(data);
                 } else {
                     pleaseLogin();
@@ -34,35 +34,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function displayProfile(data) {
+    console.log(data);
     if ('db' in data) {
         data = data.db;
     }
-    const titleElement = document.querySelector('h1');
 
-    if (data.image || data.affiliation || data.website) {
-        const profileDiv = '';
+    const profileDiv = document.createElement('div');
+    profileDiv.id = 'profile';
+
+    const titleElement = document.querySelector('h1');
+    if (data.name) {
         let title = data.name
             .split(' ')
             .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
             .join(' ');
-        if (titleElement) {
-            titleElement.innerHTML = title;
-            if (data.image) {
-                let picture = document.createElement('img');
-                picture.src = '/images/user/' + data.image;
-                titleElement.insertAdjacentElement('afterend', picture);
-            }
-        }
-    } else if (data.name) {
-        let title = data.name
-            .split(' ')
-            .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
-            .join(' ');
+
         if (titleElement) {
             titleElement.innerHTML = title;
         }
-    } else {
-        alert('oops');
+    }
+    if (data.image) {
+        let picture = document.createElement('img');
+        picture.src = '/images/user/' + data.image;
+        profileDiv.appendChild(picture);
+    }
+    if (data.image || data.affiliation) {
+        titleElement.insertAdjacentElement('beforebegin', profileDiv);
+        profileDiv.appendChild(titleElement);
     }
 
     // Probably instead want to have a image set boolean
@@ -80,26 +78,26 @@ function displayProfile(data) {
 }
 
 function addButtons() {
-    const header = document.querySelector("header");
-    const buttonContainer = document.createElement("span")
-    buttonContainer.id = "settings";
+    const header = document.querySelector('header');
+    const buttonContainer = document.createElement('span');
+    buttonContainer.id = 'settings';
 
-    const settingsButton = document.createElement("button")
-    const settingsLink = document.createElement("a")
-    settingsLink.text = "Settings"
-    settingsLink.href = "/account/settings/";
-    settingsButton.appendChild(settingsLink)
-    
-    const logoutButton = document.createElement("button")
-    const logoutLink = document.createElement("a")
-    logoutLink.text = "Log out"
-    logoutLink.href = "/api/auth/logout";
-    logoutButton.appendChild(logoutLink)
+    const settingsButton = document.createElement('button');
+    const settingsLink = document.createElement('a');
+    settingsLink.text = 'Settings';
+    settingsLink.href = '/account/settings/';
+    settingsButton.appendChild(settingsLink);
 
-    buttonContainer.appendChild(settingsButton)
-    buttonContainer.appendChild(logoutButton)
+    const logoutButton = document.createElement('button');
+    const logoutLink = document.createElement('a');
+    logoutLink.text = 'Log out';
+    logoutLink.href = '/api/auth/logout';
+    logoutButton.appendChild(logoutLink);
 
-    header.insertAdjacentElement("afterbegin",buttonContainer)
+    buttonContainer.appendChild(settingsButton);
+    buttonContainer.appendChild(logoutButton);
+
+    header.insertAdjacentElement('afterbegin', buttonContainer);
 }
 
 function pleaseLogin() {
