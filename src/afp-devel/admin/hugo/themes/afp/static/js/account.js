@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     pleaseLogin();
                 }
             })
-            .catch(() => {
-                pleaseLogin();
+            .catch((error) => {
+                pleaseLogin(error);
             });
     }
 });
@@ -70,9 +70,18 @@ function displayProfile(data) {
     if (data.description) {
         let description = document.createElement('p');
         description.textContent = data.description;
-        document
-            .querySelector('header')
-            .children[1].insertAdjacentElement('afterend', description);
+        const headerChildren = document.querySelector('header').children;
+        headerChildren[headerChildren.length - 1].insertAdjacentElement(
+            'beforebegin',
+            description
+        );
+    }
+    if (data.website) {
+        let website = document.createElement('a');
+        website.textContent = data.website;
+        website.href = data.website;
+        const headerChildren = document.querySelector('header').children;
+        headerChildren[headerChildren.length - 1].appendChild(website);
     }
 
     // Probably instead want to have a image set boolean
@@ -112,8 +121,9 @@ function addButtons() {
     header.insertAdjacentElement('afterbegin', buttonContainer);
 }
 
-function pleaseLogin() {
-    document.cookie = 'warnMessage=Log in to view this page;MaxAge=5000;path=/';
+function pleaseLogin(point) {
+    document.cookie =
+        'warnMessage=Log in to view this page ' + point +';MaxAge=5000;path=/';
     window.location.replace('/login/?next=' + window.location.pathname);
 }
 
