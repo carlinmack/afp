@@ -880,6 +880,9 @@ iframe {
 
     img {
         width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-sizing: border-box;
         border: 1px black solid;
         display: inline-block;
     }

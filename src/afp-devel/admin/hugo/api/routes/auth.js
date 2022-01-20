@@ -154,35 +154,50 @@ function updatePassword(req, res, next, resolve, reject) {
     );
 }
 
+async function updateNonEssential(req, type) {
+    return new Promise((resolve, reject) => {
+        if (!req.body[type] || req.body[type].length == 0) {
+            resolve();
+        } else {
+            const query =
+                'UPDATE users SET ' +
+                type +
+                ' = $type WHERE email = $email and (' +
+                type +
+                ' is null or ' +
+                type +
+                ' != $type)';
+            db.run(
+                query,
+                {
+                    $type: req.body[type],
+                    $email: req.session.passport.user.email,
+                },
+                function (err) {
+                    if (err) {
+                        reject(err);
+                    }
+                    if (this.changes == 1) {
+                        resolve(type);
+                    }
+                    resolve();
+                }
+            );
+        }
+    });
+}
+
 router.post('/updateSettings', function (req, res, next) {
-    console.log('req.body');
-    console.log(req.body);
-    console.log('req.session.passport.user');
-    console.log(req.session.passport.user);
+    // console.log('req.body');
+    // console.log(req.body);
+    // console.log('req.session.passport.user');
+    // console.log(req.session.passport.user);
     if (req?.session?.passport?.user) {
         Promise.all([
-            new Promise((resolve, reject) => {
-                if (!req.body.name || req.body.name.length == 0) {
-                    resolve();
-                } else {
-                    db.run(
-                        'UPDATE users SET name = $name WHERE email = $email and (name is null or name != $name)',
-                        {
-                            $name: req.body.name,
-                            $email: req.session.passport.user.email,
-                        },
-                        function (err) {
-                            if (err) {
-                                reject(err);
-                            }
-                            if (this.changes == 1) {
-                                resolve('name');
-                            }
-                            resolve();
-                        }
-                    );
-                }
-            }),
+            updateNonEssential(req, 'name'),
+            updateNonEssential(req, 'description'),
+            updateNonEssential(req, 'website'),
+            updateNonEssential(req, 'affiliation'),
             //     new Promise((resolve, reject) => {
             //         console.log(
             //             req.body.current.length,
@@ -376,7 +391,7 @@ router.post('/upload', upload.single('avatar'), function (req, res) {
                     });
                 }
                 if (this.changes == 1) {
-                    res.cookie('successMessage', "Picture updated", {
+                    res.cookie('successMessage', 'Picture updated', {
                         maxAge: 30000,
                     });
                 }

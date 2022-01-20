@@ -7,14 +7,20 @@ url: /account/settings/
   <div>
     <label disabled for="name">Display Name</label><br>
     <input disabled id="name" name="name" type="text">
-  </div>
+  </div><p></p>
+  <div>
+    <label disabled for="affiliation">Affiliation</label><br>
+    <input disabled id="affiliation" name="affiliation" type="text">
+  </div><p></p>
   <div>
     <label disabled for="website">Website</label><br>
-    <input disabled id="website" name="website" type="text">
-  </div>
+    <input disabled id="website" name="website" type="text" pattern="https?://.+" 
+    title="Please start URL with http">
+  </div><p></p>
   <div>
     <label disabled for="description">Description</label><br>
-    <input disabled id="description" name="description" type="text">
+    <textarea id="description" name="description" cols="40" rows="7">
+    </textarea>
   </div>
   <input class='action' disabled type="submit" value="Submit"></input>
   <!-- </form> -->

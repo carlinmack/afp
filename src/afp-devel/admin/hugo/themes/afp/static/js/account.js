@@ -42,12 +42,7 @@ function displayProfile(data) {
     const profileDiv = document.createElement('div');
     profileDiv.id = 'profile';
 
-    var name;
-    if (data.name) {
-        name = data.name;
-    } else {
-        name = data.username;
-    }
+    var name = data.name || data.username;
     let title = name
         .split(' ')
         .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
