@@ -4,6 +4,12 @@ title: Sign up
 
 <form action="/api/auth/signup" method="post">
   <div>
+    <label for="username">Username</label><br>
+    <input disabled required type="username" name="username" id="username" pattern="[A-Za-z-.0-9]{4,12}"
+      title="4 to 14 letters. Numbers, dashes and full stops allowed.">
+  </div>
+  <div></div>
+  <div>
     <label for="email">Email</label><br>
     <input disabled required type="email" name="email" id="email">
   </div>

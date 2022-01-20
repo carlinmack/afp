@@ -42,17 +42,22 @@ function displayProfile(data) {
     const profileDiv = document.createElement('div');
     profileDiv.id = 'profile';
 
-    const titleElement = document.querySelector('h1');
+    var name;
     if (data.name) {
-        let title = data.name
-            .split(' ')
-            .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
-            .join(' ');
-
-        if (titleElement) {
-            titleElement.innerHTML = title;
-        }
+        name = data.name;
+    } else {
+        name = data.username;
     }
+    let title = name
+        .split(' ')
+        .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
+        .join(' ');
+
+    const titleElement = document.querySelector('h1');
+    if (titleElement) {
+        titleElement.innerHTML = title;
+    }
+
     if (data.image) {
         let picture = document.createElement('img');
         picture.src = '/images/user/' + data.image;
@@ -122,8 +127,11 @@ function addButtons() {
 }
 
 function pleaseLogin(point) {
+    if (point == undefined) {
+        point = '';
+    }
     document.cookie =
-        'warnMessage=Log in to view this page ' + point +';MaxAge=5000;path=/';
+        'warnMessage=Log in to view this page ' + point + ';MaxAge=5000;path=/';
     window.location.replace('/login/?next=' + window.location.pathname);
 }
 
