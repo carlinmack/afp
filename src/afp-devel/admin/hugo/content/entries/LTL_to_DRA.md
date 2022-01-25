@@ -71,7 +71,7 @@
     ],
     "relatedEntries": [
         "LTL_Master_Theorem",
-        "LTL_to_GBA",
-        "Stuttering_Equivalence"
+        "LTL",
+        "LTL_to_GBA"
     ]
 }

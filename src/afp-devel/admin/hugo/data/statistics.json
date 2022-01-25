@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 191242,
-    "num_loc": 3299728,
+    "num_lemmas": 191323,
+    "num_loc": 3300676,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        651
+        652
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3299700
+        3300700
     ],
     "author_years": [
         14,
@@ -62,7 +62,7 @@
         39,
         34,
         45,
-        1
+        2
     ],
     "author_years_cumulative": [
         14,
@@ -83,7 +83,7 @@
         339,
         373,
         418,
-        419
+        420
     ],
     "loc_articles": [
         839,
@@ -736,7 +736,8 @@
         1699,
         1386,
         2946,
-        3108
+        3108,
+        948
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1389,6 +1390,7 @@
         "Roth_Arithmetic_Progressions",
         "Gale_Shapley",
         "Hyperdual",
-        "Knights_Tour"
+        "Knights_Tour",
+        "Actuarial_Mathematics"
     ]
 }

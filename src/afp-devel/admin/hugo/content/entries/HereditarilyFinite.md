@@ -59,7 +59,7 @@
         "OrdArith"
     ],
     "relatedEntries": [
-        "Goedel_HFSet_Semantic",
-        "Syntax_Independent_Logic"
+        "Syntax_Independent_Logic",
+        "Goedel_HFSet_Semantic"
     ]
 }
