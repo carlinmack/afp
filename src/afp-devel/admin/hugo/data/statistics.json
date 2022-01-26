@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 191323,
-    "num_loc": 3300676,
+    "num_lemmas": 191349,
+    "num_loc": 3301242,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        652
+        653
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3300700
+        3301200
     ],
     "author_years": [
         14,
@@ -737,7 +737,8 @@
         1386,
         2946,
         3108,
-        948
+        948,
+        566
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1391,6 +1392,7 @@
         "Gale_Shapley",
         "Hyperdual",
         "Knights_Tour",
-        "Actuarial_Mathematics"
+        "Actuarial_Mathematics",
+        "Median_Method"
     ]
 }
