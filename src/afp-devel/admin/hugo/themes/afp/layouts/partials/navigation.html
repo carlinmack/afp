@@ -2,9 +2,7 @@
   <input id="toggle" type="checkbox" />
   <label for="toggle">
     <span>menu</span>
-    <div></div>
-    <div></div>
-    <div></div>
+    <img src="{{- .Site.BaseURL -}}images/menu.svg" alt="Menu" />
   </label>
 
   <a href="{{- .Site.BaseURL -}}" class='logoLink'>
@@ -12,10 +10,8 @@
   </a>
 
   {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
-  <form action="{{ " search" | absURL }}">
-    <button id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg"
-          alt="Search" /></button>
-  </form>
+  <a href="/search"><img src="{{- .Site.BaseURL -}}images/search.svg"
+          alt="Search" /></a>
   {{ end -}}
 
   <nav id="menu">
