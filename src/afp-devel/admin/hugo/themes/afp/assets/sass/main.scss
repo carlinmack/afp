@@ -139,7 +139,7 @@ aside {
     word-break: break-all;
     overflow-y: auto;
 
-    > div {
+    nav {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -265,7 +265,7 @@ header {
     grid-area: content;
     margin: 0 auto 2rem;
     width: 50vw;
-    min-width: 400px;
+    min-width: 550px;
 
     div {
         line-height: 1.35em;
@@ -632,6 +632,15 @@ tr:nth-child(even) {
             align-items: center;
         }
 
+        .subtitle {
+            color: $dark-grey;
+            font-size: 0.875em;
+
+            > p {
+                margin: 0;
+            }
+        }
+
         a[download] {
             padding: 5px 7.5px;
             flex-shrink: 0;
@@ -889,5 +898,140 @@ iframe {
 
     > i {
         grid-area: affiliation;
+    }
+}
+
+#menuToggle {
+    input,
+    label {
+        display: none;
+    }
+
+    > .logoLink {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .content {
+        width: 90%;
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 875px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'content';
+    }
+
+    aside {
+        height: 4rem;
+        width: 100vw;
+        overflow-y: visible;
+        z-index: 1;
+    }
+
+    .content {
+        margin-top: 4rem;
+    }
+
+    #menuToggle {
+        background: $theme;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 3rem;
+        padding: 2rem 2rem 0;
+        user-select: none;
+        a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .logoLink {
+            height: 3rem;
+            max-width: 50vw;
+            top: 1rem;
+            left: 0;
+            right: 0;
+            margin-left: auto; 
+            margin-right: auto;
+
+
+            img {
+                padding: 0;
+                height: 3rem;
+                object-fit: contain;
+            }
+        }
+
+        .logoLink, input {
+            display: block;
+            position: absolute;
+            z-index: 2;
+        }
+
+        input {
+            width: 30px;
+            height: 30px;
+            top: 1.75rem;
+            left: 1.75rem;
+            cursor: pointer;
+            opacity: 0;
+            &:checked {
+                ~ nav {
+                    left: 0;
+                }
+            }
+        }
+        
+        label {
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 30px;
+            span {
+                display: none;
+            }
+            div {
+                display: block;
+                width: 30px;
+                height: 2px;
+                margin-bottom: 6px;
+                position: relative;
+                background: $white;
+                border-radius: 3px;
+                z-index: 1;
+                transform-origin: 4px 0;
+                transition: all 0.3s ease;
+                &:first-child {
+                    transform-origin: 0 100%;
+                }
+                &:nth-child(2) {
+                    transform-origin: 0 0;
+                }
+            }
+        }
+    }
+    #menu {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 80px;
+        box-sizing: border-box;
+        min-width: 200px;
+        width: 50vw;
+        max-width: 350px;
+        min-height: 355px;
+        background: $theme;
+        left: -100%;
+        transition: left 0.3s ease;
+
+        .logoLink {
+            display: none;
+        }
     }
 }
