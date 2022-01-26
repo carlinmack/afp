@@ -415,6 +415,7 @@ h1 {
 h2 {
     margin: 1.5em 0 0 0;
     padding: 0;
+    line-height: normal;
 }
 
 h3 {
@@ -516,6 +517,10 @@ tr:nth-child(even) {
     white-space: nowrap;
 }
 
+.largeTopMargin {
+    margin-top: 48px;
+}
+
 .searchPage {
     > div {
         display: grid;
@@ -524,7 +529,6 @@ tr:nth-child(even) {
         grid-template-areas:
             'search search'
             'entries sidebar';
-        min-width: 560px;
     }
 
     form {
@@ -798,6 +802,18 @@ iframe {
         width: 90%;
         min-width: 350px;
     }
+
+    .searchPage {
+        > div {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 150px auto auto ;
+            grid-template-areas:
+                'search'
+                'sidebar'
+                'entries';
+        }
+    }
 }
 
 @media (max-width: 875px) {
@@ -833,6 +849,11 @@ iframe {
         nav {
             margin-left: 0;
         }
+    }
+
+        
+    .largeTopMargin {
+        margin-top: 0;
     }
 
     #menuToggle {
