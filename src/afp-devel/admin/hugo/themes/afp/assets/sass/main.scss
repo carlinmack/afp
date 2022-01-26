@@ -614,6 +614,7 @@ a[download] {
     .date {
         text-align: right;
         width: 15%;
+        min-width: 6ch;
         font-family: $monospace;
     }
 
@@ -786,6 +787,10 @@ iframe {
     > .logoLink {
         display: none;
     }
+
+    form {
+        display: none;
+    }
 }
 
 @media (max-width: 650px) {
@@ -808,8 +813,26 @@ iframe {
         z-index: 1;
     }
 
+    header {
+        form {
+            display: none;
+        }
+    }
+
     .content {
-        margin-top: 4rem;
+        margin-top: 80px;
+    }
+
+    .entries {
+        > div {
+            display: grid;
+            grid-template-rows: auto auto;
+            grid-template-columns: 1fr;
+        }
+
+        nav {
+            margin-left: 0;
+        }
     }
 
     #menuToggle {
@@ -878,7 +901,6 @@ iframe {
                 margin-bottom: 6px;
                 position: relative;
                 background: $white;
-                border-radius: 3px;
                 z-index: 1;
                 transform-origin: 4px 0;
                 transition: all 0.3s ease;
@@ -889,6 +911,13 @@ iframe {
                     transform-origin: 0 0;
                 }
             }
+        }
+
+        form {
+            display: block;
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
         }
     }
     #menu {

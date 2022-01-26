@@ -11,6 +11,13 @@
     <img src="{{- .Site.BaseURL -}}images/afp.png" alt='Logo of the Archive of Formal Proofs' class="logo">
   </a>
 
+  {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
+  <form action="{{ " search" | absURL }}">
+    <button id="searchButton" type="button"><img src="{{- .Site.BaseURL -}}images/search.svg"
+          alt="Search" /></button>
+  </form>
+  {{ end -}}
+
   <nav id="menu">
     <div>
       <a href="{{- .Site.BaseURL -}}" class='logoLink'>
