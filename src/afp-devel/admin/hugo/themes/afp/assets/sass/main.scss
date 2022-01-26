@@ -3,7 +3,7 @@ $theme: hsl(242, 27%, 24%);
 $theme-hover: hsl(241, 26%, 36%);
 $theme-lightest: hsl(261, 36%, 86%);
 $theme-focus: #acabcf;
-$link:#0645ad;
+$link: #0645ad;
 $link-hover: #0000ee;
 $link-visited: #42047c;
 $white: #fff;
@@ -17,9 +17,9 @@ $black: #000;
 $black_15: rgba(0, 0, 0, 0.15);
 
 //fonts
-$sans-serif: "Open Sans", sans-serif;
-$monospace: "Consolas", monospace;
-$OpenSans: "Open Sans";
+$sans-serif: 'Open Sans', sans-serif;
+$monospace: 'Consolas', monospace;
+$OpenSans: 'Open Sans';
 
 $light: 300;
 $normal: 400;
@@ -55,8 +55,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 300;
-    src: local(""), url("/font/open-sans-v18-latin-300.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-300.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-300.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-300.woff') format('woff');
 }
 
 @font-face {
@@ -64,8 +64,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 400;
-    src: local(""), url("/font/open-sans-v18-latin-regular.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-regular.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-regular.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-regular.woff') format('woff');
 }
 
 @font-face {
@@ -73,8 +73,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: italic;
     font-weight: 400;
-    src: local(""), url("/font/open-sans-v18-latin-italic.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-italic.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-italic.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-italic.woff') format('woff');
 }
 
 @font-face {
@@ -82,8 +82,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: normal;
     font-weight: 700;
-    src: local(""), url("/font/open-sans-v18-latin-700.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-700.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-700.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-700.woff') format('woff');
 }
 
 @font-face {
@@ -91,8 +91,8 @@ $border-bottom: 2px $darker-grey solid;
     font-display: swap;
     font-style: italic;
     font-weight: 700;
-    src: local(""), url("/font/open-sans-v18-latin-700italic.woff2") format("woff2"),
-        url("/font/open-sans-v18-latin-700italic.woff") format("woff");
+    src: local(''), url('/font/open-sans-v18-latin-700italic.woff2') format('woff2'),
+        url('/font/open-sans-v18-latin-700italic.woff') format('woff');
 }
 
 *::selection {
@@ -105,8 +105,8 @@ body {
     background: $white;
     font-family: $sans-serif;
     display: grid;
-    grid-template-columns: #{"max(20%, 200px)"} 1fr;
-    grid-template-areas: "sidebar content";
+    grid-template-columns: #{'max(20%, 200px)'} 1fr;
+    grid-template-areas: 'sidebar content';
     justify-items: center;
     margin: 0;
 }
@@ -124,7 +124,7 @@ aside {
     word-break: break-all;
     overflow-y: auto;
 
-    > div {
+    nav {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -240,7 +240,7 @@ header {
     grid-area: content;
     margin: 0 auto 2rem;
     width: 50vw;
-    min-width: 400px;
+    min-width: 550px;
 
     div {
         line-height: 1.35em;
@@ -315,14 +315,14 @@ header {
     }
 
     li::before {
-        content: "–";
+        content: '–';
         position: absolute;
         margin-left: -1.3em;
     }
 }
 
 .entries {
-    >div {
+    > div {
         display: grid;
         grid-template-columns: 3fr 1fr;
     }
@@ -517,12 +517,13 @@ tr:nth-child(even) {
 }
 
 .searchPage {
-    >div {
+    > div {
         display: grid;
-        grid-template-columns: 3fr #{"max(25%, 175px)"};
+        grid-template-columns: 3fr #{'max(25%, 175px)'};
         grid-template-rows: 150px 1fr;
-        grid-template-areas: "search search"
-        "entries sidebar";
+        grid-template-areas:
+            'search search'
+            'entries sidebar';
         min-width: 560px;
     }
 
@@ -537,15 +538,14 @@ tr:nth-child(even) {
     }
 
     #search-results {
-
-        >div {
+        > div {
             position: relative;
             margin: 1.5rem 0;
             border-bottom: 2px $lighter-grey solid;
             padding-bottom: 1.5rem;
         }
 
-        div+div {
+        div + div {
             margin-top: 1rem;
         }
 
@@ -560,7 +560,7 @@ tr:nth-child(even) {
             color: $dark-grey;
             font-size: 0.875em;
 
-            >p {
+            > p {
                 margin: 0;
             }
         }
@@ -595,8 +595,8 @@ a[download] {
         color: $black;
     }
     &:after {
-        content: url("/images/download.svg");
-        @extend %button-image
+        content: url('/images/download.svg');
+        @extend %button-image;
     }
 }
 
@@ -672,8 +672,8 @@ button {
 
 button[copy] {
     &:after {
-        content: url("/images/copy.svg");
-        @extend %button-image
+        content: url('/images/copy.svg');
+        @extend %button-image;
     }
 }
 
@@ -774,5 +774,140 @@ iframe {
     @media (max-width: 1000px) {
         left: 200px;
         width: calc(100vw - 200px);
+    }
+}
+
+#menuToggle {
+    input,
+    label {
+        display: none;
+    }
+
+    > .logoLink {
+        display: none;
+    }
+}
+
+@media (max-width: 650px) {
+    .content {
+        width: 90%;
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 875px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'content';
+    }
+
+    aside {
+        height: 4rem;
+        width: 100vw;
+        overflow-y: visible;
+        z-index: 1;
+    }
+
+    .content {
+        margin-top: 4rem;
+    }
+
+    #menuToggle {
+        background: $theme;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        height: 3rem;
+        padding: 2rem 2rem 0;
+        user-select: none;
+        a {
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .logoLink {
+            height: 3rem;
+            max-width: 50vw;
+            top: 1rem;
+            left: 0;
+            right: 0;
+            margin-left: auto; 
+            margin-right: auto;
+
+
+            img {
+                padding: 0;
+                height: 3rem;
+                object-fit: contain;
+            }
+        }
+
+        .logoLink, input {
+            display: block;
+            position: absolute;
+            z-index: 2;
+        }
+
+        input {
+            width: 30px;
+            height: 30px;
+            top: 1.75rem;
+            left: 1.75rem;
+            cursor: pointer;
+            opacity: 0;
+            &:checked {
+                ~ nav {
+                    left: 0;
+                }
+            }
+        }
+        
+        label {
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 30px;
+            span {
+                display: none;
+            }
+            div {
+                display: block;
+                width: 30px;
+                height: 2px;
+                margin-bottom: 6px;
+                position: relative;
+                background: $white;
+                border-radius: 3px;
+                z-index: 1;
+                transform-origin: 4px 0;
+                transition: all 0.3s ease;
+                &:first-child {
+                    transform-origin: 0 100%;
+                }
+                &:nth-child(2) {
+                    transform-origin: 0 0;
+                }
+            }
+        }
+    }
+    #menu {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding-top: 80px;
+        box-sizing: border-box;
+        min-width: 200px;
+        width: 50vw;
+        max-width: 350px;
+        min-height: 355px;
+        background: $theme;
+        left: -100%;
+        transition: left 0.3s ease;
+
+        .logoLink {
+            display: none;
+        }
     }
 }
