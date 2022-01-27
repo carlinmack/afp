@@ -879,11 +879,8 @@ iframe {
 
 #profile {
     display: grid;
-    grid-template-columns: 100px 1fr;
-    grid-template-rows: 1fr 1fr;
-    display: grid;
     grid-auto-columns: 1fr;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 116px 1fr;
     grid-template-rows: 50px 50px;
     gap: 0px 0px;
     grid-template-areas: 'picture title' 'picture affiliation';
@@ -893,7 +890,8 @@ iframe {
     }
 
     img {
-        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
         height: 100px;
         object-fit: cover;
         box-sizing: border-box;
@@ -950,7 +948,7 @@ iframe {
         height: 4rem;
         width: 100vw;
         overflow-y: visible;
-        z-index: 1;
+        z-index: 2;
     }
 
     header {
@@ -978,6 +976,17 @@ iframe {
         
     .largeTopMargin {
         margin-top: 0;
+    }
+
+    #banner {
+        left: 0;
+        width: 100vw;
+        height: 75px;
+
+        p {
+            line-height: normal;
+            margin: 1rem;
+        }
     }
 
     #menuToggle {
