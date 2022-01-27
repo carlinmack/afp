@@ -826,7 +826,7 @@ iframe {
         height: 4rem;
         width: 100vw;
         overflow-y: visible;
-        z-index: 1;
+        z-index: 2;
     }
 
     header {
@@ -854,6 +854,17 @@ iframe {
         
     .largeTopMargin {
         margin-top: 0;
+    }
+
+    #banner {
+        left: 0;
+        width: 100vw;
+        height: 75px;
+
+        p {
+            line-height: normal;
+            margin: 1rem;
+        }
     }
 
     #menuToggle {
