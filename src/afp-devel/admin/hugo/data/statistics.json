@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 191349,
-    "num_loc": 3301242,
+    "num_lemmas": 191364,
+    "num_loc": 3301518,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        653
+        654
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3301200
+        3301500
     ],
     "author_years": [
         14,
@@ -737,6 +737,7 @@
         1386,
         2946,
         3108,
+        276,
         948,
         566
     ],
@@ -1392,6 +1393,7 @@
         "Gale_Shapley",
         "Hyperdual",
         "Knights_Tour",
+        "Irrationals_From_THEBOOK",
         "Actuarial_Mathematics",
         "Median_Method"
     ]
