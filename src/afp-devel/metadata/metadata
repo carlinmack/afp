@@ -9267,6 +9267,26 @@ abstract =
   Mathematical Logic for Computer Science.
   Paper: <a href="http://ceur-ws.org/Vol-3002/paper7.pdf">http://ceur-ws.org/Vol-3002/paper7.pdf</a>.
 
+[FOL_Seq_Calc2]
+title = A Sequent Calculus Prover for First-Order Logic with Functions
+author = Asta Halkjær From <https://people.compute.dtu.dk/ahfrom/>, Frederik Krogsdal Jacobsen <http://people.compute.dtu.dk/fkjac/>
+topic = Logic/General logic/Classical first-order logic, Logic/Proof theory, Logic/General logic/Mechanization of proofs
+date = 2022-01-31
+notify = ahfrom@dtu.dk, fkjac@dtu.dk
+abstract =
+  We formalize an automated theorem prover for first-order logic with
+  functions. The proof search procedure is based on sequent calculus and
+  we verify its soundness and completeness using the Abstract Soundness
+  and Abstract Completeness theories. Our analytic completeness proof
+  covers both open and closed formulas. Since our deterministic prover
+  considers only the subset of terms relevant to proving a given
+  sequent, we do so as well when building a countermodel from a failed
+  proof. We formally connect our prover with the proof system and
+  semantics of the existing SeCaV system. In particular, the
+  prover's output can be post-processed in Haskell to generate
+  human-readable SeCaV proofs which are also machine-verifiable proof
+  certificates.
+
 [Szpilrajn]
 title = Order Extension and Szpilrajn's Extension Theorem
 author = Peter Zeller <mailto:p_zeller@cs.uni-kl.de>, Lukas Stevens <https://www21.in.tum.de/team/stevensl>
@@ -11727,4 +11747,31 @@ abstract =
   As for the theorem itself, note that a much stronger and more general
   result (the Hermite--Lindemann--Weierstraß transcendence theorem) is
   already available in the AFP.
+
+[Interpolation_Polynomials_HOL_Algebra]
+title = Interpolation Polynomials (in HOL-Algebra)
+author = Emin Karayel <https://orcid.org/0000-0003-3290-5034>
+topic = Mathematics/Algebra
+date = 2022-01-29
+notify = me@eminkarayel.de
+abstract =
+  <p>A well known result from algebra is that, on any field, there
+  is exactly one polynomial of degree less than n interpolating n points
+  [<a
+  href="https://doi.org/10.1017/CBO9780511814549">1</a>,
+  §7].</p> <p>This entry contains a formalization of the
+  above result, as well as the following generalization in the case of
+  finite fields <i>F</i>: There are
+  <i>|F|<sup>m-n</sup></i> polynomials of degree
+  less than <i>m ≥ n</i> interpolating the same n points,
+  where <i>|F|</i> denotes the size of the domain of the
+  field. To establish the result the entry also includes a formalization
+  of Lagrange interpolation, which might be of independent
+  interest.</p> <p>The formalized results are defined on the
+  algebraic structures from HOL-Algebra, which are distinct from the
+  type-class based structures defined in HOL. Note that there is an
+  existing formalization for polynomial interpolation and, in
+  particular, Lagrange interpolation by Thiemann and Yamada [<a
+  href="https://www.isa-afp.org/entries/Polynomial_Interpolation.html">2</a>]
+  on the type-class based structures in HOL.</p>
 

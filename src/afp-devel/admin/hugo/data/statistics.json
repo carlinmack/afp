@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 191364,
-    "num_loc": 3301518,
+    "num_lemmas": 191555,
+    "num_loc": 3304937,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        654
+        656
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3301500
+        3304900
     ],
     "author_years": [
         14,
@@ -62,7 +62,7 @@
         39,
         34,
         45,
-        2
+        3
     ],
     "author_years_cumulative": [
         14,
@@ -83,7 +83,7 @@
         339,
         373,
         418,
-        420
+        421
     ],
     "loc_articles": [
         839,
@@ -737,9 +737,11 @@
         1386,
         2946,
         3108,
-        276,
+        279,
         948,
-        566
+        566,
+        822,
+        2594
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1395,6 +1397,8 @@
         "Knights_Tour",
         "Irrationals_From_THEBOOK",
         "Actuarial_Mathematics",
-        "Median_Method"
+        "Median_Method",
+        "Interpolation_Polynomials_HOL_Algebra",
+        "FOL_Seq_Calc2"
     ]
 }
