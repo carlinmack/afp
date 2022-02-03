@@ -1,20 +1,29 @@
-const sqlite3 = require('sqlite3').verbose();
 var express = require('express');
 
 var db = require('./db.js');
 var router = express.Router();
 
-// URL prefix: /api/auth/
+// URL prefix: /api/pageviews/
 router.post('/', function (req, res, next) {
     if (req?.body?.entries) {
         var entriesList = req.body.entries;
-        if (entriesList.every((x) => x.match('^[/a-z_]'))) {
+        if (entriesList.every((x) => x.match('^[/a-z0-9_-]+$'))) {
             Promise.all(
                 entriesList.map((entry) => {
                     return getCount(entry);
                 })
-            ).then((result) => {
-                res.json(Object.fromEntries(result));
+            ).then((counts) => {
+                Promise.all(
+                    entriesList.map((entry) => {
+                        return getDownload(entry);
+                    })
+                ).then((downloads) => {
+                    res.json({
+                        entries: entriesList.map(getEntryName),
+                        pageviews: counts,
+                        downloads: downloads,
+                    });
+                });
             });
         } else {
             res.json({
@@ -35,12 +44,30 @@ async function getCount(entry) {
             [entry],
             function (err, row) {
                 if (err) {
-                    reject('not found')
+                    reject('not found');
                 }
-                resolve([entry, row.count])
+                resolve(row.count);
             }
         );
     });
 }
+
+async function getDownload(entry) {
+    return new Promise((resolve, reject) => {
+        const downloadUrl = '/release/afp-' + getEntryName(entry) + '-current.tar.gz';
+        db.get(
+            'SELECT count(*) as count FROM logs WHERE request_url = ?',
+            [downloadUrl],
+            function (err, row) {
+                if (err) {
+                    reject('not found');
+                }
+                resolve(row.count);
+            }
+        );
+    });
+}
+
+const getEntryName = entry => entry.match(/\/([a-z0-9_-]+)\/$/)[1];
 
 module.exports = router;

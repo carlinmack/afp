@@ -122,14 +122,14 @@
   <div class="popup">
     <h2>Download</h2>
     <a class="close" href="#">&times;</a>
-    <a href="https://isa-afp.org/release/afp-{{- $entryName -}}-current.tar.gz" download>Download latest</a>
+    <a href="/release/afp-{{- urlize $entryName -}}-current.tar.gz" download>Download latest</a>
     {{ with .Params.olderReleases -}}
     <p>Older releases:</p>
     <ul>
       {{- range $map := . -}}
       {{- range $key, $value := $map -}}
       <li>Isabelle {{- $key -}}:
-        <a href="https://isa-afp.org/release/afp-{{- $entryName -}}-{{- $value -}}.tar.gz">
+        <a href="/release/afp-{{- urlize $entryName -}}-{{- $value -}}.tar.gz">
           afp-{{- $entryName -}}-{{- $value -}}.tar.gz
         </a>
       </li>

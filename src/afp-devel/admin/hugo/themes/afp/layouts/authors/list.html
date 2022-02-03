@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<div class="chart hidden" style="min-height: 150px; height: 200px; padding: 1rem 1rem 0 0;">
+  <canvas id="pageviews"></canvas>
+</div>
+
+
+{{- $site := . -}}
+{{- range (.Data.Pages).GroupByDate "2006" -}}
+{{- if ne .Key "0001" -}}
+<h2 class="head">{{- .Key -}}</h2>
+{{- range .Pages -}}
+<article class="entry">
+  <span class="item-text">
+    <p><a class="title" href="{{ .RelPermalink }}">{{- htmlUnescape .Title -}}</a> <br>
+      {{- with .Params.authors -}}by {{ partial "authors.html" (dict "site" $site "authors" .) -}}{{- end -}} <br>
+      <span class='subtitle'><a href="{{ .RelPermalink }}#isso-thread">Comments</a></span>
+    </p>
+  </span>
+  <time>
+    {{ .Date.Format "02 Jan" }}
+  </time>
+</article>
+{{ end }}
+{{ end }}
+{{ end }}
+
+
+{{ end }}
