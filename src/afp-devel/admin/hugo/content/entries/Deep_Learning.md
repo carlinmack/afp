@@ -65,7 +65,7 @@
     ],
     "relatedEntries": [
         "Groebner_Bases",
-        "Isabelle_Marries_Dirac",
-        "Polynomial_Factorization"
+        "Polynomial_Factorization",
+        "Isabelle_Marries_Dirac"
     ]
 }

@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 191555,
-    "num_loc": 3304937,
+    "num_lemmas": 192100,
+    "num_loc": 3313678,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        656
+        657
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3304900
+        3313700
     ],
     "author_years": [
         14,
@@ -62,7 +62,7 @@
         39,
         34,
         45,
-        3
+        5
     ],
     "author_years_cumulative": [
         14,
@@ -83,7 +83,7 @@
         339,
         373,
         418,
-        421
+        423
     ],
     "loc_articles": [
         839,
@@ -741,7 +741,8 @@
         948,
         566,
         822,
-        2594
+        2594,
+        8741
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1399,6 +1400,7 @@
         "Actuarial_Mathematics",
         "Median_Method",
         "Interpolation_Polynomials_HOL_Algebra",
-        "FOL_Seq_Calc2"
+        "FOL_Seq_Calc2",
+        "Quasi_Borel_Spaces"
     ]
 }

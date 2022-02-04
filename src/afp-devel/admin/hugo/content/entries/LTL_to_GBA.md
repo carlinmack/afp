@@ -56,8 +56,8 @@
         "All_Of_LTL_to_GBA"
     ],
     "relatedEntries": [
-        "LTL_Master_Theorem",
+        "Stuttering_Equivalence",
         "LTL_to_DRA",
-        "Stuttering_Equivalence"
+        "LTL_Normal_Form"
     ]
 }

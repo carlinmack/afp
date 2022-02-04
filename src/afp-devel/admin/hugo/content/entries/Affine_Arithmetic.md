@@ -74,7 +74,7 @@
     ],
     "relatedEntries": [
         "Real_Impl",
-        "MSO_Regex_Equivalence",
-        "Formula_Derivatives"
+        "Formula_Derivatives",
+        "MSO_Regex_Equivalence"
     ]
 }

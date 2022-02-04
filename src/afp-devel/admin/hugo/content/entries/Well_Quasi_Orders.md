@@ -76,7 +76,7 @@
         "Wqo_Multiset"
     ],
     "relatedEntries": [
-        "Decreasing-Diagrams-II",
-        "Myhill-Nerode"
+        "Myhill-Nerode",
+        "Decreasing-Diagrams-II"
     ]
 }
