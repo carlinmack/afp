@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 192100,
-    "num_loc": 3313678,
+    "num_lemmas": 192125,
+    "num_loc": 3314485,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        657
+        658
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3313700
+        3314500
     ],
     "author_years": [
         14,
@@ -742,6 +742,7 @@
         566,
         822,
         2594,
+        807,
         8741
     ],
     "all_articles": [
@@ -1401,6 +1402,7 @@
         "Median_Method",
         "Interpolation_Polynomials_HOL_Algebra",
         "FOL_Seq_Calc2",
+        "Youngs_Inequality",
         "Quasi_Borel_Spaces"
     ]
 }
