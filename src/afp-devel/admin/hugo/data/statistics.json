@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 192125,
-    "num_loc": 3314485,
+    "num_lemmas": 192144,
+    "num_loc": 3315169,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        658
+        659
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3314500
+        3315200
     ],
     "author_years": [
         14,
@@ -737,13 +737,14 @@
         1386,
         2946,
         3108,
-        279,
+        280,
         948,
         566,
         822,
         2594,
         807,
-        8741
+        8741,
+        683
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1403,6 +1404,7 @@
         "Interpolation_Polynomials_HOL_Algebra",
         "FOL_Seq_Calc2",
         "Youngs_Inequality",
-        "Quasi_Borel_Spaces"
+        "Quasi_Borel_Spaces",
+        "LP_Duality"
     ]
 }
