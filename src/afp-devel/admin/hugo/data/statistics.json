@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 192174,
-    "num_loc": 3315671,
+    "num_lemmas": 193084,
+    "num_loc": 3324879,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        660
+        661
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3315700
+        3324900
     ],
     "author_years": [
         14,
@@ -743,6 +743,7 @@
         822,
         2594,
         807,
+        9208,
         8741,
         683,
         502
@@ -1405,6 +1406,7 @@
         "Interpolation_Polynomials_HOL_Algebra",
         "FOL_Seq_Calc2",
         "Youngs_Inequality",
+        "FO_Theory_Rewriting",
         "Quasi_Borel_Spaces",
         "LP_Duality",
         "Equivalence_Relation_Enumeration"
