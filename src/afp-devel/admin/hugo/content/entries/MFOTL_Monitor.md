@@ -45,6 +45,7 @@
         "Examples"
     ],
     "relatedEntries": [
-        "MFODL_Monitor_Optimized"
+        "MFODL_Monitor_Optimized",
+        "VYDRA_MDL"
     ]
 }
