@@ -75,7 +75,7 @@ function makeChart(labels, pageviews, downloads) {
                 responsive: true,
                 maintainAspectRatio: false,
                 legend: {
-                    position: labels.length > 5 ? 'bottom' : 'top',
+                    position: labels.length > 8 ? 'bottom' : 'top',
                     reverse: true,
                     labels: {
                         fontFamily: 'Open Sans',
@@ -89,7 +89,7 @@ function makeChart(labels, pageviews, downloads) {
                                 display: false,
                             },
                             ticks: {
-                                display: labels.length > 5 ? false : true,
+                                display: labels.length > 8 ? false : true,
                             },
                         },
                     ],
