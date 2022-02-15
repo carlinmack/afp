@@ -25,16 +25,26 @@
         }
     },
     "menu": {
-        "main": [
-           {
-              "name": "Topics",
-              "url": "/topics/",
-              "weight": 2
-           }
-        ]
+        "main": [{
+            "name": "Topics",
+            "url": "/topics/",
+            "weight": 2
+        }]
     },
+     "mediaTypes": {
+         "application/atom": {
+             "suffixes": ["atom"]
+         }
+     },
+     "outputFormats": {
+         "Atom": {
+             "mediaType": "application/atom",
+             "baseName": "index",
+             "isPlainText": false
+         }
+     },
     "outputs": {
-        "home": ["html", "rss", "json"],
+        "home": ["html", "rss", "json", "atom"],
         "taxonomyTerm": ["html", "json"]
     }
 }

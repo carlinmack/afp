@@ -1,0 +1,5 @@
+{{- $Scratch := newScratch -}}
+
+{{- range .authors -}}
+{{- printf "<author><name>%s</name></author>" . | safeHTML }}
+{{ end -}}
