@@ -7,7 +7,7 @@
     "taxonomies": {
         "author": "authors",
         "topic": "topics",
-        "dependency": "dependencies" 
+        "dependency": "dependencies"
     },
     "params": {
         "description": "A collection of proof libraries, examples, and larger scientific developments, mechanically checked in the theorem prover Isabelle.",
@@ -45,6 +45,7 @@
      },
     "outputs": {
         "home": ["html", "rss", "json", "atom"],
-        "taxonomyTerm": ["html", "json"]
+        "taxonomy": ["html", "json"],
+        "term": ["html", "rss", "atom"]
     }
 }
