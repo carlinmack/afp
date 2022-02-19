@@ -32,5 +32,11 @@
   {{ with .Params.date }}
     <time>{{- dateFormat "2 January 2006" . -}}</time>
   {{ end }}
+  {{ if eq .Kind "term" }}
+  <details>
+    <summary><img src="{{- .Site.BaseURL -}}images/rss.svg" alt="RSS" /></summary>
+    <ul><li><a href="index.xml">RSS</a></li><li><a href="index.atom">Atom</a></li><li><a href="">ActivityPub</a></li><li><a href="/help">Info</a></li></ul>
+  </details>
+  {{ end }}
   </div>
 </header>

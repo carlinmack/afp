@@ -259,6 +259,22 @@ header {
     div p {
         margin: 0;
     }
+    
+    summary img {
+        height: 1rem;
+        margin-left: 0.5rem;
+    }
+
+    details  {
+        ul {
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-left: 2em;
+        }
+    }
 }
 
 .content {
