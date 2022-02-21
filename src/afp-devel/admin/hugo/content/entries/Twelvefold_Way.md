@@ -61,6 +61,6 @@
     "relatedEntries": [
         "Bell_Numbers_Spivey",
         "Card_Equiv_Relations",
-        "Card_Partitions"
+        "Euler_Partition"
     ]
 }

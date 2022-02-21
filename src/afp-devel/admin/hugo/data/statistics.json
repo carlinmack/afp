@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 193812,
-    "num_loc": 3337959,
+    "num_lemmas": 193886,
+    "num_loc": 3338724,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        663
+        664
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3338000
+        3338700
     ],
     "author_years": [
         14,
@@ -748,7 +748,8 @@
         683,
         502,
         7143,
-        5937
+        5937,
+        765
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1413,6 +1414,7 @@
         "LP_Duality",
         "Equivalence_Relation_Enumeration",
         "VYDRA_MDL",
-        "Eval_FO"
+        "Eval_FO",
+        "Wetzels_Problem"
     ]
 }
