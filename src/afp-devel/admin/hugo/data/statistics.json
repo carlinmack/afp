@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 193886,
-    "num_loc": 3338724,
+    "num_lemmas": 193940,
+    "num_loc": 3339675,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        664
+        665
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3338700
+        3339700
     ],
     "author_years": [
         14,
@@ -749,7 +749,8 @@
         502,
         7143,
         5937,
-        765
+        765,
+        951
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1415,6 +1416,7 @@
         "Equivalence_Relation_Enumeration",
         "VYDRA_MDL",
         "Eval_FO",
-        "Wetzels_Problem"
+        "Wetzels_Problem",
+        "Universal_Hash_Families"
     ]
 }
