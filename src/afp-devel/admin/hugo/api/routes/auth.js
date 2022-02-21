@@ -310,61 +310,6 @@ router.get('/logged-in', function (req, res, next) {
     // });
 });
 
-router.get('/notifications', function (req, res, next) {
-    if (req?.session?.passport?.user) {
-        db.all(
-            'select ROWID, date, message, link, seen from notifications WHERE user = ?',
-            [req.session.passport.user.email],
-            function (err, rows) {
-                if (err) {
-                    return next(err);
-                }
-                res.json({
-                    authenticated: true,
-                    notifications: rows,
-                });
-            }
-        );
-    } else {
-        res.clearCookie('authenticated');
-        res.json({
-            authenticated: false,
-            error: 'Not logged in',
-        });
-    }
-});
-
-router.post('/readNotifications', function (req, res, next) {
-    if (req?.session?.passport?.user) {
-        const rows = req.body.rows;
-        db.run(
-            `UPDATE notifications SET seen = 1 WHERE user = ? and 
-            ROWID in (${rows
-                .map(() => {
-                    return '?';
-                })
-                .join(',')})`,
-            req.session.passport.user.email,
-            ...rows,
-            function (err) {
-                if (err) {
-                    res.json({
-                        error: err,
-                    });
-                } else {
-                    res.json({});
-                }
-            }
-        );
-    } else {
-        res.clearCookie('authenticated');
-        res.json({
-            authenticated: false,
-            error: 'Not logged in',
-        });
-    }
-});
-
 router.post('/upload', upload.single('avatar'), function (req, res) {
     // req.file is the name of your file in the form above, here 'uploaded_file'
     // req.body will hold the text fields, if there were any

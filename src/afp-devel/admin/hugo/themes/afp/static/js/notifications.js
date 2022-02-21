@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (cookieExists('authenticated')) {
-        fetch('/api/auth/notifications')
+        fetch('/api/notifications')
             .then((r) => r.json())
             .then((data) => {
                 console.log(data);
@@ -108,7 +108,7 @@ function notificationElement(notification, unread) {
 }
 
 function markRead(data) {
-    fetch('/api/auth/readNotifications', {
+    fetch('/api/notifications/read', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

@@ -14,6 +14,7 @@ app.use(express.json());
 
 const authRouter = require('./routes/auth');
 const pageviews = require('./pageviews.js');
+const notifications = require('./notifications.js');
 
 require('./boot/db')();
 require('./boot/auth')();
@@ -40,6 +41,7 @@ app.use(passport.authenticate('session'));
 app.use('/graphql', graphqlHTTP({ schema: schema.schema }));
 app.use('/auth', authRouter);
 app.use('/pageviews', pageviews);
+app.use('/notifications', notifications);
 
 
 // app.get('/', function (req, res) {
