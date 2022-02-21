@@ -55,6 +55,17 @@ The bibtext entry for this would be:
 }
 ```
 
+## Syndication
+
+The AFP provides many syndicated feeds which Isabelle users can subscribe to. All feeds described
+below can be found on the home page (linked) as well as any author, topic or dependency page.
+
+* RSS: append index.xml, [example](/index.xml)
+* Atom: append index.atom, [example](/index.atom)
+* ActivityPub: append ___, [example](/index.xml)
+
+Atom is a successor to RSS which features a better defined grammar. <!-- ActivityPub is a W3C Recommendation standard for decentralised social networking. You can use ActivityPub links to follow the AFP on a social network such as Mastodon. -->
+
 ## Mailing Lists
 
 * isabelle-users@cl.cam.ac.uk provides a forum for Isabelle users to discuss problems, exchange information, and make announcements. Users of official Isabelle releases should subscribe or see the archive.
