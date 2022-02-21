@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 193494,
-    "num_loc": 3332022,
+    "num_lemmas": 193812,
+    "num_loc": 3337959,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        662
+        663
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3332000
+        3338000
     ],
     "author_years": [
         14,
@@ -747,7 +747,8 @@
         8741,
         683,
         502,
-        7143
+        7143,
+        5937
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1411,6 +1412,7 @@
         "Quasi_Borel_Spaces",
         "LP_Duality",
         "Equivalence_Relation_Enumeration",
-        "VYDRA_MDL"
+        "VYDRA_MDL",
+        "Eval_FO"
     ]
 }
