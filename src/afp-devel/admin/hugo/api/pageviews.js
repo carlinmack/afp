@@ -3,6 +3,14 @@ var express = require('express');
 var db = require('./db.js');
 var router = express.Router();
 
+const createLogsTable = () => {
+    const query = `CREATE TABLE IF NOT EXISTS logs (status INTEGER, request_method TEXT, request_url TEXT, date TEXT)`;
+    return db.run(query);
+};
+
+//call function to init the post table
+createLogsTable();
+
 // URL prefix: /api/pageviews/
 router.post('/', function (req, res, next) {
     if (req?.body?.entries) {
