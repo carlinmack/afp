@@ -7,12 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.authenticated) {
                     var unread = [];
                     var read = [];
-                    for (var notification of data['notifications']) {
-                        if (notification['seen']) {
-                            read.unshift(notificationElement(notification, false));
-                        } else {
-                            unread.unshift(notificationElement(notification, true));
+                    if (data['notifications'].length > 0) {
+                        for (var notification of data['notifications']) {
+                            if (notification['seen']) {
+                                read.unshift(notificationElement(notification, false));
+                            } else {
+                                unread.unshift(notificationElement(notification, true));
+                            }
                         }
+                    } else {
+                        read = [noNotifications()]
                     }
                     const main = document.querySelector('main');
                     if (main) {
@@ -41,13 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error:', error);
             });
     } else {
-        pleaseLogin()
+        pleaseLogin();
     }
 });
 
 function pleaseLogin() {
-    document.cookie ='warnMessage=Log in to view this page;MaxAge=5000;path=/'; 
-    window.location.replace("/login/?next=" + window.location.pathname);
+    document.cookie = 'warnMessage=Log in to view this page;MaxAge=5000;path=/';
+    window.location.replace('/login/?next=' + window.location.pathname);
 }
 
 function header(str) {
@@ -103,6 +107,20 @@ function notificationElement(notification, unread) {
 
     article.appendChild(title);
     article.appendChild(date);
+    return article;
+}
+
+function noNotifications() {
+    const article = document.createElement('article');
+    article.className = 'entry';
+
+    const title = document.createElement('h5');
+    const link = document.createElement('i');
+    link.className = 'title';
+    link.textContent = "No notifications";
+    title.appendChild(link);
+
+    article.appendChild(title);
     return article;
 }
 
