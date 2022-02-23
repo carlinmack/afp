@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch((error) => {
-                pleaseLogin(error);
+                console.error('Error:', error);
             });
     }
 });
