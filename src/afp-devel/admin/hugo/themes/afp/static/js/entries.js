@@ -51,13 +51,13 @@ function removeAuthInputs(name, email, username) {
     let emails = document.querySelectorAll("input[name='email']");
     let websites = document.querySelectorAll("input[name='website']");
     for (let elem of names) {
-        elem.value = name;
+        elem.value = name || username;
     }
     for (let elem of emails) {
         elem.value = email;
     }
     for (let elem of websites) {
-        elem.value = 'localhost/account/?user=' + username;
+        elem.value = '/account/?user=' + username;
     }
 }
 
