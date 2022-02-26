@@ -57,7 +57,7 @@ function removeAuthInputs(name, email, username) {
         elem.value = email;
     }
     for (let elem of websites) {
-        elem.value = '/account/?user=' + username;
+        elem.value = 'https://afp.carlinmack.com/account/?user=' + username;
     }
 }
 
