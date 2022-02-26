@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then((response) => response.json())
             .then((data) => {
+                data["username"] = username;
                 displayProfile(data);
             })
             .catch((error) => {
@@ -40,7 +41,7 @@ function displayProfile(data) {
     }
 
     const profileDiv = document.createElement('div');
-    profileDiv.id = 'profile';
+    profileDiv.id = 'titleAffiliation';
 
     var name = data.name || data.username;
     let title = name
