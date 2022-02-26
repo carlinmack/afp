@@ -10,18 +10,18 @@ const createNotificationsTable = () => {
 
 const alterCommentsTable = () => {
     db.get(
-        'select count(*) from pragma_table_info("comments") where name = "seen"',
+        'select count(*) as count from pragma_table_info("comments") where name = "seen"',
         function (err, row) {
             if (err) {
                 reject('not found');
             }
             if (row.count == 0) {
-                console.log("alter table")
+                console.log('alter table');
                 const query = `ALTER TABLE comments ADD COLUMN seen INT DEFAULT 0`;
                 return db.run(query);
             } else {
-                console.log("no alter")
-            };
+                console.log('no alter');
+            }
         }
     );
 };
