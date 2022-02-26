@@ -265,16 +265,6 @@ header {
         margin-left: 0.5rem;
     }
 
-    img {
-        min-width: 100px;
-        max-width: 100px;
-        height: 100px;
-        object-fit: cover;
-        box-sizing: border-box;
-        border: 1px black solid;
-        display: inline-block;
-    }
-
     details  {
         ul {
             margin: 0;
@@ -283,23 +273,6 @@ header {
         li {
             display: inline-block;
             margin-left: 2em;
-        }
-    }
-
-    #profile {
-        display: grid;
-        grid-auto-columns: 1fr;
-        grid-template-columns: 1fr;
-        grid-template-rows: 50px 50px;
-        gap: 0px 0px;
-        grid-template-areas: 'title' 'affiliation';
-
-        h1 {
-            border: none;
-        }
-
-        > i {
-            grid-area: affiliation;
         }
     }
 }
@@ -918,6 +891,33 @@ iframe {
 
 #bell {
     float: right;
+}
+
+#profile {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 116px 1fr;
+    grid-template-rows: 50px 50px;
+    gap: 0px 0px;
+    grid-template-areas: 'picture title' 'picture affiliation';
+
+    h1 {
+        border: none;
+    }
+
+    img {
+        min-width: 100px;
+        max-width: 100px;
+        height: 100px;
+        object-fit: cover;
+        box-sizing: border-box;
+        border: 1px black solid;
+        display: inline-block;
+    }
+
+    > i {
+        grid-area: affiliation;
+    }
 }
 
 #menuToggle {
