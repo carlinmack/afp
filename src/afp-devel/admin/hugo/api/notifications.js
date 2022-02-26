@@ -8,8 +8,27 @@ const createNotificationsTable = () => {
     return db.run(query);
 };
 
+const alterCommentsTable = () => {
+    db.get(
+        'select count(*) from pragma_table_info("comments") where name = "seen"',
+        function (err, row) {
+            if (err) {
+                reject('not found');
+            }
+            if (row.count == 0) {
+                console.log("alter table")
+                const query = `ALTER TABLE comments ADD COLUMN seen INT DEFAULT 0`;
+                return db.run(query);
+            } else {
+                console.log("no alter")
+            };
+        }
+    );
+};
+
 //call function to init the notification table
 createNotificationsTable();
+alterCommentsTable();
 
 // URL prefix: /api/notifications/
 router.get('/', function (req, res, next) {
