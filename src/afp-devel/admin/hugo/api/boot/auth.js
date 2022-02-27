@@ -50,6 +50,7 @@ module.exports = function () {
                                 id: row.id.toString(),
                                 email: row.email,
                                 displayName: row.name,
+                                username: row.username,
                             };
                             return cb(null, user);
                         }
@@ -68,7 +69,7 @@ module.exports = function () {
     // deserializing.
     passport.serializeUser(function (user, cb) {
         process.nextTick(function () {
-            cb(null, { id: user.id, email: user.email, displayName: user.displayName });
+            cb(null, { id: user.id, email: user.email, displayName: user.displayName, username: user.username });
         });
     });
 

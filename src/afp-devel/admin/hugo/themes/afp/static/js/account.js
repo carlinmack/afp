@@ -41,7 +41,7 @@ function displayProfile(data) {
     }
 
     const profileDiv = document.createElement('div');
-    profileDiv.id = 'titleAffiliation';
+    profileDiv.id = 'profile';
 
     var name = data.name || data.username;
     let title = name

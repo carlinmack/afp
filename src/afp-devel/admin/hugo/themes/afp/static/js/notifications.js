@@ -86,7 +86,7 @@ function notificationElement(notification, unread) {
 
     const date = document.createElement('time');
     date.className = 'date';
-    date.textContent = formatDate(new Date(notification['date']));
+    date.textContent = formatDate(notification['date']);
     date.dateTime = notification['date'];
     date.title = notification['date'];
 
@@ -145,7 +145,8 @@ function markRead(data) {
         });
 }
 
-function formatDate(date) {
+function formatDate(unixTimestamp) {
+    const date = new Date(unixTimestamp * 1000);
     const months = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
         'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',

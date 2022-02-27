@@ -16,11 +16,8 @@ const alterCommentsTable = () => {
                 reject('not found');
             }
             if (row.count == 0) {
-                console.log('alter table');
                 const query = `ALTER TABLE comments ADD COLUMN seen INT DEFAULT 0`;
                 return db.run(query);
-            } else {
-                console.log('no alter');
             }
         }
     );
@@ -33,9 +30,26 @@ alterCommentsTable();
 // URL prefix: /api/notifications/
 router.get('/', function (req, res, next) {
     if (req?.session?.passport?.user) {
+        // db.all(
+        //     'select ROWID, date, message, link, seen from notifications WHERE user = ?',
+        //     [req.session.passport.user.email],
+        //     function (err, rows) {
+        //         if (err) {
+        //             return next(err);
+        //         }
+        //         res.json({
+        //             authenticated: true,
+        //             notifications: rows,
+        //         });
+        //     }
+        // );
         db.all(
-            'select ROWID, date, message, link, seen from notifications WHERE user = ?',
-            [req.session.passport.user.email],
+            'select comments.id as rowid, created as date, "New reply" as message, ' +
+                'threads.uri || "#isso-" || comments.id as link, seen from threads ' +
+                'join comments on threads.id = comments.tid where comments.parent ' +
+                'in (select id from comments where website like "%=' +
+                req.session.passport.user.username +
+                '")',
             function (err, rows) {
                 if (err) {
                     return next(err);
@@ -43,6 +57,7 @@ router.get('/', function (req, res, next) {
                 res.json({
                     authenticated: true,
                     notifications: rows,
+                    username: req.session.passport.user,
                 });
             }
         );
