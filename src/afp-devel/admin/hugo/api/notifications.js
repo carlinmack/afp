@@ -44,12 +44,13 @@ router.get('/', function (req, res, next) {
         //     }
         // );
         db.all(
-            'select comments.id as rowid, created as date, "New reply" as message, ' +
-                'threads.uri || "#isso-" || comments.id as link, seen from threads ' +
-                'join comments on threads.id = comments.tid where comments.parent ' +
-                'in (select id from comments where website like "%=' +
-                req.session.passport.user.username +
-                '")',
+            'select comments.id as rowid, created as date, ' +
+            'comments.author || " replied to your comment" as message, ' +
+            'threads.uri || "#isso-" || comments.id as link, seen from threads ' +
+            'join comments on threads.id = comments.tid where comments.parent ' +
+            'in (select id from comments where website like "%=' +
+            req.session.passport.user.username +
+            '")',
             function (err, rows) {
                 if (err) {
                     return next(err);
