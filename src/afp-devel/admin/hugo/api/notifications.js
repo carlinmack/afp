@@ -3,10 +3,10 @@ var express = require('express');
 var db = require('./db.js');
 var router = express.Router();
 
-const createNotificationsTable = () => {
-    const query = `CREATE TABLE IF NOT EXISTS notifications (date TEXT DEFAULT (datetime('now')), message TEXT, link TEXT, user TEXT, seen INT DEFAULT 0)`;
-    return db.run(query);
-};
+// const createNotificationsTable = () => {
+//     const query = `CREATE TABLE IF NOT EXISTS notifications (date TEXT DEFAULT (datetime('now')), message TEXT, link TEXT, user TEXT, seen INT DEFAULT 0)`;
+//     return db.run(query);
+// };
 
 const alterCommentsTable = () => {
     db.get(
@@ -24,7 +24,7 @@ const alterCommentsTable = () => {
 };
 
 //call function to init the notification table
-createNotificationsTable();
+// createNotificationsTable();
 alterCommentsTable();
 
 // URL prefix: /api/notifications/
@@ -75,13 +75,11 @@ router.post('/read', function (req, res, next) {
     if (req?.session?.passport?.user) {
         const rows = req.body.rows;
         db.run(
-            `UPDATE notifications SET seen = 1 WHERE user = ? and 
-            ROWID in (${rows
+            `UPDATE comments SET seen = 1 WHERE id in (${rows
                 .map(() => {
                     return '?';
                 })
                 .join(',')})`,
-            req.session.passport.user.email,
             ...rows,
             function (err) {
                 if (err) {
