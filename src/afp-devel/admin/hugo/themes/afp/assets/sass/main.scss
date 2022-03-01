@@ -891,6 +891,19 @@ iframe {
 
 #bell {
     float: right;
+
+    #number {
+        display: inline-block;
+        font-size: 0.9rem;
+        width: 20px;
+        margin: 0;
+        margin-left: 0.5rem;
+        background: white;
+        color: #2E2D4E;
+        text-align: center;
+        border-radius: 2px;
+        vertical-align: text-top;
+    }
 }
 
 #profile {
