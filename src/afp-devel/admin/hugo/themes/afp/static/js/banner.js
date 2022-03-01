@@ -123,6 +123,9 @@ function getMostRecentComment() {
 
 function addUnreadCounter(unread) {
     const pEl = document.createElement('p');
+    if (unread > 9) {
+        unread = '+';
+    }
     pEl.textContent = unread;
     pEl.id = 'number';
     const bell = document.getElementById('bell');
