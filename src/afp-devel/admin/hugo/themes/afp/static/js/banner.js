@@ -90,7 +90,33 @@ function hasComments() {
             if (data.unread > 0) {
                 addUnreadCounter(data.unread);
             } else {
-                // check every couple seconds what most recent comment is
+                if (data.totalComments > 0) {
+                    checkForUpdates(data.mostRecent);
+                }
+            }
+        });
+}
+
+function checkForUpdates(currentMostRecent) {
+    const mostRecentComment = getMostRecentComment();
+    if (mostRecentComment > currentMostRecent) {
+        alert('check for new comments');
+        // hasComments();
+    } else {
+        console.log("don't check");
+        setTimeout(() => {checkForUpdates(currentMostRecent)}, 1000);
+    }
+}
+
+function getMostRecentComment() {
+    fetch('/api/comments/mostRecent')
+        .then((r) => r.json())
+        .then((data) => {
+            console.log(data);
+            if (data.mostRecent > 0) {
+                return data.mostRecent;
+            } else {
+                return -1;
             }
         });
 }
