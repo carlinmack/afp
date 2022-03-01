@@ -43,7 +43,7 @@ app.use(passport.authenticate('session'));
 app.use('/auth', authRouter);
 app.use('/pageviews', pageviews);
 app.use('/notifications', notifications);
-app.use('/comments', comments);
+app.use('/comment', comments);
 
 
 // app.get('/', function (req, res) {

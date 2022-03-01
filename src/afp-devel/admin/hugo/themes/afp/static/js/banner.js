@@ -99,6 +99,7 @@ function hasComments() {
 
 function checkForUpdates(currentMostRecent) {
     const mostRecentComment = getMostRecentComment();
+    console.log(mostRecentComment, currentMostRecent);
     if (mostRecentComment > currentMostRecent) {
         alert('check for new comments');
         // hasComments();
@@ -109,12 +110,11 @@ function checkForUpdates(currentMostRecent) {
 }
 
 function getMostRecentComment() {
-    fetch('/api/comments/mostRecent')
+    fetch('/api/comment/mostRecent')
         .then((r) => r.json())
         .then((data) => {
-            console.log(data);
-            if (data.mostRecent > 0) {
-                return data.mostRecent;
+            if (data['mostRecent'] > 0) {
+                return data['mostRecent'];
             } else {
                 return -1;
             }

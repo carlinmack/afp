@@ -3,7 +3,7 @@ var express = require('express');
 var db = require('./db.js');
 var router = express.Router();
 
-// URL prefix: /api/comments/
+// URL prefix: /api/comment/
 router.get('/', function (req, res) {
     console.log('wolrd');
   res.send('Hello World');
