@@ -87,28 +87,10 @@ function hasComments() {
         .then((r) => r.json())
         .then((data) => {
             console.log(data)
-            if (data.unread) {
-                addUnreadCounter(unread);
+            if (data.unread > 0) {
+                addUnreadCounter(data.unread);
             } else {
                 // check every couple seconds what most recent comment is
-            }
-        });
-}
-
-function checkUnread() {
-    fetch('/api/notifications')
-        .then((r) => r.json())
-        .then((data) => {
-            if (data.authenticated) {
-                var unread = 0;
-                if (data['notifications'].length > 0) {
-                    for (var notification of data['notifications']) {
-                        if (!notification['seen']) {
-                            unread += 1;
-                        }
-                    }
-                    addUnreadCounter(unread);
-                }
             }
         });
 }
