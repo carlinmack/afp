@@ -97,8 +97,8 @@ function hasComments() {
         });
 }
 
-function checkForUpdates(currentMostRecent) {
-    const mostRecentComment = getMostRecentComment();
+async function checkForUpdates(currentMostRecent) {
+    const mostRecentComment = await getMostRecentComment();
     console.log(mostRecentComment, currentMostRecent);
     if (mostRecentComment > currentMostRecent) {
         alert('check for new comments');
@@ -110,15 +110,17 @@ function checkForUpdates(currentMostRecent) {
 }
 
 function getMostRecentComment() {
-    fetch('/api/comment/mostRecent')
-        .then((r) => r.json())
-        .then((data) => {
-            if (data['mostRecent'] > 0) {
-                return data['mostRecent'];
-            } else {
-                return -1;
-            }
-        });
+    return new Promise((resolve, reject) => {
+        fetch('/api/comment/mostRecent')
+            .then((r) => r.json())
+            .then((data) => {
+                if (data['mostRecent'] > 0) {
+                    resolve(data['mostRecent']);
+                } else {
+                    resolve(-1);
+                }
+            });
+    });
 }
 
 function addUnreadCounter(unread) {
