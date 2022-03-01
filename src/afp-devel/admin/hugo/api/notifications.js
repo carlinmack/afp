@@ -112,7 +112,7 @@ router.get('/unread', function (req, res, next) {
                 'join comments on threads.id = comments.tid where comments.parent ' +
                 'in (select id from comments where website like "%=' +
                 req.session.passport.user.username +
-                '") where seen = 0) as unread;',
+                '") and seen = 0) as unread;',
             function (err, row) {
                 if (err) {
                     res.json({
