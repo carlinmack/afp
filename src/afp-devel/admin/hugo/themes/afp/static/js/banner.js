@@ -78,7 +78,7 @@ function menuLink() {
 
 function unreadNotifications() {
     if (cookieExists('authenticated')) {
-        hasComments()
+        hasComments();
     }
 }
 
@@ -86,7 +86,6 @@ function hasComments() {
     fetch('/api/notifications/unread')
         .then((r) => r.json())
         .then((data) => {
-            console.log(data)
             if (data.unread > 0) {
                 addUnreadCounter(data.unread);
             } else {
@@ -99,13 +98,12 @@ function hasComments() {
 
 async function checkForUpdates(currentMostRecent) {
     const mostRecentComment = await getMostRecentComment();
-    console.log(mostRecentComment, currentMostRecent);
     if (mostRecentComment > currentMostRecent) {
-        alert('check for new comments');
-        // hasComments();
+        hasComments();
     } else {
-        console.log("don't check");
-        setTimeout(() => {checkForUpdates(currentMostRecent)}, 1000);
+        setTimeout(() => {
+            checkForUpdates(currentMostRecent);
+        }, 1000);
     }
 }
 
@@ -124,12 +122,12 @@ function getMostRecentComment() {
 }
 
 function addUnreadCounter(unread) {
-    const pEl = document.createElement("p")
-    pEl.textContent = unread
-    pEl.id = "number";
-    const bell = document.getElementById("bell")
+    const pEl = document.createElement('p');
+    pEl.textContent = unread;
+    pEl.id = 'number';
+    const bell = document.getElementById('bell');
     if (bell) {
-        bell.insertAdjacentElement("beforeend", pEl)
+        bell.insertAdjacentElement('beforeend', pEl);
     }
 }
 
