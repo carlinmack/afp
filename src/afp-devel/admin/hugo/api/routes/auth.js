@@ -102,7 +102,8 @@ router.post('/signup', function (req, res, next) {
                             var user = {
                                 username: req.body.username,
                             };
-                            req.login(user, function (err) {
+                            res.cookie('authenticated', true);
+                            req.logIn(user, function (err) {
                                 if (err) {
                                     return next(err);
                                 }
@@ -179,6 +180,7 @@ async function updateNonEssential(req, type) {
                     }
                     console.log(query)
                     console.log(req.body[type]);
+                    console.log(this.changes);
                     if (this.changes == 1) {
                         resolve(type);
                     }
