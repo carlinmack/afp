@@ -259,13 +259,13 @@ header {
     div p {
         margin: 0;
     }
-    
+
     summary img {
         height: 1rem;
         margin-left: 0.5rem;
     }
 
-    details  {
+    details {
         ul {
             margin: 0;
         }
@@ -273,6 +273,32 @@ header {
         li {
             display: inline-block;
             margin-left: 2em;
+        }
+    }
+
+    #profile {
+        justify-content: flex-start;
+        gap: 1rem;
+
+        > div   {
+            width: calc(100% - 116px);
+        }
+
+        h1 {
+            border: none;
+        }
+
+        i {
+            grid-area: affiliation;
+        }
+
+        img {
+            min-width: 100px;
+            max-width: 100px;
+            height: 100px;
+            object-fit: cover;
+            box-sizing: border-box;
+            border: 1px black solid;
         }
     }
 }
@@ -652,15 +678,6 @@ tr:nth-child(even) {
             align-items: center;
         }
 
-        .subtitle {
-            color: $dark-grey;
-            font-size: 0.875em;
-
-            > p {
-                margin: 0;
-            }
-        }
-
         a[download] {
             padding: 5px 7.5px;
             flex-shrink: 0;
@@ -899,37 +916,10 @@ iframe {
         margin: 0;
         margin-left: 0.5rem;
         background: white;
-        color: #2E2D4E;
+        color: #2e2d4e;
         text-align: center;
         border-radius: 2px;
         vertical-align: text-top;
-    }
-}
-
-#profile {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 116px 1fr;
-    grid-template-rows: 50px 50px;
-    gap: 0px 0px;
-    grid-template-areas: 'picture title' 'picture affiliation';
-
-    h1 {
-        border: none;
-    }
-
-    img {
-        min-width: 100px;
-        max-width: 100px;
-        height: 100px;
-        object-fit: cover;
-        box-sizing: border-box;
-        border: 1px black solid;
-        display: inline-block;
-    }
-
-    > i {
-        grid-area: affiliation;
     }
 }
 
@@ -939,7 +929,8 @@ iframe {
         display: none;
     }
 
-    > .logoLink, img[alt="Search"] {
+    > .logoLink,
+    img[alt='Search'] {
         display: none;
     }
 
@@ -958,7 +949,7 @@ iframe {
         > div {
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 150px auto auto ;
+            grid-template-rows: 150px auto auto;
             grid-template-areas:
                 'search'
                 'sidebar'
@@ -1002,7 +993,6 @@ iframe {
         }
     }
 
-        
     .largeTopMargin {
         margin-top: 0;
     }
@@ -1037,9 +1027,8 @@ iframe {
             top: 1rem;
             left: 0;
             right: 0;
-            margin-left: auto; 
+            margin-left: auto;
             margin-right: auto;
-
 
             img {
                 padding: 0;
@@ -1048,29 +1037,36 @@ iframe {
             }
         }
 
-        .logoLink, input, label, a[href="/search"] {
+        .logoLink,
+        input,
+        label,
+        a[href='/search'] {
             display: block;
             position: absolute;
             z-index: 2;
         }
 
-        input, label, a[href="/search"] {
+        input,
+        label,
+        a[href='/search'] {
             width: 24px;
             height: 24px;
             top: 28px;
         }
 
-        input,label { 
+        input,
+        label {
             left: 28px;
             cursor: pointer;
         }
 
-        a[href="/search"] {
+        a[href='/search'] {
             right: 28px;
             filter: invert(1);
         }
 
-        a[href="/search"] img, label img {
+        a[href='/search'] img,
+        label img {
             width: 100%;
         }
 
@@ -1082,9 +1078,9 @@ iframe {
                 }
             }
         }
-        
+
         label span {
-                display: none;
+            display: none;
         }
     }
     #menu {

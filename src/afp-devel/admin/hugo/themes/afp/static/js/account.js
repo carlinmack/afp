@@ -40,9 +40,6 @@ function displayProfile(data) {
         data = data.db;
     }
 
-    const profileDiv = document.createElement('div');
-    profileDiv.id = 'profile';
-
     var name = data.name || data.username;
     let title = name
         .split(' ')
@@ -54,21 +51,27 @@ function displayProfile(data) {
         titleElement.innerHTML = title;
     }
 
-    if (data.image) {
-        let picture = document.createElement('img');
-        picture.src = '/images/user/' + data.image;
-        profileDiv.appendChild(picture);
-    }
+    const profileDiv = document.createElement('div');
+    profileDiv.id = 'profile';
     if (data.image || data.affiliation) {
         titleElement.insertAdjacentElement('beforebegin', profileDiv);
         profileDiv.appendChild(titleElement);
     }
+    if (data.image) {
+        let picture = document.createElement('img');
+        picture.src = '/images/user/' + data.image;
+        picture.id = "profileImage"
+        profileDiv.insertAdjacentElement('afterbegin', picture);
+    }
     if (data.affiliation) {
         let affiliation = document.createElement('i');
         affiliation.textContent = data.affiliation;
-        profileDiv.appendChild(affiliation);
+        const subDiv = document.createElement('div');
+        profileDiv.appendChild(subDiv);
+        subDiv.appendChild(titleElement);
+        subDiv.appendChild(affiliation);
     }
-    if (data.description) {
+    if (data.description && data.description.length > 0) {
         let description = document.createElement('p');
         description.textContent = data.description;
         const headerChildren = document.querySelector('header').children;
