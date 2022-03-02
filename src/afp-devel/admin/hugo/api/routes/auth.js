@@ -177,6 +177,8 @@ async function updateNonEssential(req, type) {
                     if (err) {
                         reject(err);
                     }
+                    console.log(query)
+                    console.log(req.body[type]);
                     if (this.changes == 1) {
                         resolve(type);
                     }
