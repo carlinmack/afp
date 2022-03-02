@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.authenticated) {
                 document.getElementById('isso-thread').classList.remove('notAuth');
 
-                removeAuthInputs(data.db.name, data.db.email, data.db.username);
+                let name = data.db.name || data.db.username;
+                removeAuthInputs(name, data.db.email, data.db.username);
 
                 const targetNode = document.getElementById('isso-thread');
                 const config = { childList: true, subtree: true };

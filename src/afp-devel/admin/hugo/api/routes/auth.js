@@ -100,6 +100,8 @@ router.post('/signup', function (req, res, next) {
                             }
 
                             var user = {
+                                id: this.lastID,
+                                email: req.body.email,
                                 username: req.body.username,
                             };
                             res.cookie('authenticated', true);
@@ -182,6 +184,9 @@ async function updateNonEssential(req, type) {
                     console.log(req.body[type]);
                     console.log(this.changes);
                     if (this.changes == 1) {
+                        if (type == "name") {
+                            req.user['displayName'] = req.body[type];
+                        }
                         resolve(type);
                     }
                     resolve();
