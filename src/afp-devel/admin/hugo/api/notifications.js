@@ -50,7 +50,9 @@ router.get('/', function (req, res, next) {
                 'join comments on threads.id = comments.tid where comments.parent ' +
                 'in (select id from comments where website like "%=' +
                 req.session.passport.user.username +
-                '")',
+                '") and website not like "%=' +
+                req.session.passport.user.username +
+                '"',
             function (err, rows) {
                 if (err) {
                     return next(err);
@@ -112,7 +114,9 @@ router.get('/unread', function (req, res, next) {
                 'join comments on threads.id = comments.tid where comments.parent ' +
                 'in (select id from comments where website like "%=' +
                 req.session.passport.user.username +
-                '") and seen = 0) as unread;',
+                '") and website not like "%=' +
+                req.session.passport.user.username +
+                '" and seen = 0) as unread;',
             function (err, row) {
                 if (err) {
                     res.json({

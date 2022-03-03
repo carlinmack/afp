@@ -77,12 +77,14 @@ function notificationElement(notification, unread) {
     article.className = 'entry';
     article.dataset.id = notification['rowid'];
 
+    const titleDiv = document.createElement("div")
     const title = document.createElement('h5');
     const link = document.createElement('a');
     link.className = 'title';
     link.href = notification['link'];
     link.textContent = notification['message'];
     title.appendChild(link);
+    titleDiv.appendChild(title)
 
     const date = document.createElement('time');
     date.className = 'date';
@@ -105,7 +107,7 @@ function notificationElement(notification, unread) {
         title.appendChild(readButton);
     }
 
-    article.appendChild(title);
+    article.appendChild(titleDiv);
     article.appendChild(date);
     return article;
 }
