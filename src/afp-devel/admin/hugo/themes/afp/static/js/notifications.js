@@ -110,6 +110,7 @@ function notificationElement(notification, unread) {
     const br = document.createElement("br")
     const text = document.createElement("p")
     text.textContent = notification["text"];
+    text.style = 'margin-left:1rem';
     titleDiv.appendChild(br);
     titleDiv.appendChild(text);
 
