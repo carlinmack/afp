@@ -107,6 +107,12 @@ function notificationElement(notification, unread) {
         title.appendChild(readButton);
     }
 
+    const br = document.createElement("br")
+    const text = document.createElement("p")
+    text.textContent = notification["text"];
+    titleDiv.appendChild(br);
+    titleDiv.appendChild(text);
+
     article.appendChild(titleDiv);
     article.appendChild(date);
     return article;

@@ -44,7 +44,7 @@ router.get('/', function (req, res, next) {
         //     }
         // );
         db.all(
-            'select comments.id as rowid, created as date, ' +
+            'select comments.id as rowid, created as date, comments.text as text, ' +
                 'comments.author || " replied to your comment" as message, ' +
                 'threads.uri || "#isso-" || comments.id as link, seen from threads ' +
                 'join comments on threads.id = comments.tid where comments.parent ' +
