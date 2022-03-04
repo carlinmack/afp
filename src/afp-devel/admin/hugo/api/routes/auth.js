@@ -285,6 +285,7 @@ router.post('/updateSettings', function (req, res, next) {
                 if (req.body.next) {
                     message += " on user profile"
                 }
+                message = message.charAt(0).toUpperCase() + message.slice(1);
                 res.cookie('successMessage', message, {
                     maxAge: 30000,
                 });
