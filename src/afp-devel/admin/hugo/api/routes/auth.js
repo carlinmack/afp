@@ -193,6 +193,7 @@ async function updateNonEssential(req, type) {
                     if (this.changes == 1) {
                         if (type == "name") {
                             console.log(req.user);
+                            resolve("display name");
                         }
                         resolve(type);
                     }
@@ -281,6 +282,9 @@ router.post('/updateSettings', function (req, res, next) {
             responses = responses.filter((x) => x !== undefined);
             if (responses.length) {
                 var message = responses.join(', ') + ' updated';
+                if (req.body.next) {
+                    message += " on user profile"
+                }
                 res.cookie('successMessage', message, {
                     maxAge: 30000,
                 });
