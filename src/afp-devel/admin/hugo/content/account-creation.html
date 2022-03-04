@@ -18,6 +18,7 @@ url: /account/create
   <textarea id="description" name="description" cols="40" rows="7"></textarea>
   <label disabled for="website">Website</label>
   <input disabled id="website" name="website" type="url"/>
+  <input disabled type="hidden" name="next">
   <input class='action' disabled type="submit" value="Submit"></input>
 </form>
 
@@ -25,6 +26,15 @@ url: /account/create
   var inputs = document.querySelectorAll('input');
   for (var input of inputs) {
     input.removeAttribute("disabled");
+  }
+
+  function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+  }
+  let nextURL = getURLParameter("next");
+  if (nextURL) {
+    document.querySelector("input[name='next']").value = nextURL
+    document.querySelector('a[href="/login/"]').href += "?next=" + nextURL
   }
 </script>
 

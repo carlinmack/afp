@@ -109,7 +109,14 @@ router.post('/signup', function (req, res, next) {
                                 if (err) {
                                     return next(err);
                                 }
-                                res.redirect('/account/create');
+                                
+                                if (req.body.next) {
+                                    res.redirect(
+                                        '/account/create?next=' + req.body.next
+                                    );
+                                } else {
+                                    res.redirect('/account/create');
+                                }
                             });
                         }
                     );
@@ -185,7 +192,7 @@ async function updateNonEssential(req, type) {
                     console.log(this.changes);
                     if (this.changes == 1) {
                         if (type == "name") {
-                            req.user['displayName'] = req.body[type];
+                            console.log(req.user);
                         }
                         resolve(type);
                     }
@@ -278,7 +285,12 @@ router.post('/updateSettings', function (req, res, next) {
                     maxAge: 30000,
                 });
             }
-            res.redirect('/account');
+            
+            if (req.body.next) {
+                res.redirect(req.body.next);
+            } else {
+                res.redirect('/account');
+            }
         });
     } else {
         res.clearCookie('authenticated');
