@@ -1,6 +1,6 @@
 {
     "num_lemmas": 195052,
-    "num_loc": 3354551,
+    "num_loc": 3372856,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        666
+        667
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3354600
+        3372900
     ],
     "author_years": [
         14,
@@ -751,6 +751,7 @@
         5937,
         765,
         951,
+        18305,
         14876
     ],
     "all_articles": [
@@ -1419,6 +1420,7 @@
         "Eval_FO",
         "Wetzels_Problem",
         "Universal_Hash_Families",
+        "ResiduatedTransitionSystem",
         "Transitive_Models"
     ]
 }
