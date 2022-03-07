@@ -64,5 +64,8 @@
         {
             "2020": "2020-05-06"
         }
+    ],
+    "relatedEntries": [
+        "Independence_CH"
     ]
 }

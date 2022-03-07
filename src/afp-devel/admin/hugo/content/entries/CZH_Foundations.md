@@ -73,7 +73,8 @@
         "CZH_SMC_Conclusions"
     ],
     "relatedEntries": [
-        "CZH_Universal_Constructions"
+        "CZH_Universal_Constructions",
+        "CZH_Elementary_Categories"
     ],
     "olderReleases": [
         {

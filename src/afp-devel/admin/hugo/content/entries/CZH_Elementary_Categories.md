@@ -51,7 +51,8 @@
         "CZH_ECAT_Conclusions"
     ],
     "relatedEntries": [
-        "CZH_Universal_Constructions"
+        "CZH_Universal_Constructions",
+        "CZH_Foundations"
     ],
     "olderReleases": [
         {

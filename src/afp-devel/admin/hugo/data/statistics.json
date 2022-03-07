@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 195052,
-    "num_loc": 3372856,
+    "num_lemmas": 195861,
+    "num_loc": 3388061,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        667
+        668
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3372900
+        3388100
     ],
     "author_years": [
         14,
@@ -752,7 +752,8 @@
         765,
         951,
         18305,
-        14876
+        14876,
+        15205
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1421,6 +1422,7 @@
         "Wetzels_Problem",
         "Universal_Hash_Families",
         "ResiduatedTransitionSystem",
-        "Transitive_Models"
+        "Transitive_Models",
+        "Independence_CH"
     ]
 }
