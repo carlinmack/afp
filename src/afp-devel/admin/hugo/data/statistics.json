@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 195890,
-    "num_loc": 3388791,
+    "num_lemmas": 195919,
+    "num_loc": 3389020,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        669
+        670
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3388800
+        3389000
     ],
     "author_years": [
         14,
@@ -754,7 +754,8 @@
         18305,
         14876,
         15205,
-        730
+        730,
+        229
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1425,6 +1426,7 @@
         "ResiduatedTransitionSystem",
         "Transitive_Models",
         "Independence_CH",
-        "Cotangent_PFD_Formula"
+        "Cotangent_PFD_Formula",
+        "Ackermanns_not_PR"
     ]
 }
