@@ -16,6 +16,12 @@ document.addEventListener('DOMContentLoaded', function () {
         .then((data) => {
             console.log(data);
             if (data.authenticated) {
+                let inputs = document.querySelectorAll('.auth-section input');
+                for (let input of inputs) {
+                    if (input.type != 'submit') {
+                        input.hidden = true;
+                    }
+                }
                 document.getElementById('isso-thread').classList.remove('notAuth');
 
                 let name = data.db.name || data.db.username;
@@ -73,5 +79,4 @@ function loggedOut() {
             footer.innerHTML = '';
         }
     }
-    console.log('done');
 }
