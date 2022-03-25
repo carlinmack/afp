@@ -18,7 +18,7 @@
     {{ with .website}}
     <p><a href="{{ . }}">{{ . }}</a></p>
   {{- end -}}{{- end -}}{{- end -}}
-  {{ if (or (eq .File.TranslationBaseName "account-settings") )}}
+  {{ if (or (eq .File.TranslationBaseName "account-settings") (eq .File.TranslationBaseName "account-edit") )}}
   <button><a href="/account/">Back</a></button>
   {{ end }}
   {{- $site := . -}}
