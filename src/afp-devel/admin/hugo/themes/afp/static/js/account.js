@@ -123,6 +123,13 @@ function addButtons() {
     buttonContainer.appendChild(logoutButton);
 
     header.insertAdjacentElement('afterbegin', buttonContainer);
+
+    const editButton = document.createElement('button');
+    const editLink = document.createElement('a');
+    editLink.text = 'Edit';
+    editLink.href = '/account/edit/';
+    editButton.appendChild(editLink);
+    buttonContainer.appendChild(editButton);
 }
 
 function pleaseLogin(point) {
