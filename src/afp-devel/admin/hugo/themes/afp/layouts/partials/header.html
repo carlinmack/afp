@@ -9,9 +9,17 @@
     </div>
   </form>
   {{ end -}}
+  {{ if (eq .File.TranslationBaseName "account") }}
+  <div id="profile"><img src="/images/profile.svg" id="profileImage">
+    <div>
+      <h1 id="name">Account</h1><i id="affiliation">No affiliation</i>
+    </div>
+  </div>
+  {{ else }}
   {{ .Scratch.Set "title" (default .Site.Title (default .Title .Params.name)) }}
   <h1 {{ if or (eq .Kind "home") (eq .File.TranslationBaseName "search") -}}class="largeTopMargin"{{ end -}}>{{ title (.Scratch.Get "title") | replaceRE "[A-Z]" "<span class='first'>$0</span>" | safeHTML -}}{{- if (eq .Section "dependencies") }} Dependents{{ end -}}
   </h1>
+  {{ end }}
   <div>
   {{ if (eq .Section "authors") -}}
     {{ with (index $.Site.Data.authors .Title )}}

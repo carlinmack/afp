@@ -46,7 +46,7 @@ function displayProfile(data) {
         .map((x) => x.replace(/([A-Z])/, "<span class='first'>$1</span>"))
         .join(' ');
 
-    const titleElement = document.querySelector('h1');
+    const titleElement = document.getElementById('name');
     if (titleElement) {
         titleElement.innerHTML = title;
     }
@@ -58,18 +58,16 @@ function displayProfile(data) {
         profileDiv.appendChild(titleElement);
     }
     if (data.image) {
-        let picture = document.createElement('img');
-        picture.src = '/images/user/' + data.image;
-        picture.id = "profileImage"
-        profileDiv.insertAdjacentElement('afterbegin', picture);
+        let picture = document.getElementById('profileImage');
+        if (picture) {
+            picture.src = '/images/user/' + data.image;
+        }
     }
     if (data.affiliation) {
-        let affiliation = document.createElement('i');
-        affiliation.textContent = data.affiliation;
-        const subDiv = document.createElement('div');
-        profileDiv.appendChild(subDiv);
-        subDiv.appendChild(titleElement);
-        subDiv.appendChild(affiliation);
+        let affiliation = document.getElementById('affiliation');
+        if (affiliation) {
+            affiliation.textContent = data.affiliation;
+        }
     }
     if (data.description && data.description.length > 0) {
         let description = document.createElement('p');
