@@ -10,8 +10,9 @@
   </a>
 
   {{ if and (ne .Kind "home") (ne .File.TranslationBaseName "search") -}}
+  <div id="searchIconContainer">
   <a href="/search"><img src="{{- .Site.BaseURL -}}images/search.svg"
-          alt="Search" /></a>
+          alt="Search" /></a></div>
   {{ end -}}
 
   <nav id="menu">

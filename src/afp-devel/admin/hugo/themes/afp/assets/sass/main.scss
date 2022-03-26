@@ -931,16 +931,10 @@ iframe {
 
 #menuToggle {
     input,
-    label {
-        display: none;
-    }
-
-    > .logoLink,
-    img[alt='Search'] {
-        display: none;
-    }
-
-    form {
+    label,
+    form,
+    #searchIconContainer,
+    > .logoLink {
         display: none;
     }
 }
@@ -971,7 +965,7 @@ iframe {
     }
 
     aside {
-        height: 4rem;
+        height: 80px;
         width: 100vw;
         overflow-y: visible;
         z-index: 2;
@@ -1016,48 +1010,50 @@ iframe {
 
     #menuToggle {
         background: $theme;
-        display: block;
-        position: relative;
-        top: 0;
-        left: 0;
         z-index: 1;
         height: 80px;
         user-select: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        
         a {
             text-decoration: none;
             transition: color 0.3s ease;
         }
         .logoLink {
             height: 3rem;
-            max-width: 50vw;
-            top: 1rem;
+            max-width: 20vw;
+            position: absolute;
             left: 0;
             right: 0;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
 
             img {
                 padding: 0;
                 height: 3rem;
-                object-fit: contain;
+                width: auto;
             }
         }
 
-        .logoLink,
-        input,
         label,
-        a[href='/search'] {
+        form,
+        #searchIconContainer,
+        > .logoLink {
             display: block;
-            position: absolute;
             z-index: 2;
         }
 
-        input,
+        #searchIconContainer{
+            display: flex;
+            gap: 1rem;
+        }
+
         label,
-        a[href='/search'] {
+        #searchIconContainer a {
             width: 24px;
             height: 24px;
-            top: 28px;
         }
 
         input,
@@ -1067,17 +1063,16 @@ iframe {
         }
 
         a[href='/search'] {
-            right: 28px;
             filter: invert(1);
         }
 
-        a[href='/search'] img,
+        #searchIconContainer a img,
         label img {
             width: 100%;
         }
 
         input {
-            opacity: 0;
+            display: none;
             &:checked {
                 ~ nav {
                     left: 0;

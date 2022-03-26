@@ -65,11 +65,16 @@ function localStorageTest() {
 function menuLink() {
     if (cookieExists('authenticated')) {
         const login = document.querySelector('a[href="/login/"]');
+        const mobileNav = document.getElementById('searchIconContainer');
         if (login) {
             login.textContent = 'Profile';
             login.href = '/account/';
             login.insertAdjacentHTML(
-                'afterEnd',
+                'afterend',
+                "<a id='bell' href='/notifications'><img src='/images/bell.svg' alt='Notifications' /></a>"
+            );
+            mobileNav.insertAdjacentHTML(
+                'afterbegin',
                 "<a id='bell' href='/notifications'><img src='/images/bell.svg' alt='Notifications' /></a>"
             );
         }
