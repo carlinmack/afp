@@ -132,6 +132,8 @@ function addUnreadCounter(unread) {
     if (bell) {
         bell.insertAdjacentElement('beforeend', pEl);
     }
+
+    document.title = unread + " - " + document.title;
 }
 
 function cookieExists(key) {
