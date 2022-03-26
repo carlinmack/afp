@@ -102,6 +102,7 @@ function displayProfile(data) {
 
 function addButtons() {
     const header = document.querySelector('header');
+    const profile = document.getElementById('profile');
     const buttonContainer = document.createElement('span');
     buttonContainer.id = 'settings';
 
@@ -127,7 +128,7 @@ function addButtons() {
     editLink.text = 'Edit';
     editLink.href = '/account/edit/';
     editButton.appendChild(editLink);
-    buttonContainer.appendChild(editButton);
+    profile.appendChild(editButton);
 }
 
 function pleaseLogin(point) {

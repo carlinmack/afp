@@ -279,6 +279,7 @@ header {
     #profile {
         justify-content: flex-start;
         gap: 1rem;
+        flex-wrap: nowrap;
 
         > div   {
             width: calc(100% - 116px);
