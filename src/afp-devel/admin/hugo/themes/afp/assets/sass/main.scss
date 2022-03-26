@@ -17,7 +17,7 @@ $black: #000;
 $black_15: rgba(0, 0, 0, 0.15);
 $success: #d4edda;
 $warn: #fff3cd;
-$danger: #f8d7da;
+$error: #f8d7da;
 
 //fonts
 $sans-serif: 'Open Sans', sans-serif;
@@ -365,7 +365,8 @@ header {
     }
 
     .warn,
-    .success {
+    .success,
+    .error {
         @extend %alert;
         line-height: 3em;
     }
@@ -626,6 +627,10 @@ tr:nth-child(even) {
 
 .hidden {
     display: none;
+}
+
+.error {
+    background-color: $error;
 }
 
 .warn {

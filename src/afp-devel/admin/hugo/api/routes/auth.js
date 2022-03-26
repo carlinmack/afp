@@ -390,7 +390,11 @@ router.post('/getUser', function (req, res) {
             if (err) {
                 return res.json(err);
             }
-            res.json(row);
+            if (row != undefined){
+                res.json(row);
+            } else {
+                res.json({ error: `User "${user}" not found` });
+            }
         }
     );
 });

@@ -35,19 +35,19 @@ function displayMessages() {
     ];
     for (let [cookie, className] of types) {
         if (cookieExists(cookie)) {
-            const content = document.querySelector('.content');
-            if (content) {
-                var flash =
-                    '<div class="' +
-                    className +
-                    '" data-id="0"><p>' +
-                    getCookie(cookie);
-                flash += '</p></div>';
-                content.insertAdjacentHTML('beforeend', flash);
+            makeFlash(className, getCookie(cookie))
 
-                clearCookie(cookie);
-            }
+            clearCookie(cookie);
         }
+    }
+}
+
+function makeFlash(type, message) {
+    const content = document.querySelector('.content');
+    if (content) {
+        var flash = '<div class="' + type + '" data-id="0"><p>' + message;
+        flash += '</p></div>';
+        content.insertAdjacentHTML('beforeend', flash);
     }
 }
 

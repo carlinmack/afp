@@ -10,8 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                data["username"] = username;
-                displayProfile(data);
+                if (data["error"]) {
+                    makeFlash('error', data['error']);
+                } else {
+                    data["username"] = username;
+                    displayProfile(data);
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
