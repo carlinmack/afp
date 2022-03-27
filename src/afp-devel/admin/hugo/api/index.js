@@ -1,6 +1,4 @@
 const express = require('express');
-// const { graphqlHTTP } = require('express-graphql');
-// const schema = require('./post.js');
 const app = express();
 
 const passport = require('passport');
@@ -38,8 +36,6 @@ app.use(function (req, res, next) {
 });
 app.use(passport.authenticate('session'));
 
-// app.use('/graphql', graphqlHTTP({ schema: schema.schema, graphiql: true }));
-// app.use('/graphql', graphqlHTTP({ schema: schema.schema }));
 app.use('/auth', authRouter);
 app.use('/pageviews', pageviews);
 app.use('/notifications', notifications);
