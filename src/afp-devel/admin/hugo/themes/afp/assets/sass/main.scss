@@ -943,6 +943,12 @@ iframe {
     .content {
         width: 90%;
         min-width: 350px;
+
+        >div form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem 0;
+        }
     }
 
     .searchPage {
