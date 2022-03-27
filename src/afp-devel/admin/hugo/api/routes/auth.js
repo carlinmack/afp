@@ -187,12 +187,9 @@ async function updateNonEssential(req, type) {
                     if (err) {
                         reject(err);
                     }
-                    console.log(query)
-                    console.log(req.body[type]);
-                    console.log(this.changes);
+                    
                     if (this.changes == 1) {
                         if (type == "name") {
-                            console.log(req.user);
                             resolve("display name");
                         }
                         resolve(type);
@@ -205,10 +202,6 @@ async function updateNonEssential(req, type) {
 }
 
 router.post('/updateSettings', function (req, res, next) {
-    // console.log('req.body');
-    // console.log(req.body);
-    // console.log('req.session.passport.user');
-    // console.log(req.session.passport.user);
     if (req?.session?.passport?.user) {
         Promise.all([
             updateNonEssential(req, 'name'),

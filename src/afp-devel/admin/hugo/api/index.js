@@ -13,9 +13,9 @@ app.use(
 app.use(express.json());
 
 const authRouter = require('./routes/auth');
-const pageviews = require('./pageviews.js');
-const notifications = require('./notifications.js');
-const comments = require('./comments.js');
+const pageviews = require('./routes/pageviews.js');
+const notifications = require('./routes/notifications.js');
+const comments = require('./routes/comments.js');
 
 require('./boot/db')();
 require('./boot/auth')();
