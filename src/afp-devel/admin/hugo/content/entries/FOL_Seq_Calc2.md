@@ -35,5 +35,8 @@
         "Soundness",
         "Completeness",
         "Results"
+    ],
+    "relatedEntries": [
+        "FOL_Seq_Calc3"
     ]
 }

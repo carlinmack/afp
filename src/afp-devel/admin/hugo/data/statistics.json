@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 195919,
-    "num_loc": 3389020,
+    "num_lemmas": 196086,
+    "num_loc": 3391173,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        670
+        672
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3389000
+        3391200
     ],
     "author_years": [
         14,
@@ -755,7 +755,9 @@
         14876,
         15205,
         730,
-        229
+        742,
+        229,
+        1411
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1427,6 +1429,8 @@
         "Transitive_Models",
         "Independence_CH",
         "Cotangent_PFD_Formula",
-        "Ackermanns_not_PR"
+        "FOL_Seq_Calc3",
+        "Ackermanns_not_PR",
+        "Dedekind_Real"
     ]
 }
