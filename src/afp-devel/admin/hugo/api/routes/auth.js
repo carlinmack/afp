@@ -308,7 +308,6 @@ router.get('/logged-in', function (req, res, next) {
                 }
                 res.json({
                     authenticated: true,
-                    user: req.session.passport.user,
                     db: row,
                 });
             }

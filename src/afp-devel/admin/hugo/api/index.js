@@ -14,6 +14,7 @@ const authRouter = require('./routes/auth');
 const pageviews = require('./routes/pageviews.js');
 const notifications = require('./routes/notifications.js');
 const comments = require('./routes/comments.js');
+const topics = require('./routes/topics.js');
 
 require('./boot/db')();
 require('./boot/auth')();
@@ -40,6 +41,7 @@ app.use('/auth', authRouter);
 app.use('/pageviews', pageviews);
 app.use('/notifications', notifications);
 app.use('/comment', comments);
+app.use('/topics', topics);
 
 
 // app.get('/', function (req, res) {
