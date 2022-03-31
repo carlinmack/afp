@@ -12,7 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
     a.setAttribute('download', filename + '.bib');
 
     fetch('/api/auth/logged-in')
-        .then((r) => r.json())
+        .then((r) => {
+            if (r.status == 503) {
+                makeFlash('error', 'Error: API is unavailable');
+                throw new Error('Failed with HTTP code ' + r.status);
+            }
+            return r.json();
+        })
         .then((data) => {
             console.log(data);
             if (data.authenticated) {

@@ -45,7 +45,7 @@ function displayMessages() {
 function makeFlash(type, message) {
     const content = document.querySelector('.content');
     if (content) {
-        var flash = '<div class="' + type + '" data-id="0"><p>' + message;
+        var flash = '<div class="' + type + '"><p>' + message;
         flash += '</p></div>';
         content.insertAdjacentHTML('beforeend', flash);
     }
@@ -89,7 +89,13 @@ function unreadNotifications() {
 
 function hasComments() {
     fetch('/api/notifications/unread')
-        .then((r) => r.json())
+        .then((r) => {
+            if (r.status == 503) {
+                makeFlash('error', 'Error: API is unavailable');
+                throw new Error('Failed with HTTP code ' + r.status);
+            }
+            return r.json();
+        })
         .then((data) => {
             if (data.unread > 0) {
                 addUnreadCounter(data.unread);
@@ -115,7 +121,13 @@ async function checkForUpdates(currentMostRecent) {
 function getMostRecentComment() {
     return new Promise((resolve, reject) => {
         fetch('/api/comment/mostRecent')
-            .then((r) => r.json())
+            .then((r) => {
+                if (r.status == 503) {
+                    makeFlash('error', 'Error: API is unavailable');
+                    throw new Error('Failed with HTTP code ' + r.status);
+                }
+                return r.json();
+            })
             .then((data) => {
                 if (data['mostRecent'] > 0) {
                     resolve(data['mostRecent']);

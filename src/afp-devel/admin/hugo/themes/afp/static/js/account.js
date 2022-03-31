@@ -8,12 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify({ user: username }),
         })
-            .then((response) => response.json())
+            .then((r) => {
+                if (r.status == 503) {
+                    makeFlash('error', 'Error: API is unavailable');
+                    throw new Error('Failed with HTTP code ' + r.status);
+                }
+                return r.json();
+            })
             .then((data) => {
-                if (data["error"]) {
+                if (data['error']) {
                     makeFlash('error', data['error']);
                 } else {
-                    data["username"] = username;
+                    data['username'] = username;
                     displayProfile(data);
                 }
             })
@@ -22,7 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     } else {
         fetch('/api/auth/logged-in')
-            .then((r) => r.json())
+            .then((r) => {
+                if (r.status == 503) {
+                    makeFlash('error', 'Error: API is unavailable');
+                    throw new Error('Failed with HTTP code ' + r.status);
+                }
+                return r.json();
+            })
             .then((data) => {
                 console.log(data);
                 if (data.authenticated) {

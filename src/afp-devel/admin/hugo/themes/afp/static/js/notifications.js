@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     if (cookieExists('authenticated')) {
         fetch('/api/notifications')
-            .then((r) => r.json())
+            .then((r) => {
+                if (r.status == 503) {
+                    makeFlash('error', 'Error: API is unavailable');
+                    throw new Error('Failed with HTTP code ' + r.status);
+                }
+                return r.json();
+            })
             .then((data) => {
                 console.log(data);
                 if (data.authenticated) {
@@ -16,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             }
                         }
                     } else {
-                        read = [noNotifications()]
+                        read = [noNotifications()];
                     }
                     const main = document.querySelector('main');
                     if (main) {
@@ -141,7 +147,13 @@ function markRead(data) {
         },
         body: JSON.stringify({ rows: data }),
     })
-        .then((response) => response.json())
+        .then((r) => {
+            if (r.status == 503) {
+                makeFlash('error', 'Error: API is unavailable');
+                throw new Error('Failed with HTTP code ' + r.status);
+            }
+            return r.json();
+        })
         .then((data) => {
             if ('error' in data) {
                 console.error('Error:', data['error']);

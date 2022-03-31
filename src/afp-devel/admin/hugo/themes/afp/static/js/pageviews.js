@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(data),
         })
-            .then((response) => response.json())
+            .then((r) => {
+                if (r.status == 503) {
+                    makeFlash('error', 'Error: API is unavailable');
+                    throw new Error('Failed with HTTP code ' + r.status);
+                }
+                return r.json();
+            })
             .then((data) => {
                 console.log('Success:', data);
 
