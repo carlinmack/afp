@@ -403,6 +403,17 @@ header {
         padding-right: 1rem;
     }
 
+    .small-button {
+        width: 1.25rem;
+        height: 1.25rem;
+        padding: 1.5px;
+        margin-left: 1rem;
+    }
+
+    .small-button + .small-button {
+        margin-left: 0.5rem;
+    }
+
     ul {
         list-style-type: none;
     }

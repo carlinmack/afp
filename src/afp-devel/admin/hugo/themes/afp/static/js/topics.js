@@ -12,22 +12,20 @@ const functionHandlers = {};
 function addPinButtons() {
     const headings = document.querySelectorAll('h3');
     for (let heading of headings) {
-        const readButton = document.createElement('button');
-        readButton.type = 'button';
-        readButton.style =
-            'width: 1.5rem;height: 1.5rem;padding: 3px;margin-left: 1rem;';
-        const readImage = document.createElement('img');
-        readImage.src = '/images/pin-45.svg';
-        readImage.alt = 'Pin topic';
-        readImage.style = 'filter: opacity(0.5)';
-        readButton.appendChild(readImage);
-        readButton.addEventListener(
+        const pinButton = document.createElement('button')
+        pinButton.classList = 'small-button'
+        const pinImage = document.createElement('img');
+        pinImage.src = '/images/pin-45.svg';
+        pinImage.alt = 'Pin topic';
+        pinImage.style = 'filter: opacity(0.5)';
+        pinButton.appendChild(pinImage);
+        pinButton.addEventListener(
             'click',
             (functionHandlers[heading.id] = () => {
                 pinTopic(heading.id);
             })
         );
-        heading.insertAdjacentElement('beforeend', readButton);
+        heading.insertAdjacentElement('beforeend', pinButton);
     }
 }
 
@@ -111,7 +109,7 @@ function movePinnedTopics() {
                         heading.firstChild.data =
                             h2Name.textContent + ' / ' + heading.firstChild.data;
 
-                        let pin = heading.querySelector("button");
+                        let pin = heading.querySelectorAll("button")[2];
                         pin.removeEventListener(
                             'click',
                             functionHandlers[heading.id]

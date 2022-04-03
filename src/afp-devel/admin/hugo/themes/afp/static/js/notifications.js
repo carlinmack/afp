@@ -68,7 +68,6 @@ function header(str) {
 
 function allReadButton(notifications) {
     const readButton = document.createElement('button');
-    readButton.type = 'button';
     readButton.style = 'float:right;';
     readButton.textContent = 'Mark all read';
     var unread = notifications.map((x) => x.dataset.id);

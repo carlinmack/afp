@@ -17,7 +17,9 @@
     {{ with $secondLevelTaxonomy }}
       {{ range $secondLevel, $thirdLevelTaxonomy := . }}
       <div>
-        <h3 id="{{ $firstLevel }}-{{ $secondLevel }}">{{ $secondLevel }}</h3>
+        <h3 id="{{ $firstLevel }}-{{ $secondLevel }}">{{ $secondLevel }}<button class="small-button"><img
+            src="/images/link.svg" alt="Topic page" style="filter: opacity(0.5);"></button><button class="small-button"><img
+            src="/images/rss.svg" alt="RSS feed" style="filter: opacity(0.5);"></button></h3>
         <div class="list">
           {{ with (index $topics (printf "%s/%s" (urlize $firstLevel) (urlize $secondLevel))) }}
             {{ range $key := .Pages.ByDate }}
