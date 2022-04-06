@@ -49,7 +49,7 @@ router.get('/all', function (req, res, next) {
     Promise.all(
         [new Promise((resolve, reject) => {
             db.all(
-                `SELECT count(*) AS count, STRFTIME("%Y-%m", date) as created_at 
+                `SELECT STRFTIME("%Y-%m", date) as date, count(*) AS count
                         FROM logs WHERE request_url LIKE "/entries/%" 
                         GROUP BY STRFTIME("%Y-%m", date);`,
                 function (err, rows) {
@@ -62,7 +62,7 @@ router.get('/all', function (req, res, next) {
         }),
         new Promise((resolve, reject) => {
             db.all(
-                `SELECT count(*) AS count, STRFTIME("%Y-%m", date) as created_at 
+                `SELECT STRFTIME("%Y-%m", date) as date, count(*) AS count
                         FROM logs WHERE request_url LIKE "/release/afp-%-current.tar.gz" 
                         GROUP BY STRFTIME("%Y-%m", date);`,
                 function (err, rows) {
@@ -73,7 +73,15 @@ router.get('/all', function (req, res, next) {
                 }
             );
         })]
-    ).then((pageviews, downloads) => {
+    ).then((data) => {
+        let pageviews = {}
+        let downloads = {}
+        for (let dict of data[0]) {
+            pageviews[dict["date"]] = dict["count"];
+        }
+        for (let dict of data[1]) {
+            downloads[dict["date"]] = dict["count"];
+        }
         res.json({
             pageviews: pageviews,
             downloads: downloads,
