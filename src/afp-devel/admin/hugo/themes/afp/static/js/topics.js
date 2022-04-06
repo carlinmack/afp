@@ -19,11 +19,10 @@ function addPinButtons() {
         pinImage.alt = 'Pin topic';
         pinImage.style = 'filter: opacity(0.5)';
         pinButton.appendChild(pinImage);
-        pinButton.addEventListener(
-            'click',
-            (functionHandlers[heading.id] = () => {
+        pinButton.addEventListener('click',
+            functionHandlers[heading.id] = () => {
                 pinTopic(heading.id);
-            })
+            }
         );
         heading.insertAdjacentElement('beforeend', pinButton);
     }
@@ -109,9 +108,8 @@ function movePinnedTopics() {
                         heading.firstChild.data =
                             h2Name.textContent + ' / ' + heading.firstChild.data;
 
-                        let pin = heading.querySelectorAll("button")[2];
-                        pin.removeEventListener(
-                            'click',
+                        let pin = heading.querySelectorAll("button")[0];
+                        pin.removeEventListener('click',
                             functionHandlers[heading.id]
                         );
                         pin.addEventListener('click', 
@@ -119,7 +117,7 @@ function movePinnedTopics() {
                                 unpinTopic(heading.id);
                             }
                         );
-                        pin.firstChild.src = '/images/pin.svg';
+                        pin.firstChild.src = '/images/unpin.svg';
 
                         pinned.appendChild(topicContainer);
                     }
