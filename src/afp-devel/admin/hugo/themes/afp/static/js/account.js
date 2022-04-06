@@ -129,9 +129,16 @@ function addButtons() {
     settingsButton.appendChild(settingsLink);
 
     const logoutButton = document.createElement('button');
+    logoutButton.addEventListener("click", () => {
+        fetch('/api/auth/logout', {
+            method: 'POST',
+        });
+        window.location.replace('/');
+    })
     const logoutLink = document.createElement('a');
     logoutLink.text = 'Log out';
-    logoutLink.href = '/api/auth/logout';
+    logoutLink.href = '/';
+
     logoutButton.appendChild(logoutLink);
 
     buttonContainer.appendChild(settingsButton);
