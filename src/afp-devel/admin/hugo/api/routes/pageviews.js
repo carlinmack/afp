@@ -45,6 +45,42 @@ router.post('/', function (req, res, next) {
     }
 });
 
+router.get('/all', function (req, res, next) {
+    Promise.all(
+        [new Promise((resolve, reject) => {
+            db.all(
+                `SELECT count(*) AS count, STRFTIME("%Y-%m", date) as created_at 
+                        FROM logs WHERE request_url LIKE "/entries/%" 
+                        GROUP BY STRFTIME("%Y-%m", date);`,
+                function (err, rows) {
+                    if (err) {
+                        reject('not found');
+                    }
+                    resolve(rows);
+                }
+            );
+        }),
+        new Promise((resolve, reject) => {
+            db.all(
+                `SELECT count(*) AS count, STRFTIME("%Y-%m", date) as created_at 
+                        FROM logs WHERE request_url LIKE "/release/afp-%-current.tar.gz" 
+                        GROUP BY STRFTIME("%Y-%m", date);`,
+                function (err, rows) {
+                    if (err) {
+                        reject('not found');
+                    }
+                    resolve(rows);
+                }
+            );
+        })]
+    ).then((pageviews, downloads) => {
+        res.json({
+            pageviews: pageviews,
+            downloads: downloads,
+        });
+    });
+});
+
 async function getCount(entry) {
     return new Promise((resolve, reject) => {
         db.get(
@@ -76,6 +112,6 @@ async function getDownload(entry) {
     });
 }
 
-const getEntryName = entry => entry.match(/\/([a-z0-9_-]+)\/$/)[1];
+const getEntryName = (entry) => entry.match(/\/([a-z0-9_-]+)\/$/)[1];
 
 module.exports = router;
