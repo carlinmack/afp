@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error:', error);
             });
     } else {
-        fetch('/api/auth/logged-in')
+        fetch('/api/auth/signed-in')
             .then((r) => {
                 if (r.status == 503) {
                     makeFlash('error', 'Error: API is unavailable');
@@ -130,7 +130,7 @@ function addButtons() {
 
     const logoutButton = document.createElement('button');
     logoutButton.addEventListener("click", () => {
-        fetch('/api/auth/logout', {
+        fetch('/api/auth/signout', {
             method: 'POST',
         });
         window.location.replace('/');

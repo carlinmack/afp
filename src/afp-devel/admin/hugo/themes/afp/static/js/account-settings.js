@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/api/auth/logged-in')
+    fetch('/api/auth/signed-in')
         .then((r) => {
             if (r.status == 503) {
                 makeFlash('error', 'Error: API is unavailable');

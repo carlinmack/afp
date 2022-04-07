@@ -22,7 +22,7 @@ var router = express.Router();
 
 // URL prefix: /api/auth/
 router.post(
-    '/login/password',
+    '/signin',
     // passport.authenticate('local', {
     //     successRedirect: '/',
     //     failureRedirect: '/login',
@@ -52,11 +52,11 @@ router.post(
     }
 );
 
-router.get('/logout', function (req, res, next) {
+router.post('/signout', function (req, res, next) {
     req.logOut();
     req.session.destroy(function (err) {
         res.clearCookie('authenticated');
-        res.redirect('/'); //Inside a callback… bulletproof!
+        res.redirect('/');
     });
 });
 
@@ -297,7 +297,7 @@ router.post('/updateSettings', function (req, res, next) {
     }
 });
 
-router.get('/logged-in', function (req, res, next) {
+router.get('/signed-in', function (req, res, next) {
     if (req?.session?.passport?.user) {
         db.get(
             'select username, name, email, image, affiliation, description, website from users WHERE email = ?',

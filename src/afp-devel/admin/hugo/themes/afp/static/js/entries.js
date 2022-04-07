@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+    let inputs = document.querySelectorAll('.auth-section input');
+    for (let input of inputs) {
+        if (input.type != 'submit') {
+            input.hidden = true;
+        }
+    }
+
     const content = document.getElementById('copyText').innerHTML;
     const filename = document.getElementById('bibtexFileName').innerHTML;
     document.getElementById('copyBibtex').addEventListener('click', () => {
@@ -11,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     a.setAttribute('href', url);
     a.setAttribute('download', filename + '.bib');
 
-    fetch('/api/auth/logged-in')
+    fetch('/api/auth/signed-in')
         .then((r) => {
             if (r.status == 503) {
                 makeFlash('error', 'Error: API is unavailable');
@@ -22,12 +29,6 @@ document.addEventListener('DOMContentLoaded', function () {
         .then((data) => {
             console.log(data);
             if (data.authenticated) {
-                let inputs = document.querySelectorAll('.auth-section input');
-                for (let input of inputs) {
-                    if (input.type != 'submit') {
-                        input.hidden = true;
-                    }
-                }
                 document.getElementById('isso-thread').classList.remove('notAuth');
 
                 let name = data.db.name || data.db.username;
