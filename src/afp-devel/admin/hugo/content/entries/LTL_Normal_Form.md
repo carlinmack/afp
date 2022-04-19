@@ -23,8 +23,8 @@
         "Normal_Form_Code_Export"
     ],
     "relatedEntries": [
-        "Stuttering_Equivalence",
         "LTL_to_GBA",
+        "LTL_Master_Theorem",
         "LTL_to_DRA"
     ],
     "olderReleases": [

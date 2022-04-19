@@ -20,8 +20,8 @@
     ],
     "relatedEntries": [
         "Bounded_Deducibility_Security",
-        "CoCon",
-        "CoSMed"
+        "CoSMed",
+        "CoCon"
     ],
     "theories": [
         "Composing_Security",

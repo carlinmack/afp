@@ -79,7 +79,7 @@
         "Inf_Matrix"
     ],
     "relatedEntries": [
-        "KAT_and_DRA",
-        "KAD"
+        "KAD",
+        "KAT_and_DRA"
     ]
 }

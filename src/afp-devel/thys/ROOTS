@@ -218,6 +218,7 @@ Fourier
 FO_Theory_Rewriting
 Free-Boolean-Algebra
 Free-Groups
+Frequency_Moments
 Fresh_Identifiers
 FunWithFunctions
 FunWithTilings
@@ -467,6 +468,7 @@ Posix-Lexing
 Possibilistic_Noninterference
 Power_Sum_Polynomials
 Pratt_Certificate
+Prefix_Free_Code_Combinators
 Presburger-Automata
 Prim_Dijkstra_Simple
 Prime_Distribution_Elementary

@@ -82,6 +82,6 @@
     "relatedEntries": [
         "Decreasing-Diagrams-II",
         "Finite_Automata_HF",
-        "Well_Quasi_Orders"
+        "Polynomials"
     ]
 }

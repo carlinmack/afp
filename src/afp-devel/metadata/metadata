@@ -12143,3 +12143,48 @@ abstract =
   natural numbers to terms, formulas and rules are defined using the
   <em>Nat-Bijection</em> theory in the HOL-Library.
   </p>
+
+[Prefix_Free_Code_Combinators]
+title = A Combinator Library for Prefix-Free Codes
+author = Emin Karayel <https://orcid.org/0000-0003-3290-5034>
+topic = Computer science/Algorithms, Computer science/Data structures
+date = 2022-04-08
+notify = me@eminkarayel.de
+abstract = 
+  This entry contains a set of binary encodings for primitive data
+  types, such as natural numbers, integers, floating-point numbers as
+  well as combinators to construct encodings for products, lists, sets
+  or functions of/between such types.  For natural numbers and integers,
+  the entry contains various encodings, such as Elias-Gamma-Codes and
+  exponential Golomb Codes, which are efficient variable-length codes in
+  use by current compression formats.  A use-case for this library is
+  measuring the persisted size of a complex data structure without
+  having to hand-craft a dedicated encoding for it, independent of
+  Isabelle's internal representation.
+
+[Frequency_Moments]
+title = Formalization of Randomized Approximation Algorithms for Frequency Moments
+author = Emin Karayel <https://orcid.org/0000-0003-3290-5034>
+topic = Computer science/Algorithms/Approximation, Mathematics/Probability theory
+date = 2022-04-08
+notify = me@eminkarayel.de
+abstract = 
+  In 1999 Alon et. al. introduced the still active research topic of
+  approximating the frequency moments of a data stream using randomized
+  algorithms with minimal space usage. This includes the problem of
+  estimating the cardinality of the stream elements - the zeroth
+  frequency moment. But, also higher-order frequency moments that
+  provide information about the skew of the data stream. (The
+  <i>k</i>-th frequency moment of a data stream is the sum
+  of the <i>k</i>-th powers of the occurrence counts of each
+  element in the stream.) This entry formalizes three randomized
+  algorithms for the approximation of
+  <i>F<sub>0</sub></i>,
+  <i>F<sub>2</sub></i> and
+  <i>F<sub>k</sub></i> for <i>k ≥
+  3</i> based on [<a
+  href="https://doi.org/10.1006/jcss.1997.1545">1</a>,
+  <a
+  href="https://doi.org/10.1007/3-540-45726-7_1">2</a>]
+  and verifies their expected accuracy, success probability and space
+  usage.
