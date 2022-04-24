@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 196288,
-    "num_loc": 3396178,
+    "num_lemmas": 196342,
+    "num_loc": 3397998,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        674
+        675
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3396200
+        3398000
     ],
     "author_years": [
         14,
@@ -62,7 +62,7 @@
         39,
         34,
         45,
-        6
+        7
     ],
     "author_years_cumulative": [
         14,
@@ -83,7 +83,7 @@
         339,
         373,
         418,
-        424
+        425
     ],
     "loc_articles": [
         839,
@@ -759,7 +759,8 @@
         229,
         1411,
         816,
-        4189
+        4189,
+        1820
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1435,6 +1436,7 @@
         "Ackermanns_not_PR",
         "Dedekind_Real",
         "Prefix_Free_Code_Combinators",
-        "Frequency_Moments"
+        "Frequency_Moments",
+        "Multiset_Ordering_NPC"
     ]
 }
