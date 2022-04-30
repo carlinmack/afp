@@ -51,7 +51,7 @@
     ],
     "relatedEntries": [
         "LTL_to_DRA",
-        "LTL_Normal_Form",
-        "LTL_to_GBA"
+        "LTL_to_GBA",
+        "Stuttering_Equivalence"
     ]
 }

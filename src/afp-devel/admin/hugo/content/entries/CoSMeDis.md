@@ -20,8 +20,8 @@
         "Fresh_Identifiers"
     ],
     "relatedEntries": [
-        "CoSMed",
-        "CoCon"
+        "CoCon",
+        "CoSMed"
     ],
     "theories": [
         "Prelim",

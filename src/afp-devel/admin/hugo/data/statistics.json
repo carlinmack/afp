@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 196342,
-    "num_loc": 3397998,
+    "num_lemmas": 196937,
+    "num_loc": 3403178,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        675
+        676
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3398000
+        3403200
     ],
     "author_years": [
         14,
@@ -760,7 +760,8 @@
         1411,
         816,
         4189,
-        1820
+        1820,
+        5180
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1437,6 +1438,7 @@
         "Dedekind_Real",
         "Prefix_Free_Code_Combinators",
         "Frequency_Moments",
-        "Multiset_Ordering_NPC"
+        "Multiset_Ordering_NPC",
+        "Fishers_Inequality"
     ]
 }

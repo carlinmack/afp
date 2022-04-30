@@ -42,6 +42,7 @@
         "Smith_Certified"
     ],
     "relatedEntries": [
+        "Fishers_Inequality",
         "Algebraic_Numbers"
     ],
     "olderReleases": [

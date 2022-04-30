@@ -65,8 +65,8 @@
         "Relation_Algebra_Models"
     ],
     "relatedEntries": [
-        "KAD",
         "KAT_and_DRA",
+        "KAD",
         "Relational_Paths"
     ]
 }
