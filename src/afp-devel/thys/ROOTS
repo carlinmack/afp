@@ -92,6 +92,7 @@ Chandy_Lamport
 Chord_Segments
 Circus
 Clean
+Clique_and_Monotone_Circuits
 ClockSynchInst
 Closest_Pair_Points
 CoCon
@@ -154,6 +155,7 @@ Design_Theory
 Dict_Construction
 Differential_Dynamic_Logic
 Differential_Game_Logic
+Digit_Expansions
 Dijkstra_Shortest_Path
 Diophantine_Eqns_Lin_Hom
 Dirichlet_L
@@ -580,6 +582,7 @@ Slicing
 Sliding_Window_Algorithm
 Smith_Normal_Form
 Smooth_Manifolds
+Sophomores_Dream
 Sort_Encodings
 Source_Coding_Theorem
 SpecCheck

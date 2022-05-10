@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 196937,
-    "num_loc": 3403178,
+    "num_lemmas": 197168,
+    "num_loc": 3407419,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        676
+        679
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3403200
+        3407400
     ],
     "author_years": [
         14,
@@ -62,7 +62,7 @@
         39,
         34,
         45,
-        7
+        11
     ],
     "author_years_cumulative": [
         14,
@@ -83,7 +83,7 @@
         339,
         373,
         418,
-        425
+        429
     ],
     "loc_articles": [
         839,
@@ -760,8 +760,11 @@
         1411,
         816,
         4189,
+        471,
+        1312,
         1820,
-        5180
+        5180,
+        2458
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1438,7 +1441,10 @@
         "Dedekind_Real",
         "Prefix_Free_Code_Combinators",
         "Frequency_Moments",
+        "Sophomores_Dream",
+        "Digit_Expansions",
         "Multiset_Ordering_NPC",
-        "Fishers_Inequality"
+        "Fishers_Inequality",
+        "Clique_and_Monotone_Circuits"
     ]
 }

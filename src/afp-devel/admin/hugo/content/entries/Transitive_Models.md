@@ -4,7 +4,7 @@
         "Emmanuel Gunther",
         "Miguel Pagano",
         "Pedro Sánchez Terraf",
-        "and Matías Steinberg"
+        "Matías Steinberg"
     ],
     "topics": [
         "Logic/Set theory"

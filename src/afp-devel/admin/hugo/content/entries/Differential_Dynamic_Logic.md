@@ -1,7 +1,7 @@
 {
     "title": "Differential Dynamic Logic",
     "authors": [
-        "Brandon Bohrer"
+        "Rose Bohrer"
     ],
     "topics": [
         "Logic/General logic/Modal logic",
@@ -9,9 +9,9 @@
     ],
     "date": "2017-02-13",
     "notify": [
-        "bbohrer@cs.cmu.edu"
+        "rose.bohrer.cs@gmail.com"
     ],
-    "abstract": "\nWe formalize differential dynamic logic, a logic for proving\nproperties of hybrid systems. The proof calculus in this formalization\nis based on the uniform substitution principle. We show it is sound\nwith respect to our denotational semantics, which provides increased\nconfidence in the correctness of the KeYmaera X theorem prover based\non this calculus. As an application, we include a proof term checker\nembedded in Isabelle/HOL with several example proofs.  Published in:\nBrandon Bohrer, Vincent Rahli, Ivana Vukotic, Marcus Völp, André\nPlatzer: Formally verified differential dynamic logic. CPP 2017.",
+    "abstract": "\nWe formalize differential dynamic logic, a logic for proving\nproperties of hybrid systems. The proof calculus in this formalization\nis based on the uniform substitution principle. We show it is sound\nwith respect to our denotational semantics, which provides increased\nconfidence in the correctness of the KeYmaera X theorem prover based\non this calculus. As an application, we include a proof term checker\nembedded in Isabelle/HOL with several example proofs.  Published in:\nRose Bohrer, Vincent Rahli, Ivana Vukotic, Marcus Völp, André\nPlatzer: Formally verified differential dynamic logic. CPP 2017.",
     "licence": "BSD",
     "olderReleases": [
         {
