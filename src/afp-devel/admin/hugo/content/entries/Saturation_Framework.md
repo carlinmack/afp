@@ -37,7 +37,7 @@
         "Given_Clause_Architectures"
     ],
     "relatedEntries": [
-        "Functional_Ordered_Resolution_Prover",
-        "Saturation_Framework_Extensions"
+        "Saturation_Framework_Extensions",
+        "Functional_Ordered_Resolution_Prover"
     ]
 }

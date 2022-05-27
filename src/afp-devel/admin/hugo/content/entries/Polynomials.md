@@ -110,6 +110,6 @@
     "relatedEntries": [
         "Matrix",
         "Polynomial_Factorization",
-        "Decreasing-Diagrams-II"
+        "Myhill-Nerode"
     ]
 }

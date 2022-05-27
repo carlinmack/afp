@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 197168,
-    "num_loc": 3407419,
+    "num_lemmas": 197274,
+    "num_loc": 3409593,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        679
+        680
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3407400
+        3409600
     ],
     "author_years": [
         14,
@@ -764,7 +764,8 @@
         1312,
         1820,
         5180,
-        2458
+        2458,
+        2174
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1445,6 +1446,7 @@
         "Digit_Expansions",
         "Multiset_Ordering_NPC",
         "Fishers_Inequality",
-        "Clique_and_Monotone_Circuits"
+        "Clique_and_Monotone_Circuits",
+        "Package_logic"
     ]
 }
