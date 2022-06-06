@@ -42,8 +42,8 @@
         "Dirichlet_Theorem"
     ],
     "relatedEntries": [
-        "Dirichlet_Series",
         "Prime_Number_Theorem",
+        "Dirichlet_Series",
         "Zeta_Function"
     ]
 }

@@ -29,8 +29,8 @@
         "Lifschitz_Consistency"
     ],
     "relatedEntries": [
-        "XML",
-        "Polynomial_Factorization"
+        "Polynomial_Factorization",
+        "XML"
     ],
     "olderReleases": [
         {

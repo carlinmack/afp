@@ -50,6 +50,7 @@
         "CL_Z"
     ],
     "relatedEntries": [
+        "First_Order_Terms",
         "Decreasing-Diagrams-II",
         "Decreasing-Diagrams"
     ]

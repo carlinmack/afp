@@ -1,6 +1,6 @@
 {
-    "num_lemmas": 197337,
-    "num_loc": 3410243,
+    "num_lemmas": 197796,
+    "num_loc": 3415611,
     "articles_year": [
         14,
         22,
@@ -20,7 +20,7 @@
         511,
         577,
         650,
-        681
+        683
     ],
     "loc_years": [
         60600,
@@ -41,7 +41,7 @@
         2429900,
         2817100,
         3296600,
-        3410200
+        3415600
     ],
     "author_years": [
         14,
@@ -766,7 +766,9 @@
         5180,
         2458,
         2174,
-        650
+        650,
+        2030,
+        3338
     ],
     "all_articles": [
         "AVL-Trees",
@@ -1449,6 +1451,8 @@
         "Fishers_Inequality",
         "Clique_and_Monotone_Circuits",
         "Package_logic",
-        "Pluennecke_Ruzsa_Inequality"
+        "Pluennecke_Ruzsa_Inequality",
+        "Combinable_Wands",
+        "Rewrite_Properties_Reduction"
     ]
 }

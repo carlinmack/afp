@@ -51,5 +51,8 @@
         "Unification",
         "Matching",
         "Subsumption"
+    ],
+    "relatedEntries": [
+        "Rewriting_Z"
     ]
 }

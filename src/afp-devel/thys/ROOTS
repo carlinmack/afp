@@ -102,6 +102,7 @@ CofGroups
 Coinductive
 Coinductive_Languages
 Collections
+Combinable_Wands
 Combinatorics_Words
 Combinatorics_Words_Graph_Lemma
 Combinatorics_Words_Lyndon
@@ -539,6 +540,7 @@ Rep_Fin_Groups
 ResiduatedTransitionSystem
 Residuated_Lattices
 Resolution_FOL
+Rewrite_Properties_Reduction
 Rewriting_Z
 Ribbon_Proofs
 Robbins-Conjecture
